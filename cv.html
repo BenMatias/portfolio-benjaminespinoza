@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ben Matias | CV / Resume</title>
+  <meta name="description" content="Curriculum Vitae of Benjamin Espinoza, Industrial Engineer and Business/Data Analyst.">
+  <meta property="og:title" content="Benjamin Espinoza | CV / Resume">
+  <meta property="og:description" content="Curriculum Vitae of Benjamin Espinoza, Industrial Engineer and Business/Data Analyst.">
+  <meta property="og:image" content="https://www.benmatias.com/assets/img/og-image.jpg">
+  <meta property="og:url" content="https://www.benmatias.com/cv.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Benjamin Espinoza | CV / Resume">
+  <meta name="twitter:description" content="Curriculum Vitae of Benjamin Espinoza, Industrial Engineer and Business/Data Analyst.">
+  <meta name="twitter:image" content="https://www.benmatias.com/assets/img/og-image.jpg">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <style>
+    :root {
+      --dark-blue: #0A1931;
+      --light-blue: #B3CFE5;
+      --mid-blue: #4A7FA7;
+      --deep-blue: #1A3D63;
+      --almost-white: #F6FAFD;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #f6fafd, #e8f0f8);
+      color: var(--dark-blue);
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: var(--mid-blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--light-blue);
+      text-decoration: underline;
+    }
+
+    header {
+      background: var(--dark-blue);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo img {
+      height: 30px;
+      max-width: 160px;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+      color: var(--light-blue);
+    }
+
+    .lang-toggle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--dark-blue);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .mobile-nav a, .mobile-nav .lang-toggle {
+      padding: 1rem;
+      border-top: 1px solid #ffffff22;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      width: 100%;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--light-blue);
+      padding-bottom: 0.5rem;
+      color: var(--deep-blue);
+      margin: 0;
+    }
+
+    .h2-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .download-btn {
+      background: var(--mid-blue);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .download-btn:hover {
+      background: var(--light-blue);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .badge-widgets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    section {
+      margin-top: 3rem;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+
+    .footer-contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-contact p {
+      margin: 0.2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .mobile-nav.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/Logo.PNG" alt="Ben Matias Logo" />
+      </a>
+    </div>
+    <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">&#9776;</button>
+    <nav>
+      <a href="index.html" data-key="about">About</a>
+      <a href="cv.html" data-key="cv">CV / Resume</a>
+      <a href="projects.html" data-key="projects">Projects</a>
+      <a href="mailto:bmatiasespinoza@gmail.com" data-key="contact">Contact</a>
+      <span class="lang-toggle"></span>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="index.html" data-key="about">About</a>
+      <a href="cv.html" data-key="cv">CV / Resume</a>
+      <a href="projects.html" data-key="projects">Projects</a>
+      <a href="mailto:bmatiasespinoza@gmail.com" data-key="contact">Contact</a>
+      <div class="lang-toggle"></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="h2-wrapper">
+      <h2 id="cv-title">CV / Resume</h2>
+      <a id="download-btn" class="download-btn" href="assets/Benjamin_Espinoza_CV.pdf" download>
+        <i class="fas fa-download"></i> Download PDF
+      </a>
+    </div>
+    <section id="cv-content"></section>
+  </div>
+
+  <footer>
+    <div class="footer-contact">
+      <p><i class="fas fa-envelope"></i> <a href="mailto:bmatiasespinoza@gmail.com" style="color: #B3CFE5">bmatiasespinoza@gmail.com</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Santiago, Chile</p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/benmatias" style="color: #B3CFE5">linkedin.com/in/benmatias</a></p>
+    </div>
+    <p style="margin-top: 0.5rem;">&copy; 2025 Benjamin Espinoza. All rights reserved.</p>
+  </footer>
+  <script>
+    const labels = {
+      en: {
+        about: "About",
+        cv: "CV / Resume",
+        projects: "Projects",
+        contact: "Contact",
+        download: "Download PDF",
+        cvTitle: "CV / Resume",
+        langIcon: '<img src="https://flagcdn.com/cl.svg" alt="CL" style="width: 20px; vertical-align: middle; margin-right: 4px;">ES'
+      },
+      es: {
+        about: "Sobre mí",
+        cv: "CV / Currículum",
+        projects: "Proyectos",
+        contact: "Contacto",
+        download: "Descargar PDF",
+        cvTitle: "CV / Currículum",
+        langIcon: '<img src="https://flagcdn.com/us.svg" alt="US" style="width: 20px; vertical-align: middle; margin-right: 4px;">EN'
+      }
+    };
+
+    const translations = {
+      en: {
+        content: `
+          <h3>Work Experience</h3>
+
+          <p><strong><a href="https://www.internacional.cl" target="_blank">Banco Internacional</a></strong> – Business Analyst<br><em>May 2023 – Present</em></p>
+          <ul>
+            <li>Built a company-wide reporting and KPI system from scratch for the Innovation area, where performance tracking and outcome evaluation were previously nonexistent.</li>
+            <li>Created over 20 dashboards for departments such as Innovation, Fraud, Sales, Product Owners, and Strategic Planning.</li>
+            <li>Led and scaled a metrics team, automated processes using ETL pipelines and team-managed databases, ensuring data integrity and scalability.</li>
+            <li>Transitioned to cross-functional squad as Business Analyst: user stories, testing, flows and dashboards.</li>
+          </ul>
+
+          <p><strong><a href="https://lucasdiesel.cl" target="_blank">Lucas Diesel</a></strong> – Data & Business Control Analyst<br><em>Sep 2021 – Apr 2023</em></p>
+          <ul>
+            <li>Created a new data analytics function in a company lacking visibility due to shared finance with sister company.</li>
+            <li>Delivered 30+ Power BI reports across operations, sales, inventory, procurement, automotive services and executive dashboards.</li>
+            <li>Automated daily report delivery, saving up to 1 hour daily.</li>
+            <li>Improved annual budgeting from 6 to 2 months over two years.</li>
+          </ul>
+
+          <p><strong><a href="https://www.heavenward.cl" target="_blank">Heavenward Ascensores</a></strong> – Financial Performance Analyst<br><em>Nov 2019 – Aug 2021</em></p>
+          <ul>
+            <li>Tracked KPIs and costs for modernization projects.</li>
+            <li>Created dashboards in Excel and Power BI to support strategic decisions.</li>
+            <li>Worked with technical and executive teams to improve customer data insights.</li>
+          </ul>
+          <h3>Education</h3>
+          <ul>
+            <li><strong><a href="https://www.digitalbankla.com" target="_blank">Digital Bank LATAM</a></strong> – International Diploma in Digital Transformation (2024)</li>
+            <li><strong><a href="https://www.fundaciontelefonica.cl" target="_blank">Fundación Telefónica</a> & <a href="https://www.aiep.cl" target="_blank">AIEP</a></strong> – Diploma in Web Design & Programming (2022)</li>
+            <li><strong><a href="https://www.byupathway.edu" target="_blank">BYU PathwayConnect</a></strong> – University Preparation Program (2022)</li>
+            <li><strong><a href="https://uv.cl" target="_blank">Universidad de Valparaíso</a></strong> – Industrial Civil Engineering (2013–2020)</li>
+          </ul>
+
+          <h3>Skills & Tools</h3>
+          <ul>
+            <li><strong>Data:</strong> SQL, Excel, LookML</li>
+            <li><strong>Visualization:</strong> Power BI, Looker Studio, Tableau</li>
+            <li><strong>Methods:</strong> KPIs, Agile, dashboarding, storytelling</li>
+          </ul>
+
+          <h3>Certifications</h3>
+          <ul>
+            <li><a href="assets/certificates/Certificacion Qlik.pdf" download>Qlik Sense Designer</a></li>
+            <li><a href="assets/certificates/Conceptos básicos de Google Tag Manager.pdf" download>Google Tag Manager (Basics)</a></li>
+            <li><a href="assets/certificates/Linguaskill Cambridge.pdf" download>Linguaskill English B2</a></li>
+            <li><a href="assets/certificates/SQL.pdf" download>SQL Certification</a></li>
+            <li><a href="assets/certificates/SSIS.pdf" download>SSIS Certificate</a></li>
+            <li><a href="assets/certificates/Tableau.pdf" download>Tableau & Tableau Prep</a></li>
+            <li><a href="assets/certificates/User Stories Certiprof.pdf" download>User Stories Certification</a></li>
+          </ul>
+
+          <h3>Highlighted Badges</h3>
+          <div class="badge-widgets">
+            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="80084bf2-8bfb-485a-9815-81fdc3f8d88b" data-share-badge-host="https://www.credly.com"></div>
+            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="19420706-efb7-4da0-a955-2b58c25834dd" data-share-badge-host="https://www.credly.com"></div>
+            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="4a17b3b2-fe50-4165-8cc2-dab375fa8cb7" data-share-badge-host="https://www.credly.com"></div>
+          </div>
+          <p style="margin-top: 1rem;">
+            <a href="https://www.credly.com/users/benmatias" target="_blank" style="color: var(--mid-blue); font-weight: 600;">
+              <i class="fas fa-external-link-alt"></i> View profile on Credly
+            </a>
+          </p>
+        `
+      }
+    };
+    translations.es = {
+      content: `
+        <h3>Experiencia laboral</h3>
+
+        <p><strong><a href="https://www.internacional.cl" target="_blank">Banco Internacional</a></strong> – Business Analyst<br><em>May 2023 – Actualidad</em></p>
+        <ul>
+          <li>Desarrollé un sistema de reportes y KPIs desde cero para el área de innovación, donde no existía medición previa.</li>
+          <li>Creé más de 20 dashboards para innovación, fraude, ventas, dueños de productos y planificación.</li>
+          <li>Lideré equipo de métricas que automatizó procesos mediante ETL y base de datos propia.</li>
+          <li>Transición exitosa al rol de Business Analyst en célula ágil con foco en historias de usuario, flujos y pruebas.</li>
+        </ul>
+
+        <p><strong><a href="https://lucasdiesel.cl" target="_blank">Lucas Diesel</a></strong> – Analista de Datos y Control de Gestión<br><em>Sep 2021 – Abr 2023</em></p>
+        <ul>
+          <li>Ingresé a una posición nueva para resolver brechas de visibilidad y reportes en una estructura financiera compartida.</li>
+          <li>Generé y automatizé más de 30 dashboards para ventas, inventario, abastecimiento, servicios automotrices, operaciones y gerencia.</li>
+          <li>Automatización diaria ahorró hasta 1 hora por día.</li>
+          <li>Reduje el proceso de presupuesto anual de 6 a 2 meses en dos años consecutivos.</li>
+        </ul>
+
+        <p><strong><a href="https://www.heavenward.cl" target="_blank">Heavenward Ascensores</a></strong> – Analista de Control de Gestión<br><em>Nov 2019 – Ago 2021</em></p>
+        <ul>
+          <li>Supervisión de KPIs y control de costos para proyectos de mantenimiento y modernización.</li>
+          <li>Reportes y dashboards en Excel y Power BI para análisis financiero y mejora de tiempos de respuesta.</li>
+        </ul>
+
+        <h3>Educación</h3>
+        <ul>
+          <li><strong><a href="https://www.digitalbankla.com" target="_blank">Digital Bank LATAM</a></strong> – Diplomado Internacional en Transformación Digital (2024)</li>
+          <li><strong><a href="https://www.fundaciontelefonica.cl" target="_blank">Fundación Telefónica</a> & <a href="https://www.aiep.cl" target="_blank">AIEP</a></strong> – Diplomado en Diseño y Programación Web (2022)</li>
+          <li><strong><a href="https://www.byupathway.edu" target="_blank">BYU PathwayConnect</a></strong> – Programa universitario introductorio (2022)</li>
+          <li><strong><a href="https://uv.cl" target="_blank">Universidad de Valparaíso</a></strong> – Ingeniería Civil Industrial (2013–2020)</li>
+        </ul>
+
+        <h3>Habilidades y herramientas</h3>
+        <ul>
+          <li><strong>Datos:</strong> SQL, Excel, LookML</li>
+          <li><strong>Visualización:</strong> Power BI, Looker Studio, Tableau</li>
+          <li><strong>Métodos:</strong> KPIs, Agile, dashboards, storytelling</li>
+        </ul>
+
+        <h3>Certificaciones</h3>
+        <ul>
+          <li><a href="assets/certificates/Certificacion Qlik.pdf" download>Qlik Sense Diseñador</a></li>
+          <li><a href="assets/certificates/Conceptos básicos de Google Tag Manager.pdf" download>Google Tag Manager (Básico)</a></li>
+          <li><a href="assets/certificates/Linguaskill Cambridge.pdf" download>Inglés B2 – Linguaskill</a></li>
+          <li><a href="assets/certificates/SQL.pdf" download>Certificación SQL</a></li>
+          <li><a href="assets/certificates/SSIS.pdf" download>Certificación SSIS</a></li>
+          <li><a href="assets/certificates/Tableau.pdf" download>Tableau & Tableau Prep</a></li>
+          <li><a href="assets/certificates/User Stories Certiprof.pdf" download>User Stories Certificate</a></li>
+        </ul>
+
+        <h3>Insignias destacadas</h3>
+        <div class="badge-widgets">
+          <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="80084bf2-8bfb-485a-9815-81fdc3f8d88b" data-share-badge-host="https://www.credly.com"></div>
+          <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="19420706-efb7-4da0-a955-2b58c25834dd" data-share-badge-host="https://www.credly.com"></div>
+          <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="4a17b3b2-fe50-4165-8cc2-dab375fa8cb7" data-share-badge-host="https://www.credly.com"></div>
+        </div>
+        <p style="margin-top: 1rem;">
+          <a href="https://www.credly.com/users/benmatias" target="_blank" style="color: var(--mid-blue); font-weight: 600;">
+            <i class="fas fa-external-link-alt"></i> Ver perfil en Credly
+          </a>
+        </p>
+      `
+    };
+
+    function updateLabels(lang) {
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        el.textContent = labels[lang][key] || key;
+      });
+      document.getElementById('cv-title').textContent = labels[lang].cvTitle;
+      document.getElementById('download-btn').innerHTML = `<i class="fas fa-download"></i> ${labels[lang].download}`;
+      document.querySelectorAll('.lang-toggle').forEach(el => {
+        el.innerHTML = labels[lang].langIcon;
+      });
+    }
+
+    function toggleLang() {
+      const current = document.documentElement.lang;
+      const nextLang = current === 'en' ? 'es' : 'en';
+      document.documentElement.lang = nextLang;
+      document.getElementById('cv-content').innerHTML = translations[nextLang].content;
+      updateLabels(nextLang);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const defaultLang = "en";
+      document.documentElement.lang = defaultLang;
+      document.getElementById('cv-content').innerHTML = translations[defaultLang].content;
+      updateLabels(defaultLang);
+
+      document.querySelectorAll('.lang-toggle').forEach(el => {
+        el.addEventListener('click', toggleLang);
+      });
+
+      const menuBtn = document.getElementById('menu-toggle');
+      if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+          document.getElementById('mobile-nav').classList.toggle('show');
+        });
+      }
+    });
+  </script>
+  <script async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ben Matias | Business & Data Analyst Portfolio</title>
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Ben Matias – Business & Data Analyst Portfolio" />
+  <meta property="og:description" content="Explore the professional portfolio of Ben Matias, specializing in dashboards, KPIs, and data-driven business insights." />
+  <meta property="og:image" content="https://benmatias.com/assets/img/og-image.jpg" />
+  <meta property="og:url" content="https://benmatias.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ben Matias – Business & Data Analyst Portfolio" />
+  <meta name="twitter:description" content="Explore the professional portfolio of Ben Matias." />
+  <meta name="twitter:image" content="https://benmatias.com/assets/img/og-image.jpg" />
+
+  <!-- SEO Description -->
+  <meta name="description" content="Professional portfolio of Ben Matias, Business & Data Analyst. Explore dashboards, KPIs, and data-driven projects." />
+
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --dark-blue: #0A1931;
+      --light-blue: #B3CFE5;
+      --mid-blue: #4A7FA7;
+      --deep-blue: #1A3D63;
+      --almost-white: #F6FAFD;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #f6fafd, #e8f0f8);
+      color: var(--dark-blue);
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: var(--dark-blue);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo img {
+      height: 30px;
+      max-width: 160px;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+      color: var(--light-blue);
+    }
+
+    .lang-toggle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--dark-blue);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .mobile-nav a, .mobile-nav .lang-toggle {
+      padding: 1rem;
+      border-top: 1px solid #ffffff22;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      flex: 1;
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .profile {
+      flex: 0 0 280px;
+      text-align: center;
+    }
+
+    .profile img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      margin-bottom: 1rem;
+    }
+
+    .profile h2 {
+      margin: 0.25rem 0 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .profile p {
+      margin: 0;
+    }
+
+    section {
+      flex: 1;
+      margin-top: 3rem;
+      overflow-wrap: break-word;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--light-blue);
+      padding-bottom: 0.5rem;
+      color: var(--deep-blue);
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .footer-contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-contact p {
+      margin: 0.2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .mobile-nav.show {
+        display: flex;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .profile, section {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      section {
+        margin-top: 2rem;
+        padding: 0 0.5rem;
+        text-align: left;
+      }
+
+      #about-content p, #welcome-text {
+        text-align: left;
+        overflow-wrap: break-word;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/Logo.PNG" alt="Ben Matias Logo">
+      </a>
+    </div>
+    <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">&#9776;</button>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="cv.html">CV / Resume</a>
+      <a href="projects.html">Projects</a>
+      <a href="mailto:bmatiasespinoza@gmail.com">Contact</a>
+      <span class="lang-toggle" onclick="toggleLang()"></span>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="index.html">About</a>
+      <a href="cv.html">CV / Resume</a>
+      <a href="projects.html">Projects</a>
+      <a href="mailto:bmatiasespinoza@gmail.com">Contact</a>
+      <div class="lang-toggle" onclick="toggleLang()"></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="profile">
+      <img src="assets/profile.jpg" alt="Benjamin Espinoza profile picture">
+      <h2>Benjamin Espinoza</h2>
+      <p style="font-size: 0.95rem; font-weight: 500; color: #4A7FA7;">Business & Data Analyst | Data Visualization Expert</p>
+      <p style="font-size: 0.85rem; color: #555;">Industrial Engineer</p>
+    </div>
+    <div style="flex: 1;">
+      <section>
+        <h2 id="welcome-title">Welcome</h2>
+        <p id="welcome-text"></p>
+        <br />
+        <h2 id="about-title">About Me</h2>
+        <div id="about-content"></div>
+      </section>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-contact">
+      <p><i class="fas fa-envelope"></i> <a href="mailto:bmatiasespinoza@gmail.com" style="color: #B3CFE5">bmatiasespinoza@gmail.com</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Santiago, Chile</p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/benmatias" style="color: #B3CFE5">linkedin.com/in/benmatias</a></p>
+    </div>
+    <p style="margin-top: 0.5rem;">&copy; 2025 Benjamin Espinoza. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        welcomeTitle: "Welcome",
+        welcomeText: "Welcome to my personal website! Here you’ll find a comprehensive view of who I am as a professional: explore my curriculum vitae, dive into selected analytics projects that reflect my skills and experience, and feel free to reach out if you’d like to connect. Whether you’re a recruiter, collaborator, or simply curious about my work, I’ve created this space to share what I do best—turning data into decisions.",
+        aboutTitle: "About Me",
+        aboutContent: `<p>I'm Benjamin Espinoza, Business & Data Analyst with a degree in Industrial Engineering and a strong background in analytics, reporting, and stakeholder collaboration. I enjoy solving complex problems with simple and scalable solutions, especially when they drive clarity and impact across an organization.</p>
+<p>My career has taken me through diverse industries, from manufacturing to banking, where I've built automated dashboards, implemented KPIs from scratch, and empowered teams to use data more effectively. I'm comfortable working across business areas, translating needs into technical requirements, and presenting insights that drive strategic decisions.</p>
+<p>Outside of work, I'm a father, a lifelong learner, and passionate about music, football, and continuous improvement. I'm currently focused on strengthening my language skills in English and French, and expanding my knowledge in analytics and product strategy.</p>
+<p>Let’s connect on <a href="https://www.linkedin.com/in/benmatias" style="color: #4A7FA7; font-weight: 500;">LinkedIn</a> or <a href="mailto:bmatiasespinoza@gmail.com" style="color: #4A7FA7; font-weight: 500;">send me an email</a>.</p>`
+      },
+      es: {
+        welcomeTitle: "Bienvenido",
+        welcomeText: "¡Bienvenido a mi sitio web personal! Aquí encontrarás una visión completa de quién soy como profesional: explora mi currículum, revisa algunos proyectos de análisis que reflejan mis habilidades y experiencia, y no dudes en contactarme si quieres conversar. Ya seas reclutador, colaborador o simplemente tengas curiosidad por mi trabajo, este espacio está pensado para compartir lo que mejor sé hacer: convertir datos en decisiones.",
+        aboutTitle: "Sobre mí",
+        aboutContent: `<p>Soy Benjamin Espinoza, Business & Data Analyst con formación en Ingeniería Civil Industrial y experiencia en análisis de datos, reportería y trabajo con áreas de negocio. Me interesa resolver problemas complejos con soluciones simples y escalables, generando impacto y claridad dentro de las organizaciones.</p>
+<p>A lo largo de mi carrera he trabajado en sectores diversos, desde manufactura hasta banca, creando dashboards automatizados, desarrollando indicadores desde cero y facilitando el uso de datos para la toma de decisiones. Me muevo con soltura entre lo técnico y lo estratégico, conectando necesidades del negocio con soluciones analíticas efectivas.</p>
+<p>Fuera del trabajo, soy padre, aprendiz permanente y apasionado por la música, el fútbol y la mejora continua. Actualmente me encuentro perfeccionando mi inglés y francés, y profundizando en estrategias analíticas y de producto.</p>
+<p>Puedes contactarme por <a href="https://www.linkedin.com/in/benmatias" style="color: #4A7FA7; font-weight: 500;">LinkedIn</a> o por <a href="mailto:bmatiasespinoza@gmail.com" style="color: #4A7FA7; font-weight: 500;">correo</a>.</p>`
+      }
+    };
+
+    function toggleLang() {
+      const current = document.documentElement.lang;
+      const nextLang = current === 'en' ? 'es' : 'en';
+      document.documentElement.lang = nextLang;
+      updateLang(nextLang);
+    }
+
+    function updateLang(lang) {
+      document.getElementById('welcome-title').textContent = translations[lang].welcomeTitle;
+      document.getElementById('welcome-text').textContent = translations[lang].welcomeText;
+      document.getElementById('about-title').textContent = translations[lang].aboutTitle;
+      document.getElementById('about-content').innerHTML = translations[lang].aboutContent;
+      document.querySelectorAll('.lang-toggle').forEach(el => {
+        el.innerHTML = lang === 'en'
+          ? '<img src="https://flagcdn.com/cl.svg" alt="CL" style="width: 20px; vertical-align: middle;"> ES'
+          : '<img src="https://flagcdn.com/us.svg" alt="US" style="width: 20px; vertical-align: middle;"> EN';
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const lang = 'en';
+      document.documentElement.lang = lang;
+      updateLang(lang);
+
+      document.getElementById('menu-toggle').addEventListener('click', () => {
+        document.getElementById('mobile-nav').classList.toggle('show');
+      });
+    });
+  </script>
+</body>
+</html>

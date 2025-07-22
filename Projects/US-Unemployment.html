@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>US Unemployment | Ben Matias</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <meta property="og:title" content="Unemployment in America – A Data-Driven Overview" />
+  <meta property="og:description" content="Interactive dashboard showing U.S. unemployment trends across states and metro areas." />
+  <meta property="og:image" content="https://www.benmatias.com/assets/img/us-unemployment-cover.png" />
+  <meta property="og:url" content="https://www.benmatias.com/projects/US-Unemployment.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root {
+      --dark-blue: #0A1931;
+      --light-blue: #B3CFE5;
+      --mid-blue: #4A7FA7;
+      --deep-blue: #1A3D63;
+      --almost-white: #F6FAFD;
+      --linkedin-blue: #0077B5;
+      --x-black: #000000;
+      --looker-blue: #4285F4;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #f6fafd, #e8f0f8);
+      color: var(--dark-blue);
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    a {
+      color: var(--mid-blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--light-blue);
+      text-decoration: underline;
+    }
+
+    header {
+      background: var(--dark-blue);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo img {
+      height: 30px;
+      max-width: 160px;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+      color: var(--light-blue);
+    }
+
+    .lang-toggle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--dark-blue);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .mobile-nav a, .mobile-nav .lang-toggle {
+      padding: 1rem;
+      border-top: 1px solid #ffffff22;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      width: 100%;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .button {
+      border: none;
+      padding: 0.5rem 0.8rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-back { background-color: var(--mid-blue); }
+    .btn-back:hover { background-color: var(--light-blue); }
+
+    .btn-linkedin { background-color: var(--linkedin-blue); }
+    .btn-linkedin:hover { background-color: #005582; }
+
+    .btn-x { background-color: var(--x-black); }
+    .btn-x:hover { background-color: #333333; }
+
+    .btn-looker { background-color: var(--looker-blue); }
+    .btn-looker:hover { background-color: #2c6de0; }
+
+    h1 {
+      font-size: 1.8rem;
+      color: var(--deep-blue);
+      border-bottom: 2px solid var(--light-blue);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      color: var(--mid-blue);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact p {
+      margin: 0.2rem 0;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 720px;
+      border: none;
+      margin-top: 1rem;
+    }
+
+    .lang {
+      display: none;
+    }
+
+    .lang.en,
+    .lang.es {
+      display: inline;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .mobile-nav.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/index.html">
+        <img src="/assets/Logo.PNG" alt="Ben Matias Logo" />
+      </a>
+    </div>
+    <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">&#9776;</button>
+    <nav>
+      <a href="/index.html" data-key="about">About</a>
+      <a href="/cv.html" data-key="cv">CV / Resume</a>
+      <a href="/projects.html" data-key="projects">Projects</a>
+      <a href="mailto:bmatiasespinoza@gmail.com" data-key="contact">Contact</a>
+      <span class="lang-toggle" id="lang-btn"></span>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="/index.html" data-key="about">About</a>
+      <a href="/cv.html" data-key="cv">CV / Resume</a>
+      <a href="/projects.html" data-key="projects">Projects</a>
+      <a href="mailto:bmatiasespinoza@gmail.com" data-key="contact">Contact</a>
+      <div class="lang-toggle" id="lang-btn-mobile"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="btn-group">
+      <a href="/projects.html" class="button btn-back">
+        <i class="fas fa-arrow-left"></i>
+        <span class="lang en">Back to Projects</span>
+        <span class="lang es">Volver a Proyectos</span>
+      </a>
+      <a id="linkedin-btn" class="button btn-linkedin" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+        <span class="lang en">Share on LinkedIn</span>
+        <span class="lang es">Compartir en LinkedIn</span>
+      </a>
+      <a id="twitter-btn" class="button btn-x" target="_blank" rel="noopener">
+        <i class="fab fa-x-twitter"></i>
+        <span class="lang en">Share on X</span>
+        <span class="lang es">Compartir en X</span>
+      </a>
+      <a href="https://lookerstudio.google.com/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45" class="button btn-looker" target="_blank" rel="noopener">
+        <i class="fas fa-chart-bar"></i>
+        <span class="lang en">View on Looker Studio</span>
+        <span class="lang es">Ver en Looker Studio</span>
+      </a>
+    </section>
+
+    <h1 id="title">Unemployment in America – A Data-Driven Overview</h1>
+
+    <div id="project-text" class="project-description">
+      <!-- EN -->
+      <div class="lang en">
+        <h2>Problem Statement</h2>
+        <p>The national unemployment rate in the United States appears stable. However, this aggregated figure hides important differences between states and metropolitan areas.</p>
+
+        <h2>Dashboard Objective</h2>
+        <p>The goal of this dashboard is to offer a detailed and interactive view of unemployment trends in the United States, with analysis by state and metro area.</p>
+
+        <h2>Key Questions</h2>
+        <ul>
+          <li>Which regions have experienced the highest increases or decreases in unemployment over time?</li>
+          <li>Are there metro areas that consistently show high or low unemployment compared to their states?</li>
+          <li>What structural patterns or correlations are observed across cities and regions?</li>
+        </ul>
+
+        <h2>Dataset Information</h2>
+        <p>
+          <strong>Source:</strong> <a href="https://www.bls.gov/data/" target="_blank">U.S. Bureau of Labor Statistics</a><br>
+          <strong>Period:</strong> January 2020 – May 2025<br>
+          <strong>Scope:</strong> National, State, Metro Areas (seasonally adjusted)
+        </p>
+
+        <h2>My Role</h2>
+        <p>I sourced and filtered public datasets, defined KPIs and filtering logic, and designed the dashboard using Looker Studio.</p>
+      </div>
+
+      <!-- ES -->
+      <div class="lang es">
+        <h2>Problema</h2>
+        <p>La tasa de desempleo nacional en Estados Unidos parece estable. Sin embargo, esta cifra agregada oculta diferencias importantes entre estados y áreas metropolitanas.</p>
+
+        <h2>Objetivo del Dashboard</h2>
+        <p>Este dashboard tiene como objetivo ofrecer una visión detallada e interactiva de las tendencias de desempleo en Estados Unidos, con análisis por estado y ciudad.</p>
+
+        <h2>Preguntas Clave</h2>
+        <ul>
+          <li>¿Qué regiones han tenido mayores aumentos o disminuciones en el desempleo a lo largo del tiempo?</li>
+          <li>¿Existen ciudades con niveles de desempleo distintos a sus estados?</li>
+          <li>¿Qué patrones estructurales se observan entre ciudades y regiones?</li>
+        </ul>
+
+        <h2>Información del Dataset</h2>
+        <p>
+          <strong>Fuente:</strong> <a href="https://www.bls.gov/data/" target="_blank">Oficina de Estadísticas Laborales de EE. UU.</a><br>
+          <strong>Período:</strong> Enero 2020 – Mayo 2025<br>
+          <strong>Cobertura:</strong> Nacional, Estatal, Áreas Metropolitanas (ajustado estacionalmente)
+        </p>
+
+        <h2>Mi Rol</h2>
+        <p>Seleccioné y filtré datasets públicos, definí indicadores clave (KPIs) y lógica de filtros, y diseñé la estructura del dashboard en Looker Studio.</p>
+      </div>
+    </div>
+
+    <h2 class="lang en">Interactive Dashboard</h2>
+    <h2 class="lang es">Dashboard Interactivo</h2>
+    <p class="lang en"><em>Explore the interactive report below or use the tabs to dive into state and metro-level insights.</em></p>
+    <p class="lang es"><em>Explora el reporte interactivo o usa las pestañas para navegar por estado y ciudad.</em></p>
+
+    <iframe src="https://lookerstudio.google.com/embed/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45/page/SE1QF"
+            loading="lazy"
+            allowfullscreen
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+    </iframe>
+  </main>
+  <footer>
+    <div class="footer-contact">
+      <p><i class="fas fa-envelope"></i> <a href="mailto:bmatiasespinoza@gmail.com" style="color: #B3CFE5">bmatiasespinoza@gmail.com</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Santiago, Chile</p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/benmatias" style="color: #B3CFE5">linkedin.com/in/benmatias</a></p>
+    </div>
+    <p style="margin-top: 0.5rem;">&copy; 2025 Benjamin Espinoza. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const baseURL = "https://www.benmatias.com/projects/US-Unemployment.html";
+
+    const content = {
+      en: {
+        title: "Unemployment in America – A Data-Driven Overview",
+        langIcon: '<img src="https://flagcdn.com/cl.svg" alt="CL" style="width: 20px; vertical-align: middle; margin-right: 4px;">ES'
+      },
+      es: {
+        title: "Desempleo en Estados Unidos – Un análisis basado en datos",
+        langIcon: '<img src="https://flagcdn.com/us.svg" alt="US" style="width: 20px; vertical-align: middle; margin-right: 4px;">EN'
+      }
+    };
+
+    function toggleLang() {
+      const current = document.documentElement.lang;
+      const nextLang = current === 'en' ? 'es' : 'en';
+      document.documentElement.lang = nextLang;
+      updateContent(nextLang);
+    }
+
+    function updateContent(lang) {
+      document.getElementById('title').textContent = content[lang].title;
+      document.getElementById('lang-btn').innerHTML = content[lang].langIcon;
+      document.getElementById('lang-btn-mobile').innerHTML = content[lang].langIcon;
+
+      document.querySelectorAll('.lang').forEach(el => {
+        el.style.display = el.classList.contains(lang) ? 'inline' : 'none';
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const defaultLang = "en";
+      document.documentElement.lang = defaultLang;
+      updateContent(defaultLang);
+
+      document.getElementById('lang-btn').addEventListener('click', toggleLang);
+      document.getElementById('lang-btn-mobile').addEventListener('click', toggleLang);
+
+      document.getElementById('linkedin-btn').href =
+        `https://www.linkedin.com/sharing/share-offsite/?url=${baseURL}`;
+      document.getElementById('twitter-btn').href =
+        `https://twitter.com/intent/tweet?url=${baseURL}&text=Explore%20US%20Unemployment%20Trends`;
+
+      const menuBtn = document.getElementById('menu-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+      if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+          mobileNav.classList.toggle('show');
+          const expanded = mobileNav.classList.contains('show');
+          menuBtn.setAttribute('aria-expanded', expanded);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
