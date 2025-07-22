@@ -3,23 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Ben Matias | Business & Data Analyst Portfolio</title>
 
-  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Ben Matias – Business & Data Analyst Portfolio" />
   <meta property="og:description" content="Explore the professional portfolio of Ben Matias, specializing in dashboards, KPIs, and data-driven business insights." />
   <meta property="og:image" content="assets/img/og-image.jpg" />
   <meta property="og:url" content="https://benmatias.com/" />
   <meta property="og:type" content="website" />
-
-  <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ben Matias – Business & Data Analyst Portfolio" />
   <meta name="twitter:description" content="Explore the professional portfolio of Ben Matias." />
   <meta name="twitter:image" content="assets/img/og-image.jpg" />
-
-  <!-- SEO Description -->
   <meta name="description" content="Professional portfolio of Ben Matias, Business & Data Analyst. Explore dashboards, KPIs, and data-driven projects." />
 
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
@@ -51,9 +45,13 @@
       text-decoration: none;
     }
 
-    /* HEADER */
+    .header-hero-wrapper {
+      background: url('assets/img/Header.jpg') center/cover no-repeat;
+      color: white;
+    }
+
     header {
-      background: var(--dark-blue);
+      background: transparent;
       color: white;
       padding: 1rem 2rem;
       display: flex;
@@ -62,8 +60,20 @@
       position: relative;
     }
 
+    .logo {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 0.4rem;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
     .logo img {
-      height: 30px;
+      height: 44px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
     }
 
     nav {
@@ -116,7 +126,6 @@
       text-align: center;
     }
 
-    /* BOTONES */
     .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -147,233 +156,274 @@
       background-color: var(--accent);
       color: white;
     }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: white;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      line-height: 1.6;
+      color: white;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <a href="index.html">
-        <img src="assets/Logo.PNG" alt="Ben Matias Logo">
-      </a>
-    </div>
-    <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">&#9776;</button>
-    <nav>
-      <a href="#about">About</a>
-      <a href="cv.html">CV / Resume</a>
-      <a href="projects.html">Projects</a>
-      <a href="mailto:bmatiasespinoza@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/benmatias" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <span class="lang-toggle" onclick="toggleLang()"></span>
-    </nav>
-    <div id="mobile-nav" class="mobile-nav">
-      <a href="#about">About</a>
-      <a href="cv.html">CV / Resume</a>
-      <a href="projects.html">Projects</a>
-      <a href="mailto:bmatiasespinoza@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/benmatias" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <div class="lang-toggle" onclick="toggleLang()"></div>
-    </div>
-  </header>
+  <div class="header-hero-wrapper">
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/Logo.PNG" alt="Ben Matias Logo">
+        </a>
+      </div>
+      <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">&#9776;</button>
+      <nav>
+        <a href="#about">About</a>
+        <a href="cv.html">CV / Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="mailto:bmatiasespinoza@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/benmatias" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <span class="lang-toggle" onclick="toggleLang()"></span>
+      </nav>
+      <div id="mobile-nav" class="mobile-nav">
+        <a href="#about">About</a>
+        <a href="cv.html">CV / Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="mailto:bmatiasespinoza@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/benmatias" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <div class="lang-toggle" onclick="toggleLang()"></div>
+      </div>
+    </header>
 
-  <section class="hero">
-    <div class="hero-content" style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem; padding: 4rem 1.5rem;">
-      <div class="hero-text" style="flex: 1 1 500px;">
-        <h1 id="hero-title">Business & Data Analyst focused on transforming data into decisions</h1>
-        <p id="hero-subtitle">Helping businesses make better decisions through analytics and business intelligence.</p>
-        <div class="hero-buttons" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="projects.html" class="btn btn-primary" id="btn-projects">View Projects</a>
-          <a href="cv.html" class="btn btn-secondary" id="btn-resume">View Resume</a>
+    <section class="hero">
+      <div class="hero-content" style="max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem; padding: 6rem 2rem;">
+        <div class="hero-text" style="flex: 1 1 600px; min-width: 280px;">
+          <h1 id="hero-title"></h1>
+          <p id="hero-subtitle"></p>
+          <div class="hero-buttons" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="projects.html" class="btn btn-primary" id="btn-projects"></a>
+            <a href="cv.html" class="btn btn-secondary" id="btn-resume"></a>
+          </div>
+        </div>
+        <div class="hero-image" style="flex: 1 1 300px; text-align: center; min-width: 240px;">
+          <img src="assets/hero-profile.jpg" alt="Ben Matias portrait" style="width: 100%; max-width: 280px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
         </div>
       </div>
-      <div class="hero-image" style="flex: 1 1 300px; text-align: center;">
-        <img src="assets/hero-profile.jpg" alt="Ben Matias portrait" style="width: 100%; max-width: 280px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
+    </section>
+  </div>
+
+  <section class="about-me" id="about" style="padding: 4rem 2rem; background-color: #ffffff;">
+    <div class="about-container" style="max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 3rem; align-items: center;">
+      <div class="about-image" style="flex: 1 1 300px; text-align: center;">
+        <img src="assets/Profile.jpg" alt="Ben Matias Profile" style="width: 100%; max-width: 280px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+      </div>
+      <div class="about-text" style="flex: 2 1 600px;">
+        <h2 id="about-title" style="font-size: 2rem; color: #0A1931; margin-bottom: 1.5rem; border-left: 6px solid #4A7FA7; padding-left: 1rem;"></h2>
+        <div id="about-text-content" style="color: #1A3D63; font-size: 1rem; line-height: 1.7;"></div>
       </div>
     </div>
   </section>
-<section class="about-me" id="about" style="padding: 4rem 1.5rem; background-color: #ffffff;">
-  <div class="about-container" style="max-width: 960px; margin: 0 auto;">
-    <h2 id="about-title" style="font-size: 2rem; color: #0A1931; margin-bottom: 1.5rem; border-left: 6px solid #4A7FA7; padding-left: 1rem;">About Me</h2>
-    <div id="about-text" style="color: #1A3D63; font-size: 1rem; line-height: 1.7;"></div>
-  </div>
-</section>
 
-<section class="impact" id="impact" style="background-color: #f6fafd; padding: 4rem 1.5rem;">
-  <div class="impact-container" style="max-width: 1100px; margin: 0 auto; text-align: center;">
-    <h2 id="impact-title" style="font-size: 2rem; color: #0A1931; margin-bottom: 2rem; border-left: 6px solid #4A7FA7; padding-left: 1rem; text-align: left;">How I’ve Made an Impact</h2>
-    <div class="impact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-      <div class="impact-card" style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-        <i class="fas fa-chart-bar" style="font-size: 2rem; color: #0C969C; margin-bottom: 1rem;"></i>
-        <h3 id="impact-1-title" style="font-size: 1.1rem; color: #0A1931; margin-bottom: 0.5rem;">+50 Dashboards Delivered</h3>
-        <p id="impact-1-text" style="font-size: 0.95rem; color: #1A3D63; line-height: 1.5;">Created 50+ dashboards for banking, industrial and executive audiences using Power BI and Looker Studio.</p>
-      </div>
-      <div class="impact-card" style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-        <i class="fas fa-bullseye" style="font-size: 2rem; color: #0C969C; margin-bottom: 1rem;"></i>
-        <h3 id="impact-2-title" style="font-size: 1.1rem; color: #0A1931; margin-bottom: 0.5rem;">Built KPI Systems from Scratch</h3>
-        <p id="impact-2-text" style="font-size: 0.95rem; color: #1A3D63; line-height: 1.5;">Designed and implemented performance tracking frameworks where none existed before.</p>
-      </div>
-      <div class="impact-card" style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-        <i class="fas fa-clock" style="font-size: 2rem; color: #0C969C; margin-bottom: 1rem;"></i>
-        <h3 id="impact-3-title" style="font-size: 1.1rem; color: #0A1931; margin-bottom: 0.5rem;">Saved Time with Automation</h3>
-        <p id="impact-3-text" style="font-size: 0.95rem; color: #1A3D63; line-height: 1.5;">Automated daily reporting, saving up to 1 hour per day in manual processes.</p>
-      </div>
-      <div class="impact-card" style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-        <i class="fas fa-users" style="font-size: 2rem; color: #0C969C; margin-bottom: 1rem;"></i>
-        <h3 id="impact-4-title" style="font-size: 1.1rem; color: #0A1931; margin-bottom: 0.5rem;">Supported +10 Business Units</h3>
-        <p id="impact-4-text" style="font-size: 0.95rem; color: #1A3D63; line-height: 1.5;">Generated insights across operations, sales, fraud, product, planning and more.</p>
+  <section class="impact" id="impact" style="background-color: #0A1931; padding: 4rem 2rem;">
+    <div class="impact-container" style="max-width: 1100px; margin: 0 auto; text-align: center;">
+      <h2 id="impact-title" style="font-size: 2rem; color: #ffffff; margin-bottom: 2rem; border-left: 6px solid #4A7FA7; padding-left: 1rem; text-align: left;"></h2>
+      <div class="impact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div class="impact-card" style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+          <i class="fas fa-chart-bar" style="font-size: 2rem; color: #0C969C; margin-bottom: 1rem;"></i>
+          <h3 id="impact-1-title" style="font-size: 1.1rem; color: #0A1931; margin-bottom: 0.5rem;"></h3>
+          <p id="impact-1-text" style="font-size: 0.95rem; color: #1A3D63; line-height: 1.5;"></p>
+        </div>
+        <div class="impact-card" style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+          <i class="fas fa-bullseye" style="font-size: 2rem; color: #0C969C; margin-bottom: 1rem;"></i>
+          <h3 id="impact-2-title" style="font-size: 1.1rem; color: #0A1931; margin-bottom: 0.5rem;"></h3>
+          <p id="impact-2-text" style="font-size: 0.95rem; color: #1A3D63; line-height: 1.5;"></p>
+        </div>
+        <div class="impact-card" style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+          <i class="fas fa-clock" style="font-size: 2rem; color: #0C969C; margin-bottom: 1rem;"></i>
+          <h3 id="impact-3-title" style="font-size: 1.1rem; color: #0A1931; margin-bottom: 0.5rem;"></h3>
+          <p id="impact-3-text" style="font-size: 0.95rem; color: #1A3D63; line-height: 1.5;"></p>
+        </div>
+        <div class="impact-card" style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+          <i class="fas fa-users" style="font-size: 2rem; color: #0C969C; margin-bottom: 1rem;"></i>
+          <h3 id="impact-4-title" style="font-size: 1.1rem; color: #0A1931; margin-bottom: 0.5rem;"></h3>
+          <p id="impact-4-text" style="font-size: 0.95rem; color: #1A3D63; line-height: 1.5;"></p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="projects" id="projects" style="background-color: #ffffff; padding: 4rem 1.5rem;">
-  <div class="projects-container" style="max-width: 1100px; margin: 0 auto; text-align: center;">
-    <h2 id="projects-title" style="font-size: 2rem; color: #0A1931; margin-bottom: 2rem; text-align: left; border-left: 6px solid #4A7FA7; padding-left: 1rem;">Featured Projects</h2>
+  </section>
+<section class="projects" id="projects" style="background-color: #ffffff; padding: 4rem 2rem;">
+  <div class="projects-container" style="max-width: 1400px; margin: 0 auto; text-align: center;">
+    <h2 id="projects-title" style="font-size: 2rem; color: #0A1931; margin-bottom: 2rem; text-align: left; border-left: 6px solid #4A7FA7; padding-left: 1rem;"></h2>
 
-    <div class="carousel-wrapper" style="position: relative; overflow: hidden;">
-      <button class="carousel-btn prev" aria-label="Previous" style="position: absolute; top: 50%; left: -10px; transform: translateY(-50%); background: #0A1931; color: #fff; border: none; border-radius: 50%; font-size: 1.5rem; padding: 0.25rem 0.6rem; cursor: pointer; z-index: 5;">&#10094;</button>
+    <div class="carousel-wrapper" style="position: relative;">
+      <button class="carousel-btn prev" aria-label="Previous" style="position: absolute; top: 50%; left: -40px; transform: translateY(-50%); background: #0A1931; color: #fff; border: none; border-radius: 50%; font-size: 1.5rem; padding: 0.25rem 0.6rem; cursor: pointer; z-index: 5;">&#10094;</button>
 
       <div class="carousel" id="project-carousel" style="display: flex; gap: 1.5rem; transition: transform 0.3s ease; scroll-behavior: smooth; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 0.5rem;">
         <div class="project-card" style="flex: 0 0 300px; background-color: #f6fafd; border-radius: 10px; scroll-snap-align: start; padding-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
           <img src="assets/img/us-unemployment-cover.png" alt="US Unemployment Dashboard" style="width: 100%; height: auto; border-bottom: 1px solid #ddd; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-          <h3 id="project-1-title" style="margin: 1rem 0 0.5rem; color: #0A1931;">US Unemployment Analysis</h3>
-          <a href="projects/US-Unemployment.html" class="btn btn-primary" id="project-1-button">View Project</a>
+          <h3 id="project-1-title" style="margin: 1rem 0 0.5rem; color: #0A1931;"></h3>
+          <a href="projects/US-Unemployment.html" class="btn btn-primary" id="project-1-button"></a>
         </div>
       </div>
 
-      <button class="carousel-btn next" aria-label="Next" style="position: absolute; top: 50%; right: -10px; transform: translateY(-50%); background: #0A1931; color: #fff; border: none; border-radius: 50%; font-size: 1.5rem; padding: 0.25rem 0.6rem; cursor: pointer; z-index: 5;">&#10095;</button>
+      <button class="carousel-btn next" aria-label="Next" style="position: absolute; top: 50%; right: -40px; transform: translateY(-50%); background: #0A1931; color: #fff; border: none; border-radius: 50%; font-size: 1.5rem; padding: 0.25rem 0.6rem; cursor: pointer; z-index: 5;">&#10095;</button>
     </div>
 
     <div class="view-all" style="margin-top: 2.5rem;">
-      <a href="projects.html" class="btn btn-secondary" id="view-all-btn">View All Projects</a>
+      <a href="projects.html" class="btn btn-secondary" id="view-all-btn"></a>
     </div>
   </div>
 </section>
 
 <footer class="footer" style="background-color: #0A1931; color: white; padding: 2rem 1rem; text-align: center; font-size: 0.9rem;">
-  <div class="footer-inner" style="display: flex; flex-direction: column; gap: 0.5rem; align-items: center;">
-    <p id="footer-location"><i class="fas fa-map-marker-alt"></i> Santiago, Chile</p>
-    <p><a href="mailto:bmatiasespinoza@gmail.com" style="color: #B3CFE5;"><i class="fas fa-envelope"></i> bmatiasespinoza@gmail.com</a></p>
-    <p><a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener" style="color: #B3CFE5;"><i class="fab fa-linkedin"></i> linkedin.com/in/benmatias</a></p>
+  <div class="footer-contacts" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; margin-bottom: 1rem;">
+    <a href="mailto:bmatiasespinoza@gmail.com" style="color: white; text-decoration: none;">
+      <i class="fas fa-envelope"></i> bmatiasespinoza@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener" style="color: white; text-decoration: none;">
+      <i class="fab fa-linkedin"></i> linkedin.com/in/benmatias
+    </a>
   </div>
-  <div class="footer-bottom" style="margin-top: 1.5rem; font-size: 0.8rem; opacity: 0.7;">
-    <p id="footer-copy">&copy; 2025 Ben Matias. All rights reserved.</p>
+  <div class="footer-bottom" style="font-size: 0.8rem; opacity: 0.7;">
+    <p>&copy; 2025 Ben Matias. All rights reserved.</p>
   </div>
 </footer>
+
 <script>
-  const translations = {
-    en: {
-      heroTitle: "Business & Data Analyst focused on transforming data into decisions",
-      heroSubtitle: "Helping businesses make better decisions through analytics and business intelligence.",
-      btnProjects: "View Projects",
-      btnResume: "View Resume",
-      aboutTitle: "About Me",
-      aboutContent: `
-        <p>I'm Benjamin Espinoza, Business & Data Analyst with a degree in Industrial Engineering and a strong background in analytics, reporting, and stakeholder collaboration. I enjoy solving complex problems with simple and scalable solutions.</p>
-        <p>My experience spans banking and manufacturing industries, where I've built dashboards, defined KPIs from scratch, and empowered teams through better data use. I translate business needs into analytical insights.</p>
-        <p>I'm a father, a lifelong learner, passionate about music and continuous improvement. I’m currently expanding my skills in English, French, and product strategy.</p>
-      `,
-      impactTitle: "How I’ve Made an Impact",
-      impact1Title: "+50 Dashboards Delivered",
-      impact1Text: "Created 50+ dashboards for banking, industrial and executive audiences using Power BI and Looker Studio.",
-      impact2Title: "Built KPI Systems from Scratch",
-      impact2Text: "Designed and implemented performance tracking frameworks where none existed before.",
-      impact3Title: "Saved Time with Automation",
-      impact3Text: "Automated daily reporting, saving up to 1 hour per day in manual processes.",
-      impact4Title: "Supported +10 Business Units",
-      impact4Text: "Generated insights across operations, sales, fraud, product, planning and more.",
-      projectsTitle: "Featured Projects",
-      project1Title: "US Unemployment Analysis",
-      project1Button: "View Project",
-      viewAllBtn: "View All Projects",
-      footerLocation: "Santiago, Chile",
-      footerCopy: "© 2025 Ben Matias. All rights reserved."
-    },
-    es: {
-      heroTitle: "Business & Data Analyst enfocado en transformar datos en decisiones",
-      heroSubtitle: "Ayudo a las empresas a tomar mejores decisiones a través del análisis y la inteligencia de negocios.",
-      btnProjects: "Ver Proyectos",
-      btnResume: "Ver CV",
-      aboutTitle: "Sobre mí",
-      aboutContent: `
-        <p>Soy Benjamin Espinoza, Business & Data Analyst con formación en Ingeniería Civil Industrial y experiencia en análisis de datos, reportería y colaboración con áreas de negocio. Me apasiona resolver problemas complejos con soluciones simples y escalables.</p>
-        <p>He trabajado en banca y manufactura, creando dashboards, definiendo KPIs desde cero y promoviendo el uso estratégico de los datos. Traduzco necesidades de negocio en insights accionables.</p>
-        <p>Padre, aprendiz permanente y amante de la música y la mejora continua. Actualmente perfecciono mi inglés, francés y conocimientos en estrategia de producto.</p>
-      `,
-      impactTitle: "Cómo He Generado Impacto",
-      impact1Title: "+50 Dashboards Entregados",
-      impact1Text: "Creé más de 50 dashboards para banca, industria y niveles ejecutivos con Power BI y Looker Studio.",
-      impact2Title: "Sistemas de KPIs desde Cero",
-      impact2Text: "Diseñé e implementé marcos de seguimiento de desempeño donde antes no existían.",
-      impact3Title: "Automatización que Ahorra Tiempo",
-      impact3Text: "Automaticé reportes diarios, ahorrando hasta 1 hora diaria de trabajo manual.",
-      impact4Title: "Soporte a +10 Unidades de Negocio",
-      impact4Text: "Generé insights en operaciones, ventas, fraude, producto, planificación y más.",
-      projectsTitle: "Proyectos Destacados",
-      project1Title: "Análisis de Desempleo en EE.UU.",
-      project1Button: "Ver Proyecto",
-      viewAllBtn: "Ver Todos los Proyectos",
-      footerLocation: "Santiago, Chile",
-      footerCopy: "© 2025 Ben Matias. Todos los derechos reservados."
-    }
-  };
-
-  function toggleLang() {
-    const current = document.documentElement.lang;
-    const nextLang = current === 'en' ? 'es' : 'en';
-    document.documentElement.lang = nextLang;
-    updateLang(nextLang);
+const translations = {
+  en: {
+    heroTitle: "Business & Data Analyst focused on transforming data into decisions",
+    heroSubtitle: "Helping businesses make better decisions through analytics and business intelligence.",
+    btnProjects: "View Projects",
+    btnResume: "View Resume",
+    aboutTitle: "About Me",
+    aboutContent: `
+      <p>I'm Benjamin Espinoza, Business & Data Analyst with a degree in Industrial Engineering and a strong background in analytics, reporting, and stakeholder collaboration. I enjoy solving complex problems with simple and scalable solutions.</p>
+      <p>My experience spans banking and manufacturing industries, where I've built dashboards, defined KPIs from scratch, and empowered teams through better data use. I translate business needs into analytical insights.</p>
+      <p>I'm a father, a lifelong learner, passionate about music and continuous improvement. I’m currently expanding my skills in English, French, and product strategy.</p>
+    `,
+    impactTitle: "How I’ve Made an Impact",
+    impact1Title: "+50 Dashboards Delivered",
+    impact1Text: "Created 50+ dashboards for banking, industrial and executive audiences using Power BI and Looker Studio.",
+    impact2Title: "Built KPI Systems from Scratch",
+    impact2Text: "Designed and implemented performance tracking frameworks where none existed before.",
+    impact3Title: "Saved Time with Automation",
+    impact3Text: "Automated daily reporting, saving up to 1 hour per day in manual processes.",
+    impact4Title: "Supported +10 Business Units",
+    impact4Text: "Generated insights across operations, sales, fraud, product, planning and more.",
+    projectsTitle: "Featured Projects",
+    project1Title: "US Unemployment Analysis",
+    project1Button: "View Project",
+    viewAllBtn: "View All Projects"
+  },
+  es: {
+    heroTitle: "Business & Data Analyst enfocado en transformar datos en decisiones",
+    heroSubtitle: "Ayudo a las empresas a tomar mejores decisiones a través del análisis y la inteligencia de negocios.",
+    btnProjects: "Ver Proyectos",
+    btnResume: "Ver CV",
+    aboutTitle: "Sobre mí",
+    aboutContent: `
+      <p>Soy Benjamin Espinoza, Business & Data Analyst con formación en Ingeniería Civil Industrial y experiencia en análisis de datos, reportería y colaboración con áreas de negocio. Me apasiona resolver problemas complejos con soluciones simples y escalables.</p>
+      <p>He trabajado en banca y manufactura, creando dashboards, definiendo KPIs desde cero y promoviendo el uso estratégico de los datos. Traduzco necesidades de negocio en insights accionables.</p>
+      <p>Padre, aprendiz permanente y amante de la música y la mejora continua. Actualmente perfecciono mi inglés, francés y conocimientos en estrategia de producto.</p>
+    `,
+    impactTitle: "Cómo He Generado Impacto",
+    impact1Title: "+50 Dashboards Entregados",
+    impact1Text: "Creé más de 50 dashboards para banca, industria y niveles ejecutivos con Power BI y Looker Studio.",
+    impact2Title: "Sistemas de KPIs desde Cero",
+    impact2Text: "Diseñé e implementé marcos de seguimiento de desempeño donde antes no existían.",
+    impact3Title: "Automatización que Ahorra Tiempo",
+    impact3Text: "Automaticé reportes diarios, ahorrando hasta 1 hora diaria de trabajo manual.",
+    impact4Title: "Soporte a +10 Unidades de Negocio",
+    impact4Text: "Generé insights en operaciones, ventas, fraude, producto, planificación y más.",
+    projectsTitle: "Proyectos Destacados",
+    project1Title: "Análisis de Desempleo en EE.UU.",
+    project1Button: "Ver Proyecto",
+    viewAllBtn: "Ver Todos los Proyectos"
   }
+};
 
-  function updateLang(lang) {
-    document.getElementById("hero-title").textContent = translations[lang].heroTitle;
-    document.getElementById("hero-subtitle").textContent = translations[lang].heroSubtitle;
-    document.getElementById("btn-projects").textContent = translations[lang].btnProjects;
-    document.getElementById("btn-resume").textContent = translations[lang].btnResume;
-    document.getElementById("about-title").textContent = translations[lang].aboutTitle;
-    document.getElementById("about-text").innerHTML = translations[lang].aboutContent;
-    document.getElementById("impact-title").textContent = translations[lang].impactTitle;
-    document.getElementById("impact-1-title").textContent = translations[lang].impact1Title;
-    document.getElementById("impact-1-text").textContent = translations[lang].impact1Text;
-    document.getElementById("impact-2-title").textContent = translations[lang].impact2Title;
-    document.getElementById("impact-2-text").textContent = translations[lang].impact2Text;
-    document.getElementById("impact-3-title").textContent = translations[lang].impact3Title;
-    document.getElementById("impact-3-text").textContent = translations[lang].impact3Text;
-    document.getElementById("impact-4-title").textContent = translations[lang].impact4Title;
-    document.getElementById("impact-4-text").textContent = translations[lang].impact4Text;
-    document.getElementById("projects-title").textContent = translations[lang].projectsTitle;
-    document.getElementById("project-1-title").textContent = translations[lang].project1Title;
-    document.getElementById("project-1-button").textContent = translations[lang].project1Button;
-    document.getElementById("view-all-btn").textContent = translations[lang].viewAllBtn;
-    document.getElementById("footer-location").innerHTML = `<i class="fas fa-map-marker-alt"></i> ${translations[lang].footerLocation}`;
-    document.getElementById("footer-copy").textContent = translations[lang].footerCopy;
+function toggleLang() {
+  const current = document.documentElement.lang;
+  const nextLang = current === 'en' ? 'es' : 'en';
+  document.documentElement.lang = nextLang;
+  updateLang(nextLang);
+}
 
-    document.querySelectorAll(".lang-toggle").forEach(el => {
-      el.innerHTML = lang === "en"
-        ? '<img src="https://flagcdn.com/cl.svg" alt="CL" style="width: 20px; vertical-align: middle;"> ES'
-        : '<img src="https://flagcdn.com/us.svg" alt="US" style="width: 20px; vertical-align: middle;"> EN';
-    });
-  }
+function updateLang(lang) {
+  document.getElementById("hero-title").textContent = translations[lang].heroTitle;
+  document.getElementById("hero-subtitle").textContent = translations[lang].heroSubtitle;
+  document.getElementById("btn-projects").textContent = translations[lang].btnProjects;
+  document.getElementById("btn-resume").textContent = translations[lang].btnResume;
+  document.getElementById("about-title").textContent = translations[lang].aboutTitle;
+  document.getElementById("about-text-content").innerHTML = translations[lang].aboutContent;
+  document.getElementById("impact-title").textContent = translations[lang].impactTitle;
+  document.getElementById("impact-1-title").textContent = translations[lang].impact1Title;
+  document.getElementById("impact-1-text").textContent = translations[lang].impact1Text;
+  document.getElementById("impact-2-title").textContent = translations[lang].impact2Title;
+  document.getElementById("impact-2-text").textContent = translations[lang].impact2Text;
+  document.getElementById("impact-3-title").textContent = translations[lang].impact3Title;
+  document.getElementById("impact-3-text").textContent = translations[lang].impact3Text;
+  document.getElementById("impact-4-title").textContent = translations[lang].impact4Title;
+  document.getElementById("impact-4-text").textContent = translations[lang].impact4Text;
+  document.getElementById("projects-title").textContent = translations[lang].projectsTitle;
+  document.getElementById("project-1-title").textContent = translations[lang].project1Title;
+  document.getElementById("project-1-button").textContent = translations[lang].project1Button;
+  document.getElementById("view-all-btn").textContent = translations[lang].viewAllBtn;
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const lang = 'en';
-    document.documentElement.lang = lang;
-    updateLang(lang);
-
-    document.getElementById('menu-toggle').addEventListener('click', () => {
-      document.getElementById('mobile-nav').classList.toggle('show');
-    });
-
-    const carousel = document.getElementById('project-carousel');
-    const prev = document.querySelector('.carousel-btn.prev');
-    const next = document.querySelector('.carousel-btn.next');
-
-    prev.addEventListener('click', () => {
-      carousel.scrollBy({ left: -320, behavior: 'smooth' });
-    });
-
-    next.addEventListener('click', () => {
-      carousel.scrollBy({ left: 320, behavior: 'smooth' });
-    });
+  document.querySelectorAll(".lang-toggle").forEach(el => {
+    el.innerHTML = lang === "en"
+      ? '<img src="https://flagcdn.com/cl.svg" alt="CL" style="width: 20px; vertical-align: middle;"> ES'
+      : '<img src="https://flagcdn.com/us.svg" alt="US" style="width: 20px; vertical-align: middle;"> EN';
   });
+}
+
+let autoScrollInterval;
+
+function startAutoScroll() {
+  const carousel = document.getElementById('project-carousel');
+  autoScrollInterval = setInterval(() => {
+    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+    if (carousel.scrollLeft >= maxScrollLeft - 10) {
+      carousel.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      carousel.scrollBy({ left: 320, behavior: 'smooth' });
+    }
+  }, 4000);
+}
+
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const lang = 'en';
+  document.documentElement.lang = lang;
+  updateLang(lang);
+
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-nav').classList.toggle('show');
+  });
+
+  const carousel = document.getElementById('project-carousel');
+  const prev = document.querySelector('.carousel-btn.prev');
+  const next = document.querySelector('.carousel-btn.next');
+
+  prev.addEventListener('click', () => {
+    carousel.scrollBy({ left: -320, behavior: 'smooth' });
+  });
+
+  next.addEventListener('click', () => {
+    carousel.scrollBy({ left: 320, behavior: 'smooth' });
+  });
+
+  startAutoScroll();
+  carousel.addEventListener('mouseenter', stopAutoScroll);
+  carousel.addEventListener('mouseleave', startAutoScroll);
+});
 </script>
 </body>
 </html>
