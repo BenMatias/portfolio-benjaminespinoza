@@ -4,35 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ben Matias | Business & Data Analyst</title>
-  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
-  <meta name="description" content="Business & Data Analyst Portfolio of Ben Matias. Explore dashboards, resume, and impact through data-driven solutions." />
-  <meta name="keywords" content="Business Analyst, Data Analyst, Ben Matias, Portfolio, Dashboards, Looker Studio, Power BI" />
+  <meta name="description" content="Business & Data Analyst Portfolio of Ben Matias. Transforming data into decisions through analytics and business intelligence." />
+  <meta name="keywords" content="Business Analyst, Data Analyst, Dashboards, Portfolio, Looker Studio, Power BI, SQL, Ben Matias" />
   <meta name="author" content="Ben Matias" />
-  
-  <!-- Open Graph -->
   <meta property="og:title" content="Ben Matias | Business & Data Analyst Portfolio" />
-  <meta property="og:description" content="Explore my dashboards, resume, and how I drive impact through analytics." />
+  <meta property="og:description" content="Explore dashboards, resume, and insights that drive impact." />
   <meta property="og:image" content="assets/img/og-image.jpg" />
   <meta property="og:url" content="https://benmatias.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ben Matias | Business & Data Analyst Portfolio" />
-  <meta name="twitter:description" content="Explore my dashboards, resume, and how I drive impact through analytics." />
-  <meta name="twitter:image" content="assets/img/og-image.jpg" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css" />
   <style>
     :root {
-      --primary: #0A7075;
-      --dark-bg: #031716;
-      --light-bg: #F6FAFD;
-      --contrast: #032F30;
-      --soft-border: rgba(0,0,0,0.05);
-      --text: #031716;
+      --dark-blue: #031716;
+      --light-blue: #6BA3BE;
+      --mid-blue: #0C969C;
+      --accent: #0A7075;
+      --pale: #F6FAFD;
+      --soft-border: rgba(0, 0, 0, 0.05);
     }
 
     * {
@@ -41,100 +31,110 @@
       padding: 0;
     }
 
-    body {
+    html, body {
       font-family: 'Inter', sans-serif;
-      background: var(--light-bg);
-      color: var(--text);
+      background-color: var(--pale);
+      color: var(--dark-blue);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     header {
-      background: url('assets/img/og-image.jpg') no-repeat center center/cover;
-      padding: 2rem 5%;
+      background-image: url('assets/img/og-image.jpg');
+      background-size: cover;
+      background-position: center;
       color: white;
+      padding: 1.5rem 5% 5rem;
     }
 
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
-    .navbar a.logo img {
+    .navbar .logo img {
       height: 40px;
     }
 
     .navbar ul {
-      list-style: none;
       display: flex;
       gap: 1.5rem;
+      list-style: none;
     }
 
-    .navbar a {
+    .navbar ul li a {
+      font-weight: 600;
       color: white;
-      text-decoration: none;
-      font-weight: 500;
     }
 
     .hero {
-      padding: 6rem 5%;
+      margin-top: 3rem;
       max-width: 1200px;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       font-weight: 700;
+      margin-bottom: 1rem;
     }
 
     .hero p {
       font-size: 1.25rem;
-      margin: 1rem 0 2rem;
-      max-width: 600px;
+      max-width: 700px;
+      margin-bottom: 2rem;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
-    }
-
-    .hero-buttons a {
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.2s ease;
+      gap: 1rem;
     }
 
     .btn-primary {
-      background: var(--primary);
+      background-color: var(--mid-blue);
       color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s;
     }
 
     .btn-outline {
       border: 2px solid white;
       color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      background: transparent;
+      transition: background 0.3s, color 0.3s;
     }
 
     .btn-outline:hover {
-      background: white;
-      color: var(--primary);
+      background-color: white;
+      color: var(--mid-blue);
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="navbar">
-      <a href="index.html" class="logo"><img src="assets/Logo.PNG" alt="Logo" /></a>
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img src="assets/Logo.PNG" alt="Ben Matias Logo"></a>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="index.html">About</a></li>
         <li><a href="cv.html">CV</a></li>
-        <li><a href="javascript:void(0);" onclick="toggleLanguage()">ES</a></li>
+        <li><a href="projects.html">Projects</a></li>
         <li><a href="mailto:bmatiasespinoza@gmail.com"><i class="fas fa-envelope"></i></a></li>
         <li><a href="https://www.linkedin.com/in/benmatias" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="#" onclick="toggleLanguage()">ES</a></li>
       </ul>
-    </div>
+    </nav>
 
     <div class="hero">
       <h1>Ben Matias</h1>
@@ -148,65 +148,93 @@
       </div>
     </div>
   </header>
-  <section class="about">
-    <img src="assets/Profile.jpg" alt="Profile Picture">
-    <div class="about-text">
+  <section class="about" style="padding: 4rem 5%; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; max-width: 1200px; margin: auto;">
+    <img src="assets/Profile.jpg" alt="Profile Picture" style="border-radius: 50%; width: 180px; height: 180px; object-fit: cover;" />
+    <div style="flex: 1; min-width: 280px;">
       <h2 class="lang en">About Me</h2>
-      <h2 class="lang es" style="display:none;">Sobre Mí</h2>
-      <p class="lang en">I'm Benjamin Espinoza, Business & Data Analyst with a degree in Industrial Engineering and a strong background in analytics, reporting, and stakeholder collaboration. I enjoy solving complex problems with simple and scalable solutions.</p>
-      <p class="lang en">My experience spans banking and manufacturing industries, where I've built dashboards, defined KPIs from scratch, and empowered teams through better data use. I translate business needs into analytical insights.</p>
-      <p class="lang en">I'm a father, a lifelong learner, passionate about music and continuous improvement. I’m currently expanding my skills in English, French, and product strategy.</p>
+      <h2 class="lang es" style="display: none;">Sobre Mí</h2>
+      <p class="lang en">
+        I'm Benjamin Espinoza, Business & Data Analyst with a degree in Industrial Engineering and a strong background in analytics,
+        reporting, and stakeholder collaboration. I enjoy solving complex problems with simple and scalable solutions.
+      </p>
+      <p class="lang en">
+        My experience spans banking and manufacturing industries, where I've built dashboards, defined KPIs from scratch, and
+        empowered teams through better data use. I translate business needs into analytical insights.
+      </p>
+      <p class="lang en">
+        I'm a father, a lifelong learner, passionate about music and continuous improvement. Iʼm currently expanding my skills in
+        English, French, and product strategy.
+      </p>
 
-      <p class="lang es" style="display:none;">Soy Benjamin Espinoza, Analista de Datos y Negocios con formación en Ingeniería Industrial y una sólida experiencia en análisis, reportes y colaboración con stakeholders. Disfruto resolver problemas complejos con soluciones simples y escalables.</p>
-      <p class="lang es" style="display:none;">He trabajado en la banca y la industria manufacturera, desarrollando dashboards, definiendo KPIs desde cero y empoderando a los equipos mediante el uso de datos. Traduzco necesidades del negocio en insights analíticos.</p>
-      <p class="lang es" style="display:none;">Soy padre, aprendiz continuo, apasionado por la música y la mejora continua. Actualmente estoy ampliando mis habilidades en inglés, francés y estrategia de producto.</p>
+      <p class="lang es" style="display: none;">
+        Soy Benjamin Espinoza, Analista de Datos y Negocios con formación en Ingeniería Industrial y una sólida experiencia en análisis,
+        reportes y colaboración con stakeholders. Disfruto resolver problemas complejos con soluciones simples y escalables.
+      </p>
+      <p class="lang es" style="display: none;">
+        He trabajado en la banca y la industria manufacturera, desarrollando dashboards, definiendo KPIs desde cero y empoderando a los equipos
+        mediante el uso de datos. Traduzco necesidades del negocio en insights analíticos.
+      </p>
+      <p class="lang es" style="display: none;">
+        Soy padre, aprendiz continuo, apasionado por la música y la mejora continua. Actualmente estoy ampliando mis habilidades en inglés,
+        francés y estrategia de producto.
+      </p>
     </div>
   </section>
-  <section style="background-color: #F0F9FB;">
-    <h2 class="lang en" style="padding-left: 5%;">How I’ve Made an Impact</h2>
-    <h2 class="lang es" style="padding-left: 5%; display: none;">Cómo he generado impacto</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 2rem; padding: 2rem 5%; justify-content: center;">
-      <div style="background: white; border: 1px solid var(--soft-border); border-radius: 12px; padding: 2rem; width: 250px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-        <i class="fas fa-chart-bar fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+  <section style="background-color: #F0F9FB; padding: 4rem 5%;">
+    <h2 class="lang en" style="text-align: center;">How I’ve Made an Impact</h2>
+    <h2 class="lang es" style="text-align: center; display: none;">Cómo he generado impacto</h2>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto;">
+      <div style="background: white; border: 1px solid var(--soft-border); border-radius: 12px; padding: 2rem; width: 260px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <i class="fas fa-chart-bar fa-2x" style="color: var(--mid-blue); margin-bottom: 1rem;"></i>
         <h3>+50 Dashboards Delivered</h3>
-        <p>Created 50+ dashboards for banking, industrial and executive audiences using Power BI and Looker Studio.</p>
+        <p>Created dashboards for banking, industrial, and executive audiences using Power BI and Looker Studio.</p>
       </div>
-      <div style="background: white; border: 1px solid var(--soft-border); border-radius: 12px; padding: 2rem; width: 250px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-        <i class="fas fa-bullseye fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+
+      <div style="background: white; border: 1px solid var(--soft-border); border-radius: 12px; padding: 2rem; width: 260px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <i class="fas fa-bullseye fa-2x" style="color: var(--mid-blue); margin-bottom: 1rem;"></i>
         <h3>Built KPI Systems from Scratch</h3>
         <p>Designed and implemented performance tracking frameworks where none existed before.</p>
       </div>
-      <div style="background: white; border: 1px solid var(--soft-border); border-radius: 12px; padding: 2rem; width: 250px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-        <i class="fas fa-clock fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+
+      <div style="background: white; border: 1px solid var(--soft-border); border-radius: 12px; padding: 2rem; width: 260px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <i class="fas fa-clock fa-2x" style="color: var(--mid-blue); margin-bottom: 1rem;"></i>
         <h3>Saved Time with Automation</h3>
         <p>Automated daily reporting, saving up to 1 hour per day in manual processes.</p>
       </div>
-      <div style="background: white; border: 1px solid var(--soft-border); border-radius: 12px; padding: 2rem; width: 250px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-        <i class="fas fa-users fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+
+      <div style="background: white; border: 1px solid var(--soft-border); border-radius: 12px; padding: 2rem; width: 260px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <i class="fas fa-users fa-2x" style="color: var(--mid-blue); margin-bottom: 1rem;"></i>
         <h3>Supported +10 Business Units</h3>
         <p>Generated insights across operations, sales, fraud, product, planning and more.</p>
       </div>
     </div>
   </section>
+  <section style="padding: 4rem 5%; text-align: center;">
+    <h2 class="lang en">Featured Projects</h2>
+    <h2 class="lang es" style="display: none;">Proyectos Destacados</h2>
 
-  <section>
-    <h2 class="lang en" style="text-align: center;">Featured Projects</h2>
-    <h2 class="lang es" style="text-align: center; display: none;">Proyectos Destacados</h2>
-    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 2rem;">
-      <div style="border: 1px solid var(--soft-border); padding: 2rem; border-radius: 12px; width: 100%; max-width: 500px; text-align: center;">
-        <h3>Unemployment Dashboard</h3>
-        <a href="projects/us-unemployment.html" class="btn-primary" style="margin-top: 1rem; display: inline-block;">View Project</a>
+    <div style="position: relative; max-width: 1200px; margin: 2rem auto;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 2rem;">
+        <button style="background: none; border: none; font-size: 2rem; cursor: pointer;" aria-label="Previous Project">❮</button>
+
+        <div style="background: white; border-radius: 12px; padding: 2rem; border: 1px solid var(--soft-border); width: 100%; max-width: 500px;">
+          <h3>US Unemployment Analysis</h3>
+          <img src="assets/img/us-unemployment-cover.png" alt="US Unemployment Project" style="width: 100%; border-radius: 8px; margin: 1rem 0;" />
+          <a href="projects/us-unemployment.html" class="btn-primary" style="display: inline-block; margin-top: 1rem;">View Project</a>
+        </div>
+
+        <button style="background: none; border: none; font-size: 2rem; cursor: pointer;" aria-label="Next Project">❯</button>
       </div>
-      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 500px; margin-top: 1.5rem;">
-        <button style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">❮</button>
+
+      <div style="margin-top: 2rem;">
         <a href="projects.html" class="btn-outline">View All</a>
-        <button style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">❯</button>
       </div>
     </div>
   </section>
-  <footer style="background: var(--dark-bg); color: white; text-align: center; padding: 2rem;">
-    <div style="margin-bottom: 1rem;">
-      <a href="mailto:bmatiasespinoza@gmail.com" style="color: white; margin-right: 1.5rem; text-decoration: none;">
+  <footer style="background: var(--dark-blue); color: white; text-align: center; padding: 2rem;">
+    <div style="margin-bottom: 1rem; font-size: 1rem;">
+      <a href="mailto:bmatiasespinoza@gmail.com" style="color: white; margin-right: 2rem; text-decoration: none;">
         <i class="fas fa-envelope"></i> bmatiasespinoza@gmail.com
       </a>
       <a href="https://www.linkedin.com/in/benmatias" target="_blank" style="color: white; text-decoration: none;">
@@ -217,7 +245,6 @@
       &copy; 2025 Ben Matias. All rights reserved.
     </div>
   </footer>
-
   <script>
     function toggleLanguage() {
       const enElements = document.querySelectorAll('.lang.en');
