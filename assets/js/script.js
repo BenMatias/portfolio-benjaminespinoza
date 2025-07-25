@@ -15,7 +15,7 @@ const translations = {
     cv_timeline_items: [
       { type: 'work', date: "May 2023 – Present", title: "Business Analyst", company: "Banco Internacional", url: "https://www.internacional.cl", logo: "assets/img/logos/banco-internacional.png", description: `<ul><li>Built a company-wide reporting and KPI system from scratch for the Innovation area, where performance tracking and outcome evaluation were previously nonexistent.</li><li>Created over 20 dashboards for departments such as Innovation, Fraud, Sales, Product Owners, and Strategic Planning.</li><li>Led and scaled a metrics team, automated processes using ETL pipelines and team-managed databases, ensuring data integrity and scalability.</li><li>Transitioned to cross-functional squad as Business Analyst: user stories, testing, flows and dashboards.</li></ul>` },
       { type: 'work', date: "Sep 2021 – Apr 2023", title: "Data & Business Control Analyst", company: "Lucas Diesel", url: "https://lucasdiesel.cl", logo: "assets/img/logos/lucas-diesel.png", description: `<ul><li>Created a new data analytics function in a company lacking visibility due to shared finance with sister company.</li><li>Delivered 30+ Power BI reports across operations, sales, inventory, procurement, automotive services and executive dashboards.</li><li>Automated daily report delivery, saving up to 1 hour daily.</li><li>Improved annual budgeting from 6 to 2 months over two years.</li></ul>` },
-      { type: 'work', date: "Nov 2021 – Aug 2021", title: "Financial Performance Analyst", company: "Heavenward Ascensores", url: "https://www.heavenward.cl", logo: "assets/img/logos/heavenward.png", description: `<ul><li>Tracked KPIs and costs for modernization projects.</li><li>Created dashboards in Excel and Power BI to support strategic decisions.</li><li>Worked with technical and executive teams to improve customer data insights.</li></ul>` },
+      { type: 'work', date: "Nov 2019 – Aug 2021", title: "Financial Performance Analyst", company: "Heavenward Ascensores", url: "https://www.heavenward.cl", logo: "assets/img/logos/heavenward.png", description: `<ul><li>Tracked KPIs and costs for modernization projects.</li><li>Created dashboards in Excel and Power BI to support strategic decisions.</li><li>Worked with technical and executive teams to improve customer data insights.</li></ul>` },
       { type: 'education', date: "2024", title: "International Diploma in Digital Transformation", company: "Digital Bank LATAM", url: "https://www.digitalbankla.com", logo: "assets/img/logos/digital-bank-latam.png" },
       { type: 'education', date: "2022", title: "Diploma in Web Design & Programming", company: "Fundación Telefónica & AIEP", url: "https://www.fundaciontelefonica.cl", logo: "assets/img/logos/telefonica-aiep.png" },
       { type: 'education', date: "2022", title: "University Preparation Program", company: "BYU PathwayConnect", url: "https://www.byupathway.edu", logo: "assets/img/logos/byu.png" },
@@ -103,13 +103,33 @@ function populateCvPage(lang) {
 
     if(timelineWork) {
         timelineWork.innerHTML = workItems.map((item, index) => {
-            return `<div class="timeline-item"><div class="timeline-content-block"><div class="timeline-date">${item.date}</div><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3 class="timeline-title">${item.title}</h3><p class="timeline-company">${item.company} <a href="${item.url}" target="_blank" rel="noopener" aria-label="Visit site"></a></p>${item.description || ''}</div></div>`;
+            return `<div class="timeline-item">
+                        <div class="timeline-logo-wrapper">
+                            <img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo">
+                        </div>
+                        <div class="timeline-content-block">
+                            <div class="timeline-date">${item.date}</div>
+                            <h3 class="timeline-title">${item.title}</h3>
+                            <p class="timeline-company">${item.company} <a href="${item.url}" target="_blank" rel="noopener" aria-label="Visit site"></a></p>
+                            ${item.description || ''}
+                        </div>
+                    </div>`;
         }).join('');
     }
     
     if(timelineEducation) {
         timelineEducation.innerHTML = educationItems.map((item, index) => {
-            return `<div class="timeline-item"><div class="timeline-content-block"><div class="timeline-date">${item.date}</div><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3 class="timeline-title">${item.title}</h3><p class="timeline-company">${item.company} <a href="${item.url}" target="_blank" rel="noopener" aria-label="Visit site"></a></p>${item.description || ''}</div></div>`;
+            return `<div class="timeline-item">
+                        <div class="timeline-logo-wrapper">
+                             <img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo">
+                        </div>
+                        <div class="timeline-content-block">
+                            <div class="timeline-date">${item.date}</div>
+                            <h3 class="timeline-title">${item.title}</h3>
+                            <p class="timeline-company">${item.company} <a href="${item.url}" target="_blank" rel="noopener" aria-label="Visit site"></a></p>
+                            ${item.description || ''}
+                        </div>
+                    </div>`;
         }).join('');
     }
 
