@@ -10,6 +10,7 @@ const translations = {
     // --- CV Page Content ---
     cv_hero_title: "My Professional Journey", cv_hero_summary: "A journey through the projects and roles that have defined my career in the world of data.",
     cv_download: "Download PDF",
+    cv_work_title: "Work Experience", cv_education_title: "Education", cv_skills_title: "My Toolkit", cv_languages_title: "Languages", cv_interests_title: "Interests", cv_certifications_title: "Certifications", cv_badges_title: "Highlighted Badges", cv_credly_link: "View profile on Credly",
     cv_timeline_items: [
       { type: 'work', date: "May 2023 – Present", title: "Business Analyst", company: "Banco Internacional", url: "https://www.internacional.cl", logo: "assets/img/logos/banco-internacional.png", description: `<ul><li>Built a company-wide reporting and KPI system from scratch for the Innovation area, where performance tracking and outcome evaluation were previously nonexistent.</li><li>Created over 20 dashboards for departments such as Innovation, Fraud, Sales, Product Owners, and Strategic Planning.</li><li>Led and scaled a metrics team, automated processes using ETL pipelines and team-managed databases, ensuring data integrity and scalability.</li><li>Transitioned to cross-functional squad as Business Analyst: user stories, testing, flows and dashboards.</li></ul>` },
       { type: 'work', date: "Sep 2021 – Apr 2023", title: "Data & Business Control Analyst", company: "Lucas Diesel", url: "https://lucasdiesel.cl", logo: "assets/img/logos/lucas-diesel.png", description: `<ul><li>Created a new data analytics function in a company lacking visibility due to shared finance with sister company.</li><li>Delivered 30+ Power BI reports across operations, sales, inventory, procurement, automotive services and executive dashboards.</li><li>Automated daily report delivery, saving up to 1 hour daily.</li><li>Improved annual budgeting from 6 to 2 months over two years.</li></ul>` },
@@ -19,16 +20,35 @@ const translations = {
       { type: 'education', date: "2022", title: "University Preparation Program", company: "BYU PathwayConnect", url: "https://www.byupathway.edu" },
       { type: 'education', date: "2013–2020", title: "Industrial Civil Engineering", company: "Universidad de Valparaíso", url: "https://uv.cl" }
     ],
-    cv_skills_title: "My Toolkit",
     cv_skills_items: [ { category: "Visualization", skills: [ { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" } ]}, { category: "Data", skills: [ { name: "SQL", logo: null }, { name: "Excel", logo: null }, { name: "LookML", logo: null } ]}, { category: "Methods", skills: [ { name: "KPIs", logo: null }, { name: "Agile", logo: null }, { name: "Storytelling", logo: null } ]} ],
-    cv_languages_title: "Languages", cv_languages_items: [ { lang: "Spanish", level: "Native", flag: "es" }, { lang: "English", level: "B2 Upper-Intermediate", flag: "gb" }, { lang: "French", level: "A1 Basic", flag: "fr" } ],
-    cv_interests_title: "Interests", cv_interests_items: [ { name: "Running", icon: "fa-solid fa-person-running" }, { name: "Football", icon: "fa-solid fa-futbol" }, { name: "Gaming", icon: "fa-solid fa-gamepad" }, { name: "Guitar", icon: "fa-solid fa-guitar" }, { name: "Drawing", icon: "fa-solid fa-pencil-alt" }, { name: "Tennis", icon: "fa-solid fa-trophy" } ],
-    cv_certifications_title: "Certifications", cv_certifications_items: [ { name: "Qlik Sense Designer", url: "assets/certificates/Certificacion Qlik.pdf" }, { name: "Google Tag Manager (Basics)", url: "assets/certificates/Conceptos básicos de Google Tag Manager.pdf" }, { name: "Linguaskill English B2", url: "assets/certificates/Linguaskill Cambridge.pdf" }, { name: "SQL Certification", url: "assets/certificates/SQL.pdf" }, { name: "SSIS Certificate", url: "assets/certificates/SSIS.pdf" }, { name: "Tableau & Tableau Prep", url: "assets/certificates/Tableau.pdf" }, { name: "User Stories Certification", url: "assets/certificates/User Stories Certiprof.pdf" } ],
-    cv_badges_title: "Highlighted Badges", cv_credly_link: "View profile on Credly",
+    cv_languages_items: [ { lang: "Spanish", level: "Native", flag: "es" }, { lang: "English", level: "B2 Upper-Intermediate", flag: "gb" }, { lang: "French", level: "A1 Basic", flag: "fr" } ],
+    cv_interests_items: [ { name: "Running", icon: "fa-solid fa-person-running" }, { name: "Football", icon: "fa-solid fa-futbol" }, { name: "Gaming", icon: "fa-solid fa-gamepad" }, { name: "Guitar", icon: "fa-solid fa-guitar" }, { name: "Drawing", icon: "fa-solid fa-pencil-alt" }, { name: "Tennis", icon: "fa-solid fa-trophy" } ],
+    cv_certifications_items: [ { name: "Qlik Sense Designer", url: "assets/certificates/Certificacion Qlik.pdf" }, { name: "Google Tag Manager (Basics)", url: "assets/certificates/Conceptos básicos de Google Tag Manager.pdf" }, { name: "Linguaskill English B2", url: "assets/certificates/Linguaskill Cambridge.pdf" }, { name: "SQL Certification", url: "assets/certificates/SQL.pdf" }, { name: "SSIS Certificate", url: "assets/certificates/SSIS.pdf" }, { name: "Tableau & Tableau Prep", url: "assets/certificates/Tableau.pdf" }, { name: "User Stories Certification", url: "assets/certificates/User Stories Certiprof.pdf" } ]
   },
   es: {
-    // ... (Contenido completo en Español aquí)
-    // Asegúrate de que todas las secciones del CV también estén traducidas.
+    heroTitle: "Business & Data Analyst enfocado en transformar datos en decisiones", heroSubtitle: "Ayudo a las empresas a tomar mejores decisiones a través del análisis y la inteligencia de negocios.",
+    btnProjects: "Ver Proyectos", btnResume: "Ver CV", navAbout: "Sobre mí", navResume: "CV", navProjects: "Proyectos",
+    aboutTitle: "Sobre mí", aboutContent: `<p>Soy Benjamin Espinoza, Business & Data Analyst con formación en Ingeniería Civil Industrial y experiencia en análisis de datos, reportería y colaboración con áreas de negocio. Me apasiona resolver problemas complejos con soluciones simples y escalables.</p><p>He trabajado en empresas de servicios, ventas y banca, creando dashboards, definiendo KPIs desde cero y promoviendo el uso estratégico de los datos. Traduzco necesidades de negocio en insights accionables.</p><p>Padre, aprendiz permanente y amante de la música y la mejora continua. Actualmente perfecciono mi inglés, francés y conocimientos en estrategia de producto.</p>`,
+    impactTitle: "Cómo He Generado Impacto", impacts: [ { icon: "fa-chart-bar", title: "Dashboards que Impulsan Decisiones", text: "Diseñé dashboards de alto impacto para audiencias ejecutivas, industriales y del sector bancario usando Power BI y Looker Studio." }, { icon: "fa-bullseye", title: "Implementación de Sistemas de KPIs desde Cero", text: "Establecí marcos de medición de desempeño donde antes no existían, aportando estructura, alineación y mejora continua." }, { icon: "fa-clock", title: "Eficiencia a Través de la Automatización", text: "Automatización de tareas recurrentes de reportería para eliminar procesos manuales y optimizar el tiempo." }, { icon: "fa-users", title: "Insights para Toda la Organización", text: "Apoyé diversas áreas de negocio con insights accionables que respaldan la toma de decisiones en operaciones, ventas, riesgo, producto y más." } ],
+    projectsTitle: "Proyectos Destacados", project1Title: "Análisis de Desempleo en EE.UU.", project1Description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.",
+    project1Button: "Ver Proyecto", viewAllBtn: "Ver Todos los Proyectos",
+    cv_hero_title: "Mi Trayectoria Profesional", cv_hero_summary: "Un viaje a través de los proyectos y roles que han definido mi carrera en el mundo de los datos.",
+    cv_download: "Descargar PDF", cv_work_title: "Experiencia Laboral", cv_education_title: "Educación", cv_skills_title: "Mi Caja de Herramientas",
+    cv_languages_title: "Idiomas", cv_interests_title: "Intereses", cv_certifications_title: "Certificaciones", cv_badges_title: "Insignias Destacadas",
+    cv_credly_link: "Ver perfil en Credly",
+    cv_timeline_items: [
+        { type: 'work', date: "May 2023 – Actualidad", title: "Business Analyst", company: "Banco Internacional", url: "https://www.internacional.cl", logo: "assets/img/logos/banco-internacional.png", description: `<ul><li>Desarrollé un sistema de reportes y KPIs desde cero para el área de innovación, donde no existía medición previa.</li><li>Creé más de 20 dashboards para innovación, fraude, ventas, dueños de productos y planificación.</li><li>Lideré equipo de métricas que automatizó procesos mediante ETL y base de datos propia.</li><li>Transición exitosa al rol de Business Analyst en célula ágil con foco en historias de usuario, flujos y pruebas.</li></ul>` },
+        { type: 'work', date: "Sep 2021 – Abr 2023", title: "Analista de Datos y Control de Gestión", company: "Lucas Diesel", url: "https://lucasdiesel.cl", logo: "assets/img/logos/lucas-diesel.png", description: `<ul><li>Ingresé a una posición nueva para resolver brechas de visibilidad y reportes en una estructura financiera compartida.</li><li>Generé y automatizé más de 30 dashboards para ventas, inventario, abastecimiento, servicios automotrices, operaciones y gerencia.</li><li>Automatización diaria ahorró hasta 1 hora por día.</li><li>Reduje el proceso de presupuesto anual de 6 a 2 meses en dos años consecutivos.</li></ul>` },
+        { type: 'work', date: "Nov 2019 – Ago 2021", title: "Analista de Control de Gestión", company: "Heavenward Ascensores", url: "https://www.heavenward.cl", logo: "assets/img/logos/heavenward.png", description: `<ul><li>Supervisión de KPIs y control de costos para proyectos de mantenimiento y modernización.</li><li>Reportes y dashboards en Excel y Power BI para análisis financiero y mejora de tiempos de respuesta.</li></ul>` },
+        { type: 'education', date: "2024", title: "Diplomado Internacional en Transformación Digital", company: "Digital Bank LATAM", url: "https://www.digitalbankla.com" },
+        { type: 'education', date: "2022", title: "Diplomado en Diseño y Programación Web", company: "Fundación Telefónica & AIEP", url: "https://www.fundaciontelefonica.cl" },
+        { type: 'education', date: "2022", title: "Programa universitario introductorio", company: "BYU PathwayConnect", url: "https://www.byupathway.edu" },
+        { type: 'education', date: "2013–2020", title: "Ingeniería Civil Industrial", company: "Universidad de Valparaíso", url: "https://uv.cl" }
+    ],
+    cv_skills_items: [ { category: "Visualización", skills: [ { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" } ]}, { category: "Datos", skills: [ { name: "SQL", logo: null }, { name: "Excel", logo: null }, { name: "LookML", logo: null } ]}, { category: "Métodos", skills: [ { name: "KPIs", logo: null }, { name: "Agile", logo: null }, { name: "Storytelling", logo: null } ]} ],
+    cv_languages_items: [ { lang: "Español", level: "Nativo", flag: "es" }, { lang: "Inglés", level: "B2 Intermedio-Alto", flag: "gb" }, { lang: "Francés", level: "A1 Básico", flag: "fr" } ],
+    cv_interests_items: [ { name: "Correr", icon: "fa-solid fa-person-running" }, { name: "Fútbol", icon: "fa-solid fa-futbol" }, { name: "Videojuegos", icon: "fa-solid fa-gamepad" }, { name: "Guitarra", icon: "fa-solid fa-guitar" }, { name: "Dibujo", icon: "fa-solid fa-pencil-alt" }, { name: "Tenis", icon: "fa-solid fa-trophy" } ],
+    cv_certifications_items: [ { name: "Qlik Sense Diseñador", url: "assets/certificates/Certificacion Qlik.pdf" }, { name: "Google Tag Manager (Básico)", url: "assets/certificates/Conceptos básicos de Google Tag Manager.pdf" }, { name: "Inglés B2 – Linguaskill", url: "assets/certificates/Linguaskill Cambridge.pdf" }, { name: "Certificación SQL", url: "assets/certificates/SQL.pdf" }, { name: "Certificación SSIS", url: "assets/certificates/SSIS.pdf" }, { name: "Tableau & Tableau Prep", url: "assets/certificates/Tableau.pdf" }, { name: "User Stories Certificate", url: "assets/certificates/User Stories Certiprof.pdf" } ]
   }
 };
 
@@ -50,22 +70,15 @@ function setupScrollAnimations() {
 function populateCvPage(lang) {
     const data = translations[lang];
     const getEl = (id) => document.getElementById(id);
-
     if (getEl('cv-hero-title')) getEl('cv-hero-title').textContent = data.cv_hero_title;
     if (getEl('cv-hero-summary')) getEl('cv-hero-summary').textContent = data.cv_hero_summary;
     if (getEl('download-btn-text')) getEl('download-btn-text').textContent = data.cv_download;
-    if (getEl('skills-title')) getEl('skills-title').textContent = data.cv_skills_title;
-    if (getEl('languages-title')) getEl('languages-title').textContent = data.cv_languages_title;
-    if (getEl('interests-title')) getEl('interests-title').textContent = data.cv_interests_title;
-    if (getEl('certifications-title')) getEl('certifications-title').textContent = data.cv_certifications_title;
-    if (getEl('badges-title')) getEl('badges-title').textContent = data.cv_badges_title;
-    if (getEl('credly-link')) getEl('credly-link').querySelector('span').textContent = data.cv_credly_link;
-    
     const timelineContainer = getEl('timeline-content-wrapper');
     if (timelineContainer) {
-        timelineContainer.innerHTML = ''; // Clear
+        timelineContainer.innerHTML = '';
         data.cv_timeline_items.forEach((item, index) => {
             const side = (index % 2 === 0) ? 'left' : 'right';
+            let titleHtml = item.type === 'work' ? `<h2 id="work-experience-title" class="section-title"></h2>` : `<h2 id="education-title" class="section-title"></h2>`;
             let contentBlock;
             if(item.type === 'work') {
                 contentBlock = `<img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3>${item.title}</h3><p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>${item.description || ''}`;
@@ -76,24 +89,32 @@ function populateCvPage(lang) {
             timelineContainer.innerHTML += itemHtml;
         });
     }
-    
     const skillsContainer = getEl('skills-content');
     if(skillsContainer) {
+        getEl('skills-title').textContent = data.cv_skills_title;
         skillsContainer.innerHTML = '';
         data.cv_skills_items.forEach(category => {
             const categoryHtml = `<div class="skill-category-wrapper"><h3 class="skill-category-title">${category.category}</h3><div class="skills-logo-grid">${category.skills.map(item => { if (item.logo) { return `<div class="skill-item"><img src="${item.logo}" alt="${item.name} Logo"><p>${item.name}</p></div>`; } else { return `<div class="skill-tag"><p>${item.name}</p></div>`; } }).join('')}</div></div>`;
             skillsContainer.innerHTML += categoryHtml;
         });
     }
-
     const langContainer = getEl('languages-content');
-    if(langContainer) langContainer.innerHTML = data.cv_languages_items.map(item => `<div class="language-item"><img src="https://flagcdn.com/w40/${item.flag}.png" alt="${item.lang} flag"><div><p><strong>${item.lang}</strong></p><p class="lang-level">${item.level}</p></div></div>`).join('');
+    if(langContainer) {
+        getEl('languages-title').textContent = data.cv_languages_title;
+        langContainer.innerHTML = data.cv_languages_items.map(item => `<div class="language-item"><img src="https://flagcdn.com/w40/${item.flag}.png" alt="${item.lang} flag"><div><p><strong>${item.lang}</strong></p><p class="lang-level">${item.level}</p></div></div>`).join('');
+    }
     const interestsContainer = getEl('interests-content');
-    if(interestsContainer) interestsContainer.innerHTML = data.cv_interests_items.map(item => `<div class="interest-item"><i class="${item.icon}"></i><p>${item.name}</p></div>`).join('');
+    if(interestsContainer) {
+        getEl('interests-title').textContent = data.cv_interests_title;
+        interestsContainer.innerHTML = data.cv_interests_items.map(item => `<div class="interest-item"><i class="${item.icon}"></i><p>${item.name}</p></div>`).join('');
+    }
     const certsContainer = getEl('certifications-content');
-    if(certsContainer) certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="${item.url}" download>${item.name}</a></li>`).join('');
-
-    // Set up animations after content is populated
+    if(certsContainer) {
+        getEl('certifications-title').textContent = data.cv_certifications_title;
+        certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="${item.url}" download>${item.name}</a></li>`).join('');
+    }
+    if (getEl('badges-title')) getEl('badges-title').textContent = data.cv_badges_title;
+    if (getEl('credly-link')) getEl('credly-link').querySelector('span').textContent = data.cv_credly_link;
     setTimeout(setupScrollAnimations, 100);
 }
 
@@ -101,9 +122,8 @@ function setLanguage(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
   const data = translations[lang];
-
   const heroTitle = document.getElementById('hero-title');
-  if (heroTitle) { // Logic for index.html
+  if (heroTitle) {
       heroTitle.textContent = data.heroTitle;
       document.getElementById("hero-subtitle").textContent = data.heroSubtitle;
       document.getElementById("about-title").textContent = data.aboutTitle;
@@ -130,18 +150,13 @@ function setLanguage(lang) {
       const btnResume = document.getElementById("btn-resume");
       if(btnResume) btnResume.textContent = data.btnResume;
   }
-  
   const cvHeroTitle = document.getElementById('cv-hero-title');
-  if (cvHeroTitle) { // Logic for cv.html
+  if (cvHeroTitle) {
       populateCvPage(lang);
   }
-
-  // Common logic for navigation
   document.querySelectorAll('.desktop-nav a[href="index.html#about"], .mobile-nav a[href="index.html#about"]').forEach(el => { if(el) el.textContent = data.navAbout });
   document.querySelectorAll('.desktop-nav a[href="cv.html"], .mobile-nav a[href="cv.html"]').forEach(el => { if(el) el.textContent = data.navResume });
   document.querySelectorAll('.desktop-nav a[href="projects.html"], .mobile-nav a[href="projects.html"]').forEach(el => { if(el) el.textContent = data.navProjects });
-
-  // Common logic for language toggle
   document.querySelectorAll(".lang-toggle").forEach(el => {
     el.innerHTML = lang === "en" ? `<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES` : `<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN`;
   });
@@ -153,9 +168,7 @@ function toggleLang() {
 
 document.addEventListener("DOMContentLoaded", () => {
   setLanguage('en');
-  
   document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
-
   const menuToggle = document.getElementById('menu-toggle');
   if (menuToggle) {
     menuToggle.addEventListener('click', () => {
@@ -163,7 +176,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if(mobileNav) mobileNav.classList.toggle('show');
     });
   }
-
   const carousel = document.getElementById('project-carousel');
   if (carousel) {
     const prevBtn = document.querySelector('.carousel-btn.prev');
