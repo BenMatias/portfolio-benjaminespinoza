@@ -144,6 +144,51 @@ nav.desktop-nav a { color: var(--white); font-weight: 600; }
 .badge-widgets { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem; }
 .credly-link-styled { display: inline-block; margin-top: 1rem; font-weight: 600; }
 
+/* --- FOOTER --- */
+.footer {
+  background-color: var(--dark-blue);
+  color: var(--almost-white);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-contacts a {
+  font-weight: 600;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-contacts a:hover {
+  color: var(--light-blue);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-socials a {
+  font-size: 1.6rem; /* Íconos un poco más grandes */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: var(--light-blue);
+  transform: translateY(-2px); /* Efecto sutil al pasar el mouse */
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: var(--light-blue);
+  opacity: 0.8;
+}
+
 /* --- ESTILOS RESPONSIVOS --- */
 @media (max-width: 992px) {
   .impact-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
