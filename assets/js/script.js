@@ -98,7 +98,6 @@ function populateCvPage(lang) {
     const timelineWork = getEl('timeline-work-content');
     const timelineEducation = getEl('timeline-education-content');
     
-    // Filtramos los items de la timeline por tipo
     const workItems = data.cv_timeline_items.filter(item => item.type === 'work');
     const educationItems = data.cv_timeline_items.filter(item => item.type === 'education');
 
@@ -120,7 +119,7 @@ function populateCvPage(lang) {
         let lineupHtml = '<div class="skills-lineup">';
         
         lineupHtml += '<div class="lineup-tier lineup-tier-1">';
-        tier1.forEach(skill => { lineupHtml += `<div class="skill"><img src="${skill.logo}" class="skill-logo" alt="${skill.name} logo">${skill.name}</div>`; });
+        tier1.forEach(skill => { lineupHtml += `<div class="skill"><img src="${skill.logo}" class="skill-logo" alt="${skill.name} logo"><span>${skill.name}</span></div>`; });
         lineupHtml += '</div>';
 
         lineupHtml += '<div class="lineup-tier lineup-tier-2">';
@@ -156,7 +155,7 @@ function setLanguage(lang) {
   const data = translations[lang] || translations.en;
   
   const heroTitle = document.getElementById('hero-title');
-  if (heroTitle) { // Logic for index.html
+  if (heroTitle) {
       heroTitle.textContent = data.heroTitle;
       document.getElementById("hero-subtitle").textContent = data.heroSubtitle;
       document.getElementById("about-title").textContent = data.aboutTitle;
@@ -197,11 +196,10 @@ function setLanguage(lang) {
   }
   
   const cvHeroTitle = document.getElementById('cv-hero-title');
-  if (cvHeroTitle) { // Logic for cv.html
+  if (cvHeroTitle) {
       populateCvPage(lang);
   }
 
-  // Common logic for navigation
   document.querySelectorAll('[data-translate]').forEach(el => {
       const key = el.getAttribute('data-translate');
       if (data[key]) {
@@ -219,7 +217,6 @@ function toggleLang() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Set default language
   setLanguage('en');
   
   document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
