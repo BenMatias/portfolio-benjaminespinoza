@@ -23,9 +23,9 @@ const translations = {
     ],
     cv_skills_items: {
         tier1: [ { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" } ], 
-        tier2: ["SQL", "Data Modeling", "Business Intelligence", "Dashboard Design", "Storytelling"], 
-        tier3: ["Power Query", "DAX", "LookML", "Process Mapping", "BPMN", "Agile/Scrum", "KPI Development"],
-        tier4: ["Jira / Confluence", "Stakeholder Engagement", "Advanced Excel", "Google Sheets", "Lucidchart / Draw.io", "Data Visualization Principles", "Documentation & Reporting", "Miro"]
+        tier2: ["Data Modeling", "Business Intelligence", "Dashboard Design", "Storytelling", "Stakeholder Engagement"], 
+        tier3: ["Power Query", "DAX", "LookML", "Process Mapping", "BPMN", "Agile/Scrum", "KPI Development", "SQL"],
+        tier4: ["Jira / Confluence", "Advanced Excel", "Google Sheets", "Lucidchart / Draw.io", "Data Visualization Principles", "Documentation & Reporting", "Miro"]
     },
     cv_languages_items: [ { lang: "Spanish", level: "Native", flag: "es" }, { lang: "English", level: "B2 Upper-Intermediate", flag: "gb" }, { lang: "French", level: "A1 Basic", flag: "fr" } ],
     cv_interests_items: [ { name: "Running", icon: "fa-solid fa-person-running" }, { name: "Football", icon: "fa-solid fa-futbol" }, { name: "Gaming", icon: "fa-solid fa-gamepad" }, { name: "Tennis", icon: "fa-solid fa-table-tennis-paddle-ball" }, { name: "Guitar", icon: "fa-solid fa-guitar" }, { name: "Drawing", icon: "fa-solid fa-pencil-alt" }, { name: "Music Festivals", icon: "fa-solid fa-music" } ],
@@ -54,9 +54,9 @@ const translations = {
     ],
     cv_skills_items: {
         tier1: [ { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" } ], 
-        tier2: ["SQL", "Modelado de Datos", "Inteligencia de Negocios", "Diseño de Dashboards", "Storytelling"], 
-        tier3: ["Power Query", "DAX", "LookML", "Mapeo de Procesos", "BPMN", "Agile/Scrum", "Desarrollo de KPIs"],
-        tier4: ["Jira / Confluence", "Gestión de Interesados", "Excel Avanzado", "Google Sheets", "Lucidchart / Draw.io", "Principios de Visualización de Datos", "Documentación y Reportería", "Miro"]
+        tier2: ["Modelado de Datos", "Inteligencia de Negocios", "Diseño de Dashboards", "Storytelling", "Gestión de Interesados"],
+        tier3: ["Power Query", "DAX", "LookML", "Mapeo de Procesos", "BPMN", "Agile/Scrum", "Desarrollo de KPIs", "SQL"],
+        tier4: ["Jira / Confluence", "Excel Avanzado", "Google Sheets", "Lucidchart / Draw.io", "Principios de Visualización de Datos", "Documentación y Reportería", "Miro"]
     },
     cv_languages_items: [ { lang: "Español", level: "Nativo", flag: "es" }, { lang: "Inglés", level: "B2 Intermedio-Alto", flag: "gb" }, { lang: "Francés", level: "A1 Básico", flag: "fr" } ],
     cv_interests_items: [ { name: "Correr", icon: "fa-solid fa-person-running" }, { name: "Fútbol", icon: "fa-solid fa-futbol" }, { name: "Videojuegos", icon: "fa-solid fa-gamepad" }, { name: "Tenis", icon: "fa-solid fa-table-tennis-paddle-ball" }, { name: "Guitarra", icon: "fa-solid fa-guitar" }, { name: "Dibujo", icon: "fa-solid fa-pencil-alt" }, { name: "Festivales", icon: "fa-solid fa-music" } ],
@@ -86,13 +86,13 @@ function populateCvPage(lang) {
     if (getEl('cv-hero-title')) getEl('cv-hero-title').textContent = data.cv_hero_title;
     if (getEl('cv-hero-summary')) getEl('cv-hero-summary').textContent = data.cv_hero_summary;
     if (getEl('download-btn-text')) getEl('download-btn-text').textContent = data.cv_download;
-    if (getEl('work-experience-title')) getEl('work-experience-title').textContent = data.cv_work_title;
-    if (getEl('education-title')) getEl('education-title').textContent = data.cv_education_title;
-    if (getEl('skills-title')) getEl('skills-title').textContent = data.cv_skills_title;
-    if (getEl('languages-title')) getEl('languages-title').textContent = data.cv_languages_title;
-    if (getEl('interests-title')) getEl('interests-title').textContent = data.cv_interests_title;
-    if (getEl('certifications-title')) getEl('certifications-title').textContent = data.cv_certifications_title;
-    if (getEl('badges-title')) getEl('badges-title').textContent = data.cv_badges_title;
+    if (getEl('work-experience-title')) getEl('work-experience-title').innerHTML = `<i class="fas fa-briefcase"></i> ${data.cv_work_title}`;
+    if (getEl('education-title')) getEl('education-title').innerHTML = `<i class="fas fa-graduation-cap"></i> ${data.cv_education_title}`;
+    if (getEl('skills-title')) getEl('skills-title').innerHTML = `<i class="fas fa-star"></i> ${data.cv_skills_title}`;
+    if (getEl('languages-title')) getEl('languages-title').innerHTML = `<i class="fas fa-language"></i> ${data.cv_languages_title}`;
+    if (getEl('interests-title')) getEl('interests-title').innerHTML = `<i class="fas fa-heart"></i> ${data.cv_interests_title}`;
+    if (getEl('certifications-title')) getEl('certifications-title').innerHTML = `<i class="fas fa-certificate"></i> ${data.cv_certifications_title}`;
+    if (getEl('badges-title')) getEl('badges-title').innerHTML = `<i class="fas fa-medal"></i> ${data.cv_badges_title}`;
     if (getEl('credly-link')) getEl('credly-link').querySelector('span').textContent = data.cv_credly_link;
 
     const timelineWork = getEl('timeline-work-content');
@@ -258,7 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // AÑADIDO: Cierra el menú móvil al hacer clic en un enlace
   if (mobileNav) {
     mobileNav.addEventListener('click', (e) => {
         if (e.target.tagName === 'A') {
