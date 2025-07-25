@@ -95,7 +95,7 @@ nav.desktop-nav a:hover { color: var(--light-blue); }
 .cv-hero h1 { font-size: 2.5rem; color: var(--dark-blue); }
 .cv-hero .subtitle { font-size: 1.1rem; color: var(--deep-blue); max-width: 600px; margin: 1rem auto 0 auto; }
 .dark-section-wrapper { background-color: var(--dark-blue); color: var(--white); }
-.dark-section-wrapper .section-title { color: var(--white); }
+.dark-section-wrapper .section-title { color: var(--white); border-left-color: var(--light-blue); }
 .dark-section-wrapper a { color: var(--light-blue); }
 .page-container { padding-top: 2rem; padding-bottom: 2rem; max-width: 960px; }
 .page-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
@@ -120,6 +120,7 @@ nav.desktop-nav a:hover { color: var(--light-blue); }
 .certifications-list li a { text-decoration: none; font-weight: 600; }
 .badge-widgets { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem; }
 .credly-link-styled { display: inline-block; margin-top: 1rem; font-weight: 600; }
+.credly-link-styled:hover { text-decoration: underline; }
 
 /* --- ESTILOS RESPONSIVOS --- */
 @media (max-width: 992px) { .impact-grid { grid-template-columns: repeat(2, 1fr); } }
