@@ -1,5 +1,6 @@
 const translations = {
   en: {
+    // --- Index Page Content ---
     heroTitle: "Business & Data Analyst focused on transforming data into decisions",
     heroSubtitle: "Helping businesses make better decisions through analytics and business intelligence.",
     btnProjects: "View Projects",
@@ -24,9 +25,106 @@ const translations = {
     project1Title: "US Unemployment Analysis",
     project1Description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.",
     project1Button: "View Project",
-    viewAllBtn: "View All Projects"
+    viewAllBtn: "View All Projects",
+    
+    // --- CV Page Content ---
+    cv_title: "CV / Resume",
+    cv_download: "Download PDF",
+    cv_work_title: "Work Experience",
+    cv_education_title: "Education",
+    cv_skills_title: "Skills & Tools",
+    cv_certifications_title: "Certifications",
+    cv_badges_title: "Highlighted Badges",
+    cv_credly_link: "View profile on Credly",
+    cv_work_items: [
+      {
+        date: "May 2023 – Present",
+        title: "Business Analyst",
+        company: "Banco Internacional",
+        url: "https://www.internacional.cl",
+        description: `<ul>
+          <li>Built a company-wide reporting and KPI system from scratch for the Innovation area, where performance tracking and outcome evaluation were previously nonexistent.</li>
+          <li>Created over 20 dashboards for departments such as Innovation, Fraud, Sales, Product Owners, and Strategic Planning.</li>
+          <li>Led and scaled a metrics team, automated processes using ETL pipelines and team-managed databases, ensuring data integrity and scalability.</li>
+          <li>Transitioned to cross-functional squad as Business Analyst: user stories, testing, flows and dashboards.</li>
+        </ul>`
+      },
+      {
+        date: "Sep 2021 – Apr 2023",
+        title: "Data & Business Control Analyst",
+        company: "Lucas Diesel",
+        url: "https://lucasdiesel.cl",
+        description: `<ul>
+          <li>Created a new data analytics function in a company lacking visibility due to shared finance with sister company.</li>
+          <li>Delivered 30+ Power BI reports across operations, sales, inventory, procurement, automotive services and executive dashboards.</li>
+          <li>Automated daily report delivery, saving up to 1 hour daily.</li>
+          <li>Improved annual budgeting from 6 to 2 months over two years.</li>
+        </ul>`
+      },
+      {
+        date: "Nov 2019 – Aug 2021",
+        title: "Financial Performance Analyst",
+        company: "Heavenward Ascensores",
+        url: "https://www.heavenward.cl",
+        description: `<ul>
+          <li>Tracked KPIs and costs for modernization projects.</li>
+          <li>Created dashboards in Excel and Power BI to support strategic decisions.</li>
+          <li>Worked with technical and executive teams to improve customer data insights.</li>
+        </ul>`
+      }
+    ],
+    cv_education_items: [
+        {
+            date: "2024",
+            title: "International Diploma in Digital Transformation",
+            company: "Digital Bank LATAM",
+            url: "https://www.digitalbankla.com",
+            description: ""
+        },
+        {
+            date: "2022",
+            title: "Diploma in Web Design & Programming",
+            company: "Fundación Telefónica & AIEP",
+            url: "https://www.fundaciontelefonica.cl",
+            description: ""
+        },
+        {
+            date: "2022",
+            title: "University Preparation Program",
+            company: "BYU PathwayConnect",
+            url: "https://www.byupathway.edu",
+            description: ""
+        },
+        {
+            date: "2013–2020",
+            title: "Industrial Civil Engineering",
+            company: "Universidad de Valparaíso",
+            url: "https://uv.cl",
+            description: ""
+        }
+    ],
+    cv_skills_items: [
+        { title: "Data", skills: "SQL, Excel, LookML" },
+        { title: "Visualization", skills: "Power BI, Looker Studio, Tableau" },
+        { title: "Methods", skills: "KPIs, Agile, dashboarding, storytelling" }
+    ],
+    cv_certifications_items: [
+        { name: "Qlik Sense Designer", url: "assets/certificates/Certificacion Qlik.pdf" },
+        { name: "Google Tag Manager (Basics)", url: "assets/certificates/Conceptos básicos de Google Tag Manager.pdf" },
+        { name: "Linguaskill English B2", url: "assets/certificates/Linguaskill Cambridge.pdf" },
+        { name: "SQL Certification", url: "assets/certificates/SQL.pdf" },
+        { name: "SSIS Certificate", url: "assets/certificates/SSIS.pdf" },
+        { name: "Tableau & Tableau Prep", url: "assets/certificates/Tableau.pdf" },
+        { name: "User Stories Certification", url: "assets/certificates/User Stories Certiprof.pdf" }
+    ],
+    cv_badges_items: [
+        { id: "80084bf2-8bfb-485a-9815-81fdc3f8d88b" },
+        { id: "19420706-efb7-4da0-a955-2b58c25834dd" },
+        { id: "4a17b3b2-fe50-4165-8cc2-dab375fa8cb7" }
+    ]
   },
   es: {
+    // --- Index Page Content ---
     heroTitle: "Business & Data Analyst enfocado en transformar datos en decisiones",
     heroSubtitle: "Ayudo a las empresas a tomar mejores decisiones a través del análisis y la inteligencia de negocios.",
     btnProjects: "Ver Proyectos",
@@ -42,125 +140,16 @@ const translations = {
     `,
     impactTitle: "Cómo He Generado Impacto",
     impacts: [
-      { icon: "fa-chart-bar", title: "Dashboards que Impulsan Decisiones", text: "Diseñé dashboards de alto impacto para audiencias ejecutivas, industriales y del sector bancario usando Power BI y Looker Studio." },
-      { icon: "fa-bullseye", title: "Implementación de Sistemas de KPIs desde Cero", text: "Establecí marcos de medición de desempeño donde antes no existían, aportando estructura, alineación y mejora continua." },
-      { icon: "fa-clock", title: "Eficiencia a Través de la Automatización", text: "Automatización de tareas recurrentes de reportería para eliminar procesos manuales y optimizar el tiempo." },
-      { icon: "fa-users", title: "Insights para Toda la Organización", text: "Apoyé diversas áreas de negocio con insights accionables que respaldan la toma de decisiones en operaciones, ventas, riesgo, producto y más." }
+        { icon: "fa-chart-bar", title: "Dashboards que Impulsan Decisiones", text: "Diseñé dashboards de alto impacto para audiencias ejecutivas, industriales y del sector bancario usando Power BI y Looker Studio." },
+        { icon: "fa-bullseye", title: "Implementación de Sistemas de KPIs desde Cero", text: "Establecí marcos de medición de desempeño donde antes no existían, aportando estructura, alineación y mejora continua." },
+        { icon: "fa-clock", title: "Eficiencia a Través de la Automatización", text: "Automatización de tareas recurrentes de reportería para eliminar procesos manuales y optimizar el tiempo." },
+        { icon: "fa-users", title: "Insights para Toda la Organización", text: "Apoyé diversas áreas de negocio con insights accionables que respaldan la toma de decisiones en operaciones, ventas, riesgo, producto y más." }
     ],
     projectsTitle: "Proyectos Destacados",
     project1Title: "Análisis de Desempleo en EE.UU.",
     project1Description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.",
     project1Button: "Ver Proyecto",
-    viewAllBtn: "Ver Todos los Proyectos"
-  }
-};
+    viewAllBtn: "Ver Todos los Proyectos",
 
-let currentLang = 'en';
-
-function setLanguage(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-
-  // Update hero
-  document.getElementById("hero-title").textContent = translations[lang].heroTitle;
-  document.getElementById("hero-subtitle").textContent = translations[lang].heroSubtitle;
-  document.getElementById("btn-projects").textContent = translations[lang].btnProjects;
-  document.getElementById("btn-resume").textContent = translations[lang].btnResume;
-  
-  // Update navs
-  document.querySelectorAll('a[href="#about"]').forEach(el => el.textContent = translations[lang].navAbout);
-  document.querySelectorAll('a[href="assets/Benjamin_Espinoza_CV.pdf"]').forEach(el => el.textContent = translations[lang].navResume);
-  document.querySelectorAll('a[href="projects.html"]:not(.btn)').forEach(el => el.textContent = translations[lang].navProjects);
-
-  // Update About me
-  document.getElementById("about-title").textContent = translations[lang].aboutTitle;
-  document.getElementById("about-text-content").innerHTML = translations[lang].aboutContent;
-  
-  // Update Impact
-  document.getElementById("impact-title").textContent = translations[lang].impactTitle;
-  const impactGrid = document.querySelector('.impact-grid');
-  impactGrid.innerHTML = ''; // Clear existing cards
-  translations[lang].impacts.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'impact-card';
-      card.innerHTML = `
-          <i class="fas ${item.icon}"></i>
-          <h3>${item.title}</h3>
-          <p>${item.text}</p>
-      `;
-      impactGrid.appendChild(card);
-  });
-  
-  // Update Projects
-  document.getElementById("projects-title").textContent = translations[lang].projectsTitle;
-  document.getElementById("project-1-title").textContent = translations[lang].project1Title;
-  document.getElementById("project-1-description").textContent = translations[lang].project1Description;
-  document.getElementById("project-1-button").textContent = translations[lang].project1Button;
-  document.getElementById("view-all-btn").textContent = translations[lang].viewAllBtn;
-
-  // Update language toggles
-  document.querySelectorAll(".lang-toggle").forEach(el => {
-    el.innerHTML = lang === "en"
-      ? '<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES'
-      : '<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN';
-  });
-}
-
-function toggleLang() {
-  const nextLang = currentLang === 'en' ? 'es' : 'en';
-  setLanguage(nextLang);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Set initial language
-  setLanguage('en');
-  
-  // Add event listener for language toggles
-  document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
-
-  // Hamburger menu toggle
-  document.getElementById('menu-toggle').addEventListener('click', () => {
-    document.getElementById('mobile-nav').classList.toggle('show');
-  });
-
-  // Carousel logic
-  const carousel = document.getElementById('project-carousel');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
-  const nextBtn = document.querySelector('.carousel-btn.next');
-  let autoScrollInterval;
-
-  if (carousel) {
-    const scrollStep = 316;
-
-    function startAutoScroll() {
-      stopAutoScroll();
-      autoScrollInterval = setInterval(() => {
-        const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-        if (carousel.scrollLeft >= maxScrollLeft - 10) {
-          carousel.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
-        }
-      }, 4000);
-    }
-
-    function stopAutoScroll() {
-      clearInterval(autoScrollInterval);
-    }
-
-    prevBtn.addEventListener('click', () => {
-        stopAutoScroll();
-        carousel.scrollBy({ left: -scrollStep, behavior: 'smooth' });
-    });
-
-    nextBtn.addEventListener('click', () => {
-        stopAutoScroll();
-        carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
-    });
-
-    carousel.addEventListener('mouseenter', stopAutoScroll);
-    carousel.addEventListener('mouseleave', startAutoScroll);
-    
-    startAutoScroll();
-  }
-});
+    // --- CV Page Content ---
+    cv_title:
