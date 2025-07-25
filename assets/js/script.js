@@ -152,4 +152,269 @@ const translations = {
     viewAllBtn: "Ver Todos los Proyectos",
 
     // --- CV Page Content ---
-    cv_title:
+    cv_title: "CV / Currículum",
+    cv_download: "Descargar PDF",
+    cv_work_title: "Experiencia Laboral",
+    cv_education_title: "Educación",
+    cv_skills_title: "Habilidades y Herramientas",
+    cv_certifications_title: "Certificaciones",
+    cv_badges_title: "Insignias Destacadas",
+    cv_credly_link: "Ver perfil en Credly",
+    cv_work_items: [
+        {
+            date: "May 2023 – Actualidad",
+            title: "Business Analyst",
+            company: "Banco Internacional",
+            url: "https://www.internacional.cl",
+            description: `<ul>
+              <li>Desarrollé un sistema de reportes y KPIs desde cero para el área de innovación, donde no existía medición previa.</li>
+              <li>Creé más de 20 dashboards para innovación, fraude, ventas, dueños de productos y planificación.</li>
+              <li>Lideré equipo de métricas que automatizó procesos mediante ETL y base de datos propia.</li>
+              <li>Transición exitosa al rol de Business Analyst en célula ágil con foco en historias de usuario, flujos y pruebas.</li>
+            </ul>`
+        },
+        {
+            date: "Sep 2021 – Abr 2023",
+            title: "Analista de Datos y Control de Gestión",
+            company: "Lucas Diesel",
+            url: "https://lucasdiesel.cl",
+            description: `<ul>
+              <li>Ingresé a una posición nueva para resolver brechas de visibilidad y reportes en una estructura financiera compartida.</li>
+              <li>Generé y automatizé más de 30 dashboards para ventas, inventario, abastecimiento, servicios automotrices, operaciones y gerencia.</li>
+              <li>Automatización diaria ahorró hasta 1 hora por día.</li>
+              <li>Reduje el proceso de presupuesto anual de 6 a 2 meses en dos años consecutivos.</li>
+            </ul>`
+        },
+        {
+            date: "Nov 2019 – Ago 2021",
+            title: "Analista de Control de Gestión",
+            company: "Heavenward Ascensores",
+            url: "https://www.heavenward.cl",
+            description: `<ul>
+              <li>Supervisión de KPIs y control de costos para proyectos de mantenimiento y modernización.</li>
+              <li>Reportes y dashboards en Excel y Power BI para análisis financiero y mejora de tiempos de respuesta.</li>
+            </ul>`
+        }
+    ],
+    cv_education_items: [
+        {
+            date: "2024",
+            title: "Diplomado Internacional en Transformación Digital",
+            company: "Digital Bank LATAM",
+            url: "https://www.digitalbankla.com",
+            description: ""
+        },
+        {
+            date: "2022",
+            title: "Diplomado en Diseño y Programación Web",
+            company: "Fundación Telefónica & AIEP",
+            url: "https://www.fundaciontelefonica.cl",
+            description: ""
+        },
+        {
+            date: "2022",
+            title: "Programa universitario introductorio",
+            company: "BYU PathwayConnect",
+            url: "https://www.byupathway.edu",
+            description: ""
+        },
+        {
+            date: "2013–2020",
+            title: "Ingeniería Civil Industrial",
+            company: "Universidad de Valparaíso",
+            url: "https://uv.cl",
+            description: ""
+        }
+    ],
+    cv_skills_items: [
+        { title: "Datos", skills: "SQL, Excel, LookML" },
+        { title: "Visualización", skills: "Power BI, Looker Studio, Tableau" },
+        { title: "Métodos", skills: "KPIs, Agile, dashboards, storytelling" }
+    ],
+    cv_certifications_items: [
+        { name: "Qlik Sense Diseñador", url: "assets/certificates/Certificacion Qlik.pdf" },
+        { name: "Google Tag Manager (Básico)", url: "assets/certificates/Conceptos básicos de Google Tag Manager.pdf" },
+        { name: "Inglés B2 – Linguaskill", url: "assets/certificates/Linguaskill Cambridge.pdf" },
+        { name: "Certificación SQL", url: "assets/certificates/SQL.pdf" },
+        { name: "Certificación SSIS", url: "assets/certificates/SSIS.pdf" },
+        { name: "Tableau & Tableau Prep", url: "assets/certificates/Tableau.pdf" },
+        { name: "User Stories Certificate", url: "assets/certificates/User Stories Certiprof.pdf" }
+    ],
+    cv_badges_items: [
+        { id: "80084bf2-8bfb-485a-9815-81fdc3f8d88b" },
+        { id: "19420706-efb7-4da0-a955-2b58c25834dd" },
+        { id: "4a17b3b2-fe50-4165-8cc2-dab375fa8cb7" }
+    ]
+  }
+};
+
+let currentLang = 'en';
+
+// --- NUEVA FUNCIÓN PARA POBLAR LA PÁGINA DE CV ---
+function populateCvPage(lang) {
+    const data = translations[lang];
+
+    // Títulos de secciones y botones
+    document.getElementById('cv-title').textContent = data.cv_title;
+    document.getElementById('download-btn-text').textContent = data.cv_download;
+    document.getElementById('work-experience-title').textContent = data.cv_work_title;
+    document.getElementById('education-title').textContent = data.cv_education_title;
+    document.getElementById('skills-title').textContent = data.cv_skills_title;
+    document.getElementById('certifications-title').textContent = data.cv_certifications_title;
+    document.getElementById('badges-title').textContent = data.cv_badges_title;
+    document.querySelector('#credly-link span').textContent = data.cv_credly_link;
+
+    // Generar Experiencia Laboral
+    const workContainer = document.getElementById('work-experience-content');
+    workContainer.innerHTML = data.cv_work_items.map(item => `
+        <div class="timeline-item">
+            <div class="timeline-date">${item.date}</div>
+            <div class="timeline-content">
+                <h3><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></h3>
+                <p class="timeline-company">${item.company}</p>
+                ${item.description}
+            </div>
+        </div>
+    `).join('');
+
+    // Generar Educación
+    const educationContainer = document.getElementById('education-content');
+    educationContainer.innerHTML = data.cv_education_items.map(item => `
+        <div class="timeline-item">
+            <div class="timeline-date">${item.date}</div>
+            <div class="timeline-content">
+                <h3><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></h3>
+                <p class="timeline-company">${item.company}</p>
+            </div>
+        </div>
+    `).join('');
+
+    // Generar Habilidades
+    const skillsContainer = document.getElementById('skills-content');
+    skillsContainer.innerHTML = data.cv_skills_items.map(item => `
+        <div class="skill-category">
+            <h4>${item.title}</h4>
+            <ul>
+                <li>${item.skills}</li>
+            </ul>
+        </div>
+    `).join('');
+
+    // Generar Certificaciones
+    const certsContainer = document.getElementById('certifications-content');
+    certsContainer.innerHTML = data.cv_certifications_items.map(item => `
+        <li><a href="${item.url}" download>${item.name}</a></li>
+    `).join('');
+    
+    // Generar Insignias
+    const badgesContainer = document.getElementById('badges-content');
+    badgesContainer.innerHTML = data.cv_badges_items.map(item => `
+        <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="${item.id}" data-share-badge-host="https://www.credly.com"></div>
+    `).join('');
+    
+    // Forzar a Credly a re-renderizar los badges
+    if (window.Credly) {
+        window.Credly.init();
+    }
+}
+
+
+function setLanguage(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+
+  // --- LÓGICA PARA LA PÁGINA DE INICIO (INDEX) ---
+  if (document.getElementById('hero-title')) {
+      document.getElementById("hero-title").textContent = translations[lang].heroTitle;
+      document.getElementById("hero-subtitle").textContent = translations[lang].heroSubtitle;
+      document.getElementById("about-title").textContent = translations[lang].aboutTitle;
+      document.getElementById("about-text-content").innerHTML = translations[lang].aboutContent;
+      document.getElementById("impact-title").textContent = translations[lang].impactTitle;
+      document.getElementById("projects-title").textContent = translations[lang].projectsTitle;
+      document.getElementById("project-1-title").textContent = translations[lang].project1Title;
+      document.getElementById("project-1-description").textContent = translations[lang].project1Description;
+      document.getElementById("project-1-button").textContent = translations[lang].project1Button;
+      document.getElementById("view-all-btn").textContent = translations[lang].viewAllBtn;
+      
+      const impactGrid = document.querySelector('.impact-grid');
+      impactGrid.innerHTML = '';
+      translations[lang].impacts.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'impact-card';
+          card.innerHTML = `<i class="fas ${item.icon}"></i><h3>${item.title}</h3><p>${item.text}</p>`;
+          impactGrid.appendChild(card);
+      });
+  }
+  
+  // --- LÓGICA PARA LA PÁGINA DE CV ---
+  if (document.getElementById('cv-title')) {
+      populateCvPage(lang);
+  }
+
+  // --- LÓGICA COMÚN PARA TODAS LAS PÁGINAS ---
+  document.querySelectorAll('.desktop-nav a[href="index.html#about"], .mobile-nav a[href="index.html#about"]').forEach(el => el.textContent = translations[lang].navAbout);
+  document.querySelectorAll('.desktop-nav a[href="cv.html"], .mobile-nav a[href="cv.html"]').forEach(el => el.textContent = translations[lang].navResume);
+  document.querySelectorAll('.desktop-nav a[href="projects.html"], .mobile-nav a[href="projects.html"]').forEach(el => el.textContent = translations[lang].navProjects);
+  document.getElementById("btn-projects").textContent = translations[lang].btnProjects;
+  document.getElementById("btn-resume").textContent = translations[lang].btnResume;
+
+  document.querySelectorAll(".lang-toggle").forEach(el => {
+    el.innerHTML = lang === "en"
+      ? '<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES'
+      : '<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN';
+  });
+}
+
+function toggleLang() {
+  const nextLang = currentLang === 'en' ? 'es' : 'en';
+  setLanguage(nextLang);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setLanguage(currentLang);
+  
+  document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
+
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.querySelector('.mobile-nav').classList.toggle('show');
+  });
+
+  const carousel = document.getElementById('project-carousel');
+  if (carousel) {
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let autoScrollInterval;
+    const scrollStep = 316;
+
+    function startAutoScroll() {
+      stopAutoScroll();
+      autoScrollInterval = setInterval(() => {
+        const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+        if (carousel.scrollLeft >= maxScrollLeft - 10) {
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
+        }
+      }, 4000);
+    }
+
+    function stopAutoScroll() {
+      clearInterval(autoScrollInterval);
+    }
+
+    prevBtn.addEventListener('click', () => {
+        stopAutoScroll();
+        carousel.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        stopAutoScroll();
+        carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
+    });
+
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', startAutoScroll);
+    
+    startAutoScroll();
+  }
+});
