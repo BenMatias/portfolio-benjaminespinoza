@@ -125,7 +125,6 @@ p.timeline-company a:hover { text-decoration: none; }
 .lineup-tier-1 {
   flex-wrap: nowrap;
 }
-
 .lineup-tier-1 .skill { 
   font-size: clamp(1.6rem, 4vw, 2.4rem); 
   font-weight: 700; 
@@ -136,12 +135,10 @@ p.timeline-company a:hover { text-decoration: none; }
   gap: 1rem;
   padding: 0.75rem 1.5rem;
 }
-
 .lineup-tier-1 .skill-logo { 
   height: 2.5rem; 
   filter: brightness(0) invert(1);
 }
-
 .lineup-tier-1 .skill:nth-child(1) { background-color: var(--lineup-orange); }
 .lineup-tier-1 .skill:nth-child(2) { background-color: var(--lineup-purple); }
 .lineup-tier-1 .skill:nth-child(3) { background-color: var(--lineup-green); }
@@ -149,10 +146,8 @@ p.timeline-company a:hover { text-decoration: none; }
 .lineup-tier-2 { padding: 0.5rem; background-color: var(--lineup-yellow); }
 .lineup-tier-2 .skill { font-size: clamp(1.2rem, 4vw, 1.8rem); color: var(--dark-blue); font-weight: 700; }
 
+.lineup-tier-3 { padding: 0 1rem; }
 .lineup-tier-3 .skill { font-size: 0.9rem; font-weight: 600; color: var(--white); background-color: var(--mid-blue); border-radius: 4px; }
-
-.lineup-tier-4 { border-top: 1px solid var(--mid-blue); padding-top: 1.5rem; margin-top: 2rem; }
-.lineup-tier-4 .skill { font-size: 1rem; font-weight: 600; color: var(--light-blue); }
 
 .languages-list { display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: flex-start; align-items: center; }
 .language-item { display: flex; align-items: center; gap: 0.75rem; }
