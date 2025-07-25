@@ -16,10 +16,19 @@ a { text-decoration: none; color: inherit; }
 /* --- HEADER Y NAVEGACIÓN --- */
 .header-hero-wrapper { 
     background: var(--dark-blue); color: var(--white);
-    position: sticky; top: 0; z-index: 1000;
 }
-.header-hero-wrapper.with-bg-image { background: url('../img/Header.jpg') center/cover no-repeat; }
-header.container { padding: 1rem 0; display: flex; justify-content: space-between; align-items: center; position: relative; }
+/* Se aplica la imagen de fondo solo si existe esta clase (en index.html) */
+.header-hero-wrapper.with-bg-image { 
+    background: url('../img/Header.jpg') center/cover no-repeat;
+}
+/* Se hace fijo el header SÓLO en la página de CV (que tiene la clase page-cv en el body) */
+.page-cv .header-hero-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header.container { padding: 1rem 0; display: flex; justify-content: space-between; align-items: center; }
+/* ... (resto del código CSS es igual al anterior) ... */
 .logo img { height: 44px; transition: transform 0.3s ease; }
 .logo img:hover { transform: scale(1.05); }
 nav.desktop-nav { display: flex; gap: 1.5rem; align-items: center; }
@@ -55,7 +64,43 @@ nav.desktop-nav a:hover { color: var(--light-blue); }
 
 /* --- SECCIONES INDEX --- */
 .about-me { background-color: var(--almost-white); }
-/* ... (resto de estilos del index) ... */
+.about-container { display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; }
+.about-image { flex: 1 1 300px; text-align: center; }
+.about-image img { width: 100%; max-width: 320px; border-radius: 12px; }
+.about-text { flex: 2 1 600px; }
+#about-text-content { color: var(--deep-blue); font-size: 1rem; line-height: 1.7; }
+#about-text-content p { margin-bottom: 1rem; }
+.impact { background-color: var(--dark-blue); }
+.impact .section-title { color: var(--white); border-left-color: var(--light-blue); }
+.impact-container { max-width: 1200px; margin: 0 auto; }
+.impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.impact-card { background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: left; }
+.impact-card i { font-size: 2rem; color: var(--accent); margin-bottom: 1rem; }
+.impact-card h3 { font-size: 1.1rem; color: var(--dark-blue); margin-bottom: 0.5rem; }
+.impact-card p { font-size: 0.95rem; color: var(--deep-blue); line-height: 1.5; }
+.projects { background-color: var(--white); }
+.projects-container { text-align: center; }
+.carousel-wrapper { position: relative; }
+.carousel { display: flex; gap: 1.5rem; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; padding: 1rem 0.5rem; -ms-overflow-style: none; scrollbar-width: none; }
+.carousel::-webkit-scrollbar { display: none; }
+.project-card { flex: 0 0 300px; background-color: var(--almost-white); border-radius: 10px; scroll-snap-align: start; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
+.project-card img { width: 100%; height: auto; border-bottom: 1px solid #ddd; border-top-left-radius: 10px; border-top-right-radius: 10px; }
+.project-card-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column; }
+.project-card h3 { color: var(--dark-blue); margin-bottom: 0.5rem; }
+.project-card p { font-size: 0.95rem; color: var(--deep-blue); margin-bottom: 1rem; flex-grow: 1; }
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--dark-blue); color: #fff; border: none; border-radius: 50%; font-size: 1.5rem; padding: 0.25rem 0.6rem; cursor: pointer; z-index: 5; opacity: 0.8; transition: opacity 0.3s ease; }
+.carousel-btn:hover { opacity: 1; }
+.carousel-btn.prev { left: -25px; }
+.carousel-btn.next { right: -25px; }
+.view-all { margin-top: 2.5rem; }
+
+/* --- FOOTER --- */
+.footer { background-color: var(--dark-blue); color: var(--white); padding: 2rem 1rem; text-align: center; font-size: 0.9rem; }
+.footer-contacts { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; margin-bottom: 1rem; }
+.footer-socials { margin-bottom: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; }
+.footer-socials a { color: var(--white); font-size: 1.75rem; transition: transform 0.3s ease, color 0.3s ease; }
+.footer-socials a:hover { color: var(--light-blue); transform: scale(1.1); }
+.footer-bottom { font-size: 0.8rem; opacity: 0.7; }
 
 /* --- ESTILOS PARA LA PÁGINA DE CV --- */
 .cv-hero { background-color: var(--almost-white); padding: 3rem 0; text-align: center; border-bottom: 1px solid #e0eaf1; }
@@ -104,7 +149,7 @@ nav.desktop-nav a:hover { color: var(--light-blue); }
 .credly-link-styled:hover { text-decoration: underline; }
 
 /* --- ESTILOS RESPONSIVOS --- */
-@media (max-width: 992px) { /* Estilos Index */ }
+@media (max-width: 992px) { .impact-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) {
   nav.desktop-nav, .carousel-btn { display: none; }
   .hamburger { display: block; }
