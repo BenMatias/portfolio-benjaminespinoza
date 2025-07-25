@@ -15,14 +15,12 @@ a { text-decoration: none; color: inherit; }
 .section, .cv-section { padding: 4rem 0; }
 .section-title { font-size: 2rem; color: var(--dark-blue); margin-bottom: 2rem; border-left: 6px solid var(--mid-blue); padding-left: 1rem; }
 
-/* --- INICIO DE CAMBIOS: Estilos para Iconos de Sección --- */
 .section-title i {
   font-size: 1.5rem;
   margin-right: 0.75rem;
   color: var(--accent);
-  vertical-align: -2px; /* Alineación fina del ícono con el texto */
+  vertical-align: -2px;
 }
-/* --- FIN DE CAMBIOS --- */
 
 
 /* --- HEADER Y NAVEGACIÓN --- */
@@ -149,7 +147,6 @@ a:focus, button:focus, [tabindex="0"]:focus, input:focus {
 .timeline-item:nth-child(odd):after { right: -10px; }
 .timeline-item:nth-child(even):after { left: -10px; }
 
-/* --- INICIO DE CAMBIOS: Borde superior para vitalidad --- */
 .timeline-content-block { 
     background: var(--white); 
     color: var(--dark-blue); 
@@ -158,10 +155,9 @@ a:focus, button:focus, [tabindex="0"]:focus, input:focus {
     border-radius: 8px; 
     box-shadow: 0 5px 25px rgba(0,0,0,0.07); 
     width: 100%;
-    border-top: 4px solid var(--accent); /* Borde de acento */
-    overflow: hidden; /* Asegura que el borde se vea bien con el border-radius */
+    border-top: 4px solid var(--accent);
+    overflow: hidden;
 }
-/* --- FIN DE CAMBIOS --- */
 
 .timeline-item:nth-child(odd) .timeline-content-block { margin-right: 3rem; }
 .timeline-item:nth-child(even) .timeline-content-block { margin-left: 3rem; }
@@ -207,7 +203,20 @@ p.timeline-company a:hover {
 
 /* --- SKILLS LINEUP --- */
 .skills-lineup { font-family: 'Oswald', sans-serif; text-align: center; padding: 2rem 0; }
-.lineup-tier { margin-bottom: 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; align-items: center; }
+
+/* --- INICIO DE CAMBIOS: Estilos para Skills Lineup --- */
+.lineup-tier {
+  margin-bottom: 1rem; /* Reducido para un look más compacto */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  width: 100%; /* CLAVE: Fuerza a todos los tiers a tener el mismo ancho */
+  padding: 0.75rem 1rem; /* CLAVE: Padding consistente para todos */
+}
+/* --- FIN DE CAMBIOS --- */
+
 .lineup-tier .skill { color: var(--white); padding: 0.5rem 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
 
 .lineup-tier-1 { flex-wrap: nowrap; }
@@ -217,13 +226,12 @@ p.timeline-company a:hover {
 .lineup-tier-1 .skill:nth-child(2) { background-color: var(--lineup-purple); }
 .lineup-tier-1 .skill:nth-child(3) { background-color: var(--lineup-green); }
 
-.lineup-tier-2 { padding: 0.5rem; background-color: var(--lineup-yellow); }
+.lineup-tier-2 { background-color: var(--lineup-yellow); }
 .lineup-tier-2 .skill { font-size: clamp(1.2rem, 4vw, 1.8rem); color: var(--dark-blue); font-weight: 700; }
 
-.lineup-tier-3 { padding: 0.5rem; background-color: var(--lineup-cyan); }
+.lineup-tier-3 { background-color: var(--lineup-cyan); }
 .lineup-tier-3 .skill { font-size: clamp(1.0rem, 3.5vw, 1.5rem); color: var(--dark-blue); font-weight: 700; }
 
-.lineup-tier-4 { padding: 0 1rem; }
 .lineup-tier-4 .skill { font-size: 0.9rem; font-weight: 600; color: var(--white); background-color: var(--mid-blue); border-radius: 4px; }
 
 .languages-list { display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: flex-start; align-items: center; }
