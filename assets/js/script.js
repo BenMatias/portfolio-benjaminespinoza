@@ -48,9 +48,7 @@ const translations = {
     ],
     cv_skills_items: [
         { category: "Visualization", skills: [
-            { name: "Power BI", logo: "assets/img/logos/power-bi.png" },
-            { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" },
-            { name: "Tableau", logo: "assets/img/logos/tableau.png" }
+            { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" }
         ]},
         { category: "Data", skills: [
             { name: "SQL", logo: null }, { name: "Excel", logo: null }, { name: "LookML", logo: null }
@@ -59,7 +57,9 @@ const translations = {
             { name: "KPIs", logo: null }, { name: "Agile", logo: null }, { name: "Storytelling", logo: null }
         ]}
     ],
-    cv_languages_items: [ { lang: "Spanish", level: "Native" }, { lang: "English", level: "B2 Upper-Intermediate" }, { lang: "French", level: "A1" } ],
+    cv_languages_items: [
+        { lang: "Spanish", level: "Native", flag: "es" }, { lang: "English", level: "B2 Upper-Intermediate", flag: "gb" }, { lang: "French", level: "A1", flag: "fr" }
+    ],
     cv_interests_items: [
         { name: "Running", icon: "fa-solid fa-person-running" }, { name: "Football", icon: "fa-solid fa-futbol" },
         { name: "Gaming", icon: "fa-solid fa-gamepad" }, { name: "Guitar", icon: "fa-solid fa-guitar" },
@@ -76,8 +76,10 @@ const translations = {
     // --- Index Page Content ---
     heroTitle: "Business & Data Analyst enfocado en transformar datos en decisiones", heroSubtitle: "Ayudo a las empresas a tomar mejores decisiones a través del análisis y la inteligencia de negocios.",
     btnProjects: "Ver Proyectos", btnResume: "Ver CV", navAbout: "Sobre mí", navResume: "CV", navProjects: "Proyectos",
-    aboutTitle: "Sobre mí", aboutContent: `<p>Soy Benjamin Espinoza... (contenido completo)</p>`,
-    impactTitle: "Cómo He Generado Impacto", impacts: [ /*...*/ ], projectsTitle: "Proyectos Destacados", /*...*/
+    aboutTitle: "Sobre mí", aboutContent: `<p>Soy Benjamin Espinoza, Business & Data Analyst con formación en Ingeniería Civil Industrial y experiencia en análisis de datos, reportería y colaboración con áreas de negocio. Me apasiona resolver problemas complejos con soluciones simples y escalables.</p><p>He trabajado en empresas de servicios, ventas y banca, creando dashboards, definiendo KPIs desde cero y promoviendo el uso estratégico de los datos. Traduzco necesidades de negocio en insights accionables.</p><p>Padre, aprendiz permanente y amante de la música y la mejora continua. Actualmente perfecciono mi inglés, francés y conocimientos en estrategia de producto.</p>`,
+    impactTitle: "Cómo He Generado Impacto", impacts: [ { icon: "fa-chart-bar", title: "Dashboards que Impulsan Decisiones", text: "Diseñé dashboards de alto impacto para audiencias ejecutivas, industriales y del sector bancario usando Power BI y Looker Studio." }, { icon: "fa-bullseye", title: "Implementación de Sistemas de KPIs desde Cero", text: "Establecí marcos de medición de desempeño donde antes no existían, aportando estructura, alineación y mejora continua." }, { icon: "fa-clock", title: "Eficiencia a Través de la Automatización", text: "Automatización de tareas recurrentes de reportería para eliminar procesos manuales y optimizar el tiempo." }, { icon: "fa-users", title: "Insights para Toda la Organización", text: "Apoyé diversas áreas de negocio con insights accionables que respaldan la toma de decisiones en operaciones, ventas, riesgo, producto y más." } ],
+    projectsTitle: "Proyectos Destacados", project1Title: "Análisis de Desempleo en EE.UU.", project1Description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.",
+    project1Button: "Ver Proyecto", viewAllBtn: "Ver Todos los Proyectos",
 
     // --- CV Page Content ---
     cv_hero_title: "Mi Trayectoria Profesional", cv_hero_summary: "Un resumen de mi experiencia transformando datos en decisiones estratégicas a través del análisis y la inteligencia de negocios.",
@@ -89,7 +91,12 @@ const translations = {
         { date: "Sep 2021 – Abr 2023", title: "Analista de Datos y Control de Gestión", company: "Lucas Diesel", url: "https://lucasdiesel.cl", logo: "assets/img/logos/lucas-diesel.png", description: `<ul><li>Ingresé a una posición nueva para resolver brechas...</li></ul>` },
         { date: "Nov 2019 – Ago 2021", title: "Analista de Control de Gestión", company: "Heavenward Ascensores", url: "https://www.heavenward.cl", logo: "assets/img/logos/heavenward.png", description: `<ul><li>Supervisión de KPIs y control de costos...</li></ul>` }
     ],
-    cv_education_items: [ /*...*/ ],
+    cv_education_items: [
+        { date: "2024", title: "Diplomado Internacional en Transformación Digital", company: "Digital Bank LATAM", url: "https://www.digitalbankla.com" },
+        { date: "2022", title: "Diplomado en Diseño y Programación Web", company: "Fundación Telefónica & AIEP", url: "https://www.fundaciontelefonica.cl" },
+        { date: "2022", title: "Programa universitario introductorio", company: "BYU PathwayConnect", url: "https://www.byupathway.edu" },
+        { date: "2013–2020", title: "Ingeniería Civil Industrial", company: "Universidad de Valparaíso", url: "https://uv.cl" }
+    ],
     cv_skills_items: [
         { category: "Visualización", skills: [
             { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" }
@@ -101,13 +108,20 @@ const translations = {
             { name: "KPIs", logo: null }, { name: "Agile", logo: null }, { name: "Storytelling", logo: null }
         ]}
     ],
-    cv_languages_items: [ { lang: "Español", level: "Nativo" }, { lang: "Inglés", level: "B2 Intermedio-Alto" }, { lang: "Francés", level: "A1" } ],
+    cv_languages_items: [
+        { lang: "Español", level: "Nativo", flag: "es" }, { lang: "Inglés", level: "B2 Intermedio-Alto", flag: "gb" }, { lang: "Francés", level: "A1", flag: "fr" }
+    ],
     cv_interests_items: [
         { name: "Correr", icon: "fa-solid fa-person-running" }, { name: "Fútbol", icon: "fa-solid fa-futbol" },
         { name: "Videojuegos", icon: "fa-solid fa-gamepad" }, { name: "Guitarra", icon: "fa-solid fa-guitar" },
         { name: "Dibujo", icon: "fa-solid fa-pencil-alt" }, { name: "Tenis", icon: "fa-solid fa-tennis-ball" }
     ],
-    cv_certifications_items: [ /*...*/ ]
+    cv_certifications_items: [
+        { name: "Qlik Sense Diseñador", url: "assets/certificates/Certificacion Qlik.pdf" }, { name: "Google Tag Manager (Básico)", url: "assets/certificates/Conceptos básicos de Google Tag Manager.pdf" },
+        { name: "Inglés B2 – Linguaskill", url: "assets/certificates/Linguaskill Cambridge.pdf" }, { name: "Certificación SQL", url: "assets/certificates/SQL.pdf" },
+        { name: "Certificación SSIS", url: "assets/certificates/SSIS.pdf" }, { name: "Tableau & Tableau Prep", url: "assets/certificates/Tableau.pdf" },
+        { name: "User Stories Certificate", url: "assets/certificates/User Stories Certiprof.pdf" }
+    ]
   }
 };
 
@@ -117,7 +131,7 @@ function populateCvPage(lang) {
     const data = translations[lang];
     const getEl = (id) => document.getElementById(id);
 
-    // Poblar textos
+    // Populate texts
     if (getEl('cv-hero-title')) getEl('cv-hero-title').textContent = data.cv_hero_title;
     if (getEl('cv-hero-summary')) getEl('cv-hero-summary').textContent = data.cv_hero_summary;
     if (getEl('download-btn-text')) getEl('download-btn-text').textContent = data.cv_download;
@@ -130,18 +144,18 @@ function populateCvPage(lang) {
     if (getEl('badges-title')) getEl('badges-title').textContent = data.cv_badges_title;
     if (getEl('credly-link')) getEl('credly-link').querySelector('span').textContent = data.cv_credly_link;
     
-    // Generar Experiencia Laboral (Enlaces Corregidos)
+    // Generate Work Experience (Links corrected)
     const workContainer = getEl('work-experience-content');
     if(workContainer) workContainer.innerHTML = data.cv_work_items.map(item => `<div class="timeline-item"><div class="timeline-date">${item.date}</div><div class="timeline-content"><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3>${item.title}</h3><p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>${item.description}</div></div>`).join('');
     
-    // Generar Educación (Enlaces Corregidos)
+    // Generate Education (Links corrected)
     const eduContainer = getEl('education-content');
     if(eduContainer) eduContainer.innerHTML = data.cv_education_items.map(item => `<div class="timeline-item"><div class="timeline-date">${item.date}</div><div class="timeline-content"><h3>${item.title}</h3><p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p></div></div>`).join('');
 
-    // Generar Habilidades por Categoría
+    // Generate Skills by Category
     const skillsContainer = getEl('skills-content');
     if(skillsContainer) {
-        skillsContainer.innerHTML = ''; // Limpiar contenedor
+        skillsContainer.innerHTML = ''; // Clear container
         data.cv_skills_items.forEach(category => {
             const categoryHtml = `
                 <div class="skill-category-wrapper">
@@ -151,24 +165,32 @@ function populateCvPage(lang) {
                             if (item.logo) {
                                 return `<div class="skill-item"><img src="${item.logo}" alt="${item.name} Logo"><p>${item.name}</p></div>`;
                             } else {
-                                return `<div class="skill-item-text"><p>${item.name}</p></div>`;
+                                return `<div class="skill-tag"><p>${item.name}</p></div>`;
                             }
                         }).join('')}
                     </div>
-                </div>
-            `;
+                </div>`;
             skillsContainer.innerHTML += categoryHtml;
         });
     }
 
-    // Generar Idiomas
+    // Generate Languages
     const langContainer = getEl('languages-content');
-    if(langContainer) langContainer.innerHTML = data.cv_languages_items.map(item => `<div class="language-item"><p><strong>${item.lang}</strong></p><p class="lang-level">${item.level}</p></div>`).join('');
+    if(langContainer) langContainer.innerHTML = data.cv_languages_items.map(item => `
+        <div class="language-item">
+            <img src="https://flagcdn.com/w40/${item.flag}.png" alt="${item.lang} flag">
+            <div>
+                <p><strong>${item.lang}</strong></p>
+                <p class="lang-level">${item.level}</p>
+            </div>
+        </div>
+    `).join('');
 
-    // Generar Intereses con Iconos
+    // Generate Interests
     const interestsContainer = getEl('interests-content');
     if(interestsContainer) interestsContainer.innerHTML = data.cv_interests_items.map(item => `<div class="interest-item"><i class="${item.icon}"></i><p>${item.name}</p></div>`).join('');
 
+    // Generate Certifications
     const certsContainer = getEl('certifications-content');
     if(certsContainer) certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="${item.url}" download>${item.name}</a></li>`).join('');
 }
@@ -178,9 +200,8 @@ function setLanguage(lang) {
   document.documentElement.lang = lang;
   const data = translations[lang];
 
-  // Lógica para la página de inicio (INDEX)
   const heroTitle = document.getElementById('hero-title');
-  if (heroTitle) {
+  if (heroTitle) { // Logic for index.html
       heroTitle.textContent = data.heroTitle;
       document.getElementById("hero-subtitle").textContent = data.heroSubtitle;
       document.getElementById("about-title").textContent = data.aboutTitle;
@@ -205,20 +226,19 @@ function setLanguage(lang) {
       document.getElementById("btn-resume").textContent = data.btnResume;
   }
   
-  // Lógica para la página de CV
   const cvHeroTitle = document.getElementById('cv-hero-title');
-  if (cvHeroTitle) {
+  if (cvHeroTitle) { // Logic for cv.html
       populateCvPage(lang);
   }
 
-  // Lógica común para la navegación en ambas páginas
+  // Common logic for navigation
   document.querySelectorAll('.desktop-nav a[href="index.html#about"], .mobile-nav a[href="index.html#about"]').forEach(el => { if(el) el.textContent = data.navAbout });
   document.querySelectorAll('.desktop-nav a[href="cv.html"], .mobile-nav a[href="cv.html"]').forEach(el => { if(el) el.textContent = data.navResume });
   document.querySelectorAll('.desktop-nav a[href="projects.html"], .mobile-nav a[href="projects.html"]').forEach(el => { if(el) el.textContent = data.navProjects });
 
-  // Lógica común para el conmutador de idioma
+  // Common logic for language toggle
   document.querySelectorAll(".lang-toggle").forEach(el => {
-    el.innerHTML = lang === "en" ? '<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES' : '<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN';
+    el.innerHTML = lang === "en" ? `<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES` : `<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN`;
   });
 }
 
