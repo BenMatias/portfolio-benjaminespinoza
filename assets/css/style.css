@@ -122,13 +122,26 @@ p.timeline-company a:hover { text-decoration: none; }
 .lineup-tier { margin-bottom: 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; align-items: center; }
 .lineup-tier .skill { color: var(--white); padding: 0.5rem 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
 
-/* Nueva regla para mantener los headliners en una línea */
 .lineup-tier-1 {
   flex-wrap: nowrap;
 }
 
-.lineup-tier-1 .skill { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 700; line-height: 1.2; }
-.lineup-tier-1 .skill-logo { height: 2.8rem; vertical-align: middle; margin-right: 1rem; filter: brightness(0) invert(1); }
+.lineup-tier-1 .skill { 
+  font-size: clamp(1.6rem, 4vw, 2.4rem); 
+  font-weight: 700; 
+  line-height: 1.2; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.lineup-tier-1 .skill-logo { 
+  height: 2.5rem; 
+  filter: brightness(0) invert(1);
+}
+
 .lineup-tier-1 .skill:nth-child(1) { background-color: var(--lineup-orange); }
 .lineup-tier-1 .skill:nth-child(2) { background-color: var(--lineup-purple); }
 .lineup-tier-1 .skill:nth-child(3) { background-color: var(--lineup-green); }
@@ -214,7 +227,6 @@ p.timeline-company a:hover { text-decoration: none; }
   .timeline-item::after { left: 1px; }
   .certifications-list { columns: 1; }
   
-  /* Permite que los headliners se ajusten en móvil */
   .lineup-tier-1 {
       flex-wrap: wrap;
   }
