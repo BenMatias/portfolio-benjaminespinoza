@@ -284,9 +284,10 @@
       }
 
       .impact-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem;
+        display: grid;
+        /* UPDATED: Define 4 columns for desktop */
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
       }
       
       .impact-card {
@@ -439,6 +440,13 @@
       }
 
       /* --- RESPONSIVE STYLES --- */
+      @media (max-width: 992px) {
+        /* UPDATED: Responsive rule for Impact Grid on tablets */
+        .impact-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
       @media (max-width: 768px) {
           nav.desktop-nav {
               display: none;
@@ -447,8 +455,15 @@
               display: block;
           }
           .carousel-btn {
-              display: none; /* Oculta botones en móvil, el scroll es táctil */
+              display: none; /* Hide buttons on mobile, scroll is touch-based */
           }
+      }
+
+      @media (max-width: 576px) {
+        /* UPDATED: Responsive rule for Impact Grid on mobile */
+        .impact-grid {
+          grid-template-columns: 1fr;
+        }
       }
       
     </style>
@@ -630,10 +645,11 @@ function setLanguage(lang) {
   document.querySelectorAll('a[href="#about"]').forEach(el => el.textContent = translations[lang].navAbout);
   document.querySelectorAll('a[href="cv.html"]').forEach(el => el.textContent = translations[lang].navResume);
   document.querySelectorAll('a[href="projects.html"]').forEach(el => {
-      // Evita cambiar el texto de los botones "View All" y similares
       if(el.classList.contains('btn')) {
+          // This handles buttons like "View Projects" inside the hero
           el.textContent = translations[lang].btnProjects;
       } else {
+          // This handles the main navigation link
           el.textContent = translations[lang].navProjects;
       }
   });
@@ -701,6 +717,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function startAutoScroll() {
     stopAutoScroll(); // Prevent multiple intervals
     autoScrollInterval = setInterval(() => {
+      if (!carousel) return;
       const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
       if (carousel.scrollLeft >= maxScrollLeft - 10) {
         carousel.scrollTo({ left: 0, behavior: 'smooth' });
@@ -714,18 +731,20 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(autoScrollInterval);
   }
 
-  prevBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: -scrollStep, behavior: 'smooth' });
-  });
+  if (carousel) {
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+    });
 
-  nextBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
-  });
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
+    });
 
-  carousel.addEventListener('mouseenter', stopAutoScroll);
-  carousel.addEventListener('mouseleave', startAutoScroll);
-  
-  startAutoScroll();
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', startAutoScroll);
+    
+    startAutoScroll();
+  }
 });
 </script>
 </body>
