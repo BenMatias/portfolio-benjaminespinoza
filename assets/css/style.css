@@ -202,28 +202,31 @@ p.timeline-company a:hover {
 .timeline-content-block ul { padding-left: 1.75rem; margin-top: 1rem; line-height: 1.7; }
 
 
-/* --- INICIO DE CAMBIOS: Nuevo Diseño "Nube de Habilidades" --- */
+/* --- INICIO DE CAMBIOS: Nuevo Diseño "Embudo de Competencias" --- */
 
 .skills-lineup { 
   font-family: 'Oswald', sans-serif; 
-  text-align: center; 
+  display: flex; /* Usamos flex en el contenedor principal */
+  flex-direction: column; /* Para apilar los tiers verticalmente */
+  align-items: center; /* Para centrar los tiers horizontalmente */
   padding: 2rem 0; 
 }
 .lineup-tier {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.75rem; /* Espacio entre píldoras */
+  gap: 0.75rem;
   align-items: center;
-  margin-bottom: 2rem; /* Espacio entre tiers */
+  margin-bottom: 2rem;
+  width: 100%; /* Permitimos que ocupe el 100% de su max-width */
 }
 
-/* Estilo base para todas las "píldoras" de habilidad */
+/* Base de las píldoras (sin cambios) */
 .lineup-tier .skill {
   padding: 0.5rem 1.25rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-radius: 2rem; /* Píldoras redondeadas */
+  border-radius: 2rem;
   font-weight: 700;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -232,8 +235,10 @@ p.timeline-company a:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-
-/* Tier 1: Headliners - Grandes y con color de marca */
+/* Tier 1: Headliners (los más anchos) */
+.lineup-tier-1 {
+  max-width: 100%; /* Ancho completo */
+}
 .lineup-tier-1 .skill {
   font-size: clamp(1.4rem, 4vw, 1.8rem);
   color: var(--white);
@@ -251,26 +256,35 @@ p.timeline-company a:hover {
 .lineup-tier-1 .skill:nth-child(3) { background-color: var(--lineup-green); }
 
 
-/* Tier 2: Habilidades Principales */
+/* Tier 2: Ancho intermedio */
+.lineup-tier-2 {
+  max-width: 90%;
+}
 .lineup-tier-2 .skill {
   font-size: clamp(1rem, 3vw, 1.2rem);
   background-color: var(--lineup-yellow);
   color: var(--dark-blue);
 }
 
-/* Tier 3: Habilidades Secundarias */
+/* Tier 3: Más estrecho */
+.lineup-tier-3 {
+  max-width: 80%;
+}
 .lineup-tier-3 .skill {
   font-size: clamp(0.9rem, 2.5vw, 1rem);
   background-color: var(--lineup-cyan);
   color: var(--dark-blue);
 }
 
-/* Tier 4: Herramientas (Estilo "Outline") */
+/* Tier 4: El más estrecho, completando el embudo */
+.lineup-tier-4 {
+  max-width: 70%;
+}
 .lineup-tier-4 .skill {
   font-size: 0.9rem;
-  color: var(--light-blue); /* Texto claro */
+  color: var(--light-blue);
   background-color: transparent;
-  border: 2px solid var(--mid-blue); /* Borde en lugar de fondo */
+  border: 2px solid var(--mid-blue);
   font-weight: 600;
 }
 .lineup-tier-4 .skill:hover {
@@ -339,6 +353,11 @@ p.timeline-company a:hover {
 /* --- ESTILOS RESPONSIVOS --- */
 @media (max-width: 992px) {
   .impact-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  
+  /* Hacemos que el embudo sea menos pronunciado en tablets */
+  .lineup-tier-2 { max-width: 95%; }
+  .lineup-tier-3 { max-width: 90%; }
+  .lineup-tier-4 { max-width: 85%; }
 }
 
 @media (max-width: 768px) {
@@ -359,6 +378,11 @@ p.timeline-company a:hover {
   
   .lineup-tier-1 {
       flex-wrap: wrap;
+  }
+
+  /* Eliminamos el embudo en móviles para mejor legibilidad y uso del espacio */
+  .lineup-tier-2, .lineup-tier-3, .lineup-tier-4 {
+      max-width: 100%;
   }
 }
 
