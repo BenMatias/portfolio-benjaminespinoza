@@ -1,368 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ben Matias | Projects</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <style>
-    :root {
-      --dark-blue: #0A1931;
-      --light-blue: #B3CFE5;
-      --mid-blue: #4A7FA7;
-      --deep-blue: #1A3D63;
-      --almost-white: #F6FAFD;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      min-height: 100%;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom, #f6fafd, #e8f0f8);
-      color: var(--dark-blue);
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a {
-      color: var(--mid-blue);
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: var(--light-blue);
-      text-decoration: underline;
-    }
-
-    header {
-      background: var(--dark-blue);
-      color: white;
-      padding: 0.5rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-    }
-
-    .logo img {
-      height: 30px;
-      max-width: 160px;
-      width: auto;
-    }
-
-    nav {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.2s ease, color 0.2s ease;
-    }
-
-    nav a:hover {
-      transform: scale(1.1);
-      color: var(--light-blue);
-    }
-
-    .lang-toggle {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
-
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      background: var(--dark-blue);
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-    }
-
-    .mobile-nav a, .mobile-nav .lang-toggle {
-      padding: 1rem;
-      border-top: 1px solid #ffffff22;
-      color: white;
-      text-align: center;
-    }
-
-    .container {
-      flex: 1;
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      width: 100%;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      color: var(--deep-blue);
-      border-bottom: 2px solid var(--light-blue);
-      padding-bottom: 0.5rem;
-    }
-
-    .intro-text {
-      margin-top: 1rem;
-      margin-bottom: 2.5rem;
-      line-height: 1.6;
-    }
-
-    .projects-grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .project-card.enhanced {
-      background: var(--mid-blue);
-      border-radius: 12px;
-      padding: 1.8rem 1.5rem;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      border-left: 4px solid var(--light-blue);
-      display: flex;
-      flex-direction: column;
-      color: white;
-    }
-
-    .project-card.enhanced:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .project-card.enhanced .card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .project-card.enhanced .icon {
-      font-size: 1.3rem;
-      color: white;
-    }
-
-    .project-card.enhanced h3 {
-      margin: 0;
-      font-size: 1.15rem;
-      color: white;
-    }
-
-    .project-card.enhanced .description {
-      font-size: 0.95rem;
-      margin: 0.5rem 0 1rem;
-      line-height: 1.5;
-      color: white;
-    }
-
-    .project-card.enhanced .date {
-      font-size: 0.85rem;
-      color: #e3e3e3;
-      margin-bottom: 1rem;
-    }
-
-    .project-card.enhanced .button.big {
-      padding: 0.55rem 1rem;
-      font-size: 0.95rem;
-      background-color: white;
-      color: var(--mid-blue);
-      border-radius: 4px;
-      text-decoration: none;
-      align-self: start;
-      font-weight: 600;
-    }
-
-    .project-card.enhanced .button.big:hover {
-      background-color: var(--light-blue);
-      color: white;
-    }
-
-    footer {
-      background: var(--dark-blue);
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      margin-top: 4rem;
-    }
-
-    .footer-contact {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-contact p {
-      margin: 0.2rem 0;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .mobile-nav.show {
-        display: flex;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ben Matias | Projects</title>
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
-  <header>
-    <div class="logo">
-      <a href="index.html">
-        <img src="assets/Logo.PNG" alt="Ben Matias Logo" />
-      </a>
-    </div>
-    <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">&#9776;</button>
-    <nav>
-      <a href="index.html" data-key="about">About</a>
-      <a href="cv.html" data-key="cv">CV / Resume</a>
-      <a href="projects.html" data-key="projects">Projects</a>
-      <a href="mailto:bmatiasespinoza@gmail.com" data-key="contact">Contact</a>
-      <span class="lang-toggle" id="lang-btn"></span>
-    </nav>
-    <div id="mobile-nav" class="mobile-nav">
-      <a href="index.html" data-key="about">About</a>
-      <a href="cv.html" data-key="cv">CV / Resume</a>
-      <a href="projects.html" data-key="projects">Projects</a>
-      <a href="mailto:bmatiasespinoza@gmail.com" data-key="contact">Contact</a>
-      <div class="lang-toggle" id="lang-btn-mobile"></div>
-    </div>
-  </header>
-<main class="container">
-  <section id="projects-section">
-    <h2 id="projects-title">Projects</h2>
-    <p id="projects-intro" class="intro-text">
-      As a data analyst, I’ve developed numerous dashboards and KPI reports using tools like Power BI, Looker Studio, and Tableau. However, due to confidentiality agreements, I’m unable to publicly showcase those internal reports. For this portfolio, I use <strong>public datasets</strong> and <strong>Looker Studio</strong>—a free and accessible BI tool that allows me to share projects openly and interactively. Each project reflects real-world analytical approaches applied in a transparent, reproducible way.
-    </p>
+<body class="page-projects">
 
-    <div class="projects-grid">
-      <!-- Proyecto 1 -->
-      <div class="project-card enhanced">
-        <div class="card-header">
-          <i class="fas fa-chart-line icon"></i>
-          <h3>Unemployment in America</h3>
+    <div class="header-hero-wrapper">
+        <header class="container">
+            <a href="index.html" class="logo"><img src="assets/img/Logo.PNG" alt="Ben Matias Logo"></a>
+            <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">&#9776;</button>
+            <nav class="desktop-nav">
+                <a data-translate="navAbout" href="index.html#about">About</a>
+                <a data-translate="navResume" href="cv.html">CV / Resume</a>
+                <a data-translate="navProjects" href="projects.html">Projects</a>
+                <a href="mailto:bmatiasespinoza@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <button class="lang-toggle" aria-label="Change language"></button>
+            </nav>
+            <div id="mobile-nav" class="mobile-nav">
+                <a data-translate="navAbout" href="index.html#about">About</a>
+                <a data-translate="navResume" href="cv.html">CV / Resume</a>
+                <a data-translate="navProjects" href="projects.html">Projects</a>
+                <a href="mailto:bmatiasespinoza@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <div class="lang-toggle-wrapper"><button class="lang-toggle" aria-label="Change language"></button></div>
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <section class="container page-container">
+            <h2 id="projects-title" class="section-title"><i class="fas fa-lightbulb"></i> </h2>
+            <p id="projects-intro" class="intro-text"></p>
+            <div id="projects-grid" class="projects-grid">
+                </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-contacts">
+          <a href="mailto:bmatiasespinoza@gmail.com"><i class="fas fa-envelope"></i> bmatiasespinoza@gmail.com</a>
         </div>
-        <p class="description">Analyze short- and long-term labor dynamics across U.S. states and cities using public data and interactive visuals.</p>
-        <p class="date"><strong>Published:</strong> July 2025</p>
-        <a href="projects/US-Unemployment.html" class="button big">View Project</a>
-      </div>
+        <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/BenMatias" target="_blank" rel="noopener" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 Ben Matias. All rights reserved.</p></div>
+    </footer>
 
-      <!-- Puedes duplicar este bloque para agregar más proyectos -->
-    </div>
-  </section>
-</main>
-  <footer>
-    <div class="footer-contact">
-      <p><i class="fas fa-envelope"></i> <a href="mailto:bmatiasespinoza@gmail.com" style="color: #B3CFE5">bmatiasespinoza@gmail.com</a></p>
-      <p><i class="fas fa-map-marker-alt"></i> Santiago, Chile</p>
-      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/benmatias" style="color: #B3CFE5">linkedin.com/in/benmatias</a></p>
-    </div>
-    <p style="margin-top: 0.5rem;">&copy; 2025 Benjamin Espinoza. All rights reserved.</p>
-  </footer>
-
-  <script>
-    const labels = {
-      en: {
-        about: "About",
-        cv: "CV / Resume",
-        projects: "Projects",
-        contact: "Contact",
-        langIcon: '<img src="https://flagcdn.com/cl.svg" alt="CL" style="width: 20px; vertical-align: middle; margin-right: 4px;">ES',
-        title: "Projects",
-        intro: `As a data analyst, I’ve developed numerous dashboards and KPI reports using tools like Power BI, Looker Studio, and Tableau. However, due to confidentiality agreements, I’m unable to publicly showcase those internal reports. For this portfolio, I use <strong>public datasets</strong> and <strong>Looker Studio</strong>—a free and accessible BI tool that allows me to share projects openly and interactively. Each project reflects real-world analytical approaches applied in a transparent, reproducible way.`,
-        project1desc: "Analyze short- and long-term labor dynamics across U.S. states and cities using public data and interactive visuals.",
-        project1btn: "View Project",
-        published: "Published:"
-      },
-      es: {
-        about: "Sobre mí",
-        cv: "CV / Currículum",
-        projects: "Proyectos",
-        contact: "Contacto",
-        langIcon: '<img src="https://flagcdn.com/us.svg" alt="US" style="width: 20px; vertical-align: middle; margin-right: 4px;">EN',
-        title: "Proyectos",
-        intro: `Como analista de datos he desarrollado numerosos dashboards e informes de KPI utilizando herramientas como Power BI, Looker Studio y Tableau. Sin embargo, debido a acuerdos de confidencialidad, no puedo compartir públicamente esos reportes internos. Para este portafolio, utilizo <strong>datasets públicos</strong> y <strong>Looker Studio</strong>, una herramienta gratuita y accesible que me permite compartir proyectos de forma abierta e interactiva. Cada proyecto refleja enfoques analíticos del mundo real aplicados de forma transparente y reproducible.`,
-        project1desc: "Analiza dinámicas laborales de corto y largo plazo en EE.UU. con datos públicos y visualizaciones interactivas.",
-        project1btn: "Ver Proyecto",
-        published: "Publicado:"
-      }
-    };
-
-    function updateLabels(lang) {
-      document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        el.textContent = labels[lang][key] || key;
-      });
-
-      document.querySelectorAll('.lang-toggle').forEach(el => {
-        el.innerHTML = labels[lang].langIcon;
-      });
-
-      document.getElementById('projects-title').textContent = labels[lang].title;
-      document.getElementById('projects-intro').innerHTML = labels[lang].intro;
-
-      const card = document.querySelector('.project-card.enhanced');
-      if (card) {
-        card.querySelector('.description').textContent = labels[lang].project1desc;
-        card.querySelector('.button').textContent = labels[lang].project1btn;
-        card.querySelector('.date strong').textContent = labels[lang].published;
-      }
-    }
-
-    function toggleLang() {
-      const current = document.documentElement.lang;
-      const nextLang = current === 'en' ? 'es' : 'en';
-      document.documentElement.lang = nextLang;
-      updateLabels(nextLang);
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const defaultLang = "en";
-      document.documentElement.lang = defaultLang;
-      updateLabels(defaultLang);
-
-      document.querySelectorAll('.lang-toggle').forEach(el => {
-        el.addEventListener('click', toggleLang);
-      });
-
-      const menuBtn = document.getElementById('menu-toggle');
-      if (menuBtn) {
-        menuBtn.addEventListener('click', () => {
-          document.getElementById('mobile-nav').classList.toggle('show');
-        });
-      }
-    });
-  </script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
