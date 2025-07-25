@@ -1,16 +1,40 @@
 const translations = {
   en: {
     // --- Index Page Content ---
-    heroTitle: "Business & Data Analyst focused on transforming data into decisions", heroSubtitle: "Helping businesses make better decisions through analytics and business intelligence.",
-    btnProjects: "View Projects", btnResume: "View Resume", navAbout: "About", navResume: "CV / Resume", navProjects: "Projects",
-    aboutTitle: "About Me", aboutContent: `<p>I'm Benjamin Espinoza, Business & Data Analyst with a degree in Industrial Engineering and a strong background in analytics, reporting, and stakeholder collaboration. I enjoy solving complex problems with simple and scalable solutions.</p><p>My experience spans services, sales, and banking industries, where I've built dashboards, defined KPIs from scratch, and empowered teams through better data use. I translate business needs into analytical insights.</p><p>I'm a father, a lifelong learner, passionate about music and continuous improvement. I’m currently expanding my skills in English, French, and product strategy.</p>`,
-    impactTitle: "How I’ve Made an Impact", impacts: [ { icon: "fa-chart-bar", title: "Dashboards that Drive Decisions", text: "Designed impactful dashboards for banking, industrial, and executive audiences using Power BI and Looker Studio." }, { icon: "fa-bullseye", title: "Built KPI Systems from the Ground Up", text: "Established performance measurement frameworks in teams with no prior tracking, bringing structure, alignment, and continuous improvement." }, { icon: "fa-clock", title: "Efficiency Through Automation", text: "Automated recurring reporting tasks to eliminate manual processes and optimize time." }, { icon: "fa-users", title: "Insights Across the Organization", text: "Empowered diverse business areas with data-driven insights to support decision-making across operations, sales, risk, product, and beyond." } ],
-    projectsTitle: "Featured Projects", project1Title: "US Unemployment Analysis", project1Description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.", project1Button: "View Project", viewAllBtn: "View All Projects",
+    heroTitle: "Business & Data Analyst focused on transforming data into decisions",
+    heroSubtitle: "Helping businesses make better decisions through analytics and business intelligence.",
+    btnProjects: "View Projects",
+    btnResume: "View Resume",
+    navAbout: "About",
+    navResume: "CV / Resume",
+    navProjects: "Projects",
+    aboutTitle: "About Me",
+    aboutContent: `<p>I'm Benjamin Espinoza, Business & Data Analyst with a degree in Industrial Engineering and a strong background in analytics, reporting, and stakeholder collaboration. I enjoy solving complex problems with simple and scalable solutions.</p><p>My experience spans services, sales, and banking industries, where I've built dashboards, defined KPIs from scratch, and empowered teams through better data use. I translate business needs into analytical insights.</p><p>I'm a father, a lifelong learner, passionate about music and continuous improvement. I’m currently expanding my skills in English, French, and product strategy.</p>`,
+    impactTitle: "How I’ve Made an Impact",
+    impacts: [
+      { icon: "fa-chart-bar", title: "Dashboards that Drive Decisions", text: "Designed impactful dashboards for banking, industrial, and executive audiences using Power BI and Looker Studio." },
+      { icon: "fa-bullseye", title: "Built KPI Systems from the Ground Up", text: "Established performance measurement frameworks in teams with no prior tracking, bringing structure, alignment, and continuous improvement." },
+      { icon: "fa-clock", title: "Efficiency Through Automation", text: "Automated recurring reporting tasks to eliminate manual processes and optimize time." },
+      { icon: "fa-users", title: "Insights Across the Organization", text: "Empowered diverse business areas with data-driven insights to support decision-making across operations, sales, risk, product, and beyond." }
+    ],
+    projectsTitle: "Featured Projects",
+    project1Title: "US Unemployment Analysis",
+    project1Description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.",
+    project1Button: "View Project",
+    viewAllBtn: "View All Projects",
     
     // --- CV Page Content ---
-    cv_hero_title: "My Professional Journey", cv_hero_summary: "A journey through the projects and roles that have defined my career in the world of data.",
-    cv_download: "Download PDF", cv_work_title: "Work Experience", cv_education_title: "Education", cv_skills_title: "My Toolkit",
-    cv_languages_title: "Languages", cv_interests_title: "Interests", cv_certifications_title: "Certifications", cv_badges_title: "Highlighted Badges", cv_credly_link: "View profile on Credly",
+    cv_hero_title: "My Professional Journey",
+    cv_hero_summary: "A journey through the projects and roles that have defined my career in the world of data.",
+    cv_download: "Download PDF",
+    cv_work_title: "Work Experience",
+    cv_education_title: "Education",
+    cv_skills_title: "My Toolkit",
+    cv_languages_title: "Languages",
+    cv_interests_title: "Interests",
+    cv_certifications_title: "Certifications",
+    cv_badges_title: "Highlighted Badges",
+    cv_credly_link: "View profile on Credly",
     cv_timeline_items: [
       { type: 'work', date: "May 2023 – Present", title: "Business Analyst", company: "Banco Internacional", url: "https://www.internacional.cl", logo: "assets/img/logos/banco-internacional.png", description: `<ul><li>Built a company-wide reporting and KPI system from scratch for the Innovation area, where performance tracking and outcome evaluation were previously nonexistent.</li><li>Created over 20 dashboards for departments such as Innovation, Fraud, Sales, Product Owners, and Strategic Planning.</li><li>Led and scaled a metrics team, automated processes using ETL pipelines and team-managed databases, ensuring data integrity and scalability.</li><li>Transitioned to cross-functional squad as Business Analyst: user stories, testing, flows and dashboards.</li></ul>` },
       { type: 'work', date: "Sep 2021 – Apr 2023", title: "Data & Business Control Analyst", company: "Lucas Diesel", url: "https://lucasdiesel.cl", logo: "assets/img/logos/lucas-diesel.png", description: `<ul><li>Created a new data analytics function in a company lacking visibility due to shared finance with sister company.</li><li>Delivered 30+ Power BI reports across operations, sales, inventory, procurement, automotive services and executive dashboards.</li><li>Automated daily report delivery, saving up to 1 hour daily.</li><li>Improved annual budgeting from 6 to 2 months over two years.</li></ul>` },
@@ -63,32 +87,41 @@ function setupScrollAnimations() {
 function populateCvPage(lang) {
     const data = translations[lang] || translations.en;
     const getEl = (id) => document.getElementById(id);
+
     if (getEl('cv-hero-title')) getEl('cv-hero-title').textContent = data.cv_hero_title;
     if (getEl('cv-hero-summary')) getEl('cv-hero-summary').textContent = data.cv_hero_summary;
     if (getEl('download-btn-text')) getEl('download-btn-text').textContent = data.cv_download;
-    if (getEl('work-experience-title')) getEl('work-experience-title').textContent = data.cv_work_title;
-    if (getEl('education-title')) getEl('education-title').textContent = data.cv_education_title;
-    if (getEl('skills-title')) getEl('skills-title').textContent = data.cv_skills_title;
-    if (getEl('languages-title')) getEl('languages-title').textContent = data.cv_languages_title;
-    if (getEl('interests-title')) getEl('interests-title').textContent = data.cv_interests_title;
-    if (getEl('certifications-title')) getEl('certifications-title').textContent = data.cv_certifications_title;
-    if (getEl('badges-title')) getEl('badges-title').textContent = data.cv_badges_title;
-    if (getEl('credly-link')) getEl('credly-link').querySelector('span').textContent = data.cv_credly_link;
-    const workContainer = getEl('timeline-work-content');
-    if(workContainer) workContainer.innerHTML = data.cv_work_items.map((item, index) => {
-        const side = (index % 2 === 0) ? 'left' : 'right';
-        return `<div class="timeline-item timeline-item-${side}"><div class="timeline-content-block"><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3>${item.title}</h3><p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>${item.description}</div></div>`;
-    }).join('');
-    const eduContainer = getEl('timeline-education-content');
-    if(eduContainer) eduContainer.innerHTML = data.cv_education_items.map((item, index) => {
-        const side = (workContainer.children.length + index) % 2 === 0 ? 'left' : 'right';
-        return `<div class="timeline-item timeline-item-${side}"><div class="timeline-content-block"><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3>${item.title}</h3><p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p></div></div>`;
-    }).join('');
+    
+    const workTitle = getEl('work-experience-title');
+    if (workTitle) workTitle.textContent = data.cv_work_title;
+    const eduTitle = getEl('education-title');
+    if (eduTitle) eduTitle.textContent = data.cv_education_title;
+
+    const timelineWrapper = getEl('timeline-content-wrapper');
+    if (timelineWrapper) {
+        timelineWrapper.innerHTML = '';
+        const workItems = data.cv_timeline_items.filter(item => item.type === 'work');
+        const educationItems = data.cv_timeline_items.filter(item => item.type === 'education');
+        
+        let htmlContent = '';
+        workItems.forEach((item, index) => {
+            const side = (index % 2 === 0) ? 'left' : 'right';
+            htmlContent += `<div class="timeline-item timeline-item-${side}"><div class="timeline-content-block"><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3>${item.title}</h3><p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>${item.description || ''}</div></div>`;
+        });
+
+        educationItems.forEach((item, index) => {
+            const side = (workItems.length + index) % 2 === 0 ? 'left' : 'right';
+            htmlContent += `<div class="timeline-item timeline-item-${side}"><div class="timeline-content-block"><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3>${item.title}</h3><p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p></div></div>`;
+        });
+        timelineWrapper.innerHTML = htmlContent;
+    }
+    
     const skillsContainer = getEl('skills-content');
     if(skillsContainer) {
+        getEl('skills-title').textContent = data.cv_skills_title;
         let lineupHtml = '<div class="skills-lineup">';
         lineupHtml += '<div class="lineup-tier lineup-tier-1">';
-        data.cv_skills_items.tier1.forEach(skill => { lineupHtml += `<div class="skill"><img src="${skill.logo}" class="skill-logo" alt="">${skill.name}</div>`; });
+        data.cv_skills_items.tier1.forEach(skill => { lineupHtml += `<div class="skill"><img src="${skill.logo}" class="skill-logo" alt="${skill.name} logo">${skill.name}</div>`; });
         lineupHtml += '</div>';
         lineupHtml += '<div class="lineup-tier lineup-tier-2">';
         data.cv_skills_items.tier2.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
@@ -101,12 +134,25 @@ function populateCvPage(lang) {
         lineupHtml += '</div></div>';
         skillsContainer.innerHTML = lineupHtml;
     }
+
     const langContainer = getEl('languages-content');
-    if(langContainer) langContainer.innerHTML = data.cv_languages_items.map(item => `<div class="language-item"><img src="https://flagcdn.com/w40/${item.flag}.png" alt="${item.lang} flag"><div><p><strong>${item.lang}</strong></p><p class="lang-level">${item.level}</p></div></div>`).join('');
+    if(langContainer) {
+        getEl('languages-title').textContent = data.cv_languages_title;
+        langContainer.innerHTML = data.cv_languages_items.map(item => `<div class="language-item"><img src="https://flagcdn.com/w40/${item.flag}.png" alt="${item.lang} flag"><div><p><strong>${item.lang}</strong></p><p class="lang-level">${item.level}</p></div></div>`).join('');
+    }
     const interestsContainer = getEl('interests-content');
-    if(interestsContainer) interestsContainer.innerHTML = data.cv_interests_items.map(item => `<div class="interest-item"><i class="${item.icon}"></i><p>${item.name}</p></div>`).join('');
+    if(interestsContainer) {
+        getEl('interests-title').textContent = data.cv_interests_title;
+        interestsContainer.innerHTML = data.cv_interests_items.map(item => `<div class="interest-item"><i class="${item.icon}"></i><p>${item.name}</p></div>`).join('');
+    }
     const certsContainer = getEl('certifications-content');
-    if(certsContainer) certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="${item.url}" download>${item.name}</a></li>`).join('');
+    if(certsContainer) {
+        getEl('certifications-title').textContent = data.cv_certifications_title;
+        certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="${item.url}" download>${item.name}</a></li>`).join('');
+    }
+    if (getEl('badges-title')) getEl('badges-title').textContent = data.cv_badges_title;
+    if (getEl('credly-link')) getEl('credly-link').querySelector('span').textContent = data.cv_credly_link;
+    
     setTimeout(setupScrollAnimations, 100);
 }
 
@@ -114,6 +160,7 @@ function setLanguage(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
   const data = translations[lang] || translations.en;
+  
   const heroTitle = document.getElementById('hero-title');
   if (heroTitle) {
       heroTitle.textContent = data.heroTitle;
@@ -142,13 +189,16 @@ function setLanguage(lang) {
       const btnResume = document.getElementById("btn-resume");
       if(btnResume) btnResume.textContent = data.btnResume;
   }
+  
   const cvHeroTitle = document.getElementById('cv-hero-title');
   if (cvHeroTitle) {
       populateCvPage(lang);
   }
+
   document.querySelectorAll('.desktop-nav a[href="index.html#about"], .mobile-nav a[href="index.html#about"]').forEach(el => { if(el) el.textContent = data.navAbout });
   document.querySelectorAll('.desktop-nav a[href="cv.html"], .mobile-nav a[href="cv.html"]').forEach(el => { if(el) el.textContent = data.navResume });
   document.querySelectorAll('.desktop-nav a[href="projects.html"], .mobile-nav a[href="projects.html"]').forEach(el => { if(el) el.textContent = data.navProjects });
+  
   document.querySelectorAll(".lang-toggle").forEach(el => {
     el.innerHTML = lang === "en" ? `<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES` : `<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN`;
   });
@@ -160,7 +210,9 @@ function toggleLang() {
 
 document.addEventListener("DOMContentLoaded", () => {
   setLanguage('en');
+  
   document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
+
   const menuToggle = document.getElementById('menu-toggle');
   if (menuToggle) {
     menuToggle.addEventListener('click', () => {
@@ -168,8 +220,30 @@ document.addEventListener("DOMContentLoaded", () => {
         if(mobileNav) mobileNav.classList.toggle('show');
     });
   }
+
   const carousel = document.getElementById('project-carousel');
   if (carousel) {
-      // Carousel logic
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      let autoScrollInterval;
+      const scrollStep = 316;
+      function startAutoScroll() {
+        stopAutoScroll();
+        autoScrollInterval = setInterval(() => {
+          if (!carousel.offsetParent) return;
+          const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+          if (carousel.scrollLeft >= maxScrollLeft - 10) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
+          }
+        }, 4000);
+      }
+      function stopAutoScroll() { clearInterval(autoScrollInterval); }
+      prevBtn.addEventListener('click', () => { stopAutoScroll(); carousel.scrollBy({ left: -scrollStep, behavior: 'smooth' }); });
+      nextBtn.addEventListener('click', () => { stopAutoScroll(); carousel.scrollBy({ left: scrollStep, behavior: 'smooth' }); });
+      carousel.addEventListener('mouseenter', stopAutoScroll);
+      carousel.addEventListener('mouseleave', startAutoScroll);
+      startAutoScroll();
   }
 });
