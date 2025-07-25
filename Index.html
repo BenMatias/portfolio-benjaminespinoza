@@ -20,450 +20,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <style>
-      /* --- VARIABLES & RESET --- */
-      :root {
-        --dark-blue: #0A1931;
-        --light-blue: #B3CFE5;
-        --mid-blue: #4A7FA7;
-        --deep-blue: #1A3D63;
-        --accent: #0C969C;
-        --almost-white: #F6FAFD;
-        --white: #ffffff;
-      }
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: 'Inter', sans-serif;
-        background: linear-gradient(to bottom, #f6fafd, #e8f0f8);
-        color: var(--dark-blue);
-      }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-      
-      /* --- LAYOUT & CONTAINERS --- */
-      .container {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 0 2rem;
-      }
-
-      .section {
-          padding: 4rem 0;
-      }
-
-      /* --- HEADER & NAVIGATION --- */
-      .header-hero-wrapper {
-        background: url('assets/img/Header.jpg') center/cover no-repeat;
-        color: var(--white);
-      }
-
-      header {
-        background: transparent;
-        padding: 1rem 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-      }
-
-      .logo img {
-        height: 44px;
-        transition: transform 0.3s ease;
-      }
-
-      .logo img:hover {
-        transform: scale(1.05);
-      }
-
-      nav.desktop-nav {
-        display: flex;
-        gap: 1.5rem;
-        align-items: center;
-      }
-
-      nav.desktop-nav a {
-        color: var(--white);
-        font-weight: 600;
-        transition: color 0.3s ease;
-      }
-
-      nav.desktop-nav a:hover {
-        color: var(--light-blue);
-      }
-      
-      .lang-toggle {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        font-weight: 600;
-      }
-
-      .hamburger {
-        display: none; /* Oculto en escritorio */
-        font-size: 1.5rem;
-        background: none;
-        border: none;
-        color: var(--white);
-        cursor: pointer;
-        z-index: 1001;
-      }
-
-      .mobile-nav {
-        display: none; /* Oculto por defecto */
-        flex-direction: column;
-        background: var(--dark-blue);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-      }
-      
-      .mobile-nav.show {
-          display: flex;
-      }
-
-      .mobile-nav a, .mobile-nav .lang-toggle {
-        padding: 1rem;
-        border-top: 1px solid #ffffff22;
-        color: var(--white);
-        text-align: center;
-      }
-
-      /* --- HERO SECTION --- */
-      .hero {
-          padding: 5rem 0;
-      }
-      
-      .hero-content {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          align-items: center;
-          gap: 2rem;
-      }
-      
-      .hero-text {
-          flex: 1 1 600px;
-          min-width: 280px;
-      }
-
-      #hero-title {
-          font-size: clamp(2rem, 5vw, 2.8rem);
-          line-height: 1.2;
-      }
-
-      #hero-subtitle {
-          font-size: 1.1rem;
-          margin-top: 1rem;
-          max-width: 600px;
-      }
-      
-      .hero-buttons {
-          margin-top: 2rem;
-          display: flex;
-          gap: 1rem;
-          flex-wrap: wrap;
-      }
-      
-      .hero-image {
-          flex: 1 1 300px;
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
-          min-width: 240px;
-      }
-      
-      .hero-image img {
-          height: 100%;
-          max-height: 520px;
-          object-fit: contain;
-          border-radius: 0.5rem;
-      }
-
-      /* --- BUTTONS --- */
-      .btn {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        font-weight: 600;
-        border-radius: 6px;
-        font-size: 1rem;
-        transition: 0.3s ease;
-        text-align: center;
-        border: 2px solid transparent;
-      }
-
-      .btn-blue {
-        background-color: var(--dark-blue);
-        color: var(--white);
-        border-color: var(--white);
-      }
-
-      .btn-blue:hover {
-        background-color: var(--white);
-        color: var(--dark-blue);
-      }
-
-      .btn-outline-blue {
-        background-color: var(--white);
-        color: var(--dark-blue);
-        border-color: var(--dark-blue);
-      }
-
-      .btn-outline-blue:hover {
-        background-color: var(--dark-blue);
-        color: var(--white);
-        border-color: var(--dark-blue);
-      }
-      
-      /* --- ABOUT ME SECTION --- */
-      .about-me {
-          background-color: var(--white);
-      }
-
-      .about-container {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 3rem;
-          align-items: center;
-      }
-
-      .about-image {
-          flex: 1 1 300px;
-          text-align: center;
-      }
-
-      .about-image img {
-          width: 100%;
-          max-width: 320px;
-          border-radius: 12px;
-      }
-
-      .about-text {
-          flex: 2 1 600px;
-      }
-      
-      .section-title {
-          font-size: 2rem;
-          color: var(--dark-blue);
-          margin-bottom: 2rem;
-          border-left: 6px solid var(--mid-blue);
-          padding-left: 1rem;
-      }
-
-      #about-text-content {
-          color: var(--deep-blue);
-          font-size: 1rem;
-          line-height: 1.7;
-      }
-      #about-text-content p {
-          margin-bottom: 1rem;
-      }
-
-      /* --- IMPACT SECTION --- */
-      .impact {
-          background-color: var(--dark-blue);
-      }
-      
-      .impact .section-title {
-          color: var(--white);
-      }
-      
-      .impact-container {
-          max-width: 1200px; /* UPDATED: Increased width */
-          margin: 0 auto;
-      }
-
-      .impact-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-      }
-      
-      .impact-card {
-          background: var(--white);
-          padding: 2rem;
-          border-radius: 10px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-          text-align: left;
-      }
-      
-      .impact-card i {
-          font-size: 2rem;
-          color: var(--accent);
-          margin-bottom: 1rem;
-      }
-      
-      .impact-card h3 {
-          font-size: 1.1rem;
-          color: var(--dark-blue);
-          margin-bottom: 0.5rem;
-      }
-      
-      .impact-card p {
-          font-size: 0.95rem;
-          color: var(--deep-blue);
-          line-height: 1.5;
-      }
-
-      /* --- PROJECTS SECTION --- */
-      .projects {
-          background-color: var(--white);
-      }
-
-      .projects-container {
-          text-align: center;
-      }
-
-      .carousel-wrapper {
-          position: relative;
-      }
-
-      .carousel {
-          display: flex;
-          gap: 1.5rem;
-          overflow-x: auto;
-          scroll-behavior: smooth;
-          scroll-snap-type: x mandatory;
-          padding: 1rem 0.5rem;
-          -ms-overflow-style: none; /* IE and Edge */
-          scrollbar-width: none; /* Firefox */
-      }
-      
-      .carousel::-webkit-scrollbar {
-          display: none; /* Chrome, Safari, and Opera */
-      }
-
-      .project-card {
-          flex: 0 0 300px;
-          background-color: var(--almost-white);
-          border-radius: 10px;
-          scroll-snap-align: start;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-          display: flex;
-          flex-direction: column;
-      }
-      
-      .project-card img {
-          width: 100%;
-          height: auto;
-          border-bottom: 1px solid #ddd;
-          border-top-left-radius: 10px;
-          border-top-right-radius: 10px;
-      }
-      
-      .project-card-content {
-          padding: 1rem;
-          flex-grow: 1;
-          display: flex;
-          flex-direction: column;
-      }
-
-      .project-card h3 {
-          color: var(--dark-blue);
-          margin-bottom: 0.5rem;
-      }
-      
-      .project-card p {
-          font-size: 0.95rem;
-          color: var(--deep-blue);
-          margin-bottom: 1rem;
-          flex-grow: 1;
-      }
-      
-      .carousel-btn {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          background: var(--dark-blue);
-          color: #fff;
-          border: none;
-          border-radius: 50%;
-          font-size: 1.5rem;
-          padding: 0.25rem 0.6rem;
-          cursor: pointer;
-          z-index: 5;
-          opacity: 0.8;
-          transition: opacity 0.3s ease;
-      }
-      .carousel-btn:hover {
-          opacity: 1;
-      }
-      
-      .carousel-btn.prev { left: -25px; }
-      .carousel-btn.next { right: -25px; }
-
-      .view-all {
-          margin-top: 2.5rem;
-      }
-
-      /* --- FOOTER --- */
-      .footer {
-          background-color: var(--dark-blue);
-          color: var(--white);
-          padding: 2rem 1rem;
-          text-align: center;
-          font-size: 0.9rem;
-      }
-      
-      .footer-contacts {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          gap: 2rem;
-          margin-bottom: 1rem;
-      }
-      
-      .footer-contacts a {
-          color: var(--white);
-          text-decoration: none;
-          transition: color 0.3s;
-      }
-      .footer-contacts a:hover {
-          color: var(--light-blue);
-      }
-      
-      .footer-bottom {
-          font-size: 0.8rem;
-          opacity: 0.7;
-      }
-
-      /* --- RESPONSIVE STYLES --- */
-      @media (max-width: 992px) {
-        .impact-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 768px) {
-          nav.desktop-nav {
-              display: none;
-          }
-          .hamburger {
-              display: block;
-          }
-          .carousel-btn {
-              display: none; /* Hide buttons on mobile, scroll is touch-based */
-          }
-      }
-
-      @media (max-width: 576px) {
-        .impact-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-      
-    </style>
 </head>
 <body>
 
@@ -481,7 +39,7 @@
         <a href="projects.html">Projects</a>
         <a href="mailto:bmatiasespinoza@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/benmatias" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <span class="lang-toggle"></span>
+        <button class="lang-toggle" aria-label="Change language"></button>
       </nav>
 
       <div id="mobile-nav" class="mobile-nav">
@@ -490,7 +48,9 @@
         <a href="projects.html">Projects</a>
         <a href="mailto:bmatiasespinoza@gmail.com"><i class="fas fa-envelope"></i> Email</a>
         <a href="https://www.linkedin.com/in/benmatias" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <div class="lang-toggle"></div>
+        <div class="lang-toggle-wrapper">
+             <button class="lang-toggle" aria-label="Change language"></button>
+        </div>
       </div>
     </header>
 
@@ -511,48 +71,50 @@
     </section>
   </div>
 
-  <section class="about-me section" id="about">
-    <div class="about-container container">
-      <div class="about-image">
-        <img src="assets/Profile.jpeg" alt="Ben Matias Profile">
-      </div>
-      <div class="about-text">
-        <h2 id="about-title" class="section-title"></h2>
-        <div id="about-text-content"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="impact section" id="impact">
-    <div class="impact-container container">
-      <h2 id="impact-title" class="section-title"></h2>
-      <div class="impact-grid">
+  <main>
+    <section class="about-me section" id="about">
+      <div class="about-container container">
+        <div class="about-image">
+          <img src="assets/Profile.jpeg" alt="Ben Matias Profile">
         </div>
-    </div>
-  </section>
+        <div class="about-text">
+          <h2 id="about-title" class="section-title"></h2>
+          <div id="about-text-content"></div>
+        </div>
+      </div>
+    </section>
 
-  <section class="projects section" id="projects">
-    <div class="projects-container container">
-      <h2 id="projects-title" class="section-title" style="text-align: left;"></h2>
-      <div class="carousel-wrapper">
-        <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
-        <div class="carousel" id="project-carousel">
-          <div class="project-card">
-              <img src="assets/img/us-unemployment-cover.png" alt="US Unemployment Dashboard">
-              <div class="project-card-content">
-                <h3 id="project-1-title"></h3>
-                <p id="project-1-description"></p>
-                <a href="projects/US-Unemployment.html" class="btn btn-blue" id="project-1-button"></a>
-              </div>
+    <section class="impact section" id="impact">
+      <div class="impact-container container">
+        <h2 id="impact-title" class="section-title"></h2>
+        <div class="impact-grid">
           </div>
-          </div>
-        <button class="carousel-btn next" aria-label="Next">&#10095;</button>
       </div>
-      <div class="view-all">
-        <a href="projects.html" class="btn btn-outline-blue" id="view-all-btn"></a>
+    </section>
+
+    <section class="projects section" id="projects">
+      <div class="projects-container container">
+        <h2 id="projects-title" class="section-title" style="text-align: left;"></h2>
+        <div class="carousel-wrapper">
+          <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
+          <div class="carousel" id="project-carousel">
+            <div class="project-card">
+                <img src="assets/img/us-unemployment-cover.png" alt="US Unemployment Dashboard">
+                <div class="project-card-content">
+                  <h3 id="project-1-title"></h3>
+                  <p id="project-1-description"></p>
+                  <a href="projects/US-Unemployment.html" class="btn btn-blue" id="project-1-button"></a>
+                </div>
+            </div>
+            </div>
+          <button class="carousel-btn next" aria-label="Next">&#10095;</button>
+        </div>
+        <div class="view-all">
+          <a href="projects.html" class="btn btn-outline-blue" id="view-all-btn"></a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="footer-contacts">
@@ -568,181 +130,7 @@
     </div>
   </footer>
 
-<script>
-const translations = {
-  en: {
-    heroTitle: "Business & Data Analyst focused on transforming data into decisions",
-    heroSubtitle: "Helping businesses make better decisions through analytics and business intelligence.",
-    btnProjects: "View Projects",
-    btnResume: "View Resume",
-    navAbout: "About",
-    navResume: "CV / Resume",
-    navProjects: "Projects",
-    aboutTitle: "About Me",
-    aboutContent: `
-      <p>I'm Benjamin Espinoza, Business & Data Analyst with a degree in Industrial Engineering and a strong background in analytics, reporting, and stakeholder collaboration. I enjoy solving complex problems with simple and scalable solutions.</p>
-      <p>My experience spans services, sales, and banking industries, where I've built dashboards, defined KPIs from scratch, and empowered teams through better data use. I translate business needs into analytical insights.</p>
-      <p>I'm a father, a lifelong learner, passionate about music and continuous improvement. I’m currently expanding my skills in English, French, and product strategy.</p>
-    `,
-    impactTitle: "How I’ve Made an Impact",
-    impacts: [
-      { icon: "fa-chart-bar", title: "Dashboards that Drive Decisions", text: "Designed impactful dashboards for banking, industrial, and executive audiences using Power BI and Looker Studio." },
-      { icon: "fa-bullseye", title: "Built KPI Systems from the Ground Up", text: "Established performance measurement frameworks in teams with no prior tracking, bringing structure, alignment, and continuous improvement." },
-      { icon: "fa-clock", title: "Efficiency Through Automation", text: "Automated recurring reporting tasks to eliminate manual processes and optimize time." },
-      { icon: "fa-users", title: "Insights Across the Organization", text: "Empowered diverse business areas with data-driven insights to support decision-making across operations, sales, risk, product, and beyond." }
-    ],
-    projectsTitle: "Featured Projects",
-    project1Title: "US Unemployment Analysis",
-    project1Description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.",
-    project1Button: "View Project",
-    viewAllBtn: "View All Projects"
-  },
-  es: {
-    heroTitle: "Business & Data Analyst enfocado en transformar datos en decisiones",
-    heroSubtitle: "Ayudo a las empresas a tomar mejores decisiones a través del análisis y la inteligencia de negocios.",
-    btnProjects: "Ver Proyectos",
-    btnResume: "Ver CV",
-    navAbout: "Sobre mí",
-    navResume: "CV",
-    navProjects: "Proyectos",
-    aboutTitle: "Sobre mí",
-    aboutContent: `
-      <p>Soy Benjamin Espinoza, Business & Data Analyst con formación en Ingeniería Civil Industrial y experiencia en análisis de datos, reportería y colaboración con áreas de negocio. Me apasiona resolver problemas complejos con soluciones simples y escalables.</p>
-      <p>He trabajado en empresas de servicios, ventas y banca, creando dashboards, definiendo KPIs desde cero y promoviendo el uso estratégico de los datos. Traduzco necesidades de negocio en insights accionables.</p>
-      <p>Padre, aprendiz permanente y amante de la música y la mejora continua. Actualmente perfecciono mi inglés, francés y conocimientos en estrategia de producto.</p>
-    `,
-    impactTitle: "Cómo He Generado Impacto",
-    impacts: [
-      { icon: "fa-chart-bar", title: "Dashboards que Impulsan Decisiones", text: "Diseñé dashboards de alto impacto para audiencias ejecutivas, industriales y del sector bancario usando Power BI y Looker Studio." },
-      { icon: "fa-bullseye", title: "Implementación de Sistemas de KPIs desde Cero", text: "Establecí marcos de medición de desempeño donde antes no existían, aportando estructura, alineación y mejora continua." },
-      { icon: "fa-clock", title: "Eficiencia a Través de la Automatización", text: "Automatización de tareas recurrentes de reportería para eliminar procesos manuales y optimizar el tiempo." },
-      { icon: "fa-users", title: "Insights para Toda la Organización", text: "Apoyé diversas áreas de negocio con insights accionables que respaldan la toma de decisiones en operaciones, ventas, riesgo, producto y más." }
-    ],
-    projectsTitle: "Proyectos Destacados",
-    project1Title: "Análisis de Desempleo en EE.UU.",
-    project1Description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.",
-    project1Button: "Ver Proyecto",
-    viewAllBtn: "Ver Todos los Proyectos"
-  }
-};
+  <script src="assets/js/script.js"></script>
 
-let currentLang = 'en';
-
-function setLanguage(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-
-  // Update hero
-  document.getElementById("hero-title").textContent = translations[lang].heroTitle;
-  document.getElementById("hero-subtitle").textContent = translations[lang].heroSubtitle;
-  document.getElementById("btn-projects").textContent = translations[lang].btnProjects;
-  document.getElementById("btn-resume").textContent = translations[lang].btnResume;
-  
-  // Update navs
-  document.querySelectorAll('a[href="#about"]').forEach(el => el.textContent = translations[lang].navAbout);
-  document.querySelectorAll('a[href="cv.html"]').forEach(el => el.textContent = translations[lang].navResume);
-  document.querySelectorAll('a[href="projects.html"]').forEach(el => {
-      if(el.classList.contains('btn')) {
-          // This handles buttons like "View Projects" inside the hero
-          el.textContent = translations[lang].btnProjects;
-      } else {
-          // This handles the main navigation link
-          el.textContent = translations[lang].navProjects;
-      }
-  });
-
-
-  // Update About me
-  document.getElementById("about-title").textContent = translations[lang].aboutTitle;
-  document.getElementById("about-text-content").innerHTML = translations[lang].aboutContent;
-  
-  // Update Impact
-  document.getElementById("impact-title").textContent = translations[lang].impactTitle;
-  const impactGrid = document.querySelector('.impact-grid');
-  impactGrid.innerHTML = ''; // Clear existing cards
-  translations[lang].impacts.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'impact-card';
-      card.innerHTML = `
-          <i class="fas ${item.icon}"></i>
-          <h3>${item.title}</h3>
-          <p>${item.text}</p>
-      `;
-      impactGrid.appendChild(card);
-  });
-  
-  // Update Projects
-  document.getElementById("projects-title").textContent = translations[lang].projectsTitle;
-  document.getElementById("project-1-title").textContent = translations[lang].project1Title;
-  document.getElementById("project-1-description").textContent = translations[lang].project1Description;
-  document.getElementById("project-1-button").textContent = translations[lang].project1Button;
-  document.getElementById("view-all-btn").textContent = translations[lang].viewAllBtn;
-
-  // Update language toggles
-  document.querySelectorAll(".lang-toggle").forEach(el => {
-    el.innerHTML = lang === "en"
-      ? '<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES'
-      : '<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN';
-  });
-}
-
-function toggleLang() {
-  const nextLang = currentLang === 'en' ? 'es' : 'en';
-  setLanguage(nextLang);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Set initial language
-  setLanguage('en');
-  
-  // Add event listener for language toggles
-  document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
-
-  // Hamburger menu toggle
-  document.getElementById('menu-toggle').addEventListener('click', () => {
-    document.getElementById('mobile-nav').classList.toggle('show');
-  });
-
-  // Carousel logic
-  const carousel = document.getElementById('project-carousel');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
-  const nextBtn = document.querySelector('.carousel-btn.next');
-  let autoScrollInterval;
-
-  const scrollStep = 316; // Card width + gap
-
-  function startAutoScroll() {
-    stopAutoScroll(); // Prevent multiple intervals
-    autoScrollInterval = setInterval(() => {
-      if (!carousel) return;
-      const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-      if (carousel.scrollLeft >= maxScrollLeft - 10) {
-        carousel.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
-      }
-    }, 4000);
-  }
-
-  function stopAutoScroll() {
-    clearInterval(autoScrollInterval);
-  }
-
-  if (carousel) {
-    prevBtn.addEventListener('click', () => {
-      carousel.scrollBy({ left: -scrollStep, behavior: 'smooth' });
-    });
-
-    nextBtn.addEventListener('click', () => {
-      carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
-    });
-
-    carousel.addEventListener('mouseenter', stopAutoScroll);
-    carousel.addEventListener('mouseleave', startAutoScroll);
-    
-    startAutoScroll();
-  }
-});
-</script>
 </body>
 </html>
