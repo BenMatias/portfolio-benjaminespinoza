@@ -117,6 +117,20 @@ const translations = {
 
 let currentLang = 'en';
 
+function renderBadges() {
+    let attempts = 0;
+    const maxAttempts = 20; // Intentar por 2 segundos (20 * 100ms)
+    const interval = setInterval(() => {
+        if (window.Credly) {
+            window.Credly.init();
+            clearInterval(interval);
+        } else if (attempts >= maxAttempts) {
+            clearInterval(interval);
+        }
+        attempts++;
+    }, 100);
+}
+
 function populateCvPage(lang) {
     const data = translations[lang];
     const getEl = (id) => document.getElementById(id);
@@ -134,7 +148,7 @@ function populateCvPage(lang) {
     getEl('credly-link').querySelector('span').textContent = data.cv_credly_link;
     
     const workContainer = getEl('work-experience-content');
-    if(workContainer) workContainer.innerHTML = data.cv_work_items.map(item => `<div class="timeline-item"><div class="timeline-date">${item.date}</div><div class.timeline-content"><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></h3><p class="timeline-company">${item.company}</p>${item.description}</div></div>`).join('');
+    if(workContainer) workContainer.innerHTML = data.cv_work_items.map(item => `<div class="timeline-item"><div class="timeline-date">${item.date}</div><div class="timeline-content"><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></h3><p class="timeline-company">${item.company}</p>${item.description}</div></div>`).join('');
     
     const eduContainer = getEl('education-content');
     if(eduContainer) eduContainer.innerHTML = data.cv_education_items.map(item => `<div class="timeline-item"><div class="timeline-date">${item.date}</div><div class="timeline-content"><h3><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></h3><p class="timeline-company">${item.company}</p></div></div>`).join('');
@@ -148,15 +162,7 @@ function populateCvPage(lang) {
     const badgesContainer = getEl('badges-content');
     if(badgesContainer) {
         badgesContainer.innerHTML = data.cv_badges_items.map(item => `<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="${item.id}" data-share-badge-host="https://www.credly.com"></div>`).join('');
-        
-        // --- CAMBIO CLAVE ---
-        // Forzar a Credly a re-renderizar los badges con un pequeño retraso
-        // para asegurar que el script de Credly se haya cargado.
-        setTimeout(() => {
-            if (window.Credly) {
-                window.Credly.init();
-            }
-        }, 500); // 500 milisegundos de espera
+        renderBadges();
     }
 }
 
