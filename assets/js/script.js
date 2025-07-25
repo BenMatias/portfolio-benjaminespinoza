@@ -110,7 +110,7 @@ function populateCvPage(lang) {
                         <div class="timeline-content-block">
                             <div class="timeline-date">${item.date}</div>
                             <h3 class="timeline-title">${item.title}</h3>
-                            <p class="timeline-company">${item.company} <a href="${item.url}" target="_blank" rel="noopener" aria-label="Visit site"></a></p>
+                            <p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>
                             ${item.description || ''}
                         </div>
                     </div>`;
@@ -126,7 +126,7 @@ function populateCvPage(lang) {
                         <div class="timeline-content-block">
                             <div class="timeline-date">${item.date}</div>
                             <h3 class="timeline-title">${item.title}</h3>
-                            <p class="timeline-company">${item.company} <a href="${item.url}" target="_blank" rel="noopener" aria-label="Visit site"></a></p>
+                            <p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>
                             ${item.description || ''}
                         </div>
                     </div>`;
