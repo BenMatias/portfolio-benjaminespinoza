@@ -202,7 +202,7 @@ p.timeline-company a:hover {
 .timeline-content-block ul { padding-left: 1.75rem; margin-top: 1rem; line-height: 1.7; }
 
 
-/* --- INICIO DE CAMBIOS: Diseño "Embudo de Competencias" (Corregido) --- */
+/* --- SKILLS LINEUP: Diseño "Embudo de Competencias" --- */
 
 .skills-lineup { 
   font-family: 'Oswald', sans-serif; 
@@ -233,7 +233,6 @@ p.timeline-company a:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* CORRECCIÓN: Usamos 'width' en lugar de 'max-width' para forzar el tamaño */
 .lineup-tier-1 {
   width: 100%;
 }
@@ -287,9 +286,7 @@ p.timeline-company a:hover {
   color: var(--white);
 }
 
-/* --- FIN DE CAMBIOS --- */
-
-
+/* --- LANGUAGES, CERTIFICATIONS, INTERESTS --- */
 .languages-list { display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: flex-start; align-items: center; }
 .language-item { display: flex; align-items: center; gap: 0.75rem; }
 .language-item img { width: 32px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
@@ -304,6 +301,19 @@ p.timeline-company a:hover {
 .interest-item i { font-size: 2.5rem; margin-bottom: 0.5rem; }
 .interest-item p { font-weight: 600; }
 .badge-widgets { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem; }
+
+.badge-widgets > div {
+  background-color: var(--white);
+  padding: 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.badge-widgets > div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
 .credly-link-styled { display: inline-block; margin-top: 1rem; font-weight: 600; }
 
 /* --- FOOTER --- */
@@ -349,7 +359,7 @@ p.timeline-company a:hover {
 @media (max-width: 992px) {
   .impact-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
   
-  /* CORRECCIÓN: Usamos 'width' también en la versión de tablet */
+  .lineup-tier-1 { width: 100%; }
   .lineup-tier-2 { width: 95%; }
   .lineup-tier-3 { width: 90%; }
   .lineup-tier-4 { width: 85%; }
@@ -375,8 +385,7 @@ p.timeline-company a:hover {
       flex-wrap: wrap;
   }
 
-  /* CORRECCIÓN: Forzamos el 100% del ancho en móviles */
-  .lineup-tier-2, .lineup-tier-3, .lineup-tier-4 {
+  .lineup-tier-1, .lineup-tier-2, .lineup-tier-3, .lineup-tier-4 {
       width: 100%;
   }
 }
