@@ -17,18 +17,15 @@ a { text-decoration: none; color: inherit; }
 .header-hero-wrapper { 
     background: var(--dark-blue); color: var(--white);
 }
-/* Se aplica la imagen de fondo solo si existe esta clase (en index.html) */
 .header-hero-wrapper.with-bg-image { 
     background: url('../img/Header.jpg') center/cover no-repeat;
 }
-/* Se hace fijo el header SÓLO en la página de CV (que tiene la clase page-cv en el body) */
 .page-cv .header-hero-wrapper {
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 header.container { padding: 1rem 0; display: flex; justify-content: space-between; align-items: center; }
-/* ... (resto del código CSS es igual al anterior) ... */
 .logo img { height: 44px; transition: transform 0.3s ease; }
 .logo img:hover { transform: scale(1.05); }
 nav.desktop-nav { display: flex; gap: 1.5rem; align-items: center; }
@@ -114,28 +111,24 @@ nav.desktop-nav a:hover { color: var(--light-blue); }
 .page-header .section-title { margin-bottom: 0; }
 .cv-section { margin-bottom: 3rem; padding: 0; }
 .timeline-item { display: flex; gap: 2rem; padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #e0eaf1; }
-.timeline-item:last-child { border-bottom: none; margin-bottom: 0; }
+.timeline-item:last-child { border-bottom: none; }
 .timeline-date { flex: 0 0 120px; color: var(--mid-blue); font-weight: 600; font-size: 0.9rem; }
-.timeline-content { flex: 1; }
 .timeline-logo { max-width: 120px; max-height: 40px; margin-bottom: 0.75rem; object-fit: contain; }
 .timeline-content h3 { font-size: 1.2rem; margin: 0 0 0.25rem 0; color: var(--dark-blue); }
 .timeline-content p.timeline-company a { font-weight: 600; color: var(--deep-blue); text-decoration: none; transition: color 0.3s ease; }
 .timeline-content p.timeline-company a:hover { color: var(--mid-blue); text-decoration: underline; }
 .timeline-content ul { padding-left: 1.25rem; margin: 0.75rem 0 0 0; line-height: 1.6; }
-
 .skills-categories { display: flex; flex-direction: column; gap: 2.5rem; }
-.skill-category-wrapper { }
 .skill-category-title { font-size: 1.2rem; font-weight: 600; color: var(--white); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
-.skills-logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 2rem; }
+.skills-logo-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;}
 .skill-item { text-align: center; }
 .skill-item img { height: 48px; width: 48px; object-fit: contain; margin-bottom: 0.5rem; }
 .skill-item p { font-weight: 600; color: var(--white); font-size: 0.9rem; }
-.skill-item-text { background-color: #ffffff11; border: 1px solid #ffffff22; padding: 1rem; border-radius: 8px; text-align: center; }
-.skill-item-text p { font-weight: 600; color: var(--white); }
-
-.languages-list { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
-.language-item { text-align: center; }
-.language-item p { margin: 0.25rem 0 0 0; }
+.skill-tag { background-color: #ffffff1a; border-radius: 6px; padding: 0.5rem 1rem; font-weight: 600; color: var(--white); font-size: 0.9rem; }
+.languages-list { display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: flex-start; align-items: center; }
+.language-item { display: flex; align-items: center; gap: 0.75rem; }
+.language-item img { width: 32px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.language-item p { margin: 0; }
 .language-item .lang-level { font-size: 0.9rem; color: var(--deep-blue); }
 .certifications-list { list-style: none; padding-left: 0; columns: 2; gap: 2rem; }
 .certifications-list li { break-inside: avoid-column; padding-bottom: 0.5rem; }
@@ -158,4 +151,4 @@ nav.desktop-nav a:hover { color: var(--light-blue); }
   .timeline-date { flex-basis: auto; }
   .certifications-list { columns: 1; }
 }
-@media (max-width: 576px) { .impact-grid, .skills-logo-grid, .interests-grid { grid-template-columns: 1fr; } }
+@media (max-width: 576px) { .impact-grid, .interests-grid { grid-template-columns: 1fr; } .skills-logo-grid { justify-content: center; } }
