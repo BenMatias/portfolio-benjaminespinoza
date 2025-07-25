@@ -10,7 +10,7 @@ const translations = {
     
     // --- CV Page Content ---
     cv_hero_title: "My Professional Journey", cv_hero_summary: "A journey through the projects and roles that have defined my career in the world of data.",
-    cv_download: "Download PDF", cv_work_title: "Work Experience", cv_education_title: "Education", cv_skills_title: "My Toolkit",
+    cv_download: "Download PDF", cv_work_title: "Work Experience", cv_education_title: "Education", cv_skills_title: "My Skills Lineup",
     cv_languages_title: "Languages", cv_interests_title: "Interests", cv_certifications_title: "Certifications", cv_badges_title: "Highlighted Badges", cv_credly_link: "View profile on Credly",
     cv_timeline_items: [
       { type: 'work', date: "May 2023 – Present", title: "Business Analyst", company: "Banco Internacional", url: "https://www.internacional.cl", logo: "assets/img/logos/banco-internacional.png", description: `<ul><li>Built a company-wide reporting and KPI system from scratch for the Innovation area, where performance tracking and outcome evaluation were previously nonexistent.</li><li>Created over 20 dashboards for departments such as Innovation, Fraud, Sales, Product Owners, and Strategic Planning.</li><li>Led and scaled a metrics team, automated processes using ETL pipelines and team-managed databases, ensuring data integrity and scalability.</li><li>Transitioned to cross-functional squad as Business Analyst: user stories, testing, flows and dashboards.</li></ul>` },
@@ -21,7 +21,12 @@ const translations = {
       { type: 'education', date: "2022", title: "University Preparation Program", company: "BYU PathwayConnect", url: "https://www.byupathway.edu", logo: "assets/img/logos/byu.png" },
       { type: 'education', date: "2013–2020", title: "Industrial Civil Engineering", company: "Universidad de Valparaíso", url: "https://uv.cl", logo: "assets/img/logos/uv.png" }
     ],
-    cv_skills_items: { tier1: [ { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" } ], tier2: ["SQL", "Advanced Excel"], tier3: ["Data Modeling", "ETL & Automation", "KPI Development", "Dashboard Design", "Storytelling", "Business Intelligence"], tier4: ["DAX", "Power Query", "SSIS", "PostgreSQL", "Google Tag Manager", "GitHub"] },
+    cv_skills_items: {
+        tier1: [ { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" } ], 
+        tier2: ["SQL", "Data Modeling", "KPI Development", "Business Intelligence"], 
+        tier3: ["ETL & Automation", "Dashboard Design", "Storytelling", "DAX", "Power Query", "SSIS", "PostgreSQL", "Google Tag Manager", "GitHub"],
+        tier4: ["Advanced Excel"] 
+    },
     cv_languages_items: [ { lang: "Spanish", level: "Native", flag: "es" }, { lang: "English", level: "B2 Upper-Intermediate", flag: "gb" }, { lang: "French", level: "A1 Basic", flag: "fr" } ],
     cv_interests_items: [ { name: "Running", icon: "fa-solid fa-person-running" }, { name: "Football", icon: "fa-solid fa-futbol" }, { name: "Gaming", icon: "fa-solid fa-gamepad" }, { name: "Guitar", icon: "fa-solid fa-guitar" }, { name: "Drawing", icon: "fa-solid fa-pencil-alt" }, { name: "Music Festivals", icon: "fa-solid fa-music" } ],
     cv_certifications_items: [ { name: "Qlik Sense Designer", url: "assets/certificates/Certificacion Qlik.pdf" }, { name: "Google Tag Manager (Basics)", url: "assets/certificates/Conceptos básicos de Google Tag Manager.pdf" }, { name: "Linguaskill English B2", url: "assets/certificates/Linguaskill Cambridge.pdf" }, { name: "SQL Certification", url: "assets/certificates/SQL.pdf" }, { name: "SSIS Certificate", url: "assets/certificates/SSIS.pdf" }, { name: "Tableau & Tableau Prep", url: "assets/certificates/Tableau.pdf" }, { name: "User Stories Certification", url: "assets/certificates/User Stories Certiprof.pdf" } ]
@@ -35,7 +40,7 @@ const translations = {
     projects: [ { title: "Análisis de Desempleo en EE.UU.", description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "Ver Proyecto" } ],
     viewAllBtn: "Ver Todos los Proyectos",
     cv_hero_title: "Mi Trayectoria Profesional", cv_hero_summary: "Un viaje a través de los proyectos y roles que han definido mi carrera en el mundo de los datos.",
-    cv_download: "Descargar PDF", cv_work_title: "Experiencia Laboral", cv_education_title: "Educación", cv_skills_title: "Mi Caja de Herramientas",
+    cv_download: "Descargar PDF", cv_work_title: "Experiencia Laboral", cv_education_title: "Educación", cv_skills_title: "Mi Lineup de Habilidades",
     cv_languages_title: "Idiomas", cv_interests_title: "Intereses", cv_certifications_title: "Certificaciones", cv_badges_title: "Insignias Destacadas",
     cv_credly_link: "Ver perfil en Credly",
     cv_timeline_items: [
@@ -47,7 +52,12 @@ const translations = {
         { type: 'education', date: "2022", title: "Programa universitario introductorio", company: "BYU PathwayConnect", url: "https://www.byupathway.edu", logo: "assets/img/logos/byu.png" },
         { type: 'education', date: "2013–2020", title: "Ingeniería Civil Industrial", company: "Universidad de Valparaíso", url: "https://uv.cl", logo: "assets/img/logos/uv.png" }
     ],
-    cv_skills_items: { tier1: [ { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" } ], tier2: ["SQL", "Excel Avanzado"], tier3: ["Modelado de Datos", "ETL & Automatización", "Desarrollo de KPIs", "Diseño de Dashboards", "Storytelling", "Inteligencia de Negocios"], tier4: ["DAX", "Power Query", "SSIS", "PostgreSQL", "Google Tag Manager", "GitHub"] },
+    cv_skills_items: {
+        tier1: [ { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" } ], 
+        tier2: ["SQL", "Modelado de Datos", "Desarrollo de KPIs", "Inteligencia de Negocios"], 
+        tier3: ["ETL & Automatización", "Diseño de Dashboards", "Storytelling", "DAX", "Power Query", "SSIS", "PostgreSQL", "Google Tag Manager", "GitHub"],
+        tier4: ["Excel Avanzado"] 
+    },
     cv_languages_items: [ { lang: "Español", level: "Nativo", flag: "es" }, { lang: "Inglés", level: "B2 Intermedio-Alto", flag: "gb" }, { lang: "Francés", level: "A1 Básico", flag: "fr" } ],
     cv_interests_items: [ { name: "Correr", icon: "fa-solid fa-person-running" }, { name: "Fútbol", icon: "fa-solid fa-futbol" }, { name: "Videojuegos", icon: "fa-solid fa-gamepad" }, { name: "Guitarra", icon: "fa-solid fa-guitar" }, { name: "Dibujo", icon: "fa-solid fa-pencil-alt" }, { name: "Festivales", icon: "fa-solid fa-music" } ],
     cv_certifications_items: [ { name: "Qlik Sense Diseñador", url: "assets/certificates/Certificacion Qlik.pdf" }, { name: "Google Tag Manager (Básico)", url: "assets/certificates/Conceptos básicos de Google Tag Manager.pdf" }, { name: "Inglés B2 – Linguaskill", url: "assets/certificates/Linguaskill Cambridge.pdf" }, { name: "Certificación SQL", url: "assets/certificates/SQL.pdf" }, { name: "Certificación SSIS", url: "assets/certificates/SSIS.pdf" }, { name: "Tableau & Tableau Prep", url: "assets/certificates/Tableau.pdf" }, { name: "User Stories Certificate", url: "assets/certificates/User Stories Certiprof.pdf" } ]
@@ -94,31 +104,38 @@ function populateCvPage(lang) {
 
     if(timelineWork) {
         timelineWork.innerHTML = workItems.map((item, index) => {
-            return `<div class="timeline-item"><div class="timeline-content-block"><div class="timeline-date">${item.date}</div><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3>${item.title}</h3><p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>${item.description || ''}</div></div>`;
+            return `<div class="timeline-item"><div class="timeline-content-block"><div class="timeline-date">${item.date}</div><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3 class="timeline-title">${item.title}</h3><p class="timeline-company">${item.company} <a href="${item.url}" target="_blank" rel="noopener" aria-label="Visit site"></a></p>${item.description || ''}</div></div>`;
         }).join('');
     }
     
     if(timelineEducation) {
         timelineEducation.innerHTML = educationItems.map((item, index) => {
-            return `<div class="timeline-item"><div class="timeline-content-block"><div class="timeline-date">${item.date}</div><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3>${item.title}</h3><p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>${item.description || ''}</div></div>`;
+            return `<div class="timeline-item"><div class="timeline-content-block"><div class="timeline-date">${item.date}</div><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3 class="timeline-title">${item.title}</h3><p class="timeline-company">${item.company} <a href="${item.url}" target="_blank" rel="noopener" aria-label="Visit site"></a></p>${item.description || ''}</div></div>`;
         }).join('');
     }
 
     const skillsContainer = getEl('skills-content');
     if(skillsContainer) {
+        const { tier1, tier2, tier3, tier4 } = data.cv_skills_items;
         let lineupHtml = '<div class="skills-lineup">';
+        
         lineupHtml += '<div class="lineup-tier lineup-tier-1">';
-        data.cv_skills_items.tier1.forEach(skill => { lineupHtml += `<div class="skill"><img src="${skill.logo}" class="skill-logo" alt="${skill.name} logo">${skill.name}</div>`; });
+        tier1.forEach(skill => { lineupHtml += `<div class="skill"><img src="${skill.logo}" class="skill-logo" alt="${skill.name} logo">${skill.name}</div>`; });
         lineupHtml += '</div>';
+
         lineupHtml += '<div class="lineup-tier lineup-tier-2">';
-        data.cv_skills_items.tier2.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
+        tier2.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
         lineupHtml += '</div>';
+        
         lineupHtml += '<div class="lineup-tier lineup-tier-3">';
-        data.cv_skills_items.tier3.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
+        tier3.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
         lineupHtml += '</div>';
+
         lineupHtml += '<div class="lineup-tier lineup-tier-4">';
-        data.cv_skills_items.tier4.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
-        lineupHtml += '</div></div>';
+        tier4.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
+        lineupHtml += '</div>';
+
+        lineupHtml += '</div>';
         skillsContainer.innerHTML = lineupHtml;
     }
 
@@ -129,7 +146,6 @@ function populateCvPage(lang) {
     const certsContainer = getEl('certifications-content');
     if(certsContainer) certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="${item.url}" target="_blank" rel="noopener">${item.name}</a></li>`).join('');
 
-    // Se asegura de que las animaciones se activen después de que el contenido se haya cargado
     setTimeout(setupScrollAnimations, 100);
 }
 
@@ -222,7 +238,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = document.querySelector('.carousel-btn.next');
     
     const scrollStep = () => {
-        // El scroll será el ancho de una tarjeta de proyecto (300px) más el gap (1.5rem = 24px)
         return 300 + 24; 
     };
 
