@@ -23,9 +23,8 @@ const translations = {
     ],
     cv_skills_items: {
         tier1: [ { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" } ], 
-        tier2: ["SQL", "Data Modeling", "KPI Development", "Business Intelligence"], 
-        tier3: ["ETL & Automation", "Dashboard Design", "Storytelling", "DAX", "Power Query", "SSIS", "PostgreSQL", "Google Tag Manager", "GitHub"],
-        tier4: ["Advanced Excel"] 
+        tier2: ["SQL", "Data Modeling", "KPI Development", "Business Intelligence", "Dashboard Design", "Storytelling", "Power Query", "DAX", "LookML", "Process Mapping", "BPMN", "Agile/Scrum"], 
+        tier3: ["Jira / Confluence", "Stakeholder Engagement", "Advanced Excel", "Google Sheets", "Lucidchart / Draw.io", "Data Visualization Principles", "Documentation & Reporting", "Miro"]
     },
     cv_languages_items: [ { lang: "Spanish", level: "Native", flag: "es" }, { lang: "English", level: "B2 Upper-Intermediate", flag: "gb" }, { lang: "French", level: "A1 Basic", flag: "fr" } ],
     cv_interests_items: [ { name: "Running", icon: "fa-solid fa-person-running" }, { name: "Football", icon: "fa-solid fa-futbol" }, { name: "Gaming", icon: "fa-solid fa-gamepad" }, { name: "Guitar", icon: "fa-solid fa-guitar" }, { name: "Drawing", icon: "fa-solid fa-pencil-alt" }, { name: "Music Festivals", icon: "fa-solid fa-music" } ],
@@ -54,9 +53,8 @@ const translations = {
     ],
     cv_skills_items: {
         tier1: [ { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" } ], 
-        tier2: ["SQL", "Modelado de Datos", "Desarrollo de KPIs", "Inteligencia de Negocios"], 
-        tier3: ["ETL & Automatización", "Diseño de Dashboards", "Storytelling", "DAX", "Power Query", "SSIS", "PostgreSQL", "Google Tag Manager", "GitHub"],
-        tier4: ["Excel Avanzado"] 
+        tier2: ["SQL", "Modelado de Datos", "Desarrollo de KPIs", "Inteligencia de Negocios", "Diseño de Dashboards", "Storytelling", "Power Query", "DAX", "LookML", "Mapeo de Procesos", "BPMN", "Agile/Scrum"], 
+        tier3: ["Jira / Confluence", "Gestión de Interesados", "Excel Avanzado", "Google Sheets", "Lucidchart / Draw.io", "Principios de Visualización de Datos", "Documentación y Reportería", "Miro"]
     },
     cv_languages_items: [ { lang: "Español", level: "Nativo", flag: "es" }, { lang: "Inglés", level: "B2 Intermedio-Alto", flag: "gb" }, { lang: "Francés", level: "A1 Básico", flag: "fr" } ],
     cv_interests_items: [ { name: "Correr", icon: "fa-solid fa-person-running" }, { name: "Fútbol", icon: "fa-solid fa-futbol" }, { name: "Videojuegos", icon: "fa-solid fa-gamepad" }, { name: "Guitarra", icon: "fa-solid fa-guitar" }, { name: "Dibujo", icon: "fa-solid fa-pencil-alt" }, { name: "Festivales", icon: "fa-solid fa-music" } ],
@@ -115,24 +113,26 @@ function populateCvPage(lang) {
 
     const skillsContainer = getEl('skills-content');
     if(skillsContainer) {
-        const { tier1, tier2, tier3, tier4 } = data.cv_skills_items;
+        const { tier1, tier2, tier3 } = data.cv_skills_items;
         let lineupHtml = '<div class="skills-lineup">';
         
-        lineupHtml += '<div class="lineup-tier lineup-tier-1">';
-        tier1.forEach(skill => { lineupHtml += `<div class="skill"><img src="${skill.logo}" class="skill-logo" alt="${skill.name} logo"><span>${skill.name}</span></div>`; });
-        lineupHtml += '</div>';
+        if (tier1 && tier1.length > 0) {
+            lineupHtml += '<div class="lineup-tier lineup-tier-1">';
+            tier1.forEach(skill => { lineupHtml += `<div class="skill"><img src="${skill.logo}" class="skill-logo" alt="${skill.name} logo"><span>${skill.name}</span></div>`; });
+            lineupHtml += '</div>';
+        }
 
-        lineupHtml += '<div class="lineup-tier lineup-tier-2">';
-        tier2.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
-        lineupHtml += '</div>';
+        if (tier2 && tier2.length > 0) {
+            lineupHtml += '<div class="lineup-tier lineup-tier-2">';
+            tier2.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
+            lineupHtml += '</div>';
+        }
         
-        lineupHtml += '<div class="lineup-tier lineup-tier-3">';
-        tier3.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
-        lineupHtml += '</div>';
-
-        lineupHtml += '<div class="lineup-tier lineup-tier-4">';
-        tier4.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
-        lineupHtml += '</div>';
+        if (tier3 && tier3.length > 0) {
+            lineupHtml += '<div class="lineup-tier lineup-tier-3">';
+            tier3.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
+            lineupHtml += '</div>';
+        }
 
         lineupHtml += '</div>';
         skillsContainer.innerHTML = lineupHtml;
