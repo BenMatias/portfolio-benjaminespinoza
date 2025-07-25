@@ -121,7 +121,6 @@ function populateCvPage(lang) {
     const data = translations[lang];
     const getEl = (id) => document.getElementById(id);
 
-    // Poblar el nuevo Mini-Hero
     if (getEl('cv-hero-title')) getEl('cv-hero-title').textContent = data.cv_hero_title;
     if (getEl('cv-hero-summary')) getEl('cv-hero-summary').textContent = data.cv_hero_summary;
 
@@ -134,45 +133,30 @@ function populateCvPage(lang) {
     getEl('badges-title').textContent = data.cv_badges_title;
     getEl('credly-link').querySelector('span').textContent = data.cv_credly_link;
     
-    // Generar Experiencia Laboral con LOGOS
     const workContainer = getEl('work-experience-content');
-    if(workContainer) workContainer.innerHTML = data.cv_work_items.map(item => `
-        <div class="timeline-item">
-            <div class="timeline-date">${item.date}</div>
-            <div class="timeline-content">
-                <img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo">
-                <h3><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></h3>
-                <p class="timeline-company">${item.company}</p>
-                ${item.description}
-            </div>
-        </div>
-    `).join('');
+    if(workContainer) workContainer.innerHTML = data.cv_work_items.map(item => `<div class="timeline-item"><div class="timeline-date">${item.date}</div><div class.timeline-content"><img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo"><h3><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></h3><p class="timeline-company">${item.company}</p>${item.description}</div></div>`).join('');
     
-    // Generar Educación
     const eduContainer = getEl('education-content');
-    if(eduContainer) eduContainer.innerHTML = data.cv_education_items.map(item => `
-        <div class="timeline-item">
-            <div class="timeline-date">${item.date}</div>
-            <div class="timeline-content">
-                <h3><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></h3>
-                <p class="timeline-company">${item.company}</p>
-            </div>
-        </div>
-    `).join('');
+    if(eduContainer) eduContainer.innerHTML = data.cv_education_items.map(item => `<div class="timeline-item"><div class="timeline-date">${item.date}</div><div class="timeline-content"><h3><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></h3><p class="timeline-company">${item.company}</p></div></div>`).join('');
 
-    // Generar Habilidades
     const skillsContainer = getEl('skills-content');
     if(skillsContainer) skillsContainer.innerHTML = data.cv_skills_items.map(item => `<div class="skill-category"><h4>${item.title}</h4><ul><li>${item.skills}</li></ul></div>`).join('');
     
-    // Generar Certificaciones
     const certsContainer = getEl('certifications-content');
     if(certsContainer) certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="${item.url}" download>${item.name}</a></li>`).join('');
     
-    // Generar Insignias de Credly
     const badgesContainer = getEl('badges-content');
     if(badgesContainer) {
         badgesContainer.innerHTML = data.cv_badges_items.map(item => `<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="${item.id}" data-share-badge-host="https://www.credly.com"></div>`).join('');
-        if (window.Credly) { window.Credly.init(); }
+        
+        // --- CAMBIO CLAVE ---
+        // Forzar a Credly a re-renderizar los badges con un pequeño retraso
+        // para asegurar que el script de Credly se haya cargado.
+        setTimeout(() => {
+            if (window.Credly) {
+                window.Credly.init();
+            }
+        }, 500); // 500 milisegundos de espera
     }
 }
 
@@ -181,7 +165,6 @@ function setLanguage(lang) {
   document.documentElement.lang = lang;
   const data = translations[lang];
 
-  // Lógica para la página de inicio (INDEX)
   const heroTitle = document.getElementById('hero-title');
   if (heroTitle) {
       heroTitle.textContent = data.heroTitle;
@@ -206,18 +189,15 @@ function setLanguage(lang) {
       document.getElementById("btn-resume").textContent = data.btnResume;
   }
   
-  // Lógica para la página de CV
   const cvTitle = document.getElementById('cv-title');
   if (cvTitle) {
       populateCvPage(lang);
   }
 
-  // Lógica común para la navegación en ambas páginas
   document.querySelectorAll('.desktop-nav a[href="index.html#about"], .mobile-nav a[href="index.html#about"]').forEach(el => { if(el) el.textContent = data.navAbout });
   document.querySelectorAll('.desktop-nav a[href="cv.html"], .mobile-nav a[href="cv.html"]').forEach(el => { if(el) el.textContent = data.navResume });
   document.querySelectorAll('.desktop-nav a[href="projects.html"], .mobile-nav a[href="projects.html"]').forEach(el => { if(el) el.textContent = data.navProjects });
 
-  // Lógica común para el conmutador de idioma
   document.querySelectorAll(".lang-toggle").forEach(el => {
     el.innerHTML = lang === "en" ? '<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES' : '<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN';
   });
