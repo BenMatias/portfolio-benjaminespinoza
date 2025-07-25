@@ -69,11 +69,8 @@ function setLanguage(lang) {
   
   // Update navs
   document.querySelectorAll('a[href="#about"]').forEach(el => el.textContent = translations[lang].navAbout);
-  // Ensure we only target the nav links, not buttons with the same href text
-  document.querySelector('.desktop-nav a[href="cv.html"]').textContent = translations[lang].navResume;
-  document.querySelector('.mobile-nav a[href="cv.html"]').textContent = translations[lang].navResume;
-  document.querySelector('.desktop-nav a[href="projects.html"]').textContent = translations[lang].navProjects;
-  document.querySelector('.mobile-nav a[href="projects.html"]').textContent = translations[lang].navProjects;
+  document.querySelectorAll('a[href="assets/Benjamin_Espinoza_CV.pdf"]').forEach(el => el.textContent = translations[lang].navResume);
+  document.querySelectorAll('a[href="projects.html"]:not(.btn)').forEach(el => el.textContent = translations[lang].navProjects);
 
   // Update About me
   document.getElementById("about-title").textContent = translations[lang].aboutTitle;
@@ -132,18 +129,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.querySelector('.carousel-btn.next');
   let autoScrollInterval;
 
-  // Check if carousel exists on the page
   if (carousel) {
-    const scrollStep = 316; // Card width (300px) + gap (1.5rem = 24px, but 1rem = 16px, so 1.5rem is 24px) - let's stick with a value that works. 316 is good.
+    const scrollStep = 316;
 
     function startAutoScroll() {
-      stopAutoScroll(); // Prevent multiple intervals
+      stopAutoScroll();
       autoScrollInterval = setInterval(() => {
-        if (!carousel) return;
-        // Check if we are near the end
         const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
         if (carousel.scrollLeft >= maxScrollLeft - 10) {
-          carousel.scrollTo({ left: 0, behavior: 'smooth' }); // Go back to the beginning
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
           carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
         }
@@ -155,20 +149,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     prevBtn.addEventListener('click', () => {
-        stopAutoScroll(); // Stop auto-scroll on manual navigation
+        stopAutoScroll();
         carousel.scrollBy({ left: -scrollStep, behavior: 'smooth' });
     });
 
     nextBtn.addEventListener('click', () => {
-        stopAutoScroll(); // Stop auto-scroll on manual navigation
+        stopAutoScroll();
         carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
     });
 
-    // Pause auto-scroll on hover
     carousel.addEventListener('mouseenter', stopAutoScroll);
     carousel.addEventListener('mouseleave', startAutoScroll);
     
-    // Start the auto-scroll initially
     startAutoScroll();
   }
 });
