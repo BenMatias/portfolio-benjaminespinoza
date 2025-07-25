@@ -449,6 +449,11 @@ nav.desktop-nav a:hover {
     .carousel-btn {
         display: none;
     }
+    /* --- CAMBIO AÑADIDO --- */
+    /* Oculta la imagen de la sección "About Me" en móvil para evitar redundancia y problemas de layout */
+    .about-container .about-image {
+        display: none;
+    }
 }
 
 @media (max-width: 576px) {
