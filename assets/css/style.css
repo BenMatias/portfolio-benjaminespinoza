@@ -15,6 +15,16 @@ a { text-decoration: none; color: inherit; }
 .section, .cv-section { padding: 4rem 0; }
 .section-title { font-size: 2rem; color: var(--dark-blue); margin-bottom: 2rem; border-left: 6px solid var(--mid-blue); padding-left: 1rem; }
 
+/* --- INICIO DE CAMBIOS: Estilos para Iconos de Sección --- */
+.section-title i {
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+  color: var(--accent);
+  vertical-align: -2px; /* Alineación fina del ícono con el texto */
+}
+/* --- FIN DE CAMBIOS --- */
+
+
 /* --- HEADER Y NAVEGACIÓN --- */
 .header-hero-wrapper { 
     background: var(--dark-blue); color: var(--white);
@@ -108,21 +118,18 @@ a:focus, button:focus, [tabindex="0"]:focus, input:focus {
 .cv-hero .subtitle { font-size: 1.2rem; color: var(--deep-blue); max-width: 600px; margin: 1rem auto 2rem auto; }
 .cv-hero #download-btn { margin-top: 1rem; }
 
-/* --- INICIO DE CAMBIOS: Estilo para Título con Degradado --- */
 .cv-hero h1 {
   font-family: 'Oswald', sans-serif;
-  font-size: clamp(2.8rem, 7vw, 4rem); /* Tamaño de fuente grande y responsivo */
+  font-size: clamp(2.8rem, 7vw, 4rem);
   margin-bottom: 1.5rem;
   padding: 0;
-  /* El degradado define la identidad y el look moderno */
   background: linear-gradient(45deg, var(--dark-blue), var(--mid-blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  display: inline-block; /* Importante para que el efecto funcione correctamente */
+  display: inline-block;
 }
-/* --- FIN DE CAMBIOS --- */
 
 .dark-section-wrapper { background-color: var(--dark-blue); color: var(--white); }
 .dark-section-wrapper .section-title { color: var(--white); border-left-color: var(--light-blue); }
@@ -142,7 +149,20 @@ a:focus, button:focus, [tabindex="0"]:focus, input:focus {
 .timeline-item:nth-child(odd):after { right: -10px; }
 .timeline-item:nth-child(even):after { left: -10px; }
 
-.timeline-content-block { background: var(--white); color: var(--dark-blue); padding: 2rem; text-align: left; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.07); width: 100%; }
+/* --- INICIO DE CAMBIOS: Borde superior para vitalidad --- */
+.timeline-content-block { 
+    background: var(--white); 
+    color: var(--dark-blue); 
+    padding: 2rem; 
+    text-align: left; 
+    border-radius: 8px; 
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07); 
+    width: 100%;
+    border-top: 4px solid var(--accent); /* Borde de acento */
+    overflow: hidden; /* Asegura que el borde se vea bien con el border-radius */
+}
+/* --- FIN DE CAMBIOS --- */
+
 .timeline-item:nth-child(odd) .timeline-content-block { margin-right: 3rem; }
 .timeline-item:nth-child(even) .timeline-content-block { margin-left: 3rem; }
 
