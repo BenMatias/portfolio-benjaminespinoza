@@ -5,7 +5,7 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: 'Inter', sans-serif; background: var(--almost-white);
+  font-family: 'Inter', sans-serif; background: var(--white);
   color: var(--dark-blue);
 }
 a { text-decoration: none; color: inherit; }
@@ -15,7 +15,7 @@ a { text-decoration: none; color: inherit; }
 
 /* --- HEADER Y NAVEGACIÓN --- */
 .header-hero-wrapper { background: var(--dark-blue); color: var(--white); }
-.with-bg-image { background: url('../img/Header.jpg') center/cover no-repeat; }
+.header-hero-wrapper.with-bg-image { background: url('../img/Header.jpg') center/cover no-repeat; }
 header.container { padding: 1rem 0; display: flex; justify-content: space-between; align-items: center; position: relative; }
 .logo img { height: 44px; transition: transform 0.3s ease; }
 .logo img:hover { transform: scale(1.05); }
@@ -51,7 +51,7 @@ nav.desktop-nav a:hover { color: var(--light-blue); }
 .btn-hero-secondary:hover { background-color: var(--white); color: var(--dark-blue); }
 
 /* --- SECCIONES INDEX --- */
-.about-me { background-color: var(--white); }
+.about-me { background-color: var(--almost-white); }
 .about-container { display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; }
 .about-image { flex: 1 1 300px; text-align: center; }
 .about-image img { width: 100%; max-width: 320px; border-radius: 12px; }
@@ -59,7 +59,7 @@ nav.desktop-nav a:hover { color: var(--light-blue); }
 #about-text-content { color: var(--deep-blue); font-size: 1rem; line-height: 1.7; }
 #about-text-content p { margin-bottom: 1rem; }
 .impact { background-color: var(--dark-blue); }
-.impact .section-title { color: var(--white); }
+.impact .section-title { color: var(--white); border-left-color: var(--light-blue); }
 .impact-container { max-width: 1200px; margin: 0 auto; }
 .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
 .impact-card { background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: left; }
@@ -91,7 +91,7 @@ nav.desktop-nav a:hover { color: var(--light-blue); }
 .footer-bottom { font-size: 0.8rem; opacity: 0.7; }
 
 /* --- ESTILOS PARA LA PÁGINA DE CV --- */
-.cv-hero { background-color: var(--white); padding: 3rem 0; text-align: center; }
+.cv-hero { background-color: var(--almost-white); padding: 3rem 0; text-align: center; }
 .cv-hero h1 { font-size: 2.5rem; color: var(--dark-blue); }
 .cv-hero .subtitle { font-size: 1.1rem; color: var(--deep-blue); max-width: 600px; margin: 1rem auto 0 auto; }
 .dark-section-wrapper { background-color: var(--dark-blue); color: var(--white); }
