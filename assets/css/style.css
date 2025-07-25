@@ -492,3 +492,155 @@ nav.desktop-nav a:hover {
     grid-template-columns: 1fr;
   }
 }
+/* --- ESTILOS PARA LA PÁGINA DE CV (cv.html) --- */
+
+/* Contenedor y cabecera de la página */
+.page-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.page-header .section-title {
+    margin-bottom: 0; /* Anulamos el margen del título cuando está en la cabecera */
+}
+
+/* Estructura de línea de tiempo para Experiencia y Educación */
+.cv-section {
+    margin-bottom: 3rem;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e0eaf1;
+}
+.timeline-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.timeline-date {
+    flex: 0 0 120px; /* Ancho fijo para la fecha */
+    color: var(--mid-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    margin: 0 0 0.25rem 0;
+    color: var(--dark-blue);
+}
+
+.timeline-content h3 a {
+    color: var(--dark-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.timeline-content h3 a:hover {
+    color: var(--mid-blue);
+    text-decoration: underline;
+}
+
+.timeline-content p.timeline-company {
+    margin: 0 0 0.75rem 0;
+    font-weight: 600;
+    color: var(--deep-blue);
+}
+
+.timeline-content ul {
+    padding-left: 1.25rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Cuadrícula para Habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-category {
+    background-color: var(--almost-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e0eaf1;
+}
+
+.skill-category h4 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.1rem;
+    color: var(--dark-blue);
+}
+
+.skill-category ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+/* Lista de Certificaciones */
+.certifications-list {
+    list-style: none;
+    padding-left: 0;
+    columns: 2;
+    gap: 2rem;
+}
+
+.certifications-list li a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Contenedor de Insignias de Credly */
+.badge-widgets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.credly-link-styled {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--mid-blue);
+    text-decoration: none;
+}
+.credly-link-styled:hover {
+     text-decoration: underline;
+}
+
+/* --- ESTILOS RESPONSIVOS PARA CV --- */
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column; /* Apila fecha y contenido en móvil */
+        gap: 0.5rem;
+    }
+
+    .timeline-date {
+        flex-basis: auto; /* Anula el ancho fijo en móvil */
+    }
+
+    .certifications-list {
+        columns: 1; /* Una sola columna en móvil */
+    }
+}
