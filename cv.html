@@ -10,12 +10,10 @@
     <meta property="og:description" content="Review the professional CV of Ben Matias." />
     <meta property="og:image" content="https://portafoliostg.netlify.app/assets/img/og-image.jpg" />
     <meta property="og:url" content="https://portafoliostg.netlify.app/cv.html" />
-    <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ben Matias | CV / Resume" />
     <meta name="twitter:description" content="Review the professional CV of Ben Matias." />
     <meta name="twitter:image" content="https://portafoliostg.netlify.app/assets/img/og-image.jpg" />
-
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -25,35 +23,34 @@
 
     <div class="header-hero-wrapper">
         <header class="container">
-            <a href="index.html" class="logo">
-                <img src="assets/img/Logo.PNG" alt="Ben Matias Logo">
-            </a>
+            <a href="index.html" class="logo"><img src="assets/img/Logo.PNG" alt="Ben Matias Logo"></a>
             <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">&#9776;</button>
             <nav class="desktop-nav">
-                <a href="index.html#about">About</a>
-                <a href="cv.html">CV / Resume</a>
-                <a href="projects.html">Projects</a>
+                <a href="index.html#about">About</a><a href="cv.html">CV / Resume</a><a href="projects.html">Projects</a>
                 <a href="mailto:bmatiasespinoza@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                 <a href="https://www.linkedin.com/in/benmatias" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <button class="lang-toggle" aria-label="Change language"></button>
             </nav>
             <div id="mobile-nav" class="mobile-nav">
-                <a href="index.html#about">About</a>
-                <a href="cv.html">CV / Resume</a>
-                <a href="projects.html">Projects</a>
+                <a href="index.html#about">About</a><a href="cv.html">CV / Resume</a><a href="projects.html">Projects</a>
                 <a href="mailto:bmatiasespinoza@gmail.com"><i class="fas fa-envelope"></i> Email</a>
                 <a href="https://www.linkedin.com/in/benmatias" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <div class="lang-toggle-wrapper">
-                     <button class="lang-toggle" aria-label="Change language"></button>
-                </div>
+                <div class="lang-toggle-wrapper"><button class="lang-toggle" aria-label="Change language"></button></div>
             </div>
         </header>
     </div>
 
     <main>
+        <section class="cv-hero">
+            <div class="container">
+                <h1 id="cv-hero-title"></h1>
+                <p id="cv-hero-summary" class="subtitle"></p>
+            </div>
+        </section>
+
         <div class="container page-container">
             <div class="page-header">
-                <h1 id="cv-title" class="section-title"></h1>
+                <h2 id="cv-title" class="section-title"></h2>
                 <a id="download-btn" class="btn btn-outline-blue" href="assets/Benjamin_Espinoza_CV.pdf" download>
                     <i class="fas fa-download"></i> <span id="download-btn-text"></span>
                 </a>
@@ -61,58 +58,49 @@
 
             <section class="cv-section" id="work-experience">
                 <h2 id="work-experience-title" class="section-title"></h2>
-                <div id="work-experience-content" class="timeline">
-                    </div>
+                <div id="work-experience-content" class="timeline"></div>
             </section>
 
             <section class="cv-section" id="education">
                 <h2 id="education-title" class="section-title"></h2>
-                <div id="education-content" class="timeline">
-                    </div>
+                <div id="education-content" class="timeline"></div>
             </section>
-            
-            <section class="cv-section" id="skills">
-                <h2 id="skills-title" class="section-title"></h2>
-                <div id="skills-content" class="skills-grid">
-                    </div>
-            </section>
+        </div>
 
-            <section class="cv-section" id="certifications">
-                <h2 id="certifications-title" class="section-title"></h2>
-                <ul id="certifications-content" class="certifications-list">
-                     </ul>
-            </section>
-            
-            <section class="cv-section" id="badges">
-                <h2 id="badges-title" class="section-title"></h2>
-                <div id="badges-content" class="badge-widgets">
-                    </div>
-                 <p style="margin-top: 1rem; text-align: center;">
-                    <a id="credly-link" href="https://www.credly.com/users/benmatias" target="_blank" class="credly-link-styled">
-                      <i class="fas fa-external-link-alt"></i> <span></span>
-                    </a>
-                </p>
-            </section>
+        <div class="dark-section-wrapper">
+            <div class="container page-container">
+                <section class="cv-section" id="skills">
+                    <h2 id="skills-title" class="section-title"></h2>
+                    <div id="skills-content" class="skills-grid"></div>
+                </section>
+
+                <section class="cv-section" id="certifications">
+                    <h2 id="certifications-title" class="section-title"></h2>
+                    <ul id="certifications-content" class="certifications-list"></ul>
+                </section>
+
+                <section class="cv-section" id="badges">
+                    <h2 id="badges-title" class="section-title"></h2>
+                    <div id="badges-content" class="badge-widgets"></div>
+                    <p style="text-align: center;">
+                        <a id="credly-link" href="https://www.credly.com/users/benmatias" target="_blank" class="credly-link-styled">
+                            <i class="fas fa-external-link-alt"></i> <span></span>
+                        </a>
+                    </p>
+                </section>
+            </div>
         </div>
     </main>
 
     <footer class="footer">
         <div class="footer-contacts">
-          <a href="mailto:bmatiasespinoza@gmail.com">
-            <i class="fas fa-envelope"></i> bmatiasespinoza@gmail.com
-          </a>
+          <a href="mailto:bmatiasespinoza@gmail.com"><i class="fas fa-envelope"></i> bmatiasespinoza@gmail.com</a>
         </div>
         <div class="footer-socials">
-            <a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/BenMatias" target="_blank" rel="noopener" aria-label="GitHub Profile">
-                <i class="fab fa-github"></i>
-            </a>
+            <a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/BenMatias" target="_blank" rel="noopener" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 Ben Matias. All rights reserved.</p>
-        </div>
+        <div class="footer-bottom"><p>&copy; 2025 Ben Matias. All rights reserved.</p></div>
     </footer>
 
     <script async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
