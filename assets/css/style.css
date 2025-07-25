@@ -219,6 +219,28 @@ nav.desktop-nav a:hover {
   border-color: var(--dark-blue);
 }
 
+/* --- CAMBIO: Estilos para botones del hero --- */
+.btn-hero-primary {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+.btn-hero-primary:hover {
+    background-color: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.btn-hero-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+.btn-hero-secondary:hover {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+
 /* --- ABOUT ME SECTION --- */
 .about-me {
     background-color: var(--white);
@@ -415,16 +437,27 @@ nav.desktop-nav a:hover {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    margin-bottom: 1rem;
+    /* --- CAMBIO: Se reduce el margen inferior para dar espacio a los iconos --- */
+    margin-bottom: 1rem; 
 }
 
-.footer-contacts a {
-    color: var(--white);
-    text-decoration: none;
-    transition: color 0.3s;
+/* --- CAMBIO: Estilos para iconos sociales del footer --- */
+.footer-socials {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
 }
-.footer-contacts a:hover {
+
+.footer-socials a {
+    color: var(--white);
+    font-size: 1.75rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-socials a:hover {
     color: var(--light-blue);
+    transform: scale(1.1);
 }
 
 .footer-bottom {
@@ -449,8 +482,6 @@ nav.desktop-nav a:hover {
     .carousel-btn {
         display: none;
     }
-    /* --- CAMBIO AÑADIDO --- */
-    /* Oculta la imagen de la sección "About Me" en móvil para evitar redundancia y problemas de layout */
     .about-container .about-image {
         display: none;
     }
