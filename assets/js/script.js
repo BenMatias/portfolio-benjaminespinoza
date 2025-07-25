@@ -71,7 +71,7 @@ const translations = {
     projectsTitle: "Proyectos Destacados", project1Title: "Análisis de Desempleo en EE.UU.", project1Description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.",
     project1Button: "Ver Proyecto", viewAllBtn: "Ver Todos los Proyectos",
 
-    // --- CONTENIDO DEL CV EN ESPAÑOL (AHORA SÍ, COMPLETO) ---
+    // --- CV Page Content ---
     cv_hero_title: "Mi Trayectoria Profesional", cv_hero_summary: "Un resumen de mi experiencia transformando datos en decisiones estratégicas a través del análisis y la inteligencia de negocios.",
     cv_download: "Descargar PDF", cv_work_title: "Experiencia Laboral", cv_education_title: "Educación", cv_skills_title: "Habilidades y Herramientas",
     cv_languages_title: "Idiomas", cv_interests_title: "Intereses", cv_certifications_title: "Certificaciones", cv_badges_title: "Insignias Destacadas",
