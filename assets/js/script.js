@@ -183,8 +183,10 @@ const translations = {
     projects_list: [{
       id: "project-unemployment",
       title: "Unemployment in America",
+      description: "Analyze short- and long-term labor dynamics across U.S. states and cities using public data and interactive visuals.",
       link: "projects/US-Unemployment.html",
-      imageUrl: "assets/img/us-unemployment-cover.png"
+      imageUrl: "assets/img/us-unemployment-cover.png",
+      buttonText: "View Project"
     }]
   },
   es: {
@@ -371,8 +373,10 @@ const translations = {
     projects_list: [{
       id: "project-unemployment",
       title: "Desempleo en América",
+      description: "Analiza dinámicas laborales de corto y largo plazo en EE.UU. a nivel estatal y metropolitano mediante datos públicos y visualizaciones interactivas.",
       link: "projects/US-Unemployment.html",
-      imageUrl: "assets/img/us-unemployment-cover.png"
+      imageUrl: "assets/img/us-unemployment-cover.png",
+      buttonText: "Ver Proyecto"
     }]
   }
 };
@@ -510,14 +514,17 @@ function populateProjectsPage(lang) {
   const data = translations[lang] || translations.en;
   const getEl = (id) => document.getElementById(id);
 
-  const titleEl = getEl('projects-title');
-  if (titleEl) {
-    titleEl.innerHTML = `<i class="fas fa-lightbulb"></i> ${data.projects_page_title}`;
+  // Populate titles for both desktop and mobile containers
+  if (getEl('projects-title-desktop')) {
+    getEl('projects-title-desktop').innerHTML = `<i class="fas fa-lightbulb"></i> ${data.projects_page_title}`;
+  }
+  if (getEl('projects-title-mobile')) {
+    getEl('projects-title-mobile').innerHTML = `<i class="fas fa-lightbulb"></i> ${data.projects_page_title}`;
   }
 
+  // --- Desktop View Logic ---
   const listUl = getEl('projects-list-ul');
   const previewCol = getEl('projects-preview-column');
-
   if (listUl && previewCol) {
     listUl.innerHTML = '';
     previewCol.innerHTML = '';
@@ -538,23 +545,30 @@ function populateProjectsPage(lang) {
     projectLinks.forEach(link => {
       link.addEventListener('mouseenter', () => {
         const targetId = link.getAttribute('data-preview-target');
-
-        previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => {
-          activeImg.classList.remove('is-active');
-        });
-
+        previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => activeImg.classList.remove('is-active'));
         const targetImage = getEl(targetId);
-        if (targetImage) {
-          targetImage.classList.add('is-active');
-        }
+        if (targetImage) targetImage.classList.add('is-active');
       });
     });
 
     listUl.addEventListener('mouseleave', () => {
-      previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => {
-        activeImg.classList.remove('is-active');
-      });
+      previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => activeImg.classList.remove('is-active'));
     });
+  }
+  
+  // --- Mobile View Logic ---
+  const grid = getEl('projects-grid');
+  if (grid) {
+    grid.innerHTML = data.projects_list.map(project => `
+      <a href="${project.link}" class="project-card-mobile">
+        <img src="${project.imageUrl}" alt="${project.title} preview">
+        <div class="project-card-mobile-content">
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+          <span class="btn btn-outline-blue">${project.buttonText}</span>
+        </div>
+      </a>
+    `).join('');
   }
 }
 
@@ -563,6 +577,7 @@ function setLanguage(lang) {
   document.documentElement.lang = lang;
   const data = translations[lang] || translations.en;
 
+  // Common content (runs on all pages)
   document.querySelectorAll('[data-translate]').forEach(el => {
     const key = el.getAttribute('data-translate');
     if (data[key]) {
@@ -570,9 +585,15 @@ function setLanguage(lang) {
     }
   });
 
+  document.querySelectorAll(".lang-toggle").forEach(el => {
+    el.innerHTML = lang === "en" ? `<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES` : `<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN`;
+  });
+
+  // Page-specific content
   const body = document.body;
+  const getEl = (id) => document.getElementById(id);
+
   if (body.classList.contains('page-home')) {
-    const getEl = (id) => document.getElementById(id);
     if (getEl('hero-title')) getEl('hero-title').textContent = data.heroTitle;
     if (getEl('hero-subtitle')) getEl('hero-subtitle').textContent = data.heroSubtitle;
     if (getEl('btn-projects')) getEl('btn-projects').textContent = data.btnProjects;
@@ -615,10 +636,6 @@ function setLanguage(lang) {
   } else if (body.classList.contains('page-projects')) {
     populateProjectsPage(lang);
   }
-
-  document.querySelectorAll(".lang-toggle").forEach(el => {
-    el.innerHTML = lang === "en" ? `<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES` : `<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN`;
-  });
 }
 
 function toggleLang() {
@@ -644,6 +661,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
 
   const carousel = document.getElementById('project-carousel');
   if (carousel) {
