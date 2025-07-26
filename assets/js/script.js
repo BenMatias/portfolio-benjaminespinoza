@@ -34,67 +34,67 @@ const translations = {
     viewAllBtn: "View All Projects",
 
     // --- CV Page Content ---
-    [cite_start]cv_hero_title: "My Professional Journey"[cite: 87],
-    [cite_start]cv_hero_summary: "A journey through the projects and roles that have defined my career in the world of data"[cite: 88],
-    [cite_start]cv_download: "Download PDF"[cite: 99],
-    [cite_start]cv_work_title: "Work Experience"[cite: 89],
-    [cite_start]cv_education_title: "Education"[cite: 111],
-    [cite_start]cv_skills_title: "My Skills Lineup"[cite: 127],
-    [cite_start]cv_languages_title: "Languages"[cite: 148],
-    [cite_start]cv_interests_title: "Interests"[cite: 157],
-    [cite_start]cv_certifications_title: "Certifications"[cite: 152],
-    [cite_start]cv_badges_title: "Highlighted Badges"[cite: 165],
+    cv_hero_title: "My Professional Journey",
+    cv_hero_summary: "A journey through the projects and roles that have defined my career in the world of data.",
+    cv_download: "Download PDF",
+    cv_work_title: "Work Experience",
+    cv_education_title: "Education",
+    cv_skills_title: "My Skills Lineup",
+    cv_languages_title: "Languages",
+    cv_interests_title: "Interests",
+    cv_certifications_title: "Certifications",
+    cv_badges_title: "Highlighted Badges",
     cv_credly_link: "View more on my profile on Credly",
     cv_timeline_items: [{
       type: 'work',
       date: "May 2023 – Present",
       title: "Business Analyst",
-      [cite_start]company: "Banco Internacional"[cite: 91],
+      company: "Banco Internacional",
       url: "https://www.internacional.cl",
       logo: "assets/img/logos/banco-internacional.png",
       description: `<ul><li>Built a company-wide reporting and KPI system from scratch for the Innovation area, where performance tracking and outcome evaluation were previously nonexistent.</li><li>Created over 20 dashboards for departments such as Innovation, Fraud, Sales, Product Owners, and Strategic Planning.</li><li>Led and scaled a metrics team, automated processes using ETL pipelines and team-managed databases, ensuring data integrity and scalability.</li><li>Transitioned to cross-functional squad as Business Analyst: user stories, testing, flows and dashboards.</li></ul>`
     }, {
       type: 'work',
-      [cite_start]date: "Sep 2021 – Apr 2023"[cite: 101],
-      [cite_start]title: "Data & Business Control Analyst"[cite: 102],
-      [cite_start]company: "Lucas Diesel"[cite: 98],
+      date: "Sep 2021 – Apr 2023",
+      title: "Data & Business Control Analyst",
+      company: "Lucas Diesel",
       url: "https://lucasdiesel.cl",
       logo: "assets/img/logos/lucas-diesel.png",
-      [cite_start]description: `<ul><li>Created a new data analytics function in a company lacking visibility due to shared finance with sister company.</li><li>Delivered 30+ Power BI reports across operations, sales, inventory, procurement, automotive services and executive dashboards.</li><li>Automated daily report delivery, saving up to 1 hour daily.</li><li>Improved annual budgeting from 6 to 2 months over two years.</li></ul>` [cite: 103, 105, 106]
+      description: `<ul><li>Created a new data analytics function in a company lacking visibility due to shared finance with sister company.</li><li>Delivered 30+ Power BI reports across operations, sales, inventory, procurement, automotive services and executive dashboards.</li><li>Automated daily report delivery, saving up to 1 hour daily.</li><li>Improved annual budgeting from 6 to 2 months over two years.</li></ul>`
     }, {
       type: 'work',
       date: "Nov 2019 – Aug 2021",
-      [cite_start]title: "Financial Performance Analyst"[cite: 97],
+      title: "Financial Performance Analyst",
       company: "Heavenward Ascensores",
       url: "https://www.heavenward.cl",
       logo: "assets/img/logos/heavenward.png",
-      [cite_start]description: `<ul><li>Tracked KPIs and costs for modernization projects.</li><li>Created dashboards in Excel and Power BI to support strategic decisions.</li><li>Worked with technical and executive teams to improve customer data insights.</li></ul>` [cite: 107, 109, 110]
+      description: `<ul><li>Tracked KPIs and costs for modernization projects.</li><li>Created dashboards in Excel and Power BI to support strategic decisions.</li><li>Worked with technical and executive teams to improve customer data insights.</li></ul>`
     }, {
       type: 'education',
-      [cite_start]date: "2024"[cite: 112],
-      [cite_start]title: "International Diploma in Digital Transformation"[cite: 113],
-      [cite_start]company: "Digital Bank LATAM"[cite: 113],
+      date: "2024",
+      title: "International Diploma in Digital Transformation",
+      company: "Digital Bank LATAM",
       url: "https://www.digitalbankla.com",
       logo: "assets/img/logos/digital-bank-latam.png"
     }, {
       type: 'education',
-      [cite_start]date: "2022"[cite: 118],
-      [cite_start]title: "Diploma in Web Design & Programming"[cite: 119],
-      [cite_start]company: "Fundación Telefónica & AIEP"[cite: 119],
+      date: "2022",
+      title: "Diploma in Web Design & Programming",
+      company: "Fundación Telefónica & AIEP",
       url: "https://www.fundaciontelefonica.cl",
       logo: "assets/img/logos/telefonica-aiep.png"
     }, {
       type: 'education',
-      [cite_start]date: "2022"[cite: 120],
-      [cite_start]title: "University Preparation Program"[cite: 121],
-      [cite_start]company: "BYU PathwayConnect"[cite: 121],
+      date: "2022",
+      title: "University Preparation Program",
+      company: "BYU PathwayConnect",
       url: "https://www.byupathway.edu",
       logo: "assets/img/logos/byu.png"
     }, {
       type: 'education',
       date: "2013–2020",
-      [cite_start]title: "Industrial Civil Engineering"[cite: 126],
-      [cite_start]company: "Universidad de Valparaíso"[cite: 126],
+      title: "Industrial Civil Engineering",
+      company: "Universidad de Valparaíso",
       url: "https://uv.cl",
       logo: "assets/img/logos/uv.png"
     }],
@@ -172,18 +172,12 @@ const translations = {
     }],
 
     // --- Projects Page Content ---
-    [cite_start]projects_page_title: "Projects"[cite: 70],
-    projects_intro: `As a data analyst, I’ve developed numerous dashboards and KPI reports using tools like Power BI, Looker Studio, and Tableau. However, due to confidentiality agreements, I’m unable to publicly showcase those internal reports. For this portfolio, I use <strong>public datasets</strong> and <strong>Looker Studio</strong>—a free and accessible BI tool that allows me to share projects openly and interactively. [cite_start]Each project reflects real-world analytical approaches applied in a transparent, reproducible way.`[cite: 71, 72, 73, 74],
-
+    projects_page_title: "Projects",
     projects_list: [{
       id: "project-unemployment",
-      [cite_start]title: "Unemployment in America"[cite: 78],
+      title: "Unemployment in America",
       link: "projects/US-Unemployment.html",
-      imageUrl: "assets/img/us-unemployment-cover.png",
-      [cite_start]description: "Analyze short- and long-term labor dynamics across U.S. states and cities using public data and interactive visuals."[cite: 79],
-      [cite_start]date: "July 2025"[cite: 80],
-      [cite_start]buttonText: "View Project"[cite: 83],
-      [cite_start]published: "Published:" [cite: 80]
+      imageUrl: "assets/img/us-unemployment-cover.png"
     }]
   },
   es: {
@@ -360,17 +354,11 @@ const translations = {
 
     // --- Projects Page Content ---
     projects_page_title: "Proyectos",
-    projects_intro: `Como analista de datos, he desarrollado numerosos dashboards e informes de KPI utilizando herramientas como Power BI, Looker Studio y Tableau. Sin embargo, debido a acuerdos de confidencialidad, no puedo compartir públicamente esos reportes internos. Para este portafolio, utilizo <strong>datasets públicos</strong> y <strong>Looker Studio</strong>, una herramienta gratuita y accesible que me permite compartir proyectos de forma abierta e interactiva. Cada proyecto refleja enfoques analíticos del mundo real aplicados de forma transparente y reproducible.`,
-
     projects_list: [{
       id: "project-unemployment",
       title: "Desempleo en América",
       link: "projects/US-Unemployment.html",
-      imageUrl: "assets/img/us-unemployment-cover.png",
-      description: "Analiza dinámicas laborales de corto y largo plazo en EE.UU. a nivel estatal y metropolitano mediante datos públicos y visualizaciones interactivas.",
-      date: "Julio 2025",
-      buttonText: "Ver Proyecto",
-      published: "Publicado:"
+      imageUrl: "assets/img/us-unemployment-cover.png"
     }]
   }
 };
@@ -608,11 +596,11 @@ function toggleLang() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Add page-specific class to body
-  const path = window.location.pathname;
-  if (path.includes('cv.html')) {
+  const path = window.location.pathname.split("/").pop();
+
+  if (path === 'cv.html') {
     document.body.classList.add('page-cv');
-  } else if (path.includes('projects.html')) {
+  } else if (path === 'projects.html') {
     document.body.classList.add('page-projects');
   } else {
     document.body.classList.add('page-home');
