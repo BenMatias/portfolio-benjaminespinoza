@@ -437,4 +437,235 @@ function populateCvPage(lang) {
   if (timelineEducation) {
     timelineEducation.innerHTML = educationItems.map((item, index) => {
       return `<div class="timeline-item">
-                        <div class="timeline-logo-wrapper
+                        <div class="timeline-logo-wrapper">
+                             <img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo">
+                        </div>
+                        <div class="timeline-content-block">
+                            <div class="timeline-date">${item.date}</div>
+                            <h3 class="timeline-title">${item.title}</h3>
+                            <p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>
+                            ${item.description || ''}
+                        </div>
+                    </div>`;
+    }).join('');
+  }
+
+  const skillsContainer = getEl('skills-content');
+  if (skillsContainer) {
+    const {
+      tier1,
+      tier2,
+      tier3,
+      tier4
+    } = data.cv_skills_items;
+    let lineupHtml = '<div class="skills-lineup">';
+
+    if (tier1 && tier1.length > 0) {
+      lineupHtml += '<div class="lineup-tier lineup-tier-1">';
+      tier1.forEach(skill => {
+        lineupHtml += `<div class="skill"><img src="${skill.logo}" class="skill-logo" alt="${skill.name} logo"><span>${skill.name}</span></div>`;
+      });
+      lineupHtml += '</div>';
+    }
+
+    if (tier2 && tier2.length > 0) {
+      lineupHtml += '<div class="lineup-tier lineup-tier-2">';
+      tier2.forEach(skill => {
+        lineupHtml += `<div class="skill">${skill}</div>`;
+      });
+      lineupHtml += '</div>';
+    }
+
+    if (tier3 && tier3.length > 0) {
+      lineupHtml += '<div class="lineup-tier lineup-tier-3">';
+      tier3.forEach(skill => {
+        lineupHtml += `<div class="skill">${skill}</div>`;
+      });
+      lineupHtml += '</div>';
+    }
+
+    if (tier4 && tier4.length > 0) {
+      lineupHtml += '<div class="lineup-tier lineup-tier-4">';
+      tier4.forEach(skill => {
+        lineupHtml += `<div class="skill">${skill}</div>`;
+      });
+      lineupHtml += '</div>';
+    }
+
+    lineupHtml += '</div>';
+    skillsContainer.innerHTML = lineupHtml;
+  }
+
+  const langContainer = getEl('languages-content');
+  if (langContainer) langContainer.innerHTML = data.cv_languages_items.map(item => `<div class="language-item"><img src="https://flagcdn.com/w40/${item.flag}.png" alt="${item.lang} flag"><div><p><strong>${item.lang}</strong></p><p class="lang-level">${item.level}</p></div></div>`).join('');
+  const interestsContainer = getEl('interests-content');
+  if (interestsContainer) interestsContainer.innerHTML = data.cv_interests_items.map(item => `<div class="interest-item"><i class="${item.icon}"></i><p>${item.name}</p></div>`).join('');
+  const certsContainer = getEl('certifications-content');
+  if (certsContainer) certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="${item.url}" target="_blank" rel="noopener">${item.name}</a></li>`).join('');
+
+  setTimeout(setupScrollAnimations, 100);
+}
+
+function populateProjectsPage(lang) {
+  const data = translations[lang] || translations.en;
+  const getEl = (id) => document.getElementById(id);
+
+  const titleEl = getEl('projects-title');
+  if (titleEl) {
+    titleEl.innerHTML = `<i class="fas fa-lightbulb"></i> ${data.projects_page_title}`;
+  }
+
+  const listUl = getEl('projects-list-ul');
+  const previewCol = getEl('projects-preview-column');
+
+  if (listUl && previewCol) {
+    listUl.innerHTML = '';
+    previewCol.innerHTML = '';
+
+    data.projects_list.forEach(project => {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `<a href="${project.link}" data-preview-target="${project.id}">${project.title}</a>`;
+      listUl.appendChild(listItem);
+
+      const previewImage = document.createElement('div');
+      previewImage.id = project.id;
+      previewImage.className = 'project-preview-image';
+      previewImage.style.backgroundImage = `url('${project.imageUrl}')`;
+      previewCol.appendChild(previewImage);
+    });
+
+    const projectLinks = listUl.querySelectorAll('a');
+    projectLinks.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        const targetId = link.getAttribute('data-preview-target');
+
+        previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => {
+          activeImg.classList.remove('is-active');
+        });
+
+        const targetImage = getEl(targetId);
+        if (targetImage) {
+          targetImage.classList.add('is-active');
+        }
+      });
+    });
+
+    listUl.addEventListener('mouseleave', () => {
+      previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => {
+        activeImg.classList.remove('is-active');
+      });
+    });
+  }
+}
+
+function setLanguage(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  const data = translations[lang] || translations.en;
+
+  document.querySelectorAll('[data-translate]').forEach(el => {
+    const key = el.getAttribute('data-translate');
+    if (data[key]) {
+      el.textContent = data[key];
+    }
+  });
+
+  const body = document.body;
+  if (body.classList.contains('page-home')) {
+    const getEl = (id) => document.getElementById(id);
+    if (getEl('hero-title')) getEl('hero-title').textContent = data.heroTitle;
+    if (getEl('hero-subtitle')) getEl('hero-subtitle').textContent = data.heroSubtitle;
+    if (getEl('btn-projects')) getEl('btn-projects').textContent = data.btnProjects;
+    if (getEl('btn-resume')) getEl('btn-resume').textContent = data.btnResume;
+    if (getEl('about-title')) getEl('about-title').textContent = data.aboutTitle;
+    if (getEl('about-text-content')) getEl('about-text-content').innerHTML = data.aboutContent;
+    if (getEl('impact-title')) getEl('impact-title').textContent = data.impactTitle;
+    if (getEl('projects-title')) getEl('projects-title').textContent = data.projectsTitle;
+    if (getEl('view-all-btn')) getEl('view-all-btn').textContent = data.viewAllBtn;
+
+    const impactGrid = document.querySelector('.impact-grid');
+    if (impactGrid) {
+      impactGrid.innerHTML = '';
+      data.impacts.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'impact-card';
+        card.innerHTML = `<i class="fas ${item.icon}"></i><h3>${item.title}</h3><p>${item.text}</p>`;
+        impactGrid.appendChild(card);
+      });
+    }
+    
+    const projectCarousel = getEl("project-carousel");
+    if (projectCarousel) {
+        projectCarousel.innerHTML = '';
+        (data.featured_projects || []).forEach(project => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.innerHTML = `
+                <img src="${project.imageUrl}" alt="${project.title}">
+                <div class="project-card-content">
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                    <a href="${project.link}" class="btn btn-outline-blue">${project.buttonText}</a>
+                </div>`;
+            projectCarousel.appendChild(card);
+        });
+    }
+  } else if (body.classList.contains('page-cv')) {
+    populateCvPage(lang);
+  } else if (body.classList.contains('page-projects')) {
+    populateProjectsPage(lang);
+  }
+
+  document.querySelectorAll(".lang-toggle").forEach(el => {
+    el.innerHTML = lang === "en" ? `<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES` : `<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN`;
+  });
+}
+
+function toggleLang() {
+  setLanguage(currentLang === 'en' ? 'es' : 'en');
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setLanguage('en');
+
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      if (mobileNav) mobileNav.classList.toggle('show');
+    });
+  }
+
+  if (mobileNav) {
+    mobileNav.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        mobileNav.classList.remove('show');
+      }
+    });
+  }
+
+  const carousel = document.getElementById('project-carousel');
+  if (carousel) {
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+
+    const scrollStep = () => {
+      return 300 + 24;
+    };
+
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({
+        left: scrollStep(),
+        behavior: 'smooth'
+      });
+    });
+
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({
+        left: -scrollStep(),
+        behavior: 'smooth'
+      });
+    });
+  }
+});
