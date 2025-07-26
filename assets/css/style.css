@@ -96,7 +96,7 @@ a:focus, button:focus, [tabindex="0"]:focus, input:focus {
 .impact-card p { font-size: 0.95rem; color: var(--deep-blue); line-height: 1.5; }
 
 .projects { background-color: var(--white); }
-.projects .section-title { text-align: left; }
+#projects-title.section-title { text-align: left; }
 .projects-container { text-align: center; }
 .carousel-wrapper { position: relative; margin-bottom: 2rem; }
 .carousel { display: flex; gap: 1.5rem; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; padding: 1rem 0.5rem; -ms-overflow-style: none; scrollbar-width: none; }
@@ -367,7 +367,7 @@ p.timeline-company a:hover {
 /* --- ESTILOS PARA LA PÁGINA DE PROYECTOS --- */
 .projects-main-content {
   display: flex;
-  min-height: calc(100vh - 220px); /* Ajusta este valor según la altura de tu header y footer */
+  min-height: calc(100vh - 220px);
 }
 .projects-list-column {
   flex: 1 1 50%;
@@ -436,4 +436,4 @@ p.timeline-company a:hover {
   .projects-list-column {
     padding: 2rem;
   }
-  }
+}
