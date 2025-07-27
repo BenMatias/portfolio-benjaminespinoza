@@ -455,32 +455,54 @@ p.timeline-company a:hover {
 }
 
 
-/* --- TEMA PROYECTO 1: UNEMPLOYMENT (VERDE OSCURO) --- */
+/* --- TEMA PROYECTO 1: UNEMPLOYMENT (VERDE) --- */
 .theme-dark-project {
-  --dark-blue: #092E34;
-  --almost-white: #0E3E45;
-  --mid-blue: #00A693;
-  --accent: #00D5C0;
-  --deep-blue: #FFFFFF;
-  --text-secondary: #B3CFE5;
-}
-.theme-dark-project {
-  background: var(--dark-blue);
-  color: var(--text-secondary);
+  background-color: var(--white);
+  color: var(--dark-blue);
+  --unemployment-green-dark: #092E34;
+  --unemployment-green-mid: #00A693;
 }
 .theme-dark-project .header-hero-wrapper,
 .theme-dark-project .footer {
-    background-color: #062024;
+    background-color: var(--unemployment-green-dark);
 }
-.theme-dark-project .section-title,
 .theme-dark-project .project-header h1 {
-  color: var(--deep-blue);
-  border-left-color: var(--mid-blue);
+  color: var(--unemployment-green-dark);
 }
-.theme-dark-project .project-executive-summary,
+.theme-dark-project .project-executive-summary {
+  background-color: #F0FFFC;
+  border-left: 5px solid var(--unemployment-green-dark);
+}
+.theme-dark-project .summary-card i {
+    color: var(--unemployment-green-dark);
+}
 .theme-dark-project .project-sidebar .sidebar-section {
-  background-color: var(--almost-white);
+  background-color: var(--white);
+  border: 1px solid #ddd;
+  border-top: 4px solid var(--unemployment-green-dark);
 }
+.theme-dark-project .project-sidebar h3 {
+    color: var(--dark-blue);
+}
+.theme-dark-project .project-sidebar p,
+.theme-dark-project .project-sidebar li,
+.theme-dark-project .project-sidebar strong {
+    color: var(--deep-blue);
+}
+.theme-dark-project .project-sidebar h3 i {
+    color: var(--unemployment-green-dark);
+}
+.theme-dark-project .project-sidebar a {
+    color: var(--unemployment-green-mid);
+    font-weight: 600;
+}
+.theme-dark-project .button.btn-back {
+    background-color: var(--unemployment-green-dark);
+}
+.theme-dark-project .button.btn-looker {
+    background-color: var(--unemployment-green-mid);
+}
+
 
 /* --- TEMA PROYECTO 2: FINANCIAL INCLUSION (AZUL) --- */
 .theme-blue-project {
