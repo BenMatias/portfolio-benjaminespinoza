@@ -568,6 +568,7 @@ p.timeline-company a:hover {
 }
 .project-sidebar h3 i {
     font-size: 1rem;
+    margin-right: 0.75rem; /* Espacio entre ícono y texto */
 }
 .project-sidebar p,
 .project-sidebar li {
