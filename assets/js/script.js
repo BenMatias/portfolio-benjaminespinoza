@@ -834,10 +834,11 @@ function setLanguage(lang, basePath) {
   } else if (document.body.classList.contains('page-projects')) {
     populateProjectsPage(lang, basePath);
   } else if (document.body.classList.contains('page-project-case-study')) {
-    const path = window.location.pathname.toLowerCase();
-    if (path.includes('us-unemployment.html')) {
+    const bodyId = document.body.id; // Obtenemos el ID del body
+    
+    if (bodyId === 'page-unemployment') {
         populateUnemploymentPage(lang, basePath);
-    } else if (path.includes('global-financial-inclusion.html')) {
+    } else if (bodyId === 'page-financial-inclusion') {
         populateFinancialInclusionPage(lang, basePath);
     }
   }
