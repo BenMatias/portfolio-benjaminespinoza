@@ -179,9 +179,9 @@ const translations = {
     // --- Projects Page Content ---
     projects_page_title: "Projects",
     projects_list: [
-        { id: "project-pokedex", title: "Interactive Pokédex", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.png" },
-        { id: "project-unemployment", title: "Unemployment in America", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png" },
-        { id: "project-financial-inclusion", title: "Global Financial Inclusion", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png" }
+        { id: "project-pokedex", title: "Interactive Pokédex", description: "An interactive dashboard with data from over 1,000 Pokémon.", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.png" },
+        { id: "project-unemployment", title: "Unemployment in America", description: "Analysis of unemployment trends across U.S. states and metro areas.", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png" },
+        { id: "project-financial-inclusion", title: "Global Financial Inclusion", description: "Visualizing global trends in account ownership and borrowing behaviors.", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png" }
     ],
 
     // --- CASE STUDY DATA ---
@@ -396,9 +396,9 @@ const translations = {
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
     projects_list: [
-        { id: "project-pokedex", title: "Pokédex Interactiva", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.png" },
-        { id: "project-unemployment", title: "Desempleo en América", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png" },
-        { id: "project-financial-inclusion", title: "Inclusión Financiera Global", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png" }
+        { id: "project-pokedex", title: "Pokédex Interactiva", description: "Un dashboard interactivo con datos de más de 1.000 Pokémon.", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.png" },
+        { id: "project-unemployment", title: "Desempleo en América", description: "Análisis de tendencias de desempleo en estados y áreas metropolitanas de EE.UU.", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png" },
+        { id: "project-financial-inclusion", title: "Inclusión Financiera Global", description: "Visualización de tendencias globales en posesión de cuentas y comportamientos de crédito.", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png" }
     ],
 
     // --- CASE STUDY DATA ---
@@ -699,7 +699,7 @@ function populateProjectsPage(lang, basePath) {
   const data = translations[lang] || translations.en;
   const titleEl = getEl('projects-title');
   if (titleEl) {
-    titleEl.innerHTML = `<i class="fas fa-lightbulb"></i> ${data.projects_page_title}`;
+    titleEl.textContent = data.projects_page_title;
   }
 
   const listUl = getEl('projects-list-ul');
@@ -711,7 +711,11 @@ function populateProjectsPage(lang, basePath) {
 
     data.projects_list.forEach(project => {
       const listItem = document.createElement('li');
-      listItem.innerHTML = `<a href="${project.link}" data-preview-target="${project.id}">${project.title}</a>`;
+      listItem.innerHTML = `
+        <a href="${project.link}" data-preview-target="${project.id}">
+            <span class="project-list-title">${project.title}</span>
+            <span class="project-list-description">${project.description}</span>
+        </a>`;
       listUl.appendChild(listItem);
 
       const previewImage = document.createElement('div');
