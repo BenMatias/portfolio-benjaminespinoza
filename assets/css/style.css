@@ -570,5 +570,10 @@ p.timeline-company a:hover {
   .project-sidebar {
     position: static;
     width: 100%;
+    order: 2;
+    margin-top: 3rem;
+  }
+  .project-dashboard-content {
+    order: 1;
   }
 }
