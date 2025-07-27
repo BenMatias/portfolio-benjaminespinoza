@@ -450,6 +450,39 @@ p.timeline-company a:hover {
 .btn-x { background-color: #000000; }
 .btn-looker { background-color: #4285F4; }
 
+/* --- ESTILOS PARA RESUMEN EJECUTIVO DEL PROYECTO --- */
+.project-executive-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+  padding: 2rem;
+  background-color: var(--almost-white); 
+  border-radius: 8px;
+  border-left: 5px solid var(--accent);
+}
+.summary-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+.summary-card i {
+  font-size: 1.8rem;
+  color: var(--mid-blue);
+  margin-top: 5px;
+}
+.summary-card-text h3 {
+  font-size: 1.1rem;
+  color: var(--deep-blue);
+  margin: 0 0 0.5rem 0;
+}
+.summary-card-text p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
 .case-study-layout {
   display: flex;
   gap: 3rem;
@@ -462,7 +495,11 @@ p.timeline-company a:hover {
   top: 120px;
 }
 .project-sidebar .sidebar-section {
-  margin-bottom: 2rem;
+    background-color: var(--almost-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-top: 3px solid var(--mid-blue);
 }
 .project-sidebar h3 {
   font-size: 1.1rem;
