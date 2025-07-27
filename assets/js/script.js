@@ -31,10 +31,7 @@ const translations = {
       text: "Empowered diverse business areas with data-driven insights to support decision-making across operations, sales, risk, product, and beyond."
     }],
     projectsTitle: "Featured Projects",
-    projects: [
-        { title: "US Unemployment Analysis", description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "View Project" },
-        { title: "Global Financial Inclusion", description: "Visualize global trends in account ownership and borrowing behavior by region, income group, and demographics.", imageUrl: "assets/img/global-financial-inclusion-cover.png", link: "projects/global-financial-inclusion.html", buttonText: "View Project" }
-    ],
+    projects: [ { title: "US Unemployment Analysis", description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "View Project" } ],
     viewAllBtn: "View All Projects",
 
     // --- CV Page Content ---
@@ -177,16 +174,16 @@ const translations = {
 
     // --- Projects Page Content ---
     projects_page_title: "Projects",
-    projects_list: [
-        { id: "project-unemployment", title: "Unemployment in America", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png" },
-        { id: "project-financial-inclusion", title: "Global Financial Inclusion", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png" }
-    ],
+    projects_list: [{
+      id: "project-unemployment",
+      title: "Unemployment in America",
+      link: "projects/US-Unemployment.html",
+      imageUrl: "assets/img/us-unemployment-cover.png"
+    }],
 
-    // --- CASE STUDY DATA ---
+    // --- Case Study Page Content: US Unemployment ---
     project_unemployment: {
       pageTitle: "Unemployment in America – A Data-Driven Overview",
-      lookerStudioUrl: "https://lookerstudio.google.com/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45",
-      iframeEmbed: `<iframe src="https://lookerstudio.google.com/embed/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45/page/SE1QF" loading="lazy" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Back to Projects",
       linkedinButton: "Share on LinkedIn",
       xButton: "Share on X",
@@ -220,7 +217,6 @@ const translations = {
       ],
       datasetTitle: "Dataset Information",
       datasetSource: "Source:",
-      datasetSourceText: "U.S. Bureau of Labor Statistics",
       datasetSourceLink: "https://www.bls.gov/data/",
       datasetPeriod: "Period:",
       datasetPeriodValue: "January 2020 – May 2025",
@@ -230,55 +226,6 @@ const translations = {
       roleText: "I sourced and filtered public datasets, defined KPIs and filtering logic, and designed the dashboard using Looker Studio.",
       dashboardTitle: "Interactive Dashboard",
       dashboardSubtitle: "Explore the interactive report below or use the tabs to dive into state and metro-level insights."
-    },
-    project_financial_inclusion: {
-      pageTitle: "Global Financial Inclusion Dashboard – 2025",
-      lookerStudioUrl: "https://lookerstudio.google.com/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb",
-      iframeEmbed: `<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb/page/4kyRF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
-      backButton: "Back to Projects",
-      linkedinButton: "Share on LinkedIn",
-      xButton: "Share on X",
-      lookerButton: "View on Looker Studio",
-      executiveSummary: [
-        {
-          icon: "fas fa-users",
-          title: "5.77 Billion Adults (15+)",
-          text: "Total global adult population considered for financial inclusion metrics."
-        },
-        {
-          icon: "fas fa-piggy-bank",
-          title: "78.02% Account Ownership",
-          text: "Global rate of adults who own a financial account, reflecting broad access to financial services."
-        },
-        {
-          icon: "fas fa-money-check-alt",
-          title: "Formal vs. Informal Borrowing",
-          text: "The dashboard analyzes borrowing behaviors, differentiating between formal financial institutions and informal sources."
-        }
-      ],
-      problemTitle: "Problem Statement",
-      problemText: "Financial inclusion is essential for reducing inequality and promoting sustainable economic development. However, access to financial services varies significantly across countries, regions, income levels, and demographic segments. Understanding these gaps is key to driving more inclusive financial ecosystems.",
-      objectiveTitle: "Dashboard Objective",
-      objectiveText: "To provide a comprehensive overview of financial inclusion worldwide, focusing on two main dimensions: account ownership (including formal and mobile money accounts) and borrowing behavior (from formal and informal sources). The dashboard allows for interactive comparisons by region, income group, and demographic characteristics.",
-      questionsTitle: "Key Questions",
-      questionsList: [
-        "Which regions have the highest levels of financial inclusion?",
-        "How does account ownership differ between income groups or genders?",
-        "What demographic groups are most likely to borrow informally?",
-        "Where is mobile money playing a key role in financial access?"
-      ],
-      datasetTitle: "Dataset Information",
-      datasetSource: "Source:",
-      datasetSourceText: "World Bank – Global Findex Database 2025",
-      datasetSourceLink: "https://www.worldbank.org/en/publication/globalfindex",
-      datasetPeriod: "Coverage:",
-      datasetPeriodValue: "140+ countries (2025 data)",
-      datasetScope: "Metrics:",
-      datasetScopeValue: "Account ownership, borrowing, mobile money, demographics (adults 15+).",
-      roleTitle: "My Role",
-      roleText: "I led the entire development of the dashboard, including: cleaning and transforming raw data from the Global Findex 2025 dataset, creating calculated fields for regional classification, designing KPIs and visuals for comparison, and building a bilingual, interactive dashboard using Looker Studio.",
-      dashboardTitle: "Interactive Global Findex Dashboard",
-      dashboardSubtitle: "Use the dynamic filters to explore financial inclusion data by year, region, country, income group, and demographics."
     }
   },
   es: {
@@ -313,10 +260,7 @@ const translations = {
       text: "Apoyé diversas áreas de negocio con insights accionables que respaldan la toma de decisiones en operaciones, ventas, riesgo, producto y más."
     }],
     projectsTitle: "Proyectos Destacados",
-    projects: [
-        { title: "Análisis de Desempleo en EE.UU.", description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "Ver Proyecto" },
-        { title: "Inclusión Financiera Global", description: "Visualiza tendencias globales de titularidad de cuentas y comportamiento de crédito por región, ingreso y demografía.", imageUrl: "assets/img/global-financial-inclusion-cover.png", link: "projects/global-financial-inclusion.html", buttonText: "Ver Proyecto" }
-    ],
+    projects: [ { title: "Análisis de Desempleo en EE.UU.", description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "Ver Proyecto" } ],
     viewAllBtn: "Ver Todos los Proyectos",
     
     // --- CV Page Content (Spanish) ---
@@ -352,16 +296,16 @@ const translations = {
 
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
-    projects_list: [
-        { id: "project-unemployment", title: "Desempleo en América", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png" },
-        { id: "project-financial-inclusion", title: "Inclusión Financiera Global", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png" }
-    ],
+    projects_list: [{
+      id: "project-unemployment",
+      title: "Desempleo en América",
+      link: "projects/US-Unemployment.html",
+      imageUrl: "assets/img/us-unemployment-cover.png"
+    }],
 
-    // --- CASE STUDY DATA ---
+    // --- Case Study Page Content: US Unemployment (Español) ---
     project_unemployment: {
       pageTitle: "Desempleo en Estados Unidos – Un análisis basado en datos",
-      lookerStudioUrl: "https://lookerstudio.google.com/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45",
-      iframeEmbed: `<iframe src="https://lookerstudio.google.com/embed/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45/page/SE1QF" loading="lazy" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Volver a Proyectos",
       linkedinButton: "Compartir en LinkedIn",
       xButton: "Compartir en X",
@@ -395,7 +339,6 @@ const translations = {
       ],
       datasetTitle: "Información del Dataset",
       datasetSource: "Fuente:",
-      datasetSourceText: "Oficina de Estadísticas Laborales de EE. UU.",
       datasetSourceLink: "https://www.bls.gov/data/",
       datasetPeriod: "Período:",
       datasetPeriodValue: "Enero 2020 – Mayo 2025",
@@ -405,55 +348,6 @@ const translations = {
       roleText: "Seleccioné y filtré datasets públicos, definí indicadores clave (KPIs) y lógica de filtros, y diseñé la estructura del dashboard en Looker Studio.",
       dashboardTitle: "Dashboard Interactivo",
       dashboardSubtitle: "Explora el reporte interactivo o usa las pestañas para navegar por estado y ciudad."
-    },
-    project_financial_inclusion: {
-      pageTitle: "Dashboard de Inclusión Financiera Global – 2025",
-      lookerStudioUrl: "https://lookerstudio.google.com/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb",
-      iframeEmbed: `<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb/page/4kyRF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
-      backButton: "Volver a Proyectos",
-      linkedinButton: "Compartir en LinkedIn",
-      xButton: "Compartir en X",
-      lookerButton: "Ver en Looker Studio",
-      executiveSummary: [
-        {
-          icon: "fas fa-users",
-          title: "5.770 Millones de Adultos (15+)",
-          text: "Población adulta global total considerada para las métricas de inclusión financiera."
-        },
-        {
-          icon: "fas fa-piggy-bank",
-          title: "78,02% de Titularidad de Cuentas",
-          text: "Tasa global de adultos que poseen una cuenta financiera, reflejando un amplio acceso a servicios."
-        },
-        {
-          icon: "fas fa-money-check-alt",
-          title: "Crédito Formal vs. Informal",
-          text: "El dashboard analiza comportamientos de endeudamiento, diferenciando entre instituciones formales y fuentes informales."
-        }
-      ],
-      problemTitle: "Problema",
-      problemText: "La inclusión financiera es esencial para reducir la desigualdad y promover el desarrollo económico sostenible. Sin embargo, el acceso a servicios financieros varía significativamente entre países, regiones, niveles de ingreso y segmentos demográficos. Comprender estas brechas es clave para impulsar ecosistemas financieros más inclusivos.",
-      objectiveTitle: "Objetivo del Dashboard",
-      objectiveText: "Proveer una visión general y completa de la inclusión financiera a nivel mundial, enfocándose en dos dimensiones principales: la titularidad de cuentas (incluyendo cuentas formales y de dinero móvil) y el comportamiento de endeudamiento (de fuentes formales e informales). El dashboard permite comparaciones interactivas por región, grupo de ingresos y características demográficas.",
-      questionsTitle: "Preguntas Clave",
-      questionsList: [
-        "¿Qué regiones tienen los niveles más altos de inclusión financiera?",
-        "¿Cómo difiere la titularidad de cuentas entre grupos de ingresos o géneros?",
-        "¿Qué grupos demográficos son más propensos a solicitar créditos informales?",
-        "¿Dónde está jugando el dinero móvil un rol clave en el acceso financiero?"
-      ],
-      datasetTitle: "Información del Dataset",
-      datasetSource: "Fuente:",
-      datasetSourceText: "Banco Mundial – Base de Datos Global Findex 2025",
-      datasetSourceLink: "https://www.worldbank.org/en/publication/globalfindex",
-      datasetPeriod: "Cobertura:",
-      datasetPeriodValue: "Más de 140 países (datos de 2025)",
-      datasetScope: "Métricas:",
-      datasetScopeValue: "Titularidad de cuentas, endeudamiento, dinero móvil, demografía (adultos 15+).",
-      roleTitle: "Mi Rol",
-      roleText: "Lideré el desarrollo completo del dashboard, incluyendo: la limpieza y transformación de datos crudos del dataset Global Findex 2025, la creación de campos calculados para una clasificación regional consistente, el diseño de KPIs y visualizaciones para apoyar comparaciones regionales y demográficas, y la construcción de un dashboard bilingüe e interactivo en Looker Studio.",
-      dashboardTitle: "Dashboard Interactivo de Inclusión Financiera",
-      dashboardSubtitle: "Usa los filtros dinámicos para explorar los datos de inclusión financiera por año, región, país, grupo de ingresos y demografía."
     }
   }
 };
@@ -591,319 +485,4 @@ function populateCvPage(lang, basePath) {
 
   const skillsContainer = getEl('skills-content');
   if (skillsContainer) {
-    const { tier1, tier2, tier3, tier4 } = data.cv_skills_items;
-    let lineupHtml = '<div class="skills-lineup">';
-    if (tier1) lineupHtml += `<div class="lineup-tier lineup-tier-1">${tier1.map(s => `<div class="skill"><img src="${basePath}${s.logo}" class="skill-logo" alt="${s.name} logo"><span>${s.name}</span></div>`).join('')}</div>`;
-    if (tier2) lineupHtml += `<div class="lineup-tier lineup-tier-2">${tier2.map(s => `<div class="skill">${s}</div>`).join('')}</div>`;
-    if (tier3) lineupHtml += `<div class="lineup-tier lineup-tier-3">${tier3.map(s => `<div class="skill">${s}</div>`).join('')}</div>`;
-    if (tier4) lineupHtml += `<div class="lineup-tier lineup-tier-4">${tier4.map(s => `<div class="skill">${s}</div>`).join('')}</div>`;
-    lineupHtml += '</div>';
-    skillsContainer.innerHTML = lineupHtml;
-  }
-
-  const langContainer = getEl('languages-content');
-  if (langContainer) langContainer.innerHTML = data.cv_languages_items.map(item => `<div class="language-item"><img src="https://flagcdn.com/w40/${item.flag}.png" alt="${item.lang} flag"><div><p><strong>${item.lang}</strong></p><p class="lang-level">${item.level}</p></div></div>`).join('');
-  const interestsContainer = getEl('interests-content');
-  if (interestsContainer) interestsContainer.innerHTML = data.cv_interests_items.map(item => `<div class="interest-item"><i class="${item.icon}"></i><p>${item.name}</p></div>`).join('');
-  const certsContainer = getEl('certifications-content');
-  if (certsContainer) certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="${basePath}${item.url}" target="_blank" rel="noopener">${item.name}</a></li>`).join('');
-
-  setTimeout(setupScrollAnimations, 100);
-}
-
-function populateProjectsPage(lang, basePath) {
-  const data = translations[lang] || translations.en;
-  const titleEl = getEl('projects-title');
-  if (titleEl) {
-    titleEl.innerHTML = `<i class="fas fa-lightbulb"></i> ${data.projects_page_title}`;
-  }
-
-  const listUl = getEl('projects-list-ul');
-  const previewCol = getEl('projects-preview-column');
-
-  if (listUl && previewCol) {
-    listUl.innerHTML = '';
-    previewCol.innerHTML = '';
-
-    data.projects_list.forEach(project => {
-      const listItem = document.createElement('li');
-      listItem.innerHTML = `<a href="${project.link}" data-preview-target="${project.id}">${project.title}</a>`;
-      listUl.appendChild(listItem);
-
-      const previewImage = document.createElement('div');
-      previewImage.id = project.id;
-      previewImage.className = 'project-preview-image';
-      previewImage.style.backgroundImage = `url('${basePath}${project.imageUrl}')`;
-      previewCol.appendChild(previewImage);
-    });
-
-    const projectLinks = listUl.querySelectorAll('a');
-    projectLinks.forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        const targetId = link.getAttribute('data-preview-target');
-        previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => activeImg.classList.remove('is-active'));
-        const targetImage = getEl(targetId);
-        if (targetImage) targetImage.classList.add('is-active');
-      });
-    });
-
-    listUl.addEventListener('mouseleave', () => {
-      previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => activeImg.classList.remove('is-active'));
-    });
-  }
-}
-
-// =========================================================================
-// ==================== DEDICATED PROJECT FUNCTIONS ========================
-// =========================================================================
-
-function populateUnemploymentPage(lang, basePath) {
-    const data = translations[lang].project_unemployment || translations.en.project_unemployment;
-    const pageData = translations[lang] || translations.en;
-    
-    // Populate Header and Buttons
-    if (getEl('project-title')) getEl('project-title').textContent = data.pageTitle;
-    const btnGroup = getEl('project-button-group');
-    if (btnGroup) {
-      const pageUrl = window.location.href;
-      const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
-      const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(data.pageTitle)}`;
-      
-      btnGroup.innerHTML = `
-        <a href="${basePath}projects.html" class="button btn-back"><i class="fas fa-arrow-left"></i> ${data.backButton || pageData.navProjects}</a>
-        <a href="${linkedinUrl}" class="button btn-linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> ${data.linkedinButton}</a>
-        <a href="${twitterUrl}" class="button btn-x" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> ${data.xButton}</a>
-        <a href="${data.lookerStudioUrl}" class="button btn-looker" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> ${data.lookerButton}</a>
-      `;
-    }
-
-    // Populate Executive Summary
-    const summarySection = getEl('project-executive-summary');
-    if (summarySection && data.executiveSummary) {
-        summarySection.innerHTML = data.executiveSummary.map(item => `
-            <div class="summary-card">
-                <i class="${item.icon}"></i>
-                <div class="summary-card-text">
-                    <h3>${item.title}</h3>
-                    <p>${item.text}</p>
-                </div>
-            </div>
-        `).join('');
-    }
-
-    // Populate Sidebar
-    const sidebar = getEl('project-sidebar');
-    if (sidebar && data.problemTitle) {
-        sidebar.innerHTML = `
-            <div class="sidebar-section">
-                <h3><i class="fas fa-exclamation-circle"></i> ${data.problemTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
-                <div class="content"><p>${data.problemText}</p></div>
-            </div>
-            <div class="sidebar-section">
-                <h3><i class="fas fa-bullseye"></i> ${data.objectiveTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
-                <div class="content"><p>${data.objectiveText}</p></div>
-            </div>
-             <div class="sidebar-section">
-                 <h3><i class="fas fa-question-circle"></i> ${data.questionsTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
-                 <div class="content"><ul>${data.questionsList.map(q => `<li>${q}</li>`).join('')}</ul></div>
-            </div>
-            <div class="sidebar-section">
-                <h3><i class="fas fa-user-tie"></i> ${data.roleTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
-                <div class="content"><p>${data.roleText}</p></div>
-            </div>
-            <div class="sidebar-section">
-                <h3><i class="fas fa-database"></i> ${data.datasetTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
-                <div class="content"><p>
-                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">${data.datasetSourceText}</a><br>
-                    <strong>${data.datasetPeriod}</strong> ${data.datasetPeriodValue}<br>
-                    <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
-                </p></div>
-            </div>
-        `;
-    }
-  
-    // Populate Dashboard
-    const dashboardContent = getEl('project-dashboard-content');
-    if(dashboardContent){
-        const iframeHtml = data.iframeEmbed;
-        const titleEl = dashboardContent.querySelector('#dashboard-title');
-        const subtitleEl = dashboardContent.querySelector('#dashboard-subtitle');
-        const embedEl = dashboardContent.querySelector('#dashboard-embed-container');
-        if (titleEl) titleEl.textContent = data.dashboardTitle;
-        if (subtitleEl) subtitleEl.innerHTML = `<em>${data.dashboardSubtitle}</em>`;
-        if (embedEl) embedEl.innerHTML = iframeHtml;
-    }
-}
-
-function populateFinancialInclusionPage(lang, basePath) {
-    const data = translations[lang].project_financial_inclusion || translations.en.project_financial_inclusion;
-    const pageData = translations[lang] || translations.en;
-    
-    // Populate Header and Buttons
-    if (getEl('project-title')) getEl('project-title').textContent = data.pageTitle;
-    const btnGroup = getEl('project-button-group');
-    if (btnGroup) {
-      const pageUrl = window.location.href;
-      const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
-      const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(data.pageTitle)}`;
-      
-      btnGroup.innerHTML = `
-        <a href="${basePath}projects.html" class="button btn-back"><i class="fas fa-arrow-left"></i> ${data.backButton || pageData.navProjects}</a>
-        <a href="${linkedinUrl}" class="button btn-linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> ${data.linkedinButton}</a>
-        <a href="${twitterUrl}" class="button btn-x" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> ${data.xButton}</a>
-        <a href="${data.lookerStudioUrl}" class="button btn-looker" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> ${data.lookerButton}</a>
-      `;
-    }
-
-    // Populate Executive Summary
-    const summarySection = getEl('project-executive-summary');
-    if (summarySection && data.executiveSummary) {
-        summarySection.innerHTML = data.executiveSummary.map(item => `
-            <div class="summary-card">
-                <i class="${item.icon}"></i>
-                <div class="summary-card-text">
-                    <h3>${item.title}</h3>
-                    <p>${item.text}</p>
-                </div>
-            </div>
-        `).join('');
-    }
-
-    // Populate Sidebar
-    const sidebar = getEl('project-sidebar');
-    if (sidebar && data.problemTitle) {
-        sidebar.innerHTML = `
-            <div class="sidebar-section">
-                <h3><i class="fas fa-exclamation-circle"></i> ${data.problemTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
-                <div class="content"><p>${data.problemText}</p></div>
-            </div>
-            <div class="sidebar-section">
-                <h3><i class="fas fa-bullseye"></i> ${data.objectiveTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
-                <div class="content"><p>${data.objectiveText}</p></div>
-            </div>
-             <div class="sidebar-section">
-                 <h3><i class="fas fa-question-circle"></i> ${data.questionsTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
-                 <div class="content"><ul>${data.questionsList.map(q => `<li>${q}</li>`).join('')}</ul></div>
-            </div>
-            <div class="sidebar-section">
-                <h3><i class="fas fa-user-tie"></i> ${data.roleTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
-                <div class="content"><p>${data.roleText}</p></div>
-            </div>
-            <div class="sidebar-section">
-                <h3><i class="fas fa-database"></i> ${data.datasetTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
-                <div class="content"><p>
-                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">${data.datasetSourceText}</a><br>
-                    <strong>${data.datasetPeriod}</strong> ${data.datasetPeriodValue}<br>
-                    <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
-                </p></div>
-            </div>
-        `;
-    }
-  
-    // Populate Dashboard
-    const dashboardContent = getEl('project-dashboard-content');
-    if(dashboardContent){
-        const iframeHtml = data.iframeEmbed;
-        const titleEl = dashboardContent.querySelector('#dashboard-title');
-        const subtitleEl = dashboardContent.querySelector('#dashboard-subtitle');
-        const embedEl = dashboardContent.querySelector('#dashboard-embed-container');
-        if (titleEl) titleEl.textContent = data.dashboardTitle;
-        if (subtitleEl) subtitleEl.innerHTML = `<em>${data.dashboardSubtitle}</em>`;
-        if (embedEl) embedEl.innerHTML = iframeHtml;
-    }
-}
-
-// =========================================================================
-
-function setLanguage(lang, basePath) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  const data = translations[lang] || translations.en;
-
-  document.querySelectorAll('[data-translate]').forEach(el => {
-    const key = el.getAttribute('data-translate');
-    if (data[key]) {
-      el.textContent = data[key];
-    }
-  });
-
-  if (document.body.classList.contains('page-home')) {
-    populateHomePage(lang, basePath);
-  } else if (document.body.classList.contains('page-cv')) {
-    populateCvPage(lang, basePath);
-  } else if (document.body.classList.contains('page-projects')) {
-    populateProjectsPage(lang, basePath);
-  } else if (document.body.classList.contains('page-project-case-study')) {
-    const path = window.location.pathname.toLowerCase();
-    if (path.includes('us-unemployment.html')) {
-        populateUnemploymentPage(lang, basePath);
-    } else if (path.includes('global-financial-inclusion.html')) {
-        populateFinancialInclusionPage(lang, basePath);
-    }
-  }
-
-  document.querySelectorAll(".lang-toggle").forEach(el => {
-    const flag = lang === "en" ? 'cl' : 'us';
-    const alt = lang === "en" ? 'Bandera de Chile' : 'USA Flag';
-    const text = lang === "en" ? 'ES' : 'EN';
-    const flagUrl = `https://flagcdn.com/w20/${flag}.png`;
-    el.innerHTML = `<img src="${flagUrl}" alt="${alt}" style="width: 20px; vertical-align: middle;"> ${text}`;
-  });
-}
-
-function toggleLang() {
-  const newLang = currentLang === 'en' ? 'es' : 'en';
-  setLanguage(newLang, basePath);
-  localStorage.setItem('preferredLanguage', newLang);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const path = window.location.pathname;
-  
-  if (path.endsWith('/') || path.endsWith('index.html') || path.length <= 1) {
-    document.body.classList.add('page-home');
-    basePath = '';
-  } else if (path.includes('cv.html')) {
-    document.body.classList.add('page-cv');
-    basePath = '';
-  } else if (path.includes('projects.html')) {
-    document.body.classList.add('page-projects');
-    basePath = '';
-  } else if (path.includes('/projects/')) {
-    document.body.classList.add('page-project-case-study');
-    basePath = '../';
-  }
-
-  const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
-  setLanguage(preferredLanguage, basePath);
-
-  document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
-
-  setupAccordion();
-
-  const menuToggle = getEl('menu-toggle');
-  const mobileNav = getEl('mobile-nav');
-
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-      if (mobileNav) mobileNav.classList.toggle('show');
-    });
-  }
-
-  if (mobileNav) {
-    mobileNav.addEventListener('click', (e) => {
-      if (e.target.tagName === 'A') {
-        mobileNav.classList.remove('show');
-      }
-    });
-  }
-
-  const carousel = getEl('project-carousel');
-  if (carousel) {
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    const scrollStep = () => 324;
-    nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollStep(), behavior: 'smooth' }));
-    prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollStep(), behavior: 'smooth' }));
-  }
-});
+    const { tier1, tier2, tier3, tier4 }.
