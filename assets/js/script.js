@@ -256,131 +256,24 @@ const translations = {
     cv_certifications_title: "Certificaciones",
     cv_badges_title: "Insignias Destacadas",
     cv_credly_link: "Ver más en mi perfil de Credly",
-    cv_timeline_items: [{
-      type: 'work',
-      date: "Mayo 2023 – Actualidad",
-      title: "Business Analyst",
-      company: "Banco Internacional",
-      url: "https://www.internacional.cl",
-      logo: "assets/img/logos/banco-internacional.png",
-      description: `<ul><li>Desarrollé un sistema de reportes y KPIs desde cero para el área de innovación, donde no existía medición previa.</li><li>Creé más de 20 dashboards para innovación, fraude, ventas, dueños de productos y planificación.</li><li>Lideré equipo de métricas que automatizó procesos mediante ETL y base de datos propia.</li><li>Transición exitosa al rol de Business Analyst en célula ágil con foco en historias de usuario, flujos y pruebas.</li></ul>`
-    }, {
-      type: 'work',
-      date: "Sep 2021 – Abr 2023",
-      title: "Analista de Datos y Control de Gestión",
-      company: "Lucas Diesel",
-      url: "https://lucasdiesel.cl",
-      logo: "assets/img/logos/lucas-diesel.png",
-      description: `<ul><li>Ingresé a una posición nueva para resolver brechas de visibilidad y reportes en una estructura financiera compartida.</li><li>Generé y automatizé más de 30 dashboards para ventas, inventario, abastecimiento, servicios automotrices, operaciones y gerencia.</li><li>Automatización diaria ahorró hasta 1 hora por día.</li><li>Reduje el proceso de presupuesto anual de 6 a 2 meses en dos años consecutivos.</li></ul>`
-    }, {
-      type: 'work',
-      date: "Nov 2019 – Ago 2021",
-      title: "Analista de Control de Gestión",
-      company: "Heavenward Ascensores",
-      url: "https://www.heavenward.cl",
-      logo: "assets/img/logos/heavenward.png",
-      description: `<ul><li>Supervisión de KPIs y control de costos para proyectos de mantenimiento y modernización.</li><li>Reportes y dashboards en Excel y Power BI para análisis financiero y mejora de tiempos de respuesta.</li></ul>`
-    }, {
-      type: 'education',
-      date: "2024",
-      title: "Diplomado Internacional en Transformación Digital",
-      company: "Digital Bank LATAM",
-      url: "https://www.digitalbankla.com",
-      logo: "assets/img/logos/digital-bank-latam.png"
-    }, {
-      type: 'education',
-      date: "2022",
-      title: "Diplomado en Diseño y Programación Web",
-      company: "Fundación Telefónica & AIEP",
-      url: "https://www.fundaciontelefonica.cl",
-      logo: "assets/img/logos/telefonica-aiep.png"
-    }, {
-      type: 'education',
-      date: "2022",
-      title: "Programa universitario introductorio",
-      company: "BYU PathwayConnect",
-      url: "https://www.byupathway.edu",
-      logo: "assets/img/logos/byu.png"
-    }, {
-      type: 'education',
-      date: "2013–2020",
-      title: "Ingeniería Civil Industrial",
-      company: "Universidad de Valparaíso",
-      url: "https://uv.cl",
-      logo: "assets/img/logos/uv.png"
-    }],
+    cv_timeline_items: [
+        { type: 'work', date: "Mayo 2023 – Actualidad", title: "Business Analyst", company: "Banco Internacional", url: "https://www.internacional.cl", logo: "assets/img/logos/banco-internacional.png", description: `<ul><li>Desarrollé un sistema de reportes y KPIs desde cero para el área de innovación, donde no existía medición previa.</li><li>Creé más de 20 dashboards para innovación, fraude, ventas, dueños de productos y planificación.</li><li>Lideré equipo de métricas que automatizó procesos mediante ETL y base de datos propia.</li><li>Transición exitosa al rol de Business Analyst en célula ágil con foco en historias de usuario, flujos y pruebas.</li></ul>` },
+        { type: 'work', date: "Sep 2021 – Abr 2023", title: "Analista de Datos y Control de Gestión", company: "Lucas Diesel", url: "https://lucasdiesel.cl", logo: "assets/img/logos/lucas-diesel.png", description: `<ul><li>Ingresé a una posición nueva para resolver brechas de visibilidad y reportes en una estructura financiera compartida.</li><li>Generé y automatizé más de 30 dashboards para ventas, inventario, abastecimiento, servicios automotrices, operaciones y gerencia.</li><li>Automatización diaria ahorró hasta 1 hora por día.</li><li>Reduje el proceso de presupuesto anual de 6 a 2 meses en dos años consecutivos.</li></ul>` },
+        { type: 'work', date: "Nov 2019 – Ago 2021", title: "Analista de Control de Gestión", company: "Heavenward Ascensores", url: "https://www.heavenward.cl", logo: "assets/img/logos/heavenward.png", description: `<ul><li>Supervisión de KPIs y control de costos para proyectos de mantenimiento y modernización.</li><li>Reportes y dashboards en Excel y Power BI para análisis financiero y mejora de tiempos de respuesta.</li></ul>` },
+        { type: 'education', date: "2024", title: "Diplomado Internacional en Transformación Digital", company: "Digital Bank LATAM", url: "https://www.digitalbankla.com", logo: "assets/img/logos/digital-bank-latam.png" },
+        { type: 'education', date: "2022", title: "Diplomado en Diseño y Programación Web", company: "Fundación Telefónica & AIEP", url: "https://www.fundaciontelefonica.cl", logo: "assets/img/logos/telefonica-aiep.png" },
+        { type: 'education', date: "2022", title: "Programa universitario introductorio", company: "BYU PathwayConnect", url: "https://www.byupathway.edu", logo: "assets/img/logos/byu.png" },
+        { type: 'education', date: "2013–2020", title: "Ingeniería Civil Industrial", company: "Universidad de Valparaíso", url: "https://uv.cl", logo: "assets/img/logos/uv.png" }
+    ],
     cv_skills_items: {
-      tier1: [{
-        name: "Power BI",
-        logo: "assets/img/logos/power-bi.png"
-      }, {
-        name: "Looker Studio",
-        logo: "assets/img/logos/looker-studio.png"
-      }, {
-        name: "Tableau",
-        logo: "assets/img/logos/tableau.png"
-      }],
-      tier2: ["Modelado de Datos", "Inteligencia de Negocios", "Diseño de Dashboards", "Storytelling", "Gestión de Interesados"],
-      tier3: ["Power Query", "DAX", "LookML", "Mapeo de Procesos", "BPMN", "Agile/Scrum", "Desarrollo de KPIs", "SQL"],
-      tier4: ["Jira / Confluence", "Excel Avanzado", "Google Sheets", "Lucidchart / Draw.io", "Principios de Visualización de Datos", "Documentación y Reportería", "Miro"]
+        tier1: [ { name: "Power BI", logo: "assets/img/logos/power-bi.png" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.png" }, { name: "Tableau", logo: "assets/img/logos/tableau.png" } ], 
+        tier2: ["Modelado de Datos", "Inteligencia de Negocios", "Diseño de Dashboards", "Storytelling", "Gestión de Interesados"],
+        tier3: ["Power Query", "DAX", "LookML", "Mapeo de Procesos", "BPMN", "Agile/Scrum", "Desarrollo de KPIs", "SQL"],
+        tier4: ["Jira / Confluence", "Excel Avanzado", "Google Sheets", "Lucidchart / Draw.io", "Principios de Visualización de Datos", "Documentación y Reportería", "Miro"]
     },
-    cv_languages_items: [{
-      lang: "Español",
-      level: "Nativo",
-      flag: "es"
-    }, {
-      lang: "Inglés",
-      level: "B2 Intermedio-Alto",
-      flag: "gb"
-    }, {
-      lang: "Francés",
-      level: "A1 Básico",
-      flag: "fr"
-    }],
-    cv_interests_items: [{
-      name: "Correr",
-      icon: "fa-solid fa-person-running"
-    }, {
-      name: "Fútbol",
-      icon: "fa-solid fa-futbol"
-    }, {
-      name: "Videojuegos",
-      icon: "fa-solid fa-gamepad"
-    }, {
-      name: "Tenis",
-      icon: "fa-solid fa-baseball"
-    }, {
-      name: "Guitarra",
-      icon: "fa-solid fa-guitar"
-    }, {
-      name: "Dibujo",
-      icon: "fa-solid fa-pencil-alt"
-    }, {
-      name: "Festivales",
-      icon: "fa-solid fa-music"
-    }],
-    cv_certifications_items: [{
-      name: "Qlik Sense Diseñador",
-      url: "assets/certificates/Certificacion Qlik.pdf"
-    }, {
-      name: "Google Tag Manager (Básico)",
-      url: "assets/certificates/Conceptos básicos de Google Tag Manager.pdf"
-    }, {
-      name: "Inglés B2 – Linguaskill",
-      url: "assets/certificates/Linguaskill Cambridge.pdf"
-    }, {
-      name: "Certificación SQL",
-      url: "assets/certificates/SQL.pdf"
-    }, {
-      name: "Certificación SSIS",
-      url: "assets/certificates/SSIS.pdf"
-    }, {
-      name: "Tableau & Tableau Prep",
-      url: "assets/certificates/Tableau.pdf"
-    }, {
-      name: "User Stories Certificate",
-      url: "assets/certificates/User Stories Certiprof.pdf"
-    }],
+    cv_languages_items: [ { lang: "Español", level: "Nativo", flag: "es" }, { lang: "Inglés", level: "B2 Intermedio-Alto", flag: "gb" }, { lang: "Francés", level: "A1 Básico", flag: "fr" } ],
+    cv_interests_items: [ { name: "Correr", icon: "fa-solid fa-person-running" }, { name: "Fútbol", icon: "fa-solid fa-futbol" }, { name: "Videojuegos", icon: "fa-solid fa-gamepad" }, { name: "Tenis", icon: "fa-solid fa-baseball" }, { name: "Guitarra", icon: "fa-solid fa-guitar" }, { name: "Dibujo", icon: "fa-solid fa-pencil-alt" }, { name: "Festivales", icon: "fa-solid fa-music" } ],
+    cv_certifications_items: [ { name: "Qlik Sense Diseñador", url: "assets/certificates/Certificacion Qlik.pdf" }, { name: "Google Tag Manager (Básico)", url: "assets/certificates/Conceptos básicos de Google Tag Manager.pdf" }, { name: "Inglés B2 – Linguaskill", url: "assets/certificates/Linguaskill Cambridge.pdf" }, { name: "Certificación SQL", url: "assets/certificates/SQL.pdf" }, { name: "Certificación SSIS", url: "assets/certificates/SSIS.pdf" }, { name: "Tableau & Tableau Prep", url: "assets/certificates/Tableau.pdf" }, { name: "User Stories Certificate", url: "assets/certificates/User Stories Certiprof.pdf" } ],
 
     // --- Projects Page Content ---
     projects_page_title: "Proyectos",
@@ -425,6 +318,10 @@ const translations = {
 
 let currentLang = 'en';
 
+function getEl(id) {
+  return document.getElementById(id);
+}
+
 function setupScrollAnimations() {
   const items = document.querySelectorAll('.timeline-item');
   if (!items.length) return;
@@ -442,10 +339,33 @@ function setupScrollAnimations() {
   });
 }
 
+function populateHomePage(lang) {
+  const data = translations[lang] || translations.en;
+  getEl('hero-title').textContent = data.heroTitle;
+  getEl("hero-subtitle").textContent = data.heroSubtitle;
+  getEl("btn-projects").textContent = data.btnProjects;
+  getEl("btn-resume").textContent = data.btnResume;
+  getEl("about-title").textContent = data.aboutTitle;
+  getEl("about-text-content").innerHTML = data.aboutContent;
+  getEl("impact-title").textContent = data.impactTitle;
+  
+  const impactGrid = document.querySelector('.impact-grid');
+  if (impactGrid) {
+    impactGrid.innerHTML = '';
+    data.impacts.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'impact-card';
+      card.innerHTML = `<i class="fas ${item.icon}"></i><h3>${item.title}</h3><p>${item.text}</p>`;
+      impactGrid.appendChild(card);
+    });
+  }
+
+  getEl("projects-title").textContent = data.projectsTitle;
+  getEl("view-all-btn").textContent = data.viewAllBtn;
+}
+
 function populateCvPage(lang) {
   const data = translations[lang] || translations.en;
-  const getEl = (id) => document.getElementById(id);
-
   if (getEl('cv-hero-title')) getEl('cv-hero-title').textContent = data.cv_hero_title;
   if (getEl('cv-hero-summary')) getEl('cv-hero-summary').textContent = data.cv_hero_summary;
   if (getEl('download-btn-text')) getEl('download-btn-text').textContent = data.cv_download;
@@ -465,34 +385,34 @@ function populateCvPage(lang) {
   const educationItems = data.cv_timeline_items.filter(item => item.type === 'education');
 
   if (timelineWork) {
-    timelineWork.innerHTML = workItems.map((item, index) => {
+    timelineWork.innerHTML = workItems.map((item) => {
       return `<div class="timeline-item">
-                        <div class="timeline-logo-wrapper">
-                            <img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo">
-                        </div>
-                        <div class="timeline-content-block">
-                            <div class="timeline-date">${item.date}</div>
-                            <h3 class="timeline-title">${item.title}</h3>
-                            <p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>
-                            ${item.description || ''}
-                        </div>
-                    </div>`;
+                <div class="timeline-logo-wrapper">
+                    <img src="../${item.logo}" alt="${item.company} Logo" class="timeline-logo">
+                </div>
+                <div class="timeline-content-block">
+                    <div class="timeline-date">${item.date}</div>
+                    <h3 class="timeline-title">${item.title}</h3>
+                    <p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>
+                    ${item.description || ''}
+                </div>
+            </div>`;
     }).join('');
   }
 
   if (timelineEducation) {
-    timelineEducation.innerHTML = educationItems.map((item, index) => {
+    timelineEducation.innerHTML = educationItems.map((item) => {
       return `<div class="timeline-item">
-                        <div class="timeline-logo-wrapper">
-                             <img src="${item.logo}" alt="${item.company} Logo" class="timeline-logo">
-                        </div>
-                        <div class="timeline-content-block">
-                            <div class="timeline-date">${item.date}</div>
-                            <h3 class="timeline-title">${item.title}</h3>
-                            <p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>
-                            ${item.description || ''}
-                        </div>
-                    </div>`;
+                <div class="timeline-logo-wrapper">
+                     <img src="../${item.logo}" alt="${item.company} Logo" class="timeline-logo">
+                </div>
+                <div class="timeline-content-block">
+                    <div class="timeline-date">${item.date}</div>
+                    <h3 class="timeline-title">${item.title}</h3>
+                    <p class="timeline-company"><a href="${item.url}" target="_blank" rel="noopener">${item.company}</a></p>
+                    ${item.description || ''}
+                </div>
+            </div>`;
     }).join('');
   }
 
@@ -505,15 +425,13 @@ function populateCvPage(lang) {
       tier4
     } = data.cv_skills_items;
     let lineupHtml = '<div class="skills-lineup">';
-
     if (tier1 && tier1.length > 0) {
       lineupHtml += '<div class="lineup-tier lineup-tier-1">';
       tier1.forEach(skill => {
-        lineupHtml += `<div class="skill"><img src="${skill.logo}" class="skill-logo" alt="${skill.name} logo"><span>${skill.name}</span></div>`;
+        lineupHtml += `<div class="skill"><img src="../${skill.logo}" class="skill-logo" alt="${skill.name} logo"><span>${skill.name}</span></div>`;
       });
       lineupHtml += '</div>';
     }
-
     if (tier2 && tier2.length > 0) {
       lineupHtml += '<div class="lineup-tier lineup-tier-2">';
       tier2.forEach(skill => {
@@ -521,7 +439,6 @@ function populateCvPage(lang) {
       });
       lineupHtml += '</div>';
     }
-
     if (tier3 && tier3.length > 0) {
       lineupHtml += '<div class="lineup-tier lineup-tier-3">';
       tier3.forEach(skill => {
@@ -529,7 +446,6 @@ function populateCvPage(lang) {
       });
       lineupHtml += '</div>';
     }
-
     if (tier4 && tier4.length > 0) {
       lineupHtml += '<div class="lineup-tier lineup-tier-4">';
       tier4.forEach(skill => {
@@ -537,7 +453,6 @@ function populateCvPage(lang) {
       });
       lineupHtml += '</div>';
     }
-
     lineupHtml += '</div>';
     skillsContainer.innerHTML = lineupHtml;
   }
@@ -547,15 +462,13 @@ function populateCvPage(lang) {
   const interestsContainer = getEl('interests-content');
   if (interestsContainer) interestsContainer.innerHTML = data.cv_interests_items.map(item => `<div class="interest-item"><i class="${item.icon}"></i><p>${item.name}</p></div>`).join('');
   const certsContainer = getEl('certifications-content');
-  if (certsContainer) certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="${item.url}" target="_blank" rel="noopener">${item.name}</a></li>`).join('');
+  if (certsContainer) certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="../${item.url}" target="_blank" rel="noopener">${item.name}</a></li>`).join('');
 
   setTimeout(setupScrollAnimations, 100);
 }
 
 function populateProjectsPage(lang) {
   const data = translations[lang] || translations.en;
-  const getEl = (id) => document.getElementById(id);
-
   const titleEl = getEl('projects-title');
   if (titleEl) {
     titleEl.innerHTML = `<i class="fas fa-lightbulb"></i> ${data.projects_page_title}`;
@@ -584,11 +497,9 @@ function populateProjectsPage(lang) {
     projectLinks.forEach(link => {
       link.addEventListener('mouseenter', () => {
         const targetId = link.getAttribute('data-preview-target');
-
         previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => {
           activeImg.classList.remove('is-active');
         });
-
         const targetImage = getEl(targetId);
         if (targetImage) {
           targetImage.classList.add('is-active');
@@ -606,7 +517,6 @@ function populateProjectsPage(lang) {
 
 function populateCaseStudyPage(lang) {
   const data = translations[lang].project_unemployment || translations.en.project_unemployment;
-  const getEl = (id) => document.getElementById(id);
 
   if (getEl('project-title')) getEl('project-title').textContent = data.pageTitle;
 
@@ -667,7 +577,6 @@ function populateCaseStudyPage(lang) {
   }
 }
 
-
 function setLanguage(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -681,35 +590,14 @@ function setLanguage(lang) {
   });
 
   if (document.body.classList.contains('page-home')) {
-    document.getElementById('hero-title').textContent = data.heroTitle;
-    document.getElementById("hero-subtitle").textContent = data.heroSubtitle;
-    document.getElementById("btn-projects").textContent = data.btnProjects;
-    document.getElementById("btn-resume").textContent = data.btnResume;
-    document.getElementById("about-title").textContent = data.aboutTitle;
-    document.getElementById("about-text-content").innerHTML = data.aboutContent;
-    document.getElementById("impact-title").textContent = data.impactTitle;
-    const impactGrid = document.querySelector('.impact-grid');
-    if (impactGrid) {
-      impactGrid.innerHTML = '';
-      data.impacts.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'impact-card';
-        card.innerHTML = `<i class="fas ${item.icon}"></i><h3>${item.title}</h3><p>${item.text}</p>`;
-        impactGrid.appendChild(card);
-      });
-    }
-    document.getElementById("projects-title").textContent = data.projectsTitle;
-    document.getElementById("view-all-btn").textContent = data.viewAllBtn;
+    populateHomePage(lang);
   }
-
   if (document.body.classList.contains('page-cv')) {
     populateCvPage(lang);
   }
-
   if (document.body.classList.contains('page-projects')) {
     populateProjectsPage(lang);
   }
-
   if (document.body.classList.contains('page-project-case-study')) {
     populateCaseStudyPage(lang);
   }
@@ -730,8 +618,8 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (path.includes('projects.html')) {
     document.body.classList.add('page-projects');
   } else if (path.includes('US-Unemployment.html')) {
-     document.body.classList.add('page-project-case-study');
-  }else {
+    document.body.classList.add('page-project-case-study');
+  } else {
     document.body.classList.add('page-home');
   }
 
@@ -739,8 +627,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
 
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileNav = document.getElementById('mobile-nav');
+  const menuToggle = getEl('menu-toggle');
+  const mobileNav = getEl('mobile-nav');
 
   if (menuToggle) {
     menuToggle.addEventListener('click', () => {
@@ -756,27 +644,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const carousel = document.getElementById('project-carousel');
+  const carousel = getEl('project-carousel');
   if (carousel) {
     const prevBtn = document.querySelector('.carousel-btn.prev');
     const nextBtn = document.querySelector('.carousel-btn.next');
-
-    const scrollStep = () => {
-      return 300 + 24;
-    };
-
-    nextBtn.addEventListener('click', () => {
-      carousel.scrollBy({
-        left: scrollStep(),
-        behavior: 'smooth'
-      });
-    });
-
-    prevBtn.addEventListener('click', () => {
-      carousel.scrollBy({
-        left: -scrollStep(),
-        behavior: 'smooth'
-      });
-    });
+    const scrollStep = () => 324;
+    nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollStep(), behavior: 'smooth' }));
+    prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollStep(), behavior: 'smooth' }));
   }
 });
