@@ -210,8 +210,8 @@ const translations = {
           text: "Transformed and structured the raw API data in Google Sheets to create a clean and efficient dataset for visualization."
         }
       ],
-      problemTitle: "Project Goal",
-      problemText: "The objective was to create a comprehensive and visually engaging National Pokédex by leveraging a public API. The challenge involved automating data extraction, modeling it for performance, and building an interactive dashboard that felt true to the source material.",
+      problemTitle: "Beyond the Office: Finding Fun in Data",
+      problemText: "Who says data is just for boardrooms and balance sheets? This project was born from a simple idea: data is everywhere, and with a bit of creativity, it can be used to build something fun. The goal was to step away from traditional business KPIs and use analytics skills to bring a piece of pop culture to life.",
       objectiveTitle: "Dashboard Features",
       objectiveText: "This dashboard connects to the PokéAPI via Google Sheets and Apps Script to dynamically build a National Pokédex. Each Pokémon profile features type, abilities, stats, and visual styling inspired by the anime Pokédex layout.",
       datasetTitle: "Technology Stack",
@@ -221,7 +221,7 @@ const translations = {
       datasetScope: "Tools:",
       datasetScopeValue: "Google Looker Studio, Google Sheets, Google Apps Script, API.",
       roleTitle: "My Role",
-      roleText: "I was responsible for the entire end-to-end process: writing the Apps Script code to call the PokéAPI, parsing the JSON data, structuring the final table in Google Sheets, and designing the complete interactive experience in Looker Studio.",
+      roleText: "As the sole creator, I handled the entire end-to-end process: writing the Apps Script code to call the API, transforming the data, and designing the complete interactive experience in Looker Studio.",
       dashboardTitle: "Interactive Pokédex",
       dashboardSubtitle: "Select a Pokémon to see its complete profile, including stats, abilities, and more."
     },
@@ -427,8 +427,8 @@ const translations = {
           text: "Transformación y estructuración de los datos crudos de la API en Google Sheets para crear un dataset limpio y eficiente."
         }
       ],
-      problemTitle: "Objetivo del Proyecto",
-      problemText: "El objetivo era crear una Pokédex Nacional completa y visualmente atractiva utilizando una API pública. El desafío consistió en automatizar la extracción de datos, modelarlos para un buen rendimiento y construir un dashboard interactivo que se sintiera fiel al material original.",
+      problemTitle: "Datos más allá de la oficina: la diversión de crear",
+      problemText: "¿Quién dijo que los datos son solo para el trabajo? Este proyecto nació de una idea simple: los datos están en todas partes y, con un poco de creatividad, pueden usarse para construir algo entretenido. El objetivo fue alejarse de los KPIs de negocio y usar las habilidades de análisis para dar vida a un ícono de la cultura pop.",
       objectiveTitle: "Características del Dashboard",
       objectiveText: "Este dashboard se conecta a la PokéAPI a través de Google Sheets y Apps Script para construir dinámicamente una Pokédex Nacional. Cada perfil de Pokémon muestra su tipo, habilidades, estadísticas y un estilo visual inspirado en la Pokédex del anime.",
       datasetTitle: "Stack Tecnológico",
@@ -438,7 +438,7 @@ const translations = {
       datasetScope: "Herramientas:",
       datasetScopeValue: "Google Looker Studio, Google Sheets, Google Apps Script, API.",
       roleTitle: "Mi Rol",
-      roleText: "Fui responsable de todo el proceso de principio a fin: escribir el código en Apps Script para llamar a la PokéAPI, procesar los datos JSON, estructurar la tabla final en Google Sheets y diseñar la experiencia interactiva completa en Looker Studio.",
+      roleText: "Como único creador, me encargué de todo el proceso: escribí el código en Apps Script para llamar a la API, transformé los datos y diseñé la experiencia interactiva completa en Looker Studio.",
       dashboardTitle: "Pokédex Interactiva",
       dashboardSubtitle: "Selecciona un Pokémon para ver su perfil completo, con estadísticas, habilidades y más."
     },
@@ -777,7 +777,7 @@ function populatePokedexPage(lang, basePath) {
     if (sidebar && data.problemTitle) {
         sidebar.innerHTML = `
             <div class="sidebar-section">
-                <h3><i class="fas fa-bullseye"></i> ${data.problemTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <h3><i class="fas fa-lightbulb"></i> ${data.problemTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
                 <div class="content"><p>${data.problemText}</p></div>
             </div>
             <div class="sidebar-section">
