@@ -394,7 +394,7 @@ p.timeline-company a:hover {
 .project-header {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(179, 207, 229, 0.2);
+  border-bottom: 1px solid #ddd;
 }
 .project-header h1 {
   font-family: 'Oswald', sans-serif;
@@ -484,46 +484,50 @@ p.timeline-company a:hover {
 
 /* --- TEMA PROYECTO 2: FINANCIAL INCLUSION (AZUL) --- */
 .theme-blue-project {
-  --dark-blue: #03045E;
-  --almost-white: #0077B6;
-  --mid-blue: #00B4D8;
-  --accent: #90E0EF;
-  --deep-blue: #CAF0F8;
-  --text-secondary: #90E0EF;
-}
-.theme-blue-project {
-  background: var(--dark-blue);
-  color: var(--deep-blue);
+  background-color: var(--white);
+  color: var(--dark-blue);
+  --financial-blue-dark: #03045E;
+  --financial-blue-mid: #0077B6;
+  --financial-blue-light: #00B4D8;
 }
 .theme-blue-project .header-hero-wrapper,
 .theme-blue-project .footer {
-    background-color: #020344;
+    background-color: var(--financial-blue-dark);
 }
-.theme-blue-project .section-title,
 .theme-blue-project .project-header h1 {
-  color: var(--white);
-  border-left-color: var(--mid-blue);
+    color: var(--financial-blue-dark);
 }
 .theme-blue-project .project-executive-summary {
-  background-color: var(--almost-white); 
-  border-left: 5px solid var(--accent);
+  background-color: #EBF7FF; 
+  border-left: 5px solid var(--financial-blue-dark);
 }
-.theme-blue-project .summary-card i { color: var(--accent); }
-.theme-blue-project .summary-card-text h3 { color: var(--white); }
+.theme-blue-project .summary-card i { color: var(--financial-blue-dark); }
+.theme-blue-project .summary-card-text h3 { color: var(--financial-blue-dark); }
 .theme-blue-project .summary-card-text p { color: var(--deep-blue); }
 .theme-blue-project .project-sidebar .sidebar-section {
-    background-color: var(--almost-white);
-    border-top: 3px solid var(--mid-blue);
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    border-top: 4px solid var(--financial-blue-dark);
 }
 .theme-blue-project .project-sidebar h3 {
-  color: var(--white);
-  border-bottom: 2px solid var(--accent);
+  color: var(--dark-blue);
 }
-.theme-blue-project .project-sidebar h3 i { color: var(--accent); }
-.theme-blue-project .project-sidebar a { color: var(--accent); }
-.theme-blue-project .project-dashboard-content h2 { color: var(--white); }
-.theme-blue-project .project-dashboard-content p { color: var(--mid-blue); }
-
+.theme-blue-project .project-sidebar p,
+.theme-blue-project .project-sidebar li,
+.theme-blue-project .project-sidebar strong {
+    color: var(--deep-blue);
+}
+.theme-blue-project .project-sidebar h3 i { color: var(--financial-blue-dark); }
+.theme-blue-project .project-sidebar a { 
+    color: var(--financial-blue-mid);
+    font-weight: 600;
+}
+.theme-blue-project .button.btn-back {
+    background-color: var(--financial-blue-dark);
+}
+.theme-blue-project .button.btn-looker {
+    background-color: var(--financial-blue-mid);
+}
 
 /* --- ESTILOS COMPARTIDOS POR TEMAS DE PROYECTO --- */
 .project-executive-summary {
