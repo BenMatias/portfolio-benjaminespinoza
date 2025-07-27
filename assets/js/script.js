@@ -32,13 +32,6 @@ const translations = {
     }],
     projectsTitle: "Featured Projects",
     viewAllBtn: "View All Projects",
-    featured_projects: [{
-      title: "US Unemployment Analysis",
-      description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.",
-      imageUrl: "assets/img/us-unemployment-cover.png",
-      link: "projects/US-Unemployment.html",
-      buttonText: "View Project"
-    }],
 
     // --- CV Page Content ---
     cv_hero_title: "My Professional Journey",
@@ -183,11 +176,39 @@ const translations = {
     projects_list: [{
       id: "project-unemployment",
       title: "Unemployment in America",
-      description: "Analyze short- and long-term labor dynamics across U.S. states and cities using public data and interactive visuals.",
       link: "projects/US-Unemployment.html",
-      imageUrl: "assets/img/us-unemployment-cover.png",
-      buttonText: "View Project"
-    }]
+      imageUrl: "assets/img/us-unemployment-cover.png"
+    }],
+
+    // --- Case Study Page Content: US Unemployment ---
+    project_unemployment: {
+      pageTitle: "Unemployment in America – A Data-Driven Overview",
+      backButton: "Back to Projects",
+      linkedinButton: "Share on LinkedIn",
+      xButton: "Share on X",
+      lookerButton: "View on Looker Studio",
+      problemTitle: "Problem Statement",
+      problemText: "The national unemployment rate in the United States appears stable. However, this aggregated figure hides important differences between states and metropolitan areas.",
+      objectiveTitle: "Dashboard Objective",
+      objectiveText: "The goal of this dashboard is to offer a detailed and interactive view of unemployment trends in the United States, with analysis by state and metro area.",
+      questionsTitle: "Key Questions",
+      questionsList: [
+        "Which regions have experienced the highest increases or decreases in unemployment over time?",
+        "Are there metro areas that consistently show high or low unemployment compared to their states?",
+        "What structural patterns or correlations are observed across cities and regions?"
+      ],
+      datasetTitle: "Dataset Information",
+      datasetSource: "Source:",
+      datasetSourceLink: "U.S. Bureau of Labor Statistics",
+      datasetPeriod: "Period:",
+      datasetPeriodValue: "January 2020 – May 2025",
+      datasetScope: "Scope:",
+      datasetScopeValue: "National, State, Metro Areas (seasonally adjusted)",
+      roleTitle: "My Role",
+      roleText: "I sourced and filtered public datasets, defined KPIs and filtering logic, and designed the dashboard using Looker Studio.",
+      dashboardTitle: "Interactive Dashboard",
+      dashboardSubtitle: "Explore the interactive report below or use the tabs to dive into state and metro-level insights."
+    }
   },
   es: {
     // --- Navigation ---
@@ -222,13 +243,6 @@ const translations = {
     }],
     projectsTitle: "Proyectos Destacados",
     viewAllBtn: "Ver Todos los Proyectos",
-    featured_projects: [{
-      title: "Análisis de Desempleo en EE.UU.",
-      description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.",
-      imageUrl: "assets/img/us-unemployment-cover.png",
-      link: "projects/US-Unemployment.html",
-      buttonText: "Ver Proyecto"
-    }],
 
     // --- CV Page Content ---
     cv_hero_title: "Mi Trayectoria Profesional",
@@ -373,11 +387,39 @@ const translations = {
     projects_list: [{
       id: "project-unemployment",
       title: "Desempleo en América",
-      description: "Analiza dinámicas laborales de corto y largo plazo en EE.UU. a nivel estatal y metropolitano mediante datos públicos y visualizaciones interactivas.",
       link: "projects/US-Unemployment.html",
-      imageUrl: "assets/img/us-unemployment-cover.png",
-      buttonText: "Ver Proyecto"
-    }]
+      imageUrl: "assets/img/us-unemployment-cover.png"
+    }],
+
+    // --- Case Study Page Content: US Unemployment (Español) ---
+    project_unemployment: {
+      pageTitle: "Desempleo en Estados Unidos – Un análisis basado en datos",
+      backButton: "Volver a Proyectos",
+      linkedinButton: "Compartir en LinkedIn",
+      xButton: "Compartir en X",
+      lookerButton: "Ver en Looker Studio",
+      problemTitle: "Problema",
+      problemText: "La tasa de desempleo nacional en Estados Unidos parece estable. Sin embargo, esta cifra agregada oculta diferencias importantes entre estados y áreas metropolitanas.",
+      objectiveTitle: "Objetivo del Dashboard",
+      objectiveText: "Este dashboard tiene como objetivo ofrecer una visión detallada e interactiva de las tendencias de desempleo en Estados Unidos, con análisis por estado y ciudad.",
+      questionsTitle: "Preguntas Clave",
+      questionsList: [
+        "¿Qué regiones han tenido mayores aumentos o disminuciones en el desempleo a lo largo del tiempo?",
+        "¿Existen ciudades con niveles de desempleo distintos a sus estados?",
+        "¿Qué patrones estructurales se observan entre ciudades y regiones?"
+      ],
+      datasetTitle: "Información del Dataset",
+      datasetSource: "Fuente:",
+      datasetSourceLink: "Oficina de Estadísticas Laborales de EE. UU.",
+      datasetPeriod: "Período:",
+      datasetPeriodValue: "Enero 2020 – Mayo 2025",
+      datasetScope: "Cobertura:",
+      datasetScopeValue: "Nacional, Estatal, Áreas Metropolitanas (ajustado estacionalmente)",
+      roleTitle: "Mi Rol",
+      roleText: "Seleccioné y filtré datasets públicos, definí indicadores clave (KPIs) y lógica de filtros, y diseñé la estructura del dashboard en Looker Studio.",
+      dashboardTitle: "Dashboard Interactivo",
+      dashboardSubtitle: "Explora el reporte interactivo o usa las pestañas para navegar por estado y ciudad."
+    }
   }
 };
 
@@ -514,17 +556,14 @@ function populateProjectsPage(lang) {
   const data = translations[lang] || translations.en;
   const getEl = (id) => document.getElementById(id);
 
-  // Populate titles for both desktop and mobile containers
-  if (getEl('projects-title-desktop')) {
-    getEl('projects-title-desktop').innerHTML = `<i class="fas fa-lightbulb"></i> ${data.projects_page_title}`;
-  }
-  if (getEl('projects-title-mobile')) {
-    getEl('projects-title-mobile').innerHTML = `<i class="fas fa-lightbulb"></i> ${data.projects_page_title}`;
+  const titleEl = getEl('projects-title');
+  if (titleEl) {
+    titleEl.innerHTML = `<i class="fas fa-lightbulb"></i> ${data.projects_page_title}`;
   }
 
-  // --- Desktop View Logic ---
   const listUl = getEl('projects-list-ul');
   const previewCol = getEl('projects-preview-column');
+
   if (listUl && previewCol) {
     listUl.innerHTML = '';
     previewCol.innerHTML = '';
@@ -545,39 +584,95 @@ function populateProjectsPage(lang) {
     projectLinks.forEach(link => {
       link.addEventListener('mouseenter', () => {
         const targetId = link.getAttribute('data-preview-target');
-        previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => activeImg.classList.remove('is-active'));
+
+        previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => {
+          activeImg.classList.remove('is-active');
+        });
+
         const targetImage = getEl(targetId);
-        if (targetImage) targetImage.classList.add('is-active');
+        if (targetImage) {
+          targetImage.classList.add('is-active');
+        }
       });
     });
 
     listUl.addEventListener('mouseleave', () => {
-      previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => activeImg.classList.remove('is-active'));
+      previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => {
+        activeImg.classList.remove('is-active');
+      });
     });
   }
-  
-  // --- Mobile View Logic ---
-  const grid = getEl('projects-grid');
-  if (grid) {
-    grid.innerHTML = data.projects_list.map(project => `
-      <a href="${project.link}" class="project-card-mobile">
-        <img src="${project.imageUrl}" alt="${project.title} preview">
-        <div class="project-card-mobile-content">
-          <h3>${project.title}</h3>
-          <p>${project.description}</p>
-          <span class="btn btn-outline-blue">${project.buttonText}</span>
-        </div>
-      </a>
-    `).join('');
+}
+
+function populateCaseStudyPage(lang) {
+  const data = translations[lang].project_unemployment || translations.en.project_unemployment;
+  const getEl = (id) => document.getElementById(id);
+
+  if (getEl('project-title')) getEl('project-title').textContent = data.pageTitle;
+
+  const btnGroup = getEl('project-button-group');
+  if (btnGroup) {
+    const pageUrl = window.location.href;
+    const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+    const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(data.pageTitle)}`;
+
+    btnGroup.innerHTML = `
+      <a href="../projects.html" class="button btn-back"><i class="fas fa-arrow-left"></i> ${data.backButton}</a>
+      <a href="${linkedinUrl}" class="button btn-linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> ${data.linkedinButton}</a>
+      <a href="${twitterUrl}" class="button btn-x" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> ${data.xButton}</a>
+      <a href="https://lookerstudio.google.com/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45" class="button btn-looker" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> ${data.lookerButton}</a>
+    `;
+  }
+
+  const contextGrid = getEl('project-context');
+  if (contextGrid) {
+    contextGrid.innerHTML = `
+      <div class="context-section">
+        <h3><i class="fas fa-exclamation-circle"></i> ${data.problemTitle}</h3>
+        <p>${data.problemText}</p>
+      </div>
+      <div class="context-section">
+        <h3><i class="fas fa-bullseye"></i> ${data.objectiveTitle}</h3>
+        <p>${data.objectiveText}</p>
+      </div>
+      <div class="context-section">
+        <h3><i class="fas fa-user-tie"></i> ${data.roleTitle}</h3>
+        <p>${data.roleText}</p>
+      </div>
+      <div class="context-section">
+        <h3><i class="fas fa-database"></i> ${data.datasetTitle}</h3>
+        <p>
+          <strong>${data.datasetSource}</strong> <a href="https://www.bls.gov/data/" target="_blank" rel="noopener">${data.datasetSourceLink}</a><br>
+          <strong>${data.datasetPeriod}</strong> ${data.datasetPeriodValue}<br>
+          <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
+        </p>
+      </div>
+    `;
+  }
+
+  const dashboardContent = getEl('project-dashboard-section');
+  if (dashboardContent) {
+    dashboardContent.innerHTML = `
+      <h2><i class="fas fa-poll"></i> ${data.dashboardTitle}</h2>
+      <p><em>${data.dashboardSubtitle}</em></p>
+      <div class="dashboard-embed-container">
+        <iframe 
+          src="https://lookerstudio.google.com/embed/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45/page/SE1QF"
+          loading="lazy" 
+          allowfullscreen 
+          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
+      </div>
+    `;
   }
 }
+
 
 function setLanguage(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
   const data = translations[lang] || translations.en;
 
-  // Common content (runs on all pages)
   document.querySelectorAll('[data-translate]').forEach(el => {
     const key = el.getAttribute('data-translate');
     if (data[key]) {
@@ -585,25 +680,14 @@ function setLanguage(lang) {
     }
   });
 
-  document.querySelectorAll(".lang-toggle").forEach(el => {
-    el.innerHTML = lang === "en" ? `<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES` : `<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN`;
-  });
-
-  // Page-specific content
-  const body = document.body;
-  const getEl = (id) => document.getElementById(id);
-
-  if (body.classList.contains('page-home')) {
-    if (getEl('hero-title')) getEl('hero-title').textContent = data.heroTitle;
-    if (getEl('hero-subtitle')) getEl('hero-subtitle').textContent = data.heroSubtitle;
-    if (getEl('btn-projects')) getEl('btn-projects').textContent = data.btnProjects;
-    if (getEl('btn-resume')) getEl('btn-resume').textContent = data.btnResume;
-    if (getEl('about-title')) getEl('about-title').textContent = data.aboutTitle;
-    if (getEl('about-text-content')) getEl('about-text-content').innerHTML = data.aboutContent;
-    if (getEl('impact-title')) getEl('impact-title').textContent = data.impactTitle;
-    if (getEl('projects-title')) getEl('projects-title').textContent = data.projectsTitle;
-    if (getEl('view-all-btn')) getEl('view-all-btn').textContent = data.viewAllBtn;
-
+  if (document.body.classList.contains('page-home')) {
+    document.getElementById('hero-title').textContent = data.heroTitle;
+    document.getElementById("hero-subtitle").textContent = data.heroSubtitle;
+    document.getElementById("btn-projects").textContent = data.btnProjects;
+    document.getElementById("btn-resume").textContent = data.btnResume;
+    document.getElementById("about-title").textContent = data.aboutTitle;
+    document.getElementById("about-text-content").innerHTML = data.aboutContent;
+    document.getElementById("impact-title").textContent = data.impactTitle;
     const impactGrid = document.querySelector('.impact-grid');
     if (impactGrid) {
       impactGrid.innerHTML = '';
@@ -614,28 +698,25 @@ function setLanguage(lang) {
         impactGrid.appendChild(card);
       });
     }
-    
-    const projectCarousel = getEl("project-carousel");
-    if (projectCarousel) {
-        projectCarousel.innerHTML = '';
-        (data.featured_projects || []).forEach(project => {
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            card.innerHTML = `
-                <img src="${project.imageUrl}" alt="${project.title}">
-                <div class="project-card-content">
-                    <h3>${project.title}</h3>
-                    <p>${project.description}</p>
-                    <a href="${project.link}" class="btn btn-outline-blue">${project.buttonText}</a>
-                </div>`;
-            projectCarousel.appendChild(card);
-        });
-    }
-  } else if (body.classList.contains('page-cv')) {
+    document.getElementById("projects-title").textContent = data.projectsTitle;
+    document.getElementById("view-all-btn").textContent = data.viewAllBtn;
+  }
+
+  if (document.body.classList.contains('page-cv')) {
     populateCvPage(lang);
-  } else if (body.classList.contains('page-projects')) {
+  }
+
+  if (document.body.classList.contains('page-projects')) {
     populateProjectsPage(lang);
   }
+
+  if (document.body.classList.contains('page-project-case-study')) {
+    populateCaseStudyPage(lang);
+  }
+
+  document.querySelectorAll(".lang-toggle").forEach(el => {
+    el.innerHTML = lang === "en" ? `<img src="https://flagcdn.com/cl.svg" alt="Bandera de Chile" style="width: 20px; vertical-align: middle;"> ES` : `<img src="https://flagcdn.com/us.svg" alt="USA Flag" style="width: 20px; vertical-align: middle;"> EN`;
+  });
 }
 
 function toggleLang() {
@@ -643,7 +724,20 @@ function toggleLang() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const path = window.location.pathname;
+  if (path.includes('cv.html')) {
+    document.body.classList.add('page-cv');
+  } else if (path.includes('projects.html')) {
+    document.body.classList.add('page-projects');
+  } else if (path.includes('US-Unemployment.html')) {
+     document.body.classList.add('page-project-case-study');
+  }else {
+    document.body.classList.add('page-home');
+  }
+
   setLanguage('en');
+
+  document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
 
   const menuToggle = document.getElementById('menu-toggle');
   const mobileNav = document.getElementById('mobile-nav');
@@ -661,8 +755,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
 
   const carousel = document.getElementById('project-carousel');
   if (carousel) {
