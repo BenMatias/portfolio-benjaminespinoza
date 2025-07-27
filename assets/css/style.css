@@ -614,27 +614,34 @@ p.timeline-company a:hover {
 
 /* --- TEMA PROYECTO 3: POKEDEX (ROJO) --- */
 .theme-red-project {
-  background-color: var(--almost-white); /* Fondo general blanco hueso */
+  background-color: var(--white);
   color: var(--dark-blue);
   --pokedex-red-dark: #A70000;
   --pokedex-red-mid: #BF0000;
   --pokedex-red-light: #FF1F1F;
 }
-.theme-red-project .header-hero-wrapper,
-.theme-red-project .footer {
-    background-color: var(--pokedex-red-dark);
-    color: var(--white);
-}
 .theme-red-project .header-hero-wrapper {
-    border-bottom: none;
+    background-color: var(--white);
+    color: var(--dark-blue);
+    border-bottom: 1px solid #eee;
 }
 .theme-red-project .footer {
-    border-top: none;
+    background-color: var(--almost-white);
+    color: var(--dark-blue);
+    border-top: 1px solid #eee;
+}
+.theme-red-project .footer .footer-contacts a,
+.theme-red-project .footer .footer-socials a {
+    color: var(--deep-blue);
+}
+.theme-red-project .footer .footer-contacts a:hover,
+.theme-red-project .footer .footer-socials a:hover {
+    color: var(--pokedex-red-dark);
 }
 .theme-red-project nav.desktop-nav a,
 .theme-red-project .lang-toggle,
 .theme-red-project .hamburger {
-    color: var(--white);
+    color: var(--dark-blue);
 }
 .theme-red-project .project-header {
     border-bottom-color: #ddd;
