@@ -31,6 +31,7 @@ const translations = {
       text: "Empowered diverse business areas with data-driven insights to support decision-making across operations, sales, risk, product, and beyond."
     }],
     projectsTitle: "Featured Projects",
+    projects: [ { title: "US Unemployment Analysis", description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "View Project" } ],
     viewAllBtn: "View All Projects",
 
     // --- CV Page Content ---
@@ -242,6 +243,7 @@ const translations = {
       text: "Apoyé diversas áreas de negocio con insights accionables que respaldan la toma de decisiones en operaciones, ventas, riesgo, producto y más."
     }],
     projectsTitle: "Proyectos Destacados",
+    projects: [ { title: "Análisis de Desempleo en EE.UU.", description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "Ver Proyecto" } ],
     viewAllBtn: "Ver Todos los Proyectos",
 
     // --- CV Page Content ---
@@ -361,6 +363,22 @@ function populateHomePage(lang) {
   }
 
   getEl("projects-title").textContent = data.projectsTitle;
+  const projectCarousel = getEl("project-carousel");
+  if (projectCarousel) {
+      projectCarousel.innerHTML = '';
+      data.projects.forEach(project => {
+          const card = document.createElement('div');
+          card.className = 'project-card';
+          card.innerHTML = `
+              <img src="${project.imageUrl}" alt="${project.title}">
+              <div class="project-card-content">
+                  <h3>${project.title}</h3>
+                  <p>${project.description}</p>
+                  <a href="${project.link}" class="btn btn-outline-blue">${project.buttonText}</a>
+              </div>`;
+          projectCarousel.appendChild(card);
+      });
+  }
   getEl("view-all-btn").textContent = data.viewAllBtn;
 }
 
@@ -388,7 +406,7 @@ function populateCvPage(lang) {
     timelineWork.innerHTML = workItems.map((item) => {
       return `<div class="timeline-item">
                 <div class="timeline-logo-wrapper">
-                    <img src="../${item.logo}" alt="${item.company} Logo" class="timeline-logo">
+                    <img src="${item.logo.startsWith('http') ? item.logo : 'assets/img/logos/' + item.logo.split('/').pop()}" alt="${item.company} Logo" class="timeline-logo">
                 </div>
                 <div class="timeline-content-block">
                     <div class="timeline-date">${item.date}</div>
@@ -404,7 +422,7 @@ function populateCvPage(lang) {
     timelineEducation.innerHTML = educationItems.map((item) => {
       return `<div class="timeline-item">
                 <div class="timeline-logo-wrapper">
-                     <img src="../${item.logo}" alt="${item.company} Logo" class="timeline-logo">
+                     <img src="${item.logo.startsWith('http') ? item.logo : 'assets/img/logos/' + item.logo.split('/').pop()}" alt="${item.company} Logo" class="timeline-logo">
                 </div>
                 <div class="timeline-content-block">
                     <div class="timeline-date">${item.date}</div>
@@ -418,39 +436,28 @@ function populateCvPage(lang) {
 
   const skillsContainer = getEl('skills-content');
   if (skillsContainer) {
-    const {
-      tier1,
-      tier2,
-      tier3,
-      tier4
-    } = data.cv_skills_items;
+    const { tier1, tier2, tier3, tier4 } = data.cv_skills_items;
     let lineupHtml = '<div class="skills-lineup">';
     if (tier1 && tier1.length > 0) {
       lineupHtml += '<div class="lineup-tier lineup-tier-1">';
       tier1.forEach(skill => {
-        lineupHtml += `<div class="skill"><img src="../${skill.logo}" class="skill-logo" alt="${skill.name} logo"><span>${skill.name}</span></div>`;
+        lineupHtml += `<div class="skill"><img src="${skill.logo}" class="skill-logo" alt="${skill.name} logo"><span>${skill.name}</span></div>`;
       });
       lineupHtml += '</div>';
     }
     if (tier2 && tier2.length > 0) {
       lineupHtml += '<div class="lineup-tier lineup-tier-2">';
-      tier2.forEach(skill => {
-        lineupHtml += `<div class="skill">${skill}</div>`;
-      });
+      tier2.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
       lineupHtml += '</div>';
     }
     if (tier3 && tier3.length > 0) {
       lineupHtml += '<div class="lineup-tier lineup-tier-3">';
-      tier3.forEach(skill => {
-        lineupHtml += `<div class="skill">${skill}</div>`;
-      });
+      tier3.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
       lineupHtml += '</div>';
     }
     if (tier4 && tier4.length > 0) {
       lineupHtml += '<div class="lineup-tier lineup-tier-4">';
-      tier4.forEach(skill => {
-        lineupHtml += `<div class="skill">${skill}</div>`;
-      });
+      tier4.forEach(skill => { lineupHtml += `<div class="skill">${skill}</div>`; });
       lineupHtml += '</div>';
     }
     lineupHtml += '</div>';
@@ -462,7 +469,7 @@ function populateCvPage(lang) {
   const interestsContainer = getEl('interests-content');
   if (interestsContainer) interestsContainer.innerHTML = data.cv_interests_items.map(item => `<div class="interest-item"><i class="${item.icon}"></i><p>${item.name}</p></div>`).join('');
   const certsContainer = getEl('certifications-content');
-  if (certsContainer) certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="../${item.url}" target="_blank" rel="noopener">${item.name}</a></li>`).join('');
+  if (certsContainer) certsContainer.innerHTML = data.cv_certifications_items.map(item => `<li><a href="${item.url}" target="_blank" rel="noopener">${item.name}</a></li>`).join('');
 
   setTimeout(setupScrollAnimations, 100);
 }
@@ -591,14 +598,11 @@ function setLanguage(lang) {
 
   if (document.body.classList.contains('page-home')) {
     populateHomePage(lang);
-  }
-  if (document.body.classList.contains('page-cv')) {
+  } else if (document.body.classList.contains('page-cv')) {
     populateCvPage(lang);
-  }
-  if (document.body.classList.contains('page-projects')) {
+  } else if (document.body.classList.contains('page-projects')) {
     populateProjectsPage(lang);
-  }
-  if (document.body.classList.contains('page-project-case-study')) {
+  } else if (document.body.classList.contains('page-project-case-study')) {
     populateCaseStudyPage(lang);
   }
 
