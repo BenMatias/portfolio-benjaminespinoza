@@ -335,6 +335,10 @@ p.timeline-company a:hover {
 }
 
 /* --- ESTILOS PARA LA PÁGINA DE PROYECTOS (LISTA INTERACTIVA) --- */
+.page-projects .header-hero-wrapper header.container {
+    max-width: none;
+    margin: 0;
+}
 .page-projects .section-title {
     font-family: 'Oswald', sans-serif;
     font-size: clamp(2.8rem, 7vw, 3.5rem);
@@ -365,18 +369,31 @@ p.timeline-company a:hover {
   margin: 0;
 }
 .projects-list-ul li a {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
   padding: 1.5rem 0;
   border-bottom: 1px solid #e0eaf1;
   text-decoration: none;
-  color: var(--mid-blue);
-  font-size: 1.8rem;
-  font-family: 'Oswald', sans-serif;
-  transition: color 0.3s ease, padding-left 0.3s ease;
+  transition: padding-left 0.3s ease;
 }
 .projects-list-ul li a:hover {
-  color: var(--dark-blue);
   padding-left: 1.5rem;
+}
+.project-list-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    color: var(--mid-blue);
+    transition: color 0.3s ease;
+}
+.projects-list-ul li a:hover .project-list-title {
+  color: var(--dark-blue);
+}
+.project-list-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--deep-blue);
+    font-weight: 400;
 }
 .project-preview-image {
   position: absolute;
