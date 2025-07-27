@@ -614,7 +614,7 @@ p.timeline-company a:hover {
 
 /* --- TEMA PROYECTO 3: POKEDEX (ROJO) --- */
 .theme-red-project {
-  background-color: var(--white);
+  background-color: var(--almost-white); /* Fondo general blanco hueso */
   color: var(--dark-blue);
   --pokedex-red-dark: #A70000;
   --pokedex-red-mid: #BF0000;
@@ -649,21 +649,30 @@ p.timeline-company a:hover {
 .theme-red-project .summary-card i {
     color: var(--pokedex-red-dark);
 }
+/* Estilo suavizado para el menú lateral */
 .theme-red-project .project-sidebar .sidebar-section {
-    background-color: var(--pokedex-red-dark);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--dark-blue);
+    border: 1px solid #ddd;
+    border-top: 4px solid var(--pokedex-red-dark);
+}
+.theme-red-project .project-sidebar h3 {
+    color: var(--dark-blue);
+}
+.theme-red-project .project-sidebar h3 i {
+    color: var(--pokedex-red-dark);
 }
 .theme-red-project .project-sidebar p,
 .theme-red-project .project-sidebar li,
-.theme-red-project .project-sidebar strong,
+.theme-red-project .project-sidebar strong {
+    color: var(--deep-blue);
+}
 .theme-red-project .project-sidebar a {
-    color: var(--white);
+    color: var(--pokedex-red-mid);
+    font-weight: 600;
 }
 .theme-red-project .project-sidebar a:hover {
     text-decoration-color: var(--pokedex-red-light);
-}
-.theme-red-project .project-sidebar h3 i {
-    color: var(--white);
 }
 .theme-red-project .button.btn-back { background-color: var(--dark-blue); }
 .theme-red-project .button.btn-looker { background-color: var(--pokedex-red-mid); }
