@@ -32,6 +32,7 @@ const translations = {
     }],
     projectsTitle: "Featured Projects",
     projects: [
+        { title: "Interactive Pokédex", description: "A National Pokédex of 1,025 Pokémon built by connecting to the PokéAPI with Apps Script.", imageUrl: "assets/img/pokedex-cover.png", link: "projects/pokedex-dashboard.html", buttonText: "View Project" },
         { title: "US Unemployment Analysis", description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "View Project" },
         { title: "Global Financial Inclusion", description: "Visualize global trends in account ownership and borrowing behavior by region, income group, and demographics.", imageUrl: "assets/img/global-financial-inclusion-cover.png", link: "projects/global-financial-inclusion.html", buttonText: "View Project" }
     ],
@@ -178,11 +179,52 @@ const translations = {
     // --- Projects Page Content ---
     projects_page_title: "Projects",
     projects_list: [
+        { id: "project-pokedex", title: "Interactive Pokédex", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.png" },
         { id: "project-unemployment", title: "Unemployment in America", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png" },
         { id: "project-financial-inclusion", title: "Global Financial Inclusion", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png" }
     ],
 
     // --- CASE STUDY DATA ---
+    project_pokedex: {
+      pageTitle: "Interactive Pokédex Dashboard – Powered by Looker Studio",
+      lookerStudioUrl: "https://lookerstudio.google.com/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF",
+      iframeEmbed: `<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
+      backButton: "Back to Projects",
+      linkedinButton: "Share on LinkedIn",
+      xButton: "Share on X",
+      lookerButton: "View on Looker Studio",
+      executiveSummary: [
+        {
+          icon: "fas fa-database",
+          title: "API Integration",
+          text: "Connected to the PokéAPI via Google Apps Script to fetch and process data for over 1,000 Pokémon."
+        },
+        {
+          icon: "fas fa-palette",
+          title: "Dynamic Visual Elements",
+          text: "Used conditional formatting to dynamically change colors and styles based on Pokémon type, just like a real Pokédex."
+        },
+        {
+          icon: "fas fa-sitemap",
+          title: "Data Modeling",
+          text: "Transformed and structured the raw API data in Google Sheets to create a clean and efficient dataset for visualization."
+        }
+      ],
+      problemTitle: "Project Goal",
+      problemText: "The objective was to create a comprehensive and visually engaging National Pokédex by leveraging a public API. The challenge involved automating data extraction, modeling it for performance, and building an interactive dashboard that felt true to the source material.",
+      objectiveTitle: "Dashboard Features",
+      objectiveText: "This dashboard connects to the PokéAPI via Google Sheets and Apps Script to dynamically build a National Pokédex. Each Pokémon profile features type, abilities, stats, and visual styling inspired by the anime Pokédex layout.",
+      datasetTitle: "Technology Stack",
+      datasetSource: "Data Source:",
+      datasetSourceText: "PokéAPI",
+      datasetSourceLink: "https://pokeapi.co/",
+      datasetScope: "Tools:",
+      datasetScopeValue: "Google Looker Studio, Google Sheets, Google Apps Script, API.",
+      roleTitle: "My Role",
+      roleText: "I was responsible for the entire end-to-end process: writing the Apps Script code to call the PokéAPI, parsing the JSON data, structuring the final table in Google Sheets, and designing the complete interactive experience in Looker Studio.",
+      dashboardTitle: "Interactive Pokédex",
+      dashboardSubtitle: "Select a Pokémon to see its complete profile, including stats, abilities, and more."
+    },
     project_unemployment: {
       pageTitle: "Unemployment in America – A Data-Driven Overview",
       lookerStudioUrl: "https://lookerstudio.google.com/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45",
@@ -314,6 +356,7 @@ const translations = {
     }],
     projectsTitle: "Proyectos Destacados",
     projects: [
+        { title: "Pokédex Interactiva", description: "Una Pokédex Nacional de 1.025 Pokémon construida conectándose a la PokéAPI con Apps Script.", imageUrl: "assets/img/pokedex-cover.png", link: "projects/pokedex-dashboard.html", buttonText: "Ver Proyecto" },
         { title: "Análisis de Desempleo en EE.UU.", description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "Ver Proyecto" },
         { title: "Inclusión Financiera Global", description: "Visualiza tendencias globales de titularidad de cuentas y comportamiento de crédito por región, ingreso y demografía.", imageUrl: "assets/img/global-financial-inclusion-cover.png", link: "projects/global-financial-inclusion.html", buttonText: "Ver Proyecto" }
     ],
@@ -353,11 +396,52 @@ const translations = {
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
     projects_list: [
+        { id: "project-pokedex", title: "Pokédex Interactiva", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.png" },
         { id: "project-unemployment", title: "Desempleo en América", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png" },
         { id: "project-financial-inclusion", title: "Inclusión Financiera Global", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png" }
     ],
 
     // --- CASE STUDY DATA ---
+    project_pokedex: {
+      pageTitle: "Dashboard Interactivo de Pokédex – Con Looker Studio",
+      lookerStudioUrl: "https://lookerstudio.google.com/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF",
+      iframeEmbed: `<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
+      backButton: "Volver a Proyectos",
+      linkedinButton: "Compartir en LinkedIn",
+      xButton: "Compartir en X",
+      lookerButton: "Ver en Looker Studio",
+      executiveSummary: [
+        {
+          icon: "fas fa-database",
+          title: "Integración con API",
+          text: "Conexión a la PokéAPI mediante Google Apps Script para obtener y procesar datos de más de 1.000 Pokémon."
+        },
+        {
+          icon: "fas fa-palette",
+          title: "Elementos Visuales Dinámicos",
+          text: "Uso de formato condicional para cambiar colores y estilos según el tipo de Pokémon, como en una Pokédex real."
+        },
+        {
+          icon: "fas fa-sitemap",
+          title: "Modelado de Datos",
+          text: "Transformación y estructuración de los datos crudos de la API en Google Sheets para crear un dataset limpio y eficiente."
+        }
+      ],
+      problemTitle: "Objetivo del Proyecto",
+      problemText: "El objetivo era crear una Pokédex Nacional completa y visualmente atractiva utilizando una API pública. El desafío consistió en automatizar la extracción de datos, modelarlos para un buen rendimiento y construir un dashboard interactivo que se sintiera fiel al material original.",
+      objectiveTitle: "Características del Dashboard",
+      objectiveText: "Este dashboard se conecta a la PokéAPI a través de Google Sheets y Apps Script para construir dinámicamente una Pokédex Nacional. Cada perfil de Pokémon muestra su tipo, habilidades, estadísticas y un estilo visual inspirado en la Pokédex del anime.",
+      datasetTitle: "Stack Tecnológico",
+      datasetSource: "Fuente de Datos:",
+      datasetSourceText: "PokéAPI",
+      datasetSourceLink: "https://pokeapi.co/",
+      datasetScope: "Herramientas:",
+      datasetScopeValue: "Google Looker Studio, Google Sheets, Google Apps Script, API.",
+      roleTitle: "Mi Rol",
+      roleText: "Fui responsable de todo el proceso de principio a fin: escribir el código en Apps Script para llamar a la PokéAPI, procesar los datos JSON, estructurar la tabla final en Google Sheets y diseñar la experiencia interactiva completa en Looker Studio.",
+      dashboardTitle: "Pokédex Interactiva",
+      dashboardSubtitle: "Selecciona un Pokémon para ver su perfil completo, con estadísticas, habilidades y más."
+    },
     project_unemployment: {
       pageTitle: "Desempleo en Estados Unidos – Un análisis basado en datos",
       lookerStudioUrl: "https://lookerstudio.google.com/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45",
@@ -657,11 +741,10 @@ function populateProjectsPage(lang, basePath) {
 // ==================== DEDICATED PROJECT FUNCTIONS ========================
 // =========================================================================
 
-function populateUnemploymentPage(lang, basePath) {
-    const data = translations[lang].project_unemployment || translations.en.project_unemployment;
+function populatePokedexPage(lang, basePath) {
+    const data = translations[lang].project_pokedex || translations.en.project_pokedex;
     const pageData = translations[lang] || translations.en;
     
-    // Populate Header and Buttons
     if (getEl('project-title')) getEl('project-title').textContent = data.pageTitle;
     const btnGroup = getEl('project-button-group');
     if (btnGroup) {
@@ -677,7 +760,6 @@ function populateUnemploymentPage(lang, basePath) {
       `;
     }
 
-    // Populate Executive Summary
     const summarySection = getEl('project-executive-summary');
     if (summarySection && data.executiveSummary) {
         summarySection.innerHTML = data.executiveSummary.map(item => `
@@ -691,7 +773,75 @@ function populateUnemploymentPage(lang, basePath) {
         `).join('');
     }
 
-    // Populate Sidebar
+    const sidebar = getEl('project-sidebar');
+    if (sidebar && data.problemTitle) {
+        sidebar.innerHTML = `
+            <div class="sidebar-section">
+                <h3><i class="fas fa-bullseye"></i> ${data.problemTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>${data.problemText}</p></div>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-tasks"></i> ${data.objectiveTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>${data.objectiveText}</p></div>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-user-tie"></i> ${data.roleTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>${data.roleText}</p></div>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-cogs"></i> ${data.datasetTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>
+                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">${data.datasetSourceText}</a><br>
+                    <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
+                </p></div>
+            </div>
+        `;
+    }
+  
+    const dashboardContent = getEl('project-dashboard-content');
+    if(dashboardContent){
+        const iframeHtml = data.iframeEmbed;
+        const titleEl = dashboardContent.querySelector('#dashboard-title');
+        const subtitleEl = dashboardContent.querySelector('#dashboard-subtitle');
+        const embedEl = dashboardContent.querySelector('#dashboard-embed-container');
+        if (titleEl) titleEl.textContent = data.dashboardTitle;
+        if (subtitleEl) subtitleEl.innerHTML = `<em>${data.dashboardSubtitle}</em>`;
+        if (embedEl) embedEl.innerHTML = iframeHtml;
+    }
+}
+
+function populateUnemploymentPage(lang, basePath) {
+    const data = translations[lang].project_unemployment || translations.en.project_unemployment;
+    const pageData = translations[lang] || translations.en;
+    
+    if (getEl('project-title')) getEl('project-title').textContent = data.pageTitle;
+    const btnGroup = getEl('project-button-group');
+    if (btnGroup) {
+      const pageUrl = window.location.href;
+      const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+      const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(data.pageTitle)}`;
+      
+      btnGroup.innerHTML = `
+        <a href="${basePath}projects.html" class="button btn-back"><i class="fas fa-arrow-left"></i> ${data.backButton || pageData.navProjects}</a>
+        <a href="${linkedinUrl}" class="button btn-linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> ${data.linkedinButton}</a>
+        <a href="${twitterUrl}" class="button btn-x" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> ${data.xButton}</a>
+        <a href="${data.lookerStudioUrl}" class="button btn-looker" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> ${data.lookerButton}</a>
+      `;
+    }
+
+    const summarySection = getEl('project-executive-summary');
+    if (summarySection && data.executiveSummary) {
+        summarySection.innerHTML = data.executiveSummary.map(item => `
+            <div class="summary-card">
+                <i class="${item.icon}"></i>
+                <div class="summary-card-text">
+                    <h3>${item.title}</h3>
+                    <p>${item.text}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+
     const sidebar = getEl('project-sidebar');
     if (sidebar && data.problemTitle) {
         sidebar.innerHTML = `
@@ -722,7 +872,6 @@ function populateUnemploymentPage(lang, basePath) {
         `;
     }
   
-    // Populate Dashboard
     const dashboardContent = getEl('project-dashboard-content');
     if(dashboardContent){
         const iframeHtml = data.iframeEmbed;
@@ -739,7 +888,6 @@ function populateFinancialInclusionPage(lang, basePath) {
     const data = translations[lang].project_financial_inclusion || translations.en.project_financial_inclusion;
     const pageData = translations[lang] || translations.en;
     
-    // Populate Header and Buttons
     if (getEl('project-title')) getEl('project-title').textContent = data.pageTitle;
     const btnGroup = getEl('project-button-group');
     if (btnGroup) {
@@ -755,7 +903,6 @@ function populateFinancialInclusionPage(lang, basePath) {
       `;
     }
 
-    // Populate Executive Summary
     const summarySection = getEl('project-executive-summary');
     if (summarySection && data.executiveSummary) {
         summarySection.innerHTML = data.executiveSummary.map(item => `
@@ -769,7 +916,6 @@ function populateFinancialInclusionPage(lang, basePath) {
         `).join('');
     }
 
-    // Populate Sidebar
     const sidebar = getEl('project-sidebar');
     if (sidebar && data.problemTitle) {
         sidebar.innerHTML = `
@@ -800,7 +946,6 @@ function populateFinancialInclusionPage(lang, basePath) {
         `;
     }
   
-    // Populate Dashboard
     const dashboardContent = getEl('project-dashboard-content');
     if(dashboardContent){
         const iframeHtml = data.iframeEmbed;
@@ -834,9 +979,11 @@ function setLanguage(lang, basePath) {
   } else if (document.body.classList.contains('page-projects')) {
     populateProjectsPage(lang, basePath);
   } else if (document.body.classList.contains('page-project-case-study')) {
-    const bodyId = document.body.id; // Obtenemos el ID del body
+    const bodyId = document.body.id;
     
-    if (bodyId === 'page-unemployment') {
+    if (bodyId === 'page-pokedex') {
+        populatePokedexPage(lang, basePath);
+    } else if (bodyId === 'page-unemployment') {
         populateUnemploymentPage(lang, basePath);
     } else if (bodyId === 'page-financial-inclusion') {
         populateFinancialInclusionPage(lang, basePath);
