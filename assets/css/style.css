@@ -629,6 +629,7 @@ p.timeline-company a:hover {
     background-color: var(--almost-white);
     color: var(--dark-blue);
     border-top: 1px solid #eee;
+    background-image: none; /* Quita la textura de ruido en este footer claro */
 }
 .theme-red-project .footer .footer-contacts a,
 .theme-red-project .footer .footer-socials a {
@@ -642,6 +643,9 @@ p.timeline-company a:hover {
 .theme-red-project .lang-toggle,
 .theme-red-project .hamburger {
     color: var(--dark-blue);
+}
+.theme-red-project .logo img {
+    filter: invert(1); /* Invierte el logo blanco a negro */
 }
 .theme-red-project .project-header {
     border-bottom-color: #ddd;
