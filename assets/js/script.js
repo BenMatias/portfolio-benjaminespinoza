@@ -231,7 +231,7 @@ const translations = {
     },
     project_financial_inclusion: {
       pageTitle: "Global Financial Inclusion Dashboard – 2025",
-      iframeEmbed: `<p style="text-align:center; padding:4rem; color: var(--light-blue);">Your <strong>Global Financial Inclusion</strong> dashboard embed code goes here. Get it from Looker Studio's "Embed report" option.</p>`,
+      iframeEmbed: `<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb/page/4kyRF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Back to Projects",
       linkedinButton: "Share on LinkedIn",
       xButton: "Share on X",
@@ -402,7 +402,7 @@ const translations = {
     },
     project_financial_inclusion: {
       pageTitle: "Dashboard de Inclusión Financiera Global – 2025",
-      iframeEmbed: `<p style="text-align:center; padding:4rem; color: var(--light-blue);">El código para insertar tu dashboard de <strong>Inclusión Financiera Global</strong> va aquí. Obtenlo desde la opción "Insertar informe" de Looker Studio.</p>`,
+      iframeEmbed: `<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb/page/4kyRF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Volver a Proyectos",
       linkedinButton: "Compartir en LinkedIn",
       xButton: "Compartir en X",
@@ -818,6 +818,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = document.querySelector('.carousel-btn.next');
     const scrollStep = () => 324;
     nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollStep(), behavior: 'smooth' }));
-    prevBtn.addEventListener('click', () => carousel.scrollby({ left: -scrollStep(), behavior: 'smooth' }));
+    prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollStep(), behavior: 'smooth' }));
   }
 });
