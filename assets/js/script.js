@@ -220,6 +220,7 @@ const translations = {
       ],
       datasetTitle: "Dataset Information",
       datasetSource: "Source:",
+      datasetSourceText: "U.S. Bureau of Labor Statistics", // LÍNEA CORREGIDA
       datasetSourceLink: "https://www.bls.gov/data/",
       datasetPeriod: "Period:",
       datasetPeriodValue: "January 2020 – May 2025",
@@ -268,6 +269,7 @@ const translations = {
       ],
       datasetTitle: "Dataset Information",
       datasetSource: "Source:",
+      datasetSourceText: "World Bank – Global Findex Database 2025",
       datasetSourceLink: "https://www.worldbank.org/en/publication/globalfindex",
       datasetPeriod: "Coverage:",
       datasetPeriodValue: "140+ countries (2025 data)",
@@ -393,7 +395,7 @@ const translations = {
       ],
       datasetTitle: "Información del Dataset",
       datasetSource: "Fuente:",
-      datasetSourceText: "Oficina de Estadísticas Laborales de EE. UU.",
+      datasetSourceText: "Oficina de Estadísticas Laborales de EE. UU.", // LÍNEA CORREGIDA
       datasetSourceLink: "https://www.bls.gov/data/",
       datasetPeriod: "Período:",
       datasetPeriodValue: "Enero 2020 – Mayo 2025",
@@ -712,7 +714,7 @@ function populateUnemploymentPage(lang, basePath) {
             <div class="sidebar-section">
                 <h3><i class="fas fa-database"></i> ${data.datasetTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
                 <div class="content"><p>
-                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">${"U.S. Bureau of Labor Statistics"}</a><br>
+                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">${data.datasetSourceText}</a><br>
                     <strong>${data.datasetPeriod}</strong> ${data.datasetPeriodValue}<br>
                     <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
                 </p></div>
@@ -790,7 +792,7 @@ function populateFinancialInclusionPage(lang, basePath) {
             <div class="sidebar-section">
                 <h3><i class="fas fa-database"></i> ${data.datasetTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
                 <div class="content"><p>
-                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">${"World Bank – Global Findex Database 2025"}</a><br>
+                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">${data.datasetSourceText}</a><br>
                     <strong>${data.datasetPeriod}</strong> ${data.datasetPeriodValue}<br>
                     <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
                 </p></div>
