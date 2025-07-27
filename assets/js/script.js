@@ -220,7 +220,7 @@ const translations = {
       ],
       datasetTitle: "Dataset Information",
       datasetSource: "Source:",
-      datasetSourceText: "U.S. Bureau of Labor Statistics", // LÍNEA CORREGIDA
+      datasetSourceText: "U.S. Bureau of Labor Statistics",
       datasetSourceLink: "https://www.bls.gov/data/",
       datasetPeriod: "Period:",
       datasetPeriodValue: "January 2020 – May 2025",
@@ -395,7 +395,7 @@ const translations = {
       ],
       datasetTitle: "Información del Dataset",
       datasetSource: "Fuente:",
-      datasetSourceText: "Oficina de Estadísticas Laborales de EE. UU.", // LÍNEA CORREGIDA
+      datasetSourceText: "Oficina de Estadísticas Laborales de EE. UU.",
       datasetSourceLink: "https://www.bls.gov/data/",
       datasetPeriod: "Período:",
       datasetPeriodValue: "Enero 2020 – Mayo 2025",
