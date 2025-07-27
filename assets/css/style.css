@@ -498,26 +498,51 @@ p.timeline-company a:hover {
     background-color: var(--almost-white);
     padding: 1.5rem;
     border-radius: 8px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem; /* Reducido para acordeón */
     border-top: 3px solid var(--mid-blue);
 }
-.project-sidebar h3 {
+.project-sidebar .sidebar-section h3 {
   font-size: 1.1rem;
   color: var(--deep-blue);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  border-bottom: 2px solid var(--accent);
   padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0; /* Ajustado para acordeón */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .project-sidebar h3 i {
     color: var(--accent);
     font-size: 1rem;
 }
-.project-sidebar p, .project-sidebar li {
+
+/* --- MEJORA DE CONTRASTE EN SIDEBAR DE PROYECTO --- */
+.theme-dark-project .project-sidebar p,
+.theme-dark-project .project-sidebar li {
+  color: var(--deep-blue); /* Forza el color a blanco puro en este tema */
+}
+
+/* --- ESTILOS PARA SIDEBAR ACORDEÓN --- */
+.project-sidebar .sidebar-section .more-icon {
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+.project-sidebar .sidebar-section .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding-top 0.4s ease-out;
+  padding-top: 0;
   line-height: 1.7;
 }
+.project-sidebar .sidebar-section.active .content {
+  max-height: 500px; /* Un valor suficientemente grande */
+  transition: max-height 0.5s ease-in, padding-top 0.5s ease-in;
+  padding-top: 1rem; /* Espacio entre el título y el texto */
+}
+.project-sidebar .sidebar-section.active .more-icon {
+  transform: rotate(180deg);
+}
+
 .project-sidebar ul {
   padding-left: 1.25rem;
 }
