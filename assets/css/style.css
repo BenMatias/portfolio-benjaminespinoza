@@ -467,9 +467,16 @@ p.timeline-company a:hover {
 .project-sidebar h3 {
   font-size: 1.1rem;
   color: var(--deep-blue);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   border-bottom: 2px solid var(--accent);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
+}
+.project-sidebar h3 i {
+    color: var(--accent);
+    font-size: 1rem;
 }
 .project-sidebar p, .project-sidebar li {
   line-height: 1.7;
