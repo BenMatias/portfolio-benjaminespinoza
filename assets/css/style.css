@@ -614,38 +614,58 @@ p.timeline-company a:hover {
 
 /* --- TEMA PROYECTO 3: POKEDEX (ROJO) --- */
 .theme-red-project {
-  --dark-blue: #A70000; /* Rojo oscuro de fondo */
-  --almost-white: #BF0000; /* Rojo intermedio para elementos */
-  --mid-blue: #FF1F1F; /* Rojo brillante para acentos */
-  --accent: #FFC7C7; /* Rosa pálido para texto secundario */
-  --deep-blue: #FFFFFF; /* Blanco para texto principal */
-  --text-secondary: #FFC7C7;
-}
-.theme-red-project {
-  background: var(--dark-blue);
-  color: var(--deep-blue);
+  background-color: var(--white);
+  color: var(--dark-blue);
+  --pokedex-red-dark: #A70000;
+  --pokedex-red-mid: #BF0000;
+  --pokedex-red-light: #FF1F1F;
 }
 .theme-red-project .header-hero-wrapper,
 .theme-red-project .footer {
-    background-color: #7F0000; /* Rojo aún más oscuro para header/footer */
+    background-color: var(--white);
+    color: var(--dark-blue);
+    border-top: 1px solid #eee;
 }
-.theme-red-project .section-title,
+.theme-red-project .header-hero-wrapper {
+    border-bottom: 1px solid #eee;
+    border-top: none;
+}
+.theme-red-project nav.desktop-nav a,
+.theme-red-project .lang-toggle,
+.theme-red-project .hamburger {
+    color: var(--dark-blue);
+}
+.theme-red-project .project-header {
+    border-bottom-color: #ddd;
+}
 .theme-red-project .project-header h1 {
-  color: var(--deep-blue);
-  border-left-color: var(--mid-blue);
+  color: var(--pokedex-red-dark);
 }
-.theme-red-project .project-executive-summary,
+.theme-red-project .project-executive-summary {
+    background-color: #FFF5F5;
+    border-left: 5px solid var(--pokedex-red-dark);
+}
+.theme-red-project .summary-card i {
+    color: var(--pokedex-red-dark);
+}
 .theme-red-project .project-sidebar .sidebar-section {
-  background-color: var(--almost-white);
-  border-radius: 8px;
+    background-color: var(--pokedex-red-dark);
+    color: var(--white);
 }
-.theme-red-project .summary-card i,
-.theme-red-project .project-sidebar h3 i {
-    color: var(--accent);
-}
+.theme-red-project .project-sidebar p,
+.theme-red-project .project-sidebar li,
+.theme-red-project .project-sidebar strong,
 .theme-red-project .project-sidebar a {
-    color: var(--accent);
+    color: var(--white);
 }
+.theme-red-project .project-sidebar a:hover {
+    text-decoration-color: var(--pokedex-red-light);
+}
+.theme-red-project .project-sidebar h3 i {
+    color: var(--white);
+}
+.theme-red-project .button.btn-back { background-color: var(--dark-blue); }
+.theme-red-project .button.btn-looker { background-color: var(--pokedex-red-mid); }
 
 
 /* --- ESTILOS RESPONSIVOS --- */
