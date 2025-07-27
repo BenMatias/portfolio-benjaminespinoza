@@ -653,19 +653,12 @@ function populateProjectsPage(lang, basePath) {
   }
 }
 
-function populateCaseStudyPage(lang, basePath) {
-    const path = window.location.pathname.toLowerCase();
-    let projectDataKey;
+// =========================================================================
+// ==================== NEW DEDICATED PROJECT FUNCTIONS ====================
+// =========================================================================
 
-    if (path.includes('us-unemployment.html')) {
-        projectDataKey = 'project_unemployment';
-    } else if (path.includes('global-financial-inclusion.html')) {
-        projectDataKey = 'project_financial_inclusion';
-    }
-
-    if (!projectDataKey) return;
-
-    const data = translations[lang][projectDataKey] || translations.en[projectDataKey];
+function populateUnemploymentPage(lang, basePath) {
+    const data = translations[lang].project_unemployment || translations.en.project_unemployment;
     const pageData = translations[lang] || translations.en;
     
     if (getEl('project-title')) getEl('project-title').textContent = data.pageTitle;
@@ -728,18 +721,91 @@ function populateCaseStudyPage(lang, basePath) {
   
     const dashboardContent = getEl('project-dashboard-content');
     if(dashboardContent){
-        const iframeHtml = data.iframeEmbed || `<p style="text-align:center; padding:4rem;">Dashboard embed for this project is not yet configured.</p>`;
+        const iframeHtml = data.iframeEmbed;
         const titleEl = dashboardContent.querySelector('#dashboard-title');
         const subtitleEl = dashboardContent.querySelector('#dashboard-subtitle');
         const embedEl = dashboardContent.querySelector('#dashboard-embed-container');
         if (titleEl) titleEl.textContent = data.dashboardTitle;
         if (subtitleEl) subtitleEl.innerHTML = `<em>${data.dashboardSubtitle}</em>`;
-        if (embedEl) {
-            embedEl.innerHTML = iframeHtml;
-        }
+        if (embedEl) embedEl.innerHTML = iframeHtml;
     }
 }
 
+function populateFinancialInclusionPage(lang, basePath) {
+    const data = translations[lang].project_financial_inclusion || translations.en.project_financial_inclusion;
+    const pageData = translations[lang] || translations.en;
+    
+    if (getEl('project-title')) getEl('project-title').textContent = data.pageTitle;
+    const btnGroup = getEl('project-button-group');
+    if (btnGroup) {
+      const pageUrl = window.location.href;
+      const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+      const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(data.pageTitle)}`;
+      
+      btnGroup.innerHTML = `
+        <a href="${basePath}projects.html" class="button btn-back"><i class="fas fa-arrow-left"></i> ${data.backButton || pageData.navProjects}</a>
+        <a href="${linkedinUrl}" class="button btn-linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> ${data.linkedinButton}</a>
+        <a href="${twitterUrl}" class="button btn-x" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> ${data.xButton}</a>
+        <a href="${data.lookerStudioUrl}" class="button btn-looker" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> ${data.lookerButton}</a>
+      `;
+    }
+
+    const summarySection = getEl('project-executive-summary');
+    if (summarySection && data.executiveSummary) {
+        summarySection.innerHTML = data.executiveSummary.map(item => `
+            <div class="summary-card">
+                <i class="${item.icon}"></i>
+                <div class="summary-card-text">
+                    <h3>${item.title}</h3>
+                    <p>${item.text}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    const sidebar = getEl('project-sidebar');
+    if (sidebar && data.problemTitle) {
+        sidebar.innerHTML = `
+            <div class="sidebar-section">
+                <h3><i class="fas fa-exclamation-circle"></i> ${data.problemTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>${data.problemText}</p></div>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-bullseye"></i> ${data.objectiveTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>${data.objectiveText}</p></div>
+            </div>
+             <div class="sidebar-section">
+                 <h3><i class="fas fa-question-circle"></i> ${data.questionsTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                 <div class="content"><ul>${data.questionsList.map(q => `<li>${q}</li>`).join('')}</ul></div>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-user-tie"></i> ${data.roleTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>${data.roleText}</p></div>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-database"></i> ${data.datasetTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>
+                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">${data.datasetSourceText}</a><br>
+                    <strong>${data.datasetPeriod}</strong> ${data.datasetPeriodValue}<br>
+                    <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
+                </p></div>
+            </div>
+        `;
+    }
+  
+    const dashboardContent = getEl('project-dashboard-content');
+    if(dashboardContent){
+        const iframeHtml = data.iframeEmbed;
+        const titleEl = dashboardContent.querySelector('#dashboard-title');
+        const subtitleEl = dashboardContent.querySelector('#dashboard-subtitle');
+        const embedEl = dashboardContent.querySelector('#dashboard-embed-container');
+        if (titleEl) titleEl.textContent = data.dashboardTitle;
+        if (subtitleEl) subtitleEl.innerHTML = `<em>${data.dashboardSubtitle}</em>`;
+        if (embedEl) embedEl.innerHTML = iframeHtml;
+    }
+}
+
+// =========================================================================
 
 function setLanguage(lang, basePath) {
   currentLang = lang;
@@ -760,7 +826,12 @@ function setLanguage(lang, basePath) {
   } else if (document.body.classList.contains('page-projects')) {
     populateProjectsPage(lang, basePath);
   } else if (document.body.classList.contains('page-project-case-study')) {
-    populateCaseStudyPage(lang, basePath);
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('us-unemployment.html')) {
+        populateUnemploymentPage(lang, basePath);
+    } else if (path.includes('global-financial-inclusion.html')) {
+        populateFinancialInclusionPage(lang, basePath);
+    }
   }
 
   document.querySelectorAll(".lang-toggle").forEach(el => {
