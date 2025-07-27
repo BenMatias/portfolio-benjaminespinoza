@@ -622,18 +622,19 @@ p.timeline-company a:hover {
 }
 .theme-red-project .header-hero-wrapper,
 .theme-red-project .footer {
-    background-color: var(--white);
-    color: var(--dark-blue);
-    border-top: 1px solid #eee;
+    background-color: var(--pokedex-red-dark);
+    color: var(--white);
 }
 .theme-red-project .header-hero-wrapper {
-    border-bottom: 1px solid #eee;
+    border-bottom: none;
+}
+.theme-red-project .footer {
     border-top: none;
 }
 .theme-red-project nav.desktop-nav a,
 .theme-red-project .lang-toggle,
 .theme-red-project .hamburger {
-    color: var(--dark-blue);
+    color: var(--white);
 }
 .theme-red-project .project-header {
     border-bottom-color: #ddd;
