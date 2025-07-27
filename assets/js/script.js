@@ -185,6 +185,7 @@ const translations = {
     // --- CASE STUDY DATA ---
     project_unemployment: {
       pageTitle: "Unemployment in America – A Data-Driven Overview",
+      lookerStudioUrl: "https://lookerstudio.google.com/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45",
       iframeEmbed: `<iframe src="https://lookerstudio.google.com/embed/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45/page/SE1QF" loading="lazy" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Back to Projects",
       linkedinButton: "Share on LinkedIn",
@@ -219,6 +220,7 @@ const translations = {
       ],
       datasetTitle: "Dataset Information",
       datasetSource: "Source:",
+      datasetSourceText: "U.S. Bureau of Labor Statistics",
       datasetSourceLink: "https://www.bls.gov/data/",
       datasetPeriod: "Period:",
       datasetPeriodValue: "January 2020 – May 2025",
@@ -231,6 +233,7 @@ const translations = {
     },
     project_financial_inclusion: {
       pageTitle: "Global Financial Inclusion Dashboard – 2025",
+      lookerStudioUrl: "https://lookerstudio.google.com/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb",
       iframeEmbed: `<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb/page/4kyRF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Back to Projects",
       linkedinButton: "Share on LinkedIn",
@@ -266,6 +269,7 @@ const translations = {
       ],
       datasetTitle: "Dataset Information",
       datasetSource: "Source:",
+      datasetSourceText: "World Bank – Global Findex Database 2025",
       datasetSourceLink: "https://www.worldbank.org/en/publication/globalfindex",
       datasetPeriod: "Coverage:",
       datasetPeriodValue: "140+ countries (2025 data)",
@@ -356,6 +360,7 @@ const translations = {
     // --- CASE STUDY DATA ---
     project_unemployment: {
       pageTitle: "Desempleo en Estados Unidos – Un análisis basado en datos",
+      lookerStudioUrl: "https://lookerstudio.google.com/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45",
       iframeEmbed: `<iframe src="https://lookerstudio.google.com/embed/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45/page/SE1QF" loading="lazy" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Volver a Proyectos",
       linkedinButton: "Compartir en LinkedIn",
@@ -390,6 +395,7 @@ const translations = {
       ],
       datasetTitle: "Información del Dataset",
       datasetSource: "Fuente:",
+      datasetSourceText: "Oficina de Estadísticas Laborales de EE. UU.",
       datasetSourceLink: "https://www.bls.gov/data/",
       datasetPeriod: "Período:",
       datasetPeriodValue: "Enero 2020 – Mayo 2025",
@@ -402,6 +408,7 @@ const translations = {
     },
     project_financial_inclusion: {
       pageTitle: "Dashboard de Inclusión Financiera Global – 2025",
+      lookerStudioUrl: "https://lookerstudio.google.com/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb",
       iframeEmbed: `<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb/page/4kyRF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Volver a Proyectos",
       linkedinButton: "Compartir en LinkedIn",
@@ -437,6 +444,7 @@ const translations = {
       ],
       datasetTitle: "Información del Dataset",
       datasetSource: "Fuente:",
+      datasetSourceText: "Banco Mundial – Base de Datos Global Findex 2025",
       datasetSourceLink: "https://www.worldbank.org/en/publication/globalfindex",
       datasetPeriod: "Cobertura:",
       datasetPeriodValue: "Más de 140 países (datos de 2025)",
@@ -646,10 +654,10 @@ function populateProjectsPage(lang, basePath) {
 }
 
 function populateCaseStudyPage(lang, basePath) {
-    const path = window.location.pathname;
+    const path = window.location.pathname.toLowerCase();
     let projectDataKey;
 
-    if (path.includes('US-Unemployment.html')) {
+    if (path.includes('us-unemployment.html')) {
         projectDataKey = 'project_unemployment';
     } else if (path.includes('global-financial-inclusion.html')) {
         projectDataKey = 'project_financial_inclusion';
@@ -666,13 +674,12 @@ function populateCaseStudyPage(lang, basePath) {
       const pageUrl = window.location.href;
       const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
       const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(data.pageTitle)}`;
-      const lookerUrl = data.lookerStudioUrl || "https://lookerstudio.google.com/";
-
+      
       btnGroup.innerHTML = `
         <a href="${basePath}projects.html" class="button btn-back"><i class="fas fa-arrow-left"></i> ${data.backButton || pageData.navProjects}</a>
         <a href="${linkedinUrl}" class="button btn-linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> ${data.linkedinButton}</a>
         <a href="${twitterUrl}" class="button btn-x" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> ${data.xButton}</a>
-        <a href="${lookerUrl}" class="button btn-looker" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> ${data.lookerButton}</a>
+        <a href="${data.lookerStudioUrl}" class="button btn-looker" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> ${data.lookerButton}</a>
       `;
     }
 
@@ -711,7 +718,7 @@ function populateCaseStudyPage(lang, basePath) {
             <div class="sidebar-section">
                 <h3><i class="fas fa-database"></i> ${data.datasetTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
                 <div class="content"><p>
-                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">World Bank Global Findex</a><br>
+                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">${data.datasetSourceText}</a><br>
                     <strong>${data.datasetPeriod}</strong> ${data.datasetPeriodValue}<br>
                     <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
                 </p></div>
