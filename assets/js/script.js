@@ -31,7 +31,10 @@ const translations = {
       text: "Empowered diverse business areas with data-driven insights to support decision-making across operations, sales, risk, product, and beyond."
     }],
     projectsTitle: "Featured Projects",
-    projects: [ { title: "US Unemployment Analysis", description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "View Project" } ],
+    projects: [
+        { title: "US Unemployment Analysis", description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "View Project" },
+        { title: "Global Financial Inclusion", description: "Visualize global trends in account ownership and borrowing behavior by region, income group, and demographics.", imageUrl: "assets/img/global-financial-inclusion-cover.png", link: "projects/global-financial-inclusion.html", buttonText: "View Project" }
+    ],
     viewAllBtn: "View All Projects",
 
     // --- CV Page Content ---
@@ -174,16 +177,15 @@ const translations = {
 
     // --- Projects Page Content ---
     projects_page_title: "Projects",
-    projects_list: [{
-      id: "project-unemployment",
-      title: "Unemployment in America",
-      link: "projects/US-Unemployment.html",
-      imageUrl: "assets/img/us-unemployment-cover.png"
-    }],
+    projects_list: [
+        { id: "project-unemployment", title: "Unemployment in America", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png" },
+        { id: "project-financial-inclusion", title: "Global Financial Inclusion", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png" }
+    ],
 
-    // --- Case Study Page Content: US Unemployment ---
+    // --- CASE STUDY DATA ---
     project_unemployment: {
       pageTitle: "Unemployment in America – A Data-Driven Overview",
+      iframeEmbed: `<iframe src="https://lookerstudio.google.com/embed/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45/page/SE1QF" loading="lazy" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Back to Projects",
       linkedinButton: "Share on LinkedIn",
       xButton: "Share on X",
@@ -226,6 +228,53 @@ const translations = {
       roleText: "I sourced and filtered public datasets, defined KPIs and filtering logic, and designed the dashboard using Looker Studio.",
       dashboardTitle: "Interactive Dashboard",
       dashboardSubtitle: "Explore the interactive report below or use the tabs to dive into state and metro-level insights."
+    },
+    project_financial_inclusion: {
+      pageTitle: "Global Financial Inclusion Dashboard – 2025",
+      iframeEmbed: `<p style="text-align:center; padding:4rem; color: var(--light-blue);">Your <strong>Global Financial Inclusion</strong> dashboard embed code goes here. Get it from Looker Studio's "Embed report" option.</p>`,
+      backButton: "Back to Projects",
+      linkedinButton: "Share on LinkedIn",
+      xButton: "Share on X",
+      lookerButton: "View on Looker Studio",
+      executiveSummary: [
+        {
+          icon: "fas fa-users",
+          title: "5.77 Billion Adults (15+)",
+          text: "Total global adult population considered for financial inclusion metrics."
+        },
+        {
+          icon: "fas fa-piggy-bank",
+          title: "78.02% Account Ownership",
+          text: "Global rate of adults who own a financial account, reflecting broad access to financial services."
+        },
+        {
+          icon: "fas fa-money-check-alt",
+          title: "Formal vs. Informal Borrowing",
+          text: "The dashboard analyzes borrowing behaviors, differentiating between formal financial institutions and informal sources."
+        }
+      ],
+      problemTitle: "Problem Statement",
+      problemText: "Financial inclusion is essential for reducing inequality and promoting sustainable economic development. However, access to financial services varies significantly across countries, regions, income levels, and demographic segments. Understanding these gaps is key to driving more inclusive financial ecosystems.",
+      objectiveTitle: "Dashboard Objective",
+      objectiveText: "To provide a comprehensive overview of financial inclusion worldwide, focusing on two main dimensions: account ownership (including formal and mobile money accounts) and borrowing behavior (from formal and informal sources). The dashboard allows for interactive comparisons by region, income group, and demographic characteristics.",
+      questionsTitle: "Key Questions",
+      questionsList: [
+        "Which regions have the highest levels of financial inclusion?",
+        "How does account ownership differ between income groups or genders?",
+        "What demographic groups are most likely to borrow informally?",
+        "Where is mobile money playing a key role in financial access?"
+      ],
+      datasetTitle: "Dataset Information",
+      datasetSource: "Source:",
+      datasetSourceLink: "https://www.worldbank.org/en/publication/globalfindex",
+      datasetPeriod: "Coverage:",
+      datasetPeriodValue: "140+ countries (2025 data)",
+      datasetScope: "Metrics:",
+      datasetScopeValue: "Account ownership, borrowing, mobile money, demographics (adults 15+).",
+      roleTitle: "My Role",
+      roleText: "I led the entire development of the dashboard, including: cleaning and transforming raw data from the Global Findex 2025 dataset, creating calculated fields for regional classification, designing KPIs and visuals for comparison, and building a bilingual, interactive dashboard using Looker Studio.",
+      dashboardTitle: "Interactive Global Findex Dashboard",
+      dashboardSubtitle: "Use the dynamic filters to explore financial inclusion data by year, region, country, income group, and demographics."
     }
   },
   es: {
@@ -260,7 +309,10 @@ const translations = {
       text: "Apoyé diversas áreas de negocio con insights accionables que respaldan la toma de decisiones en operaciones, ventas, riesgo, producto y más."
     }],
     projectsTitle: "Proyectos Destacados",
-    projects: [ { title: "Análisis de Desempleo en EE.UU.", description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "Ver Proyecto" } ],
+    projects: [
+        { title: "Análisis de Desempleo en EE.UU.", description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "Ver Proyecto" },
+        { title: "Inclusión Financiera Global", description: "Visualiza tendencias globales de titularidad de cuentas y comportamiento de crédito por región, ingreso y demografía.", imageUrl: "assets/img/global-financial-inclusion-cover.png", link: "projects/global-financial-inclusion.html", buttonText: "Ver Proyecto" }
+    ],
     viewAllBtn: "Ver Todos los Proyectos",
     
     // --- CV Page Content (Spanish) ---
@@ -296,16 +348,15 @@ const translations = {
 
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
-    projects_list: [{
-      id: "project-unemployment",
-      title: "Desempleo en América",
-      link: "projects/US-Unemployment.html",
-      imageUrl: "assets/img/us-unemployment-cover.png"
-    }],
+    projects_list: [
+        { id: "project-unemployment", title: "Desempleo en América", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png" },
+        { id: "project-financial-inclusion", title: "Inclusión Financiera Global", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png" }
+    ],
 
-    // --- Case Study Page Content: US Unemployment (Español) ---
+    // --- CASE STUDY DATA ---
     project_unemployment: {
       pageTitle: "Desempleo en Estados Unidos – Un análisis basado en datos",
+      iframeEmbed: `<iframe src="https://lookerstudio.google.com/embed/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45/page/SE1QF" loading="lazy" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Volver a Proyectos",
       linkedinButton: "Compartir en LinkedIn",
       xButton: "Compartir en X",
@@ -348,6 +399,53 @@ const translations = {
       roleText: "Seleccioné y filtré datasets públicos, definí indicadores clave (KPIs) y lógica de filtros, y diseñé la estructura del dashboard en Looker Studio.",
       dashboardTitle: "Dashboard Interactivo",
       dashboardSubtitle: "Explora el reporte interactivo o usa las pestañas para navegar por estado y ciudad."
+    },
+    project_financial_inclusion: {
+      pageTitle: "Dashboard de Inclusión Financiera Global – 2025",
+      iframeEmbed: `<p style="text-align:center; padding:4rem; color: var(--light-blue);">El código para insertar tu dashboard de <strong>Inclusión Financiera Global</strong> va aquí. Obtenlo desde la opción "Insertar informe" de Looker Studio.</p>`,
+      backButton: "Volver a Proyectos",
+      linkedinButton: "Compartir en LinkedIn",
+      xButton: "Compartir en X",
+      lookerButton: "Ver en Looker Studio",
+      executiveSummary: [
+        {
+          icon: "fas fa-users",
+          title: "5.770 Millones de Adultos (15+)",
+          text: "Población adulta global total considerada para las métricas de inclusión financiera."
+        },
+        {
+          icon: "fas fa-piggy-bank",
+          title: "78,02% de Titularidad de Cuentas",
+          text: "Tasa global de adultos que poseen una cuenta financiera, reflejando un amplio acceso a servicios."
+        },
+        {
+          icon: "fas fa-money-check-alt",
+          title: "Crédito Formal vs. Informal",
+          text: "El dashboard analiza comportamientos de endeudamiento, diferenciando entre instituciones formales y fuentes informales."
+        }
+      ],
+      problemTitle: "Problema",
+      problemText: "La inclusión financiera es esencial para reducir la desigualdad y promover el desarrollo económico sostenible. Sin embargo, el acceso a servicios financieros varía significativamente entre países, regiones, niveles de ingreso y segmentos demográficos. Comprender estas brechas es clave para impulsar ecosistemas financieros más inclusivos.",
+      objectiveTitle: "Objetivo del Dashboard",
+      objectiveText: "Proveer una visión general y completa de la inclusión financiera a nivel mundial, enfocándose en dos dimensiones principales: la titularidad de cuentas (incluyendo cuentas formales y de dinero móvil) y el comportamiento de endeudamiento (de fuentes formales e informales). El dashboard permite comparaciones interactivas por región, grupo de ingresos y características demográficas.",
+      questionsTitle: "Preguntas Clave",
+      questionsList: [
+        "¿Qué regiones tienen los niveles más altos de inclusión financiera?",
+        "¿Cómo difiere la titularidad de cuentas entre grupos de ingresos o géneros?",
+        "¿Qué grupos demográficos son más propensos a solicitar créditos informales?",
+        "¿Dónde está jugando el dinero móvil un rol clave en el acceso financiero?"
+      ],
+      datasetTitle: "Información del Dataset",
+      datasetSource: "Fuente:",
+      datasetSourceLink: "https://www.worldbank.org/en/publication/globalfindex",
+      datasetPeriod: "Cobertura:",
+      datasetPeriodValue: "Más de 140 países (datos de 2025)",
+      datasetScope: "Métricas:",
+      datasetScopeValue: "Titularidad de cuentas, endeudamiento, dinero móvil, demografía (adultos 15+).",
+      roleTitle: "Mi Rol",
+      roleText: "Lideré el desarrollo completo del dashboard, incluyendo: la limpieza y transformación de datos crudos del dataset Global Findex 2025, la creación de campos calculados para una clasificación regional consistente, el diseño de KPIs y visualizaciones para apoyar comparaciones regionales y demográficas, y la construcción de un dashboard bilingüe e interactivo en Looker Studio.",
+      dashboardTitle: "Dashboard Interactivo de Inclusión Financiera",
+      dashboardSubtitle: "Usa los filtros dinámicos para explorar los datos de inclusión financiera por año, región, país, grupo de ingresos y demografía."
     }
   }
 };
@@ -548,21 +646,33 @@ function populateProjectsPage(lang, basePath) {
 }
 
 function populateCaseStudyPage(lang, basePath) {
-    const data = translations[lang].project_unemployment || translations.en.project_unemployment;
-    const pageData = translations[lang] || translations.en;
+    const path = window.location.pathname;
+    let projectDataKey;
 
+    if (path.includes('US-Unemployment.html')) {
+        projectDataKey = 'project_unemployment';
+    } else if (path.includes('global-financial-inclusion.html')) {
+        projectDataKey = 'project_financial_inclusion';
+    }
+
+    if (!projectDataKey) return;
+
+    const data = translations[lang][projectDataKey] || translations.en[projectDataKey];
+    const pageData = translations[lang] || translations.en;
+    
     if (getEl('project-title')) getEl('project-title').textContent = data.pageTitle;
     const btnGroup = getEl('project-button-group');
     if (btnGroup) {
       const pageUrl = window.location.href;
       const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
       const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(data.pageTitle)}`;
-      
+      const lookerUrl = data.lookerStudioUrl || "https://lookerstudio.google.com/";
+
       btnGroup.innerHTML = `
         <a href="${basePath}projects.html" class="button btn-back"><i class="fas fa-arrow-left"></i> ${data.backButton || pageData.navProjects}</a>
         <a href="${linkedinUrl}" class="button btn-linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> ${data.linkedinButton}</a>
         <a href="${twitterUrl}" class="button btn-x" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> ${data.xButton}</a>
-        <a href="https://lookerstudio.google.com/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45" class="button btn-looker" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> ${data.lookerButton}</a>
+        <a href="${lookerUrl}" class="button btn-looker" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> ${data.lookerButton}</a>
       `;
     }
 
@@ -580,7 +690,7 @@ function populateCaseStudyPage(lang, basePath) {
     }
 
     const sidebar = getEl('project-sidebar');
-    if (sidebar) {
+    if (sidebar && data.problemTitle) {
         sidebar.innerHTML = `
             <div class="sidebar-section">
                 <h3><i class="fas fa-exclamation-circle"></i> ${data.problemTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
@@ -601,7 +711,7 @@ function populateCaseStudyPage(lang, basePath) {
             <div class="sidebar-section">
                 <h3><i class="fas fa-database"></i> ${data.datasetTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
                 <div class="content"><p>
-                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics</a><br>
+                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">World Bank Global Findex</a><br>
                     <strong>${data.datasetPeriod}</strong> ${data.datasetPeriodValue}<br>
                     <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
                 </p></div>
@@ -611,20 +721,14 @@ function populateCaseStudyPage(lang, basePath) {
   
     const dashboardContent = getEl('project-dashboard-content');
     if(dashboardContent){
+        const iframeHtml = data.iframeEmbed || `<p style="text-align:center; padding:4rem;">Dashboard embed for this project is not yet configured.</p>`;
         const titleEl = dashboardContent.querySelector('#dashboard-title');
         const subtitleEl = dashboardContent.querySelector('#dashboard-subtitle');
         const embedEl = dashboardContent.querySelector('#dashboard-embed-container');
         if (titleEl) titleEl.textContent = data.dashboardTitle;
         if (subtitleEl) subtitleEl.innerHTML = `<em>${data.dashboardSubtitle}</em>`;
         if (embedEl) {
-            embedEl.innerHTML = `
-                <iframe 
-                    src="https://lookerstudio.google.com/embed/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45/page/SE1QF"
-                    loading="lazy" 
-                    allowfullscreen 
-                    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-                </iframe>
-            `;
+            embedEl.innerHTML = iframeHtml;
         }
     }
 }
@@ -714,6 +818,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = document.querySelector('.carousel-btn.next');
     const scrollStep = () => 324;
     nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollStep(), behavior: 'smooth' }));
-    prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollStep(), behavior: 'smooth' }));
+    prevBtn.addEventListener('click', () => carousel.scrollby({ left: -scrollStep(), behavior: 'smooth' }));
   }
 });
