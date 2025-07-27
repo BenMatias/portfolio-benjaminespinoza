@@ -612,6 +612,42 @@ p.timeline-company a:hover {
   margin: 0 auto 2rem auto;
 }
 
+/* --- TEMA PROYECTO 3: POKEDEX (ROJO) --- */
+.theme-red-project {
+  --dark-blue: #A70000; /* Rojo oscuro de fondo */
+  --almost-white: #BF0000; /* Rojo intermedio para elementos */
+  --mid-blue: #FF1F1F; /* Rojo brillante para acentos */
+  --accent: #FFC7C7; /* Rosa pálido para texto secundario */
+  --deep-blue: #FFFFFF; /* Blanco para texto principal */
+  --text-secondary: #FFC7C7;
+}
+.theme-red-project {
+  background: var(--dark-blue);
+  color: var(--deep-blue);
+}
+.theme-red-project .header-hero-wrapper,
+.theme-red-project .footer {
+    background-color: #7F0000; /* Rojo aún más oscuro para header/footer */
+}
+.theme-red-project .section-title,
+.theme-red-project .project-header h1 {
+  color: var(--deep-blue);
+  border-left-color: var(--mid-blue);
+}
+.theme-red-project .project-executive-summary,
+.theme-red-project .project-sidebar .sidebar-section {
+  background-color: var(--almost-white);
+  border-radius: 8px;
+}
+.theme-red-project .summary-card i,
+.theme-red-project .project-sidebar h3 i {
+    color: var(--accent);
+}
+.theme-red-project .project-sidebar a {
+    color: var(--accent);
+}
+
+
 /* --- ESTILOS RESPONSIVOS --- */
 @media (max-width: 992px) {
   .impact-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
