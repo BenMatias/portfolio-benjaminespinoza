@@ -188,6 +188,23 @@ const translations = {
       linkedinButton: "Share on LinkedIn",
       xButton: "Share on X",
       lookerButton: "View on Looker Studio",
+      executiveSummary: [
+        {
+          icon: "fas fa-chart-line",
+          title: "Regional Disparities",
+          text: "The national unemployment rate masks significant variations between states, with some regions showing much higher volatility."
+        },
+        {
+          icon: "fas fa-city",
+          title: "Urban vs. State Trends",
+          text: "Certain metropolitan areas exhibit unemployment patterns that diverge considerably from their state's average."
+        },
+        {
+          icon: "fas fa-search-dollar",
+          title: "Structural Patterns",
+          text: "The analysis reveals structural economic factors that correlate with persistently high or low unemployment rates in specific zones."
+        }
+      ],
       problemTitle: "Problem Statement",
       problemText: "The national unemployment rate in the United States appears stable. However, this aggregated figure hides important differences between states and metropolitan areas.",
       objectiveTitle: "Dashboard Objective",
@@ -200,7 +217,7 @@ const translations = {
       ],
       datasetTitle: "Dataset Information",
       datasetSource: "Source:",
-      datasetSourceLink: "U.S. Bureau of Labor Statistics",
+      datasetSourceLink: "https://www.bls.gov/data/",
       datasetPeriod: "Period:",
       datasetPeriodValue: "January 2020 – May 2025",
       datasetScope: "Scope:",
@@ -293,6 +310,23 @@ const translations = {
       linkedinButton: "Compartir en LinkedIn",
       xButton: "Compartir en X",
       lookerButton: "Ver en Looker Studio",
+      executiveSummary: [
+        {
+            icon: "fas fa-chart-line",
+            title: "Disparidades Regionales",
+            text: "La tasa de desempleo nacional enmascara variaciones significativas entre estados, con algunas regiones mostrando una volatilidad mucho mayor."
+        },
+        {
+            icon: "fas fa-city",
+            title: "Tendencias Urbanas vs. Estatales",
+            text: "Ciertas áreas metropolitanas exhiben patrones de desempleo que divergen considerablemente del promedio de sus estados respectivos."
+        },
+        {
+            icon: "fas fa-search-dollar",
+            title: "Patrones Estructurales",
+            text: "El análisis revela factores económicos estructurales que se correlacionan con tasas de desempleo persistentemente altas o bajas en zonas específicas."
+        }
+      ],
       problemTitle: "Problema",
       problemText: "La tasa de desempleo nacional en Estados Unidos parece estable. Sin embargo, esta cifra agregada oculta diferencias importantes entre estados y áreas metropolitanas.",
       objectiveTitle: "Objetivo del Dashboard",
@@ -305,7 +339,7 @@ const translations = {
       ],
       datasetTitle: "Información del Dataset",
       datasetSource: "Fuente:",
-      datasetSourceLink: "Oficina de Estadísticas Laborales de EE. UU.",
+      datasetSourceLink: "https://www.bls.gov/data/",
       datasetPeriod: "Período:",
       datasetPeriodValue: "Enero 2020 – Mayo 2025",
       datasetScope: "Cobertura:",
@@ -491,65 +525,86 @@ function populateProjectsPage(lang, basePath) {
 
 function populateCaseStudyPage(lang, basePath) {
     const data = translations[lang].project_unemployment || translations.en.project_unemployment;
+    const pageData = translations[lang] || translations.en;
 
     if (getEl('project-title')) getEl('project-title').textContent = data.pageTitle;
-  
     const btnGroup = getEl('project-button-group');
     if (btnGroup) {
       const pageUrl = window.location.href;
       const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
       const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(data.pageTitle)}`;
-  
+      
       btnGroup.innerHTML = `
-        <a href="${basePath}projects.html" class="button btn-back"><i class="fas fa-arrow-left"></i> ${data.backButton}</a>
+        <a href="${basePath}projects.html" class="button btn-back"><i class="fas fa-arrow-left"></i> ${data.backButton || pageData.navProjects}</a>
         <a href="${linkedinUrl}" class="button btn-linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> ${data.linkedinButton}</a>
         <a href="${twitterUrl}" class="button btn-x" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> ${data.xButton}</a>
         <a href="https://lookerstudio.google.com/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45" class="button btn-looker" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> ${data.lookerButton}</a>
       `;
     }
-  
-    const contextGrid = getEl('project-context');
-    if (contextGrid) {
-      contextGrid.innerHTML = `
-        <div class="context-section">
-          <h3><i class="fas fa-exclamation-circle"></i> ${data.problemTitle}</h3>
-          <p>${data.problemText}</p>
-        </div>
-        <div class="context-section">
-          <h3><i class="fas fa-bullseye"></i> ${data.objectiveTitle}</h3>
-          <p>${data.objectiveText}</p>
-        </div>
-        <div class="context-section">
-          <h3><i class="fas fa-user-tie"></i> ${data.roleTitle}</h3>
-          <p>${data.roleText}</p>
-        </div>
-        <div class="context-section">
-          <h3><i class="fas fa-database"></i> ${data.datasetTitle}</h3>
-          <p>
-            <strong>${data.datasetSource}</strong> <a href="https://www.bls.gov/data/" target="_blank" rel="noopener">${data.datasetSourceLink}</a><br>
-            <strong>${data.datasetPeriod}</strong> ${data.datasetPeriodValue}<br>
-            <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
-          </p>
-        </div>
-      `;
+
+    const summarySection = getEl('project-executive-summary');
+    if (summarySection && data.executiveSummary) {
+        summarySection.innerHTML = data.executiveSummary.map(item => `
+            <div class="summary-card">
+                <i class="${item.icon}"></i>
+                <div class="summary-card-text">
+                    <h3>${item.title}</h3>
+                    <p>${item.text}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    const sidebar = getEl('project-sidebar');
+    if (sidebar) {
+        sidebar.innerHTML = `
+            <div class="sidebar-section">
+                <h3><i class="fas fa-exclamation-circle"></i> ${data.problemTitle}</h3>
+                <p>${data.problemText}</p>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-bullseye"></i> ${data.objectiveTitle}</h3>
+                <p>${data.objectiveText}</p>
+            </div>
+             <div class="sidebar-section">
+                 <h3><i class="fas fa-question-circle"></i> ${data.questionsTitle}</h3>
+                 <ul>${data.questionsList.map(q => `<li>${q}</li>`).join('')}</ul>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-user-tie"></i> ${data.roleTitle}</h3>
+                <p>${data.roleText}</p>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-database"></i> ${data.datasetTitle}</h3>
+                <p>
+                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics</a><br>
+                    <strong>${data.datasetPeriod}</strong> ${data.datasetPeriodValue}<br>
+                    <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
+                </p>
+            </div>
+        `;
     }
   
-    const dashboardContent = getEl('project-dashboard-section');
-    if (dashboardContent) {
-      dashboardContent.innerHTML = `
-        <h2><i class="fas fa-poll"></i> ${data.dashboardTitle}</h2>
-        <p><em>${data.dashboardSubtitle}</em></p>
-        <div class="dashboard-embed-container">
-          <iframe 
-            src="https://lookerstudio.google.com/embed/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45/page/SE1QF"
-            loading="lazy" 
-            allowfullscreen 
-            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-          </iframe>
-        </div>
-      `;
+    const dashboardContent = getEl('project-dashboard-content');
+    if(dashboardContent){
+        const titleEl = dashboardContent.querySelector('#dashboard-title');
+        const subtitleEl = dashboardContent.querySelector('#dashboard-subtitle');
+        const embedEl = dashboardContent.querySelector('#dashboard-embed-container');
+        if (titleEl) titleEl.textContent = data.dashboardTitle;
+        if (subtitleEl) subtitleEl.innerHTML = `<em>${data.dashboardSubtitle}</em>`;
+        if (embedEl) {
+            embedEl.innerHTML = `
+                <iframe 
+                    src="https://lookerstudio.google.com/embed/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45/page/SE1QF"
+                    loading="lazy" 
+                    allowfullscreen 
+                    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+                </iframe>
+            `;
+        }
     }
 }
+
 
 function setLanguage(lang, basePath) {
   currentLang = lang;
@@ -583,7 +638,9 @@ function setLanguage(lang, basePath) {
 }
 
 function toggleLang() {
-  setLanguage(currentLang === 'en' ? 'es' : 'en', basePath);
+  const newLang = currentLang === 'en' ? 'es' : 'en';
+  setLanguage(newLang, basePath);
+  localStorage.setItem('preferredLanguage', newLang);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -603,7 +660,8 @@ document.addEventListener("DOMContentLoaded", () => {
     basePath = '../';
   }
 
-  setLanguage('en', basePath);
+  const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+  setLanguage(preferredLanguage, basePath);
 
   document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
 
