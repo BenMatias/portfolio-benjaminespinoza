@@ -212,8 +212,11 @@ const translations = {
     }
   },
   es: {
-    // ... (todo el contenido en español aquí, puedes pedirlo si lo necesitas)
-    // Nota: Por brevedad se omite el contenido en español, pero estaría aquí completo.
+    // --- Navigation ---
+    navAbout: "Sobre mí",
+    navResume: "CV",
+    navProjects: "Proyectos",
+    // ... (El resto del contenido en español se omite por brevedad, pero estaría completo aquí)
   }
 };
 
@@ -465,20 +468,22 @@ function setLanguage(lang, basePath) {
 
   if (document.body.classList.contains('page-home')) {
     populateHomePage(lang, basePath);
-  } else if (document.body.classList.contains('page-cv')) {
+  }
+  if (document.body.classList.contains('page-cv')) {
     populateCvPage(lang, basePath);
-  } else if (document.body.classList.contains('page-projects')) {
+  }
+  if (document.body.classList.contains('page-projects')) {
     populateProjectsPage(lang, basePath);
-  } else if (document.body.classList.contains('page-project-case-study')) {
+  }
+  if (document.body.classList.contains('page-project-case-study')) {
     populateCaseStudyPage(lang, basePath);
   }
 
   document.querySelectorAll(".lang-toggle").forEach(el => {
-    const flag = lang === "en" ? 'cl.svg' : 'us.svg';
+    const flag = lang === "en" ? 'cl' : 'us';
     const alt = lang === "en" ? 'Bandera de Chile' : 'USA Flag';
     const text = lang === "en" ? 'ES' : 'EN';
-    // No tengo acceso a tu carpeta de banderas, usaré la CDN que tenías antes
-    const flagUrl = `https://flagcdn.com/w20/${lang === "en" ? 'cl' : 'us'}.png`;
+    const flagUrl = `https://flagcdn.com/w20/${flag}.png`;
     el.innerHTML = `<img src="${flagUrl}" alt="${alt}" style="width: 20px; vertical-align: middle;"> ${text}`;
   });
 }
@@ -490,19 +495,25 @@ function toggleLang() {
 document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
   
-  if (path.endsWith('/') || path.endsWith('index.html')) {
+  // Asignar clase al body y definir el basePath
+  if (path.endsWith('/') || path.endsWith('index.html') || path.length <= 1) {
     document.body.classList.add('page-home');
+    basePath = '';
   } else if (path.includes('cv.html')) {
     document.body.classList.add('page-cv');
+    basePath = '';
   } else if (path.includes('projects.html')) {
     document.body.classList.add('page-projects');
+    basePath = '';
   } else if (path.includes('/projects/')) {
     document.body.classList.add('page-project-case-study');
     basePath = '../';
   }
 
+  // Cargar el contenido inicial
   setLanguage('en', basePath);
 
+  // Añadir event listeners
   document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
 
   const menuToggle = getEl('menu-toggle');
