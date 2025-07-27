@@ -376,6 +376,30 @@ function setupScrollAnimations() {
   });
 }
 
+function setupAccordion() {
+  const sidebar = getEl('project-sidebar');
+  if (!sidebar) return;
+
+  const sections = sidebar.querySelectorAll('.sidebar-section');
+
+  sections.forEach(section => {
+    const header = section.querySelector('h3');
+    header.addEventListener('click', () => {
+      const isActive = section.classList.contains('active');
+      
+      sections.forEach(s => s.classList.remove('active'));
+
+      if (!isActive) {
+        section.classList.add('active');
+      }
+    });
+  });
+
+  if (sections.length > 0) {
+    sections[0].classList.add('active');
+  }
+}
+
 function populateHomePage(lang, basePath) {
   const data = translations[lang] || translations.en;
   getEl('hero-title').textContent = data.heroTitle;
@@ -559,28 +583,28 @@ function populateCaseStudyPage(lang, basePath) {
     if (sidebar) {
         sidebar.innerHTML = `
             <div class="sidebar-section">
-                <h3><i class="fas fa-exclamation-circle"></i> ${data.problemTitle}</h3>
-                <p>${data.problemText}</p>
+                <h3><i class="fas fa-exclamation-circle"></i> ${data.problemTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>${data.problemText}</p></div>
             </div>
             <div class="sidebar-section">
-                <h3><i class="fas fa-bullseye"></i> ${data.objectiveTitle}</h3>
-                <p>${data.objectiveText}</p>
+                <h3><i class="fas fa-bullseye"></i> ${data.objectiveTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>${data.objectiveText}</p></div>
             </div>
              <div class="sidebar-section">
-                 <h3><i class="fas fa-question-circle"></i> ${data.questionsTitle}</h3>
-                 <ul>${data.questionsList.map(q => `<li>${q}</li>`).join('')}</ul>
+                 <h3><i class="fas fa-question-circle"></i> ${data.questionsTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                 <div class="content"><ul>${data.questionsList.map(q => `<li>${q}</li>`).join('')}</ul></div>
             </div>
             <div class="sidebar-section">
-                <h3><i class="fas fa-user-tie"></i> ${data.roleTitle}</h3>
-                <p>${data.roleText}</p>
+                <h3><i class="fas fa-user-tie"></i> ${data.roleTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>${data.roleText}</p></div>
             </div>
             <div class="sidebar-section">
-                <h3><i class="fas fa-database"></i> ${data.datasetTitle}</h3>
-                <p>
+                <h3><i class="fas fa-database"></i> ${data.datasetTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>
                     <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics</a><br>
                     <strong>${data.datasetPeriod}</strong> ${data.datasetPeriodValue}<br>
                     <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
-                </p>
+                </p></div>
             </div>
         `;
     }
@@ -664,6 +688,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setLanguage(preferredLanguage, basePath);
 
   document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
+
+  setupAccordion();
 
   const menuToggle = getEl('menu-toggle');
   const mobileNav = getEl('mobile-nav');
