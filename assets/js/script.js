@@ -796,6 +796,7 @@ function populatePokedexPage(lang, basePath) {
                 </p></div>
             </div>
         `;
+        setupAccordion();
     }
   
     const dashboardContent = getEl('project-dashboard-content');
@@ -870,6 +871,7 @@ function populateUnemploymentPage(lang, basePath) {
                 </p></div>
             </div>
         `;
+        setupAccordion();
     }
   
     const dashboardContent = getEl('project-dashboard-content');
@@ -944,6 +946,7 @@ function populateFinancialInclusionPage(lang, basePath) {
                 </p></div>
             </div>
         `;
+        setupAccordion();
     }
   
     const dashboardContent = getEl('project-dashboard-content');
@@ -1027,31 +1030,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
 
-  setupAccordion();
-
-  const menuToggle = getEl('menu-toggle');
-  const mobileNav = getEl('mobile-nav');
-
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-      if (mobileNav) mobileNav.classList.toggle('show');
-    });
-  }
-
-  if (mobileNav) {
-    mobileNav.addEventListener('click', (e) => {
-      if (e.target.tagName === 'A') {
-        mobileNav.classList.remove('show');
-      }
-    });
-  }
-
-  const carousel = getEl('project-carousel');
-  if (carousel) {
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    const scrollStep = () => 324;
-    nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollStep(), behavior: 'smooth' }));
-    prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollStep(), behavior: 'smooth' }));
+  if (!document.body.classList.contains('page-project-case-study')) {
+    setupAccordion();
   }
 });
