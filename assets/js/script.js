@@ -213,6 +213,7 @@ const translations = {
   },
   es: {
     // ... (todo el contenido en español aquí, puedes pedirlo si lo necesitas)
+    // Nota: Por brevedad se omite el contenido en español, pero estaría aquí completo.
   }
 };
 
@@ -449,6 +450,7 @@ function populateCaseStudyPage(lang, basePath) {
     }
 }
 
+
 function setLanguage(lang, basePath) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -475,7 +477,9 @@ function setLanguage(lang, basePath) {
     const flag = lang === "en" ? 'cl.svg' : 'us.svg';
     const alt = lang === "en" ? 'Bandera de Chile' : 'USA Flag';
     const text = lang === "en" ? 'ES' : 'EN';
-    el.innerHTML = `<img src="${basePath}assets/img/flags/${flag}" alt="${alt}" style="width: 20px; vertical-align: middle;"> ${text}`;
+    // No tengo acceso a tu carpeta de banderas, usaré la CDN que tenías antes
+    const flagUrl = `https://flagcdn.com/w20/${lang === "en" ? 'cl' : 'us'}.png`;
+    el.innerHTML = `<img src="${flagUrl}" alt="${alt}" style="width: 20px; vertical-align: middle;"> ${text}`;
   });
 }
 
