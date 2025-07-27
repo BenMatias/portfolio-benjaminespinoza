@@ -497,39 +497,55 @@ p.timeline-company a:hover {
 .btn-linkedin { background-color: #0077B5; }
 .btn-x { background-color: #000000; }
 .btn-looker { background-color: #4285F4; }
-.project-context-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  margin-bottom: 4rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(179, 207, 229, 0.2);
-}
-.context-section h3 {
-  font-size: 1.2rem;
-  color: var(--deep-blue);
+
+.case-study-layout {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  gap: 3rem;
+  align-items: flex-start;
+}
+.project-sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 120px;
+}
+.project-sidebar .sidebar-section {
+  margin-bottom: 2rem;
+}
+.project-sidebar h3 {
+  font-size: 1.1rem;
+  color: var(--deep-blue);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
-.context-section h3 i { color: var(--accent); }
-.context-section p, .context-section li { line-height: 1.7; }
-.context-section ul { padding-left: 1.25rem; }
-.context-section strong { color: var(--text-secondary); }
-.context-section a {
+.project-sidebar p, .project-sidebar li {
+  line-height: 1.7;
+}
+.project-sidebar ul {
+  padding-left: 1.25rem;
+}
+.project-sidebar strong {
+  color: var(--text-secondary);
+}
+.project-sidebar a {
   color: var(--accent);
   font-weight: 600;
   text-decoration: none;
 }
-.context-section a:hover { text-decoration: underline; }
-.project-dashboard-section h2 {
+.project-sidebar a:hover {
+  text-decoration: underline;
+}
+.project-dashboard-content {
+  flex-grow: 1;
+}
+.project-dashboard-content h2 {
   font-size: 1.8rem;
   color: var(--deep-blue);
   text-align: center;
   margin-bottom: 0.5rem;
 }
-.project-dashboard-section p {
+.project-dashboard-content p {
   text-align: center;
   max-width: 600px;
   margin: 0 auto 2rem auto;
@@ -546,15 +562,13 @@ p.timeline-company a:hover {
   height: 100%;
   border: 0;
 }
+
 @media (max-width: 992px) {
   .case-study-layout {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
   .project-sidebar {
-    order: 2;
-    margin-top: 3rem;
-  }
-  .project-dashboard-content {
-    order: 1;
+    position: static;
+    width: 100%;
   }
 }
