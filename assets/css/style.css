@@ -22,7 +22,6 @@ a { text-decoration: none; color: inherit; }
   vertical-align: -2px;
 }
 
-
 /* --- HEADER Y NAVEGACIÓN --- */
 .header-hero-wrapper { 
     background: var(--dark-blue); color: var(--white);
@@ -771,7 +770,13 @@ p.timeline-company a:hover {
 @media (max-width: 768px) {
   nav.desktop-nav { display: none; }
   .hamburger { display: block; }
-  .hero-content { flex-direction: column-reverse; text-align: center; }
+  .hero-content { 
+    flex-direction: column; /* CORRECCIÓN 1: ORDEN DEL HERO */
+    text-align: center; 
+  }
+  .about-image {
+    display: none; /* CORRECIÓN 2: OCULTAR IMAGEN ABOUT */
+  }
   .hero-buttons { justify-content: center; }
   .impact-grid { grid-template-columns: 1fr; }
   .carousel-btn.prev { left: 5px; }
