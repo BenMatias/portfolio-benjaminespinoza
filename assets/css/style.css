@@ -100,7 +100,7 @@ a:focus, button:focus, [tabindex="0"]:focus, input:focus {
 .carousel-wrapper { position: relative; margin-bottom: 2rem; }
 .carousel {
   display: flex;
-  justify-content: center; /* Centra los proyectos cuando no llenan el espacio */
+  justify-content: flex-start; /* CORRECCIÓN: Alinea el carrusel al inicio */
   gap: 1.5rem;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -771,11 +771,11 @@ p.timeline-company a:hover {
   nav.desktop-nav { display: none; }
   .hamburger { display: block; }
   .hero-content { 
-    flex-direction: column; /* CORRECCIÓN 1: ORDEN DEL HERO */
+    flex-direction: column;
     text-align: center; 
   }
   .about-image {
-    display: none; /* CORRECIÓN 2: OCULTAR IMAGEN ABOUT */
+    display: none;
   }
   .hero-buttons { justify-content: center; }
   .impact-grid { grid-template-columns: 1fr; }
