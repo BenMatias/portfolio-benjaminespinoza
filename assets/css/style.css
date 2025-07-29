@@ -100,7 +100,7 @@ a:focus, button:focus, [tabindex="0"]:focus, input:focus {
 .carousel-wrapper { position: relative; margin-bottom: 2rem; }
 .carousel {
   display: flex;
-  justify-content: flex-start; /* CORRECCIÓN: Alinea el carrusel al inicio */
+  justify-content: flex-start;
   gap: 1.5rem;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -628,7 +628,7 @@ p.timeline-company a:hover {
 }
 .project-sidebar h3 i {
     font-size: 1rem;
-    margin-right: 0.75rem; /* Espacio entre ícono y texto */
+    margin-right: 0.75rem;
 }
 .project-sidebar p,
 .project-sidebar li {
@@ -690,7 +690,7 @@ p.timeline-company a:hover {
     background-color: var(--almost-white);
     color: var(--dark-blue);
     border-top: 1px solid #eee;
-    background-image: none; /* Quita la textura de ruido en este footer claro */
+    background-image: none;
 }
 .theme-red-project .footer .footer-contacts a,
 .theme-red-project .footer .footer-socials a {
@@ -706,7 +706,7 @@ p.timeline-company a:hover {
     color: var(--dark-blue);
 }
 .theme-red-project .logo img {
-    filter: invert(1); /* Invierte el logo blanco a negro */
+    filter: invert(1);
 }
 .theme-red-project .project-header {
     border-bottom-color: #ddd;
@@ -721,7 +721,6 @@ p.timeline-company a:hover {
 .theme-red-project .summary-card i {
     color: var(--pokedex-red-dark);
 }
-/* Estilo suavizado para el menú lateral */
 .theme-red-project .project-sidebar .sidebar-section {
     background-color: var(--white);
     color: var(--dark-blue);
@@ -748,6 +747,16 @@ p.timeline-company a:hover {
 }
 .theme-red-project .button.btn-back { background-color: var(--dark-blue); }
 .theme-red-project .button.btn-looker { background-color: var(--pokedex-red-mid); }
+
+/* CORRECCIÓN PARA EL MENÚ MÓVIL EN TEMA ROJO */
+.theme-red-project .mobile-nav {
+  background: var(--white);
+}
+.theme-red-project .mobile-nav a,
+.theme-red-project .mobile-nav .lang-toggle-wrapper {
+  color: var(--dark-blue);
+  border-top: 1px solid #f0f0f0;
+}
 
 
 /* --- ESTILOS RESPONSIVOS --- */
