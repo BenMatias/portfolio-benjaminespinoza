@@ -549,7 +549,9 @@ function getEl(id) {
   return document.getElementById(id);
 }
 
-function setupMobileMenu() {
+// FUNCIÓN GLOBAL: Se ejecutará en todas las páginas
+function setupGlobalInteractions() {
+  // --- Lógica del Menú Móvil (Hamburguesa) ---
   const menuToggle = getEl('menu-toggle');
   const mobileNav = getEl('mobile-nav');
 
@@ -560,33 +562,38 @@ function setupMobileMenu() {
   }
 }
 
-function setupHomePageInteractions() {
-  // --- Lógica del Menú Móvil (Hamburguesa) ---
-  const menuToggle = getEl('menu-toggle');
-  const mobileNav = getEl('mobile-nav');
-
-  if (menuToggle && mobileNav) {
-    menuToggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('show');
-    });
-  }
-
+// FUNCIÓN PARA EL INICIO: Se ejecutará solo en el index
+function setupHomePageCarousel() {
   // --- Lógica del Carrusel de Proyectos ---
   const carousel = getEl('project-carousel');
   if (carousel) {
     const prevButton = document.querySelector('.carousel-btn.prev');
     const nextButton = document.querySelector('.carousel-btn.next');
 
+    const checkCarouselButtons = () => {
+      if (!carousel || !prevButton || !nextButton) return;
+      const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+
+      // Oculta el botón izquierdo si estamos al principio
+      prevButton.style.display = (carousel.scrollLeft <= 1) ? 'none' : 'block';
+      // Oculta el botón derecho si estamos al final
+      nextButton.style.display = (carousel.scrollLeft >= maxScrollLeft - 1) ? 'none' : 'block';
+    };
+
     if (prevButton && nextButton) {
       nextButton.addEventListener('click', () => {
-        const scrollAmount = 300 + 24;
-        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        // Nos movemos el ancho de una tarjeta (300px) más el gap (1.5rem ~ 24px)
+        carousel.scrollBy({ left: 324, behavior: 'smooth' });
       });
 
       prevButton.addEventListener('click', () => {
-        const scrollAmount = 300 + 24;
-        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        carousel.scrollBy({ left: -324, behavior: 'smooth' });
       });
+
+      // Escucha el evento de scroll en el carrusel para actualizar los botones
+      carousel.addEventListener('scroll', checkCarouselButtons);
+      // Llama a la función una vez al inicio para establecer el estado inicial correcto
+      setTimeout(checkCarouselButtons, 150);
     }
   }
 }
@@ -1003,8 +1010,6 @@ function populateFinancialInclusionPage(lang, basePath) {
     }
 }
 
-// =========================================================================
-
 function setLanguage(lang, basePath) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -1026,8 +1031,6 @@ function setLanguage(lang, basePath) {
   } else if (document.body.classList.contains('page-project-case-study')) {
     const bodyId = document.body.id;
     
-    // Asignar el nombre del proyecto al body Id en el HTML para que esto funcione
-    // ej: <body id="page-pokedex" ...>
     if (bodyId === 'page-pokedex') {
         populatePokedexPage(lang, basePath);
     } else if (bodyId === 'page-unemployment') {
@@ -1056,7 +1059,6 @@ document.addEventListener("DOMContentLoaded", () => {
   basePath = '';
   const path = window.location.pathname;
   
-  // Lógica para determinar la página actual y basePath
   if (path.endsWith('/') || path.endsWith('index.html') || path.length <= 1) {
     document.body.classList.add('page-home');
   } else if (path.includes('cv.html')) {
@@ -1068,14 +1070,18 @@ document.addEventListener("DOMContentLoaded", () => {
     basePath = '../';
   }
 
+  // --- 1. EJECUCIÓN DE LÓGICA GLOBAL ---
+  // Esta función se llama siempre, en todas las páginas.
+  setupGlobalInteractions();
+
+  // --- 2. GESTIÓN DE IDIOMA ---
   const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
   setLanguage(preferredLanguage, basePath);
-
   document.querySelectorAll('.lang-toggle').forEach(el => el.addEventListener('click', toggleLang));
 
-  // --- EJECUCIÓN DE FUNCIONES ESPECÍFICAS DE LA PÁGINA ---
+  // --- 3. EJECUCIÓN DE LÓGICA ESPECÍFICA DE LA PÁGINA ---
   if (document.body.classList.contains('page-home')) {
-    setupHomePageInteractions();
+    setupHomePageCarousel(); // Llama solo a la función del carrusel
   } else if (document.body.classList.contains('page-cv')) {
     // Aquí irían las funciones específicas de la página de CV si las hubiera
   } else if (document.body.classList.contains('page-project-case-study')) {
