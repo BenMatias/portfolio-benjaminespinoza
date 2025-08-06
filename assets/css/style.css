@@ -293,7 +293,7 @@ p.timeline-company a:hover {
 .badge-widgets { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem; }
 .badge-widgets > div {
   background-color: var(--white);
-  padding: 0.75rem 0.4rem; /* Mantenemos el padding vertical, reducimos el horizontal */
+  padding: 0.75rem 0.4rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -766,14 +766,87 @@ p.timeline-company a:hover {
   .lineup-tier-2 { width: 95%; }
   .lineup-tier-3 { width: 90%; }
   .lineup-tier-4 { width: 85%; }
-  .projects-main-content, .case-study-layout {
+  
+  .projects-main-content {
     flex-direction: column;
   }
-  .projects-list-column { border-right: none; }
-  .projects-preview-column { min-height: 400px; }
-  .projects-list-ul li a { font-size: 1.8rem; }
-  .project-sidebar { position: static; width: 100%; order: 2; margin-top: 3rem; }
-  .project-dashboard-content { order: 1; }
+  .projects-list-column { 
+    border-right: none; 
+    padding: 2rem 1rem; /* Ajuste para móvil */
+  }
+  /* Ocultar la columna de previsualización en móvil */
+  .projects-preview-column { 
+    display: none; 
+  }
+
+  .case-study-layout {
+    flex-direction: column;
+  }
+  .project-sidebar { 
+    position: static; 
+    width: 100%; 
+    order: 2; 
+    margin-top: 3rem; 
+  }
+  .project-dashboard-content { 
+    order: 1; 
+  }
+
+  /* --- ESTILOS PARA ACORDEÓN DE PROYECTOS (MÓVIL) --- */
+  .projects-list-ul.is-accordion {
+    border-top: 1px solid #e0eaf1;
+  }
+  /* Ocultar la lista de escritorio por defecto en esta vista */
+  .projects-list-ul:not(.is-accordion) li a {
+      display: none;
+  }
+  .accordion-item {
+    border-bottom: 1px solid #e0eaf1;
+  }
+  .accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.25rem 0.5rem;
+    text-align: left;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    color: var(--mid-blue);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+  .accordion-header:hover {
+      color: var(--dark-blue);
+  }
+  .accordion-header .chevron-icon {
+    transition: transform 0.3s ease;
+    font-size: 1.1rem;
+  }
+  .accordion-item.active .accordion-header {
+    color: var(--dark-blue);
+  }
+  .accordion-item.active .chevron-icon {
+    transform: rotate(180deg);
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 0.5rem;
+  }
+  .accordion-item.active .accordion-content {
+    max-height: 250px;
+    padding: 0 0.5rem 1.5rem 0.5rem;
+  }
+  .accordion-content .project-list-description {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      color: var(--deep-blue);
+      font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 768px) {
