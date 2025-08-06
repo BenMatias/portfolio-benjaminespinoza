@@ -551,7 +551,6 @@ function getEl(id) {
 
 // FUNCIÓN GLOBAL: Se ejecutará en todas las páginas
 function setupGlobalInteractions() {
-  // --- Lógica del Menú Móvil (Hamburguesa) ---
   const menuToggle = getEl('menu-toggle');
   const mobileNav = getEl('mobile-nav');
 
@@ -564,7 +563,6 @@ function setupGlobalInteractions() {
 
 // FUNCIÓN PARA EL INICIO: Se ejecutará solo en el index
 function setupHomePageCarousel() {
-  // --- Lógica del Carrusel de Proyectos ---
   const carousel = getEl('project-carousel');
   if (carousel) {
     const prevButton = document.querySelector('.carousel-btn.prev');
@@ -573,29 +571,45 @@ function setupHomePageCarousel() {
     const checkCarouselButtons = () => {
       if (!carousel || !prevButton || !nextButton) return;
       const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-
-      // Oculta el botón izquierdo si estamos al principio
       prevButton.style.display = (carousel.scrollLeft <= 1) ? 'none' : 'block';
-      // Oculta el botón derecho si estamos al final
       nextButton.style.display = (carousel.scrollLeft >= maxScrollLeft - 1) ? 'none' : 'block';
     };
 
     if (prevButton && nextButton) {
       nextButton.addEventListener('click', () => {
-        // Nos movemos el ancho de una tarjeta (300px) más el gap (1.5rem ~ 24px)
         carousel.scrollBy({ left: 324, behavior: 'smooth' });
       });
-
       prevButton.addEventListener('click', () => {
         carousel.scrollBy({ left: -324, behavior: 'smooth' });
       });
-
-      // Escucha el evento de scroll en el carrusel para actualizar los botones
       carousel.addEventListener('scroll', checkCarouselButtons);
-      // Llama a la función una vez al inicio para establecer el estado inicial correcto
       setTimeout(checkCarouselButtons, 150);
     }
   }
+}
+
+// --- LÓGICA DE ACORDEÓN ---
+function setupAccordion(containerSelector, headerSelector) {
+  const container = document.querySelector(containerSelector);
+  if (!container) return;
+
+  const headers = container.querySelectorAll(headerSelector);
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const wasActive = item.classList.contains('active');
+      
+      // Cerrar todos los items
+      container.querySelectorAll('.active').forEach(activeItem => {
+        activeItem.classList.remove('active');
+      });
+
+      // Abrir el item clickeado si no estaba activo
+      if (!wasActive) {
+        item.classList.add('active');
+      }
+    });
+  });
 }
 
 function setupScrollAnimations() {
@@ -613,30 +627,6 @@ function setupScrollAnimations() {
   items.forEach(item => {
     observer.observe(item);
   });
-}
-
-function setupAccordion() {
-  const sidebar = getEl('project-sidebar');
-  if (!sidebar) return;
-
-  const sections = sidebar.querySelectorAll('.sidebar-section');
-
-  sections.forEach(section => {
-    const header = section.querySelector('h3');
-    header.addEventListener('click', () => {
-      const isActive = section.classList.contains('active');
-      
-      sections.forEach(s => s.classList.remove('active'));
-
-      if (!isActive) {
-        section.classList.add('active');
-      }
-    });
-  });
-
-  if (sections.length > 0) {
-    sections[0].classList.add('active');
-  }
 }
 
 function populateHomePage(lang, basePath) {
@@ -745,52 +735,84 @@ function populateCvPage(lang, basePath) {
 }
 
 function populateProjectsPage(lang, basePath) {
-  const data = translations[lang] || translations.en;
-  const titleEl = getEl('projects-title');
-  if (titleEl) {
-    titleEl.textContent = data.projects_page_title;
-  }
+    const data = translations[lang] || translations.en;
+    const titleEl = getEl('projects-title');
+    if (titleEl) {
+        titleEl.textContent = data.projects_page_title;
+    }
 
-  const listUl = getEl('projects-list-ul');
-  const previewCol = getEl('projects-preview-column');
+    const listUl = getEl('projects-list-ul');
+    const previewCol = getEl('projects-preview-column');
 
-  if (listUl && previewCol) {
-    listUl.innerHTML = '';
-    previewCol.innerHTML = '';
+    if (listUl) {
+        listUl.innerHTML = '';
+        if (previewCol) previewCol.innerHTML = '';
+        listUl.className = 'projects-list-ul'; // Reset classes
 
-    (data.projects_list || []).forEach(project => {
-      // For Desktop: Interactive List
-      const listItem = document.createElement('li');
-      listItem.innerHTML = `
-        <a href="${project.link}" data-preview-target="${project.id}">
-            <span class="project-list-title">${project.title}</span>
-            <span class="project-list-description">${project.description}</span>
-        </a>`;
-      listUl.appendChild(listItem);
+        const isMobile = window.innerWidth <= 992;
 
-      // For Desktop: Preview Image
-      const previewImage = document.createElement('div');
-      previewImage.id = project.id;
-      previewImage.className = 'project-preview-image';
-      previewImage.style.backgroundImage = `url('${basePath}${project.imageUrl}')`;
-      previewCol.appendChild(previewImage);
-    });
+        if (isMobile) {
+            // Mobile Accordion View
+            listUl.classList.add('is-accordion');
+            (data.projects_list || []).forEach(project => {
+                const accordionItem = document.createElement('li');
+                accordionItem.className = 'accordion-item';
+                accordionItem.innerHTML = `
+                    <button class="accordion-header">
+                        <span>${project.title}</span>
+                        <i class="fas fa-chevron-down chevron-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="project-list-description">${project.description}</p>
+                        <a href="${project.link}" class="btn btn-outline-blue">${project.buttonText}</a>
+                    </div>
+                `;
+                listUl.appendChild(accordionItem);
+            });
+            setupAccordion('.projects-list-ul', '.accordion-header');
 
-    const projectLinks = listUl.querySelectorAll('a');
-    projectLinks.forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        const targetId = link.getAttribute('data-preview-target');
-        previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => activeImg.classList.remove('is-active'));
-        const targetImage = getEl(targetId);
-        if (targetImage) targetImage.classList.add('is-active');
-      });
-    });
+        } else {
+            // Desktop Interactive List View
+            if (!previewCol) return;
+            (data.projects_list || []).forEach(project => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <a href="${project.link}" data-preview-target="${project.id}">
+                        <span class="project-list-title">${project.title}</span>
+                        <span class="project-list-description">${project.description}</span>
+                    </a>`;
+                listUl.appendChild(listItem);
 
-    listUl.addEventListener('mouseleave', () => {
-      previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => activeImg.classList.remove('is-active'));
-    });
-  }
+                const previewImage = document.createElement('div');
+                previewImage.id = project.id;
+                previewImage.className = 'project-preview-image';
+                previewImage.style.backgroundImage = `url('${basePath}${project.imageUrl}')`;
+                previewCol.appendChild(previewImage);
+            });
+
+            const projectLinks = listUl.querySelectorAll('a');
+            projectLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    const targetId = link.getAttribute('data-preview-target');
+                    if(previewCol) {
+                        previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => activeImg.classList.remove('is-active'));
+                        const targetImage = getEl(targetId);
+                        if (targetImage) targetImage.classList.add('is-active');
+                    }
+                });
+            });
+
+            if (listUl) {
+                listUl.addEventListener('mouseleave', () => {
+                    if(previewCol) {
+                        previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => activeImg.classList.remove('is-active'));
+                    }
+                });
+            }
+        }
+    }
 }
+
 
 function populatePokedexPage(lang, basePath) {
     const data = translations[lang].project_pokedex || translations.en.project_pokedex;
@@ -847,7 +869,7 @@ function populatePokedexPage(lang, basePath) {
                 </p></div>
             </div>
         `;
-        setupAccordion();
+        setupAccordion('#project-sidebar', '.sidebar-section h3');
     }
   
     const dashboardContent = getEl('project-dashboard-content');
@@ -922,7 +944,7 @@ function populateUnemploymentPage(lang, basePath) {
                 </p></div>
             </div>
         `;
-        setupAccordion();
+        setupAccordion('#project-sidebar', '.sidebar-section h3');
     }
   
     const dashboardContent = getEl('project-dashboard-content');
@@ -997,7 +1019,7 @@ function populateFinancialInclusionPage(lang, basePath) {
                 </p></div>
             </div>
         `;
-        setupAccordion();
+        setupAccordion('#project-sidebar', '.sidebar-section h3');
     }
   
     const dashboardContent = getEl('project-dashboard-content');
@@ -1011,6 +1033,7 @@ function populateFinancialInclusionPage(lang, basePath) {
         if (embedEl) embedEl.innerHTML = iframeHtml;
     }
 }
+
 
 function setLanguage(lang, basePath) {
   currentLang = lang;
@@ -1073,7 +1096,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- 1. EJECUCIÓN DE LÓGICA GLOBAL ---
-  // Esta función se llama siempre, en todas las páginas.
   setupGlobalInteractions();
 
   // --- 2. GESTIÓN DE IDIOMA ---
@@ -1083,10 +1105,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- 3. EJECUCIÓN DE LÓGICA ESPECÍFICA DE LA PÁGINA ---
   if (document.body.classList.contains('page-home')) {
-    setupHomePageCarousel(); // Llama solo a la función del carrusel
-  } else if (document.body.classList.contains('page-cv')) {
-    // Aquí irían las funciones específicas de la página de CV si las hubiera
+    setupHomePageCarousel();
   } else if (document.body.classList.contains('page-project-case-study')) {
-    setupAccordion();
+    setupAccordion('#project-sidebar', '.sidebar-section h3');
   }
 });
