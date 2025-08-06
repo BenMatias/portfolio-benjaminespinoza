@@ -783,6 +783,9 @@ p.timeline-company a:hover {
     flex-direction: column;
     text-align: center; 
   }
+  .hero-image {
+    display: none;
+  }
   .about-image {
     display: none;
   }
