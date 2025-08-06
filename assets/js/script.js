@@ -595,11 +595,15 @@ function setupAccordion(containerSelector, headerSelector) {
 
   const headers = container.querySelectorAll(headerSelector);
   headers.forEach(header => {
+    // Evitar añadir listeners múltiples veces si la función es llamada de nuevo
+    if (header.dataset.accordionAttached) return;
+    header.dataset.accordionAttached = 'true';
+
     header.addEventListener('click', () => {
       const item = header.parentElement;
       const wasActive = item.classList.contains('active');
       
-      // Cerrar todos los items
+      // Cerrar todos los items dentro del mismo contenedor
       container.querySelectorAll('.active').forEach(activeItem => {
         activeItem.classList.remove('active');
       });
@@ -611,6 +615,7 @@ function setupAccordion(containerSelector, headerSelector) {
     });
   });
 }
+
 
 function setupScrollAnimations() {
   const items = document.querySelectorAll('.timeline-item');
@@ -869,7 +874,7 @@ function populatePokedexPage(lang, basePath) {
                 </p></div>
             </div>
         `;
-        setupAccordion('#project-sidebar', '.sidebar-section h3');
+        setTimeout(() => setupAccordion('#project-sidebar', '.sidebar-section h3'), 0);
     }
   
     const dashboardContent = getEl('project-dashboard-content');
@@ -944,7 +949,7 @@ function populateUnemploymentPage(lang, basePath) {
                 </p></div>
             </div>
         `;
-        setupAccordion('#project-sidebar', '.sidebar-section h3');
+        setTimeout(() => setupAccordion('#project-sidebar', '.sidebar-section h3'), 0);
     }
   
     const dashboardContent = getEl('project-dashboard-content');
@@ -1019,7 +1024,7 @@ function populateFinancialInclusionPage(lang, basePath) {
                 </p></div>
             </div>
         `;
-        setupAccordion('#project-sidebar', '.sidebar-section h3');
+        setTimeout(() => setupAccordion('#project-sidebar', '.sidebar-section h3'), 0);
     }
   
     const dashboardContent = getEl('project-dashboard-content');
@@ -1106,7 +1111,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- 3. EJECUCIÓN DE LÓGICA ESPECÍFICA DE LA PÁGINA ---
   if (document.body.classList.contains('page-home')) {
     setupHomePageCarousel();
-  } else if (document.body.classList.contains('page-project-case-study')) {
-    setupAccordion('#project-sidebar', '.sidebar-section h3');
   }
+  // No es necesario llamar a setupAccordion aquí porque ahora
+  // las funciones 'populate' se encargan de su propia inicialización.
+  // Esto soluciona el bug de la doble inicialización.
 });
