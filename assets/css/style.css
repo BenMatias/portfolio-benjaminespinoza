@@ -881,3 +881,15 @@ p.timeline-company a:hover {
   .section-title { text-align: center; border-left: none; padding-left: 0; }
   .projects .section-title { text-align: center; }
 }
+
+/* --- ESTILOS PARA ENLACE RESALTADO EN SUBTÍTULOS --- */
+.subtitle-link {
+  font-weight: bold; /* Pone el texto en negrita */
+  text-decoration: underline; /* Añade el subrayado */
+  color: inherit; /* Hereda el color del texto circundante */
+  transition: opacity 0.2s ease;
+}
+
+.subtitle-link:hover {
+  opacity: 0.7; /* Efecto sutil al pasar el mouse */
+}
