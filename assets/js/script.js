@@ -318,9 +318,9 @@ const translations = {
       datasetScope: "Metrics:",
       datasetScopeValue: "Account ownership, borrowing, mobile money, demographics (adults 15+).",
       roleTitle: "My Role",
-      roleText: "I developed this dashboard from start to finish, handling the entire process from data cleaning and transformation to KPI design and the final build of the bilingual, interactive dashboard in Looker Studio.",
+      roleText: "I developed this dashboard from start to finish, handling the entire process from data cleaning and transformation to KPI design and the final build of the interactive dashboard in Looker Studio.",
       dashboardTitle: "Interactive Global Findex Dashboard",
-      dashboardSubtitle: `Use the dynamic filters to explore financial inclusion data by year, region, country, and income group. You can see it in full screen <a href="https://lookerstudio.google.com/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb" target="_blank" rel="noopener">here</a>.`
+      dashboardSubtitle: `Use the dynamic filters to explore financial inclusion data by year, region, country, and income group. You can see it in full screen <a href="https://lookerstudio.google.com/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb" target="_blank" rel="noopener" class="subtitle-link">here</a>.`
     }
   },
   es: {
@@ -535,9 +535,9 @@ const translations = {
       datasetScope: "Métricas:",
       datasetScopeValue: "Titularidad de cuentas, endeudamiento, dinero móvil, demografía (adultos +15).",
       roleTitle: "Mi Rol",
-      roleText: "Desarrollé este dashboard de principio a fin, abarcando todo el proceso: desde la limpieza y transformación de los datos, hasta el diseño de KPIs y la construcción de la versión final, bilingüe e interactiva, en Looker Studio.",
+      roleText: "Desarrollé este dashboard de principio a fin, abarcando todo el proceso: desde la limpieza y transformación de los datos, hasta el diseño de KPIs y la construcción de la versión final interactiva en Looker Studio.",
       dashboardTitle: "Dashboard Interactivo de Inclusión Financiera",
-      dashboardSubtitle: `Usa los filtros dinámicos para explorar los datos de inclusión financiera por año, región, país y grupo de ingresos. Puedes verlo en pantalla completa <a href="https://lookerstudio.google.com/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb" target="_blank" rel="noopener">aquí</a>.`
+      dashboardSubtitle: `Usa los filtros dinámicos para explorar los datos de inclusión financiera por año, región, país y grupo de ingresos. Puedes verlo en pantalla completa <a href="https://lookerstudio.google.com/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb" target="_blank" rel="noopener" class="subtitle-link">aquí</a>.`
     }
   }
 };
