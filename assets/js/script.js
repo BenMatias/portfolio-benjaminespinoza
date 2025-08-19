@@ -223,7 +223,7 @@ const translations = {
       roleTitle: "My Role",
       roleText: "As the sole creator, I handled the entire end-to-end process: writing the Apps Script code to call the API, transforming the data, and designing the complete interactive experience in Looker Studio.",
       dashboardTitle: "Interactive Pokédex",
-      dashboardSubtitle: "Select a Pokémon to see its complete profile, including stats, abilities, and more."
+      dashboardSubtitle: `Select a Pokémon to see its complete profile, including stats, abilities, and more. You can see it in full screen <a href="https://lookerstudio.google.com/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF" target="_blank" rel="noopener" class="subtitle-link">here</a>.`
     },
     project_unemployment: {
       pageTitle: "Unemployment in America – A Data-Driven Overview",
@@ -271,7 +271,7 @@ const translations = {
       roleTitle: "My Role",
       roleText: "I sourced and filtered public datasets, defined KPIs and filtering logic, and designed the dashboard using Looker Studio.",
       dashboardTitle: "Interactive Dashboard",
-      dashboardSubtitle: "Explore the interactive report below or use the tabs to dive into state and metro-level insights."
+      dashboardSubtitle: `Explore the interactive report below or use the tabs to dive into state and metro-level insights. You can see it in full screen <a href="https://lookerstudio.google.com/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45" target="_blank" rel="noopener" class="subtitle-link">here</a>.`
     },
     project_financial_inclusion: {
       pageTitle: "Global Financial Inclusion Dashboard – 2024",
@@ -440,7 +440,7 @@ const translations = {
       roleTitle: "Mi Rol",
       roleText: "Como único creador, me encargué de todo el proceso: escribí el código en Apps Script para llamar a la API, transformé los datos y diseñé la experiencia interactiva completa en Looker Studio.",
       dashboardTitle: "Pokédex Interactiva",
-      dashboardSubtitle: "Selecciona un Pokémon para ver su perfil completo, con estadísticas, habilidades y más."
+      dashboardSubtitle: `Selecciona un Pokémon para ver su perfil completo, con estadísticas, habilidades y más. Puedes verlo en pantalla completa <a href="https://lookerstudio.google.com/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF" target="_blank" rel="noopener" class="subtitle-link">aquí</a>.`
     },
     project_unemployment: {
       pageTitle: "Desempleo en Estados Unidos – Un análisis basado en datos",
@@ -488,7 +488,7 @@ const translations = {
       roleTitle: "Mi Rol",
       roleText: "Seleccioné y filtré datasets públicos, definí indicadores clave (KPIs) y lógica de filtros, y diseñé la estructura del dashboard en Looker Studio.",
       dashboardTitle: "Dashboard Interactivo",
-      dashboardSubtitle: "Explora el reporte interactivo o usa las pestañas para navegar por estado y ciudad."
+      dashboardSubtitle: `Explora el reporte interactivo o usa las pestañas para navegar por estado y ciudad. Puedes verlo en pantalla completa <a href="https://lookerstudio.google.com/reporting/0c6a7b6a-a542-4cdc-8c57-dbe52b344e45" target="_blank" rel="noopener" class="subtitle-link">aquí</a>.`
     },
     project_financial_inclusion: {
       pageTitle: "Dashboard de Inclusión Financiera Global – 2024",
@@ -884,7 +884,7 @@ function populatePokedexPage(lang, basePath) {
         const subtitleEl = dashboardContent.querySelector('#dashboard-subtitle');
         const embedEl = dashboardContent.querySelector('#dashboard-embed-container');
         if (titleEl) titleEl.textContent = data.dashboardTitle;
-        if (subtitleEl) subtitleEl.innerHTML = `<em>${data.dashboardSubtitle}</em>`;
+        if (subtitleEl) subtitleEl.innerHTML = data.dashboardSubtitle;
         if (embedEl) embedEl.innerHTML = iframeHtml;
     }
 }
@@ -959,7 +959,7 @@ function populateUnemploymentPage(lang, basePath) {
         const subtitleEl = dashboardContent.querySelector('#dashboard-subtitle');
         const embedEl = dashboardContent.querySelector('#dashboard-embed-container');
         if (titleEl) titleEl.textContent = data.dashboardTitle;
-        if (subtitleEl) subtitleEl.innerHTML = `<em>${data.dashboardSubtitle}</em>`;
+        if (subtitleEl) subtitleEl.innerHTML = data.dashboardSubtitle;
         if (embedEl) embedEl.innerHTML = iframeHtml;
     }
 }
