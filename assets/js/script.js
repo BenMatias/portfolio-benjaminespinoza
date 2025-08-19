@@ -274,9 +274,9 @@ const translations = {
       dashboardSubtitle: "Explore the interactive report below or use the tabs to dive into state and metro-level insights."
     },
     project_financial_inclusion: {
-      pageTitle: "Global Financial Inclusion Dashboard – 2025",
+      pageTitle: "Global Financial Inclusion Dashboard – 2024",
       lookerStudioUrl: "https://lookerstudio.google.com/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb",
-      iframeEmbed: `<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb/page/4kyRF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
+      iframeEmbed: `<iframe width="100%" height="100%" src="https://lookerstudio.google.com/embed/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb/page/4kyRF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Back to Projects",
       linkedinButton: "Share on LinkedIn",
       xButton: "Share on X",
@@ -285,42 +285,42 @@ const translations = {
         {
           icon: "fas fa-users",
           title: "5.77 Billion Adults (15+)",
-          text: "Total global adult population considered for financial inclusion metrics."
+          text: "Total global adult population considered for financial inclusion metrics in 2024."
         },
         {
           icon: "fas fa-piggy-bank",
-          title: "78.02% Account Ownership",
-          text: "Global rate of adults who own a financial account, reflecting broad access to financial services."
+          title: "74.35% Formal Account Ownership",
+          text: "Global rate of adults who own an account at a formal financial institution, reflecting access to regulated services."
         },
         {
-          icon: "fas fa-money-check-alt",
-          title: "Formal vs. Informal Borrowing",
-          text: "The dashboard analyzes borrowing behaviors, differentiating between formal financial institutions and informal sources."
+          icon: "fas fa-chart-line",
+          title: "Steady Growth Since 2011",
+          text: "The dashboard shows a clear upward trend in both general and formal account ownership over the last decade."
         }
       ],
       problemTitle: "Problem Statement",
-      problemText: "Financial inclusion is essential for reducing inequality and promoting sustainable economic development. However, access to financial services varies significantly across countries, regions, income levels, and demographic segments. Understanding these gaps is key to driving more inclusive financial ecosystems.",
+      problemText: "Financial inclusion is essential for reducing inequality and promoting sustainable economic development. However, access to financial services varies significantly across countries, regions, and income levels. Understanding these gaps is key to driving more inclusive financial ecosystems.",
       objectiveTitle: "Dashboard Objective",
-      objectiveText: "To provide a comprehensive overview of financial inclusion worldwide, focusing on two main dimensions: account ownership (including formal and mobile money accounts) and borrowing behavior (from formal and informal sources). The dashboard allows for interactive comparisons by region, income group, and demographic characteristics.",
+      objectiveText: "To provide a comprehensive overview of financial inclusion worldwide, focusing on account ownership (formal and mobile money) and borrowing behavior. The dashboard allows for interactive comparisons by region, income group, and demographic characteristics.",
       questionsTitle: "Key Questions",
       questionsList: [
-        "Which regions have the highest levels of financial inclusion?",
-        "How does account ownership differ between income groups or genders?",
-        "What demographic groups are most likely to borrow informally?",
-        "Where is mobile money playing a key role in financial access?"
+        "Which regions show the most significant progress in financial inclusion since 2011?",
+        "How does account ownership correlate with a country's income level?",
+        "What is the gap between the top 10 and bottom 10 countries in terms of financial access?",
+        "Where is mobile money playing a key role in bridging the financial access gap?"
       ],
       datasetTitle: "Dataset Information",
       datasetSource: "Source:",
-      datasetSourceText: "World Bank – Global Findex Database 2025",
+      datasetSourceText: "World Bank – Global Findex Database",
       datasetSourceLink: "https://www.worldbank.org/en/publication/globalfindex",
       datasetPeriod: "Coverage:",
-      datasetPeriodValue: "140+ countries (2025 data)",
+      datasetPeriodValue: "Global data from 2011 to 2024",
       datasetScope: "Metrics:",
       datasetScopeValue: "Account ownership, borrowing, mobile money, demographics (adults 15+).",
       roleTitle: "My Role",
-      roleText: "I led the entire development of the dashboard, including: cleaning and transforming raw data from the Global Findex 2025 dataset, creating calculated fields for regional classification, designing KPIs and visuals for comparison, and building a bilingual, interactive dashboard using Looker Studio.",
+      roleText: "I led the entire development of the dashboard, including: cleaning and transforming raw data, creating calculated fields for regional classification, designing KPIs and visuals for clear comparison, and building a bilingual, interactive dashboard using Looker Studio.",
       dashboardTitle: "Interactive Global Findex Dashboard",
-      dashboardSubtitle: "Use the dynamic filters to explore financial inclusion data by year, region, country, income group, and demographics."
+      dashboardSubtitle: "Use the dynamic filters to explore financial inclusion data by year, region, country, and income group."
     }
   },
   es: {
@@ -491,9 +491,9 @@ const translations = {
       dashboardSubtitle: "Explora el reporte interactivo o usa las pestañas para navegar por estado y ciudad."
     },
     project_financial_inclusion: {
-      pageTitle: "Dashboard de Inclusión Financiera Global – 2025",
+      pageTitle: "Dashboard de Inclusión Financiera Global – 2024",
       lookerStudioUrl: "https://lookerstudio.google.com/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb",
-      iframeEmbed: `<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb/page/4kyRF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
+      iframeEmbed: `<iframe width="100%" height="100%" src="https://lookerstudio.google.com/embed/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb/page/4kyRF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Volver a Proyectos",
       linkedinButton: "Compartir en LinkedIn",
       xButton: "Compartir en X",
@@ -501,43 +501,43 @@ const translations = {
       executiveSummary: [
         {
           icon: "fas fa-users",
-          title: "5.770 Millones de Adultos (15+)",
-          text: "Población adulta global total considerada para las métricas de inclusión financiera."
+          title: "5.77 Mil Millones de Adultos (+15)",
+          text: "Población adulta global total considerada para las métricas de inclusión financiera en 2024."
         },
         {
           icon: "fas fa-piggy-bank",
-          title: "78,02% de Titularidad de Cuentas",
-          text: "Tasa global de adultos que poseen una cuenta financiera, reflejando un amplio acceso a servicios."
+          title: "74,35% Titularidad de Cuenta Formal",
+          text: "Tasa global de adultos que poseen una cuenta en una institución financiera formal, reflejando el acceso a servicios regulados."
         },
         {
-          icon: "fas fa-money-check-alt",
-          title: "Crédito Formal vs. Informal",
-          text: "El dashboard analiza comportamientos de endeudamiento, diferenciando entre instituciones formales y fuentes informales."
+          icon: "fas fa-chart-line",
+          title: "Crecimiento Sostenido desde 2011",
+          text: "El dashboard muestra una clara tendencia al alza tanto en la titularidad de cuentas generales como formales durante la última década."
         }
       ],
-      problemTitle: "Problema",
-      problemText: "La inclusión financiera es esencial para reducir la desigualdad y promover el desarrollo económico sostenible. Sin embargo, el acceso a servicios financieros varía significativamente entre países, regiones, niveles de ingreso y segmentos demográficos. Comprender estas brechas es clave para impulsar ecosistemas financieros más inclusivos.",
+      problemTitle: "Planteamiento del Problema",
+      problemText: "La inclusión financiera es esencial para reducir la desigualdad y promover el desarrollo económico sostenible. Sin embargo, el acceso a servicios financieros varía significativamente entre países, regiones y niveles de ingreso. Comprender estas brechas es clave para impulsar ecosistemas financieros más inclusivos.",
       objectiveTitle: "Objetivo del Dashboard",
-      objectiveText: "Proveer una visión general y completa de la inclusión financiera a nivel mundial, enfocándose en dos dimensiones principales: la titularidad de cuentas (incluyendo cuentas formales y de dinero móvil) y el comportamiento de endeudamiento (de fuentes formales e informales). El dashboard permite comparaciones interactivas por región, grupo de ingresos y características demográficas.",
+      objectiveText: "Proveer una visión completa de la inclusión financiera mundial, enfocándose en la titularidad de cuentas (formales y de dinero móvil) y el comportamiento de endeudamiento. El dashboard permite comparaciones interactivas por región, grupo de ingresos y características demográficas.",
       questionsTitle: "Preguntas Clave",
       questionsList: [
-        "¿Qué regiones tienen los niveles más altos de inclusión financiera?",
-        "¿Cómo difiere la titularidad de cuentas entre grupos de ingresos o géneros?",
-        "¿Qué grupos demográficos son más propensos a solicitar créditos informales?",
-        "¿Dónde está jugando el dinero móvil un rol clave en el acceso financiero?"
+        "¿Qué regiones muestran el progreso más significativo en inclusión financiera desde 2011?",
+        "¿Cómo se correlaciona la titularidad de cuentas con el nivel de ingresos de un país?",
+        "¿Cuál es la brecha entre los 10 países con mayor y menor acceso financiero?",
+        "¿Dónde está jugando el dinero móvil un rol clave para cerrar la brecha de acceso financiero?"
       ],
       datasetTitle: "Información del Dataset",
       datasetSource: "Fuente:",
-      datasetSourceText: "Banco Mundial – Base de Datos Global Findex 2025",
+      datasetSourceText: "Banco Mundial – Base de Datos Global Findex",
       datasetSourceLink: "https://www.worldbank.org/en/publication/globalfindex",
       datasetPeriod: "Cobertura:",
-      datasetPeriodValue: "Más de 140 países (datos de 2025)",
+      datasetPeriodValue: "Datos globales de 2011 a 2024",
       datasetScope: "Métricas:",
-      datasetScopeValue: "Titularidad de cuentas, endeudamiento, dinero móvil, demografía (adultos 15+).",
+      datasetScopeValue: "Titularidad de cuentas, endeudamiento, dinero móvil, demografía (adultos +15).",
       roleTitle: "Mi Rol",
-      roleText: "Lideré el desarrollo completo del dashboard, incluyendo: la limpieza y transformación de datos crudos del dataset Global Findex 2025, la creación de campos calculados para una clasificación regional consistente, el diseño de KPIs y visualizaciones para apoyar comparaciones regionales y demográficas, y la construcción de un dashboard bilingüe e interactivo en Looker Studio.",
+      roleText: "Lideré el desarrollo completo del dashboard, incluyendo: la limpieza y transformación de datos crudos, la creación de campos calculados, el diseño de KPIs y visualizaciones para una clara comparación, y la construcción de un dashboard bilingüe e interactivo en Looker Studio.",
       dashboardTitle: "Dashboard Interactivo de Inclusión Financiera",
-      dashboardSubtitle: "Usa los filtros dinámicos para explorar los datos de inclusión financiera por año, región, país, grupo de ingresos y demografía."
+      dashboardSubtitle: "Usa los filtros dinámicos para explorar los datos de inclusión financiera por año, región, país y grupo de ingresos."
     }
   }
 };
