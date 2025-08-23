@@ -32,9 +32,10 @@ const translations = {
     }],
     projectsTitle: "Featured Projects",
     projects: [
-        { title: "Interactive Pokédex", description: "A National Pokédex of 1,025 Pokémon built by connecting to the PokéAPI with Apps Script.", imageUrl: "assets/img/pokedex-cover.png", link: "projects/pokedex-dashboard.html", buttonText: "View Project" },
-        { title: "US Unemployment Analysis", description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "View Project" },
-        { title: "Global Financial Inclusion", description: "Visualize global trends in account ownership and borrowing behavior by region, income group, and demographics.", imageUrl: "assets/img/global-financial-inclusion-cover.png", link: "projects/global-financial-inclusion.html", buttonText: "View Project" }
+        { title: "Exchange Rate Evolution", description: "A Power BI dashboard that tracks major currencies against the CLP, updated automatically via the Central Bank API.", imageUrl: "assets/img/exchange-rate-cover.png", link: "projects/exchange-rate-evolution.html", buttonText: "View Project", tool: "powerbi" },
+        { title: "Interactive Pokédex", description: "A National Pokédex of 1,025 Pokémon built by connecting to the PokéAPI with Apps Script.", imageUrl: "assets/img/pokedex-cover.png", link: "projects/pokedex-dashboard.html", buttonText: "View Project", tool: "looker" },
+        { title: "US Unemployment Analysis", description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "View Project", tool: "looker" },
+        { title: "Global Financial Inclusion", description: "Visualize global trends in account ownership and borrowing behavior by region, income group, and demographics.", imageUrl: "assets/img/global-financial-inclusion-cover.png", link: "projects/global-financial-inclusion.html", buttonText: "View Project", tool: "looker" }
     ],
     viewAllBtn: "View All Projects",
 
@@ -179,12 +180,52 @@ const translations = {
     // --- Projects Page Content ---
     projects_page_title: "Projects",
     projects_list: [
-        { id: "project-pokedex", title: "Interactive Pokédex", description: "An interactive dashboard with data from over 1,000 Pokémon.", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.png", buttonText: "View Project" },
-        { id: "project-unemployment", title: "Unemployment in America", description: "Analysis of unemployment trends across U.S. states and metro areas.", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png", buttonText: "View Project" },
-        { id: "project-financial-inclusion", title: "Global Financial Inclusion", description: "Visualizing global trends in account ownership and borrowing behaviors.", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png", buttonText: "View Project" }
+        { id: "project-exchange-rate", title: "Exchange Rate Evolution", description: "Real-time tracking of USD, EUR, and GBP against the Chilean Peso.", link: "projects/exchange-rate-evolution.html", imageUrl: "assets/img/exchange-rate-cover.png", buttonText: "View Project", tool: "powerbi" },
+        { id: "project-pokedex", title: "Interactive Pokédex", description: "An interactive dashboard with data from over 1,000 Pokémon.", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.png", buttonText: "View Project", tool: "looker" },
+        { id: "project-unemployment", title: "Unemployment in America", description: "Analysis of unemployment trends across U.S. states and metro areas.", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png", buttonText: "View Project", tool: "looker" },
+        { id: "project-financial-inclusion", title: "Global Financial Inclusion", description: "Visualizing global trends in account ownership and borrowing behaviors.", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png", buttonText: "View Project", tool: "looker" }
     ],
 
     // --- CASE STUDY DATA ---
+    project_exchange_rate: {
+      pageTitle: "Exchange Rate Evolution – Live Power BI Dashboard",
+      iframeEmbed: `<iframe title="Exchange rate evolution" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>`,
+      backButton: "Back to Projects",
+      linkedinButton: "Share on LinkedIn",
+      xButton: "Share on X",
+      lookerButton: "View on Power BI",
+      executiveSummary: [
+        {
+          icon: "fas fa-cogs",
+          title: "API Automation",
+          text: "Connects directly to the Central Bank of Chile's API to ensure data is always current, eliminating manual updates."
+        },
+        {
+          icon: "fas fa-sync-alt",
+          title: "Real-Time Indicators",
+          text: "Provides up-to-the-minute exchange rates for USD, EUR, and GBP, including daily fluctuation and historical trends."
+        },
+        {
+          icon: "fas fa-chart-line",
+          title: "30-Day Trend Analysis",
+          text: "Visualizes the performance of each currency against the Chilean Peso over the last 30 days for easy strategic comparison."
+        }
+      ],
+      problemTitle: "The Challenge of Volatility",
+      problemText: "Tracking foreign exchange rates in a volatile market requires constant monitoring. Businesses and individuals need a reliable, up-to-date, and easy-to-understand tool to make informed financial decisions without relying on static reports or manual data gathering.",
+      objectiveTitle: "Dashboard Objective",
+      objectiveText: "To create a self-updating, centralized dashboard that offers a clear and immediate overview of the value and recent evolution of the most relevant currencies (USD, EUR, GBP) against the Chilean Peso, using Power BI and a direct API connection.",
+      datasetTitle: "Technology & Data",
+      datasetSource: "Data Source:",
+      datasetSourceText: "Central Bank of Chile API",
+      datasetSourceLink: "https://www.bcentral.cl/web/banco-central/areas/mercados-financieros/api",
+      datasetScope: "Tools:",
+      datasetScopeValue: "Power BI, Power Query (M), DAX.",
+      roleTitle: "My Role",
+      roleText: "As the sole developer, I designed the entire solution: from establishing the API connection and transforming the data with Power Query to modeling it and creating the final interactive visualizations in Power BI.",
+      dashboardTitle: "Live Exchange Rate Dashboard",
+      dashboardSubtitle: `This report is automatically updated. Explore the 30-day trends and current values for each currency. You can view it in full screen in Power BI.`
+    },
     project_pokedex: {
       pageTitle: "Interactive Pokédex Dashboard – Powered by Looker Studio",
       lookerStudioUrl: "https://lookerstudio.google.com/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF",
@@ -356,9 +397,10 @@ const translations = {
     }],
     projectsTitle: "Proyectos Destacados",
     projects: [
-        { title: "Pokédex Interactiva", description: "Una Pokédex Nacional de 1.025 Pokémon construida conectándose a la PokéAPI con Apps Script.", imageUrl: "assets/img/pokedex-cover.png", link: "projects/pokedex-dashboard.html", buttonText: "Ver Proyecto" },
-        { title: "Análisis de Desempleo en EE.UU.", description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "Ver Proyecto" },
-        { title: "Inclusión Financiera Global", description: "Visualiza tendencias globales de titularidad de cuentas y comportamiento de crédito por región, ingreso y demografía.", imageUrl: "assets/img/global-financial-inclusion-cover.png", link: "projects/global-financial-inclusion.html", buttonText: "Ver Proyecto" }
+        { title: "Evolución del Tipo de Cambio", description: "Un dashboard en Power BI que monitorea las principales divisas frente al CLP, actualizado automáticamente vía API del Banco Central.", imageUrl: "assets/img/exchange-rate-cover.png", link: "projects/exchange-rate-evolution.html", buttonText: "Ver Proyecto", tool: "powerbi" },
+        { title: "Pokédex Interactiva", description: "Una Pokédex Nacional de 1.025 Pokémon construida conectándose a la PokéAPI con Apps Script.", imageUrl: "assets/img/pokedex-cover.png", link: "projects/pokedex-dashboard.html", buttonText: "Ver Proyecto", tool: "looker" },
+        { title: "Análisis de Desempleo en EE.UU.", description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "Ver Proyecto", tool: "looker" },
+        { title: "Inclusión Financiera Global", description: "Visualiza tendencias globales de titularidad de cuentas y comportamiento de crédito por región, ingreso y demografía.", imageUrl: "assets/img/global-financial-inclusion-cover.png", link: "projects/global-financial-inclusion.html", buttonText: "Ver Proyecto", tool: "looker" }
     ],
     viewAllBtn: "Ver Todos los Proyectos",
     
@@ -396,12 +438,52 @@ const translations = {
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
     projects_list: [
-        { id: "project-pokedex", title: "Pokédex Interactiva", description: "Un dashboard interactivo con datos de más de 1.000 Pokémon.", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.png", buttonText: "Ver Proyecto" },
-        { id: "project-unemployment", title: "Desempleo en América", description: "Análisis de tendencias de desempleo en estados y áreas metropolitanas de EE.UU.", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png", buttonText: "Ver Proyecto" },
-        { id: "project-financial-inclusion", title: "Inclusión Financiera Global", description: "Visualización de tendencias globales en posesión de cuentas y comportamientos de crédito.", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png", buttonText: "Ver Proyecto" }
+        { id: "project-exchange-rate", title: "Evolución del Tipo de Cambio", description: "Seguimiento en tiempo real del USD, EUR y GBP frente al peso chileno.", link: "projects/exchange-rate-evolution.html", imageUrl: "assets/img/exchange-rate-cover.png", buttonText: "Ver Proyecto", tool: "powerbi" },
+        { id: "project-pokedex", title: "Pokédex Interactiva", description: "Un dashboard interactivo con datos de más de 1.000 Pokémon.", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.png", buttonText: "Ver Proyecto", tool: "looker" },
+        { id: "project-unemployment", title: "Desempleo en América", description: "Análisis de tendencias de desempleo en estados y áreas metropolitanas de EE.UU.", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.png", buttonText: "Ver Proyecto", tool: "looker" },
+        { id: "project-financial-inclusion", title: "Inclusión Financiera Global", description: "Visualización de tendencias globales en posesión de cuentas y comportamientos de crédito.", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.png", buttonText: "Ver Proyecto", tool: "looker" }
     ],
 
     // --- CASE STUDY DATA ---
+    project_exchange_rate: {
+      pageTitle: "Evolución del Tipo de Cambio – Dashboard en Power BI",
+      iframeEmbed: `<iframe title="Exchange rate evolution" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>`,
+      backButton: "Volver a Proyectos",
+      linkedinButton: "Compartir en LinkedIn",
+      xButton: "Compartir en X",
+      lookerButton: "Ver en Power BI",
+      executiveSummary: [
+        {
+          icon: "fas fa-cogs",
+          title: "Automatización con API",
+          text: "Se conecta directamente a la API del Banco Central de Chile para asegurar que los datos estén siempre actualizados, eliminando la carga manual."
+        },
+        {
+          icon: "fas fa-sync-alt",
+          title: "Indicadores en Tiempo Real",
+          text: "Proporciona el valor del dólar, euro y libra al día, incluyendo la fluctuación diaria y tendencias históricas para un análisis rápido."
+        },
+        {
+          icon: "fas fa-chart-line",
+          title: "Análisis de Tendencia (30 Días)",
+          text: "Visualiza el comportamiento de cada divisa frente al peso chileno durante los últimos 30 días para una fácil comparación estratégica."
+        }
+      ],
+      problemTitle: "El Desafío de la Volatilidad",
+      problemText: "Monitorear el tipo de cambio en un mercado volátil exige una vigilancia constante. Empresas y personas necesitan una herramienta confiable, actualizada y simple para tomar decisiones financieras informadas sin depender de reportes estáticos.",
+      objectiveTitle: "Objetivo del Dashboard",
+      objectiveText: "Crear un dashboard auto-actualizable y centralizado que ofrezca una visión clara e inmediata del valor y la evolución reciente de las divisas más relevantes (USD, EUR, GBP) frente al peso chileno, utilizando Power BI y una conexión directa vía API.",
+      datasetTitle: "Tecnología y Datos",
+      datasetSource: "Fuente de Datos:",
+      datasetSourceText: "API del Banco Central de Chile",
+      datasetSourceLink: "https://www.bcentral.cl/web/banco-central/areas/mercados-financieros/api",
+      datasetScope: "Herramientas:",
+      datasetScopeValue: "Power BI, Power Query (M), DAX.",
+      roleTitle: "Mi Rol",
+      roleText: "Como único desarrollador, diseñé la solución completa: desde establecer la conexión a la API y transformar los datos con Power Query, hasta modelarlos y crear las visualizaciones interactivas finales en Power BI.",
+      dashboardTitle: "Dashboard de Tipo de Cambio en Vivo",
+      dashboardSubtitle: `Este reporte se actualiza automáticamente. Explora las tendencias de los últimos 30 días y los valores actuales de cada divisa. Puedes verlo en pantalla completa en Power BI.`
+    },
     project_pokedex: {
       pageTitle: "Dashboard Interactivo de Pokédex – Con Looker Studio",
       lookerStudioUrl: "https://lookerstudio.google.com/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF",
@@ -780,10 +862,20 @@ function populateProjectsPage(lang, basePath) {
             // Desktop Interactive List View
             if (!previewCol) return;
             (data.projects_list || []).forEach(project => {
+                let iconHtml = '';
+                if (project.tool === 'powerbi') {
+                    iconHtml = `<img src="${basePath}assets/img/logos/power-bi.png" alt="Power BI Logo" class="project-tool-icon">`;
+                } else if (project.tool === 'looker') {
+                    iconHtml = `<img src="${basePath}assets/img/logos/looker-studio.png" alt="Looker Studio Logo" class="project-tool-icon">`;
+                }
+
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `
                     <a href="${project.link}" data-preview-target="${project.id}">
-                        <span class="project-list-title">${project.title}</span>
+                        <span class="project-list-title">
+                            ${iconHtml}
+                            ${project.title}
+                        </span>
                         <span class="project-list-description">${project.description}</span>
                     </a>`;
                 listUl.appendChild(listItem);
@@ -818,6 +910,74 @@ function populateProjectsPage(lang, basePath) {
     }
 }
 
+function populateExchangeRatePage(lang, basePath) {
+    const data = translations[lang].project_exchange_rate || translations.en.project_exchange_rate;
+    const pageData = translations[lang] || translations.en;
+    
+    if (getEl('project-title')) getEl('project-title').textContent = data.pageTitle;
+    const btnGroup = getEl('project-button-group');
+    if (btnGroup) {
+      const pageUrl = window.location.href;
+      const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+      const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(data.pageTitle)}`;
+      
+      btnGroup.innerHTML = `
+        <a href="${basePath}projects.html" class="button btn-back"><i class="fas fa-arrow-left"></i> ${data.backButton || pageData.navProjects}</a>
+        <a href="${linkedinUrl}" class="button btn-linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> ${data.linkedinButton}</a>
+        <a href="${twitterUrl}" class="button btn-x" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> ${data.xButton}</a>
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" class="button btn-looker" target="_blank" rel="noopener"><i class="fas fa-chart-bar"></i> ${data.lookerButton}</a>
+      `;
+    }
+
+    const summarySection = getEl('project-executive-summary');
+    if (summarySection && data.executiveSummary) {
+        summarySection.innerHTML = data.executiveSummary.map(item => `
+            <div class="summary-card">
+                <i class="${item.icon}"></i>
+                <div class="summary-card-text">
+                    <h3>${item.title}</h3>
+                    <p>${item.text}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    const sidebar = getEl('project-sidebar');
+    if (sidebar && data.problemTitle) {
+        sidebar.innerHTML = `
+            <div class="sidebar-section">
+                <h3><i class="fas fa-exclamation-circle"></i> ${data.problemTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>${data.problemText}</p></div>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-bullseye"></i> ${data.objectiveTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>${data.objectiveText}</p></div>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-user-tie"></i> ${data.roleTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>${data.roleText}</p></div>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-database"></i> ${data.datasetTitle} <i class="fas fa-chevron-down more-icon"></i></h3>
+                <div class="content"><p>
+                    <strong>${data.datasetSource}</strong> <a href="${data.datasetSourceLink}" target="_blank" rel="noopener">${data.datasetSourceText}</a><br>
+                    <strong>${data.datasetScope}</strong> ${data.datasetScopeValue}
+                </p></div>
+            </div>
+        `;
+        setTimeout(() => setupAccordion('#project-sidebar', '.sidebar-section h3'), 0);
+    }
+  
+    const dashboardContent = getEl('project-dashboard-content');
+    if(dashboardContent){
+        const titleEl = dashboardContent.querySelector('#dashboard-title');
+        const subtitleEl = dashboardContent.querySelector('#dashboard-subtitle');
+        const embedEl = dashboardContent.querySelector('#dashboard-embed-container');
+        if (titleEl) titleEl.textContent = data.dashboardTitle;
+        if (subtitleEl) subtitleEl.innerHTML = data.dashboardSubtitle;
+        if (embedEl) embedEl.innerHTML = data.iframeEmbed;
+    }
+}
 
 function populatePokedexPage(lang, basePath) {
     const data = translations[lang].project_pokedex || translations.en.project_pokedex;
@@ -1067,6 +1227,8 @@ function setLanguage(lang, basePath) {
         populateUnemploymentPage(lang, basePath);
     } else if (bodyId === 'page-financial-inclusion') {
         populateFinancialInclusionPage(lang, basePath);
+    } else if (bodyId === 'page-exchange-rate') {
+        populateExchangeRatePage(lang, basePath);
     }
   }
 
