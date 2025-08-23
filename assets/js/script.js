@@ -203,7 +203,7 @@ const translations = {
         {
           icon: "fas fa-sync-alt",
           title: "Real-Time Indicators",
-          text: "Provides up-to-the-minute exchange rates for USD, EUR, and GBP, including daily fluctuation and historical trends."
+          text: "Provides up-to-the-minute exchange rates for USD, EUR, and GBP, including daily fluctuation and recent trends."
         },
         {
           icon: "fas fa-chart-line",
@@ -218,13 +218,13 @@ const translations = {
       datasetTitle: "Technology & Data",
       datasetSource: "Data Source:",
       datasetSourceText: "Central Bank of Chile API",
-      datasetSourceLink: "https://www.bcentral.cl/web/banco-central/areas/mercados-financieros/api",
+      datasetSourceLink: "https://si3.bcentral.cl/siete",
       datasetScope: "Tools:",
       datasetScopeValue: "Power BI, Power Query (M), DAX.",
       roleTitle: "My Role",
       roleText: "As the sole developer, I designed the entire solution: from establishing the API connection and transforming the data with Power Query to modeling it and creating the final interactive visualizations in Power BI.",
       dashboardTitle: "Live Exchange Rate Dashboard",
-      dashboardSubtitle: `This report is automatically updated. Explore the 30-day trends and current values for each currency. You can view it in full screen in Power BI.`
+      dashboardSubtitle: `This report is automatically updated. Explore the 30-day trends and current values for each currency. You can view it in full screen <a href="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" target="_blank" rel="noopener" class="subtitle-link">here</a>.`
     },
     project_pokedex: {
       pageTitle: "Interactive Pokédex Dashboard – Powered by Looker Studio",
@@ -461,7 +461,7 @@ const translations = {
         {
           icon: "fas fa-sync-alt",
           title: "Indicadores en Tiempo Real",
-          text: "Proporciona el valor del dólar, euro y libra al día, incluyendo la fluctuación diaria y tendencias históricas para un análisis rápido."
+          text: "Proporciona el valor del dólar, euro y libra al día, incluyendo la fluctuación diaria y tendencias recientes para un análisis rápido."
         },
         {
           icon: "fas fa-chart-line",
@@ -476,13 +476,13 @@ const translations = {
       datasetTitle: "Tecnología y Datos",
       datasetSource: "Fuente de Datos:",
       datasetSourceText: "API del Banco Central de Chile",
-      datasetSourceLink: "https://www.bcentral.cl/web/banco-central/areas/mercados-financieros/api",
+      datasetSourceLink: "https://si3.bcentral.cl/siete",
       datasetScope: "Herramientas:",
       datasetScopeValue: "Power BI, Power Query (M), DAX.",
       roleTitle: "Mi Rol",
       roleText: "Como único desarrollador, diseñé la solución completa: desde establecer la conexión a la API y transformar los datos con Power Query, hasta modelarlos y crear las visualizaciones interactivas finales en Power BI.",
       dashboardTitle: "Dashboard de Tipo de Cambio en Vivo",
-      dashboardSubtitle: `Este reporte se actualiza automáticamente. Explora las tendencias de los últimos 30 días y los valores actuales de cada divisa. Puedes verlo en pantalla completa en Power BI.`
+      dashboardSubtitle: `Este reporte se actualiza automáticamente. Explora las tendencias de los últimos 30 días y los valores actuales de cada divisa. Puedes verlo en pantalla completa <a href="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" target="_blank" rel="noopener" class="subtitle-link">aquí</a>.`
     },
     project_pokedex: {
       pageTitle: "Dashboard Interactivo de Pokédex – Con Looker Studio",
