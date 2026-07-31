@@ -737,6 +737,19 @@ function getEl(id) {
 function setupGlobalInteractions() {
   const menuToggle = getEl('menu-toggle');
   const mobileNav = getEl('mobile-nav');
+  const header = document.querySelector('header');
+
+  if (header) {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
 
   if (menuToggle && mobileNav) {
     menuToggle.setAttribute('aria-expanded', 'false');
