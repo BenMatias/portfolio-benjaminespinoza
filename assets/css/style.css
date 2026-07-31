@@ -153,12 +153,71 @@ nav.desktop-nav { display: flex; gap: 1.5rem; align-items: center; }
 nav.desktop-nav a { color: var(--white); font-weight: 600; transition: color 0.2s ease; }
 nav.desktop-nav a:hover { color: #00f2fe; }
 .lang-toggle { background: none; border: none; color: inherit; font-family: inherit; font-size: inherit; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; }
-.hamburger { display: none; font-size: 1.5rem; background: none; border: none; color: var(--white); cursor: pointer; z-index: 10001; }
-.mobile-nav { display: none; flex-direction: column; background: rgba(11, 19, 41, 0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); position: absolute; top: 100%; left: 0; width: 100%; }
-.mobile-nav.show { 
-    display: flex; position: fixed; top: 65px; left: 0; right: 0; bottom: 0; z-index: 9999;
+.hamburger { display: none; font-size: 1.6rem; background: none; border: none; color: var(--white); cursor: pointer; z-index: 10001; padding: 0.3rem 0.5rem; border-radius: 8px; transition: background 0.2s ease; }
+.hamburger:hover { background: rgba(0, 230, 118, 0.15); }
+
+/* Mobile Navigation - themed to match hero */
+.mobile-nav { 
+  display: none; 
+  flex-direction: column; 
+  background: rgba(10, 16, 30, 0.97); 
+  backdrop-filter: blur(24px); 
+  -webkit-backdrop-filter: blur(24px); 
+  position: absolute; 
+  top: 100%; 
+  left: 0; 
+  width: 100%; 
+  border-top: 1px solid rgba(0, 230, 118, 0.2);
 }
-.mobile-nav a, .mobile-nav .lang-toggle-wrapper { padding: 1rem; border-top: 1px solid #ffffff22; text-align: center; }
+.mobile-nav.show { 
+  display: flex; 
+  position: fixed; 
+  top: 65px; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  z-index: 9999;
+  overflow-y: auto;
+}
+.mobile-nav a { 
+  padding: 1rem 1.5rem; 
+  border-top: 1px solid rgba(255, 255, 255, 0.07); 
+  text-align: center; 
+  color: #e0e1dd !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  font-family: var(--font-display);
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease, background 0.2s ease;
+  display: block;
+}
+.mobile-nav a:hover { 
+  color: #00e676 !important; 
+  background: rgba(0, 230, 118, 0.06);
+}
+.mobile-nav a i { margin-right: 0.5rem; color: #00e676; }
+.mobile-nav .lang-toggle-wrapper { 
+  padding: 1rem 1.5rem; 
+  border-top: 1px solid rgba(255, 255, 255, 0.07); 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.mobile-nav .lang-toggle { 
+  color: #e0e1dd; 
+  font-family: var(--font-display); 
+  font-weight: 700;
+  padding: 0.45rem 1.2rem;
+  border: 1px solid rgba(0, 230, 118, 0.35);
+  border-radius: 50px;
+  background: rgba(0, 230, 118, 0.08);
+  transition: all 0.2s ease;
+}
+.mobile-nav .lang-toggle:hover {
+  background: #00e676;
+  color: #0d1b2a;
+  border-color: #00e676;
+}
 
 
 /* --- HERO SECTION (INDEX) --- */
@@ -1230,17 +1289,62 @@ p.timeline-company a:hover {
 @media (max-width: 768px) {
   nav.desktop-nav { display: none; }
   .hamburger { display: block; }
+
+  /* Hero: ocultar imagen y wrapper en mobile para eliminar espacio vacío */
+  .hero-image,
+  .hero-image-wrapper,
+  .hero-organic-shape {
+    display: none;
+  }
+
   .hero-content { 
     flex-direction: column;
     text-align: center; 
+    justify-content: center;
   }
-  .hero-image {
+
+  .hero-text {
+    padding-bottom: 2.5rem;
+    flex: none;
+    width: 100%;
+  }
+
+  .hero-buttons { 
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  .about-image { display: none; }
+
+  /* About Me buttons: centrados en mobile */
+  .about-action-buttons {
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  /* Footer: ocultar logo en mobile para no duplicar con header */
+  .footer-brand .logo {
     display: none;
   }
-  .about-image {
-    display: none;
+
+  .footer-tagline {
+    text-align: center;
+    margin: 0 auto;
   }
-  .hero-buttons { justify-content: center; }
+
+  .footer-brand {
+    text-align: center;
+  }
+
+  /* About Me: ajustar visual side en mobile */
+  .about-visual-side {
+    min-height: 300px;
+  }
+
   .impact-grid { grid-template-columns: 1fr; }
   .carousel-btn.prev { left: 5px; }
   .carousel-btn.next { right: 5px; }
@@ -1257,6 +1361,18 @@ p.timeline-company a:hover {
   .about-container { text-align: center; }
   .section-title { text-align: center; border-left: none; padding-left: 0; }
   .projects .section-title { text-align: center; }
+
+  /* Botones about me: centrados y apilados en pantallas muy pequeñas si no caben */
+  .about-action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
 }
 
 /* --- ESTILOS PARA ENLACE RESALTADO EN SUBTÍTULOS --- */
@@ -1936,4 +2052,3 @@ p.timeline-company a:hover {
     border-radius: 50%;
   }
 }
-"
