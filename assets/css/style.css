@@ -684,46 +684,137 @@ p.timeline-company a:hover {
 }
 .credly-link-styled { display: inline-block; margin-top: 1rem; font-weight: 600; }
 
-/* --- FOOTER (UNIFICADO EN GRAFITO & ESMERALDA) --- */
+/* --- FOOTER RESTRUCTURADO CON ALTA PERSONALIDAD Y GLOW ORGÁNICO --- */
 .footer {
-  background-color: var(--dark-blue);
-  color: #e0e1dd;
-  padding: 3rem 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+  background-color: #0b1622;
+  color: var(--white);
+  padding: 5rem 2rem 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
   border-top: 1px solid rgba(0, 230, 118, 0.2);
 }
-.footer-contacts a {
-  font-weight: 600;
+
+.footer-organic-shape {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 280px;
+  background: linear-gradient(135deg, rgba(0, 230, 118, 0.18), rgba(0, 180, 216, 0.18));
+  border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;
+  filter: blur(55px);
+  animation: organicMorph 16s ease-in-out infinite alternate;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto 3.5rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-brand {
+  flex: 1 1 320px;
+}
+
+.footer-brand .logo img {
+  height: 46px;
+  margin-bottom: 1rem;
+}
+
+.footer-tagline {
+  color: #e0e1dd;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 350px;
+}
+
+.footer-nav, .footer-contact-block {
+  flex: 1 1 200px;
+}
+
+.footer-nav h4, .footer-contact-block h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
   color: #ffffff;
-  transition: color 0.3s ease;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  margin-bottom: 0.65rem;
+}
+
+.footer-nav a {
+  color: #e0e1dd;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.25s ease, padding-left 0.25s ease;
+  display: inline-block;
+}
+
+.footer-nav a:hover {
+  color: #00e676;
+  padding-left: 6px;
+}
+
+.footer-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.footer-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-}
-.footer-contacts a:hover {
-  color: var(--accent);
-}
-.footer-socials {
-  display: flex;
-  gap: 1.5rem;
-}
-.footer-socials a {
-  font-size: 1.6rem;
-  color: #ffffff;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-.footer-socials a:hover {
-  color: var(--accent);
-  transform: translateY(-3px);
-}
-.footer-bottom p {
+  gap: 0.6rem;
+  padding: 0.55rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50px;
+  color: #ffffff !important;
   font-size: 0.9rem;
-  color: #e0e1dd;
-  opacity: 0.85;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.footer-pill:hover {
+  background: #00e676;
+  color: #0d1b2a !important;
+  border-color: #00e676;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 230, 118, 0.35);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-bottom p {
+  font-size: 0.88rem;
+  color: #8899a6;
 }
 
 /* --- ESTILOS PARA "MODO INMERSIVO" DE PROYECTOS (GENERAL) --- */
