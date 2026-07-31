@@ -27,6 +27,13 @@ const translations = {
     filterPowerBI: "Power BI",
     filterLooker: "Looker Studio",
 
+    // --- Section Tag Pills & Buttons ---
+    tagIntroduce: "LET ME INTRODUCE MYSELF",
+    tagImpact: "WHAT I DO FOR YOU",
+    tagWork: "SELECTED WORK",
+    btnContact: "Contact Me",
+    btnDownloadCV: "Download CV",
+
     // --- Index Page Content ---
     heroTitle: "Business & Data Analyst focused on transforming data into decisions",
     heroSubtitle: "Helping businesses make better decisions through analytics and business intelligence.",
@@ -442,6 +449,13 @@ const translations = {
     filterAll: "Todos los Proyectos",
     filterPowerBI: "Power BI",
     filterLooker: "Looker Studio",
+
+    // --- Section Tag Pills & Buttons ---
+    tagIntroduce: "PERMÍTEME PRESENTARME",
+    tagImpact: "GENERACIÓN DE VALOR E IMPACTO",
+    tagWork: "PROYECTOS DESTACADOS",
+    btnContact: "Contáctame",
+    btnDownloadCV: "Descargar CV",
 
     // --- Index Page Content ---
     heroTitle: "Business & Data Analyst enfocado en transformar datos en decisiones",
@@ -1634,7 +1648,7 @@ const GeminiChatWidget = {
     const isEn = lang === 'en';
     const toggleSpan = getEl('gemini-toggle-text-span');
     if (toggleSpan) {
-      toggleSpan.textContent = isEn ? 'Ask Gemini AI' : 'Preguntar a Gemini';
+      toggleSpan.textContent = isEn ? 'Ask Gemini AI' : 'Pregúntale a Gemini';
     }
     const statusEl = getEl('gemini-status-text');
     if (statusEl) {
@@ -1642,8 +1656,28 @@ const GeminiChatWidget = {
     }
     const inputEl = getEl('gemini-chat-input');
     if (inputEl) {
-      inputEl.placeholder = isEn ? 'Ask a question...' : 'Escribe tu pregunta...';
+      inputEl.placeholder = isEn ? 'Ask a question...' : 'Haz una pregunta sobre el portafolio...';
     }
+
+    const selectEl = getEl('gemini-dashboard-select');
+    if (selectEl) {
+      selectEl.innerHTML = `
+        <option value="general">${isEn ? 'Benjamín Profile & Overview' : 'Perfil de Benjamín & General'}</option>
+        <option value="publications">${isEn ? 'Publications & CIPER' : 'Publicaciones & CIPER'}</option>
+        <option value="pokedex">Pokédex Interactiva</option>
+        <option value="exchange">${isEn ? 'Exchange Rate Evolution' : 'Evolución Tipo de Cambio'}</option>
+        <option value="unemployment">${isEn ? 'US Unemployment' : 'Desempleo en EE.UU.'}</option>
+        <option value="inclusion">${isEn ? 'Global Financial Inclusion' : 'Inclusión Financiera Global'}</option>
+        <option value="neo">NEO Tracker (NASA)</option>
+      `;
+      selectEl.value = this.activeContextKey;
+    }
+
+    const contextLabel = document.querySelector('.gemini-context-bar label');
+    if (contextLabel) {
+      contextLabel.innerHTML = `<i class="fas fa-database"></i> ${isEn ? 'Context:' : 'Contexto:'}`;
+    }
+
     this.renderSuggestedPrompts();
   },
 
@@ -1800,10 +1834,15 @@ const GeminiChatWidget = {
   },
 
   async callGeminiAPI(apiKey, prompt, context) {
+    const isEn = currentLang === 'en';
+    const langInstruction = isEn 
+      ? "Always answer in English in a professional, helpful, and concise tone." 
+      : "Responde SIEMPRE en español de manera profesional, clara, amigable y concisa.";
+
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
     const systemInstruction = `You are a professional AI assistant named Gemini Assistant on Benjamín Espinoza's Business & Data Analyst portfolio.
 Your goal is to answer questions from recruiters or users about Benjamín's dashboards, publications, and experience.
-Always reply in the user's language.
+${langInstruction}
 
 Current context:
 ${context}`;
