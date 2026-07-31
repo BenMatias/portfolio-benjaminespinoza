@@ -372,7 +372,7 @@ nav.desktop-nav a:hover { color: #00f2fe; }
   flex-wrap: wrap;
 }
 
-/* --- SECCIÓN DE IMPACTO (CON PRIMERA TARJETA DESTACADA VERDE) --- */
+/* --- SECCIÓN DE IMPACTO (TARJETAS UNIFORMES CON HIGHLIGHT INTERACTIVO AL HOVER) --- */
 .impact { 
   background-color: #0d1b2a; 
   padding: 5rem 0;
@@ -390,39 +390,51 @@ nav.desktop-nav a:hover { color: #00f2fe; }
   padding: 2.2rem 1.8rem; 
   border-radius: 18px; 
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25); 
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
 }
 
+.impact-card i { 
+  font-size: 2.2rem; 
+  color: var(--accent); 
+  margin-bottom: 1.25rem; 
+  transition: color 0.3s ease, transform 0.3s ease; 
+}
+.impact-card h3 { 
+  font-size: 1.2rem; 
+  color: #ffffff; 
+  font-family: var(--font-display); 
+  font-weight: 700; 
+  margin-bottom: 0.6rem; 
+  transition: color 0.3s ease; 
+}
+.impact-card p { 
+  font-size: 0.96rem; 
+  color: #e0e1dd; 
+  line-height: 1.6; 
+  transition: color 0.3s ease; 
+}
+
+/* EFECTO DE HOVER: TODAS LAS TARJETAS RESALTAN EN ESMERALDA SÓLIDO CON TEXTO EN OSCURO */
 .impact-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent);
-  box-shadow: 0 14px 35px rgba(0, 230, 118, 0.15);
-}
-
-.impact-card i { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.25rem; }
-.impact-card h3 { font-size: 1.2rem; color: #ffffff; font-family: var(--font-display); font-weight: 700; margin-bottom: 0.6rem; }
-.impact-card p { font-size: 0.96rem; color: #e0e1dd; line-height: 1.6; }
-
-/* PRIMERA TARJETA EN VERDE ESMERALDA SÓLIDO DESTACADO (ESTILO REFERENCIA DE SERVICIOS) */
-.impact-grid .impact-card:first-child {
   background: #00e676;
-  color: #0d1b2a;
-  border: none;
-  box-shadow: 0 14px 35px rgba(0, 230, 118, 0.35);
+  border-color: #00e676;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 230, 118, 0.4);
 }
 
-.impact-grid .impact-card:first-child i {
+.impact-card:hover i,
+.impact-card:hover h3 {
   color: #0d1b2a;
 }
 
-.impact-grid .impact-card:first-child h3 {
+.impact-card:hover p {
   color: #0d1b2a;
-  font-weight: 800;
-}
-
-.impact-grid .impact-card:first-child p {
-  color: #1b263b;
   font-weight: 600;
+}
+
+.impact-card:hover i {
+  transform: scale(1.1);
 }
 
 /* --- PROJECTS CAROUSEL (HOME) --- */
