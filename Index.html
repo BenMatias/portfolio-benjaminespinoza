@@ -69,6 +69,7 @@
         <div class="lang-toggle-wrapper"><button class="lang-toggle" aria-label="Change language"></button></div>
       </div>
     </header>
+
     <section class="hero section">
       <div class="hero-content container">
         <div class="hero-text">
@@ -79,48 +80,71 @@
             <a href="projects.html" class="btn btn-hero-primary" id="btn-projects"></a>
             <a href="cv.html" class="btn btn-hero-secondary" id="btn-resume"></a>
           </div>
-          <div class="hero-kpi-stats">
-            <div class="kpi-stat-card">
-              <span class="kpi-num">5+</span>
-              <span class="kpi-label" data-translate="kpiDashboards">Live Dashboards</span>
-            </div>
-            <div class="kpi-stat-card">
-              <span class="kpi-num">50+</span>
-              <span class="kpi-label" data-translate="kpiReports">Executive Reports</span>
-            </div>
-            <div class="kpi-stat-card">
-              <span class="kpi-num">60h/mo</span>
-              <span class="kpi-label" data-translate="kpiAutomation">ETL Automation Saved</span>
-            </div>
-          </div>
         </div>
-        <div class="hero-image">
-          <img src="assets/img/Profile.png" alt="Ben Matias portrait" decoding="async">
+        <div class="hero-image-wrapper">
+          <div class="hero-organic-shape"></div>
+          <div class="hero-image">
+            <img src="assets/img/Profile.png" alt="Ben Matias portrait" decoding="async">
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- DIVISOR DE OLA ORGÁNICA SUAVE -->
+    <div class="hero-wave-divider">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 40C240 100 480 0 720 40C960 80 1200 20 1440 60V120H0V40Z" fill="#0d1b2a"/>
+      </svg>
+    </div>
   </div>
 
   <main>
+    <!-- SECCIÓN ABOUT ME (ESTILO REFERENCIA CON BADGES FLOTANTES) -->
     <section class="about-me section" id="about">
       <div class="about-container container">
-        <div class="about-image">
-          <img src="assets/img/Profile.jpeg" alt="Ben Matias Profile">
+        <div class="about-visual-side">
+          <div class="about-image-card">
+            <img src="assets/img/Profile.jpeg" alt="Ben Matias Profile">
+          </div>
+          <!-- BADGES FLOTANTES ALREDEDOR DE LA FOTO DE PERFIL -->
+          <div class="floating-badge badge-top-right">
+            <div class="badge-num">5+</div>
+            <div class="badge-lbl" data-translate="kpiDashboards">Live Dashboards</div>
+          </div>
+          <div class="floating-badge badge-top-left">
+            <div class="badge-num">50+</div>
+            <div class="badge-lbl" data-translate="kpiReports">Executive Reports</div>
+          </div>
+          <div class="floating-badge badge-bottom-right">
+            <div class="badge-num">60h/mo</div>
+            <div class="badge-lbl" data-translate="kpiAutomation">ETL Saved/Mo</div>
+          </div>
         </div>
-        <div class="about-text">
+        <div class="about-text-side">
+          <span class="section-tag-pill">LET ME INTRODUCE MYSELF</span>
           <h2 id="about-title" class="section-title"></h2>
           <div id="about-text-content"></div>
+          <div class="about-action-buttons">
+            <a href="mailto:bmatiasespinoza@gmail.com" class="btn btn-emerald"><i class="fas fa-paper-plane"></i> Contact Me</a>
+            <a href="https://benmatias.com/assets/Benjamin_Espinoza_CV.pdf" download class="btn btn-outline-white"><i class="fas fa-download"></i> Download CV</a>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- SECCIÓN DE IMPACTO (SERVICIOS/IMPACTO CON TARJETA DESTACADA EN VERDE) -->
     <section class="impact section" id="impact">
       <div class="impact-container container">
+        <div class="section-tag-wrapper"><span class="section-tag-pill">WHAT I DO FOR YOU</span></div>
         <h2 id="impact-title" class="section-title"></h2>
         <div class="impact-grid"></div>
       </div>
     </section>
+
+    <!-- CARRUSEL DE PROYECTOS -->
     <section class="projects section" id="projects">
       <div class="projects-container container">
+        <div class="section-tag-wrapper"><span class="section-tag-pill">SELECTED WORK</span></div>
         <h2 id="projects-title" class="section-title"></h2>
         <div class="carousel-wrapper">
           <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
