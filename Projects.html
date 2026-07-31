@@ -13,7 +13,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -41,19 +41,22 @@
                 <a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 <div class="lang-toggle-wrapper"><button class="lang-toggle" aria-label="Change language"></button></div>
             </div>
-        </header>
+        <section class="page-hero section">
+            <div class="container page-hero-container">
+                <div class="projects-header-wrapper">
+                    <h1 id="projects-title" class="page-hero-title"><i class="fas fa-lightbulb"></i></h1>
+                    <div class="project-filter-tabs">
+                        <button class="filter-tab active" data-filter="all" data-translate="filterAll">All Projects</button>
+                        <button class="filter-tab" data-filter="powerbi" data-translate="filterPowerBI">Power BI</button>
+                        <button class="filter-tab" data-filter="looker" data-translate="filterLooker">Looker Studio</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <main class="projects-main-content">
         <div class="container page-container">
-            <div class="projects-header-wrapper">
-                <h2 id="projects-title" class="section-title"><i class="fas fa-lightbulb"></i></h2>
-                <div class="project-filter-tabs">
-                    <button class="filter-tab active" data-filter="all" data-translate="filterAll">All Projects</button>
-                    <button class="filter-tab" data-filter="powerbi" data-translate="filterPowerBI">Power BI</button>
-                    <button class="filter-tab" data-filter="looker" data-translate="filterLooker">Looker Studio</button>
-                </div>
-            </div>
             <ul id="project-gallery-grid" class="project-gallery-grid">
                 </ul>
         </div>
