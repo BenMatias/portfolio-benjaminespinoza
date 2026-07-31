@@ -191,7 +191,7 @@ const translations = {
     // --- CASE STUDY DATA ---
     project_exchange_rate: {
       pageTitle: "Exchange Rate Evolution – Live Power BI Dashboard",
-      iframeEmbed: `<iframe title="Exchange rate evolution" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>`,
+      iframeEmbed: `<iframe title="Exchange rate evolution" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true" loading="lazy"></iframe>`,
       backButton: "Back to Projects",
       linkedinButton: "Share on LinkedIn",
       xButton: "Share on X",
@@ -368,7 +368,7 @@ const translations = {
     project_neo_tracker: {
       pageTitle: "NEO Tracker – Weekly Data Overview",
       lookerButton: "View on Power BI",
-      iframeEmbed: `<iframe title="NEO Tracker – Weekly Data Overview" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiN2FjMjk0N2YtMjFlYi00Nzc3LWIzZGMtZDM1ZmIzZDgxOGE3IiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>`,
+      iframeEmbed: `<iframe title="NEO Tracker – Weekly Data Overview" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiN2FjMjk0N2YtMjFlYi00Nzc3LWIzZGMtZDM1ZmIzZDgxOGE3IiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true" loading="lazy"></iframe>`,
       backButton: "Back to Projects",
       linkedinButton: "Share on LinkedIn",
       xButton: "Share on X",
@@ -478,7 +478,7 @@ const translations = {
     // --- CASE STUDY DATA ---
     project_exchange_rate: {
       pageTitle: "Evolución del Tipo de Cambio – Dashboard en Power BI",
-      iframeEmbed: `<iframe title="Exchange rate evolution" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>`,
+      iframeEmbed: `<iframe title="Exchange rate evolution" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true" loading="lazy"></iframe>`,
       backButton: "Volver a Proyectos",
       linkedinButton: "Compartir en LinkedIn",
       xButton: "Compartir en X",
@@ -655,7 +655,7 @@ const translations = {
     project_neo_tracker: {
       pageTitle: "NEO Tracker – Resumen Semanal de Datos",
       lookerButton: "Ver en Power BI",
-      iframeEmbed: `<iframe title="NEO Tracker – Weekly Data Overview" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiN2FjMjk0N2YtMjFlYi00Nzc3LWIzZGMtZDM1ZmIzZDgxOGE3IiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>`,
+      iframeEmbed: `<iframe title="NEO Tracker – Weekly Data Overview" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiN2FjMjk0N2YtMjFlYi00Nzc3LWIzZGMtZDM1ZmIzZDgxOGE3IiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true" loading="lazy"></iframe>`,
       backButton: "Volver a Proyectos",
       linkedinButton: "Compartir en LinkedIn",
       xButton: "Compartir en X",
@@ -695,11 +695,15 @@ function setupGlobalInteractions() {
   const mobileNav = getEl('mobile-nav');
 
   if (menuToggle && mobileNav) {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-controls', 'mobile-nav');
     menuToggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('show');
+      const isExpanded = mobileNav.classList.toggle('show');
+      menuToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
     });
   }
 }
+
 
 // FUNCIÓN PARA EL INICIO: Se ejecutará solo en el index
 function setupHomePageCarousel() {
@@ -1376,6 +1380,351 @@ function toggleLang() {
   localStorage.setItem('preferredLanguage', newLang);
 }
 
+// --- WIDGET DE CHAT GEMINI ---
+const KNOWLEDGE_BASE = {
+  general: {
+    name: "Perfil & General",
+    context: "Benjamín Espinoza (Ben Matias) es un Business & Data Analyst con título de Ingeniería Civil Industrial (Universidad de Valparaíso) y Diplomado Internacional en Transformación Digital (Digital Bank LATAM). Posee sólida experiencia en Banco Internacional, Lucas Diesel y Heavenward Ascensores. Es experto en Power BI, Looker Studio, Tableau, SQL, DAX, Power Query, Google Apps Script, Python, automatizaciones ETL, desarrollo de KPIs desde cero y gestión ágil (Scrum).",
+    prompts: [
+      "¿Cuáles son las habilidades clave de Benjamín?",
+      "¿En qué industrias ha trabajado?",
+      "¿Cómo contactar a Benjamín?"
+    ]
+  },
+  pokedex: {
+    name: "Pokédex Interactiva",
+    context: "Dashboard interactivo en Looker Studio con datos de 1.025 Pokémon. Se conecta a la PokéAPI usando Google Apps Script y Google Sheets como base de datos intermedia. Cuenta con formato condicional por tipo, tarjetas de estadísticas base (HP, Ataque, Defensa, Velocidad, Sp. Atk, Sp. Def), habilidades y evoluciones.",
+    prompts: [
+      "¿Cómo se conecta a la PokéAPI?",
+      "¿Qué métricas muestra sobre los Pokémon?",
+      "¿Qué tecnologías se utilizaron?"
+    ]
+  },
+  exchange: {
+    name: "Evolución Tipo de Cambio",
+    context: "Dashboard automatizado en Power BI que consume la API REST del Banco Central de Chile. Monitorea divisas clave (USD, EUR, GBP) en relación al Peso Chileno (CLP), con indicadores de fluctuación diaria, análisis de tendencia de los últimos 30 días, métricas calculadas en DAX y pipelines M en Power Query.",
+    prompts: [
+      "¿Cómo funciona la API del Banco Central?",
+      "¿Qué divisas se analizan?",
+      "¿Qué lógica DAX o Power Query se usó?"
+    ]
+  },
+  unemployment: {
+    name: "Desempleo en EE.UU.",
+    context: "Dashboard analítico en Looker Studio con datos del U.S. Bureau of Labor Statistics (BLS) entre 2020 y 2025. Compara tasas de desempleo nacional vs. estatal vs. áreas metropolitanas, identificando disparidades regionales, volatilidad y patrones económicos de recuperación tras la pandemia.",
+    prompts: [
+      "¿Qué fuente de datos utiliza?",
+      "¿Cuáles son los principales hallazgos?",
+      "¿Cómo se comparan ciudades con estados?"
+    ]
+  },
+  inclusion: {
+    name: "Inclusión Financiera Global",
+    context: "Dashboard en Looker Studio basado en la base Global Findex del Banco Mundial (2011-2024), cubriendo una población adulta mundial de 5,77 mil millones. Revela que el 74,35% posee cuenta financiera formal, analiza la adopción de Mobile Money en países en desarrollo y brechas de financiamiento por nivel de ingreso y género.",
+    prompts: [
+      "¿Qué revela la tasa del 74.35%?",
+      "¿Cómo impacta el Mobile Money?",
+      "¿De dónde provienen los datos?"
+    ]
+  },
+  neo: {
+    name: "NEO Tracker (NASA)",
+    context: "Dashboard en Power BI conectado a la API NeoWs de la NASA. Rastrea Objetos Cercanos a la Tierra (asteroides) detectados en los últimos 7 días. Clasifica riesgo de colisión, velocidad de aproximación (km/h), distancia mínima de fallo (miss distance en km) y tamaño en metros con indicadores de peligro en tiempo real.",
+    prompts: [
+      "¿Cómo se conecta a la API de la NASA?",
+      "¿Cómo clasifica los asteroides peligrosos?",
+      "¿Qué métricas astronómicas muestra?"
+    ]
+  }
+};
+
+const GeminiChatWidget = {
+  activeContextKey: 'general',
+  isOpen: false,
+
+  init() {
+    this.detectCurrentContext();
+    this.renderWidget();
+    this.attachEvents();
+    this.renderSuggestedPrompts();
+    this.addBotMessage(this.getWelcomeMessage());
+  },
+
+  detectCurrentContext() {
+    const bodyId = document.body.id;
+    if (bodyId === 'page-pokedex') this.activeContextKey = 'pokedex';
+    else if (bodyId === 'page-exchange-rate') this.activeContextKey = 'exchange';
+    else if (bodyId === 'page-unemployment') this.activeContextKey = 'unemployment';
+    else if (bodyId === 'page-financial-inclusion') this.activeContextKey = 'inclusion';
+    else if (bodyId === 'page-neo-tracker') this.activeContextKey = 'neo';
+    else this.activeContextKey = 'general';
+  },
+
+  renderWidget() {
+    if (getEl('gemini-chat-widget')) return;
+
+    const widgetHtml = `
+      <div id="gemini-chat-widget" class="gemini-chat-widget">
+        <button id="gemini-chat-toggle" class="gemini-chat-toggle" aria-label="Abrir Asistente de Datos Gemini" title="Chat con Asistente Gemini">
+          <div class="gemini-badge-sparkle"><i class="fas fa-sparkles"></i></div>
+          <i class="fas fa-robot gemini-icon-main"></i>
+          <span class="gemini-toggle-text">Pregunta a Gemini</span>
+        </button>
+
+        <div id="gemini-chat-window" class="gemini-chat-window hidden" role="dialog" aria-label="Asistente de Dashboards Gemini">
+          <div class="gemini-chat-header">
+            <div class="gemini-chat-title-group">
+              <i class="fas fa-sparkles gemini-sparkle-icon"></i>
+              <div>
+                <h3>Gemini Dashboard AI</h3>
+                <span class="gemini-chat-status"><span class="status-dot"></span> Asistente Activo</span>
+              </div>
+            </div>
+            <div class="gemini-chat-actions">
+              <button id="gemini-config-btn" class="gemini-icon-btn" aria-label="Configurar API Key de Gemini" title="Configurar API Key"><i class="fas fa-key"></i></button>
+              <button id="gemini-chat-close" class="gemini-icon-btn" aria-label="Cerrar ventana de chat"><i class="fas fa-times"></i></button>
+            </div>
+          </div>
+
+          <div id="gemini-api-key-panel" class="gemini-api-key-panel hidden">
+            <label for="gemini-api-key-input">API Key de Gemini (Google AI Studio):</label>
+            <div class="gemini-key-input-wrapper">
+              <input type="password" id="gemini-api-key-input" placeholder="AIzaSy..." value="${localStorage.getItem('gemini_api_key') || ''}" />
+              <button id="gemini-save-key-btn" type="button">Guardar</button>
+            </div>
+            <small class="gemini-key-hint">Tu clave se guarda localmente en tu navegador. Si no tienes una, se usará el asistente con respuestas contextuales predeterminadas.</small>
+          </div>
+
+          <div class="gemini-context-bar">
+            <label for="gemini-dashboard-select"><i class="fas fa-database"></i> Contexto:</label>
+            <select id="gemini-dashboard-select">
+              <option value="general">Perfil de Benjamín & General</option>
+              <option value="pokedex">Pokédex Interactiva</option>
+              <option value="exchange">Evolución Tipo de Cambio</option>
+              <option value="unemployment">Desempleo en EE.UU.</option>
+              <option value="inclusion">Inclusión Financiera Global</option>
+              <option value="neo">NEO Tracker (NASA)</option>
+            </select>
+          </div>
+
+          <div id="gemini-chat-messages" class="gemini-chat-messages"></div>
+
+          <div id="gemini-quick-prompts" class="gemini-quick-prompts"></div>
+
+          <form id="gemini-chat-form" class="gemini-chat-form">
+            <input type="text" id="gemini-chat-input" placeholder="Escribe tu pregunta aquí..." autocomplete="off" required />
+            <button type="submit" aria-label="Enviar mensaje"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', widgetHtml);
+    getEl('gemini-dashboard-select').value = this.activeContextKey;
+  },
+
+  attachEvents() {
+    const toggleBtn = getEl('gemini-chat-toggle');
+    const closeBtn = getEl('gemini-chat-close');
+    const configBtn = getEl('gemini-config-btn');
+    const saveKeyBtn = getEl('gemini-save-key-btn');
+    const selectContext = getEl('gemini-dashboard-select');
+    const chatForm = getEl('gemini-chat-form');
+
+    toggleBtn.addEventListener('click', () => this.toggleChat());
+    closeBtn.addEventListener('click', () => this.toggleChat(false));
+    configBtn.addEventListener('click', () => {
+      const panel = getEl('gemini-api-key-panel');
+      panel.classList.toggle('hidden');
+    });
+
+    saveKeyBtn.addEventListener('click', () => {
+      const val = getEl('gemini-api-key-input').value.trim();
+      if (val) {
+        localStorage.setItem('gemini_api_key', val);
+        alert(currentLang === 'en' ? 'Gemini API Key saved successfully!' : '¡API Key de Gemini guardada correctamente!');
+      } else {
+        localStorage.removeItem('gemini_api_key');
+        alert(currentLang === 'en' ? 'Gemini API Key removed. Returning to default mode.' : 'API Key eliminada. Volviendo al modo por defecto.');
+      }
+      getEl('gemini-api-key-panel').classList.add('hidden');
+    });
+
+    selectContext.addEventListener('change', (e) => {
+      this.activeContextKey = e.target.value;
+      this.renderSuggestedPrompts();
+      const ctxInfo = KNOWLEDGE_BASE[this.activeContextKey];
+      const msg = currentLang === 'en'
+        ? `Context updated to **${ctxInfo.name}**. How can I help you analyze this dashboard?`
+        : `Contexto cambiado a **${ctxInfo.name}**. ¿En qué puedo ayudarte sobre este dashboard?`;
+      this.addBotMessage(msg);
+    });
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = getEl('gemini-chat-input');
+      const query = input.value.trim();
+      if (!query) return;
+      input.value = '';
+      this.handleUserQuery(query);
+    });
+  },
+
+  toggleChat(forceState) {
+    const chatWindow = getEl('gemini-chat-window');
+    this.isOpen = typeof forceState === 'boolean' ? forceState : !this.isOpen;
+    if (this.isOpen) {
+      chatWindow.classList.remove('hidden');
+      getEl('gemini-chat-input').focus();
+    } else {
+      chatWindow.classList.add('hidden');
+    }
+  },
+
+  getWelcomeMessage() {
+    const isEn = currentLang === 'en';
+    const ctxName = KNOWLEDGE_BASE[this.activeContextKey].name;
+    return isEn
+      ? `👋 Hi! I'm **Gemini Assistant**. I can answer questions about Benjamín's dashboards and technical profile. Active context: **${ctxName}**.`
+      : `👋 ¡Hola! Soy el **Asistente Gemini**. Puedo responder tus preguntas sobre los dashboards de Benjamín y su experiencia profesional. Contexto actual: **${ctxName}**.`;
+  },
+
+  renderSuggestedPrompts() {
+    const container = getEl('gemini-quick-prompts');
+    if (!container) return;
+    container.innerHTML = '';
+    const prompts = KNOWLEDGE_BASE[this.activeContextKey].prompts;
+    prompts.forEach(text => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'gemini-chip';
+      chip.textContent = text;
+      chip.addEventListener('click', () => this.handleUserQuery(text));
+      container.appendChild(chip);
+    });
+  },
+
+  addUserMessage(text) {
+    const messagesContainer = getEl('gemini-chat-messages');
+    const msgEl = document.createElement('div');
+    msgEl.className = 'gemini-msg user';
+    msgEl.textContent = text;
+    messagesContainer.appendChild(msgEl);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  },
+
+  addBotMessage(htmlContent) {
+    const messagesContainer = getEl('gemini-chat-messages');
+    const msgEl = document.createElement('div');
+    msgEl.className = 'gemini-msg bot';
+
+    let formatted = htmlContent
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\n/g, '<br>');
+
+    msgEl.innerHTML = formatted;
+    messagesContainer.appendChild(msgEl);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  },
+
+  showTypingIndicator() {
+    const messagesContainer = getEl('gemini-chat-messages');
+    const typingEl = document.createElement('div');
+    typingEl.id = 'gemini-typing-indicator';
+    typingEl.className = 'gemini-msg bot gemini-typing';
+    typingEl.innerHTML = '<span></span><span></span><span></span>';
+    messagesContainer.appendChild(typingEl);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  },
+
+  removeTypingIndicator() {
+    const el = getEl('gemini-typing-indicator');
+    if (el) el.remove();
+  },
+
+  async handleUserQuery(userQuery) {
+    this.addUserMessage(userQuery);
+    this.showTypingIndicator();
+
+    const apiKey = localStorage.getItem('gemini_api_key');
+    const activeData = KNOWLEDGE_BASE[this.activeContextKey];
+
+    if (apiKey) {
+      try {
+        const responseText = await this.callGeminiAPI(apiKey, userQuery, activeData.context);
+        this.removeTypingIndicator();
+        this.addBotMessage(responseText);
+      } catch (err) {
+        console.error('Gemini API Error:', err);
+        this.removeTypingIndicator();
+        this.addBotMessage(this.generateLocalFallback(userQuery, activeData));
+      }
+    } else {
+      setTimeout(() => {
+        this.removeTypingIndicator();
+        this.addBotMessage(this.generateLocalFallback(userQuery, activeData));
+      }, 600);
+    }
+  },
+
+  async callGeminiAPI(apiKey, prompt, context) {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    const systemInstruction = `Eres un asistente virtual experto y formal llamado Gemini Assistant en el portafolio profesional de Benjamín Espinoza (Business & Data Analyst).
+Tu objetivo es responder de forma sintética, clara y concisa a reclutadores o usuarios sobre los dashboards y experiencia de Benjamín.
+Responde siempre en el idioma de la consulta.
+
+Contexto actual del dashboard:
+${context}`;
+
+    const body = {
+      contents: [
+        { role: 'user', parts: [{ text: `${systemInstruction}\n\nPregunta del usuario: ${prompt}` }] }
+      ]
+    };
+
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}`);
+    }
+
+    const data = await res.json();
+    return data.candidates[0].content.parts[0].text;
+  },
+
+  generateLocalFallback(query, activeData) {
+    const q = query.toLowerCase();
+    const isEn = currentLang === 'en';
+
+    if (q.includes('habilidad') || q.includes('skill') || q.includes('tecnolog') || q.includes('tool')) {
+      return isEn
+        ? `💡 **Technologies used in ${activeData.name}**:\n${activeData.context}\n\n*(Benjamín specializes in Power BI, Looker Studio, SQL, DAX, and Apps Script)*.`
+        : `💡 **Tecnologías y Enfoque en ${activeData.name}**:\n${activeData.context}\n\n*(Benjamín se especializa en Power BI, Looker Studio, SQL, DAX y Apps Script)*.`;
+    }
+
+    if (q.includes('api') || q.includes('dato') || q.includes('data') || q.includes('fuente') || q.includes('source')) {
+      return isEn
+        ? `📊 **Data Pipeline & Sources for ${activeData.name}**:\n${activeData.context}`
+        : `📊 **Pipeline de Datos y Fuentes para ${activeData.name}**:\n${activeData.context}`;
+    }
+
+    if (q.includes('contacto') || q.includes('contact') || q.includes('email') || q.includes('linkedin')) {
+      return isEn
+        ? `📩 You can contact **Benjamín Espinoza** via email at \`bmatiasespinoza@gmail.com\` or on [LinkedIn](https://www.linkedin.com/in/benmatias).`
+        : `📩 Puedes contactar a **Benjamín Espinoza** por correo a \`bmatiasespinoza@gmail.com\` o en [LinkedIn](https://www.linkedin.com/in/benmatias).`;
+    }
+
+    return isEn
+      ? `🤖 **${activeData.name} Insight**:\n${activeData.context}\n\n*(Note: Enter a Gemini API Key using the 🔑 icon above to ask any custom question with real-time AI generation).*`
+      : `🤖 **Resumen sobre ${activeData.name}**:\n${activeData.context}\n\n*(Nota: Puedes agregar tu API Key de Gemini haciendo clic en el icono de la llave 🔑 para realizar preguntas abiertas avanzadas).*`;
+  }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   basePath = '';
   const path = window.location.pathname;
@@ -1403,4 +1752,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.body.classList.contains('page-home')) {
     setupHomePageCarousel();
   }
+
+  // --- 4. INICIALIZACIÓN DEL WIDGET DE CHAT GEMINI ---
+  GeminiChatWidget.init();
 });
+
