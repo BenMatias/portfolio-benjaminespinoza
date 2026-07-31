@@ -4,6 +4,28 @@ const translations = {
     navAbout: "About",
     navResume: "CV / Resume",
     navProjects: "Projects",
+    navPublications: "Publications",
+
+    // --- Publications Page Content ---
+    publications_page_title: "Publications",
+    publications_list: [
+      {
+        title: "From Seoul to Santiago: What Chile Can Learn from South Korea's Demographic Crisis (Spanish)",
+        description: "An analysis of South Korea's demographic challenges and the potential lessons for Chile's public policy.",
+        outlet: "CIPER Chile",
+        date: "September 29, 2025",
+        outletLogoUrl: "assets/img/logos/ciper-logo.png",
+        externalUrl: "https://www.ciperchile.cl/2025/09/29/de-seul-a-santiago-lo-que-chile-puede-aprender-de-la-crisis-demografica-de-corea-del-sur"
+      }
+    ],
+
+    // --- Hero KPI & Filters ---
+    kpiDashboards: "Live Dashboards",
+    kpiReports: "Executive Reports",
+    kpiAutomation: "ETL Hours Saved/Mo",
+    filterAll: "All Projects",
+    filterPowerBI: "Power BI",
+    filterLooker: "Looker Studio",
 
     // --- Index Page Content ---
     heroTitle: "Business & Data Analyst focused on transforming data into decisions",
@@ -78,7 +100,7 @@ const translations = {
       description: `<ul><li>Tracked KPIs and costs for modernization projects.</li><li>Created dashboards in Excel and Power BI to support strategic decisions.</li><li>Worked with technical and executive teams to improve customer data insights.</li></ul>`
     }, {
       type: 'education',
-      date: "2024",
+      date: "2025",
       title: "International Diploma in Digital Transformation",
       company: "Digital Bank LATAM",
       url: "https://www.digitalbankla.com",
@@ -398,6 +420,28 @@ const translations = {
     navAbout: "Sobre mí",
     navResume: "CV",
     navProjects: "Proyectos",
+    navPublications: "Publicaciones",
+
+    // --- Publications Page Content ---
+    publications_page_title: "Publicaciones",
+    publications_list: [
+      {
+        title: "De Seúl a Santiago: lo que Chile puede aprender de la crisis demográfica de Corea del Sur",
+        description: "Un análisis sobre los desafíos demográficos de Corea del Sur y las posibles lecciones para las políticas públicas de Chile.",
+        outlet: "CIPER Chile",
+        date: "29 de septiembre de 2025",
+        outletLogoUrl: "assets/img/logos/ciper-logo.png",
+        externalUrl: "https://www.ciperchile.cl/2025/09/29/de-seul-a-santiago-lo-que-chile-puede-aprender-de-la-crisis-demografica-de-corea-del-sur"
+      }
+    ],
+
+    // --- Hero KPI & Filters ---
+    kpiDashboards: "Dashboards en Vivo",
+    kpiReports: "Reportes Ejecutivos",
+    kpiAutomation: "Horas/Mes Ahorradas ETL",
+    filterAll: "Todos los Proyectos",
+    filterPowerBI: "Power BI",
+    filterLooker: "Looker Studio",
 
     // --- Index Page Content ---
     heroTitle: "Business & Data Analyst enfocado en transformar datos en decisiones",
@@ -427,7 +471,7 @@ const translations = {
     projectsTitle: "Proyectos Destacados",
     projects: [
         { title: "Evolución del Tipo de Cambio", description: "Un dashboard en Power BI que monitorea las principales divisas frente al CLP, actualizado automáticamente vía API del Banco Central.", imageUrl: "assets/img/exchange-rate-cover.png", link: "projects/exchange-rate-evolution.html", buttonText: "Ver Proyecto", tool: "powerbi" },
-        { title: "Pokédex Interactiva", description: "Una Pokédex Nacional de 1.025 Pokémon construida conectándose a la PokéAPI con Apps Script.", imageUrl: "assets/img/pokedex-cover.png", link: "projects/pokedex-dashboard.html", buttonText: "Ver Proyecto", tool: "looker" },
+        { title: "Pokédex Interactiva", description: "Una Pokédex Nacional de 1,025 Pokémon construida conectándose a la PokéAPI con Apps Script.", imageUrl: "assets/img/pokedex-cover.png", link: "projects/pokedex-dashboard.html", buttonText: "Ver Proyecto", tool: "looker" },
         { title: "Análisis de Desempleo en EE.UU.", description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.", imageUrl: "assets/img/us-unemployment-cover.png", link: "projects/US-Unemployment.html", buttonText: "Ver Proyecto", tool: "looker" },
         { title: "Inclusión Financiera Global", description: "Visualiza tendencias globales de titularidad de cuentas y comportamiento de crédito por región, ingreso y demografía.", imageUrl: "assets/img/global-financial-inclusion-cover.png", link: "projects/global-financial-inclusion.html", buttonText: "Ver Proyecto", tool: "looker" },
         { title: "NEO Tracker", description: "Un dashboard automatizado que se conecta a la API de la NASA para rastrear Objetos Cercanos a la Tierra de los últimos 7 días.", imageUrl: "assets/img/neo-tracker-cover.png", link: "projects/neo-tracker.html", buttonText: "Ver Proyecto", tool: "powerbi" }
@@ -450,7 +494,7 @@ const translations = {
         { type: 'work', date: "Mayo 2023 – Actualidad", title: "Business Analyst", company: "Banco Internacional", url: "https://www.internacional.cl", logo: "assets/img/logos/banco-internacional.png", description: `<ul><li>Desarrollé un sistema de reportes y KPIs desde cero para el área de innovación, donde no existía medición previa.</li><li>Creé más de 20 dashboards para innovación, fraude, ventas, dueños de productos y planificación.</li><li>Lideré equipo de métricas que automatizó procesos mediante ETL y base de datos propia.</li><li>Transición exitosa al rol de Business Analyst en célula ágil con foco en historias de usuario, flujos y pruebas.</li></ul>` },
         { type: 'work', date: "Sep 2021 – Abr 2023", title: "Analista de Datos y Control de Gestión", company: "Lucas Diesel", url: "https://lucasdiesel.cl", logo: "assets/img/logos/lucas-diesel.png", description: `<ul><li>Ingresé a una posición nueva para resolver brechas de visibilidad y reportes en una estructura financiera compartida.</li><li>Generé y automatizé más de 30 dashboards para ventas, inventario, abastecimiento, servicios automotrices, operaciones y gerencia.</li><li>Automatización diaria ahorró hasta 1 hora por día.</li><li>Reduje el proceso de presupuesto anual de 6 a 2 meses en dos años consecutivos.</li></ul>` },
         { type: 'work', date: "Nov 2019 – Ago 2021", title: "Analista de Control de Gestión", company: "Heavenward Ascensores", url: "https://www.heavenward.cl", logo: "assets/img/logos/heavenward.png", description: `<ul><li>Supervisión de KPIs y control de costos para proyectos de mantenimiento y modernización.</li><li>Reportes y dashboards en Excel y Power BI para análisis financiero y mejora de tiempos de respuesta.</li></ul>` },
-        { type: 'education', date: "2024", title: "Diplomado Internacional en Transformación Digital", company: "Digital Bank LATAM", url: "https://www.digitalbankla.com", logo: "assets/img/logos/digital-bank-latam.png" },
+        { type: 'education', date: "2025", title: "Diplomado Internacional en Transformación Digital", company: "Digital Bank LATAM", url: "https://www.digitalbankla.com", logo: "assets/img/logos/digital-bank-latam.png" },
         { type: 'education', date: "2022", title: "Diplomado en Diseño y Programación Web", company: "Fundación Telefónica & AIEP", url: "https://www.fundaciontelefonica.cl", logo: "assets/img/logos/telefonica-aiep.png" },
         { type: 'education', date: "2022", title: "Programa universitario introductorio", company: "BYU PathwayConnect", url: "https://www.byupathway.edu", logo: "assets/img/logos/byu.png" },
         { type: 'education', date: "2013–2020", title: "Ingeniería Civil Industrial", company: "Universidad de Valparaíso", url: "https://uv.cl", logo: "assets/img/logos/uv.png" }
@@ -778,8 +822,33 @@ function setupScrollAnimations() {
   });
 }
 
+// --- NUEVA FUNCIÓN PARA BARAJAR EL CARRUSEL ---
+// Algoritmo Fisher-Yates (Knuth) Shuffle
+function shuffleArray(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // Mientras queden elementos por barajar.
+  while (currentIndex > 0) {
+    // Elige un elemento restante.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // Y cámbialo por el elemento actual.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
 function populateHomePage(lang, basePath) {
   const data = translations[lang] || translations.en;
+  
+  // Barajamos los proyectos antes de mostrarlos
+  if (data.projects) {
+    shuffleArray(data.projects);
+  }
+
   getEl('hero-title').textContent = data.heroTitle;
   getEl("hero-subtitle").textContent = data.heroSubtitle;
   getEl("btn-projects").textContent = data.btnProjects;
@@ -885,90 +954,73 @@ function populateCvPage(lang, basePath) {
 
 function populateProjectsPage(lang, basePath) {
     const data = translations[lang] || translations.en;
-    const titleEl = getEl('projects-title');
-    if (titleEl) {
-        titleEl.textContent = data.projects_page_title;
+    
+    // Barajamos la lista de proyectos de la galería
+    if (data.projects_list) {
+      shuffleArray(data.projects_list);
     }
 
-    const listUl = getEl('projects-list-ul');
-    const previewCol = getEl('projects-preview-column');
+    const titleEl = getEl('projects-title');
+    if (titleEl) {
+        titleEl.innerHTML = `<i class="fas fa-lightbulb"></i> ${data.projects_page_title}`;
+    }
 
-    if (listUl) {
-        listUl.innerHTML = '';
-        if (previewCol) previewCol.innerHTML = '';
-        listUl.className = 'projects-list-ul'; // Reset classes
-
-        const isMobile = window.innerWidth <= 992;
-
-        if (isMobile) {
-            // Mobile Accordion View
-            listUl.classList.add('is-accordion');
-            (data.projects_list || []).forEach(project => {
-                const accordionItem = document.createElement('li');
-                accordionItem.className = 'accordion-item';
-                accordionItem.innerHTML = `
-                    <button class="accordion-header">
-                        <span>${project.title}</span>
-                        <i class="fas fa-chevron-down chevron-icon"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <p class="project-list-description">${project.description}</p>
-                        <a href="${project.link}" class="btn btn-outline-blue">${project.buttonText}</a>
-                    </div>
-                `;
-                listUl.appendChild(accordionItem);
-            });
-            setupAccordion('.projects-list-ul', '.accordion-header');
-
-        } else {
-            // Desktop Interactive List View
-            if (!previewCol) return;
-            (data.projects_list || []).forEach(project => {
-                let iconHtml = '';
-                if (project.tool === 'powerbi') {
-                    iconHtml = `<img src="${basePath}assets/img/logos/power-bi.png" alt="Power BI Logo" class="project-tool-icon">`;
-                } else if (project.tool === 'looker') {
-                    iconHtml = `<img src="${basePath}assets/img/logos/looker-studio.png" alt="Looker Studio Logo" class="project-tool-icon">`;
-                }
-
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `
-                    <a href="${project.link}" data-preview-target="${project.id}">
-                        <span class="project-list-title">
-                            ${iconHtml}
-                            ${project.title}
-                        </span>
-                        <span class="project-list-description">${project.description}</span>
-                    </a>`;
-                listUl.appendChild(listItem);
-
-                const previewImage = document.createElement('div');
-                previewImage.id = project.id;
-                previewImage.className = 'project-preview-image';
-                previewImage.style.backgroundImage = `url('${basePath}${project.imageUrl}')`;
-                previewCol.appendChild(previewImage);
-            });
-
-            const projectLinks = listUl.querySelectorAll('a');
-            projectLinks.forEach(link => {
-                link.addEventListener('mouseenter', () => {
-                    const targetId = link.getAttribute('data-preview-target');
-                    if(previewCol) {
-                        previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => activeImg.classList.remove('is-active'));
-                        const targetImage = getEl(targetId);
-                        if (targetImage) targetImage.classList.add('is-active');
-                    }
-                });
-            });
-
-            if (listUl) {
-                listUl.addEventListener('mouseleave', () => {
-                    if(previewCol) {
-                        previewCol.querySelectorAll('.project-preview-image.is-active').forEach(activeImg => activeImg.classList.remove('is-active'));
-                    }
-                });
+    const gridContainer = getEl('project-gallery-grid');
+    if (gridContainer) {
+        gridContainer.innerHTML = '';
+        (data.projects_list || []).forEach(project => {
+            let toolIcon = '';
+            if (project.tool === 'powerbi') {
+                toolIcon = `<img src="${basePath}assets/img/logos/power-bi.png" alt="Power BI Logo" class="card-tool-icon">`;
+            } else if (project.tool === 'looker') {
+                toolIcon = `<img src="${basePath}assets/img/logos/looker-studio.png" alt="Looker Studio Logo" class="card-tool-icon">`;
             }
-        }
+
+            const cardItem = document.createElement('li');
+            cardItem.innerHTML = `
+                <a href="${project.link}" class="project-gallery-card">
+                    <div class="card-image" style="background-image: url('${basePath}${project.imageUrl}')"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>${project.title}</h3>
+                            ${toolIcon}
+                        </div>
+                        <p>${project.description}</p>
+                    </div>
+                </a>
+            `;
+            gridContainer.appendChild(cardItem);
+        });
+    }
+}
+
+function populatePublicationsPage(lang, basePath) {
+    const data = translations[lang] || translations.en;
+    
+    const titleEl = getEl('publications-title');
+    if (titleEl) {
+        titleEl.innerHTML = `<i class="fas fa-feather-alt"></i> ${data.publications_page_title}`;
+    }
+
+    const listContainer = getEl('publications-list');
+    if (listContainer) {
+        listContainer.innerHTML = '';
+        (data.publications_list || []).forEach(publication => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <a href="${publication.externalUrl}" class="publication-item" target="_blank" rel="noopener">
+                    <div class="publication-logo">
+                        <img src="${basePath}${publication.outletLogoUrl}" alt="${publication.outlet} Logo">
+                    </div>
+                    <div class="publication-text-content">
+                        <span class="publication-meta">${publication.outlet} | ${publication.date}</span>
+                        <h3>${publication.title}</h3>
+                        <p>${publication.description}</p>
+                    </div>
+                </a>
+            `;
+            listContainer.appendChild(listItem);
+        });
     }
 }
 
@@ -1349,6 +1401,8 @@ function setLanguage(lang, basePath) {
     populateCvPage(lang, basePath);
   } else if (document.body.classList.contains('page-projects')) {
     populateProjectsPage(lang, basePath);
+  } else if (document.body.classList.contains('page-publications')) {
+    populatePublicationsPage(lang, basePath);
   } else if (document.body.classList.contains('page-project-case-study')) {
     const bodyId = document.body.id;
     
@@ -1372,6 +1426,10 @@ function setLanguage(lang, basePath) {
     const flagUrl = `https://flagcdn.com/w20/${flag}.png`;
     el.innerHTML = `<img src="${flagUrl}" alt="${alt}" style="width: 20px; vertical-align: middle;"> ${text}`;
   });
+
+  if (window.GeminiChatWidget && typeof window.GeminiChatWidget.updateLanguage === 'function') {
+    window.GeminiChatWidget.updateLanguage(lang);
+  }
 }
 
 function toggleLang() {
@@ -1380,61 +1438,92 @@ function toggleLang() {
   localStorage.setItem('preferredLanguage', newLang);
 }
 
-// --- WIDGET DE CHAT GEMINI ---
+// --- FILTRADO DE PROYECTOS POR TECNOLOGÍA ---
+function setupProjectFilterTabs() {
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  if (!filterTabs.length) return;
+
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const filterVal = tab.getAttribute('data-filter');
+      const cards = document.querySelectorAll('#project-gallery-grid li');
+
+      cards.forEach(card => {
+        const isPowerBI = card.querySelector('img[alt*="Power BI"]');
+        const isLooker = card.querySelector('img[alt*="Looker"]');
+
+        if (filterVal === 'all') {
+          card.style.display = 'block';
+        } else if (filterVal === 'powerbi') {
+          card.style.display = isPowerBI ? 'block' : 'none';
+        } else if (filterVal === 'looker') {
+          card.style.display = isLooker ? 'block' : 'none';
+        }
+      });
+    });
+  });
+}
+
+// --- WIDGET DE CHAT GEMINI (CON SOPORTE I18N EN/ES) ---
 const KNOWLEDGE_BASE = {
   general: {
-    name: "Perfil & General",
-    context: "Benjamín Espinoza (Ben Matias) es un Business & Data Analyst con título de Ingeniería Civil Industrial (Universidad de Valparaíso) y Diplomado Internacional en Transformación Digital (Digital Bank LATAM). Posee sólida experiencia en Banco Internacional, Lucas Diesel y Heavenward Ascensores. Es experto en Power BI, Looker Studio, Tableau, SQL, DAX, Power Query, Google Apps Script, Python, automatizaciones ETL, desarrollo de KPIs desde cero y gestión ágil (Scrum).",
-    prompts: [
-      "¿Cuáles son las habilidades clave de Benjamín?",
-      "¿En qué industrias ha trabajado?",
-      "¿Cómo contactar a Benjamín?"
-    ]
+    name: { en: "Profile & General Overview", es: "Perfil & Resumen General" },
+    context: "Benjamín Espinoza (Ben Matias) is a Business & Data Analyst with a degree in Industrial Engineering (Universidad de Valparaíso) and an International Diploma in Digital Transformation. He has solid experience at Banco Internacional, Lucas Diesel, and Heavenward Elevators. Expert in Power BI, Looker Studio, Tableau, SQL, DAX, Power Query, Google Apps Script, Python, ETL automation, and Scrum methodology.",
+    prompts: {
+      en: ["What are Benjamín's key skills?", "Which industries has he worked in?", "How can I contact Benjamín?"],
+      es: ["¿Cuáles son las habilidades clave de Benjamín?", "¿En qué industrias ha trabajado?", "¿Cómo contactar a Benjamín?"]
+    }
+  },
+  publications: {
+    name: { en: "Publications & CIPER Chile", es: "Publicaciones & CIPER Chile" },
+    context: "Author of the opinion column 'De Seúl a Santiago: lo que Chile puede aprender de la crisis demográfica de Corea del Sur' published in CIPER Chile (Sept 2025). Analyzes South Korea's demographic decline, fertility rates, and lessons for public policy in Chile.",
+    prompts: {
+      en: ["What is the CIPER Chile column about?", "Where can I read the article?", "What demographic topics are analyzed?"],
+      es: ["¿De qué trata la columna en CIPER Chile?", "¿Dónde puedo leer el artículo?", "¿Qué temas demográficos analiza?"]
+    }
   },
   pokedex: {
-    name: "Pokédex Interactiva",
-    context: "Dashboard interactivo en Looker Studio con datos de 1.025 Pokémon. Se conecta a la PokéAPI usando Google Apps Script y Google Sheets como base de datos intermedia. Cuenta con formato condicional por tipo, tarjetas de estadísticas base (HP, Ataque, Defensa, Velocidad, Sp. Atk, Sp. Def), habilidades y evoluciones.",
-    prompts: [
-      "¿Cómo se conecta a la PokéAPI?",
-      "¿Qué métricas muestra sobre los Pokémon?",
-      "¿Qué tecnologías se utilizaron?"
-    ]
+    name: { en: "Interactive Pokédex", es: "Pokédex Interactiva" },
+    context: "Interactive dashboard in Looker Studio cataloging 1,025 Pokémon. Connects to PokéAPI using Google Apps Script and Google Sheets. Features conditional formatting by type, base stat cards (HP, Attack, Defense, Speed), abilities, and evolutions.",
+    prompts: {
+      en: ["How does it connect to the PokéAPI?", "What Pokémon metrics are shown?", "What tools were used?"],
+      es: ["¿Cómo se conecta a la PokéAPI?", "¿Qué métricas muestra sobre los Pokémon?", "¿Qué herramientas se utilizaron?"]
+    }
   },
   exchange: {
-    name: "Evolución Tipo de Cambio",
-    context: "Dashboard automatizado en Power BI que consume la API REST del Banco Central de Chile. Monitorea divisas clave (USD, EUR, GBP) en relación al Peso Chileno (CLP), con indicadores de fluctuación diaria, análisis de tendencia de los últimos 30 días, métricas calculadas en DAX y pipelines M en Power Query.",
-    prompts: [
-      "¿Cómo funciona la API del Banco Central?",
-      "¿Qué divisas se analizan?",
-      "¿Qué lógica DAX o Power Query se usó?"
-    ]
+    name: { en: "Exchange Rate Evolution", es: "Evolución Tipo de Cambio" },
+    context: "Automated Power BI dashboard consuming the Central Bank of Chile REST API. Tracks USD, EUR, and GBP against CLP, daily fluctuations, 30-day volatility trends, DAX calculated measures, and Power Query M pipelines.",
+    prompts: {
+      en: ["How does Central Bank API automation work?", "Which currencies are analyzed?", "What DAX metrics were built?"],
+      es: ["¿Cómo funciona la API del Banco Central?", "¿Qué divisas se analizan?", "¿Qué métricas DAX se crearon?"]
+    }
   },
   unemployment: {
-    name: "Desempleo en EE.UU.",
-    context: "Dashboard analítico en Looker Studio con datos del U.S. Bureau of Labor Statistics (BLS) entre 2020 y 2025. Compara tasas de desempleo nacional vs. estatal vs. áreas metropolitanas, identificando disparidades regionales, volatilidad y patrones económicos de recuperación tras la pandemia.",
-    prompts: [
-      "¿Qué fuente de datos utiliza?",
-      "¿Cuáles son los principales hallazgos?",
-      "¿Cómo se comparan ciudades con estados?"
-    ]
+    name: { en: "US Unemployment Analysis", es: "Desempleo en EE.UU." },
+    context: "Analytical dashboard in Looker Studio with U.S. Bureau of Labor Statistics (BLS) data (2020-2025). Compares national, state, and metro area unemployment rates, regional volatility, and post-pandemic recovery patterns.",
+    prompts: {
+      en: ["What data sources are used?", "What are the main findings?", "How do metro areas compare to states?"],
+      es: ["¿Qué fuente de datos utiliza?", "¿Cuáles son los principales hallazgos?", "¿Cómo se comparan ciudades con estados?"]
+    }
   },
   inclusion: {
-    name: "Inclusión Financiera Global",
-    context: "Dashboard en Looker Studio basado en la base Global Findex del Banco Mundial (2011-2024), cubriendo una población adulta mundial de 5,77 mil millones. Revela que el 74,35% posee cuenta financiera formal, analiza la adopción de Mobile Money en países en desarrollo y brechas de financiamiento por nivel de ingreso y género.",
-    prompts: [
-      "¿Qué revela la tasa del 74.35%?",
-      "¿Cómo impacta el Mobile Money?",
-      "¿De dónde provienen los datos?"
-    ]
+    name: { en: "Global Financial Inclusion", es: "Inclusión Financiera Global" },
+    context: "Looker Studio dashboard based on World Bank Global Findex dataset (2011-2024), covering 5.77 billion adults. Highlights 74.35% formal account ownership, mobile money adoption in developing economies, and borrowing gaps.",
+    prompts: {
+      en: ["What does the 74.35% rate reveal?", "How does Mobile Money impact inclusion?", "Where is the dataset from?"],
+      es: ["¿Qué revela la tasa del 74.35%?", "¿Cómo impacta el Mobile Money?", "¿De dónde provienen los datos?"]
+    }
   },
   neo: {
-    name: "NEO Tracker (NASA)",
-    context: "Dashboard en Power BI conectado a la API NeoWs de la NASA. Rastrea Objetos Cercanos a la Tierra (asteroides) detectados en los últimos 7 días. Clasifica riesgo de colisión, velocidad de aproximación (km/h), distancia mínima de fallo (miss distance en km) y tamaño en metros con indicadores de peligro en tiempo real.",
-    prompts: [
-      "¿Cómo se conecta a la API de la NASA?",
-      "¿Cómo clasifica los asteroides peligrosos?",
-      "¿Qué métricas astronómicas muestra?"
-    ]
+    name: { en: "NEO Tracker (NASA)", es: "NEO Tracker (NASA)" },
+    context: "Auto-updating Power BI dashboard connected to NASA NeoWs API. Tracks Near-Earth Objects (asteroids) detected in the last 7 days, collision risk, approach velocity (km/h), miss distance, and size in meters.",
+    prompts: {
+      en: ["How does it connect to NASA API?", "How are hazardous asteroids classified?", "What space metrics are shown?"],
+      es: ["¿Cómo se conecta a la API de la NASA?", "¿Cómo clasifica los asteroides peligrosos?", "¿Qué métricas astronómicas muestra?"]
+    }
   }
 };
 
@@ -1457,52 +1546,57 @@ const GeminiChatWidget = {
     else if (bodyId === 'page-unemployment') this.activeContextKey = 'unemployment';
     else if (bodyId === 'page-financial-inclusion') this.activeContextKey = 'inclusion';
     else if (bodyId === 'page-neo-tracker') this.activeContextKey = 'neo';
+    else if (document.body.classList.contains('page-publications')) this.activeContextKey = 'publications';
     else this.activeContextKey = 'general';
   },
 
   renderWidget() {
     if (getEl('gemini-chat-widget')) return;
 
+    const isEn = currentLang === 'en';
+    const buttonText = isEn ? 'Ask Gemini AI' : 'Preguntar a Gemini';
+
     const widgetHtml = `
       <div id="gemini-chat-widget" class="gemini-chat-widget">
-        <button id="gemini-chat-toggle" class="gemini-chat-toggle" aria-label="Abrir Asistente de Datos Gemini" title="Chat con Asistente Gemini">
+        <button id="gemini-chat-toggle" class="gemini-chat-toggle" aria-label="Ask Gemini AI Assistant" title="Chat with Gemini AI">
           <div class="gemini-badge-sparkle"><i class="fas fa-sparkles"></i></div>
           <i class="fas fa-robot gemini-icon-main"></i>
-          <span class="gemini-toggle-text">Pregunta a Gemini</span>
+          <span id="gemini-toggle-text-span" class="gemini-toggle-text">${buttonText}</span>
         </button>
 
-        <div id="gemini-chat-window" class="gemini-chat-window hidden" role="dialog" aria-label="Asistente de Dashboards Gemini">
+        <div id="gemini-chat-window" class="gemini-chat-window hidden" role="dialog" aria-label="Gemini Dashboard Assistant">
           <div class="gemini-chat-header">
             <div class="gemini-chat-title-group">
               <i class="fas fa-sparkles gemini-sparkle-icon"></i>
               <div>
                 <h3>Gemini Dashboard AI</h3>
-                <span class="gemini-chat-status"><span class="status-dot"></span> Asistente Activo</span>
+                <span class="gemini-chat-status"><span class="status-dot"></span> <span id="gemini-status-text">${isEn ? 'AI Active' : 'Asistente Activo'}</span></span>
               </div>
             </div>
             <div class="gemini-chat-actions">
-              <button id="gemini-config-btn" class="gemini-icon-btn" aria-label="Configurar API Key de Gemini" title="Configurar API Key"><i class="fas fa-key"></i></button>
-              <button id="gemini-chat-close" class="gemini-icon-btn" aria-label="Cerrar ventana de chat"><i class="fas fa-times"></i></button>
+              <button id="gemini-config-btn" class="gemini-icon-btn" aria-label="Configure Gemini API Key" title="Configure API Key"><i class="fas fa-key"></i></button>
+              <button id="gemini-chat-close" class="gemini-icon-btn" aria-label="Close chat"><i class="fas fa-times"></i></button>
             </div>
           </div>
 
           <div id="gemini-api-key-panel" class="gemini-api-key-panel hidden">
-            <label for="gemini-api-key-input">API Key de Gemini (Google AI Studio):</label>
+            <label for="gemini-api-key-input">Gemini API Key (Google AI Studio):</label>
             <div class="gemini-key-input-wrapper">
               <input type="password" id="gemini-api-key-input" placeholder="AIzaSy..." value="${localStorage.getItem('gemini_api_key') || ''}" />
-              <button id="gemini-save-key-btn" type="button">Guardar</button>
+              <button id="gemini-save-key-btn" type="button">${isEn ? 'Save' : 'Guardar'}</button>
             </div>
-            <small class="gemini-key-hint">Tu clave se guarda localmente en tu navegador. Si no tienes una, se usará el asistente con respuestas contextuales predeterminadas.</small>
+            <small class="gemini-key-hint">${isEn ? 'Key saved locally in your browser. Default mode uses pre-loaded RAG knowledge.' : 'Tu clave se guarda localmente en tu navegador. El modo por defecto usa conocimiento RAG pre-cargado.'}</small>
           </div>
 
           <div class="gemini-context-bar">
-            <label for="gemini-dashboard-select"><i class="fas fa-database"></i> Contexto:</label>
+            <label for="gemini-dashboard-select"><i class="fas fa-database"></i> ${isEn ? 'Context:' : 'Contexto:'}</label>
             <select id="gemini-dashboard-select">
-              <option value="general">Perfil de Benjamín & General</option>
+              <option value="general">${isEn ? 'Benjamín Profile & Overview' : 'Perfil de Benjamín & General'}</option>
+              <option value="publications">${isEn ? 'Publications & CIPER' : 'Publicaciones & CIPER'}</option>
               <option value="pokedex">Pokédex Interactiva</option>
-              <option value="exchange">Evolución Tipo de Cambio</option>
-              <option value="unemployment">Desempleo en EE.UU.</option>
-              <option value="inclusion">Inclusión Financiera Global</option>
+              <option value="exchange">${isEn ? 'Exchange Rate Evolution' : 'Evolución Tipo de Cambio'}</option>
+              <option value="unemployment">${isEn ? 'US Unemployment' : 'Desempleo en EE.UU.'}</option>
+              <option value="inclusion">${isEn ? 'Global Financial Inclusion' : 'Inclusión Financiera Global'}</option>
               <option value="neo">NEO Tracker (NASA)</option>
             </select>
           </div>
@@ -1512,8 +1606,8 @@ const GeminiChatWidget = {
           <div id="gemini-quick-prompts" class="gemini-quick-prompts"></div>
 
           <form id="gemini-chat-form" class="gemini-chat-form">
-            <input type="text" id="gemini-chat-input" placeholder="Escribe tu pregunta aquí..." autocomplete="off" required />
-            <button type="submit" aria-label="Enviar mensaje"><i class="fas fa-paper-plane"></i></button>
+            <input type="text" id="gemini-chat-input" placeholder="${isEn ? 'Ask a question...' : 'Escribe tu pregunta...'}" autocomplete="off" required />
+            <button type="submit" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
           </form>
         </div>
       </div>
@@ -1521,6 +1615,23 @@ const GeminiChatWidget = {
 
     document.body.insertAdjacentHTML('beforeend', widgetHtml);
     getEl('gemini-dashboard-select').value = this.activeContextKey;
+  },
+
+  updateLanguage(lang) {
+    const isEn = lang === 'en';
+    const toggleSpan = getEl('gemini-toggle-text-span');
+    if (toggleSpan) {
+      toggleSpan.textContent = isEn ? 'Ask Gemini AI' : 'Preguntar a Gemini';
+    }
+    const statusEl = getEl('gemini-status-text');
+    if (statusEl) {
+      statusEl.textContent = isEn ? 'AI Active' : 'Asistente Activo';
+    }
+    const inputEl = getEl('gemini-chat-input');
+    if (inputEl) {
+      inputEl.placeholder = isEn ? 'Ask a question...' : 'Escribe tu pregunta...';
+    }
+    this.renderSuggestedPrompts();
   },
 
   attachEvents() {
@@ -1554,9 +1665,11 @@ const GeminiChatWidget = {
       this.activeContextKey = e.target.value;
       this.renderSuggestedPrompts();
       const ctxInfo = KNOWLEDGE_BASE[this.activeContextKey];
-      const msg = currentLang === 'en'
-        ? `Context updated to **${ctxInfo.name}**. How can I help you analyze this dashboard?`
-        : `Contexto cambiado a **${ctxInfo.name}**. ¿En qué puedo ayudarte sobre este dashboard?`;
+      const isEn = currentLang === 'en';
+      const ctxName = isEn ? ctxInfo.name.en : ctxInfo.name.es;
+      const msg = isEn
+        ? `Context updated to **${ctxName}**. How can I help you analyze this?`
+        : `Contexto cambiado a **${ctxName}**. ¿En qué puedo ayudarte sobre esto?`;
       this.addBotMessage(msg);
     });
 
@@ -1583,18 +1696,23 @@ const GeminiChatWidget = {
 
   getWelcomeMessage() {
     const isEn = currentLang === 'en';
-    const ctxName = KNOWLEDGE_BASE[this.activeContextKey].name;
+    const ctxInfo = KNOWLEDGE_BASE[this.activeContextKey];
+    const ctxName = isEn ? ctxInfo.name.en : ctxInfo.name.es;
     return isEn
-      ? `👋 Hi! I'm **Gemini Assistant**. I can answer questions about Benjamín's dashboards and technical profile. Active context: **${ctxName}**.`
-      : `👋 ¡Hola! Soy el **Asistente Gemini**. Puedo responder tus preguntas sobre los dashboards de Benjamín y su experiencia profesional. Contexto actual: **${ctxName}**.`;
+      ? `👋 Hi! I'm **Gemini Assistant**. Ask me anything about Benjamín's dashboards, publications, or career background. Active context: **${ctxName}**.`
+      : `👋 ¡Hola! Soy el **Asistente Gemini**. Pregúntame sobre los dashboards de Benjamín, sus publicaciones o su experiencia. Contexto actual: **${ctxName}**.`;
   },
 
   renderSuggestedPrompts() {
     const container = getEl('gemini-quick-prompts');
     if (!container) return;
     container.innerHTML = '';
-    const prompts = KNOWLEDGE_BASE[this.activeContextKey].prompts;
-    prompts.forEach(text => {
+    const isEn = currentLang === 'en';
+    const prompts = isEn
+      ? KNOWLEDGE_BASE[this.activeContextKey].prompts.en
+      : KNOWLEDGE_BASE[this.activeContextKey].prompts.es;
+
+    (prompts || []).forEach(text => {
       const chip = document.createElement('button');
       chip.type = 'button';
       chip.className = 'gemini-chip';
@@ -1670,16 +1788,16 @@ const GeminiChatWidget = {
 
   async callGeminiAPI(apiKey, prompt, context) {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-    const systemInstruction = `Eres un asistente virtual experto y formal llamado Gemini Assistant en el portafolio profesional de Benjamín Espinoza (Business & Data Analyst).
-Tu objetivo es responder de forma sintética, clara y concisa a reclutadores o usuarios sobre los dashboards y experiencia de Benjamín.
-Responde siempre en el idioma de la consulta.
+    const systemInstruction = `You are a professional AI assistant named Gemini Assistant on Benjamín Espinoza's Business & Data Analyst portfolio.
+Your goal is to answer questions from recruiters or users about Benjamín's dashboards, publications, and experience.
+Always reply in the user's language.
 
-Contexto actual del dashboard:
+Current context:
 ${context}`;
 
     const body = {
       contents: [
-        { role: 'user', parts: [{ text: `${systemInstruction}\n\nPregunta del usuario: ${prompt}` }] }
+        { role: 'user', parts: [{ text: `${systemInstruction}\n\nUser query: ${prompt}` }] }
       ]
     };
 
@@ -1700,28 +1818,29 @@ ${context}`;
   generateLocalFallback(query, activeData) {
     const q = query.toLowerCase();
     const isEn = currentLang === 'en';
+    const ctxName = isEn ? activeData.name.en : activeData.name.es;
 
-    if (q.includes('habilidad') || q.includes('skill') || q.includes('tecnolog') || q.includes('tool')) {
+    if (q.includes('skill') || q.includes('habilidad') || q.includes('tool') || q.includes('tecnolog')) {
       return isEn
-        ? `💡 **Technologies used in ${activeData.name}**:\n${activeData.context}\n\n*(Benjamín specializes in Power BI, Looker Studio, SQL, DAX, and Apps Script)*.`
-        : `💡 **Tecnologías y Enfoque en ${activeData.name}**:\n${activeData.context}\n\n*(Benjamín se especializa en Power BI, Looker Studio, SQL, DAX y Apps Script)*.`;
+        ? `💡 **Skills & Tech in ${ctxName}**:\n${activeData.context}\n\n*(Benjamín specializes in Power BI, Looker Studio, SQL, DAX, and Apps Script)*.`
+        : `💡 **Tecnologías y Enfoque en ${ctxName}**:\n${activeData.context}\n\n*(Benjamín se especializa en Power BI, Looker Studio, SQL, DAX y Apps Script)*.`;
     }
 
-    if (q.includes('api') || q.includes('dato') || q.includes('data') || q.includes('fuente') || q.includes('source')) {
+    if (q.includes('api') || q.includes('data') || q.includes('dato') || q.includes('source') || q.includes('fuente')) {
       return isEn
-        ? `📊 **Data Pipeline & Sources for ${activeData.name}**:\n${activeData.context}`
-        : `📊 **Pipeline de Datos y Fuentes para ${activeData.name}**:\n${activeData.context}`;
+        ? `📊 **Data Sources & Pipeline for ${ctxName}**:\n${activeData.context}`
+        : `📊 **Pipeline de Datos y Fuentes para ${ctxName}**:\n${activeData.context}`;
     }
 
-    if (q.includes('contacto') || q.includes('contact') || q.includes('email') || q.includes('linkedin')) {
+    if (q.includes('contact') || q.includes('contacto') || q.includes('email') || q.includes('linkedin')) {
       return isEn
         ? `📩 You can contact **Benjamín Espinoza** via email at \`bmatiasespinoza@gmail.com\` or on [LinkedIn](https://www.linkedin.com/in/benmatias).`
         : `📩 Puedes contactar a **Benjamín Espinoza** por correo a \`bmatiasespinoza@gmail.com\` o en [LinkedIn](https://www.linkedin.com/in/benmatias).`;
     }
 
     return isEn
-      ? `🤖 **${activeData.name} Insight**:\n${activeData.context}\n\n*(Note: Enter a Gemini API Key using the 🔑 icon above to ask any custom question with real-time AI generation).*`
-      : `🤖 **Resumen sobre ${activeData.name}**:\n${activeData.context}\n\n*(Nota: Puedes agregar tu API Key de Gemini haciendo clic en el icono de la llave 🔑 para realizar preguntas abiertas avanzadas).*`;
+      ? `🤖 **${ctxName} Summary**:\n${activeData.context}\n\n*(Note: Configure a Gemini API Key using the 🔑 icon above for unrestricted open AI conversations).*`
+      : `🤖 **Resumen sobre ${ctxName}**:\n${activeData.context}\n\n*(Nota: Puedes ingresar tu API Key de Gemini con el icono 🔑 para realizar cualquier pregunta abierta).*`;
   }
 };
 
@@ -1735,6 +1854,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add('page-cv');
   } else if (path.includes('projects.html')) {
     document.body.classList.add('page-projects');
+  } else if (path.includes('publications.html')) {
+    document.body.classList.add('page-publications');
   } else if (path.includes('/projects/')) {
     document.body.classList.add('page-project-case-study');
     basePath = '../';
@@ -1751,6 +1872,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- 3. EJECUCIÓN DE LÓGICA ESPECÍFICA DE LA PÁGINA ---
   if (document.body.classList.contains('page-home')) {
     setupHomePageCarousel();
+  } else if (document.body.classList.contains('page-projects')) {
+    setupProjectFilterTabs();
   }
 
   // --- 4. INICIALIZACIÓN DEL WIDGET DE CHAT GEMINI ---
