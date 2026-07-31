@@ -1,0 +1,19 @@
+# Netlify Configuration
+# Portfolio: Ben Matias — Business & Data Analyst
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Redirect /api/gemini-proxy to the Netlify function
+[[redirects]]
+  from = "/api/gemini-proxy"
+  to = "/.netlify/functions/gemini-proxy"
+  status = 200
+
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"

@@ -1601,18 +1601,8 @@ const GeminiChatWidget = {
               </div>
             </div>
             <div class="gemini-chat-actions">
-              <button id="gemini-config-btn" class="gemini-icon-btn" aria-label="Configure Gemini API Key" title="Configure API Key"><i class="fas fa-key"></i></button>
               <button id="gemini-chat-close" class="gemini-icon-btn" aria-label="Close chat"><i class="fas fa-times"></i></button>
             </div>
-          </div>
-
-          <div id="gemini-api-key-panel" class="gemini-api-key-panel hidden">
-            <label for="gemini-api-key-input">Gemini API Key (Google AI Studio):</label>
-            <div class="gemini-key-input-wrapper">
-              <input type="password" id="gemini-api-key-input" placeholder="AIzaSy..." value="${localStorage.getItem('gemini_api_key') || ''}" />
-              <button id="gemini-save-key-btn" type="button">${isEn ? 'Save' : 'Guardar'}</button>
-            </div>
-            <small class="gemini-key-hint">${isEn ? 'Key saved locally in your browser. Default mode uses pre-loaded RAG knowledge.' : 'Tu clave se guarda localmente en tu navegador. El modo por defecto usa conocimiento RAG pre-cargado.'}</small>
           </div>
 
           <div class="gemini-context-bar">
@@ -1684,29 +1674,11 @@ const GeminiChatWidget = {
   attachEvents() {
     const toggleBtn = getEl('gemini-chat-toggle');
     const closeBtn = getEl('gemini-chat-close');
-    const configBtn = getEl('gemini-config-btn');
-    const saveKeyBtn = getEl('gemini-save-key-btn');
     const selectContext = getEl('gemini-dashboard-select');
     const chatForm = getEl('gemini-chat-form');
 
     toggleBtn.addEventListener('click', () => this.toggleChat());
     closeBtn.addEventListener('click', () => this.toggleChat(false));
-    configBtn.addEventListener('click', () => {
-      const panel = getEl('gemini-api-key-panel');
-      panel.classList.toggle('hidden');
-    });
-
-    saveKeyBtn.addEventListener('click', () => {
-      const val = getEl('gemini-api-key-input').value.trim();
-      if (val) {
-        localStorage.setItem('gemini_api_key', val);
-        alert(currentLang === 'en' ? 'Gemini API Key saved successfully!' : '¡API Key de Gemini guardada correctamente!');
-      } else {
-        localStorage.removeItem('gemini_api_key');
-        alert(currentLang === 'en' ? 'Gemini API Key removed. Returning to default mode.' : 'API Key eliminada. Volviendo al modo por defecto.');
-      }
-      getEl('gemini-api-key-panel').classList.add('hidden');
-    });
 
     selectContext.addEventListener('change', (e) => {
       this.activeContextKey = e.target.value;
@@ -1812,59 +1784,39 @@ const GeminiChatWidget = {
     this.addUserMessage(userQuery);
     this.showTypingIndicator();
 
-    const apiKey = localStorage.getItem('gemini_api_key');
     const activeData = KNOWLEDGE_BASE[this.activeContextKey];
 
-    if (apiKey) {
-      try {
-        const responseText = await this.callGeminiAPI(apiKey, userQuery, activeData.context);
-        this.removeTypingIndicator();
-        this.addBotMessage(responseText);
-      } catch (err) {
-        console.error('Gemini API Error:', err);
-        this.removeTypingIndicator();
-        this.addBotMessage(this.generateLocalFallback(userQuery, activeData));
-      }
-    } else {
-      setTimeout(() => {
-        this.removeTypingIndicator();
-        this.addBotMessage(this.generateLocalFallback(userQuery, activeData));
-      }, 600);
+    try {
+      const responseText = await this.callGeminiProxy(userQuery, activeData.context);
+      this.removeTypingIndicator();
+      this.addBotMessage(responseText);
+    } catch (err) {
+      console.warn('Gemini proxy unavailable, using local fallback:', err.message);
+      this.removeTypingIndicator();
+      this.addBotMessage(this.generateLocalFallback(userQuery, activeData));
     }
   },
 
-  async callGeminiAPI(apiKey, prompt, context) {
-    const isEn = currentLang === 'en';
-    const langInstruction = isEn 
-      ? "Always answer in English in a professional, helpful, and concise tone." 
-      : "Responde SIEMPRE en español de manera profesional, clara, amigable y concisa.";
-
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-    const systemInstruction = `You are a professional AI assistant named Gemini Assistant on Benjamín Espinoza's Business & Data Analyst portfolio.
-Your goal is to answer questions from recruiters or users about Benjamín's dashboards, publications, and experience.
-${langInstruction}
-
-Current context:
-${context}`;
-
-    const body = {
-      contents: [
-        { role: 'user', parts: [{ text: `${systemInstruction}\n\nUser query: ${prompt}` }] }
-      ]
-    };
-
-    const res = await fetch(url, {
+  async callGeminiProxy(prompt, context) {
+    // Calls the Netlify serverless proxy — the API key lives securely on the server.
+    const res = await fetch('/api/gemini-proxy', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
+      body: JSON.stringify({
+        prompt,
+        context,
+        lang: currentLang
+      })
     });
 
     if (!res.ok) {
-      throw new Error(`HTTP ${res.status}`);
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(errData.error || `HTTP ${res.status}`);
     }
 
     const data = await res.json();
-    return data.candidates[0].content.parts[0].text;
+    if (!data.response) throw new Error('Empty response from proxy.');
+    return data.response;
   },
 
   generateLocalFallback(query, activeData) {
