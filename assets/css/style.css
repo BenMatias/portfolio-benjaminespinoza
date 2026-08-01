@@ -946,100 +946,35 @@ p.timeline-company a:hover {
 }
 
 
-/* --- TEMA PROYECTO 1: UNEMPLOYMENT (VERDE) --- */
+/* --- ESTILOS DE TEMAS DE PROYECTO (UNIFICADOS AL SISTEMA DE DISEÑO) --- */
 .theme-dark-project {
-  background-color: var(--white);
-  color: var(--dark-blue);
   --unemployment-green-dark: #092E34;
   --unemployment-green-mid: #00A693;
 }
-.theme-dark-project .header-hero-wrapper,
-.theme-dark-project .footer {
-    background-color: var(--unemployment-green-dark);
-}
-.theme-dark-project .project-header h1 {
-  color: var(--unemployment-green-dark);
-}
 .theme-dark-project .project-executive-summary {
-  background-color: #F0FFFC;
-  border-left: 5px solid var(--unemployment-green-dark);
+  background-color: rgba(0, 166, 147, 0.08);
+  border-left: 5px solid var(--unemployment-green-mid);
 }
 .theme-dark-project .summary-card i {
-    color: var(--unemployment-green-dark);
+  color: var(--unemployment-green-mid);
 }
 .theme-dark-project .project-sidebar .sidebar-section {
-  background-color: var(--white);
-  border: 1px solid #ddd;
-  border-top: 4px solid var(--unemployment-green-dark);
-}
-.theme-dark-project .project-sidebar h3 {
-    color: var(--dark-blue);
-}
-.theme-dark-project .project-sidebar p,
-.theme-dark-project .project-sidebar li,
-.theme-dark-project .project-sidebar strong {
-    color: var(--deep-blue);
-}
-.theme-dark-project .project-sidebar h3 i {
-    color: var(--unemployment-green-dark);
-}
-.theme-dark-project .project-sidebar a {
-    color: var(--unemployment-green-mid);
-    font-weight: 600;
-}
-.theme-dark-project .button.btn-back {
-    background-color: var(--unemployment-green-dark);
-}
-.theme-dark-project .button.btn-looker {
-    background-color: var(--unemployment-green-mid);
+  border-top: 4px solid var(--unemployment-green-mid);
 }
 
-
-/* --- TEMA PROYECTO 2: FINANCIAL INCLUSION (AZUL) --- */
 .theme-blue-project {
-  background-color: var(--white);
-  color: var(--dark-blue);
   --financial-blue-dark: #03045E;
   --financial-blue-mid: #0077B6;
   --financial-blue-light: #00B4D8;
 }
-.theme-blue-project .header-hero-wrapper,
-.theme-blue-project .footer {
-    background-color: var(--financial-blue-dark);
-}
-.theme-blue-project .project-header h1 {
-    color: var(--financial-blue-dark);
-}
 .theme-blue-project .project-executive-summary {
-  background-color: #EBF7FF; 
-  border-left: 5px solid var(--financial-blue-dark);
+  background-color: rgba(0, 180, 216, 0.08);
+  border-left: 5px solid var(--financial-blue-light);
 }
-.theme-blue-project .summary-card i { color: var(--financial-blue-dark); }
-.theme-blue-project .summary-card-text h3 { color: var(--financial-blue-dark); }
-.theme-blue-project .summary-card-text p { color: var(--deep-blue); }
+.theme-blue-project .summary-card i { color: var(--corporate-blue); }
+.theme-blue-project .summary-card-text h3 { color: var(--dark-blue); }
 .theme-blue-project .project-sidebar .sidebar-section {
-    background-color: var(--white);
-    border: 1px solid #ddd;
-    border-top: 4px solid var(--financial-blue-dark);
-}
-.theme-blue-project .project-sidebar h3 {
-  color: var(--dark-blue);
-}
-.theme-blue-project .project-sidebar p,
-.theme-blue-project .project-sidebar li,
-.theme-blue-project .project-sidebar strong {
-    color: var(--deep-blue);
-}
-.theme-blue-project .project-sidebar h3 i { color: var(--financial-blue-dark); }
-.theme-blue-project .project-sidebar a { 
-    color: var(--financial-blue-mid);
-    font-weight: 600;
-}
-.theme-blue-project .button.btn-back {
-    background-color: var(--financial-blue-dark);
-}
-.theme-blue-project .button.btn-looker {
-    background-color: var(--financial-blue-mid);
+  border-top: 4px solid var(--corporate-blue);
 }
 
 /* --- ESTILOS COMPARTIDOS POR TEMAS DE PROYECTO --- */
@@ -1047,9 +982,12 @@ p.timeline-company a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
-  margin: 3rem 0;
+  margin: 2.5rem 0;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 .summary-card {
   display: flex;
@@ -1063,6 +1001,7 @@ p.timeline-company a:hover {
 .summary-card-text h3 {
   font-size: 1.1rem;
   margin: 0 0 0.5rem 0;
+  font-family: var(--font-display);
 }
 .summary-card-text p {
   font-size: 0.95rem;
@@ -1071,8 +1010,11 @@ p.timeline-company a:hover {
 }
 .project-sidebar .sidebar-section {
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-bottom: 1rem;
+    background-color: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 .project-sidebar .sidebar-section h3 {
   font-size: 1.1rem;
@@ -1086,6 +1028,7 @@ p.timeline-company a:hover {
 .project-sidebar h3 i {
     font-size: 1rem;
     margin-right: 0.75rem;
+    color: var(--accent);
 }
 .project-sidebar p,
 .project-sidebar li {
@@ -1114,7 +1057,11 @@ p.timeline-company a:hover {
   padding-left: 1.25rem;
 }
 .project-sidebar strong {
-  color: var(--text-secondary);
+  color: var(--dark-blue);
+}
+.project-sidebar a {
+  color: var(--corporate-blue);
+  font-weight: 600;
 }
 .project-sidebar a:hover {
   text-decoration: underline;
@@ -1130,137 +1077,33 @@ p.timeline-company a:hover {
   margin: 0 auto 2rem auto;
 }
 
-/* --- TEMA PROYECTO 3: POKEDEX (ROJO) --- */
 .theme-red-project {
-  background-color: var(--white);
-  color: var(--dark-blue);
   --pokedex-red-dark: #A70000;
   --pokedex-red-mid: #BF0000;
-  --pokedex-red-light: #FF1F1F;
-}
-.theme-red-project .header-hero-wrapper {
-    background-color: var(--white);
-    color: var(--dark-blue);
-    border-bottom: 1px solid #eee;
-}
-.theme-red-project .footer {
-    background-color: var(--almost-white);
-    color: var(--dark-blue);
-    border-top: 1px solid #eee;
-    background-image: none;
-}
-.theme-red-project .footer .footer-contacts a,
-.theme-red-project .footer .footer-socials a {
-    color: var(--deep-blue);
-}
-.theme-red-project .footer .footer-contacts a:hover,
-.theme-red-project .footer .footer-socials a:hover {
-    color: var(--pokedex-red-dark);
-}
-.theme-red-project nav.desktop-nav a,
-.theme-red-project .lang-toggle,
-.theme-red-project .hamburger {
-    color: var(--dark-blue);
-}
-.theme-red-project .logo img {
-    filter: invert(1);
-}
-.theme-red-project .project-header {
-    border-bottom-color: #ddd;
-}
-.theme-red-project .project-header h1 {
-  color: var(--pokedex-red-dark);
 }
 .theme-red-project .project-executive-summary {
-    background-color: #FFF5F5;
+    background-color: rgba(167, 0, 0, 0.05);
     border-left: 5px solid var(--pokedex-red-dark);
 }
 .theme-red-project .summary-card i {
     color: var(--pokedex-red-dark);
 }
 .theme-red-project .project-sidebar .sidebar-section {
-    background-color: var(--white);
-    color: var(--dark-blue);
-    border: 1px solid #ddd;
     border-top: 4px solid var(--pokedex-red-dark);
 }
-.theme-red-project .project-sidebar h3 {
-    color: var(--dark-blue);
-}
-.theme-red-project .project-sidebar h3 i {
-    color: var(--pokedex-red-dark);
-}
-.theme-red-project .project-sidebar p,
-.theme-red-project .project-sidebar li,
-.theme-red-project .project-sidebar strong {
-    color: var(--deep-blue);
-}
-.theme-red-project .project-sidebar a {
-    color: var(--pokedex-red-mid);
-    font-weight: 600;
-}
-.theme-red-project .project-sidebar a:hover {
-    text-decoration-color: var(--pokedex-red-light);
-}
-.theme-red-project .button.btn-back { background-color: var(--dark-blue); }
-.theme-red-project .button.btn-looker { background-color: var(--pokedex-red-mid); }
 
-/* --- TEMA PROYECTO 4: EXCHANGE RATE (CUSTOM THEME) --- */
 .theme-exchange-rate-project {
-  background-color: var(--white);
-  color: var(--dark-blue);
-  /* Definimos la nueva paleta basada en tu dashboard */
-  --exchange-rate-dark-bg: #0A1931; /* Un azul muy oscuro y corporativo, similar al fondo */
-  --exchange-rate-card-bg: #1A3D63; /* Un azul intermedio para simular las tarjetas */
-  --exchange-rate-highlight: #3498DB; /* El azul brillante para enlaces y acentos */
-}
-.theme-exchange-rate-project .header-hero-wrapper,
-.theme-exchange-rate-project .footer {
-    background-color: var(--exchange-rate-dark-bg);
-    background-image: none; /* Quitamos la textura para un look más limpio como el de Power BI */
-}
-.theme-exchange-rate-project .project-header h1 {
-  color: var(--dark-blue);
+  --exchange-rate-highlight: #3498DB;
 }
 .theme-exchange-rate-project .project-executive-summary {
-  background-color: var(--exchange-rate-card-bg);
+  background-color: rgba(52, 152, 219, 0.08);
   border-left: 5px solid var(--exchange-rate-highlight);
-  border-radius: 8px;
-  color: var(--white);
 }
-.theme-exchange-rate-project .summary-card i,
-.theme-exchange-rate-project .summary-card-text h3 {
-    color: var(--white);
-}
-.theme-exchange-rate-project .summary-card-text p {
-    color: var(--light-blue);
+.theme-exchange-rate-project .summary-card i {
+    color: var(--exchange-rate-highlight);
 }
 .theme-exchange-rate-project .project-sidebar .sidebar-section {
   border-top: 4px solid var(--exchange-rate-highlight);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-}
-.theme-exchange-rate-project .project-sidebar h3 i {
-    color: var(--exchange-rate-highlight);
-}
-.theme-exchange-rate-project .project-sidebar a {
-    color: var(--exchange-rate-highlight);
-    font-weight: 600;
-}
-.theme-exchange-rate-project .button.btn-back {
-    background-color: var(--exchange-rate-dark-bg);
-}
-.theme-exchange-rate-project .button.btn-looker {
-    background-color: var(--exchange-rate-highlight);
-}
-
-/* CORRECCIÓN PARA EL MENÚ MÓVIL EN TEMA ROJO */
-.theme-red-project .mobile-nav {
-  background: var(--white);
-}
-.theme-red-project .mobile-nav a,
-.theme-red-project .mobile-nav .lang-toggle-wrapper {
-  color: var(--dark-blue);
-  border-top: 1px solid #f0f0f0;
 }
 
 
