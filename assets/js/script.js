@@ -260,7 +260,7 @@ const translations = {
     project_pokedex: {
       pageTitle: "Interactive Pokédex Dashboard – Powered by Looker Studio",
       lookerStudioUrl: "https://lookerstudio.google.com/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF",
-      iframeEmbed: `<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
+      iframeEmbed: `<iframe width="100%" height="920" src="https://lookerstudio.google.com/embed/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF" frameborder="0" style="border:0; width:100%; height:920px;" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Back to Projects",
       linkedinButton: "Share on LinkedIn",
       xButton: "Share on X",
@@ -576,7 +576,7 @@ const translations = {
     project_pokedex: {
       pageTitle: "Dashboard Interactivo de Pokédex – Con Looker Studio",
       lookerStudioUrl: "https://lookerstudio.google.com/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF",
-      iframeEmbed: `<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
+      iframeEmbed: `<iframe width="100%" height="920" src="https://lookerstudio.google.com/embed/reporting/9a497039-444e-4275-a723-d09a926b05fa/page/Yk8RF" frameborder="0" style="border:0; width:100%; height:920px;" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>`,
       backButton: "Volver a Proyectos",
       linkedinButton: "Compartir en LinkedIn",
       xButton: "Compartir en X",

@@ -919,33 +919,41 @@ p.timeline-company a:hover {
 .btn-looker { background-color: #4285F4; }
 .case-study-layout {
   display: flex;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: flex-start;
+  margin-top: 3rem;
 }
 .project-sidebar {
   width: 320px;
   flex-shrink: 0;
   position: sticky;
-  top: 120px;
+  top: 100px;
 }
 .project-dashboard-content {
   flex-grow: 1;
+  min-width: 0;
 }
 .dashboard-embed-container {
   position: relative;
-  overflow: hidden;
   width: 100%;
-  padding-top: 62%;
-  border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  border-radius: 16px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  border: 1px solid rgba(0, 180, 216, 0.2);
+  overflow: hidden;
 }
 .dashboard-embed-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  height: 750px;
+  min-height: 700px;
   border: 0;
+  display: block;
+}
+
+/* Pokédex Dashboard Specific Styling: Tall aspect ratio for complete view */
+#page-pokedex .dashboard-embed-container iframe {
+  height: 920px;
+  min-height: 880px;
 }
 
 /* --- SKILLS LINEUP: Diseño "Embudo de Competencias" Harmonizado --- */
