@@ -948,39 +948,110 @@ p.timeline-company a:hover {
   border: 0;
 }
 
+/* --- SKILLS LINEUP: Diseño "Embudo de Competencias" Harmonizado --- */
+.skills-lineup { 
+  font-family: var(--font-display); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0; 
+}
+.lineup-tier {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.lineup-tier-1 { width: 100%; }
+.lineup-tier-2 { width: 90%; }
+.lineup-tier-3 { width: 80%; }
+.lineup-tier-4 { width: 75%; }
+.lineup-tier .skill {
+  padding: 0.6rem 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.lineup-tier .skill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 230, 118, 0.3);
+}
+.lineup-tier-1 .skill {
+  font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+  background: linear-gradient(135deg, #00b4d8, #00e676);
+  color: #0d1b2a !important;
+  padding: 0.8rem 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 230, 118, 0.25);
+  border: none;
+}
+.lineup-tier-1 .skill-logo { height: 2.2rem; filter: brightness(0); }
+.lineup-tier-2 .skill {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  background-color: rgba(0, 230, 118, 0.15);
+  border: 1.5px solid #00e676;
+  color: #ffffff;
+}
+.lineup-tier-3 .skill {
+  font-size: clamp(0.85rem, 2.2vw, 0.98rem);
+  background-color: rgba(0, 180, 216, 0.15);
+  border: 1.5px solid #00b4d8;
+  color: #ffffff;
+}
+.lineup-tier-4 .skill {
+  font-size: 0.88rem;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}
+.lineup-tier-4 .skill:hover {
+  background: linear-gradient(135deg, #00b4d8, #00e676);
+  color: #0d1b2a;
+  border-color: transparent;
+}
 
-/* --- ESTILOS DE TEMAS DE PROYECTO (UNIFICADOS AL SISTEMA DE DISEÑO) --- */
-.theme-dark-project {
-  --unemployment-green-dark: #092E34;
-  --unemployment-green-mid: #00A693;
+/* --- LANGUAGES, CERTIFICATIONS, INTERESTS --- */
+.languages-list { display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: flex-start; align-items: center; }
+.language-item { display: flex; align-items: center; gap: 0.75rem; }
+.language-item img { width: 32px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.language-item p { margin: 0; }
+.language-item .lang-level { font-size: 0.9rem; color: var(--deep-blue); }
+.certifications-list { list-style: none; padding-left: 0; columns: 2; gap: 2rem; }
+.certifications-list li { break-inside: avoid-column; padding-bottom: 1rem; }
+.certifications-list li a { text-decoration: none; font-weight: 600; color: var(--mid-blue); transition: color 0.3s ease; }
+.certifications-list li a:hover { color: var(--accent); text-decoration: underline; }
+.interests-grid { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 2.5rem; 
+  margin: 0 auto;
 }
-.theme-dark-project .project-executive-summary {
-  background-color: rgba(0, 166, 147, 0.08);
-  border-left: 5px solid var(--unemployment-green-mid);
+.interest-item { text-align: center; color: var(--white); min-width: 90px; }
+.interest-item i { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--corporate-blue); }
+.interest-item p { font-weight: 600; }
+.badge-widgets { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem; }
+.badge-widgets > div {
+  background-color: var(--white);
+  padding: 0.75rem 0.4rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.theme-dark-project .summary-card i {
-  color: var(--unemployment-green-mid);
-}
-.theme-dark-project .project-sidebar .sidebar-section {
-  border-top: 4px solid var(--unemployment-green-mid);
+.badge-widgets > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-.theme-blue-project {
-  --financial-blue-dark: #03045E;
-  --financial-blue-mid: #0077B6;
-  --financial-blue-light: #00B4D8;
-}
-.theme-blue-project .project-executive-summary {
-  background-color: rgba(0, 180, 216, 0.08);
-  border-left: 5px solid var(--financial-blue-light);
-}
-.theme-blue-project .summary-card i { color: var(--corporate-blue); }
-.theme-blue-project .summary-card-text h3 { color: var(--dark-blue); }
-.theme-blue-project .project-sidebar .sidebar-section {
-  border-top: 4px solid var(--corporate-blue);
-}
-
-/* --- ESTILOS COMPARTIDOS POR TEMAS DE PROYECTO --- */
+/* --- ESTILOS DE TEMAS DE PROYECTO (ESTÁNDAR UNIFICADO - SIN BORDES ROJOS/VERDES) --- */
 .project-executive-summary {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -988,9 +1059,10 @@ p.timeline-company a:hover {
   margin: 2.5rem 0;
   padding: 2rem;
   border-radius: 14px;
-  background: var(--white);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(0, 180, 216, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 180, 216, 0.12);
+  border-left: 5px solid var(--corporate-blue);
 }
 .summary-card {
   display: flex;
@@ -1000,16 +1072,19 @@ p.timeline-company a:hover {
 .summary-card i {
   font-size: 1.8rem;
   margin-top: 5px;
+  color: var(--corporate-blue);
 }
 .summary-card-text h3 {
   font-size: 1.1rem;
   margin: 0 0 0.5rem 0;
   font-family: var(--font-display);
+  color: var(--dark-blue);
 }
 .summary-card-text p {
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
+  color: var(--deep-blue);
 }
 .project-sidebar .sidebar-section {
     padding: 1.5rem;
@@ -1017,6 +1092,7 @@ p.timeline-company a:hover {
     margin-bottom: 1rem;
     background-color: var(--white);
     border: 1px solid rgba(0, 0, 0, 0.07);
+    border-top: 4px solid var(--corporate-blue);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 .project-sidebar .sidebar-section h3 {
@@ -1027,9 +1103,10 @@ p.timeline-company a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--dark-blue);
 }
 .project-sidebar h3 i {
-    font-size: 1rem;
+    font-size: 1.05rem;
     margin-right: 0.75rem;
     color: var(--accent);
 }
@@ -1073,42 +1150,14 @@ p.timeline-company a:hover {
   font-size: 1.8rem;
   text-align: center;
   margin-bottom: 0.5rem;
+  color: var(--dark-blue);
 }
 .project-dashboard-content p {
   text-align: center;
   max-width: 600px;
   margin: 0 auto 2rem auto;
+  color: var(--deep-blue);
 }
-
-.theme-red-project {
-  --pokedex-red-dark: #A70000;
-  --pokedex-red-mid: #BF0000;
-}
-.theme-red-project .project-executive-summary {
-    background-color: rgba(167, 0, 0, 0.05);
-    border-left: 5px solid var(--pokedex-red-dark);
-}
-.theme-red-project .summary-card i {
-    color: var(--pokedex-red-dark);
-}
-.theme-red-project .project-sidebar .sidebar-section {
-    border-top: 4px solid var(--pokedex-red-dark);
-}
-
-.theme-exchange-rate-project {
-  --exchange-rate-highlight: #3498DB;
-}
-.theme-exchange-rate-project .project-executive-summary {
-  background-color: rgba(52, 152, 219, 0.08);
-  border-left: 5px solid var(--exchange-rate-highlight);
-}
-.theme-exchange-rate-project .summary-card i {
-    color: var(--exchange-rate-highlight);
-}
-.theme-exchange-rate-project .project-sidebar .sidebar-section {
-  border-top: 4px solid var(--exchange-rate-highlight);
-}
-
 
 /* --- ESTILOS RESPONSIVOS --- */
 @media (max-width: 992px) {
