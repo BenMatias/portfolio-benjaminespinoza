@@ -768,9 +768,39 @@ function setupGlobalInteractions() {
   if (menuToggle && mobileNav) {
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.setAttribute('aria-controls', 'mobile-nav');
-    menuToggle.addEventListener('click', () => {
+
+    const toggleNav = (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
       const isExpanded = mobileNav.classList.toggle('show');
       menuToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+      if (isExpanded) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    };
+
+    menuToggle.addEventListener('click', toggleNav);
+
+    // Auto-close menu when clicking any link inside mobileNav
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (mobileNav.classList.contains('show') && !mobileNav.contains(e.target) && !menuToggle.contains(e.target)) {
+        mobileNav.classList.remove('show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
     });
   }
 }

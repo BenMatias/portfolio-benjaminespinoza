@@ -160,24 +160,22 @@ nav.desktop-nav a:hover { color: #00f2fe; }
 .mobile-nav { 
   display: none; 
   flex-direction: column; 
-  background: rgba(10, 16, 30, 0.97); 
+  background: rgba(10, 16, 30, 0.98); 
   backdrop-filter: blur(24px); 
   -webkit-backdrop-filter: blur(24px); 
-  position: absolute; 
-  top: 100%; 
-  left: 0; 
-  width: 100%; 
+  position: fixed !important; 
+  top: 60px !important; 
+  left: 0 !important; 
+  right: 0 !important; 
+  bottom: 0 !important; 
+  width: 100vw !important; 
+  height: calc(100vh - 60px) !important;
+  z-index: 99999 !important;
+  overflow-y: auto !important;
   border-top: 1px solid rgba(0, 230, 118, 0.2);
 }
 .mobile-nav.show { 
-  display: flex; 
-  position: fixed; 
-  top: 65px; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  z-index: 9999;
-  overflow-y: auto;
+  display: flex !important; 
 }
 .mobile-nav a { 
   padding: 1rem 1.5rem; 
@@ -1197,33 +1195,20 @@ p.timeline-company a:hover {
   nav.desktop-nav { display: none; }
   .hamburger { display: block; }
 
-  /* Sticky Header on Mobile: Header and logo remain anchored at top of viewport when scrolling */
+  /* Fixed Mobile Header & Navigation */
   header,
   .header-hero-wrapper header {
-    position: sticky !important;
+    position: fixed !important;
     top: 0 !important;
-    z-index: 10000 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 100000 !important;
     background: rgba(10, 16, 30, 0.96) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
+    padding: 0.75rem 1.5rem !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-  }
-
-  /* Fixed Mobile Navigation Menu: Opens right in current viewport when hamburger is tapped */
-  .mobile-nav.show { 
-    display: flex !important; 
-    position: fixed !important; 
-    top: 60px !important; 
-    left: 0 !important; 
-    right: 0 !important; 
-    bottom: 0 !important; 
-    z-index: 9999 !important;
-    background: rgba(10, 16, 30, 0.98) !important;
-    backdrop-filter: blur(24px) !important;
-    -webkit-backdrop-filter: blur(24px) !important;
-    overflow-y: auto !important;
   }
 
   /* Hero: ocultar imagen y wrapper en mobile para eliminar espacio vacío */
