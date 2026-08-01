@@ -294,18 +294,19 @@ nav.desktop-nav a:hover { color: #00f2fe; }
   cursor: pointer;
 }
 
-.btn-hero-primary, .btn-emerald { 
-  background-color: #00e676; 
+.btn-hero-primary, .btn-emerald, .btn-primary { 
+  background: linear-gradient(135deg, #00b4d8, #00e676); 
   color: #0d1b2a !important; 
-  border-color: #00e676;
+  border: none;
   box-shadow: 0 8px 24px rgba(0, 230, 118, 0.35);
+  font-weight: 700;
+  font-family: var(--font-display);
 }
-.btn-hero-primary:hover, .btn-emerald:hover { 
-  background-color: #ffffff; 
+.btn-hero-primary:hover, .btn-emerald:hover, .btn-primary:hover { 
+  background: linear-gradient(135deg, #00e676, #00b4d8); 
   color: #0d1b2a !important; 
-  border-color: #ffffff;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 230, 118, 0.5);
 }
 
 .btn-hero-secondary, .btn-outline-white { 
@@ -651,7 +652,7 @@ p.timeline-company a:hover {
 
 /* --- SKILLS LINEUP: Diseño "Embudo de Competencias" --- */
 .skills-lineup { 
-  font-family: 'Oswald', sans-serif; 
+  font-family: var(--font-display); 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -670,16 +671,16 @@ p.timeline-company a:hover {
 .lineup-tier-3 { width: 80%; }
 .lineup-tier-4 { width: 70%; }
 .lineup-tier .skill {
-  padding: 0.5rem 1.25rem;
+  padding: 0.55rem 1.3rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   border-radius: 2rem;
   font-weight: 700;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 .lineup-tier .skill:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 16px rgba(0, 230, 118, 0.25);
 }
 .lineup-tier-1 .skill {
   font-size: clamp(1.4rem, 4vw, 1.8rem);
@@ -690,29 +691,31 @@ p.timeline-company a:hover {
   gap: 1rem;
 }
 .lineup-tier-1 .skill-logo { height: 2.2rem; filter: brightness(0) invert(1); }
-.lineup-tier-1 .skill:nth-child(1) { background-color: var(--lineup-orange); }
-.lineup-tier-1 .skill:nth-child(2) { background-color: var(--lineup-purple); }
-.lineup-tier-1 .skill:nth-child(3) { background-color: var(--lineup-green); }
+.lineup-tier-1 .skill:nth-child(1) { background-color: #f2a900; color: #0d1b2a; } /* Power BI Yellow */
+.lineup-tier-1 .skill:nth-child(2) { background-color: #3b82f6; color: #ffffff; } /* Looker Studio Blue */
+.lineup-tier-1 .skill:nth-child(3) { background-color: #e8762d; color: #ffffff; } /* Tableau Orange */
 .lineup-tier-2 .skill {
-  font-size: clamp(1rem, 3vw, 1.2rem);
-  background-color: var(--lineup-yellow);
-  color: var(--dark-blue);
+  font-size: clamp(1rem, 3vw, 1.15rem);
+  background-color: #00e676;
+  color: #0d1b2a;
 }
 .lineup-tier-3 .skill {
   font-size: clamp(0.9rem, 2.5vw, 1rem);
-  background-color: var(--lineup-cyan);
-  color: var(--dark-blue);
+  background-color: rgba(0, 180, 216, 0.2);
+  border: 1.5px solid #00b4d8;
+  color: #ffffff;
 }
 .lineup-tier-4 .skill {
   font-size: 0.9rem;
-  color: var(--light-blue);
-  background-color: transparent;
-  border: 2px solid var(--mid-blue);
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
   font-weight: 600;
 }
 .lineup-tier-4 .skill:hover {
-  background-color: var(--mid-blue);
-  color: var(--white);
+  background-color: #00e676;
+  color: #0d1b2a;
+  border-color: #00e676;
 }
 
 /* --- LANGUAGES, CERTIFICATIONS, INTERESTS --- */
