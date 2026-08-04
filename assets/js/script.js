@@ -20,9 +20,9 @@ const translations = {
     ],
 
     // --- Hero KPI & Filters ---
-    kpiDashboards: "Live Dashboards",
-    kpiReports: "Executive Reports",
-    kpiAutomation: "Process & QA Efficiency",
+    kpiDashboards: "BI Dashboards & Reports",
+    kpiReports: "Business Units with KPIs",
+    kpiAutomation: "Data & Analytics Stack",
     filterAll: "All Projects",
     filterPowerBI: "Power BI",
     filterLooker: "Looker Studio",
@@ -35,12 +35,12 @@ const translations = {
     btnDownloadCV: "Download CV",
 
     // --- Index Page Content ---
-    heroTitle: "Business Analyst & Product Owner focused on bridging strategy, data, and technology",
-    heroSubtitle: "Transforming business needs into scalable products through Agile triads, process modeling (BPMN 2.0), SQL analytics, and Generative AI.",
+    heroTitle: "Business & Data Analyst | Product Owner",
+    heroSubtitle: "Transforming complex data into strategic decisions and scalable products through SQL analytics, Power BI / Looker Studio, Agile triads (BPMN 2.0), and Generative AI.",
     btnProjects: "View Projects",
     btnResume: "View Resume",
     aboutTitle: "About Me",
-    aboutContent: `<p>I'm <strong>Benjamín Espinoza</strong>, an Industrial Civil Engineer serving in a dual role as <strong>Business Analyst (BA) and Product Owner (PO)</strong> at Banco Internacional. I specialize in bridging business vision with technology development, structuring product initiatives within Agile triads (Jira/Confluence), modeling processes using <strong>BPMN 2.0</strong> standards, and driving productivity through Generative AI.</p><p>My experience spans financial services, retail, and industrial sectors. At Banco Internacional, I lead the public website redesign team using <strong>Puck CMS</strong> and web analytics (GA4, GTM, Clarity), craft user stories, manage MVP Canvases and User Story Maps, conduct functional QA testing, and build data analytics querying <strong>PostgreSQL</strong> in SQL alongside <strong>Looker Studio</strong> and Power BI dashboards.</p><p>Early adopter of AI tools like <strong>Gemini, NotebookLM, and Rovo AI</strong> to streamline business analysis and documentation. A father, lifelong learner, passionate about music and continuous improvement.</p>`,
+    aboutContent: `<p>I'm <strong>Benjamín Espinoza</strong>, an Industrial Civil Engineer specializing in <strong>Data Analytics and Business Intelligence</strong>, serving in a dual role as <strong>Business Analyst (BA) and Product Owner (PO)</strong> at Banco Internacional. My core strength lies in transforming complex data into strategic decisions, designing KPI frameworks, and bridging business vision with technical execution.</p><p>Throughout my career across banking, retail, and industrial sectors, I have built over 50 executive and operational dashboards. At Banco Internacional, I execute advanced SQL queries in <strong>PostgreSQL</strong>, build reports in <strong>Looker Studio</strong> and Power BI, define MVP Canvases and User Story Maps in Jira/Confluence, lead the public website redesign (<strong>Puck CMS</strong>, GA4, GTM, Clarity), and perform functional QA testing.</p><p>Additionally, I am an early adopter of Generative AI (<strong>Gemini, NotebookLM, and Rovo AI</strong>) to automate data workflows, streamline documentation, and accelerate value delivery. A father, lifelong learner, passionate about music and continuous improvement.</p>`,
     impactTitle: "How I’ve Made an Impact",
     impacts: [{
       icon: "fa-users-gear",
@@ -482,9 +482,9 @@ const translations = {
     ],
 
     // --- Hero KPI & Filters ---
-    kpiDashboards: "Dashboards en Vivo",
-    kpiReports: "Reportes Ejecutivos",
-    kpiAutomation: "Eficiencia en Procesos y QA",
+    kpiDashboards: "Dashboards & Reportes BI",
+    kpiReports: "Áreas con KPIs Creados",
+    kpiAutomation: "Modelado & Analítica",
     filterAll: "Todos los Proyectos",
     filterPowerBI: "Power BI",
     filterLooker: "Looker Studio",
@@ -497,12 +497,12 @@ const translations = {
     btnDownloadCV: "Descargar CV",
 
     // --- Index Page Content ---
-    heroTitle: "Business Analyst & Product Owner enfocado en conectar estrategia, datos y tecnología",
-    heroSubtitle: "Transformo necesidades de negocio en productos escalables mediante triadas ágiles, modelamiento BPMN 2.0, analítica SQL y IA Generativa.",
+    heroTitle: "Business & Data Analyst | Product Owner",
+    heroSubtitle: "Transformo datos complejos en decisiones estratégicas y productos escalables mediante analítica SQL, Power BI / Looker Studio, triadas ágiles (BPMN 2.0) e IA Generativa.",
     btnProjects: "Ver Proyectos",
     btnResume: "Ver CV",
     aboutTitle: "Sobre mí",
-    aboutContent: `<p>Soy <strong>Benjamín Espinoza</strong>, Ingeniero Civil Industrial desempeñándome en el rol dual de <strong>Business Analyst (BA) y Product Owner (PO)</strong> en Banco Internacional. Me especializo en conectar la visión estratégica de negocio con el desarrollo tecnológico, estructurar iniciativas en triadas ágiles (Jira/Confluence), modelar procesos bajo estándar <strong>BPMN 2.0</strong> y potenciar la productividad con Inteligencia Artificial Generativa.</p><p>Mi trayectoria abarca el sector financiero, retail e industrial. En Banco Internacional lidero el equipo del rediseño del sitio web público con administración en <strong>Puck CMS</strong> y analítica digital (GA4, GTM, Clarity), redacto historias de usuario, gestiono el MVP Canvas y User Story Maps, ejecuto pruebas funcionales (QA) y desarrollo analítica de datos ejecutando consultas SQL en <strong>PostgreSQL</strong> y dashboards en <strong>Looker Studio</strong> y Power BI.</p><p>Pionero en la adopción diaria de herramientas de IA como <strong>Gemini, NotebookLM y Rovo AI</strong> para automatizar flujos y optimizar la gestión de requerimientos. Padre, aprendiz constante, apasionado de la música y la mejora continua.</p>`,
+    aboutContent: `<p>Soy <strong>Benjamín Espinoza</strong>, Ingeniero Civil Industrial especializado en <strong>Análisis de Datos e Inteligencia de Negocios</strong>, desempeñándome en el rol dual de <strong>Business Analyst (BA) y Product Owner (PO)</strong> en Banco Internacional. Mi fuerte radica en transformar datos complejos en decisiones estratégicas, diseñar la arquitectura de indicadores de rendimiento (KPIs) y conectar la visión del negocio con el desarrollo tecnológico.</p><p>A lo largo de mi carrera en el sector financiero, retail e industrial, he desarrollado más de 50 tableros de control ejecutivos y operativos. En Banco Internacional ejecuto consultas SQL avanzadas en <strong>PostgreSQL</strong>, construyo reportes en <strong>Looker Studio</strong> y Power BI, estructuro el MVP Canvas y User Story Maps en Jira/Confluence para triadas ágiles, lidero el rediseño del sitio web público (<strong>Puck CMS</strong>, GA4, GTM, Clarity) y realizo pruebas funcionales (QA).</p><p>Adicionalmente, soy pionero en la integración diaria de Inteligencia Artificial Generativa (<strong>Gemini, NotebookLM y Rovo AI</strong>) para optimizar la analítica, automatizar la documentación y acelerar la entrega de valor. Padre, aprendiz constante, apasionado de la música y la mejora continua.</p>`,
     impactTitle: "Cómo He Generado Impacto",
     impacts: [{
       icon: "fa-users-gear",
