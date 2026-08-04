@@ -22,7 +22,7 @@ const translations = {
     // --- Hero KPI & Filters ---
     kpiDashboards: "Live Dashboards",
     kpiReports: "Executive Reports",
-    kpiAutomation: "ETL Hours Saved/Mo",
+    kpiAutomation: "Process & QA Efficiency",
     filterAll: "All Projects",
     filterPowerBI: "Power BI",
     filterLooker: "Looker Studio",
@@ -35,29 +35,29 @@ const translations = {
     btnDownloadCV: "Download CV",
 
     // --- Index Page Content ---
-    heroTitle: "Business & Data Analyst focused on transforming data into decisions",
-    heroSubtitle: "Helping businesses make better decisions through analytics and business intelligence.",
+    heroTitle: "Business Analyst & Product Owner focused on bridging strategy, data, and technology",
+    heroSubtitle: "Transforming business needs into scalable products through Agile triads, process modeling (BPMN 2.0), SQL analytics, and Generative AI.",
     btnProjects: "View Projects",
     btnResume: "View Resume",
     aboutTitle: "About Me",
-    aboutContent: `<p>I'm Benjamin Espinoza, Business & Data Analyst with a degree in Industrial Engineering and a strong background in analytics, reporting, and stakeholder collaboration. I enjoy solving complex problems with simple and scalable solutions.</p><p>My experience spans services, sales, and banking industries, where I've built dashboards, defined KPIs from scratch, and empowered teams through better data use. I translate business needs into analytical insights.</p><p>I'm a father, a lifelong learner, passionate about music and continuous improvement. I’m currently expanding my skills in English, French, and product strategy.</p>`,
+    aboutContent: `<p>I'm Benjamin Espinoza, a Business & Data Analyst with a degree in Industrial Engineering and dual experience as Product Owner and Business Analyst at Banco Internacional. I specialize in bridging business strategy with tech development, modeling workflows under BPMN 2.0 standards, and boosting productivity with Generative AI.</p><p>My background spans banking, services, and industrial sectors. At Banco Internacional, I lead the public website redesign managing Puck CMS and web analytics (GA4, GTM, Clarity), write user stories for Agile triads in Jira/Confluence, execute functional QA testing, and build data analytics using PostgreSQL and Looker Studio.</p><p>I actively leverage AI tools like Gemini, NotebookLM, and Rovo AI to streamline business analysis workflows. A father, lifelong learner, passionate about music and continuous improvement.</p>`,
     impactTitle: "How I’ve Made an Impact",
     impacts: [{
-      icon: "fa-chart-bar",
-      title: "Dashboards that Drive Decisions",
-      text: "Designed impactful dashboards for banking, industrial, and executive audiences using Power BI and Looker Studio."
-    }, {
-      icon: "fa-bullseye",
-      title: "Built KPI Systems from the Ground Up",
-      text: "Established performance measurement frameworks in teams with no prior tracking, bringing structure, alignment, and continuous improvement."
-    }, {
-      icon: "fa-cogs",
-      title: "Efficiency Through Automation",
-      text: "Automated recurring reporting tasks to eliminate manual processes and optimize time."
-    }, {
       icon: "fa-users-gear",
-      title: "Insights Across the Organization",
-      text: "Empowered diverse business areas with data-driven insights to support decision-making across operations, sales, risk, product, and beyond."
+      title: "Agile Triad Execution & UX Delivery",
+      text: "Facilitated business-tech alignment in Agile triads (PO, Tech Lead, BA), crafting MVP Canvases, User Story Maps, and functional QA certifications."
+    }, {
+      icon: "fa-globe",
+      title: "Public Website Redesign & Web Analytics",
+      text: "Led the public website redesign team at Banco Internacional with hands-on Puck CMS administration and full GA4, GTM, and Clarity analytics monitoring."
+    }, {
+      icon: "fa-project-diagram",
+      title: "Process Optimization (BPMN 2.0 & AI)",
+      text: "Mapped business processes using BPMN 2.0 and accelerated flow diagramming and documentation with Rovo AI, Gemini, and NotebookLM."
+    }, {
+      icon: "fa-chart-pie",
+      title: "Data Analytics & SQL Dashboards",
+      text: "Extracted insights from PostgreSQL databases with SQL and created Looker Studio / Power BI dashboards for executive decision-making."
     }],
     projectsTitle: "Featured Projects",
     projects: [
@@ -71,7 +71,7 @@ const translations = {
 
     // --- CV Page Content ---
     cv_hero_title: "My Professional Journey",
-    cv_hero_summary: "A journey through the projects and roles that have defined my career in the world of data.",
+    cv_hero_summary: "A journey through the projects and roles that have defined my career in product, business analysis, and data.",
     cv_download: "Download PDF",
     cv_work_title: "Work Experience",
     cv_education_title: "Education",
@@ -84,11 +84,19 @@ const translations = {
     cv_timeline_items: [{
       type: 'work',
       date: "May 2023 – Present",
-      title: "Business Analyst",
+      title: "Business Analyst & Product Owner",
       company: "Banco Internacional",
       url: "https://www.internacional.cl",
       logo: "assets/img/logos/banco-internacional.webp",
-      description: `<ul><li>Built a company-wide reporting and KPI system from scratch for the Innovation area, where performance tracking and outcome evaluation were previously nonexistent.</li><li>Created over 20 dashboards for departments such as Innovation, Fraud, Sales, Product Owners, and Strategic Planning.</li><li>Led and scaled a metrics team, automated processes using ETL pipelines and team-managed databases, ensuring data integrity and scalability.</li><li>Transitioned to cross-functional squad as Business Analyst: user stories, testing, flows and dashboards.</li></ul>`
+      description: `<ul>
+  <li><strong>Business Analyst in Agile Triads</strong>: Defined MVP Canvases, User Story Mapping, wrote user stories in Jira, and structured technical/functional documentation in Confluence within Agile triads (Product Owner, Tech Lead, BA + Developers).</li>
+  <li><strong>Functional QA & Production Rollouts</strong>: Conducted functional testing in QA staging environments to certify software builds, collaborated with UX designers for Figma wireframing, and performed smoke testing for production deployments.</li>
+  <li><strong>Dual Role (BA & PO) for Public Website Redesign</strong>: Led the cross-functional team in charge of redesigning the bank’s public website. Directly managed page creation and production publishing using Puck CMS, AI-assisted UX mockups (Firebase), and web analytics setup (GA4, GTM, Microsoft Clarity).</li>
+  <li><strong>Process Modeling (BPMN 2.0)</strong>: Surveyed and mapped business workflows and operating models adhering strictly to BPMN 2.0 standards.</li>
+  <li><strong>Data Analytics & SQL (PostgreSQL & Looker Studio)</strong>: Measured product adoption and performance by writing complex SQL queries in PostgreSQL and crafting executive dashboards in Looker Studio.</li>
+  <li><strong>GenAI Productivity Integration</strong>: Leveraged Gemini and NotebookLM daily for rapid user story creation and task automation, alongside Rovo AI (Jira/Confluence) for AI-assisted flow diagramming.</li>
+  <li><strong>Analytics & Metrics Legacy (2+ Years)</strong>: Established the initial reporting framework and key performance indicators from scratch across Innovation, Fraud, Sales, and Product teams before transitioning to the digital product triad.</li>
+</ul>`
     }, {
       type: 'work',
       date: "Sep 2021 – Apr 2023",
@@ -145,9 +153,30 @@ const translations = {
         name: "Tableau",
         logo: "assets/img/logos/tableau.webp"
       }],
-      tier2: ["Data Modeling", "Business Intelligence", "Dashboard Design", "Storytelling", "Stakeholder Engagement"],
-      tier3: ["Power Query", "DAX", "LookML", "Process Mapping", "BPMN", "Agile/Scrum", "KPI Development", "SQL"],
-      tier4: ["Jira / Confluence", "Advanced Excel", "Google Sheets", "Lucidchart / Draw.io", "Data Visualization Principles", "Documentation & Reporting", "Miro"]
+      tier2: [
+        "User Story Mapping & MVP Canvas",
+        "Process Modeling (BPMN 2.0)",
+        "Product Owner & BA Dual Role",
+        "Functional QA Testing",
+        "Business Intelligence & KPIs"
+      ],
+      tier3: [
+        "PostgreSQL & SQL Queries",
+        "Jira & Confluence (Rovo AI)",
+        "Gemini & NotebookLM (GenAI)",
+        "Puck CMS & Web Publishing",
+        "Web Analytics (GA4 / GTM / Clarity)",
+        "Figma & UX Collaboration",
+        "Power Query & DAX"
+      ],
+      tier4: [
+        "Agile Triads & Scrum",
+        "Advanced Excel & Google Sheets",
+        "Lucidchart & Draw.io",
+        "Dashboard Design",
+        "Stakeholder Engagement",
+        "Functional Documentation"
+      ]
     },
     cv_languages_items: [{
       lang: "Spanish",
@@ -445,7 +474,7 @@ const translations = {
     // --- Hero KPI & Filters ---
     kpiDashboards: "Dashboards en Vivo",
     kpiReports: "Reportes Ejecutivos",
-    kpiAutomation: "Horas/Mes Ahorradas ETL",
+    kpiAutomation: "Eficiencia en Procesos y QA",
     filterAll: "Todos los Proyectos",
     filterPowerBI: "Power BI",
     filterLooker: "Looker Studio",
@@ -458,29 +487,29 @@ const translations = {
     btnDownloadCV: "Descargar CV",
 
     // --- Index Page Content ---
-    heroTitle: "Business & Data Analyst enfocado en transformar datos en decisiones",
-    heroSubtitle: "Ayudo a las empresas a tomar mejores decisiones a través del análisis y la inteligencia de negocios.",
+    heroTitle: "Business Analyst & Product Owner enfocado en conectar estrategia, datos y tecnología",
+    heroSubtitle: "Transformo necesidades de negocio en productos escalables mediante triadas ágiles, modelamiento BPMN 2.0, analítica SQL y IA Generativa.",
     btnProjects: "Ver Proyectos",
     btnResume: "Ver CV",
     aboutTitle: "Sobre mí",
-    aboutContent: `<p>Soy Benjamin Espinoza, Business & Data Analyst con formación en Ingeniería Civil Industrial y experiencia en análisis de datos, reportería y colaboración con áreas de negocio. Me apasiona resolver problemas complejos con soluciones simples y escalables.</p><p>He trabajado en empresas de servicios, ventas y banca, creando dashboards, definiendo KPIs desde cero y promoviendo el uso estratégico de los datos. Traduzco necesidades de negocio en insights accionables.</p><p>Padre, aprendiz permanente y amante de la música y la mejora continua. Actualmente perfecciono mi inglés, francés y conocimientos en estrategia de producto.</p>`,
+    aboutContent: `<p>Soy Benjamin Espinoza, Business & Data Analyst con formación en Ingeniería Civil Industrial y desempeño dual como Product Owner y Business Analyst en Banco Internacional. Me especializo en conectar la estrategia de negocio con el desarrollo tecnológico, modelar procesos bajo estándar BPMN 2.0 y maximizar la eficiencia mediante Inteligencia Artificial Generativa.</p><p>Mi trayectoria abarca el sector financiero, servicios e industria. En Banco Internacional lidero el equipo del rediseño del sitio web público con administración en Puck CMS y analítica digital (GA4, GTM, Clarity), redacto historias de usuario en triadas ágiles (Jira/Confluence), ejecuto pruebas funcionales (QA) y desarrollo analítica de datos sobre PostgreSQL y Looker Studio.</p><p>Integrador activo de herramientas como Gemini, NotebookLM y Rovo AI para optimizar flujos de trabajo. Padre, aprendiz constante, apasionado de la música y la mejora continua.</p>`,
     impactTitle: "Cómo He Generado Impacto",
     impacts: [{
-      icon: "fa-chart-bar",
-      title: "Dashboards que Impulsan Decisiones",
-      text: "Diseñé dashboards de alto impacto para audiencias ejecutivas, industriales y del sector bancario usando Power BI y Looker Studio."
-    }, {
-      icon: "fa-bullseye",
-      title: "Implementación de Sistemas de KPIs desde Cero",
-      text: "Establecí marcos de medición de desempeño donde antes no existían, aportando estructura, alineación y mejora continua."
-    }, {
-      icon: "fa-cogs",
-      title: "Eficiencia a Través de la Automatización",
-      text: "Automatización de tareas recurrentes de reportería para eliminar procesos manuales y optimizar el tiempo."
-    }, {
       icon: "fa-users-gear",
-      title: "Insights para Toda la Organización",
-      text: "Apoyé diversas áreas de negocio con insights accionables que respaldan la toma de decisiones en operaciones, ventas, riesgo, producto y más."
+      title: "Triadas Ágiles & Entregables de Producto",
+      text: "Facilité la alineación negocio-tecnología en triadas ágiles (PO, Tech Lead, BA), creando MVP Canvas, User Story Maps y certificaciones de QA funcional."
+    }, {
+      icon: "fa-globe",
+      title: "Rediseño de Sitio Público & Analítica Web",
+      text: "Lideré el equipo del rediseño del sitio web público de Banco Internacional con administración en Puck CMS y monitoreo de GA4, GTM y Microsoft Clarity."
+    }, {
+      icon: "fa-project-diagram",
+      title: "Optimización de Procesos (BPMN 2.0 & IA)",
+      text: "Modelé flujos operacionales con BPMN 2.0 e impulsé la diagramación y documentación asistida por IA usando Rovo AI, Gemini y NotebookLM."
+    }, {
+      icon: "fa-chart-pie",
+      title: "Analítica de Datos & Consultas SQL",
+      text: "Extraje insights ejecutando consultas SQL complejas en PostgreSQL y construyendo tableros en Looker Studio y Power BI para la toma de decisiones."
     }],
     projectsTitle: "Proyectos Destacados",
     projects: [
@@ -494,7 +523,7 @@ const translations = {
     
     // --- CV Page Content (Spanish) ---
     cv_hero_title: "Mi Trayectoria Profesional",
-    cv_hero_summary: "Un viaje a través de los proyectos y roles que han definido mi carrera en el mundo de los datos.",
+    cv_hero_summary: "Un viaje a través de los proyectos y roles que han definido mi carrera en producto, análisis de negocio y datos.",
     cv_download: "Descargar PDF",
     cv_work_title: "Experiencia Laboral",
     cv_education_title: "Educación",
@@ -505,7 +534,15 @@ const translations = {
     cv_badges_title: "Insignias Destacadas",
     cv_credly_link: "Ver más en mi perfil de Credly",
     cv_timeline_items: [
-        { type: 'work', date: "Mayo 2023 – Actualidad", title: "Business Analyst", company: "Banco Internacional", url: "https://www.internacional.cl", logo: "assets/img/logos/banco-internacional.webp", description: `<ul><li>Desarrollé un sistema de reportes y KPIs desde cero para el área de innovación, donde no existía medición previa.</li><li>Creé más de 20 dashboards para innovación, fraude, ventas, dueños de productos y planificación.</li><li>Lideré equipo de métricas que automatizó procesos mediante ETL y base de datos propia.</li><li>Transición exitosa al rol de Business Analyst en célula ágil con foco en historias de usuario, flujos y pruebas.</li></ul>` },
+        { type: 'work', date: "Mayo 2023 – Actualidad", title: "Business Analyst & Product Owner", company: "Banco Internacional", url: "https://www.internacional.cl", logo: "assets/img/logos/banco-internacional.webp", description: `<ul>
+  <li><strong>Business Analyst en Triadas Ágiles</strong>: Definición de MVP Canvas, User Story Mapping, redacción de historias de usuario en Jira y documentación técnica/funcional en Confluence para triadas compuestas por Product Owner, Technical Lead y desarrolladores.</li>
+  <li><strong>Pruebas Funcionales y Calidad (QA)</strong>: Certificación de desarrollos en ambientes previos (QA), interacción constante con equipos UX para maquetación en Figma y ejecución de pruebas de aceptación en ambientes productivos.</li>
+  <li><strong>Doble Rol (BA & PO) en Rediseño Web Público</strong>: Liderazgo del equipo responsable del rediseño del sitio web público del banco, administrando directamente la herramienta Puck CMS para la creación y publicación de páginas en producción, maquetación apoyada en IA (Firebase) y monitoreo de analítica digital (GA4, GTM y Microsoft Clarity).</li>
+  <li><strong>Diagramación de Procesos (BPMN 2.0)</strong>: Levantamiento y modelamiento formal de flujos de negocio optimizados bajo estándar BPMN 2.0.</li>
+  <li><strong>Métricas y Consultas SQL (PostgreSQL & Looker Studio)</strong>: Medición de uso e impacto de productos digitales ejecutando consultas SQL sobre PostgreSQL y construyendo tableros de control en Looker Studio.</li>
+  <li><strong>Productividad impulsada por IA Generativa</strong>: Adopción diaria de Gemini y NotebookLM para agilizar la generación de historias de usuario y tareas repetitivas, y uso de Rovo AI en Jira/Confluence para la diagramación asistida de procesos.</li>
+  <li><strong>Trayectoria en Métricas (2+ años)</strong>: Inicio como pilar único en la estructuración e implementación de tableros de gestión y KPIs para la gerencia de innovación y diversas áreas estratégicas, escalando la práctica analítica antes de integrarse al equipo de producto.</li>
+</ul>` },
         { type: 'work', date: "Sep 2021 – Abr 2023", title: "Analista de Datos y Control de Gestión", company: "Lucas Diesel", url: "https://lucasdiesel.cl", logo: "assets/img/logos/lucas-diesel.webp", description: `<ul><li>Ingresé a una posición nueva para resolver brechas de visibilidad y reportes en una estructura financiera compartida.</li><li>Generé y automatizé más de 30 dashboards para ventas, inventario, abastecimiento, servicios automotrices, operaciones y gerencia.</li><li>Automatización diaria ahorró hasta 1 hora por día.</li><li>Reduje el proceso de presupuesto anual de 6 a 2 meses en dos años consecutivos.</li></ul>` },
         { type: 'work', date: "Nov 2019 – Ago 2021", title: "Analista de Control de Gestión", company: "Heavenward Ascensores", url: "https://www.heavenward.cl", logo: "assets/img/logos/heavenward.webp", description: `<ul><li>Supervisión de KPIs y control de costos para proyectos de mantenimiento y modernización.</li><li>Reportes y dashboards en Excel y Power BI para análisis financiero y mejora de tiempos de respuesta.</li></ul>` },
         { type: 'education', date: "2025", title: "Diplomado Internacional en Transformación Digital", company: "Digital Bank LATAM", url: "https://www.digitalbankla.com", logo: "assets/img/logos/digital-bank-latam.webp" },
@@ -515,9 +552,30 @@ const translations = {
     ],
     cv_skills_items: {
         tier1: [ { name: "Power BI", logo: "assets/img/logos/power-bi.webp" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.webp" }, { name: "Tableau", logo: "assets/img/logos/tableau.webp" } ], 
-        tier2: ["Modelado de Datos", "Inteligencia de Negocios", "Diseño de Dashboards", "Storytelling", "Gestión de Interesados"],
-        tier3: ["Power Query", "DAX", "LookML", "Mapeo de Procesos", "BPMN", "Agile/Scrum", "Desarrollo de KPIs", "SQL"],
-        tier4: ["Jira / Confluence", "Excel Avanzado", "Google Sheets", "Lucidchart / Draw.io", "Principios de Visualización de Datos", "Documentación y Reportería", "Miro"]
+        tier2: [
+          "User Story Mapping & MVP Canvas",
+          "Modelado de Procesos (BPMN 2.0)",
+          "Rol Dual Product Owner & BA",
+          "Pruebas Funcionales (QA)",
+          "Inteligencia de Negocios & KPIs"
+        ],
+        tier3: [
+          "PostgreSQL & Consultas SQL",
+          "Jira & Confluence (Rovo AI)",
+          "Gemini & NotebookLM (GenAI)",
+          "Puck CMS & Publicación Web",
+          "Analítica Web (GA4 / GTM / Clarity)",
+          "Figma & Colaboración UX",
+          "Power Query & DAX"
+        ],
+        tier4: [
+          "Triadas Ágiles & Scrum",
+          "Excel Avanzado & Google Sheets",
+          "Lucidchart & Draw.io",
+          "Diseño de Dashboards",
+          "Gestión de Stakeholders",
+          "Documentación Funcional"
+        ]
     },
     cv_languages_items: [ { lang: "Español", level: "Nativo", flag: "es" }, { lang: "Inglés", level: "B2 Intermedio-Alto", flag: "gb" }, { lang: "Francés", level: "A1 Básico", flag: "fr" } ],
     cv_interests_items: [ { name: "Correr", icon: "fa-solid fa-person-running" }, { name: "Fútbol", icon: "fa-solid fa-futbol" }, { name: "Videojuegos", icon: "fa-solid fa-gamepad" }, { name: "Tenis", icon: "fa-solid fa-baseball" }, { name: "Guitarra", icon: "fa-solid fa-guitar" }, { name: "Dibujo", icon: "fa-solid fa-pencil-alt" }, { name: "Festivales", icon: "fa-solid fa-music" } ],
