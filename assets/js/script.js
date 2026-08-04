@@ -40,7 +40,7 @@ const translations = {
     btnProjects: "View Projects",
     btnResume: "View Resume",
     aboutTitle: "About Me",
-    aboutContent: `<p>I'm Benjamin Espinoza, a Business & Data Analyst with a degree in Industrial Engineering and dual experience as Product Owner and Business Analyst at Banco Internacional. I specialize in bridging business strategy with tech development, modeling workflows under BPMN 2.0 standards, and boosting productivity with Generative AI.</p><p>My background spans banking, services, and industrial sectors. At Banco Internacional, I lead the public website redesign managing Puck CMS and web analytics (GA4, GTM, Clarity), write user stories for Agile triads in Jira/Confluence, execute functional QA testing, and build data analytics using PostgreSQL and Looker Studio.</p><p>I actively leverage AI tools like Gemini, NotebookLM, and Rovo AI to streamline business analysis workflows. A father, lifelong learner, passionate about music and continuous improvement.</p>`,
+    aboutContent: `<p>I'm <strong>Benjamín Espinoza</strong>, an Industrial Civil Engineer serving in a dual role as <strong>Business Analyst (BA) and Product Owner (PO)</strong> at Banco Internacional. I specialize in bridging business vision with technology development, structuring product initiatives within Agile triads (Jira/Confluence), modeling processes using <strong>BPMN 2.0</strong> standards, and driving productivity through Generative AI.</p><p>My experience spans financial services, retail, and industrial sectors. At Banco Internacional, I lead the public website redesign team using <strong>Puck CMS</strong> and web analytics (GA4, GTM, Clarity), craft user stories, manage MVP Canvases and User Story Maps, conduct functional QA testing, and build data analytics querying <strong>PostgreSQL</strong> in SQL alongside <strong>Looker Studio</strong> and Power BI dashboards.</p><p>Early adopter of AI tools like <strong>Gemini, NotebookLM, and Rovo AI</strong> to streamline business analysis and documentation. A father, lifelong learner, passionate about music and continuous improvement.</p>`,
     impactTitle: "How I’ve Made an Impact",
     impacts: [{
       icon: "fa-users-gear",
@@ -118,7 +118,11 @@ const translations = {
       company: "Heavenward Ascensores",
       url: "https://www.heavenward.cl",
       logo: "assets/img/logos/heavenward.webp",
-      description: `<ul><li>Tracked KPIs and costs for modernization projects.</li><li>Created dashboards in Excel and Power BI to support strategic decisions.</li><li>Worked with technical and executive teams to improve customer data insights.</li></ul>`
+      description: `<ul>
+  <li><strong>Performance Control & KPI Tracking</strong>: Managed operating cost controls and key performance metrics (KPIs) for elevator maintenance and modernization contracts.</li>
+  <li><strong>Financial Modeling & BI Reporting</strong>: Built financial cost models and dashboards in Excel and Power BI to support executive and managerial decision-making.</li>
+  <li><strong>Service Delivery Optimization</strong>: Analyzed customer service data alongside technical and commercial teams to improve response times and customer satisfaction.</li>
+</ul>`
     }, {
       type: 'education',
       date: "2025",
@@ -498,7 +502,7 @@ const translations = {
     btnProjects: "Ver Proyectos",
     btnResume: "Ver CV",
     aboutTitle: "Sobre mí",
-    aboutContent: `<p>Soy Benjamin Espinoza, Business & Data Analyst con formación en Ingeniería Civil Industrial y desempeño dual como Product Owner y Business Analyst en Banco Internacional. Me especializo en conectar la estrategia de negocio con el desarrollo tecnológico, modelar procesos bajo estándar BPMN 2.0 y maximizar la eficiencia mediante Inteligencia Artificial Generativa.</p><p>Mi trayectoria abarca el sector financiero, servicios e industria. En Banco Internacional lidero el equipo del rediseño del sitio web público con administración en Puck CMS y analítica digital (GA4, GTM, Clarity), redacto historias de usuario en triadas ágiles (Jira/Confluence), ejecuto pruebas funcionales (QA) y desarrollo analítica de datos sobre PostgreSQL y Looker Studio.</p><p>Integrador activo de herramientas como Gemini, NotebookLM y Rovo AI para optimizar flujos de trabajo. Padre, aprendiz constante, apasionado de la música y la mejora continua.</p>`,
+    aboutContent: `<p>Soy <strong>Benjamín Espinoza</strong>, Ingeniero Civil Industrial desempeñándome en el rol dual de <strong>Business Analyst (BA) y Product Owner (PO)</strong> en Banco Internacional. Me especializo en conectar la visión estratégica de negocio con el desarrollo tecnológico, estructurar iniciativas en triadas ágiles (Jira/Confluence), modelar procesos bajo estándar <strong>BPMN 2.0</strong> y potenciar la productividad con Inteligencia Artificial Generativa.</p><p>Mi trayectoria abarca el sector financiero, retail e industrial. En Banco Internacional lidero el equipo del rediseño del sitio web público con administración en <strong>Puck CMS</strong> y analítica digital (GA4, GTM, Clarity), redacto historias de usuario, gestiono el MVP Canvas y User Story Maps, ejecuto pruebas funcionales (QA) y desarrollo analítica de datos ejecutando consultas SQL en <strong>PostgreSQL</strong> y dashboards en <strong>Looker Studio</strong> y Power BI.</p><p>Pionero en la adopción diaria de herramientas de IA como <strong>Gemini, NotebookLM y Rovo AI</strong> para automatizar flujos y optimizar la gestión de requerimientos. Padre, aprendiz constante, apasionado de la música y la mejora continua.</p>`,
     impactTitle: "Cómo He Generado Impacto",
     impacts: [{
       icon: "fa-users-gear",
@@ -556,7 +560,11 @@ const translations = {
   <li><strong>Liderazgo del Presupuesto Anual (3 años)</strong>: Reduje el ciclo de formulación presupuestaria de 6 meses a 3 meses y posteriormente a 2 meses en años consecutivos, trabajando directamente con gerentes de área (Ventas, Servicio, Filtración, DT Parts).</li>
   <li><strong>Levantamiento de Requerimientos & Iteración</strong>: Responsable del levantamiento continuo de requerimientos con stakeholders de todos los niveles (jefes de bodega y taller mecánico hasta Gerente General y Directorio), iterando soluciones personalizadas en Power BI y consultas SQL.</li>
 </ul>` },
-        { type: 'work', date: "Nov 2019 – Ago 2021", title: "Analista de Control de Gestión", company: "Heavenward Ascensores", url: "https://www.heavenward.cl", logo: "assets/img/logos/heavenward.webp", description: `<ul><li>Supervisión de KPIs y control de costos para proyectos de mantenimiento y modernización.</li><li>Reportes y dashboards en Excel y Power BI para análisis financiero y mejora de tiempos de respuesta.</li></ul>` },
+        { type: 'work', date: "Nov 2019 – Ago 2021", title: "Analista de Control de Gestión", company: "Heavenward Ascensores", url: "https://www.heavenward.cl", logo: "assets/img/logos/heavenward.webp", description: `<ul>
+  <li><strong>Control de Gestión & Seguimiento de KPIs</strong>: Control de costos operativos e indicadores de rendimiento (KPIs) para proyectos de mantenimiento y modernización de ascensores.</li>
+  <li><strong>Modelos Financieros & Reportería BI</strong>: Construcción de modelos financieros y dashboards en Excel y Power BI para soportar la toma de decisiones directivas y gerenciales.</li>
+  <li><strong>Optimización de Tiempos de Respuesta</strong>: Análisis de datos de servicio y clientes junto a equipos técnicos y comerciales para mejorar los tiempos de atención y respuesta a clientes.</li>
+</ul>` },
         { type: 'education', date: "2025", title: "Diplomado Internacional en Transformación Digital", company: "Digital Bank LATAM", url: "https://www.digitalbankla.com", logo: "assets/img/logos/digital-bank-latam.webp" },
         { type: 'education', date: "2022", title: "Diplomado en Diseño y Programación Web", company: "Fundación Telefónica & AIEP", url: "https://www.fundaciontelefonica.cl", logo: "assets/img/logos/telefonica-aiep.webp" },
         { type: 'education', date: "2022", title: "Programa universitario introductorio", company: "BYU PathwayConnect", url: "https://www.byupathway.edu", logo: "assets/img/logos/byu.webp" },
