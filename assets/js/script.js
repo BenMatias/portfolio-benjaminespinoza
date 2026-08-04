@@ -104,7 +104,13 @@ const translations = {
       company: "Lucas Diesel",
       url: "https://lucasdiesel.cl",
       logo: "assets/img/logos/lucas-diesel.webp",
-      description: `<ul><li>Created a new data analytics function in a company lacking visibility due to shared finance with sister company.</li><li>Delivered 30+ Power BI reports across operations, sales, inventory, procurement, automotive services and executive dashboards.</li><li>Automated daily report delivery, saving up to 1 hour daily.</li><li>Improved annual budgeting from 6 to 2 months over two years.</li></ul>`
+      description: `<ul>
+  <li><strong>Data Analytics Department Creation</strong>: Partnered directly with the Operations Manager to build the analytics function from scratch in a shared corporate structure, establishing baseline KPI frameworks for Sales, Procurement, Logistics, Warehouse, Foreign Trade, Technical Service, and General Management.</li>
+  <li><strong>30-40+ Power BI Dashboards</strong>: Designed, modeled, and deployed 30 to 40+ daily-updating Power BI dashboards across all business departments and executive levels.</li>
+  <li><strong>Daily Sales Report Automation</strong>: Automated the daily first-thing-in-the-morning sales and target compliance report by branch, slashing manual prep time from 1 hour down to 10-15 minutes (with direct Power BI access).</li>
+  <li><strong>Annual Budgeting Leadership (3 Years)</strong>: Streamlined the company-wide annual budgeting cycle from 6 months down to 3 months, and ultimately to 2 months in subsequent years, collaborating directly with unit heads (Sales, Service, Filtration, DT Parts).</li>
+  <li><strong>Stakeholder Engagement & Iterative Delivery</strong>: Conducted daily requirement gathering with stakeholders across all organizational tiers (from warehouse leads and workshop managers to the CEO and Board), iteratively crafting custom Power BI and SQL analytical solutions.</li>
+</ul>`
     }, {
       type: 'work',
       date: "Nov 2019 – Aug 2021",
@@ -543,7 +549,13 @@ const translations = {
   <li><strong>Productividad impulsada por IA Generativa</strong>: Adopción diaria de Gemini y NotebookLM para agilizar la generación de historias de usuario y tareas repetitivas, y uso de Rovo AI en Jira/Confluence para la diagramación asistida de procesos.</li>
   <li><strong>Trayectoria en Métricas (2+ años)</strong>: Inicio como pilar único en la estructuración e implementación de tableros de gestión y KPIs para la gerencia de innovación y diversas áreas estratégicas, escalando la práctica analítica antes de integrarse al equipo de producto.</li>
 </ul>` },
-        { type: 'work', date: "Sep 2021 – Abr 2023", title: "Analista de Datos y Control de Gestión", company: "Lucas Diesel", url: "https://lucasdiesel.cl", logo: "assets/img/logos/lucas-diesel.webp", description: `<ul><li>Ingresé a una posición nueva para resolver brechas de visibilidad y reportes en una estructura financiera compartida.</li><li>Generé y automatizé más de 30 dashboards para ventas, inventario, abastecimiento, servicios automotrices, operaciones y gerencia.</li><li>Automatización diaria ahorró hasta 1 hora por día.</li><li>Reduje el proceso de presupuesto anual de 6 a 2 meses en dos años consecutivos.</li></ul>` },
+        { type: 'work', date: "Sep 2021 – Abr 2023", title: "Analista de Datos y Control de Gestión", company: "Lucas Diesel", url: "https://lucasdiesel.cl", logo: "assets/img/logos/lucas-diesel.webp", description: `<ul>
+  <li><strong>Creación del Área de Analítica de Datos</strong>: Trabajé directamente con la Gerencia de Operaciones para estructurar la analítica en una empresa con administración compartida, definiendo la base de KPIs desde cero para Ventas, Abastecimiento, Logística, Bodega, Comercio Exterior, Servicio Técnico y Gerencia General.</li>
+  <li><strong>Desarrollo de 30-40+ Dashboards en Power BI</strong>: Diseñé, modelé y publiqué más de 30 a 40 tableros de control en Power BI con actualización diaria para todas las áreas operativas y gerenciales.</li>
+  <li><strong>Automatización del Informe Diario de Ventas</strong>: Automaticé la consolidación del informe matutino de ventas diarias y cumplimiento de metas por sucursal, reduciendo el proceso manual de 1 hora diaria a solo 10-15 minutos (y consulta directa en Power BI).</li>
+  <li><strong>Liderazgo del Presupuesto Anual (3 años)</strong>: Reduje el ciclo de formulación presupuestaria de 6 meses a 3 meses y posteriormente a 2 meses en años consecutivos, trabajando directamente con gerentes de área (Ventas, Servicio, Filtración, DT Parts).</li>
+  <li><strong>Levantamiento de Requerimientos & Iteración</strong>: Responsable del levantamiento continuo de requerimientos con stakeholders de todos los niveles (jefes de bodega y taller mecánico hasta Gerente General y Directorio), iterando soluciones personalizadas en Power BI y consultas SQL.</li>
+</ul>` },
         { type: 'work', date: "Nov 2019 – Ago 2021", title: "Analista de Control de Gestión", company: "Heavenward Ascensores", url: "https://www.heavenward.cl", logo: "assets/img/logos/heavenward.webp", description: `<ul><li>Supervisión de KPIs y control de costos para proyectos de mantenimiento y modernización.</li><li>Reportes y dashboards en Excel y Power BI para análisis financiero y mejora de tiempos de respuesta.</li></ul>` },
         { type: 'education', date: "2025", title: "Diplomado Internacional en Transformación Digital", company: "Digital Bank LATAM", url: "https://www.digitalbankla.com", logo: "assets/img/logos/digital-bank-latam.webp" },
         { type: 'education', date: "2022", title: "Diplomado en Diseño y Programación Web", company: "Fundación Telefónica & AIEP", url: "https://www.fundaciontelefonica.cl", logo: "assets/img/logos/telefonica-aiep.webp" },
