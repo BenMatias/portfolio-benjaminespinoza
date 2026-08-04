@@ -21,7 +21,7 @@ const translations = {
 
     // --- Hero KPI & Filters ---
     kpiDashboards: "BI Dashboards & Reports",
-    kpiReports: "Business Units with KPIs",
+    kpiReports: "Cross-Functional Impact",
     kpiAutomation: "Data & Analytics Stack",
     filterAll: "All Projects",
     filterPowerBI: "Power BI",
@@ -129,28 +129,32 @@ const translations = {
       title: "International Diploma in Digital Transformation",
       company: "Digital Bank LATAM",
       url: "https://www.digitalbankla.com",
-      logo: "assets/img/logos/digital-bank-latam.webp"
+      logo: "assets/img/logos/digital-bank-latam.webp",
+      description: `<p class="timeline-desc">Executive program focused on banking innovation, Fintech ecosystems, emerging tech adoption, and digital business model redesign across LATAM.</p>`
     }, {
       type: 'education',
       date: "2022",
       title: "Diploma in Web Design & Programming",
       company: "Fundación Telefónica & AIEP",
       url: "https://www.fundaciontelefonica.cl",
-      logo: "assets/img/logos/telefonica-aiep.webp"
+      logo: "assets/img/logos/telefonica-aiep.webp",
+      description: `<p class="timeline-desc">Specialization in frontend web development with HTML, CSS, JavaScript, responsive design, UX/UI principles, and web performance optimization.</p>`
     }, {
       type: 'education',
       date: "2022",
-      title: "University Preparation Program",
+      title: "Introductory University Program",
       company: "BYU PathwayConnect",
       url: "https://www.byupathway.edu",
-      logo: "assets/img/logos/byu.webp"
+      logo: "assets/img/logos/byu.webp",
+      description: `<p class="timeline-desc">International university foundation program focusing on project management, professional academic English communication, and leadership development.</p>`
     }, {
       type: 'education',
       date: "2013–2020",
-      title: "Industrial Civil Engineering",
+      title: "B.S. Industrial Civil Engineering",
       company: "Universidad de Valparaíso",
       url: "https://uv.cl",
-      logo: "assets/img/logos/uv.webp"
+      logo: "assets/img/logos/uv.webp",
+      description: `<p class="timeline-desc">Professional engineering degree covering process optimization, operations management, investment project evaluation, financial engineering, and quantitative decision analysis.</p>`
     }],
     cv_skills_items: {
       tier1: [{
@@ -483,7 +487,7 @@ const translations = {
 
     // --- Hero KPI & Filters ---
     kpiDashboards: "Dashboards & Reportes BI",
-    kpiReports: "Áreas con KPIs Creados",
+    kpiReports: "Impacto Transversal",
     kpiAutomation: "Modelado & Analítica",
     filterAll: "Todos los Proyectos",
     filterPowerBI: "Power BI",
@@ -565,10 +569,10 @@ const translations = {
   <li><strong>Modelos Financieros & Reportería BI</strong>: Construcción de modelos financieros y dashboards en Excel y Power BI para soportar la toma de decisiones directivas y gerenciales.</li>
   <li><strong>Optimización de Tiempos de Respuesta</strong>: Análisis de datos de servicio y clientes junto a equipos técnicos y comerciales para mejorar los tiempos de atención y respuesta a clientes.</li>
 </ul>` },
-        { type: 'education', date: "2025", title: "Diplomado Internacional en Transformación Digital", company: "Digital Bank LATAM", url: "https://www.digitalbankla.com", logo: "assets/img/logos/digital-bank-latam.webp" },
-        { type: 'education', date: "2022", title: "Diplomado en Diseño y Programación Web", company: "Fundación Telefónica & AIEP", url: "https://www.fundaciontelefonica.cl", logo: "assets/img/logos/telefonica-aiep.webp" },
-        { type: 'education', date: "2022", title: "Programa universitario introductorio", company: "BYU PathwayConnect", url: "https://www.byupathway.edu", logo: "assets/img/logos/byu.webp" },
-        { type: 'education', date: "2013–2020", title: "Ingeniería Civil Industrial", company: "Universidad de Valparaíso", url: "https://uv.cl", logo: "assets/img/logos/uv.webp" }
+        { type: 'education', date: "2025", title: "Diplomado Internacional en Transformación Digital", company: "Digital Bank LATAM", url: "https://www.digitalbankla.com", logo: "assets/img/logos/digital-bank-latam.webp", description: `<p class="timeline-desc">Formación ejecutiva orientada a la innovación bancaria, ecosistemas Fintech, adopción de tecnologías emergentes y rediseño de modelos de negocio digitales en LATAM.</p>` },
+        { type: 'education', date: "2022", title: "Diplomado en Diseño y Programación Web", company: "Fundación Telefónica & AIEP", url: "https://www.fundaciontelefonica.cl", logo: "assets/img/logos/telefonica-aiep.webp", description: `<p class="timeline-desc">Especialización en desarrollo frontend con HTML, CSS, JavaScript, maquetación responsive, principios de UX/UI y diseño de interfaces web modernas.</p>` },
+        { type: 'education', date: "2022", title: "Programa universitario introductorio", company: "BYU PathwayConnect", url: "https://www.byupathway.edu", logo: "assets/img/logos/byu.webp", description: `<p class="timeline-desc">Programa universitario internacional enfocado en gestión de proyectos, habilidades de comunicación académica y profesional en inglés y desarrollo de liderazgo.</p>` },
+        { type: 'education', date: "2013–2020", title: "Ingeniería Civil Industrial", company: "Universidad de Valparaíso", url: "https://uv.cl", logo: "assets/img/logos/uv.webp", description: `<p class="timeline-desc">Formación profesional en optimización de procesos, gestión de operaciones, evaluación de proyectos de inversión, ingeniería financiera y análisis cuantitativo para la toma de decisiones.</p>` }
     ],
     cv_skills_items: {
         tier1: [ { name: "Power BI", logo: "assets/img/logos/power-bi.webp" }, { name: "Looker Studio", logo: "assets/img/logos/looker-studio.webp" }, { name: "Tableau", logo: "assets/img/logos/tableau.webp" } ], 
