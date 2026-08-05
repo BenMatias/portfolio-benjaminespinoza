@@ -253,11 +253,12 @@ const translations = {
     // --- Projects Page Content ---
     projects_page_title: "Projects",
     projects_list: [
+        { id: "project-digital-banking", title: "Digital Product Redesign & Analytics", description: "End-to-end case study of a public banking portal redesign, featuring MVP Canvas, BPMN 2.0, PostgreSQL queries, and GA4 telemetry.", link: "projects/digital-banking-redesign.html", imageUrl: "assets/img/digital-banking-cover.webp", buttonText: "View Case Study", tool: "all" },
         { id: "project-exchange-rate", title: "Exchange Rate Evolution", description: "Real-time tracking of USD, EUR, and GBP against the Chilean Peso.", link: "projects/exchange-rate-evolution.html", imageUrl: "assets/img/exchange-rate-cover.webp", buttonText: "View Project", tool: "powerbi" },
         { id: "project-pokedex", title: "Interactive Pokédex", description: "An interactive dashboard with data from over 1,000 Pokémon.", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.webp", buttonText: "View Project", tool: "looker" },
         { id: "project-unemployment", title: "Unemployment in America", description: "Analysis of unemployment trends across U.S. states and metro areas.", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.webp", buttonText: "View Project", tool: "looker" },
         { id: "project-financial-inclusion", title: "Global Financial Inclusion", description: "Visualizing global trends in account ownership and borrowing behaviors.", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.webp", buttonText: "View Project", tool: "looker" },
-        { id: "project-neo-tracker", title: "NEO Tracker", description: "Tracking Near-Earth Objects with NASA's API.", link: "projects/neo-tracker.webp", imageUrl: "assets/img/neo-tracker-cover.webp", buttonText: "View Project", tool: "powerbi" }
+        { id: "project-neo-tracker", title: "NEO Tracker", description: "Tracking Near-Earth Objects with NASA's API.", link: "projects/neo-tracker.html", imageUrl: "assets/img/neo-tracker-cover.webp", buttonText: "View Project", tool: "powerbi" }
     ],
 
     // --- CASE STUDY DATA ---
@@ -608,6 +609,7 @@ const translations = {
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
     projects_list: [
+        { id: "project-digital-banking", title: "Rediseño Digital & Analítica de Producto", description: "Caso de estudio de extremo a extremo de rediseño de portal bancario público con MVP Canvas, BPMN 2.0, SQL en PostgreSQL y GA4.", link: "projects/digital-banking-redesign.html", imageUrl: "assets/img/digital-banking-cover.webp", buttonText: "Ver Caso de Estudio", tool: "all" },
         { id: "project-exchange-rate", title: "Evolución del Tipo de Cambio", description: "Seguimiento en tiempo real del USD, EUR y GBP frente al peso chileno.", link: "projects/exchange-rate-evolution.html", imageUrl: "assets/img/exchange-rate-cover.webp", buttonText: "Ver Proyecto", tool: "powerbi" },
         { id: "project-pokedex", title: "Pokédex Interactiva", description: "Un dashboard interactivo con datos de más de 1.000 Pokémon.", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.webp", buttonText: "Ver Proyecto", tool: "looker" },
         { id: "project-unemployment", title: "Desempleo en América", description: "Análisis de tendencias de desempleo en estados y áreas metropolitanas de EE.UU.", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.webp", buttonText: "Ver Proyecto", tool: "looker" },

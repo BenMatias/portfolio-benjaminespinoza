@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso de Estudio: Rediseño Digital & Analítica de Producto - Benjamín Espinoza</title>
+    <meta name="description" content="Caso de estudio End-to-End de transformación digital y analítica para plataforma bancaria pública, integrando MVP Canvas, BPMN 2.0, SQL en PostgreSQL, Puck CMS y GA4.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PZ6WFTW7');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Z42HX3EZZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6Z42HX3EZZ');
+    </script>
+    
+    <!-- Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xvdor0ntw2");
+    </script>
+    
+    <style>
+        .case-study-hero {
+            padding: 4rem 0 3rem 0;
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.95), rgba(15, 23, 42, 0.98));
+            border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+        }
+        .pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(0, 230, 118, 0.15);
+            color: #00e676;
+            border: 1px solid #00e676;
+            margin-bottom: 1rem;
+        }
+        .case-study-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .case-study-subtitle {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            max-width: 850px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .meta-pills-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .meta-tag {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
+            padding: 0.4rem 0.85rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        
+        /* TAB CONTAINER SYSTEM */
+        .cs-tabs-wrapper {
+            margin: 2.5rem 0 1.5rem 0;
+            display: flex;
+            gap: 0.75rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            overflow-x: auto;
+            padding-bottom: 2px;
+        }
+        .cs-tab-btn {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            padding: 0.85rem 1.4rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .cs-tab-btn:hover {
+            color: #00b4d8;
+        }
+        .cs-tab-btn.active {
+            color: #00e676;
+            border-bottom-color: #00e676;
+            background: rgba(0, 230, 118, 0.05);
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .cs-tab-pane {
+            display: none;
+            padding: 2rem 0;
+            animation: fadeIn 0.4s ease;
+        }
+        .cs-tab-pane.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* CARDS & ARTIFACT STYLES */
+        .artifact-card {
+            background: #111c2e;
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+        .artifact-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.75rem;
+        }
+        .artifact-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #00b4d8;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        
+        /* GRID MVPCANVAS */
+        .mvp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+        .mvp-box {
+            background: rgba(15, 23, 42, 0.8);
+            border-left: 4px solid #00e676;
+            padding: 1.1rem;
+            border-radius: 6px;
+        }
+        .mvp-box h4 {
+            color: #ffffff;
+            font-size: 0.95rem;
+            margin: 0 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .mvp-box p, .mvp-box ul {
+            color: #cbd5e1;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .mvp-box ul {
+            padding-left: 1.2rem;
+        }
+
+        /* CODE BLOCK SQL */
+        .sql-code-block {
+            background: #090d16;
+            border-radius: 8px;
+            padding: 1.25rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #38bdf8;
+            overflow-x: auto;
+            border: 1px solid rgba(255,255,255,0.1);
+            line-height: 1.55;
+        }
+        .sql-keyword { color: #f43f5e; font-weight: 600; }
+        .sql-func { color: #a855f7; font-weight: 600; }
+        .sql-string { color: #34d399; }
+        .sql-comment { color: #64748b; font-style: italic; }
+
+        /* PROCESS FLOW DIAGRAM (BPMN SIMULATION) */
+        .bpmn-flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            position: relative;
+            margin: 1.5rem 0;
+        }
+        .bpmn-node {
+            flex: 1;
+            min-width: 160px;
+            background: rgba(13, 27, 42, 0.9);
+            border: 1.5px solid #00b4d8;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+        .bpmn-node.decision {
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.1);
+        }
+        .bpmn-node.success {
+            border-color: #00e676;
+            background: rgba(0, 230, 118, 0.1);
+        }
+        .bpmn-node-step {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #00b4d8;
+            text-transform: uppercase;
+        }
+        .bpmn-node-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0.4rem 0;
+        }
+        .bpmn-node-role {
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+        
+        /* USER STORY MAP BOARD */
+        .story-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+        .epic-column {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 8px;
+            padding: 1rem;
+            border-top: 4px solid #00b4d8;
+        }
+        .epic-header {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .story-card {
+            background: #1e293b;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px;
+            padding: 0.85rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.84rem;
+        }
+        .story-id {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            color: #00e676;
+            font-weight: 700;
+        }
+        .story-desc {
+            color: #e2e8f0;
+            margin: 0.3rem 0;
+            line-height: 1.4;
+        }
+        .story-ac {
+            color: #94a3b8;
+            font-size: 0.78rem;
+            border-top: 1px dashed rgba(255,255,255,0.1);
+            padding-top: 0.4rem;
+            margin-top: 0.4rem;
+        }
+    </style>
+</head>
+<body class="page-project">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZ6WFTW7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="header-hero-wrapper">
+        <header class="container">
+            <a href="../index.html" class="logo"><img src="../assets/img/Logo.webp" alt="Ben Matias Logo" decoding="async"></a>
+            <button id="menu-toggle" class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">&#9776;</button>
+            <nav class="desktop-nav">
+                <a data-translate="navAbout" href="../index.html#about">About</a>
+                <a data-translate="navResume" href="../cv.html">CV / Resume</a>
+                <a data-translate="navProjects" href="../projects.html">Projects</a>
+                <a data-translate="navPublications" href="../publications.html">Publications</a>
+                <a href="mailto:bmatiasespinoza@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <button class="lang-toggle" aria-label="Change language"></button>
+            </nav>
+            <div id="mobile-nav" class="mobile-nav">
+                <a data-translate="navAbout" href="../index.html#about">About</a>
+                <a data-translate="navResume" href="../cv.html">CV / Resume</a>
+                <a data-translate="navProjects" href="../projects.html">Projects</a>
+                <a data-translate="navPublications" href="../publications.html">Publications</a>
+                <a href="mailto:bmatiasespinoza@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <div class="lang-toggle-wrapper"><button class="lang-toggle" aria-label="Change language"></button></div>
+            </div>
+        </header>
+
+        <section class="case-study-hero">
+            <div class="container">
+                <div class="pill-badge"><i class="fas fa-star"></i> Flagship Case Study</div>
+                <h1 class="case-study-title" id="cs-hero-title">Rediseño Digital & Analítica de Producto: Banca Pública</h1>
+                <p class="case-study-subtitle" id="cs-hero-subtitle">
+                    Transformación de extremo a extremo de la plataforma pública bancaria. Integración de gestión de producto ágil (MVP Canvas & User Stories), modelamiento de procesos BPMN 2.0, arquitectura de datos en PostgreSQL, administración con Puck CMS y analítica digital avanzada (GA4 / Clarity).
+                </p>
+                <div class="meta-pills-row">
+                    <span class="meta-tag"><i class="fas fa-user-check"></i> Product Owner & Business Analyst</span>
+                    <span class="meta-tag"><i class="fas fa-database"></i> PostgreSQL & SQL</span>
+                    <span class="meta-tag"><i class="fas fa-diagram-project"></i> BPMN 2.0</span>
+                    <span class="meta-tag"><i class="fas fa-cubes"></i> Puck CMS</span>
+                    <span class="meta-tag"><i class="fas fa-chart-line"></i> GA4 / Clarity / GTM</span>
+                    <span class="meta-tag"><i class="fas fa-robot"></i> Rovo AI & GenAI</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <main class="container page-container">
+
+        <!-- RESUMEN EJECUTIVO & IMPACTO DE NEGOCIO -->
+        <div class="project-executive-summary" style="margin-top: 2rem;">
+            <div class="summary-card">
+                <i class="fas fa-bullseye"></i>
+                <div class="summary-card-text">
+                    <h3 id="cs-sum1-title">El Desafío de Negocio</h3>
+                    <p id="cs-sum1-desc">El portal web público legacy presentaba altas tasas de abandono en solicitudes de productos (cuentas/créditos), rigidez operativa para publicar campañas comerciales y falta de telemetría de eventos de usuario.</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-rocket"></i>
+                <div class="summary-card-text">
+                    <h3 id="cs-sum2-title">La Solución de Producto</h3>
+                    <p id="cs-sum2-desc">Liderazgo de triada ágil para migrar a administración No-Code/Low-Code con Puck CMS, maquetación apoyada en IA (Firebase), pruebas QA funcionales en Staging y etiquetado GTM completo.</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-chart-pie"></i>
+                <div class="summary-card-text">
+                    <h3 id="cs-sum3-title">Impacto Cuantitativo</h3>
+                    <p id="cs-sum3-desc">+35% en conversión de solicitudes digitales, reducción de tiempo de publicación web de semanas a minutos y 100% de calidad probada previo a despliegue productivo.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SISTEMA DE PESTAÑAS DEL CASO DE ESTUDIO -->
+        <div class="cs-tabs-wrapper">
+            <button class="cs-tab-btn active" data-tab="tab-po"><i class="fas fa-lightbulb"></i> 1. Estrategia PO (MVP & Stories)</button>
+            <button class="cs-tab-btn" data-tab="tab-bpmn"><i class="fas fa-project-diagram"></i> 2. Procesos BPMN 2.0</button>
+            <button class="cs-tab-btn" data-tab="tab-sql"><i class="fas fa-database"></i> 3. Arquitectura SQL (PostgreSQL)</button>
+            <button class="cs-tab-btn" data-tab="tab-dashboard"><i class="fas fa-chart-bar"></i> 4. Telemetría & Dashboard</button>
+            <button class="cs-tab-btn" data-tab="tab-genai"><i class="fas fa-robot"></i> 5. Aceleración con GenAI</button>
+        </div>
+
+        <!-- PESTAÑA 1: ESTRATEGIA PO & HISTORIAS DE USUARIO -->
+        <div id="tab-po" class="cs-tab-pane active">
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h3 class="artifact-title"><i class="fas fa-th-large"></i> MVP Canvas del Proyecto</h3>
+                    <span class="meta-tag"><i class="fas fa-check-circle"></i> Aprobado por Stakeholders</span>
+                </div>
+                <div class="mvp-grid">
+                    <div class="mvp-box">
+                        <h4>Propuesta de Valor</h4>
+                        <p>Plataforma web pública autónoma y rápida que permite crear y publicar páginas comerciales en minutos con administración Puck CMS, garantizando alta conversión y experiencia UX optimizada.</p>
+                    </div>
+                    <div class="mvp-box">
+                        <h4>Métricas Clave de Éxito (KPIs)</h4>
+                        <ul>
+                            <li>Tasa de conversión de embudo de captación (% finalizado).</li>
+                            <li>Tiempo de publicación web (SLA de días a minutos).</li>
+                            <li>Tasa de rebote móvil y mapa de calor (Clarity).</li>
+                        </ul>
+                    </div>
+                    <div class="mvp-box">
+                        <h4>Segmento de Usuarios</h4>
+                        <p>Personas y PYMEs en búsqueda de apertura de cuentas corrientes, créditos de consumo y servicios financieros digitales de Banco Internacional.</p>
+                    </div>
+                    <div class="mvp-box">
+                        <h4>Canales & Medición</h4>
+                        <p>Portal Web Público, Campañas Digitales (GTM), Google Analytics 4 (GA4), Microsoft Clarity y Dashboards en Looker Studio / Power BI.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h3 class="artifact-title"><i class="fas fa-tasks"></i> User Story Map & Backlog Priorizado (Jira)</h3>
+                    <span class="meta-tag"><i class="fab fa-jira"></i> Sprint Backlog en Triada</span>
+                </div>
+                <div class="story-board">
+                    <div class="epic-column">
+                        <div class="epic-header">
+                            <span>Épica 1: CMS & Publicación</span>
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <div class="story-card">
+                            <div class="story-id">BIN-101</div>
+                            <div class="story-desc"><strong>Como Product Owner</strong>, quiero publicar landing pages dinámicas con Puck CMS sin depender de sprints de desarrollo.</div>
+                            <div class="story-ac"><strong>Criterio Aceptación:</strong> Editor visual drag-and-drop funcionando con componentes corporativos aprobados por UX.</div>
+                        </div>
+                        <div class="story-card">
+                            <div class="story-id">BIN-102</div>
+                            <div class="story-desc"><strong>Como UX Designer</strong>, quiero validar maquetaciones creadas con Firebase AI antes de enviarlas al editor del CMS.</div>
+                            <div class="story-ac"><strong>Criterio Aceptación:</strong> Prototipo responsive validado en resoluciones mobile y desktop.</div>
+                        </div>
+                    </div>
+
+                    <div class="epic-column">
+                        <div class="epic-header">
+                            <span>Épica 2: Telemetría & GTM</span>
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="story-card">
+                            <div class="story-id">BIN-201</div>
+                            <div class="story-desc"><strong>Como Business Analyst</strong>, quiero configurar triggers en GTM para registrar la intención de solicitud de producto.</div>
+                            <div class="story-ac"><strong>Criterio Aceptación:</strong> Disparo de evento `click_apply_now` en GA4 verificado en GTM Debugger.</div>
+                        </div>
+                        <div class="story-card">
+                            <div class="story-id">BIN-202</div>
+                            <div class="story-desc"><strong>Como PO</strong>, quiero integrar Microsoft Clarity para grabar sesiones anonimizadas e identificar zonas de fricción.</div>
+                            <div class="story-ac"><strong>Criterio Aceptación:</strong> Dashboard de Clarity alimentando grabaciones y mapas de calor semanales.</div>
+                        </div>
+                    </div>
+
+                    <div class="epic-column">
+                        <div class="epic-header">
+                            <span>Épica 3: Calidad & QA</span>
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="story-card">
+                            <div class="story-id">BIN-301</div>
+                            <div class="story-desc"><strong>Como Business Analyst</strong>, quiero ejecutar la matriz de Pruebas QA en Staging antes de dar el V°B° de producción.</div>
+                            <div class="story-ac"><strong>Criterio Aceptación:</strong> 100% de casos de prueba funcionales aprobados sin errores bloqueantes.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 2: DIAGRAMA DE PROCESOS BPMN 2.0 -->
+        <div id="tab-bpmn" class="cs-tab-pane">
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h3 class="artifact-title"><i class="fas fa-diagram-project"></i> Diagrama de Proceso de Negocio (BPMN 2.0)</h3>
+                    <span class="meta-tag"><i class="fas fa-certificate"></i> Norma BPMN 2.0</span>
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                    Modelamiento formal del flujo operacional de creación, maquetación, certificación QA y despliegue del sitio público en producción. Este estándar elimina ambigüedades entre el equipo de negocio, producto y desarrollo.
+                </p>
+
+                <div class="bpmn-flow">
+                    <div class="bpmn-node">
+                        <div class="bpmn-node-step">Paso 1</div>
+                        <div class="bpmn-node-title">Solicitud de Iniciativa</div>
+                        <div class="bpmn-node-role">Stakeholders / Negocio</div>
+                    </div>
+                    <div class="bpmn-node">
+                        <div class="bpmn-node-step">Paso 2</div>
+                        <div class="bpmn-node-title">MVP & User Stories</div>
+                        <div class="bpmn-node-role">Business Analyst</div>
+                    </div>
+                    <div class="bpmn-node">
+                        <div class="bpmn-node-step">Paso 3</div>
+                        <div class="bpmn-node-title">Maquetación Puck CMS</div>
+                        <div class="bpmn-node-role">Product Owner (PO)</div>
+                    </div>
+                    <div class="bpmn-node decision">
+                        <div class="bpmn-node-step">Evaluación</div>
+                        <div class="bpmn-node-title">Pruebas QA Funcionales</div>
+                        <div class="bpmn-node-role">BA / Célula Staging</div>
+                    </div>
+                    <div class="bpmn-node success">
+                        <div class="bpmn-node-step">Paso Final</div>
+                        <div class="bpmn-node-title">Pase a Producción & GA4</div>
+                        <div class="bpmn-node-role">Publicación en Vivo</div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(0, 180, 216, 0.08); border-left: 4px solid #00b4d8; padding: 1.2rem; border-radius: 6px; margin-top: 1.5rem;">
+                    <h4 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 0.95rem;"><i class="fas fa-info-circle"></i> Aspectos Destacados del Modelamiento BPMN 2.0:</h4>
+                    <ul style="color: #cbd5e1; font-size: 0.88rem; margin: 0; padding-left: 1.2rem; line-height: 1.6;">
+                        <li><strong>Carretera de Aprobación Paralela:</strong> La maquetación UX en Puck CMS ocurre simultáneamente con la configuración de triggers en GTM.</li>
+                        <li><strong>Gate de Calidad QA:</strong> Condición de decisión donde si el ambiente Staging presenta inconsistencias, el flujo retorna automáticamente al PO para ajuste antes de tocar producción.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 3: ARQUITECTURA DE DATOS & CONSULTAS SQL -->
+        <div id="tab-sql" class="cs-tab-pane">
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h3 class="artifact-title"><i class="fas fa-database"></i> Consultas SQL en PostgreSQL (Analítica de Producto)</h3>
+                    <span class="meta-tag"><i class="fas fa-code"></i> PostgreSQL 15</span>
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                    Extracción de métricas de conversión y comportamiento de usuarios mediante consultas SQL directas sobre la base de datos de eventos digitales (`digital_events`):
+                </p>
+
+                <h4 style="color: #00e676; margin-bottom: 0.75rem;"><i class="fas fa-filter"></i> 1. Análisis de Embudo de Conversión de Productos Financieros</h4>
+                <div class="sql-code-block">
+<span class="sql-keyword">WITH</span> funnel_steps <span class="sql-keyword">AS</span> (
+    <span class="sql-keyword">SELECT</span> 
+        session_id,
+        device_category,
+        <span class="sql-func">MAX</span>(<span class="sql-keyword">CASE WHEN</span> event_name = <span class="sql-string">'page_view_public'</span> <span class="sql-keyword">THEN</span> 1 <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) <span class="sql-keyword">AS</span> step1_landing,
+        <span class="sql-func">MAX</span>(<span class="sql-keyword">CASE WHEN</span> event_name = <span class="sql-string">'click_apply_now'</span> <span class="sql-keyword">THEN</span> 1 <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) <span class="sql-keyword">AS</span> step2_intent,
+        <span class="sql-func">MAX</span>(<span class="sql-keyword">CASE WHEN</span> event_name = <span class="sql-string">'start_form_fill'</span> <span class="sql-keyword">THEN</span> 1 <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) <span class="sql-keyword">AS</span> step3_form,
+        <span class="sql-func">MAX</span>(<span class="sql-keyword">CASE WHEN</span> event_name = <span class="sql-string">'submit_application_success'</span> <span class="sql-keyword">THEN</span> 1 <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) <span class="sql-keyword">AS</span> step4_converted
+    <span class="sql-keyword">FROM</span> digital_events
+    <span class="sql-keyword">WHERE</span> event_timestamp >= <span class="sql-func">CURRENT_DATE</span> - <span class="sql-keyword">INTERVAL</span> <span class="sql-string">'30 days'</span>
+    <span class="sql-keyword">GROUP BY</span> session_id, device_category
+)
+<span class="sql-keyword">SELECT</span> 
+    device_category,
+    <span class="sql-func">COUNT</span>(session_id) <span class="sql-keyword">AS</span> total_sessions,
+    <span class="sql-func">SUM</span>(step2_intent) <span class="sql-keyword">AS</span> intent_clicks,
+    <span class="sql-func">SUM</span>(step4_converted) <span class="sql-keyword">AS</span> total_conversions,
+    <span class="sql-func">ROUND</span>(<span class="sql-func">SUM</span>(step4_converted)::<span class="sql-keyword">NUMERIC</span> / <span class="sql-func">COUNT</span>(session_id) * 100, 2) <span class="sql-keyword">AS</span> overall_conversion_pct
+<span class="sql-keyword">FROM</span> funnel_steps
+<span class="sql-keyword">GROUP BY</span> device_category
+<span class="sql-keyword">ORDER BY</span> overall_conversion_pct <span class="sql-keyword">DESC</span>;
+                </div>
+
+                <h4 style="color: #00e676; margin: 1.75rem 0 0.75rem 0;"><i class="fas fa-chart-area"></i> 2. Rendimiento de Páginas Publicadas en Puck CMS vs. Legacy</h4>
+                <div class="sql-code-block">
+<span class="sql-keyword">SELECT</span> 
+    page_cms_type,
+    <span class="sql-func">COUNT</span>(<span class="sql-keyword">DISTINCT</span> session_id) <span class="sql-keyword">AS</span> unique_visitors,
+    <span class="sql-func">ROUND</span>(<span class="sql-func">AVG</span>(page_load_time_ms), 0) <span class="sql-keyword">AS</span> avg_load_time_ms,
+    <span class="sql-func">ROUND</span>(<span class="sql-func">SUM</span>(conversion_flag)::<span class="sql-keyword">NUMERIC</span> / <span class="sql-func">COUNT</span>(session_id) * 100, 2) <span class="sql-keyword">AS</span> conversion_rate
+<span class="sql-keyword">FROM</span> web_performance_logs
+<span class="sql-keyword">WHERE</span> log_date >= <span class="sql-string">'2025-01-01'</span>
+<span class="sql-keyword">GROUP BY</span> page_cms_type;
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 4: TELEMETRÍA & DASHBOARD EN VIVO -->
+        <div id="tab-dashboard" class="cs-tab-pane">
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h3 class="artifact-title"><i class="fas fa-chart-line"></i> Tablero de Control de Adopción & Telemetría en Vivo</h3>
+                    <span class="meta-tag"><i class="fas fa-sync-alt"></i> Monitoreo Continuo</span>
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                    El dashboard visualiza en tiempo real el comportamiento de la plataforma pública, combinando eventos etiquetados en GTM y reportados en GA4:
+                </p>
+
+                <!-- EMBED DE DASHBOARD INTERACTIVO -->
+                <div class="iframe-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid rgba(0, 180, 216, 0.3);">
+                    <iframe title="Digital Banking Product Analytics Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true" style="position: absolute; top:0; left: 0; width: 100%; height: 100%;"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 5: ACELERACIÓN CON IA GENERATIVA -->
+        <div id="tab-genai" class="cs-tab-pane">
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h3 class="artifact-title"><i class="fas fa-robot"></i> Integración de IA Generativa en el Ciclo de Producto</h3>
+                    <span class="meta-tag"><i class="fas fa-bolt"></i> Gemini & Rovo AI</span>
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                    Uso diario de Inteligencia Artificial para acelerar la labor de Business Analyst y Product Owner:
+                </p>
+
+                <div class="mvp-grid">
+                    <div class="mvp-box" style="border-left-color: #a855f7;">
+                        <h4><i class="fas fa-feather-alt"></i> Redacción de Historias en Jira (Gemini)</h4>
+                        <p>Generación de criterios de aceptación estructurados en formato Given-When-Then a partir de requerimientos de stakeholders, reduciendo el tiempo de escritura de historias en un 50%.</p>
+                    </div>
+                    <div class="mvp-box" style="border-left-color: #38bdf8;">
+                        <h4><i class="fas fa-sitemap"></i> Diagramación Asistida (Rovo AI en Confluence)</h4>
+                        <p>Transformación de minutos de reunión en borradores de diagramas de secuencia y BPMN 2.0 dentro de Confluence mediante el copiloto Rovo AI.</p>
+                    </div>
+                    <div class="mvp-box" style="border-left-color: #34d399;">
+                        <h4><i class="fas fa-brain"></i> Análisis de Documentos (NotebookLM)</h4>
+                        <p>Síntesis acelerada de normativas financieras y políticas internas del banco para garantizar el cumplimiento de compliance en las landing pages públicas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTÓN DE RETORNO A PROYECTOS -->
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="../projects.html" class="btn btn-hero-primary"><i class="fas fa-arrow-left"></i> Volver a Proyectos</a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-organic-shape"></div>
+        <div class="footer-container container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="../assets/img/Logo.webp" alt="Ben Matias Logo" loading="lazy">
+                </div>
+                <p class="footer-tagline" data-translate="footerTagline">
+                    Transforming complex data into strategic business decisions through analytics, BI, and AI.
+                </p>
+            </div>
+
+            <div class="footer-nav">
+                <h4 data-translate="footerNavTitle">Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html#about" data-translate="navAbout">About</a></li>
+                    <li><a href="../cv.html" data-translate="navResume">CV / Resume</a></li>
+                    <li><a href="../projects.html" data-translate="navProjects">Projects</a></li>
+                    <li><a href="../publications.html" data-translate="navPublications">Publications</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact-block">
+                <h4 data-translate="footerContactTitle">Let's Connect</h4>
+                <div class="footer-pills">
+                    <a href="mailto:bmatiasespinoza@gmail.com" class="footer-pill"><i class="fas fa-envelope"></i> bmatiasespinoza@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener" class="footer-pill"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright container">
+            <p>&copy; <span id="year"></span> Benjamín Espinoza. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // LÓGICA DE PESTAÑAS INTERACTIVAS DEL CASO DE ESTUDIO
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabBtns = document.querySelectorAll('.cs-tab-btn');
+            const tabPanes = document.querySelectorAll('.cs-tab-pane');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetTab = btn.getAttribute('data-tab');
+
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabPanes.forEach(p => p.classList.remove('active'));
+
+                    btn.classList.add('active');
+                    const pane = document.getElementById(targetTab);
+                    if (pane) pane.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
