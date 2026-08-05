@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caso de Estudio: Rediseño Digital & Analítica de Producto - Benjamín Espinoza</title>
     <meta name="description" content="Caso de estudio End-to-End de transformación digital y analítica para plataforma bancaria pública, integrando MVP Canvas, BPMN 2.0, SQL en PostgreSQL, Puck CMS y GA4.">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -583,10 +585,70 @@
             border-radius: 4px;
             width: fit-content;
         }
+        /* RESPONSIVE DESIGN FOR MOBILE & TABLETS */
         @media (max-width: 850px) {
             .roadmap-matrix-wrapper {
                 overflow-x: auto;
                 min-width: 750px;
+            }
+            .usm-columns-board {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.25rem;
+            }
+            .story-board {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cs-tabs-wrapper {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 0.5rem;
+                justify-content: flex-start;
+                -webkit-overflow-scrolling: touch;
+            }
+            .cs-tab-btn {
+                white-space: nowrap;
+                flex-shrink: 0;
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+            }
+            .project-executive-summary {
+                grid-template-columns: 1fr !important;
+            }
+            .mvp-standard-canvas {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto !important;
+            }
+            .mvp-block-1, .mvp-block-2, .mvp-block-3, .mvp-block-4, .mvp-block-5, .mvp-block-6, .mvp-block-7 {
+                grid-column: 1 / -1 !important;
+                grid-row: auto !important;
+            }
+            .artifact-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .usm-columns-board {
+                grid-template-columns: 1fr !important;
+            }
+            .story-board {
+                grid-template-columns: 1fr !important;
+            }
+            .accordion-global-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .accordion-control-btn {
+                justify-content: center;
+            }
+            .case-study-title {
+                font-size: 1.6rem !important;
             }
         }
     </style>
@@ -684,8 +746,8 @@
                 <button id="collapse-all-cards" class="accordion-control-btn"><i class="fas fa-chevron-circle-up"></i> <span data-translate="accCollapseAll">Contraer Todas las Tarjetas</span></button>
             </div>
 
-            <!-- TARJETA 1: MVP CANVAS OFICIAL (COLLAPSIBLE CARD - OPEN BY DEFAULT) -->
-            <div class="artifact-card collapsible-card">
+            <!-- TARJETA 1: MVP CANVAS OFICIAL (COLLAPSIBLE CARD - COLLAPSED BY DEFAULT) -->
+            <div class="artifact-card collapsible-card collapsed">
                 <div class="artifact-header card-toggle-trigger">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                         <h3 class="artifact-title" data-translate="cs_mvp_title"><i class="fas fa-th-large"></i> MVP Canvas Oficial (Estándar de 7 Bloques)</h3>
@@ -1053,8 +1115,8 @@
             </div>
         </div>
 
-        <!-- TARJETA 4: ROADMAP ESTRATÉGICO DEL PRODUCTO (COLLAPSIBLE CARD - OPEN BY DEFAULT) -->
-        <div class="artifact-card collapsible-card">
+        <!-- TARJETA 4: ROADMAP ESTRATÉGICO DEL PRODUCTO (COLLAPSIBLE CARD - COLLAPSED BY DEFAULT) -->
+        <div class="artifact-card collapsible-card collapsed">
             <div class="artifact-header card-toggle-trigger">
                 <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                     <h3 class="artifact-title" data-translate="cs_roadmap_title"><i class="fas fa-map-signs"></i> Roadmap Estratégico del Producto (Quarterly Timeline - 6 Sprints)</h3>
