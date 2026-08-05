@@ -347,6 +347,8 @@ const translations = {
     cs_rm_e4_b2: "BIN-402: GTM Campaign Metrics Tagging (3 SP)",
     cs_rm_e4_time: "<i class=\"fas fa-clock\"></i> Estimated Time: Weeks 11 to 12",
     btnBackProjects: "Back to Projects",
+    accExpandAll: "Expand All Cards",
+    accCollapseAll: "Collapse All Cards",
 
     // --- Projects Page Content ---
     projects_page_title: "Projects",
@@ -801,6 +803,8 @@ const translations = {
     cs_rm_e4_b2: "BIN-402: Tagueo Métricas de Campaña GTM (3 SP)",
     cs_rm_e4_time: "<i class=\"fas fa-clock\"></i> Tiempo Estimado: Semanas 11 a 12",
     btnBackProjects: "Volver a Proyectos",
+    accExpandAll: "Expandir Todas las Tarjetas",
+    accCollapseAll: "Contraer Todas las Tarjetas",
 
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",

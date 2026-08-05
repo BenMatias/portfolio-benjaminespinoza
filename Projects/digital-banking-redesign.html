@@ -420,6 +420,64 @@
         .mvp-block-6 { grid-column: 3 / 4; grid-row: 3 / 4; border-top: 4px solid #38bdf8; }
         .mvp-block-7 { grid-column: 2 / 3; grid-row: 3 / 4; border-top: 4px solid #f59e0b; }
 
+        /* ACCORDION SYSTEM STYLES */
+        .accordion-global-controls {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        .accordion-control-btn {
+            background: rgba(0, 180, 216, 0.12);
+            border: 1px solid rgba(0, 180, 216, 0.3);
+            color: #00b4d8;
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .accordion-control-btn:hover {
+            background: #00b4d8;
+            color: #0d1b2a;
+            box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+        }
+        .card-toggle-trigger {
+            cursor: pointer;
+            user-select: none;
+        }
+        .card-accordion-toggle {
+            background: rgba(0, 180, 216, 0.15);
+            border: 1px solid rgba(0, 180, 216, 0.3);
+            color: #00b4d8;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.2s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+        .collapsible-card.collapsed .card-accordion-toggle {
+            transform: rotate(-90deg);
+            color: #94a3b8;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .collapsible-card.collapsed .artifact-body {
+            display: none;
+        }
+        .collapsible-card.collapsed {
+            padding-bottom: 1.25rem;
+        }
+
         /* ROADMAP VISUAL MATRIX STYLES */
         .roadmap-matrix-wrapper {
             display: grid;
@@ -618,21 +676,31 @@
             <button class="cs-tab-btn" data-tab="tab-genai" data-translate="cs_tab_genai"><i class="fas fa-robot"></i> 5. Aceleración con GenAI</button>
         </div>
 
-        <!-- PESTAÑA 1: ESTRATEGIA PO & HISTORIAS DE USUARIO -->
+        <!-- PESTAÑA 1: ESTRATEGIA DE PRODUCTO (MVP, USM, BACKLOG & ROADMAP) -->
         <div id="tab-po" class="cs-tab-pane active">
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h3 class="artifact-title" data-translate="cs_mvp_title"><i class="fas fa-th-large"></i> MVP Canvas Oficial (Estándar de 7 Bloques)</h3>
-                    <span class="meta-tag"><i class="fas fa-check-circle"></i> Matriz Estandarizada</span>
-                </div>
-                <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_mvp_subtitle">
-                    Estructura oficial del MVP Canvas para validar las hipótesis de negocio, definir los viajes de usuario, las funcionalidades mínimas y el cronograma de ejecución:
-                </p>
+            <!-- BARRA DE CONTROLES DEL ACORDEÓN INTERACTIVO -->
+            <div class="accordion-global-controls">
+                <button id="expand-all-cards" class="accordion-control-btn"><i class="fas fa-chevron-circle-down"></i> <span data-translate="accExpandAll">Expandir Todas las Tarjetas</span></button>
+                <button id="collapse-all-cards" class="accordion-control-btn"><i class="fas fa-chevron-circle-up"></i> <span data-translate="accCollapseAll">Contraer Todas las Tarjetas</span></button>
+            </div>
 
-                <!-- CANVAS DE 7 BLOQUES ESTÁNDAR -->
-                <div class="mvp-standard-canvas">
-                    <!-- BLOQUE 1: MVP Proposal (Top center) -->
-                    <div class="mvp-canvas-card mvp-block-1">
+            <!-- TARJETA 1: MVP CANVAS OFICIAL (COLLAPSIBLE CARD - OPEN BY DEFAULT) -->
+            <div class="artifact-card collapsible-card">
+                <div class="artifact-header card-toggle-trigger">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h3 class="artifact-title" data-translate="cs_mvp_title"><i class="fas fa-th-large"></i> MVP Canvas Oficial (Estándar de 7 Bloques)</h3>
+                        <span class="meta-tag"><i class="fas fa-check-circle"></i> Matriz Estandarizada</span>
+                    </div>
+                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="artifact-body">
+                    <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_mvp_subtitle">
+                        Estructura oficial del MVP Canvas para validar las hipótesis de negocio, definir los viajes de usuario, las funcionalidades mínimas y el cronograma de ejecución:
+                    </p>
+
+                    <!-- CANVAS DE 7 BLOQUES ESTÁNDAR -->
+                    <div class="mvp-standard-canvas">
+                        <div class="mvp-canvas-card mvp-block-1">
                         <span class="badge-num">1</span>
                         <h4 data-translate="cs_mvp_b1_title">MVP Proposal</h4>
                         <div data-translate="cs_mvp_b1_text"><p>Rediseño de la plataforma web pública bancaria implementando arquitectura desacoplada Strapi 5 (Headless CMS) + Puck CMS React, maquetación asistida por IA (Firebase) y telemetría en tiempo real (GA4 / Clarity), permitiendo publicar landing pages comerciales en minutos con 100% de calidad aprobada en QA.</p></div>
@@ -723,15 +791,19 @@
                 </div>
             </div>
 
-            <!-- TARJETA 1: MAPA VISUAL DE HISTORIAS (USER STORY MAP - 4 COLUMNAS DE ACTIVIDADES) -->
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h3 class="artifact-title" data-translate="cs_usm_matrix_title"><i class="fas fa-sitemap"></i> User Story Map: Matriz Visual de Producto</h3>
-                    <span class="meta-tag"><i class="fas fa-layer-group"></i> Estándar de Gestión de Producto</span>
+            <!-- TARJETA 2: USER STORY MAP (COLLAPSIBLE CARD - COLLAPSED BY DEFAULT) -->
+            <div class="artifact-card collapsible-card collapsed">
+                <div class="artifact-header card-toggle-trigger">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h3 class="artifact-title" data-translate="cs_usm_matrix_title"><i class="fas fa-sitemap"></i> User Story Map: Matriz Visual de Producto</h3>
+                        <span class="meta-tag"><i class="fas fa-layer-group"></i> Estándar de Gestión de Producto</span>
+                    </div>
+                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
-                <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_usm_matrix_desc">
-                    Mapa de viaje del producto estructurado en 4 Actividades Estratégicas (Backbone) con sus tareas y pasos de flujo (Steps) ordenados verticalmente:
-                </p>
+                <div class="artifact-body">
+                    <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_usm_matrix_desc">
+                        Mapa de viaje del producto estructurado en 4 Actividades Estratégicas (Backbone) con sus tareas y pasos de flujo (Steps) ordenados verticalmente:
+                    </p>
 
                 <!-- TABLERO DE 4 COLUMNAS PERFECCIONADO -->
                 <div class="usm-columns-board">
@@ -824,13 +896,18 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- TARJETA 2: BACKLOG PRIORIZADO EN JIRA (ALINEADO A LAS 4 ACTIVIDADES) -->
-            <div class="artifact-card">
-                <div class="artifact-header">
+        <!-- TARJETA 3: BACKLOG PRIORIZADO EN JIRA (COLLAPSIBLE CARD - COLLAPSED BY DEFAULT) -->
+        <div class="artifact-card collapsible-card collapsed">
+            <div class="artifact-header card-toggle-trigger">
+                <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                     <h3 class="artifact-title" data-translate="cs_usm_title"><i class="fas fa-tasks"></i> Backlog Priorizado del Producto (Jira / Confluence)</h3>
                     <span class="meta-tag"><i class="fab fa-jira"></i> Backlog en Triada (PO, BA, Tech Lead)</span>
                 </div>
+                <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="artifact-body">
                 <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_usm_desc">
                     Historias de Usuario del Backlog estructuradas en 4 Épicas alineadas al User Story Map, con estimación en Story Points (SP), nivel MoSCoW y Criterios de Aceptación BDD (Given-When-Then):
                 </p>
@@ -973,13 +1050,18 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- TARJETA 3: ROADMAP ESTRATÉGICO DEL PRODUCTO (TARJETA INDEPENDIENTE Y SEPARADA) -->
-            <div class="artifact-card">
-                <div class="artifact-header">
+        <!-- TARJETA 4: ROADMAP ESTRATÉGICO DEL PRODUCTO (COLLAPSIBLE CARD - OPEN BY DEFAULT) -->
+        <div class="artifact-card collapsible-card">
+            <div class="artifact-header card-toggle-trigger">
+                <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                     <h3 class="artifact-title" data-translate="cs_roadmap_title"><i class="fas fa-map-signs"></i> Roadmap Estratégico del Producto (Quarterly Timeline - 6 Sprints)</h3>
                     <span class="meta-tag" data-translate="cs_roadmap_tag"><i class="fas fa-calendar-alt"></i> Cronograma de 12 Semanas (Triada Ágil)</span>
                 </div>
+                <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="artifact-body">
                 <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_roadmap_desc">
                     Cronograma visual de entregas secuenciales organizado por Épicas del Backlog, Sprints y Tiempos Estimados para el rediseño del portal público bancario (5 Páginas del MVP):
                 </p>
@@ -1004,39 +1086,39 @@
                         </div>
                     </div>
 
-                    <!-- ROW 2: ÉPICA 2 (MES 2: SEMANAS 5 A 8) -->
+                    <!-- ROW 2: ÉPICA 2 (MES 1 SEMANA 3 A MES 2 SEMANA 8) -->
                     <div class="roadmap-epic-cell">
                         <div class="roadmap-epic-name" style="color: #38bdf8 !important;" data-translate="cs_rm_e2_title"><i class="fas fa-code"></i> Épica 2: Puck & Strapi 5</div>
                         <div class="roadmap-epic-sub" data-translate="cs_rm_e2_sub">CMS & Telemetría Core (16 SP)</div>
                     </div>
                     <div class="roadmap-timeline-row">
-                        <div class="roadmap-bar roadmap-bar-epic2" style="grid-column: 2 / 3;">
+                        <div class="roadmap-bar roadmap-bar-epic2" style="grid-column: 1 / 3; margin-left: 33%; width: 67%;">
                             <span data-translate="cs_rm_e2_b1">BIN-201: Componentes Puck CMS & API Strapi 5 (11 SP)</span>
                             <span data-translate="cs_rm_e2_b2">BIN-202: Telemetría (GA4, GTM & Clarity) (5 SP)</span>
-                            <span class="roadmap-milestone" data-translate="cs_rm_e2_time1"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 5 a 8</span>
+                            <span class="roadmap-milestone" data-translate="cs_rm_e2_time1"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 3 a 8</span>
                         </div>
                     </div>
 
-                    <!-- ROW 3: ÉPICA 3 (MES 3: SEMANAS 9 A 10) -->
+                    <!-- ROW 3: ÉPICA 3 (MES 3: SEMANAS 9 A 10 - PRIMERA MITAD) -->
                     <div class="roadmap-epic-cell">
                         <div class="roadmap-epic-name" style="color: #fbbf24 !important;" data-translate="cs_rm_e3_title"><i class="fas fa-vial"></i> Épica 3: Pruebas & Pase Prod</div>
                         <div class="roadmap-epic-sub" data-translate="cs_rm_e3_sub">Calidad QA & Despliegue (8 SP)</div>
                     </div>
                     <div class="roadmap-timeline-row">
-                        <div class="roadmap-bar roadmap-bar-epic3" style="grid-column: 3 / 4;">
+                        <div class="roadmap-bar roadmap-bar-epic3" style="grid-column: 3 / 4; width: 48%; margin-left: 0;">
                             <span data-translate="cs_rm_e3_b1">BIN-301: Matriz Pruebas Funcionales QA Staging (5 SP)</span>
                             <span data-translate="cs_rm_e3_b2">BIN-302: Firma Acta Certificación QA & Go-Live (3 SP)</span>
                             <span class="roadmap-milestone" data-translate="cs_rm_e3_time"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 9 a 10</span>
                         </div>
                     </div>
 
-                    <!-- ROW 4: ÉPICA 4 (MES 3: SEMANAS 11 A 12) -->
+                    <!-- ROW 4: ÉPICA 4 (MES 3: SEMANAS 11 A 12 - SEGUNDA MITAD) -->
                     <div class="roadmap-epic-cell">
                         <div class="roadmap-epic-name" style="color: #34d399 !important;" data-translate="cs_rm_e4_title"><i class="fas fa-sliders-h"></i> Épica 4: Operación Continua</div>
                         <div class="roadmap-epic-sub" data-translate="cs_rm_e4_sub">Autonomía Comercial (8 SP)</div>
                     </div>
                     <div class="roadmap-timeline-row">
-                        <div class="roadmap-bar roadmap-bar-epic4" style="grid-column: 3 / 4;">
+                        <div class="roadmap-bar roadmap-bar-epic4" style="grid-column: 3 / 4; width: 48%; margin-left: 52%;">
                             <span data-translate="cs_rm_e4_b1">BIN-401: Administración Puck & Roles Comercial (5 SP)</span>
                             <span data-translate="cs_rm_e4_b2">BIN-402: Tagueo Métricas de Campaña GTM (3 SP)</span>
                             <span class="roadmap-milestone" data-translate="cs_rm_e4_time"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 11 a 12</span>
@@ -1045,6 +1127,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
         <!-- PESTAÑA 2: DIAGRAMA DE PROCESOS BPMN 2.0 -->
         <div id="tab-bpmn" class="cs-tab-pane">
@@ -1252,6 +1335,31 @@
                     if (pane) pane.classList.add('active');
                 });
             });
+
+            // LÓGICA DE ACORDEÓN INTERACTIVO PARA LAS TARJETAS DE ESTRATEGIA DE PRODUCTO
+            const collapsibleCards = document.querySelectorAll('.collapsible-card');
+            collapsibleCards.forEach(card => {
+                const trigger = card.querySelector('.card-toggle-trigger');
+                if (trigger) {
+                    trigger.addEventListener('click', (e) => {
+                        card.classList.toggle('collapsed');
+                    });
+                }
+            });
+
+            const expandAllBtn = document.getElementById('expand-all-cards');
+            const collapseAllBtn = document.getElementById('collapse-all-cards');
+
+            if (expandAllBtn) {
+                expandAllBtn.addEventListener('click', () => {
+                    collapsibleCards.forEach(c => c.classList.remove('collapsed'));
+                });
+            }
+            if (collapseAllBtn) {
+                collapseAllBtn.addEventListener('click', () => {
+                    collapsibleCards.forEach(c => c.classList.add('collapsed'));
+                });
+            }
         });
     </script>
 </body>
