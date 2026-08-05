@@ -619,6 +619,236 @@
             gap: 0.5rem;
         }
 
+        /* BPMN 2.0 FORMAL POOL & SWIMLANE STYLES */
+        .bpmn-pool-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 0.75rem;
+            margin-top: 1rem;
+        }
+        .bpmn-pool-matrix {
+            min-width: 900px;
+            border: 2px solid rgba(0, 180, 216, 0.3);
+            border-radius: 12px;
+            background: #0f172a;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        .bpmn-pool-header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            padding: 0.85rem 1.25rem;
+            border-bottom: 2px solid rgba(0, 180, 216, 0.3);
+            color: #ffffff !important;
+            font-weight: 800;
+            font-size: 0.98rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .bpmn-swimlane {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            border-bottom: 1.5px solid rgba(255,255,255,0.08);
+            min-height: 110px;
+        }
+        .bpmn-swimlane:last-child {
+            border-bottom: none;
+        }
+        .bpmn-lane-title {
+            background: #111c2e;
+            border-right: 2px solid rgba(0, 180, 216, 0.25);
+            padding: 1rem 0.85rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #38bdf8 !important;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .bpmn-lane-title span {
+            color: #94a3b8 !important;
+            font-size: 0.72rem;
+            text-transform: none;
+            font-weight: 400;
+            margin-top: 0.25rem;
+        }
+        .bpmn-lane-content {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            overflow-x: auto;
+            background: rgba(11, 19, 41, 0.6);
+        }
+
+        /* BPMN 2.0 SPECIFIC NODES */
+        .bpmn-element {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+        .bpmn-element:hover {
+            transform: translateY(-2px);
+        }
+        .bpmn-event-start {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(0, 230, 118, 0.15);
+            border: 3px solid #00e676;
+            color: #00e676;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 0 12px rgba(0, 230, 118, 0.3);
+        }
+        .bpmn-event-end {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(239, 68, 68, 0.15);
+            border: 4px solid #ef4444;
+            color: #ef4444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
+        }
+        .bpmn-event-timer {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(245, 158, 11, 0.15);
+            border: 3px double #f59e0b;
+            color: #f59e0b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+        .bpmn-task {
+            background: #1e293b;
+            border: 1.5px solid rgba(0, 180, 216, 0.4);
+            border-radius: 8px;
+            padding: 0.65rem 0.85rem;
+            min-width: 140px;
+            max-width: 170px;
+            font-size: 0.82rem;
+            color: #f8fafc !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-align: left;
+        }
+        .bpmn-task-title {
+            font-weight: 700;
+            color: #ffffff !important;
+            margin-bottom: 0.25rem;
+            font-size: 0.82rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .bpmn-task-desc {
+            color: #cbd5e1 !important;
+            font-size: 0.74rem;
+            line-height: 1.35;
+        }
+        .bpmn-gateway-xor {
+            width: 46px;
+            height: 46px;
+            background: #1e293b;
+            border: 2px solid #00b4d8;
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 180, 216, 0.25);
+            margin: 0 0.5rem;
+            flex-shrink: 0;
+        }
+        .bpmn-gateway-inner {
+            transform: rotate(-45deg);
+            color: #00b4d8;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        .bpmn-arrow {
+            color: #64748b;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin: 0 0.2rem;
+        }
+        .bpmn-alert-banner {
+            border-radius: 8px;
+            padding: 0.85rem 1.1rem;
+            margin-top: 1rem;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            line-height: 1.45;
+        }
+        .bpmn-alert-banner.danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+            color: #fca5a5 !important;
+        }
+        .bpmn-alert-banner.success {
+            background: rgba(0, 230, 118, 0.1);
+            border-left: 4px solid #00e676;
+            color: #86efac !important;
+        }
+
+        /* KPI REENGINEERING COMPARISON TABLE */
+        .kpi-reengineering-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.88rem;
+        }
+        .kpi-reengineering-table th {
+            background: #111c2e;
+            color: #00b4d8 !important;
+            text-align: left;
+            padding: 0.85rem 1rem;
+            font-weight: 700;
+            border-bottom: 2px solid rgba(0, 180, 216, 0.3);
+        }
+        .kpi-reengineering-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: #cbd5e1 !important;
+        }
+        .kpi-reengineering-table tr:hover td {
+            background: rgba(15, 23, 42, 0.8);
+        }
+        .kpi-badge-danger {
+            background: rgba(239,68,68,0.15);
+            color: #ef4444 !important;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        .kpi-badge-success {
+            background: rgba(0,230,118,0.15);
+            color: #00e676 !important;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
         /* RESPONSIVE DESIGN FOR MOBILE & TABLETS */
         @media (max-width: 850px) {
             .mobile-scroll-hint {
@@ -639,6 +869,9 @@
         }
 
         @media (max-width: 768px) {
+            .case-study-hero {
+                padding-top: 6.5rem !important;
+            }
             .cs-tabs-wrapper {
                 overflow-x: auto;
                 flex-wrap: nowrap;
@@ -1251,50 +1484,359 @@
         </div>
     </div>
 
-        <!-- PESTAÑA 2: DIAGRAMA DE PROCESOS BPMN 2.0 -->
+        <!-- PESTAÑA 2: DIAGRAMA DE PROCESOS BPMN 2.0 (AS-IS VS TO-BE) -->
         <div id="tab-bpmn" class="cs-tab-pane">
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h3 class="artifact-title"><i class="fas fa-diagram-project"></i> Diagrama de Proceso de Negocio (BPMN 2.0)</h3>
-                    <span class="meta-tag"><i class="fas fa-certificate"></i> Norma BPMN 2.0</span>
-                </div>
-                <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1.5rem;">
-                    Modelamiento formal del flujo operacional de creación, maquetación, certificación QA y despliegue del sitio público en producción. Este estándar elimina ambigüedades entre el equipo de negocio, producto y desarrollo.
-                </p>
+            <!-- BARRA SUPERIOR DE CONTROLES GLOBALES PARA PESTAÑA 2 -->
+            <div class="accordion-global-controls">
+                <button id="expand-all-bpmn" class="accordion-control-btn"><i class="fas fa-chevron-circle-down"></i> <span data-translate="accExpandAll">Expandir Todas las Tarjetas</span></button>
+                <button id="collapse-all-bpmn" class="accordion-control-btn"><i class="fas fa-chevron-circle-up"></i> <span data-translate="accCollapseAll">Contraer Todas las Tarjetas</span></button>
+            </div>
 
-                <div class="bpmn-flow">
-                    <div class="bpmn-node">
-                        <div class="bpmn-node-step">Paso 1</div>
-                        <div class="bpmn-node-title">Solicitud de Iniciativa</div>
-                        <div class="bpmn-node-role">Stakeholders / Negocio</div>
+            <!-- TARJETA 1: FICHA DE REINGENIERÍA & COMPARATIVA DE KPIS (COLLAPSED BY DEFAULT) -->
+            <div class="artifact-card collapsible-card collapsed">
+                <div class="artifact-header card-toggle-trigger">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h3 class="artifact-title" data-translate="cs_bpmn_summary_title"><i class="fas fa-tachometer-alt"></i> Ficha de Reingeniería & Matriz Comparativa de KPIs (AS-IS vs. TO-BE)</h3>
+                        <span class="meta-tag"><i class="fas fa-chart-line"></i> Impacto Operacional</span>
                     </div>
-                    <div class="bpmn-node">
-                        <div class="bpmn-node-step">Paso 2</div>
-                        <div class="bpmn-node-title">MVP & User Stories</div>
-                        <div class="bpmn-node-role">Business Analyst</div>
-                    </div>
-                    <div class="bpmn-node">
-                        <div class="bpmn-node-step">Paso 3</div>
-                        <div class="bpmn-node-title">Maquetación Puck CMS</div>
-                        <div class="bpmn-node-role">Product Owner (PO)</div>
-                    </div>
-                    <div class="bpmn-node decision">
-                        <div class="bpmn-node-step">Evaluación</div>
-                        <div class="bpmn-node-title">Pruebas QA Funcionales</div>
-                        <div class="bpmn-node-role">BA / Célula Staging</div>
-                    </div>
-                    <div class="bpmn-node success">
-                        <div class="bpmn-node-step">Paso Final</div>
-                        <div class="bpmn-node-title">Pase a Producción & GA4</div>
-                        <div class="bpmn-node-role">Publicación en Vivo</div>
+                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="artifact-body">
+                    <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_bpmn_summary_desc">
+                        Resumen ejecutivo del impacto directo de la reingeniería de procesos en el ciclo de publicación del portal público bancario (5 Páginas del MVP):
+                    </p>
+
+                    <div style="overflow-x: auto;">
+                        <table class="kpi-reengineering-table">
+                            <thead>
+                                <tr>
+                                    <th>Métrica de Proceso</th>
+                                    <th>Flujo Actual (AS-IS)</th>
+                                    <th>Flujo Propuesto (TO-BE)</th>
+                                    <th>Impacto & Mejora %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>SLA Time-to-Market</strong></td>
+                                    <td><span class="kpi-badge-danger">14 a 21 Días Hábiles</span></td>
+                                    <td><span class="kpi-badge-success">15 Minutos</span></td>
+                                    <td><strong style="color: #00e676 !important;">-99.9% Tiempo de Ciclo</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dependencia Operativa</strong></td>
+                                    <td><span class="kpi-badge-danger">100% Ticket Dev TI</span></td>
+                                    <td><span class="kpi-badge-success">Autonomía Comercial No-Code</span></td>
+                                    <td><strong style="color: #00e676 !important;">100% Autonomía</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Costo en Story Points</strong></td>
+                                    <td><span class="kpi-badge-danger">Consumo Alto en Sprints TI</span></td>
+                                    <td><span class="kpi-badge-success">Cero consumo de horas dev</span></td>
+                                    <td><strong style="color: #00e676 !important;">Capacidad TI liberada</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Riesgo en Producción</strong></td>
+                                    <td><span class="kpi-badge-danger">Despliegue Manual Nocturno</span></td>
+                                    <td><span class="kpi-badge-success">Staging Sandbox QA Gate</span></td>
+                                    <td><strong style="color: #00e676 !important;">0 Errores en Prod</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Telemetría Analítica</strong></td>
+                                    <td><span class="kpi-badge-danger">Tagueo Manual Posterior</span></td>
+                                    <td><span class="kpi-badge-success">Auto-Tagueo GTM / GA4 / Clarity</span></td>
+                                    <td><strong style="color: #00e676 !important;">100% Medición Automática</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
 
-                <div style="background: rgba(0, 180, 216, 0.08); border-left: 4px solid #00b4d8; padding: 1.2rem; border-radius: 6px; margin-top: 1.5rem;">
-                    <h4 style="color: #ffffff; margin: 0 0 0.5rem 0; font-size: 0.95rem;"><i class="fas fa-info-circle"></i> Aspectos Destacados del Modelamiento BPMN 2.0:</h4>
-                    <ul style="color: #cbd5e1; font-size: 0.88rem; margin: 0; padding-left: 1.2rem; line-height: 1.6;">
-                        <li><strong>Carretera de Aprobación Paralela:</strong> La maquetación UX en Puck CMS ocurre simultáneamente con la configuración de triggers en GTM.</li>
-                        <li><strong>Gate de Calidad QA:</strong> Condición de decisión donde si el ambiente Staging presenta inconsistencias, el flujo retorna automáticamente al PO para ajuste antes de tocar producción.</li>
+            <!-- TARJETA 2: DIAGRAMA BPMN 2.0 - PROCESO ACTUAL (AS-IS: CUELLO DE BOTELLA EN TI) -->
+            <div class="artifact-card collapsible-card collapsed">
+                <div class="artifact-header card-toggle-trigger">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h3 class="artifact-title" style="color: #ef4444 !important;" data-translate="cs_bpmn_asis_title"><i class="fas fa-exclamation-triangle"></i> Proceso Actual (AS-IS): Cuello de Botella en Desarrollo TI</h3>
+                        <span class="meta-tag" style="border-color: #ef4444; color: #ef4444;"><i class="fas fa-history"></i> SLA: 14 a 21 Días</span>
+                    </div>
+                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="artifact-body">
+                    <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1rem;" data-translate="cs_bpmn_asis_desc">
+                        Modelamiento en estándar BPMN 2.0 del flujo tradicional. Los cambios de landing pages dependen 100% de la capacidad de desarrollo duro y ventanas nocturnas de mantenimiento:
+                    </p>
+
+                    <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA MÓVILES -->
+                    <div class="mobile-scroll-hint">
+                        <i class="fas fa-arrows-left-right"></i> <span>Desliza horizontalmente para ver las swimlanes del diagrama BPMN 2.0</span>
+                    </div>
+
+                    <!-- POOL MATRIX AS-IS -->
+                    <div class="bpmn-pool-wrapper">
+                        <div class="bpmn-pool-matrix">
+                            <div class="bpmn-pool-header">
+                                <span><i class="fas fa-layer-group"></i> POOL 1: Proceso Tradicional de Publicación Web Bancaria (AS-IS)</span>
+                                <span style="font-size:0.8rem; color:#ef4444;"><i class="fas fa-clock"></i> Tiempo de Ciclo Total: 14 a 21 Días Hábiles</span>
+                            </div>
+
+                            <!-- SWIMLANE 1: COMERCIAL / MARKETING -->
+                            <div class="bpmn-swimlane">
+                                <div class="bpmn-lane-title">
+                                    Área Comercial
+                                    <span>Marketing / PO</span>
+                                </div>
+                                <div class="bpmn-lane-content">
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-event-start"><i class="fas fa-bullhorn"></i></div>
+                                        <span style="font-size:0.7rem; color:#00e676; font-weight:700; margin-top:0.25rem;">Inicio: Oferta</span>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task">
+                                            <div class="bpmn-task-title"><i class="fas fa-file-word"></i> Requerimiento</div>
+                                            <div class="bpmn-task-desc">Redacción de documento de especificaciones de campaña.</div>
+                                        </div>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task">
+                                            <div class="bpmn-task-title"><i class="fas fa-ticket-alt"></i> Ticket Jira</div>
+                                            <div class="bpmn-task-desc">Ingreso de ticket a mesa de ayuda TI.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SWIMLANE 2: DESARROLLO TI -->
+                            <div class="bpmn-swimlane">
+                                <div class="bpmn-lane-title">
+                                    Célula Dev TI
+                                    <span>Desarrolladores Web</span>
+                                </div>
+                                <div class="bpmn-lane-content">
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-event-timer"><i class="fas fa-hourglass-half"></i></div>
+                                        <span style="font-size:0.7rem; color:#f59e0b; font-weight:700; margin-top:0.25rem;">Espera: 10-14 días</span>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task">
+                                            <div class="bpmn-task-title"><i class="fas fa-calendar-check"></i> Refinamiento</div>
+                                            <div class="bpmn-task-desc">Asignación de Story Points en Planning.</div>
+                                        </div>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task">
+                                            <div class="bpmn-task-title"><i class="fas fa-code"></i> Código Duro</div>
+                                            <div class="bpmn-task-desc">Programación HTML/React en repositorio.</div>
+                                        </div>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task">
+                                            <div class="bpmn-task-title"><i class="fas fa-code-branch"></i> Pull Request</div>
+                                            <div class="bpmn-task-desc">Code Review e integración a branch main.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SWIMLANE 3: QA & OPERACIONES TI -->
+                            <div class="bpmn-swimlane">
+                                <div class="bpmn-lane-title">
+                                    QA & Operaciones
+                                    <span>Infraestructura TI</span>
+                                </div>
+                                <div class="bpmn-lane-content">
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task">
+                                            <div class="bpmn-task-title"><i class="fas fa-vial"></i> Pruebas Manuales</div>
+                                            <div class="bpmn-task-desc">Ejecución de casos de prueba manuales.</div>
+                                        </div>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-gateway-xor">
+                                        <div class="bpmn-gateway-inner">X</div>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-event-timer"><i class="fas fa-moon"></i></div>
+                                        <span style="font-size:0.7rem; color:#f59e0b; font-weight:700; margin-top:0.25rem;">Ventana Nocturna</span>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-event-end"><i class="fas fa-flag-checkered"></i></div>
+                                        <span style="font-size:0.7rem; color:#ef4444; font-weight:700; margin-top:0.25rem;">Fin: 21 Días</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bpmn-alert-banner danger">
+                        <i class="fas fa-exclamation-circle" style="font-size: 1.4rem;"></i>
+                        <div>
+                            <strong>Punto de Dolor Identificado:</strong> El proceso AS-IS genera cuellos de botella de hasta 3 semanas por la dependencia absoluta de TI en tareas tipográficas y de contenido simple, imposibilitando la agilidad comercial.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA 3: DIAGRAMA BPMN 2.0 - PROCESO PROPUESTO (TO-BE: PUCK CMS & STRAPI 5) -->
+            <div class="artifact-card collapsible-card collapsed">
+                <div class="artifact-header card-toggle-trigger">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h3 class="artifact-title" style="color: #00e676 !important;" data-translate="cs_bpmn_tobe_title"><i class="fas fa-rocket"></i> Proceso Propuesto (TO-BE): Autonomía Comercial No-Code con Puck CMS</h3>
+                        <span class="meta-tag" style="border-color: #00e676; color: #00e676;"><i class="fas fa-bolt"></i> SLA: 15 Minutos</span>
+                    </div>
+                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="artifact-body">
+                    <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1rem;" data-translate="cs_bpmn_tobe_desc">
+                        Modelamiento en estándar BPMN 2.0 del flujo optimizado. El Editor Comercial compone landings visualmente en minutos y el Product Owner aprueba en Staging Sandbox previo a la sincronización instantánea:
+                    </p>
+
+                    <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA MÓVILES -->
+                    <div class="mobile-scroll-hint">
+                        <i class="fas fa-arrows-left-right"></i> <span>Desliza horizontalmente para ver las swimlanes del diagrama BPMN 2.0</span>
+                    </div>
+
+                    <!-- POOL MATRIX TO-BE -->
+                    <div class="bpmn-pool-wrapper">
+                        <div class="bpmn-pool-matrix">
+                            <div class="bpmn-pool-header" style="border-bottom-color: #00e676;">
+                                <span><i class="fas fa-layer-group"></i> POOL 2: Proceso Autónomo No-Code con Puck CMS & Strapi 5 (TO-BE)</span>
+                                <span style="font-size:0.8rem; color:#00e676;"><i class="fas fa-bolt"></i> Tiempo de Ciclo Total: 15 Minutos</span>
+                            </div>
+
+                            <!-- SWIMLANE 1: EDITOR COMERCIAL -->
+                            <div class="bpmn-swimlane">
+                                <div class="bpmn-lane-title" style="color: #00e676 !important;">
+                                    Editor Comercial
+                                    <span>Puck Admin UI</span>
+                                </div>
+                                <div class="bpmn-lane-content">
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-event-start"><i class="fas fa-magic"></i></div>
+                                        <span style="font-size:0.7rem; color:#00e676; font-weight:700; margin-top:0.25rem;">Inicio: Campaña</span>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task" style="border-color: #00e676;">
+                                            <div class="bpmn-task-title" style="color:#00e676 !important;"><i class="fas fa-layer-group"></i> Plantilla MVP</div>
+                                            <div class="bpmn-task-desc">Selección de 1 de las 5 páginas precargadas.</div>
+                                        </div>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task" style="border-color: #00e676;">
+                                            <div class="bpmn-task-title" style="color:#00e676 !important;"><i class="fas fa-mouse-pointer"></i> Drag & Drop</div>
+                                            <div class="bpmn-task-desc">Edición visual de textos y fotos en Puck (10 min).</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SWIMLANE 2: PUCK CMS & STRAPI 5 API ENGINE -->
+                            <div class="bpmn-swimlane">
+                                <div class="bpmn-lane-title">
+                                    Strapi 5 & Puck
+                                    <span>API & Auto-Tagueo GTM</span>
+                                </div>
+                                <div class="bpmn-lane-content">
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task">
+                                            <div class="bpmn-task-title"><i class="fas fa-database"></i> Strapi 5 Ingestion</div>
+                                            <div class="bpmn-task-desc">Validación de esquemas JSON y API Restful.</div>
+                                        </div>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task">
+                                            <div class="bpmn-task-title"><i class="fas fa-tags"></i> Auto-Tagueo GTM</div>
+                                            <div class="bpmn-task-desc">Inyección automática de eventos GA4/Clarity.</div>
+                                        </div>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task">
+                                            <div class="bpmn-task-title"><i class="fas fa-server"></i> Staging Deploy</div>
+                                            <div class="bpmn-task-desc">Generación de pre-view Sandbox (1 min).</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SWIMLANE 3: PRODUCT OWNER & QA CERTIFIER -->
+                            <div class="bpmn-swimlane">
+                                <div class="bpmn-lane-title">
+                                    Product Owner
+                                    <span>Gatekeeper QA Staging</span>
+                                </div>
+                                <div class="bpmn-lane-content">
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task">
+                                            <div class="bpmn-task-title"><i class="fas fa-check-double"></i> QA Staging Gate</div>
+                                            <div class="bpmn-task-desc">Revisión visual en vivo en Sandbox.</div>
+                                        </div>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-gateway-xor" style="border-color: #00e676;">
+                                        <div class="bpmn-gateway-inner" style="color: #00e676;">OK?</div>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-task" style="border-color: #00e676;">
+                                            <div class="bpmn-task-title" style="color:#00e676 !important;"><i class="fas fa-cloud-upload-alt"></i> Sync CDN Prod</div>
+                                            <div class="bpmn-task-desc">Despliegue instantáneo en 1-click (30 seg).</div>
+                                        </div>
+                                    </div>
+                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                    <div class="bpmn-element">
+                                        <div class="bpmn-event-end" style="border-color: #00e676; color: #00e676; background: rgba(0,230,118,0.15); box-shadow: 0 0 12px rgba(0,230,118,0.3);"><i class="fas fa-check"></i></div>
+                                        <span style="font-size:0.7rem; color:#00e676; font-weight:700; margin-top:0.25rem;">Fin: 15 Min</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bpmn-alert-banner success">
+                        <i class="fas fa-check-circle" style="font-size: 1.4rem;"></i>
+                        <div>
+                            <strong>Ganancia Operacional Prometida:</strong> Reducción del 99.9% en Time-to-Market, eliminación total de la dependencia de TI en cambios tipográficos y garantía de cero errores gracias a la certificación previa en Staging Sandbox.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA 4: MATRIZ DE GOBERNANZA, ROLES RBAC & REGLAS DE NEGOCIO BPMN -->
+            <div class="artifact-card collapsible-card collapsed">
+                <div class="artifact-header card-toggle-trigger">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h3 class="artifact-title" data-translate="cs_bpmn_gov_title"><i class="fas fa-shield-alt"></i> Matriz de Gobernanza, Roles RBAC & Reglas de Negocio BPMN</h3>
+                        <span class="meta-tag"><i class="fas fa-user-shield"></i> Control de Cambios</span>
+                    </div>
+                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="artifact-body">
+                    <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_bpmn_gov_desc">
+                        Definición formal de perfiles de acceso (Role-Based Access Control) y políticas de validación para operar el nuevo modelo de procesos sin comprometer la seguridad bancaria:
+                    </p>
+
+                    <h4 style="color: #00b4d8; font-size: 0.98rem; margin-bottom: 0.75rem;"><i class="fas fa-users-cog"></i> 1. Matriz de Permisos RBAC en Puck Admin & Strapi 5</h4>
+                    <ul style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.5rem; padding-left: 1.2rem;">
+                        <li><strong>Editor Comercial (Marketing / Producto):</strong> Permiso de creación y modificación visual de textos, imágenes y banners únicamente sobre los componentes precargados en las 5 páginas del MVP. Sin acceso a modificar código duro ni infraestructura.</li>
+                        <li><strong>Product Owner / QA Certifier:</strong> Permiso exclusivo de aprobación final del Gate de Staging Sandbox y ejecución del pase a producción en 1-Click.</li>
+                        <li><strong>Lead Developer / TI:</strong> Administración de componentes React base en Puck, definición de esquemas de datos en Strapi 5 y mantenimiento del pipeline CI/CD.</li>
+                    </ul>
+
+                    <h4 style="color: #00e676; font-size: 0.98rem; margin-bottom: 0.75rem;"><i class="fas fa-gavel"></i> 2. Reglas de Negocio del Proceso BPMN 2.0</h4>
+                    <ul style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.6; margin: 0; padding-left: 1.2rem;">
+                        <li><strong>Regla 1 (Quality Gate Obligatorio):</strong> Ninguna campaña o modificación puede pasar a producción sin previa vista previa y aprobación explícita en el ambiente Sandbox Staging.</li>
+                        <li><strong>Regla 2 (Auto-Tagueo de Analítica):</strong> Toda nueva landing o botón publicado vía Puck CMS aplica automáticamente las etiquetas DataLayer en GTM para seguimiento de conversiones en GA4 y mapas de calor en Clarity sin requerir tagueo manual.</li>
                     </ul>
                 </div>
             </div>
@@ -1474,12 +2016,30 @@
 
             if (expandAllBtn) {
                 expandAllBtn.addEventListener('click', () => {
-                    collapsibleCards.forEach(c => c.classList.remove('collapsed'));
+                    const poCards = document.querySelectorAll('#tab-po .collapsible-card');
+                    poCards.forEach(c => c.classList.remove('collapsed'));
                 });
             }
             if (collapseAllBtn) {
                 collapseAllBtn.addEventListener('click', () => {
-                    collapsibleCards.forEach(c => c.classList.add('collapsed'));
+                    const poCards = document.querySelectorAll('#tab-po .collapsible-card');
+                    poCards.forEach(c => c.classList.add('collapsed'));
+                });
+            }
+
+            const expandAllBpmnBtn = document.getElementById('expand-all-bpmn');
+            const collapseAllBpmnBtn = document.getElementById('collapse-all-bpmn');
+
+            if (expandAllBpmnBtn) {
+                expandAllBpmnBtn.addEventListener('click', () => {
+                    const bpmnCards = document.querySelectorAll('#tab-bpmn .collapsible-card');
+                    bpmnCards.forEach(c => c.classList.remove('collapsed'));
+                });
+            }
+            if (collapseAllBpmnBtn) {
+                collapseAllBpmnBtn.addEventListener('click', () => {
+                    const bpmnCards = document.querySelectorAll('#tab-bpmn .collapsible-card');
+                    bpmnCards.forEach(c => c.classList.add('collapsed'));
                 });
             }
         });

@@ -351,6 +351,15 @@ const translations = {
     accCollapseAll: "Collapse All Cards",
     cs_scroll_hint: "<i class=\"fas fa-arrows-left-right\"></i> Swipe horizontally to view full 12-week schedule",
 
+    cs_bpmn_summary_title: "<i class=\"fas fa-tachometer-alt\"></i> Process Reengineering Summary & KPI Matrix (AS-IS vs. TO-BE)",
+    cs_bpmn_summary_desc: "Executive summary of the direct impact of process reengineering on the public banking portal release cycle (5 MVP Pages):",
+    cs_bpmn_asis_title: "<i class=\"fas fa-exclamation-triangle\"></i> Current Process (AS-IS): IT Development Bottleneck",
+    cs_bpmn_asis_desc: "BPMN 2.0 modeling of the traditional workflow. Landing page updates are 100% dependent on hardcode dev capacity and late-night maintenance windows:",
+    cs_bpmn_tobe_title: "<i class=\"fas fa-rocket\"></i> Proposed Process (TO-BE): No-Code Commercial Autonomy with Puck CMS",
+    cs_bpmn_tobe_desc: "BPMN 2.0 modeling of the optimized workflow. Commercial Editor composes landings visually in minutes and Product Owner approves in Staging Sandbox prior to instant sync:",
+    cs_bpmn_gov_title: "<i class=\"fas fa-shield-alt\"></i> Governance Matrix, RBAC Roles & BPMN Business Rules",
+    cs_bpmn_gov_desc: "Formal definition of Role-Based Access Control (RBAC) and validation policies to operate the new process model without compromising banking security:",
+
     // --- Projects Page Content ---
     projects_page_title: "Projects",
     projects_list: [
@@ -807,6 +816,15 @@ const translations = {
     accExpandAll: "Expandir Todas las Tarjetas",
     accCollapseAll: "Contraer Todas las Tarjetas",
     cs_scroll_hint: "<i class=\"fas fa-arrows-left-right\"></i> Desliza horizontalmente para ver el cronograma completo de 12 semanas",
+
+    cs_bpmn_summary_title: "<i class=\"fas fa-tachometer-alt\"></i> Ficha de Reingeniería & Matriz Comparativa de KPIs (AS-IS vs. TO-BE)",
+    cs_bpmn_summary_desc: "Resumen ejecutivo del impacto directo de la reingeniería de procesos en el ciclo de publicación del portal público bancario (5 Páginas del MVP):",
+    cs_bpmn_asis_title: "<i class=\"fas fa-exclamation-triangle\"></i> Proceso Actual (AS-IS): Cuello de Botella en Desarrollo TI",
+    cs_bpmn_asis_desc: "Modelamiento en estándar BPMN 2.0 del flujo tradicional. Los cambios de landing pages dependen 100% de la capacidad de desarrollo duro y ventanas nocturnas de mantenimiento:",
+    cs_bpmn_tobe_title: "<i class=\"fas fa-rocket\"></i> Proceso Propuesto (TO-BE): Autonomía Comercial No-Code con Puck CMS",
+    cs_bpmn_tobe_desc: "Modelamiento en estándar BPMN 2.0 del flujo optimizado. El Editor Comercial compone landings visualmente en minutos y el Product Owner aprueba en Staging Sandbox previo a la sincronización instantánea:",
+    cs_bpmn_gov_title: "<i class=\"fas fa-shield-alt\"></i> Matriz de Gobernanza, Roles RBAC & Reglas de Negocio BPMN",
+    cs_bpmn_gov_desc: "Definición formal de perfiles de acceso (Role-Based Access Control) y políticas de validación para operar el nuevo modelo de procesos sin comprometer la seguridad bancaria:",
 
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
