@@ -287,98 +287,91 @@
             margin-bottom: 0.45rem;
         }
 
-        /* VISUAL USER STORY MAP MATRIX STYLES (SAVIO STANDARD) */
-        .usm-matrix-wrapper {
+        /* PERFECT 4-COLUMN USER STORY MAP (ACTIVITY HEADERS AT TOP, STEPS STACKED VERTICALLY BELOW) */
+        .usm-columns-board {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+        }
+        @media (max-width: 1050px) {
+            .usm-columns-board {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 650px) {
+            .usm-columns-board {
+                grid-template-columns: 1fr;
+            }
+        }
+        .usm-column {
             display: flex;
             flex-direction: column;
             gap: 0.85rem;
-            margin-top: 1.25rem;
-            overflow-x: auto;
-            padding-bottom: 0.5rem;
+            background: #0f172a;
+            border: 1.5px solid rgba(0, 180, 216, 0.25);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.3);
         }
-        .usm-row {
-            display: flex;
-            align-items: stretch;
-            gap: 1rem;
-            min-width: 900px;
-        }
-        .usm-label-col {
-            width: 130px;
-            flex-shrink: 0;
-            padding: 0.65rem 0.85rem;
+        .usm-activity-header {
+            background: linear-gradient(135deg, #ec4899, #be185d);
             border-radius: 8px;
+            padding: 0.85rem 1rem;
+            color: #ffffff !important;
             font-weight: 800;
-            font-size: 0.82rem;
+            font-size: 0.88rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 0.45rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-        .usm-label-col.activities {
-            background: linear-gradient(135deg, #ec4899, #be185d);
-            color: #ffffff !important;
-        }
-        .usm-label-col.steps {
-            background: linear-gradient(135deg, #06b6d4, #0891b2);
-            color: #ffffff !important;
-        }
-        .usm-label-col.details {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            color: #ffffff !important;
-        }
-        .usm-grid-3cols {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            flex-grow: 1;
-        }
-        .usm-activity-card {
-            background: rgba(236, 72, 153, 0.15);
-            border: 1.5px solid #ec4899;
-            border-radius: 8px;
-            padding: 0.75rem 1rem;
-            color: #ffffff !important;
-            font-weight: 700;
-            font-size: 0.9rem;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 0.5rem;
+            min-height: 54px;
         }
-        .usm-steps-subgrid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .usm-steps-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+        .usm-step-item {
+            background: #1e293b;
+            border: 1.5px solid rgba(6, 182, 212, 0.4);
+            border-left: 4px solid #06b6d4;
+            border-radius: 8px;
+            padding: 0.75rem 0.85rem;
+            color: #f8fafc !important;
+            font-size: 0.85rem;
+            line-height: 1.45;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            align-items: flex-start;
             gap: 0.6rem;
         }
-        .usm-step-card {
-            background: rgba(6, 182, 212, 0.15);
-            border: 1.5px solid #06b6d4;
-            border-radius: 8px;
-            padding: 0.65rem 0.75rem;
-            color: #ffffff !important;
-            font-weight: 600;
-            font-size: 0.82rem;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .usm-detail-sticky {
-            background: #1e293b;
-            border: 1.5px solid #f59e0b;
-            border-radius: 8px;
-            padding: 0.65rem 0.8rem;
-            color: #fef3c7 !important;
-            font-size: 0.8rem;
-            line-height: 1.4;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            transition: transform 0.2s ease;
-        }
-        .usm-detail-sticky:hover {
+        .usm-step-item:hover {
             transform: translateY(-2px);
-            border-color: #fbbf24;
+            border-color: #00e676;
+            border-left-color: #00e676;
+        }
+        .usm-step-num {
+            background: rgba(6, 182, 212, 0.2);
+            color: #38bdf8 !important;
+            font-weight: 800;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .usm-step-text {
+            color: #e2e8f0 !important;
+            font-weight: 500;
+        }
+        .usm-step-text strong {
+            color: #ffffff !important;
         }
 
         /* GRID POSITIONS MATCHING THE MVP CANVAS STANDARD IMAGE */
@@ -592,68 +585,102 @@
                 </div>
             </div>
 
-            <!-- TARJETA 1: MAPA VISUAL DE HISTORIAS (USER STORY MAP - ESTÁNDAR SAVIO) -->
+            <!-- TARJETA 1: MAPA VISUAL DE HISTORIAS (USER STORY MAP - 4 COLUMNAS DE ACTIVIDADES) -->
             <div class="artifact-card">
                 <div class="artifact-header">
                     <h3 class="artifact-title" data-translate="cs_usm_matrix_title"><i class="fas fa-sitemap"></i> User Story Map: Matriz Visual de Producto</h3>
                     <span class="meta-tag"><i class="fas fa-layer-group"></i> Estándar de Gestión de Producto</span>
                 </div>
                 <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_usm_matrix_desc">
-                    Matriz tridimensional del flujo de usuario organizada por <strong>Actividades Principales (Backbone)</strong>, <strong>Pasos de Flujo (User Steps)</strong> y <strong>Historias Detalladas (Details)</strong>:
+                    Mapa de viaje del producto estructurado en 4 Actividades Estratégicas (Backbone) con sus tareas y pasos de flujo (Steps) ordenados verticalmente:
                 </p>
 
-                <!-- MATRIZ USM ESTÁNDAR -->
-                <div class="usm-matrix-wrapper">
-                    <!-- ROW 1: ACTIVITIES -->
-                    <div class="usm-row">
-                        <div class="usm-label-col activities"><i class="fas fa-bullseye"></i> Activities</div>
-                        <div class="usm-grid-3cols">
-                            <div class="usm-activity-card" data-translate="cs_usm_act1">1. Autonomía CMS & Publicación No-Code</div>
-                            <div class="usm-activity-card" data-translate="cs_usm_act2">2. Telemetría & Analítica Digital</div>
-                            <div class="usm-activity-card" data-translate="cs_usm_act3">3. Calidad Funcional & Pruebas QA</div>
-                        </div>
-                    </div>
-
-                    <!-- ROW 2: STEPS -->
-                    <div class="usm-row">
-                        <div class="usm-label-col steps"><i class="fas fa-shoe-prints"></i> Steps</div>
-                        <div class="usm-grid-3cols">
-                            <div class="usm-steps-subgrid">
-                                <div class="usm-step-card" data-translate="cs_usm_st11">1.1 Selección UI</div>
-                                <div class="usm-step-card" data-translate="cs_usm_st12">1.2 Edición Drag&Drop</div>
-                                <div class="usm-step-card" data-translate="cs_usm_st13">1.3 Pub. Strapi 5</div>
+                <!-- TABLERO DE 4 COLUMNAS PERFECCIONADO -->
+                <div class="usm-columns-board">
+                    <!-- COLUMNA 1: DISEÑO UX & PROTOTIPADO -->
+                    <div class="usm-column">
+                        <div class="usm-activity-header" data-translate="cs_usm_act1"><i class="fas fa-paint-brush"></i> 1. Diseño UX & Prototipado</div>
+                        <div class="usm-steps-stack">
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">1.1</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st11">Maquetación de componentes en Firebase.</div>
                             </div>
-                            <div class="usm-steps-subgrid">
-                                <div class="usm-step-card" data-translate="cs_usm_st21">2.1 Eventos GTM</div>
-                                <div class="usm-step-card" data-translate="cs_usm_st22">2.2 Registro GA4</div>
-                                <div class="usm-step-card" data-translate="cs_usm_st23">2.3 Heatmap Clarity</div>
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">1.2</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st12">Creación de la maqueta funcional del nuevo sitio.</div>
                             </div>
-                            <div class="usm-steps-subgrid">
-                                <div class="usm-step-card" data-translate="cs_usm_st31">3.1 Despliegue Staging</div>
-                                <div class="usm-step-card" data-translate="cs_usm_st32">3.2 Matriz QA Form</div>
-                                <div class="usm-step-card" data-translate="cs_usm_st33">3.3 Pase a Prod</div>
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">1.3</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st13">Diseño de formato Mobile y Responsive.</div>
+                            </div>
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">1.4</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st14">Diseño de herramientas de accesibilidad (WCAG).</div>
+                            </div>
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">1.5</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st15">Levantamiento de imágenes y contenido para salida a producción.</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ROW 3: DETAILS (STICKY NOTES) -->
-                    <div class="usm-row">
-                        <div class="usm-label-col details"><i class="fas fa-sticky-note"></i> Details</div>
-                        <div class="usm-grid-3cols">
-                            <div class="usm-steps-subgrid">
-                                <div class="usm-detail-sticky" data-translate="cs_usm_dt11">Componentes visuales responsivos aprobados por UX.</div>
-                                <div class="usm-detail-sticky" data-translate="cs_usm_dt12">Editor visual Puck CMS con previsualización en vivo.</div>
-                                <div class="usm-detail-sticky" data-translate="cs_usm_dt13">API Headless Strapi 5 actualiza página sin redeploy dev.</div>
+                    <!-- COLUMNA 2: DESARROLLO ARQUITECTURA PUCK & STRAPI 5 -->
+                    <div class="usm-column">
+                        <div class="usm-activity-header" data-translate="cs_usm_act2"><i class="fas fa-code"></i> 2. Arquitectura Puck & Strapi 5</div>
+                        <div class="usm-steps-stack">
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">2.1</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st21">Desarrollo duro de componentes visuales en Puck CMS.</div>
                             </div>
-                            <div class="usm-steps-subgrid">
-                                <div class="usm-detail-sticky" data-translate="cs_usm_dt21">DataLayer & Triggers en GTM Debugger (`click_apply_now`).</div>
-                                <div class="usm-detail-sticky" data-translate="cs_usm_dt22">Métricas de conversión y dimensiones en GA4.</div>
-                                <div class="usm-detail-sticky" data-translate="cs_usm_dt23">Grabaciones de sesión anonimizadas en móviles.</div>
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">2.2</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st22">Implementación de Puck y conexión API con Strapi 5 (Headless CMS).</div>
                             </div>
-                            <div class="usm-steps-subgrid">
-                                <div class="usm-detail-sticky" data-translate="cs_usm_dt31">Publicación automática en ambiente Staging.</div>
-                                <div class="usm-detail-sticky" data-translate="cs_usm_dt32">Matriz de 15 casos de prueba funcionales.</div>
-                                <div class="usm-detail-sticky" data-translate="cs_usm_dt33">Firma de acta QA e hito de despliegue a producción.</div>
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">2.3</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st23">Creación de páginas precargadas en Puck para salida ágil.</div>
+                            </div>
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">2.4</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st24">Implementación de telemetría: GA4, Google Tag Manager y Clarity.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COLUMNA 3: PRUEBAS & PASO A PRODUCCIÓN -->
+                    <div class="usm-column">
+                        <div class="usm-activity-header" data-translate="cs_usm_act3"><i class="fas fa-vial"></i> 3. Pruebas & Pase a Producción</div>
+                        <div class="usm-steps-stack">
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">3.1</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st31">Ejecución de Matriz de Pruebas Funcionales QA en Staging.</div>
+                            </div>
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">3.2</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st32">Validación de formularios y prevención de errores bloqueantes.</div>
+                            </div>
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">3.3</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st33">Firma de acta de certificación QA y despliegue a Producción.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COLUMNA 4: OPERACIÓN CONTINUA & ADMINISTRACIÓN PUCK -->
+                    <div class="usm-column">
+                        <div class="usm-activity-header" data-translate="cs_usm_act4"><i class="fas fa-sliders-h"></i> 4. Operación Continua Puck</div>
+                        <div class="usm-steps-stack">
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">4.1</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st41">Creación y modificación de páginas a través del administrador Puck.</div>
+                            </div>
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">4.2</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st42">Creación de perfiles y permisos para usuarios estratégicos (Marketing/Comercial).</div>
+                            </div>
+                            <div class="usm-step-item">
+                                <span class="usm-step-num">4.3</span>
+                                <div class="usm-step-text" data-translate="cs_usm_st43">Tagueo de métricas clave y eventos de campaña en GTM.</div>
                             </div>
                         </div>
                     </div>
