@@ -165,142 +165,83 @@
             gap: 0.6rem;
         }
         
-        /* GRID MVPCANVAS */
-        .mvp-grid {
+        /* OFFICIAL 7-BLOCK MVP CANVAS STYLES */
+        .mvp-standard-canvas {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: 1fr 1.1fr 1fr;
+            grid-template-rows: auto auto auto;
             gap: 1.25rem;
+            margin-top: 1.25rem;
         }
-        .mvp-box {
-            background: rgba(15, 23, 42, 0.8);
-            border-left: 4px solid #00e676;
-            padding: 1.1rem;
-            border-radius: 6px;
+        .mvp-canvas-card {
+            background: #0f172a;
+            border: 1.5px solid rgba(0, 180, 216, 0.25);
+            border-radius: 12px;
+            padding: 1.35rem;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            transition: transform 0.25s ease, border-color 0.25s ease;
         }
-        .mvp-box h4 {
-            color: #ffffff;
-            font-size: 0.95rem;
-            margin: 0 0 0.5rem 0;
+        .mvp-canvas-card:hover {
+            border-color: #00e676;
+            transform: translateY(-2px);
+        }
+        .mvp-canvas-card .badge-num {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00b4d8, #00e676);
+            color: #0d1b2a;
+            font-weight: 800;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 230, 118, 0.35);
+        }
+        .mvp-canvas-card h4 {
+            color: #00e676;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 0 0 0.85rem 0;
+            padding-right: 42px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .mvp-box p, .mvp-box ul {
+        .mvp-canvas-card p, .mvp-canvas-card ul {
             color: #cbd5e1;
             font-size: 0.88rem;
-            line-height: 1.5;
+            line-height: 1.55;
             margin: 0;
         }
-        .mvp-box ul {
+        .mvp-canvas-card ul {
             padding-left: 1.2rem;
         }
+        .mvp-canvas-card ul li {
+            margin-bottom: 0.45rem;
+        }
 
-        /* CODE BLOCK SQL */
-        .sql-code-block {
-            background: #090d16;
-            border-radius: 8px;
-            padding: 1.25rem;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
-            color: #38bdf8;
-            overflow-x: auto;
-            border: 1px solid rgba(255,255,255,0.1);
-            line-height: 1.55;
-        }
-        .sql-keyword { color: #f43f5e; font-weight: 600; }
-        .sql-func { color: #a855f7; font-weight: 600; }
-        .sql-string { color: #34d399; }
-        .sql-comment { color: #64748b; font-style: italic; }
+        /* GRID POSITIONS MATCHING THE MVP CANVAS STANDARD IMAGE */
+        .mvp-block-1 { grid-column: 2 / 3; grid-row: 1 / 2; border-top: 4px solid #00b4d8; }
+        .mvp-block-2 { grid-column: 1 / 2; grid-row: 1 / 2; border-top: 4px solid #00e676; }
+        .mvp-block-3 { grid-column: 1 / 2; grid-row: 2 / 4; border-top: 4px solid #00b4d8; }
+        .mvp-block-4 { grid-column: 2 / 3; grid-row: 2 / 3; border-top: 4px solid #a855f7; }
+        .mvp-block-5 { grid-column: 3 / 4; grid-row: 1 / 3; border-top: 4px solid #00e676; }
+        .mvp-block-6 { grid-column: 3 / 4; grid-row: 3 / 4; border-top: 4px solid #38bdf8; }
+        .mvp-block-7 { grid-column: 2 / 3; grid-row: 3 / 4; border-top: 4px solid #f59e0b; }
 
-        /* PROCESS FLOW DIAGRAM (BPMN SIMULATION) */
-        .bpmn-flow {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: space-between;
-            position: relative;
-            margin: 1.5rem 0;
-        }
-        .bpmn-node {
-            flex: 1;
-            min-width: 160px;
-            background: rgba(13, 27, 42, 0.9);
-            border: 1.5px solid #00b4d8;
-            border-radius: 8px;
-            padding: 1rem;
-            text-align: center;
-            position: relative;
-        }
-        .bpmn-node.decision {
-            border-color: #f59e0b;
-            background: rgba(245, 158, 11, 0.1);
-        }
-        .bpmn-node.success {
-            border-color: #00e676;
-            background: rgba(0, 230, 118, 0.1);
-        }
-        .bpmn-node-step {
-            font-size: 0.72rem;
-            font-weight: 800;
-            color: #00b4d8;
-            text-transform: uppercase;
-        }
-        .bpmn-node-title {
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin: 0.4rem 0;
-        }
-        .bpmn-node-role {
-            font-size: 0.75rem;
-            color: #94a3b8;
-        }
-        
-        /* USER STORY MAP BOARD */
-        .story-board {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.25rem;
-        }
-        .epic-column {
-            background: rgba(15, 23, 42, 0.6);
-            border-radius: 8px;
-            padding: 1rem;
-            border-top: 4px solid #00b4d8;
-        }
-        .epic-header {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.85rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .story-card {
-            background: #1e293b;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 6px;
-            padding: 0.85rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.84rem;
-        }
-        .story-id {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.75rem;
-            color: #00e676;
-            font-weight: 700;
-        }
-        .story-desc {
-            color: #e2e8f0;
-            margin: 0.3rem 0;
-            line-height: 1.4;
-        }
-        .story-ac {
-            color: #94a3b8;
-            font-size: 0.78rem;
-            border-top: 1px dashed rgba(255,255,255,0.1);
-            padding-top: 0.4rem;
-            margin-top: 0.4rem;
+        @media (max-width: 950px) {
+            .mvp-standard-canvas {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            .mvp-block-1, .mvp-block-2, .mvp-block-3, .mvp-block-4, .mvp-block-5, .mvp-block-6, .mvp-block-7 {
+                grid-column: auto;
+                grid-row: auto;
+            }
         }
     </style>
 </head>
@@ -393,29 +334,91 @@
         <div id="tab-po" class="cs-tab-pane active">
             <div class="artifact-card">
                 <div class="artifact-header">
-                    <h3 class="artifact-title"><i class="fas fa-th-large"></i> MVP Canvas del Proyecto</h3>
-                    <span class="meta-tag"><i class="fas fa-check-circle"></i> Aprobado por Stakeholders</span>
+                    <h3 class="artifact-title"><i class="fas fa-th-large"></i> MVP Canvas Oficial (Estándar de 7 Bloques)</h3>
+                    <span class="meta-tag"><i class="fas fa-check-circle"></i> Matriz Estandarizada</span>
                 </div>
-                <div class="mvp-grid">
-                    <div class="mvp-box">
-                        <h4>Propuesta de Valor</h4>
-                        <p>Plataforma web pública autónoma y rápida que permite crear y publicar páginas comerciales en minutos con administración Puck CMS, garantizando alta conversión y experiencia UX optimizada.</p>
+                <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;">
+                    Estructura oficial del MVP Canvas para validar las hipótesis de negocio, definir los viajes de usuario, las funcionalidades mínimas y el cronograma de ejecución:
+                </p>
+
+                <!-- CANVAS DE 7 BLOQUES ESTÁNDAR -->
+                <div class="mvp-standard-canvas">
+                    <!-- BLOQUE 1: MVP Proposal (Top center) -->
+                    <div class="mvp-canvas-card mvp-block-1">
+                        <span class="badge-num">1</span>
+                        <h4>MVP Proposal</h4>
+                        <p>Rediseño de la plataforma web pública bancaria implementando arquitectura No-Code (Puck CMS), maquetación asistida por IA (Firebase) y telemetría en tiempo real (GA4 / Clarity), permitiendo publicar landing pages comerciales en minutos con 100% de calidad aprobada en QA.</p>
                     </div>
-                    <div class="mvp-box">
-                        <h4>Métricas Clave de Éxito (KPIs)</h4>
+
+                    <!-- BLOQUE 2: Segmented Personas (Top left) -->
+                    <div class="mvp-canvas-card mvp-block-2">
+                        <span class="badge-num">2</span>
+                        <h4>Segmented Personas</h4>
                         <ul>
-                            <li>Tasa de conversión de embudo de captación (% finalizado).</li>
-                            <li>Tiempo de publicación web (SLA de días a minutos).</li>
-                            <li>Tasa de rebote móvil y mapa de calor (Clarity).</li>
+                            <li><strong>Persona 1 (Camila / 32 yrs):</strong> Busca apertura de cuenta corriente y evaluación de crédito de consumo 100% digital desde smartphone.</li>
+                            <li><strong>Persona 2 (Roberto / 45 yrs):</strong> Requiere financiamiento comercial e información de inversión corporativa clara y ágil.</li>
+                            <li><strong>Persona 3 (Equipo Interno - PO/BA):</strong> Necesita autonomía para lanzar campañas comerciales sin depender del backlog dev.</li>
                         </ul>
                     </div>
-                    <div class="mvp-box">
-                        <h4>Segmento de Usuarios</h4>
-                        <p>Personas y PYMEs en búsqueda de apertura de cuentas corrientes, créditos de consumo y servicios financieros digitales de Banco Internacional.</p>
+
+                    <!-- BLOQUE 3: Journeys (Bottom left, spans 2 rows) -->
+                    <div class="mvp-canvas-card mvp-block-3">
+                        <span class="badge-num">3</span>
+                        <h4>Journeys</h4>
+                        <ul>
+                            <li><strong>1. Descubrimiento:</strong> Usuario ingresa a landing pública desde campaña digital o búsqueda orgánica.</li>
+                            <li><strong>2. Evaluación UX:</strong> Navegación fluida en componentes responsive y simuladores financieros.</li>
+                            <li><strong>3. Intención de Solicitud:</strong> Clic en CTA principal (<code>click_apply_now</code>) capturado en GTM.</li>
+                            <li><strong>4. Formulario & QA:</strong> Llenado optimizado en 3 pasos con validaciones funcionales certificadas.</li>
+                            <li><strong>5. Conversión:</strong> Confirmación de solicitud exitosa registrada en GA4 y dashboard en vivo.</li>
+                        </ul>
                     </div>
-                    <div class="mvp-box">
-                        <h4>Canales & Medición</h4>
-                        <p>Portal Web Público, Campañas Digitales (GTM), Google Analytics 4 (GA4), Microsoft Clarity y Dashboards en Looker Studio / Power BI.</p>
+
+                    <!-- BLOQUE 4: Features (Middle center) -->
+                    <div class="mvp-canvas-card mvp-block-4">
+                        <span class="badge-num">4</span>
+                        <h4>Features</h4>
+                        <ul>
+                            <li>Editor visual Drag-and-Drop No-Code (Puck CMS) con biblioteca UI corporativa.</li>
+                            <li>Maquetación rápida apoyada en IA Generativa (Firebase / Gemini).</li>
+                            <li>Etiquetado automático de eventos en Google Tag Manager (GTM) y GA4.</li>
+                            <li>Mapas de calor y grabación de sesiones anonimizadas (Microsoft Clarity).</li>
+                            <li>Matriz de Pruebas Funcionales QA en ambiente Staging previo a producción.</li>
+                        </ul>
+                    </div>
+
+                    <!-- BLOQUE 5: Expected Outcome (Top right, spans 2 rows) -->
+                    <div class="mvp-canvas-card mvp-block-5">
+                        <span class="badge-num">5</span>
+                        <h4>Expected Outcome</h4>
+                        <ul>
+                            <li><strong>+35% de incremento</strong> en la tasa de conversión de solicitudes de productos digitales.</li>
+                            <li><strong>Reducción de Time-to-Market:</strong> Tiempo de publicación web reducido de 2 semanas a solo 15 minutos.</li>
+                            <li><strong>Cero defectos bloqueantes:</strong> Garantía del 100% de calidad en producción mediante certificación QA en Staging.</li>
+                            <li><strong>Autonomía Operativa:</strong> Capacidad total del equipo de producto/marketing para lanzar campañas comerciales.</li>
+                        </ul>
+                    </div>
+
+                    <!-- BLOQUE 6: Metrics to Validate Hypotheses (Bottom right) -->
+                    <div class="mvp-canvas-card mvp-block-6">
+                        <span class="badge-num">6</span>
+                        <h4>Metrics to Validate Hypotheses</h4>
+                        <ul>
+                            <li><strong>Conversion Rate (CR):</strong> <code>% de sesiones que completan la solicitud (submit_application_success)</code>.</li>
+                            <li><strong>Time-to-Publish (TTP):</strong> <code>Minutos requeridos para crear y publicar una landing en Puck CMS</code>.</li>
+                            <li><strong>Bounce Rate Mobile:</strong> <code>Tasa de rebote en móviles monitoreada con Clarity</code>.</li>
+                            <li><strong>Feature Adoption:</strong> <code>% de interacción con simuladores y CTAs principales</code>.</li>
+                        </ul>
+                    </div>
+
+                    <!-- BLOQUE 7: Cost and Schedule (Bottom center) -->
+                    <div class="mvp-canvas-card mvp-block-7">
+                        <span class="badge-num">7</span>
+                        <h4>Cost and Schedule</h4>
+                        <ul>
+                            <li><strong>Cronograma:</strong> 6 Sprints ágiles de 2 semanas (12 semanas totales) operando en triada (PO, Tech Lead, BA + Developers).</li>
+                            <li><strong>Costo Operativo:</strong> Optimizado reutilizando licencias corporativas de GCP/Firebase, Jira, Confluence y GA4.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
