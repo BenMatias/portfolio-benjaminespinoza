@@ -420,14 +420,115 @@
         .mvp-block-6 { grid-column: 3 / 4; grid-row: 3 / 4; border-top: 4px solid #38bdf8; }
         .mvp-block-7 { grid-column: 2 / 3; grid-row: 3 / 4; border-top: 4px solid #f59e0b; }
 
-        @media (max-width: 950px) {
-            .mvp-standard-canvas {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-            }
-            .mvp-block-1, .mvp-block-2, .mvp-block-3, .mvp-block-4, .mvp-block-5, .mvp-block-6, .mvp-block-7 {
-                grid-column: auto;
-                grid-row: auto;
+        /* ROADMAP VISUAL MATRIX STYLES */
+        .roadmap-matrix-wrapper {
+            display: grid;
+            grid-template-columns: 240px repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1.5px solid rgba(0, 180, 216, 0.3);
+            margin-top: 1rem;
+        }
+        .roadmap-header-cell {
+            background: #0f172a;
+            padding: 1rem;
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: #00b4d8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .roadmap-header-cell.epic-col {
+            justify-content: flex-start;
+            background: #111c2e;
+            color: #ffffff;
+        }
+        .roadmap-epic-cell {
+            background: #0f172a;
+            padding: 1.25rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .roadmap-epic-name {
+            font-weight: 800;
+            font-size: 0.92rem;
+            color: #ffffff !important;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .roadmap-epic-sub {
+            font-size: 0.78rem;
+            color: #94a3b8 !important;
+        }
+        .roadmap-timeline-row {
+            grid-column: 2 / 5;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: #0b1329;
+            padding: 0.85rem 0.5rem;
+            gap: 0.75rem;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+        .roadmap-bar {
+            border-radius: 8px;
+            padding: 0.65rem 0.85rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            transition: transform 0.2s ease;
+        }
+        .roadmap-bar:hover {
+            transform: translateY(-2px);
+        }
+        .roadmap-bar-epic1 {
+            background: linear-gradient(135deg, #7c3aed, #6d28d9);
+            border-left: 4px solid #a78bfa;
+        }
+        .roadmap-bar-epic2 {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            border-left: 4px solid #38bdf8;
+        }
+        .roadmap-bar-epic3 {
+            background: linear-gradient(135deg, #d97706, #b45309);
+            border-left: 4px solid #fbbf24;
+        }
+        .roadmap-bar-epic4 {
+            background: linear-gradient(135deg, #059669, #047857);
+            border-left: 4px solid #34d399;
+        }
+        .roadmap-milestone {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.74rem;
+            color: #fef08a !important;
+            font-weight: 600;
+            background: rgba(0,0,0,0.25);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            width: fit-content;
+        }
+        @media (max-width: 850px) {
+            .roadmap-matrix-wrapper {
+                overflow-x: auto;
+                min-width: 750px;
             }
         }
     </style>
@@ -868,6 +969,77 @@
                                 • <i>When:</i> Se define la métrica principal.<br>
                                 • <i>Then:</i> Trigger GTM registrado y midiendo conversiones.
                             </div>
+                        </div>
+                    </div>
+            <!-- TARJETA 3: ROADMAP ESTRATÉGICO DEL PRODUCTO (6 SPRINTS / 12 SEMANAS) -->
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h3 class="artifact-title" data-translate="cs_roadmap_title"><i class="fas fa-map-signs"></i> Roadmap Estratégico del Producto (Quarterly Milestones - 6 Sprints)</h3>
+                    <span class="meta-tag"><i class="fas fa-calendar-alt"></i> Cronograma de 12 Semanas (Triada Ágil)</span>
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_roadmap_desc">
+                    Cronograma visual de entregas secuenciales organizado por Épicas del Backlog, Sprints y Hitos Clave (Milestones ★) para el rediseño del portal público bancario (5 Páginas del MVP):
+                </p>
+
+                <div class="roadmap-matrix-wrapper">
+                    <!-- HEADER ROW -->
+                    <div class="roadmap-header-cell epic-col" data-translate="cs_rm_col_epics"><i class="fas fa-layer-group"></i> Épicas del Backlog</div>
+                    <div class="roadmap-header-cell" data-translate="cs_rm_col_m1"><i class="fas fa-clock"></i> Mes 1: Sprints 1-2<br><span style="font-size:0.72rem; color:#94a3b8;">(Semanas 1 a 4)</span></div>
+                    <div class="roadmap-header-cell" data-translate="cs_rm_col_m2"><i class="fas fa-clock"></i> Mes 2: Sprints 3-4<br><span style="font-size:0.72rem; color:#94a3b8;">(Semanas 5 a 8)</span></div>
+                    <div class="roadmap-header-cell" data-translate="cs_rm_col_m3"><i class="fas fa-clock"></i> Mes 3: Sprints 5-6<br><span style="font-size:0.72rem; color:#94a3b8;">(Semanas 9 a 12)</span></div>
+
+                    <!-- ROW 1: ÉPICA 1 -->
+                    <div class="roadmap-epic-cell">
+                        <div class="roadmap-epic-name" style="color: #a78bfa !important;"><i class="fas fa-paint-brush"></i> Épica 1: UX & Prototipado</div>
+                        <div class="roadmap-epic-sub">Firebase & Maquetación (8 SP)</div>
+                    </div>
+                    <div class="roadmap-timeline-row">
+                        <div class="roadmap-bar roadmap-bar-epic1" style="grid-column: 1 / 3;">
+                            <span>BIN-101: Maquetación Firebase & Prototipo Functional (5 SP)</span>
+                            <span>BIN-102: Accesibilidad WCAG AA & Contenido Inicial (3 SP)</span>
+                            <span class="roadmap-milestone"><i class="fas fa-star"></i> Milestone: Prototipo UX & WCAG AA Aprobado</span>
+                        </div>
+                    </div>
+
+                    <!-- ROW 2: ÉPICA 2 -->
+                    <div class="roadmap-epic-cell">
+                        <div class="roadmap-epic-name" style="color: #38bdf8 !important;"><i class="fas fa-code"></i> Épica 2: Puck & Strapi 5</div>
+                        <div class="roadmap-epic-sub">CMS & Telemetría Core (16 SP)</div>
+                    </div>
+                    <div class="roadmap-timeline-row">
+                        <div class="roadmap-bar roadmap-bar-epic2" style="grid-column: 1 / 3;">
+                            <span>BIN-201: Componentes Puck CMS & API Strapi 5 (11 SP)</span>
+                            <span class="roadmap-milestone"><i class="fas fa-star"></i> Milestone: API Headless & CMS Integrado</span>
+                        </div>
+                        <div class="roadmap-bar roadmap-bar-epic2" style="grid-column: 2 / 4;">
+                            <span>BIN-202: Telemetría (GA4, GTM & Clarity) (5 SP)</span>
+                            <span class="roadmap-milestone"><i class="fas fa-star"></i> Milestone: DataLayer & GA4 Eventos Activos</span>
+                        </div>
+                    </div>
+
+                    <!-- ROW 3: ÉPICA 3 -->
+                    <div class="roadmap-epic-cell">
+                        <div class="roadmap-epic-name" style="color: #fbbf24 !important;"><i class="fas fa-vial"></i> Épica 3: Pruebas & Pase Prod</div>
+                        <div class="roadmap-epic-sub">Calidad QA & Despliegue (8 SP)</div>
+                    </div>
+                    <div class="roadmap-timeline-row">
+                        <div class="roadmap-bar roadmap-bar-epic3" style="grid-column: 2 / 4;">
+                            <span>BIN-301: Matriz Pruebas Funcionales QA Staging (5 SP)</span>
+                            <span>BIN-302: Firma Acta Certificación QA & Go-Live (3 SP)</span>
+                            <span class="roadmap-milestone"><i class="fas fa-star"></i> Milestone: Go-Live en Producción (5 Páginas MVP)</span>
+                        </div>
+                    </div>
+
+                    <!-- ROW 4: ÉPICA 4 -->
+                    <div class="roadmap-epic-cell">
+                        <div class="roadmap-epic-name" style="color: #34d399 !important;"><i class="fas fa-sliders-h"></i> Épica 4: Operación Continua</div>
+                        <div class="roadmap-epic-sub">Autonomía Comercial (8 SP)</div>
+                    </div>
+                    <div class="roadmap-timeline-row">
+                        <div class="roadmap-bar roadmap-bar-epic4" style="grid-column: 3 / 4;">
+                            <span>BIN-401: Administración Puck & Roles Comercial (5 SP)</span>
+                            <span>BIN-402: Tagueo Métricas de Campaña GTM (3 SP)</span>
+                            <span class="roadmap-milestone"><i class="fas fa-star"></i> Milestone: Autonomía No-Code Comercial</span>
                         </div>
                     </div>
                 </div>

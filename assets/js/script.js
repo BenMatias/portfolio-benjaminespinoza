@@ -319,6 +319,12 @@ const translations = {
     cs_usm_b401_ac: "<strong>Acceptance Criteria (BDD):</strong><br>• <i>Given:</i> Marketing user needs to launch campaign.<br>• <i>When:</i> Assigned Commercial Editor role in Puck.<br>• <i>Then:</i> Can create/edit pages autonomously.",
     cs_usm_b402_desc: "<strong>As a Business Analyst</strong>, I want to tag key metrics and campaign events in GTM in an agile manner.",
     cs_usm_b402_ac: "<strong>Acceptance Criteria (BDD):</strong><br>• <i>Given:</i> New campaign built in Puck.<br>• <i>When:</i> Primary metric defined.<br>• <i>Then:</i> GTM trigger registered measuring conversions.",
+    cs_roadmap_title: "Strategic Product Roadmap (Quarterly Milestones - 6 Sprints)",
+    cs_roadmap_desc: "Visual timeline of sequential deliverables organized by Backlog Epics, Sprints, and Key Milestones (★) for the public banking portal redesign (5 MVP Pages):",
+    cs_rm_col_epics: "<i class=\"fas fa-layer-group\"></i> Backlog Epics",
+    cs_rm_col_m1: "<i class=\"fas fa-clock\"></i> Month 1: Sprints 1-2<br><span style=\"font-size:0.72rem; color:#94a3b8;\">(Weeks 1 to 4)</span>",
+    cs_rm_col_m2: "<i class=\"fas fa-clock\"></i> Month 2: Sprints 3-4<br><span style=\"font-size:0.72rem; color:#94a3b8;\">(Weeks 5 to 8)</span>",
+    cs_rm_col_m3: "<i class=\"fas fa-clock\"></i> Month 3: Sprints 5-6<br><span style=\"font-size:0.72rem; color:#94a3b8;\">(Weeks 9 to 12)</span>",
 
     // --- Projects Page Content ---
     projects_page_title: "Projects",
@@ -745,6 +751,12 @@ const translations = {
     cs_usm_b401_ac: "<strong>Criterios de Aceptación (BDD):</strong><br>• <i>Given:</i> Usuario de marketing requiere crear campana.<br>• <i>When:</i> Se asigna rol Editor Comercial en Puck.<br>• <i>Then:</i> Puede crear/editar páginas con total autonomía.",
     cs_usm_b402_desc: "<strong>Como Business Analyst</strong>, quiero taguear métricas clave y eventos de campañas promocionales en GTM de forma ágil.",
     cs_usm_b402_ac: "<strong>Criterios de Aceptación (BDD):</strong><br>• <i>Given:</i> Nueva campaña creada en Puck.<br>• <i>When:</i> Se define la métrica principal.<br>• <i>Then:</i> Trigger GTM registrado y midiendo conversiones.",
+    cs_roadmap_title: "Roadmap Estratégico del Producto (Quarterly Milestones - 6 Sprints)",
+    cs_roadmap_desc: "Cronograma visual de entregas secuenciales organizado por Épicas del Backlog, Sprints y Hitos Clave (Milestones ★) para el rediseño del portal público bancario (5 Páginas del MVP):",
+    cs_rm_col_epics: "<i class=\"fas fa-layer-group\"></i> Épicas del Backlog",
+    cs_rm_col_m1: "<i class=\"fas fa-clock\"></i> Mes 1: Sprints 1-2<br><span style=\"font-size:0.72rem; color:#94a3b8;\">(Semanas 1 a 4)</span>",
+    cs_rm_col_m2: "<i class=\"fas fa-clock\"></i> Mes 2: Sprints 3-4<br><span style=\"font-size:0.72rem; color:#94a3b8;\">(Semanas 5 a 8)</span>",
+    cs_rm_col_m3: "<i class=\"fas fa-clock\"></i> Mes 3: Sprints 5-6<br><span style=\"font-size:0.72rem; color:#94a3b8;\">(Semanas 9 a 12)</span>",
 
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
