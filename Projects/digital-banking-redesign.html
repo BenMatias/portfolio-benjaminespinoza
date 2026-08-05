@@ -585,11 +585,48 @@
             border-radius: 4px;
             width: fit-content;
         }
+        /* ROADMAP SCROLL CONTAINER STYLES */
+        .roadmap-scroll-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 0.75rem;
+            margin-top: 0.5rem;
+            border-radius: 12px;
+        }
+        .roadmap-scroll-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+        .roadmap-scroll-wrapper::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 4px;
+        }
+        .roadmap-scroll-wrapper::-webkit-scrollbar-thumb {
+            background: #00b4d8;
+            border-radius: 4px;
+        }
+        .mobile-scroll-hint {
+            display: none;
+            background: rgba(0, 180, 216, 0.12);
+            border: 1px solid rgba(0, 180, 216, 0.3);
+            color: #38bdf8;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.45rem 0.85rem;
+            border-radius: 8px;
+            margin-bottom: 0.85rem;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         /* RESPONSIVE DESIGN FOR MOBILE & TABLETS */
         @media (max-width: 850px) {
+            .mobile-scroll-hint {
+                display: flex;
+            }
             .roadmap-matrix-wrapper {
-                overflow-x: auto;
-                min-width: 750px;
+                min-width: 820px !important;
+                margin-top: 0.25rem !important;
             }
             .usm-columns-board {
                 grid-template-columns: repeat(2, 1fr) !important;
@@ -618,17 +655,31 @@
             .project-executive-summary {
                 grid-template-columns: 1fr !important;
             }
+            .artifact-card {
+                padding: 1.1rem 0.9rem !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
             .mvp-standard-canvas {
                 grid-template-columns: 1fr !important;
                 grid-template-rows: auto !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                gap: 1rem !important;
+            }
+            .mvp-canvas-card {
+                width: 100% !important;
+                box-sizing: border-box !important;
+                padding: 1.1rem 0.95rem !important;
             }
             .mvp-block-1, .mvp-block-2, .mvp-block-3, .mvp-block-4, .mvp-block-5, .mvp-block-6, .mvp-block-7 {
                 grid-column: 1 / -1 !important;
                 grid-row: auto !important;
             }
             .artifact-header {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
                 gap: 0.5rem;
             }
         }
@@ -648,7 +699,7 @@
                 justify-content: center;
             }
             .case-study-title {
-                font-size: 1.6rem !important;
+                font-size: 1.5rem !important;
             }
         }
     </style>
@@ -1129,62 +1180,70 @@
                     Cronograma visual de entregas secuenciales organizado por Épicas del Backlog, Sprints y Tiempos Estimados para el rediseño del portal público bancario (5 Páginas del MVP):
                 </p>
 
-                <div class="roadmap-matrix-wrapper">
-                    <!-- HEADER ROW -->
-                    <div class="roadmap-header-cell epic-col" data-translate="cs_rm_col_epics"><i class="fas fa-layer-group"></i> Épicas del Backlog</div>
-                    <div class="roadmap-header-cell" data-translate="cs_rm_col_m1"><i class="fas fa-clock"></i> Mes 1: Sprints 1-2<br><span style="font-size:0.72rem; color:#94a3b8;">(Semanas 1 a 4)</span></div>
-                    <div class="roadmap-header-cell" data-translate="cs_rm_col_m2"><i class="fas fa-clock"></i> Mes 2: Sprints 3-4<br><span style="font-size:0.72rem; color:#94a3b8;">(Semanas 5 a 8)</span></div>
-                    <div class="roadmap-header-cell" data-translate="cs_rm_col_m3"><i class="fas fa-clock"></i> Mes 3: Sprints 5-6<br><span style="font-size:0.72rem; color:#94a3b8;">(Semanas 9 a 12)</span></div>
+                <!-- INDICADOR VISUAL DE DESLIZAMIENTO LATERAL PARA MÓVILES -->
+                <div class="mobile-scroll-hint">
+                    <i class="fas fa-arrows-left-right"></i> <span data-translate="cs_scroll_hint">Desliza horizontalmente para ver el cronograma completo de 12 semanas</span>
+                </div>
 
-                    <!-- ROW 1: ÉPICA 1 (MES 1: SEMANAS 1 A 4) -->
-                    <div class="roadmap-epic-cell">
-                        <div class="roadmap-epic-name" style="color: #a78bfa !important;" data-translate="cs_rm_e1_title"><i class="fas fa-paint-brush"></i> Épica 1: UX & Prototipado</div>
-                        <div class="roadmap-epic-sub" data-translate="cs_rm_e1_sub">Firebase & Maquetación (8 SP)</div>
-                    </div>
-                    <div class="roadmap-timeline-row">
-                        <div class="roadmap-bar roadmap-bar-epic1" style="grid-column: 1 / 2;">
-                            <span data-translate="cs_rm_e1_b1">BIN-101: Maquetación Firebase & Prototipo Funcional (5 SP)</span>
-                            <span data-translate="cs_rm_e1_b2">BIN-102: Accesibilidad WCAG AA & Contenido Inicial (3 SP)</span>
-                            <span class="roadmap-milestone" data-translate="cs_rm_e1_time"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 1 a 4</span>
+                <!-- CONTENEDOR DE SCROLL HORIZONTAL FLUIDO -->
+                <div class="roadmap-scroll-wrapper">
+                    <div class="roadmap-matrix-wrapper">
+                        <!-- HEADER ROW -->
+                        <div class="roadmap-header-cell epic-col" data-translate="cs_rm_col_epics"><i class="fas fa-layer-group"></i> Épicas del Backlog</div>
+                        <div class="roadmap-header-cell" data-translate="cs_rm_col_m1"><i class="fas fa-clock"></i> Mes 1: Sprints 1-2<br><span style="font-size:0.72rem; color:#94a3b8;">(Semanas 1 a 4)</span></div>
+                        <div class="roadmap-header-cell" data-translate="cs_rm_col_m2"><i class="fas fa-clock"></i> Mes 2: Sprints 3-4<br><span style="font-size:0.72rem; color:#94a3b8;">(Semanas 5 a 8)</span></div>
+                        <div class="roadmap-header-cell" data-translate="cs_rm_col_m3"><i class="fas fa-clock"></i> Mes 3: Sprints 5-6<br><span style="font-size:0.72rem; color:#94a3b8;">(Semanas 9 a 12)</span></div>
+
+                        <!-- ROW 1: ÉPICA 1 (MES 1: SEMANAS 1 A 4) -->
+                        <div class="roadmap-epic-cell">
+                            <div class="roadmap-epic-name" style="color: #a78bfa !important;" data-translate="cs_rm_e1_title"><i class="fas fa-paint-brush"></i> Épica 1: UX & Prototipado</div>
+                            <div class="roadmap-epic-sub" data-translate="cs_rm_e1_sub">Firebase & Maquetación (8 SP)</div>
                         </div>
-                    </div>
-
-                    <!-- ROW 2: ÉPICA 2 (MES 1 SEMANA 3 A MES 2 SEMANA 8) -->
-                    <div class="roadmap-epic-cell">
-                        <div class="roadmap-epic-name" style="color: #38bdf8 !important;" data-translate="cs_rm_e2_title"><i class="fas fa-code"></i> Épica 2: Puck & Strapi 5</div>
-                        <div class="roadmap-epic-sub" data-translate="cs_rm_e2_sub">CMS & Telemetría Core (16 SP)</div>
-                    </div>
-                    <div class="roadmap-timeline-row">
-                        <div class="roadmap-bar roadmap-bar-epic2" style="grid-column: 1 / 3; margin-left: 33%; width: 67%;">
-                            <span data-translate="cs_rm_e2_b1">BIN-201: Componentes Puck CMS & API Strapi 5 (11 SP)</span>
-                            <span data-translate="cs_rm_e2_b2">BIN-202: Telemetría (GA4, GTM & Clarity) (5 SP)</span>
-                            <span class="roadmap-milestone" data-translate="cs_rm_e2_time1"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 3 a 8</span>
+                        <div class="roadmap-timeline-row">
+                            <div class="roadmap-bar roadmap-bar-epic1" style="grid-column: 1 / 2;">
+                                <span data-translate="cs_rm_e1_b1">BIN-101: Maquetación Firebase & Prototipo Funcional (5 SP)</span>
+                                <span data-translate="cs_rm_e1_b2">BIN-102: Accesibilidad WCAG AA & Contenido Inicial (3 SP)</span>
+                                <span class="roadmap-milestone" data-translate="cs_rm_e1_time"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 1 a 4</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- ROW 3: ÉPICA 3 (MES 3: SEMANAS 9 A 10 - PRIMERA MITAD) -->
-                    <div class="roadmap-epic-cell">
-                        <div class="roadmap-epic-name" style="color: #fbbf24 !important;" data-translate="cs_rm_e3_title"><i class="fas fa-vial"></i> Épica 3: Pruebas & Pase Prod</div>
-                        <div class="roadmap-epic-sub" data-translate="cs_rm_e3_sub">Calidad QA & Despliegue (8 SP)</div>
-                    </div>
-                    <div class="roadmap-timeline-row">
-                        <div class="roadmap-bar roadmap-bar-epic3" style="grid-column: 3 / 4; width: 75%; margin-left: 0;">
-                            <span data-translate="cs_rm_e3_b1">BIN-301: Matriz Pruebas Funcionales QA Staging (5 SP)</span>
-                            <span data-translate="cs_rm_e3_b2">BIN-302: Firma Acta Certificación QA & Go-Live (3 SP)</span>
-                            <span class="roadmap-milestone" data-translate="cs_rm_e3_time"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 9 a 10</span>
+                        <!-- ROW 2: ÉPICA 2 (MES 1 SEMANA 3 A MES 2 SEMANA 8) -->
+                        <div class="roadmap-epic-cell">
+                            <div class="roadmap-epic-name" style="color: #38bdf8 !important;" data-translate="cs_rm_e2_title"><i class="fas fa-code"></i> Épica 2: Puck & Strapi 5</div>
+                            <div class="roadmap-epic-sub" data-translate="cs_rm_e2_sub">CMS & Telemetría Core (16 SP)</div>
                         </div>
-                    </div>
+                        <div class="roadmap-timeline-row">
+                            <div class="roadmap-bar roadmap-bar-epic2" style="grid-column: 1 / 3; margin-left: 33%; width: 67%;">
+                                <span data-translate="cs_rm_e2_b1">BIN-201: Componentes Puck CMS & API Strapi 5 (11 SP)</span>
+                                <span data-translate="cs_rm_e2_b2">BIN-202: Telemetría (GA4, GTM & Clarity) (5 SP)</span>
+                                <span class="roadmap-milestone" data-translate="cs_rm_e2_time1"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 3 a 8</span>
+                            </div>
+                        </div>
 
-                    <!-- ROW 4: ÉPICA 4 (MES 3: SEMANAS 11 A 12 - SEGUNDA MITAD) -->
-                    <div class="roadmap-epic-cell">
-                        <div class="roadmap-epic-name" style="color: #34d399 !important;" data-translate="cs_rm_e4_title"><i class="fas fa-sliders-h"></i> Épica 4: Operación Continua</div>
-                        <div class="roadmap-epic-sub" data-translate="cs_rm_e4_sub">Autonomía Comercial (8 SP)</div>
-                    </div>
-                    <div class="roadmap-timeline-row">
-                        <div class="roadmap-bar roadmap-bar-epic4" style="grid-column: 3 / 4; width: 75%; margin-left: 25%;">
-                            <span data-translate="cs_rm_e4_b1">BIN-401: Administración Puck & Roles Comercial (5 SP)</span>
-                            <span data-translate="cs_rm_e4_b2">BIN-402: Tagueo Métricas de Campaña GTM (3 SP)</span>
-                            <span class="roadmap-milestone" data-translate="cs_rm_e4_time"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 11 a 12</span>
+                        <!-- ROW 3: ÉPICA 3 (MES 3: SEMANAS 9 A 10 - PRIMERA MITAD) -->
+                        <div class="roadmap-epic-cell">
+                            <div class="roadmap-epic-name" style="color: #fbbf24 !important;" data-translate="cs_rm_e3_title"><i class="fas fa-vial"></i> Épica 3: Pruebas & Pase Prod</div>
+                            <div class="roadmap-epic-sub" data-translate="cs_rm_e3_sub">Calidad QA & Despliegue (8 SP)</div>
+                        </div>
+                        <div class="roadmap-timeline-row">
+                            <div class="roadmap-bar roadmap-bar-epic3" style="grid-column: 3 / 4; width: 75%; margin-left: 0;">
+                                <span data-translate="cs_rm_e3_b1">BIN-301: Matriz Pruebas Funcionales QA Staging (5 SP)</span>
+                                <span data-translate="cs_rm_e3_b2">BIN-302: Firma Acta Certificación QA & Go-Live (3 SP)</span>
+                                <span class="roadmap-milestone" data-translate="cs_rm_e3_time"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 9 a 10</span>
+                            </div>
+                        </div>
+
+                        <!-- ROW 4: ÉPICA 4 (MES 3: SEMANAS 11 A 12 - SEGUNDA MITAD) -->
+                        <div class="roadmap-epic-cell">
+                            <div class="roadmap-epic-name" style="color: #34d399 !important;" data-translate="cs_rm_e4_title"><i class="fas fa-sliders-h"></i> Épica 4: Operación Continua</div>
+                            <div class="roadmap-epic-sub" data-translate="cs_rm_e4_sub">Autonomía Comercial (8 SP)</div>
+                        </div>
+                        <div class="roadmap-timeline-row">
+                            <div class="roadmap-bar roadmap-bar-epic4" style="grid-column: 3 / 4; width: 75%; margin-left: 25%;">
+                                <span data-translate="cs_rm_e4_b1">BIN-401: Administración Puck & Roles Comercial (5 SP)</span>
+                                <span data-translate="cs_rm_e4_b2">BIN-402: Tagueo Métricas de Campaña GTM (3 SP)</span>
+                                <span class="roadmap-milestone" data-translate="cs_rm_e4_time"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 11 a 12</span>
+                            </div>
                         </div>
                     </div>
                 </div>

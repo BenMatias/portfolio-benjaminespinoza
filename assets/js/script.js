@@ -349,6 +349,7 @@ const translations = {
     btnBackProjects: "Back to Projects",
     accExpandAll: "Expand All Cards",
     accCollapseAll: "Collapse All Cards",
+    cs_scroll_hint: "<i class=\"fas fa-arrows-left-right\"></i> Swipe horizontally to view full 12-week schedule",
 
     // --- Projects Page Content ---
     projects_page_title: "Projects",
@@ -805,6 +806,7 @@ const translations = {
     btnBackProjects: "Volver a Proyectos",
     accExpandAll: "Expandir Todas las Tarjetas",
     accCollapseAll: "Contraer Todas las Tarjetas",
+    cs_scroll_hint: "<i class=\"fas fa-arrows-left-right\"></i> Desliza horizontalmente para ver el cronograma completo de 12 semanas",
 
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
