@@ -347,6 +347,7 @@ const translations = {
     cs_rm_e4_b1: "BIN-401: Puck Administration & Commercial Roles (5 SP)",
     cs_rm_e4_b2: "BIN-402: GTM Campaign Metrics Tagging (3 SP)",
     cs_rm_e4_time: "<i class=\"fas fa-clock\"></i> Estimated Time: Weeks 9 to 12",
+    btnBackProjects: "Back to Projects",
 
     // --- Projects Page Content ---
     projects_page_title: "Projects",
@@ -801,6 +802,7 @@ const translations = {
     cs_rm_e4_b1: "BIN-401: Administración Puck & Roles Comercial (5 SP)",
     cs_rm_e4_b2: "BIN-402: Tagueo Métricas de Campaña GTM (3 SP)",
     cs_rm_e4_time: "<i class=\"fas fa-clock\"></i> Tiempo Estimado: Semanas 9 a 12",
+    btnBackProjects: "Volver a Proyectos",
 
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
