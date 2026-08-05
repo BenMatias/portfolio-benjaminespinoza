@@ -1564,17 +1564,17 @@
                 </div>
                 <div class="artifact-body">
                     <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1rem;" data-translate="cs_bpmn_asis_desc">
-                        Modelamiento formal en norma BPMN 2.0 con flujos horizontales de izquierda a derecha entre Swimlanes, compuertas de decisión XOR, eventos de temporizador (Timer) y caminos alternativos:
+                        Modelamiento formal en norma BPMN 2.0 con flujos de secuencia entre Swimlanes, compuertas de decisión XOR, eventos de temporizador (Timer) y bucles de retorno por retrabajo perfectamente conectados:
                     </p>
 
-                    <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA MÓVILES Y PANTALLAS ANCHAS -->
-                    <div class="mobile-scroll-hint" style="display: flex;">
-                        <i class="fas fa-arrows-left-right"></i> <span>Desliza horizontalmente para explorar el diagrama BPMN 2.0 continuo (de izquierda a derecha)</span>
+                    <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA MÓVILES -->
+                    <div class="mobile-scroll-hint">
+                        <i class="fas fa-arrows-left-right"></i> <span>Desliza horizontalmente para ver el diagrama vectorial BPMN 2.0 completo</span>
                     </div>
 
-                    <!-- VECTOR SVG BPMN 2.0 DIAGRAM (STRICT LEFT-TO-RIGHT) - AS-IS -->
+                    <!-- VECTOR SVG BPMN 2.0 DIAGRAM (100% CONNECTED & FORMAL) - AS-IS -->
                     <div class="bpmn-pool-wrapper">
-                        <svg viewBox="0 0 1520 460" width="100%" height="auto" style="min-width: 1400px; background: #0f172a; border-radius: 12px; border: 2px solid rgba(239, 68, 68, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.5); font-family: system-ui, -apple-system, sans-serif;">
+                        <svg viewBox="0 0 1060 440" width="100%" height="auto" style="min-width: 950px; background: #0f172a; border-radius: 12px; border: 2px solid rgba(239, 68, 68, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.5); font-family: system-ui, -apple-system, sans-serif;">
                             <defs>
                                 <marker id="arrow-asis" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                                     <path d="M 0 0 L 10 5 L 0 10 z" fill="#00b4d8"/>
@@ -1588,133 +1588,118 @@
                             </defs>
 
                             <!-- POOL CONTAINER & HEADER -->
-                            <rect x="5" y="5" width="1510" height="450" rx="10" fill="#0b1329" stroke="rgba(239,68,68,0.3)" stroke-width="2"/>
-                            <rect x="5" y="5" width="45" height="450" rx="10 0 0 10" fill="#1e293b" stroke="rgba(239,68,68,0.3)" stroke-width="2"/>
-                            <text x="-225" y="32" transform="rotate(-90)" fill="#ffffff" font-weight="800" font-size="12" letter-spacing="1.5">POOL 1: PROCESO TRADICIONAL BANCARIO (AS-IS)</text>
+                            <rect x="5" y="5" width="1050" height="430" rx="10" fill="#0b1329" stroke="rgba(239,68,68,0.3)" stroke-width="2"/>
+                            <rect x="5" y="5" width="40" height="430" rx="10 0 0 10" fill="#1e293b" stroke="rgba(239,68,68,0.3)" stroke-width="2"/>
+                            <text x="-215" y="29" transform="rotate(-90)" fill="#ffffff" font-weight="800" font-size="11.5" letter-spacing="1.2">POOL 1: PROCESO TRADICIONAL BANCARIO (AS-IS)</text>
 
                             <!-- SWIMLANE DIVIDERS -->
-                            <line x1="50" y1="155" x2="1515" y2="155" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
-                            <line x1="50" y1="305" x2="1515" y2="305" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                            <line x1="45" y1="145" x2="1055" y2="145" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                            <line x1="45" y1="285" x2="1055" y2="285" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
 
                             <!-- SWIMLANE 1 HEADER (COMERCIAL) -->
-                            <rect x="50" y="5" width="140" height="150" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
-                            <text x="120" y="70" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="12">ÁREA COMERCIAL</text>
-                            <text x="120" y="90" text-anchor="middle" fill="#94a3b8" font-size="10">Marketing / PO</text>
+                            <rect x="45" y="5" width="135" height="140" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
+                            <text x="112" y="65" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="11.5">ÁREA COMERCIAL</text>
+                            <text x="112" y="85" text-anchor="middle" fill="#94a3b8" font-size="9.5">Marketing / PO</text>
 
                             <!-- SWIMLANE 2 HEADER (DEV TI) -->
-                            <rect x="50" y="155" width="140" height="150" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
-                            <text x="120" y="220" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="12">CÉLULA DEV TI</text>
-                            <text x="120" y="240" text-anchor="middle" fill="#94a3b8" font-size="10">Desarrolladores Web</text>
+                            <rect x="45" y="145" width="135" height="140" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
+                            <text x="112" y="210" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="11.5">CÉLULA DEV TI</text>
+                            <text x="112" y="230" text-anchor="middle" fill="#94a3b8" font-size="9.5">Desarrolladores Web</text>
 
                             <!-- SWIMLANE 3 HEADER (QA & OPS) -->
-                            <rect x="50" y="305" width="140" height="150" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
-                            <text x="120" y="370" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="12">QA & OPERACIONES</text>
-                            <text x="120" y="390" text-anchor="middle" fill="#94a3b8" font-size="10">Infraestructura TI</text>
+                            <rect x="45" y="285" width="135" height="150" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
+                            <text x="112" y="355" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="11.5">QA & OPERACIONES</text>
+                            <text x="112" y="375" text-anchor="middle" fill="#94a3b8" font-size="9.5">Infraestructura TI</text>
 
                             <!-- SWIMLANE 1 ELEMENTS -->
                             <!-- START EVENT -->
-                            <circle cx="215" cy="80" r="18" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="3"/>
-                            <text x="215" y="85" text-anchor="middle" fill="#00e676" font-size="12">▶</text>
-                            <text x="215" y="115" text-anchor="middle" fill="#00e676" font-weight="700" font-size="10">Inicio Oferta</text>
+                            <circle cx="200" cy="75" r="16" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="3"/>
+                            <text x="200" y="80" text-anchor="middle" fill="#00e676" font-size="11">▶</text>
+                            <text x="200" y="106" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9.5">Inicio Oferta</text>
 
-                            <path d="M 233 80 L 265 80" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+                            <path d="M 216 75 L 245 75" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
 
                             <!-- TASK 1 -->
-                            <rect x="265" y="50" width="130" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="275" y="68" fill="#ffffff" font-weight="700" font-size="11">📄 Requerimiento</text>
-                            <text x="275" y="86" fill="#cbd5e1" font-size="9.5">Doc Especif. Campaña</text>
+                            <rect x="245" y="48" width="125" height="54" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="255" y="65" fill="#ffffff" font-weight="700" font-size="10.5">📄 Requerimiento</text>
+                            <text x="255" y="83" fill="#cbd5e1" font-size="9">Doc Especif. Campaña</text>
 
-                            <path d="M 395 80 L 430 80" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+                            <path d="M 370 75 L 400 75" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
 
                             <!-- TASK 2 -->
-                            <rect x="430" y="50" width="130" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="440" y="68" fill="#ffffff" font-weight="700" font-size="11">🎫 Ticket Jira</text>
-                            <text x="440" y="86" fill="#cbd5e1" font-size="9.5">Ingreso Mesa TI</text>
+                            <rect x="400" y="48" width="120" height="54" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="410" y="65" fill="#ffffff" font-weight="700" font-size="10.5">🎫 Ticket Jira</text>
+                            <text x="410" y="83" fill="#cbd5e1" font-size="9">Ingreso Mesa TI</text>
 
                             <!-- CROSS-LANE FLOW TO DEV TI -->
-                            <path d="M 495 110 L 495 205" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
-                            <text x="503" y="155" fill="#38bdf8" font-size="9" font-weight="600">Asignación TI</text>
+                            <path d="M 460 102 L 460 195" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+                            <text x="468" y="145" fill="#38bdf8" font-size="9" font-weight="600">Asignación TI</text>
 
                             <!-- SWIMLANE 2 ELEMENTS -->
                             <!-- TIMER EVENT -->
-                            <circle cx="495" cy="230" r="18" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="2"/>
-                            <circle cx="495" cy="230" r="14" fill="none" stroke="#f59e0b" stroke-width="1"/>
-                            <text x="495" y="235" text-anchor="middle" fill="#f59e0b" font-size="11">⏱</text>
-                            <text x="495" y="263" text-anchor="middle" fill="#f59e0b" font-weight="700" font-size="9">Wait 10-14 días</text>
+                            <circle cx="460" cy="215" r="16" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="2"/>
+                            <circle cx="460" cy="215" r="12" fill="none" stroke="#f59e0b" stroke-width="1"/>
+                            <text x="460" y="219" text-anchor="middle" fill="#f59e0b" font-size="10">⏱</text>
+                            <text x="460" y="244" text-anchor="middle" fill="#f59e0b" font-weight="700" font-size="8.5">Wait 10-14 días</text>
 
-                            <path d="M 513 230 L 545 230" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+                            <path d="M 476 215 L 505 215" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
 
                             <!-- TASK 3 -->
-                            <rect x="545" y="200" width="130" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="555" y="218" fill="#ffffff" font-weight="700" font-size="11">📅 Refinamiento</text>
-                            <text x="555" y="236" fill="#cbd5e1" font-size="9.5">Story Points Planning</text>
+                            <rect x="505" y="188" width="115" height="54" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="513" y="205" fill="#ffffff" font-weight="700" font-size="10.5">📅 Refinamiento</text>
+                            <text x="513" y="223" fill="#cbd5e1" font-size="9">Story Points Planning</text>
 
-                            <path d="M 675 230 L 710 230" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+                            <path d="M 620 215 L 650 215" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
 
-                            <!-- TASK 4 -->
-                            <rect x="710" y="200" width="125" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="720" y="218" fill="#ffffff" font-weight="700" font-size="11">💻 Código Duro</text>
-                            <text x="720" y="236" fill="#cbd5e1" font-size="9.5">Frontend HTML/React</text>
+                            <!-- TASK 4 (TARGET OF QA LOOPBACK) -->
+                            <rect x="650" y="188" width="120" height="54" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="658" y="205" fill="#ffffff" font-weight="700" font-size="10.5">💻 Código Duro</text>
+                            <text x="658" y="223" fill="#cbd5e1" font-size="9">Frontend HTML/React</text>
 
-                            <path d="M 835 230 L 870 230" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+                            <path d="M 770 215 L 800 215" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
 
                             <!-- TASK 5 -->
-                            <rect x="870" y="200" width="105" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="878" y="218" fill="#ffffff" font-weight="700" font-size="10.5">🔀 Pull Request</text>
-                            <text x="878" y="236" fill="#cbd5e1" font-size="9">Code Review</text>
+                            <rect x="800" y="188" width="110" height="54" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="808" y="205" fill="#ffffff" font-weight="700" font-size="10">🔀 Pull Request</text>
+                            <text x="808" y="223" fill="#cbd5e1" font-size="8.5">Code Review</text>
 
                             <!-- CROSS-LANE FLOW TO QA -->
-                            <path d="M 922 260 L 922 350" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
-                            <text x="930" y="300" fill="#38bdf8" font-size="9" font-weight="600">Pase a QA</text>
+                            <path d="M 855 242 L 855 325" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+                            <text x="863" y="280" fill="#38bdf8" font-size="9" font-weight="600">Pase a QA</text>
 
                             <!-- SWIMLANE 3 ELEMENTS -->
                             <!-- TASK 6 -->
-                            <rect x="945" y="350" width="135" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="955" y="368" fill="#ffffff" font-weight="700" font-size="11">🧪 Pruebas QA</text>
-                            <text x="955" y="386" fill="#cbd5e1" font-size="9.5">Casos Manuales QA</text>
+                            <rect x="795" y="325" width="120" height="54" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="805" y="342" fill="#ffffff" font-weight="700" font-size="10.5">🧪 Pruebas QA</text>
+                            <text x="805" y="360" fill="#cbd5e1" font-size="9">Casos Manuales QA</text>
 
-                            <path d="M 1080 380 L 1115 380" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+                            <path d="M 915 352 L 932 352" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
 
                             <!-- GATEWAY XOR -->
-                            <polygon points="1135,360 1155,380 1135,400 1115,380" fill="#1e293b" stroke="#00b4d8" stroke-width="2"/>
-                            <text x="1135" y="385" text-anchor="middle" fill="#00b4d8" font-weight="800" font-size="14">✕</text>
-                            <text x="1135" y="418" text-anchor="middle" fill="#00b4d8" font-weight="700" font-size="9.5">¿Pasa QA?</text>
+                            <polygon points="950,334 968,352 950,370 932,352" fill="#1e293b" stroke="#00b4d8" stroke-width="2"/>
+                            <text x="950" y="356" text-anchor="middle" fill="#00b4d8" font-weight="800" font-size="13">✕</text>
+                            <text x="950" y="384" text-anchor="middle" fill="#00b4d8" font-weight="700" font-size="9">¿Pasa QA?</text>
 
-                            <!-- SUCCESS PATH: SÍ / APROBADO (STRAIGHT RIGHT) -->
-                            <path d="M 1155 380 L 1210 380" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe)"/>
-                            <text x="1182" y="373" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9">🟢 SÍ</text>
-
-                            <!-- TIMER EVENT VENTANA NOCTURNA -->
-                            <circle cx="1230" cy="380" r="18" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="2"/>
-                            <circle cx="1230" cy="380" r="14" fill="none" stroke="#f59e0b" stroke-width="1"/>
-                            <text x="1230" y="385" text-anchor="middle" fill="#f59e0b" font-size="11">🌙</text>
-                            <text x="1230" y="415" text-anchor="middle" fill="#f59e0b" font-weight="700" font-size="9">Ventana Nocturna</text>
-
-                            <path d="M 1248 380 L 1285 380" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
-
-                            <!-- TASK 7 DEPLOY MANUAL -->
-                            <rect x="1285" y="350" width="130" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="1295" y="368" fill="#ffffff" font-weight="700" font-size="11">⚙️ Deploy Manual</text>
-                            <text x="1295" y="386" fill="#cbd5e1" font-size="9.5">Script Build Nocturno</text>
-
-                            <path d="M 1415 380 L 1450 380" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+                            <!-- SUCCESS PATH: SÍ / APROBADO -->
+                            <path d="M 968 352 L 982 352" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe)"/>
+                            <text x="975" y="345" text-anchor="middle" fill="#00e676" font-weight="700" font-size="8.5">SÍ</text>
 
                             <!-- END EVENT -->
-                            <circle cx="1470" cy="380" r="18" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="4"/>
-                            <text x="1470" y="385" text-anchor="middle" fill="#ef4444" font-size="12">🏁</text>
-                            <text x="1470" y="415" text-anchor="middle" fill="#ef4444" font-weight="800" font-size="9.5">Fin: 21 Días</text>
+                            <circle cx="1000" cy="352" r="16" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="4"/>
+                            <text x="1000" y="357" text-anchor="middle" fill="#ef4444" font-size="11">🏁</text>
+                            <text x="1000" y="384" text-anchor="middle" fill="#ef4444" font-weight="800" font-size="9">21 Días</text>
 
-                            <!-- ALTERNATIVE REJECTION PATH: NO / RETRABAJO (RIGHT-DOWNWARD CONTINUATION) -->
-                            <path d="M 1135 400 L 1135 435 L 1285 435" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrow-danger)"/>
-                            <rect x="1145" y="420" width="125" height="18" rx="4" fill="rgba(239,68,68,0.2)"/>
-                            <text x="1207" y="433" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="9">🔴 NO: Retrabajo (3-5 días)</text>
+                            <!-- EXACT CONNECTED LOOPBACK PATH: NO / RETRABAJO (DEV TI TASK 4) -->
+                            <path d="M 950 370 L 950 405 L 710 405 L 710 242" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrow-danger)"/>
+                            <rect x="760" y="396" width="140" height="18" rx="4" fill="rgba(239,68,68,0.25)" stroke="#ef4444" stroke-width="1"/>
+                            <text x="830" y="409" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="9">🔴 NO: Retrabajo Dev (3-5 días)</text>
                         </svg>
                     </div>
 
                     <div class="bpmn-alert-banner danger">
                         <i class="fas fa-exclamation-circle" style="font-size: 1.4rem;"></i>
                         <div>
-                            <strong>Punto de Dolor Identificado:</strong> El flujo AS-IS genera cuellos de botella de hasta 3 semanas por la dependencia absoluta de TI en tareas tipográficas y de contenido simple, sumado a los retrasos por fallos de QA manuales.
+                            <strong>Punto de Dolor Identificado:</strong> El flujo AS-IS genera cuellos de botella de hasta 3 semanas por la dependencia absoluta de TI en tareas tipográficas y de contenido simple, sumado a los bucles de retorno por errores en QA manuales.
                         </div>
                     </div>
                 </div>
@@ -1731,17 +1716,17 @@
                 </div>
                 <div class="artifact-body">
                     <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1rem;" data-translate="cs_bpmn_tobe_desc">
-                        Modelamiento formal en norma BPMN 2.0 del flujo optimizado con progresión continua de izquierda a derecha. El Editor Comercial compone landings visualmente en minutos y el Product Owner aprueba en Staging Sandbox previo a la sincronización instantánea:
+                        Modelamiento formal en norma BPMN 2.0 del flujo optimizado. El Editor Comercial compone landings visualmente en minutos y el Product Owner aprueba en Staging Sandbox previo a la sincronización instantánea:
                     </p>
 
-                    <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA MÓVILES Y PANTALLAS ANCHAS -->
-                    <div class="mobile-scroll-hint" style="display: flex;">
-                        <i class="fas fa-arrows-left-right"></i> <span>Desliza horizontalmente para explorar el diagrama BPMN 2.0 continuo (de izquierda a derecha)</span>
+                    <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA MÓVILES -->
+                    <div class="mobile-scroll-hint">
+                        <i class="fas fa-arrows-left-right"></i> <span>Desliza horizontalmente para ver el diagrama vectorial BPMN 2.0 completo</span>
                     </div>
 
-                    <!-- VECTOR SVG BPMN 2.0 DIAGRAM (STRICT LEFT-TO-RIGHT) - TO-BE -->
+                    <!-- VECTOR SVG BPMN 2.0 DIAGRAM (100% CONNECTED & FORMAL) - TO-BE -->
                     <div class="bpmn-pool-wrapper">
-                        <svg viewBox="0 0 1520 460" width="100%" height="auto" style="min-width: 1400px; background: #0f172a; border-radius: 12px; border: 2px solid rgba(0, 230, 118, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.5); font-family: system-ui, -apple-system, sans-serif;">
+                        <svg viewBox="0 0 1060 440" width="100%" height="auto" style="min-width: 950px; background: #0f172a; border-radius: 12px; border: 2px solid rgba(0, 230, 118, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.5); font-family: system-ui, -apple-system, sans-serif;">
                             <defs>
                                 <marker id="arrow-tobe-main" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                                     <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e676"/>
@@ -1755,110 +1740,109 @@
                             </defs>
 
                             <!-- POOL CONTAINER & HEADER -->
-                            <rect x="5" y="5" width="1510" height="450" rx="10" fill="#0b1329" stroke="rgba(0,230,118,0.3)" stroke-width="2"/>
-                            <rect x="5" y="5" width="45" height="450" rx="10 0 0 10" fill="#1e293b" stroke="rgba(0,230,118,0.3)" stroke-width="2"/>
-                            <text x="-225" y="32" transform="rotate(-90)" fill="#00e676" font-weight="800" font-size="12" letter-spacing="1.5">POOL 2: PROCESO AUTÓNOMO NO-CODE CON PUCK (TO-BE)</text>
+                            <rect x="5" y="5" width="1050" height="430" rx="10" fill="#0b1329" stroke="rgba(0,230,118,0.3)" stroke-width="2"/>
+                            <rect x="5" y="5" width="40" height="430" rx="10 0 0 10" fill="#1e293b" stroke="rgba(0,230,118,0.3)" stroke-width="2"/>
+                            <text x="-215" y="29" transform="rotate(-90)" fill="#00e676" font-weight="800" font-size="11.5" letter-spacing="1.2">POOL 2: PROCESO AUTÓNOMO NO-CODE CON PUCK (TO-BE)</text>
 
                             <!-- SWIMLANE DIVIDERS -->
-                            <line x1="50" y1="155" x2="1515" y2="155" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
-                            <line x1="50" y1="305" x2="1515" y2="305" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                            <line x1="45" y1="145" x2="1055" y2="145" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                            <line x1="45" y1="285" x2="1055" y2="285" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
 
                             <!-- SWIMLANE 1 HEADER (EDITOR COMERCIAL) -->
-                            <rect x="50" y="5" width="140" height="150" fill="#111c2e" stroke="rgba(0,230,118,0.2)"/>
-                            <text x="120" y="70" text-anchor="middle" fill="#00e676" font-weight="700" font-size="12">EDITOR COMERCIAL</text>
-                            <text x="120" y="90" text-anchor="middle" fill="#94a3b8" font-size="10">Puck Admin UI</text>
+                            <rect x="45" y="5" width="135" height="140" fill="#111c2e" stroke="rgba(0,230,118,0.2)"/>
+                            <text x="112" y="65" text-anchor="middle" fill="#00e676" font-weight="700" font-size="11.5">EDITOR COMERCIAL</text>
+                            <text x="112" y="85" text-anchor="middle" fill="#94a3b8" font-size="9.5">Puck Admin UI</text>
 
                             <!-- SWIMLANE 2 HEADER (STRAPI 5 & PUCK ENGINE) -->
-                            <rect x="50" y="155" width="140" height="150" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
-                            <text x="120" y="215" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="11.5">STRAPI 5 & PUCK ENGINE</text>
-                            <text x="120" y="235" text-anchor="middle" fill="#94a3b8" font-size="9.5">API & Auto-Tagueo GTM</text>
+                            <rect x="45" y="145" width="135" height="140" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
+                            <text x="112" y="205" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="11">STRAPI 5 & PUCK ENGINE</text>
+                            <text x="112" y="225" text-anchor="middle" fill="#94a3b8" font-size="9">API & Auto-Tagueo GTM</text>
 
                             <!-- SWIMLANE 3 HEADER (PRODUCT OWNER / QA) -->
-                            <rect x="50" y="305" width="140" height="150" fill="#111c2e" stroke="rgba(0,230,118,0.2)"/>
-                            <text x="120" y="370" text-anchor="middle" fill="#00e676" font-weight="700" font-size="12">PRODUCT OWNER / QA</text>
-                            <text x="120" y="390" text-anchor="middle" fill="#94a3b8" font-size="10">Gatekeeper Staging</text>
+                            <rect x="45" y="285" width="135" height="150" fill="#111c2e" stroke="rgba(0,230,118,0.2)"/>
+                            <text x="112" y="355" text-anchor="middle" fill="#00e676" font-weight="700" font-size="11.5">PRODUCT OWNER / QA</text>
+                            <text x="112" y="375" text-anchor="middle" fill="#94a3b8" font-size="9.5">Gatekeeper Staging</text>
 
                             <!-- SWIMLANE 1 ELEMENTS -->
                             <!-- START EVENT -->
-                            <circle cx="215" cy="80" r="18" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="3"/>
-                            <text x="215" y="85" text-anchor="middle" fill="#00e676" font-size="12">✨</text>
-                            <text x="215" y="115" text-anchor="middle" fill="#00e676" font-weight="700" font-size="10">Inicio Campaña</text>
+                            <circle cx="200" cy="75" r="16" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="3"/>
+                            <text x="200" y="80" text-anchor="middle" fill="#00e676" font-size="11">✨</text>
+                            <text x="200" y="106" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9.5">Inicio Campaña</text>
 
-                            <path d="M 233 80 L 265 80" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+                            <path d="M 216 75 L 245 75" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
 
                             <!-- TASK 1 -->
-                            <rect x="265" y="50" width="135" height="60" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
-                            <text x="275" y="68" fill="#00e676" font-weight="700" font-size="11">📑 Plantilla MVP</text>
-                            <text x="275" y="86" fill="#cbd5e1" font-size="9.5">Selección 1 de 5 Páginas</text>
+                            <rect x="245" y="48" width="130" height="54" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
+                            <text x="255" y="65" fill="#00e676" font-weight="700" font-size="10.5">📑 Plantilla MVP</text>
+                            <text x="255" y="83" fill="#cbd5e1" font-size="9">Selección 1 de 5 Páginas</text>
 
-                            <path d="M 400 80 L 435 80" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+                            <path d="M 375 75 L 405 75" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
 
-                            <!-- TASK 2 -->
-                            <rect x="435" y="50" width="145" height="60" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
-                            <text x="445" y="68" fill="#00e676" font-weight="700" font-size="11">🎨 Drag & Drop Visual</text>
-                            <text x="445" y="86" fill="#cbd5e1" font-size="9.5">Edición en Puck (10 min)</text>
+                            <!-- TASK 2 (TARGET OF QA LOOPBACK) -->
+                            <rect x="405" y="48" width="145" height="54" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
+                            <text x="415" y="65" fill="#00e676" font-weight="700" font-size="10.5">🎨 Drag & Drop Visual</text>
+                            <text x="415" y="83" fill="#cbd5e1" font-size="9">Edición en Puck (10 min)</text>
 
                             <!-- CROSS-LANE FLOW TO STRAPI ENGINE -->
-                            <path d="M 507 110 L 507 205" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
-                            <text x="515" y="155" fill="#00e676" font-size="9" font-weight="600">Guardar & Validar</text>
+                            <path d="M 477 102 L 477 195" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+                            <text x="485" y="145" fill="#00e676" font-size="9" font-weight="600">Guardar & Validar</text>
 
                             <!-- SWIMLANE 2 ELEMENTS -->
                             <!-- TASK 3 -->
-                            <rect x="440" y="205" width="135" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="450" y="223" fill="#ffffff" font-weight="700" font-size="11">⚡ Valida Esquema</text>
-                            <text x="450" y="241" fill="#cbd5e1" font-size="9.5">Strapi 5 REST API</text>
+                            <rect x="415" y="188" width="125" height="54" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="425" y="205" fill="#ffffff" font-weight="700" font-size="10.5">⚡ Valida Esquema</text>
+                            <text x="425" y="223" fill="#cbd5e1" font-size="9">Strapi 5 REST API</text>
 
-                            <path d="M 575 235 L 610 235" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-tobe-cyan)"/>
+                            <path d="M 540 215 L 570 215" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-tobe-cyan)"/>
 
                             <!-- TASK 4 -->
-                            <rect x="610" y="205" width="140" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="620" y="223" fill="#ffffff" font-weight="700" font-size="11">🏷️ Auto-Tagueo GTM</text>
-                            <text x="620" y="241" fill="#cbd5e1" font-size="9.5">Inyección GA4/Clarity</text>
+                            <rect x="570" y="188" width="135" height="54" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="580" y="205" fill="#ffffff" font-weight="700" font-size="10.5">🏷️ Auto-Tagueo GTM</text>
+                            <text x="580" y="223" fill="#cbd5e1" font-size="9">Inyección GA4/Clarity</text>
 
-                            <path d="M 750 235 L 785 235" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-tobe-cyan)"/>
+                            <path d="M 705 215 L 735 215" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-tobe-cyan)"/>
 
                             <!-- TASK 5 -->
-                            <rect x="785" y="205" width="130" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="795" y="223" fill="#ffffff" font-weight="700" font-size="11">🖥️ Build Sandbox</text>
-                            <text x="795" y="241" fill="#cbd5e1" font-size="9.5">Deploy Staging (1 min)</text>
+                            <rect x="735" y="188" width="125" height="54" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="745" y="205" fill="#ffffff" font-weight="700" font-size="10.5">🖥️ Build Sandbox</text>
+                            <text x="745" y="223" fill="#cbd5e1" font-size="9">Deploy Staging (1 min)</text>
 
                             <!-- CROSS-LANE FLOW TO PO QA -->
-                            <path d="M 850 265 L 850 350" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
-                            <text x="858" y="300" fill="#00e676" font-size="9" font-weight="600">Pre-view Sandbox</text>
+                            <path d="M 797 242 L 797 325" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+                            <text x="805" y="280" fill="#00e676" font-size="9" font-weight="600">Pre-view Sandbox</text>
 
                             <!-- SWIMLANE 3 ELEMENTS -->
                             <!-- TASK 6 -->
-                            <rect x="870" y="350" width="145" height="60" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
-                            <text x="880" y="368" fill="#ffffff" font-weight="700" font-size="11">🔍 QA Visual Staging</text>
-                            <text x="880" y="386" fill="#cbd5e1" font-size="9.5">Revisión Sandbox</text>
+                            <rect x="737" y="325" width="120" height="54" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
+                            <text x="747" y="342" fill="#ffffff" font-weight="700" font-size="10.5">🔍 QA Visual Staging</text>
+                            <text x="747" y="360" fill="#cbd5e1" font-size="9">Revisión Sandbox</text>
 
-                            <path d="M 1015 380 L 1050 380" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+                            <path d="M 857 352 L 877 352" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
 
                             <!-- GATEWAY XOR -->
-                            <polygon points="1070,360 1090,380 1070,400 1050,380" fill="#1e293b" stroke="#00e676" stroke-width="2"/>
-                            <text x="1070" y="385" text-anchor="middle" fill="#00e676" font-weight="800" font-size="14">✕</text>
-                            <text x="1070" y="418" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9.5">¿Aprobado?</text>
+                            <polygon points="895,334 913,352 895,370 877,352" fill="#1e293b" stroke="#00e676" stroke-width="2"/>
+                            <text x="895" y="356" text-anchor="middle" fill="#00e676" font-weight="800" font-size="13">✕</text>
+                            <text x="895" y="384" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9">¿Aprobado?</text>
 
-                            <!-- SUCCESS PATH: SÍ / CERTIFICADO (STRAIGHT RIGHT) -->
-                            <path d="M 1090 380 L 1145 380" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
-                            <text x="1117" y="373" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9">🟢 SÍ</text>
+                            <!-- SUCCESS PATH: SÍ / CERTIFICADO -->
+                            <path d="M 913 352 L 925 352" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
 
                             <!-- TASK 7 SYNC CDN 1-CLICK -->
-                            <rect x="1145" y="350" width="145" height="60" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
-                            <text x="1155" y="368" fill="#00e676" font-weight="700" font-size="11">☁️ Sync CDN 1-Click</text>
-                            <text x="1155" y="386" fill="#cbd5e1" font-size="9.5">Despliegue Prod (30 seg)</text>
+                            <rect x="925" y="325" width="80" height="54" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
+                            <text x="932" y="342" fill="#00e676" font-weight="700" font-size="9.5">☁️ Sync CDN</text>
+                            <text x="932" y="360" fill="#cbd5e1" font-size="8.5">Prod (30 seg)</text>
 
-                            <path d="M 1290 380 L 1325 380" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+                            <path d="M 1005 352 L 1018 352" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
 
                             <!-- END EVENT -->
-                            <circle cx="1345" cy="380" r="18" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="4"/>
-                            <text x="1345" y="385" text-anchor="middle" fill="#00e676" font-size="12">✨</text>
-                            <text x="1345" y="415" text-anchor="middle" fill="#00e676" font-weight="800" font-size="9.5">Fin: 15 Min</text>
+                            <circle cx="1035" cy="352" r="16" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="4"/>
+                            <text x="1035" y="357" text-anchor="middle" fill="#00e676" font-size="11">✨</text>
+                            <text x="1035" y="384" text-anchor="middle" fill="#00e676" font-weight="800" font-size="9">15 Min</text>
 
-                            <!-- ALTERNATIVE ADJUSTMENT PATH: NO / AJUSTE (RIGHT-DOWNWARD CONTINUATION) -->
-                            <path d="M 1070 400 L 1070 435 L 1220 435" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrow-danger-tobe)"/>
-                            <rect x="1080" y="420" width="135" height="18" rx="4" fill="rgba(239,68,68,0.2)"/>
-                            <text x="1147" y="433" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="9">🔴 NO: Ajuste Puck (2 min)</text>
+                            <!-- EXACT CONNECTED LOOPBACK PATH: NO / AJUSTE (TO EDITOR COMERCIAL TASK 2) -->
+                            <path d="M 895 370 L 895 405 L 477 405 L 477 102" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrow-danger-tobe)"/>
+                            <rect x="620" y="396" width="140" height="18" rx="4" fill="rgba(239,68,68,0.25)" stroke="#ef4444" stroke-width="1"/>
+                            <text x="690" y="409" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="9">🔴 NO: Ajuste en Puck (2 min)</text>
                         </svg>
                     </div>
 
