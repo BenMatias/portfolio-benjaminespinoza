@@ -287,6 +287,100 @@
             margin-bottom: 0.45rem;
         }
 
+        /* VISUAL USER STORY MAP MATRIX STYLES (SAVIO STANDARD) */
+        .usm-matrix-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-top: 1.25rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+        .usm-row {
+            display: flex;
+            align-items: stretch;
+            gap: 1rem;
+            min-width: 900px;
+        }
+        .usm-label-col {
+            width: 130px;
+            flex-shrink: 0;
+            padding: 0.65rem 0.85rem;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .usm-label-col.activities {
+            background: linear-gradient(135deg, #ec4899, #be185d);
+            color: #ffffff !important;
+        }
+        .usm-label-col.steps {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: #ffffff !important;
+        }
+        .usm-label-col.details {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #ffffff !important;
+        }
+        .usm-grid-3cols {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            flex-grow: 1;
+        }
+        .usm-activity-card {
+            background: rgba(236, 72, 153, 0.15);
+            border: 1.5px solid #ec4899;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            color: #ffffff !important;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .usm-steps-subgrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+        }
+        .usm-step-card {
+            background: rgba(6, 182, 212, 0.15);
+            border: 1.5px solid #06b6d4;
+            border-radius: 8px;
+            padding: 0.65rem 0.75rem;
+            color: #ffffff !important;
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .usm-detail-sticky {
+            background: #1e293b;
+            border: 1.5px solid #f59e0b;
+            border-radius: 8px;
+            padding: 0.65rem 0.8rem;
+            color: #fef3c7 !important;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease;
+        }
+        .usm-detail-sticky:hover {
+            transform: translateY(-2px);
+            border-color: #fbbf24;
+        }
+
         /* GRID POSITIONS MATCHING THE MVP CANVAS STANDARD IMAGE */
         .mvp-block-1 { grid-column: 2 / 3; grid-row: 1 / 2; border-top: 4px solid #00b4d8; }
         .mvp-block-2 { grid-column: 1 / 2; grid-row: 1 / 2; border-top: 4px solid #00e676; }
@@ -498,13 +592,82 @@
                 </div>
             </div>
 
+            <!-- TARJETA 1: MAPA VISUAL DE HISTORIAS (USER STORY MAP - ESTÁNDAR SAVIO) -->
             <div class="artifact-card">
                 <div class="artifact-header">
-                    <h3 class="artifact-title" data-translate="cs_usm_title"><i class="fas fa-tasks"></i> User Story Map & Backlog Priorizado (Jira / Confluence)</h3>
+                    <h3 class="artifact-title" data-translate="cs_usm_matrix_title"><i class="fas fa-sitemap"></i> User Story Map: Matriz Visual de Producto</h3>
+                    <span class="meta-tag"><i class="fas fa-layer-group"></i> Estándar de Gestión de Producto</span>
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_usm_matrix_desc">
+                    Matriz tridimensional del flujo de usuario organizada por <strong>Actividades Principales (Backbone)</strong>, <strong>Pasos de Flujo (User Steps)</strong> y <strong>Historias Detalladas (Details)</strong>:
+                </p>
+
+                <!-- MATRIZ USM ESTÁNDAR -->
+                <div class="usm-matrix-wrapper">
+                    <!-- ROW 1: ACTIVITIES -->
+                    <div class="usm-row">
+                        <div class="usm-label-col activities"><i class="fas fa-bullseye"></i> Activities</div>
+                        <div class="usm-grid-3cols">
+                            <div class="usm-activity-card" data-translate="cs_usm_act1">1. Autonomía CMS & Publicación No-Code</div>
+                            <div class="usm-activity-card" data-translate="cs_usm_act2">2. Telemetría & Analítica Digital</div>
+                            <div class="usm-activity-card" data-translate="cs_usm_act3">3. Calidad Funcional & Pruebas QA</div>
+                        </div>
+                    </div>
+
+                    <!-- ROW 2: STEPS -->
+                    <div class="usm-row">
+                        <div class="usm-label-col steps"><i class="fas fa-shoe-prints"></i> Steps</div>
+                        <div class="usm-grid-3cols">
+                            <div class="usm-steps-subgrid">
+                                <div class="usm-step-card" data-translate="cs_usm_st11">1.1 Selección UI</div>
+                                <div class="usm-step-card" data-translate="cs_usm_st12">1.2 Edición Drag&Drop</div>
+                                <div class="usm-step-card" data-translate="cs_usm_st13">1.3 Pub. Strapi 5</div>
+                            </div>
+                            <div class="usm-steps-subgrid">
+                                <div class="usm-step-card" data-translate="cs_usm_st21">2.1 Eventos GTM</div>
+                                <div class="usm-step-card" data-translate="cs_usm_st22">2.2 Registro GA4</div>
+                                <div class="usm-step-card" data-translate="cs_usm_st23">2.3 Heatmap Clarity</div>
+                            </div>
+                            <div class="usm-steps-subgrid">
+                                <div class="usm-step-card" data-translate="cs_usm_st31">3.1 Despliegue Staging</div>
+                                <div class="usm-step-card" data-translate="cs_usm_st32">3.2 Matriz QA Form</div>
+                                <div class="usm-step-card" data-translate="cs_usm_st33">3.3 Pase a Prod</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ROW 3: DETAILS (STICKY NOTES) -->
+                    <div class="usm-row">
+                        <div class="usm-label-col details"><i class="fas fa-sticky-note"></i> Details</div>
+                        <div class="usm-grid-3cols">
+                            <div class="usm-steps-subgrid">
+                                <div class="usm-detail-sticky" data-translate="cs_usm_dt11">Componentes visuales responsivos aprobados por UX.</div>
+                                <div class="usm-detail-sticky" data-translate="cs_usm_dt12">Editor visual Puck CMS con previsualización en vivo.</div>
+                                <div class="usm-detail-sticky" data-translate="cs_usm_dt13">API Headless Strapi 5 actualiza página sin redeploy dev.</div>
+                            </div>
+                            <div class="usm-steps-subgrid">
+                                <div class="usm-detail-sticky" data-translate="cs_usm_dt21">DataLayer & Triggers en GTM Debugger (`click_apply_now`).</div>
+                                <div class="usm-detail-sticky" data-translate="cs_usm_dt22">Métricas de conversión y dimensiones en GA4.</div>
+                                <div class="usm-detail-sticky" data-translate="cs_usm_dt23">Grabaciones de sesión anonimizadas en móviles.</div>
+                            </div>
+                            <div class="usm-steps-subgrid">
+                                <div class="usm-detail-sticky" data-translate="cs_usm_dt31">Publicación automática en ambiente Staging.</div>
+                                <div class="usm-detail-sticky" data-translate="cs_usm_dt32">Matriz de 15 casos de prueba funcionales.</div>
+                                <div class="usm-detail-sticky" data-translate="cs_usm_dt33">Firma de acta QA e hito de despliegue a producción.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA 2: BACKLOG PRIORIZADO EN JIRA -->
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h3 class="artifact-title" data-translate="cs_usm_title"><i class="fas fa-tasks"></i> Backlog Priorizado del Producto (Jira / Confluence)</h3>
                     <span class="meta-tag"><i class="fab fa-jira"></i> Backlog en Triada (PO, BA, Tech Lead)</span>
                 </div>
                 <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_usm_desc">
-                    Estructura visual del Backlog del Producto organizado en 3 Épicas Estratégicas y dividido en Sprints con estimación de puntos de historia (Story Points), niveles de prioridad MoSCoW y Criterios de Aceptación estructurados (Given-When-Then):
+                    Historias de Usuario del Backlog priorizadas por Épicas, con estimación en Puntos de Historia (Story Points), priorización MoSCoW y Criterios de Aceptación BDD (Given-When-Then):
                 </p>
 
                 <div class="story-board">
