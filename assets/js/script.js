@@ -1594,7 +1594,7 @@ function setLanguage(lang, basePath) {
   document.querySelectorAll('[data-translate]').forEach(el => {
     const key = el.getAttribute('data-translate');
     if (data[key]) {
-      el.textContent = data[key];
+      el.innerHTML = data[key];
     }
   });
 
