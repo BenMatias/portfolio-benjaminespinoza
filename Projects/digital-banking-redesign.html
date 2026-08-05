@@ -1564,121 +1564,156 @@
                 </div>
                 <div class="artifact-body">
                     <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1rem;" data-translate="cs_bpmn_asis_desc">
-                        Modelamiento en estándar BPMN 2.0 del flujo tradicional. Los cambios de landing pages dependen 100% de la capacidad de desarrollo duro y ventanas nocturnas de mantenimiento:
+                        Modelamiento formal en norma BPMN 2.0 con flujos de secuencia entre Swimlanes, compuertas de decisión XOR, eventos de temporizador (Timer) y bucles de retorno por retrabajo:
                     </p>
 
                     <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA MÓVILES -->
                     <div class="mobile-scroll-hint">
-                        <i class="fas fa-arrows-left-right"></i> <span>Desliza horizontalmente para ver las swimlanes del diagrama BPMN 2.0</span>
+                        <i class="fas fa-arrows-left-right"></i> <span>Desliza horizontalmente para ver el diagrama vectorial BPMN 2.0 completo</span>
                     </div>
 
-                    <!-- POOL MATRIX AS-IS -->
+                    <!-- VECTOR SVG BPMN 2.0 DIAGRAM - AS-IS -->
                     <div class="bpmn-pool-wrapper">
-                        <div class="bpmn-pool-matrix">
-                            <div class="bpmn-pool-header">
-                                <span><i class="fas fa-layer-group"></i> POOL 1: Proceso Tradicional de Publicación Web Bancaria (AS-IS)</span>
-                                <span style="font-size:0.8rem; color:#ef4444;"><i class="fas fa-clock"></i> Tiempo de Ciclo Total: 14 a 21 Días Hábiles</span>
-                            </div>
+                        <svg viewBox="0 0 1000 460" width="100%" height="auto" style="min-width: 900px; background: #0f172a; border-radius: 12px; border: 2px solid rgba(239, 68, 68, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.5); font-family: system-ui, -apple-system, sans-serif;">
+                            <defs>
+                                <marker id="arrow-asis" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#00b4d8"/>
+                                </marker>
+                                <marker id="arrow-danger" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444"/>
+                                </marker>
+                                <marker id="arrow-tobe" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e676"/>
+                                </marker>
+                            </defs>
 
-                            <!-- SWIMLANE 1: COMERCIAL / MARKETING -->
-                            <div class="bpmn-swimlane">
-                                <div class="bpmn-lane-title">
-                                    Área Comercial
-                                    <span>Marketing / PO</span>
-                                </div>
-                                <div class="bpmn-lane-content">
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-event-start"><i class="fas fa-bullhorn"></i></div>
-                                        <span style="font-size:0.7rem; color:#00e676; font-weight:700; margin-top:0.25rem;">Inicio: Oferta</span>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task">
-                                            <div class="bpmn-task-title"><i class="fas fa-file-word"></i> Requerimiento</div>
-                                            <div class="bpmn-task-desc">Redacción de documento de especificaciones de campaña.</div>
-                                        </div>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task">
-                                            <div class="bpmn-task-title"><i class="fas fa-ticket-alt"></i> Ticket Jira</div>
-                                            <div class="bpmn-task-desc">Ingreso de ticket a mesa de ayuda TI.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- POOL CONTAINER & HEADER -->
+                            <rect x="5" y="5" width="990" height="450" rx="10" fill="#0b1329" stroke="rgba(239,68,68,0.3)" stroke-width="2"/>
+                            <rect x="5" y="5" width="45" height="450" rx="10 0 0 10" fill="#1e293b" stroke="rgba(239,68,68,0.3)" stroke-width="2"/>
+                            <text x="-225" y="32" transform="rotate(-90)" fill="#ffffff" font-weight="800" font-size="12" letter-spacing="1.5">POOL 1: PROCESO TRADICIONAL BANCARIO (AS-IS)</text>
 
-                            <!-- SWIMLANE 2: DESARROLLO TI -->
-                            <div class="bpmn-swimlane">
-                                <div class="bpmn-lane-title">
-                                    Célula Dev TI
-                                    <span>Desarrolladores Web</span>
-                                </div>
-                                <div class="bpmn-lane-content">
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-event-timer"><i class="fas fa-hourglass-half"></i></div>
-                                        <span style="font-size:0.7rem; color:#f59e0b; font-weight:700; margin-top:0.25rem;">Espera: 10-14 días</span>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task">
-                                            <div class="bpmn-task-title"><i class="fas fa-calendar-check"></i> Refinamiento</div>
-                                            <div class="bpmn-task-desc">Asignación de Story Points en Planning.</div>
-                                        </div>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task">
-                                            <div class="bpmn-task-title"><i class="fas fa-code"></i> Código Duro</div>
-                                            <div class="bpmn-task-desc">Programación HTML/React en repositorio.</div>
-                                        </div>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task">
-                                            <div class="bpmn-task-title"><i class="fas fa-code-branch"></i> Pull Request</div>
-                                            <div class="bpmn-task-desc">Code Review e integración a branch main.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- SWIMLANE DIVIDERS -->
+                            <line x1="50" y1="155" x2="995" y2="155" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                            <line x1="50" y1="305" x2="995" y2="305" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
 
-                            <!-- SWIMLANE 3: QA & OPERACIONES TI -->
-                            <div class="bpmn-swimlane">
-                                <div class="bpmn-lane-title">
-                                    QA & Operaciones
-                                    <span>Infraestructura TI</span>
-                                </div>
-                                <div class="bpmn-lane-content">
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task">
-                                            <div class="bpmn-task-title"><i class="fas fa-vial"></i> Pruebas Manuales</div>
-                                            <div class="bpmn-task-desc">Ejecución de casos de prueba manuales.</div>
-                                        </div>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-gateway-xor">
-                                        <div class="bpmn-gateway-inner">X</div>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-event-timer"><i class="fas fa-moon"></i></div>
-                                        <span style="font-size:0.7rem; color:#f59e0b; font-weight:700; margin-top:0.25rem;">Ventana Nocturna</span>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-event-end"><i class="fas fa-flag-checkered"></i></div>
-                                        <span style="font-size:0.7rem; color:#ef4444; font-weight:700; margin-top:0.25rem;">Fin: 21 Días</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <!-- SWIMLANE 1 HEADER (COMERCIAL) -->
+                            <rect x="50" y="5" width="140" height="150" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
+                            <text x="120" y="70" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="12">ÁREA COMERCIAL</text>
+                            <text x="120" y="90" text-anchor="middle" fill="#94a3b8" font-size="10">Marketing / PO</text>
+
+                            <!-- SWIMLANE 2 HEADER (DEV TI) -->
+                            <rect x="50" y="155" width="140" height="150" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
+                            <text x="120" y="220" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="12">CÉLULA DEV TI</text>
+                            <text x="120" y="240" text-anchor="middle" fill="#94a3b8" font-size="10">Desarrolladores Web</text>
+
+                            <!-- SWIMLANE 3 HEADER (QA & OPS) -->
+                            <rect x="50" y="305" width="140" height="150" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
+                            <text x="120" y="370" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="12">QA & OPERACIONES</text>
+                            <text x="120" y="390" text-anchor="middle" fill="#94a3b8" font-size="10">Infraestructura TI</text>
+
+                            <!-- SWIMLANE 1 ELEMENTS -->
+                            <!-- START EVENT -->
+                            <circle cx="220" cy="80" r="18" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="3"/>
+                            <text x="220" y="85" text-anchor="middle" fill="#00e676" font-size="12">▶</text>
+                            <text x="220" y="115" text-anchor="middle" fill="#00e676" font-weight="700" font-size="10">Inicio Oferta</text>
+
+                            <path d="M 238 80 L 275 80" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+
+                            <!-- TASK 1 -->
+                            <rect x="275" y="50" width="130" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="285" y="68" fill="#ffffff" font-weight="700" font-size="11">📄 Requerimiento</text>
+                            <text x="285" y="86" fill="#cbd5e1" font-size="9.5">Doc Especif. Campaña</text>
+
+                            <path d="M 405 80 L 445 80" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+
+                            <!-- TASK 2 -->
+                            <rect x="445" y="50" width="130" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="455" y="68" fill="#ffffff" font-weight="700" font-size="11">🎫 Ticket Jira</text>
+                            <text x="455" y="86" fill="#cbd5e1" font-size="9.5">Ingreso Mesa TI</text>
+
+                            <!-- CROSS-LANE FLOW TO DEV TI -->
+                            <path d="M 510 110 L 510 205" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+                            <text x="518" y="155" fill="#38bdf8" font-size="9" font-weight="600">Asignación Ticket</text>
+
+                            <!-- SWIMLANE 2 ELEMENTS -->
+                            <!-- TIMER EVENT -->
+                            <circle cx="510" cy="230" r="18" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="2"/>
+                            <circle cx="510" cy="230" r="14" fill="none" stroke="#f59e0b" stroke-width="1"/>
+                            <text x="510" y="235" text-anchor="middle" fill="#f59e0b" font-size="11">⏱</text>
+                            <text x="510" y="263" text-anchor="middle" fill="#f59e0b" font-weight="700" font-size="9">Wait 10-14 días</text>
+
+                            <path d="M 528 230 L 565 230" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+
+                            <!-- TASK 3 -->
+                            <rect x="565" y="200" width="130" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="575" y="218" fill="#ffffff" font-weight="700" font-size="11">📅 Refinamiento</text>
+                            <text x="575" y="236" fill="#cbd5e1" font-size="9.5">Story Points Planning</text>
+
+                            <path d="M 695 230 L 735 230" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+
+                            <!-- TASK 4 -->
+                            <rect x="735" y="200" width="125" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="745" y="218" fill="#ffffff" font-weight="700" font-size="11">💻 Código Duro</text>
+                            <text x="745" y="236" fill="#cbd5e1" font-size="9.5">Frontend HTML/React</text>
+
+                            <path d="M 860 230 L 890 230" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+
+                            <!-- TASK 5 -->
+                            <rect x="890" y="200" width="95" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="897" y="218" fill="#ffffff" font-weight="700" font-size="10.5">🔀 Pull Request</text>
+                            <text x="897" y="236" fill="#cbd5e1" font-size="9">Code Review</text>
+
+                            <!-- CROSS-LANE FLOW TO QA -->
+                            <path d="M 937 260 L 937 380 L 880 380" fill="none" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+
+                            <!-- SWIMLANE 3 ELEMENTS -->
+                            <!-- TASK 6 -->
+                            <rect x="745" y="350" width="135" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="755" y="368" fill="#ffffff" font-weight="700" font-size="11">🧪 Pruebas QA</text>
+                            <text x="755" y="386" fill="#cbd5e1" font-size="9.5">Casos Manuales QA</text>
+
+                            <path d="M 745 380 L 675 380" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+
+                            <!-- GATEWAY XOR -->
+                            <polygon points="650,360 670,380 650,400 630,380" fill="#1e293b" stroke="#00b4d8" stroke-width="2"/>
+                            <text x="650" y="385" text-anchor="middle" fill="#00b4d8" font-weight="800" font-size="14">✕</text>
+                            <text x="650" y="418" text-anchor="middle" fill="#00b4d8" font-weight="700" font-size="9.5">¿Pasa QA?</text>
+
+                            <!-- LOOPBACK PATH: NO / RECHAZADO (TO DEV TI TASK 4) -->
+                            <path d="M 650 360 L 650 330 L 797 330 L 797 260" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrow-danger)"/>
+                            <rect x="660" y="318" width="130" height="18" rx="4" fill="rgba(239,68,68,0.2)"/>
+                            <text x="725" y="331" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="9">🔴 NO: Retrabajo (3-5 días extra)</text>
+
+                            <!-- SUCCESS PATH: SÍ / APROBADO -->
+                            <path d="M 630 380 L 538 380" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe)"/>
+                            <text x="584" y="373" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9">🟢 SÍ</text>
+
+                            <!-- TIMER EVENT VENTANA NOCTURNA -->
+                            <circle cx="520" cy="380" r="18" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="2"/>
+                            <circle cx="520" cy="380" r="14" fill="none" stroke="#f59e0b" stroke-width="1"/>
+                            <text x="520" y="385" text-anchor="middle" fill="#f59e0b" font-size="11">🌙</text>
+                            <text x="520" y="415" text-anchor="middle" fill="#f59e0b" font-weight="700" font-size="9">Ventana Nocturna</text>
+
+                            <path d="M 502 380 L 435 380" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+
+                            <!-- TASK 7 DEPLOY MANUAL -->
+                            <rect x="305" y="350" width="130" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="315" y="368" fill="#ffffff" font-weight="700" font-size="11">⚙️ Deploy Manual</text>
+                            <text x="315" y="386" fill="#cbd5e1" font-size="9.5">Script Build Nocturno</text>
+
+                            <path d="M 305 380 L 238 380" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+
+                            <!-- END EVENT -->
+                            <circle cx="220" cy="380" r="18" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="4"/>
+                            <text x="220" y="385" text-anchor="middle" fill="#ef4444" font-size="12">🏁</text>
+                            <text x="220" y="415" text-anchor="middle" fill="#ef4444" font-weight="800" font-size="9.5">Fin: Prod (14-21 Días)</text>
+                        </svg>
                     </div>
 
                     <div class="bpmn-alert-banner danger">
                         <i class="fas fa-exclamation-circle" style="font-size: 1.4rem;"></i>
                         <div>
-                            <strong>Punto de Dolor Identificado:</strong> El proceso AS-IS genera cuellos de botella de hasta 3 semanas por la dependencia absoluta de TI en tareas tipográficas y de contenido simple, imposibilitando la agilidad comercial.
+                            <strong>Punto de Dolor Identificado:</strong> El flujo AS-IS genera cuellos de botella de hasta 3 semanas por la dependencia absoluta de TI en tareas tipográficas y de contenido simple, sumado a los bucles de retorno por errores en QA manuales.
                         </div>
                     </div>
                 </div>
@@ -1695,112 +1730,134 @@
                 </div>
                 <div class="artifact-body">
                     <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1rem;" data-translate="cs_bpmn_tobe_desc">
-                        Modelamiento en estándar BPMN 2.0 del flujo optimizado. El Editor Comercial compone landings visualmente en minutos y el Product Owner aprueba en Staging Sandbox previo a la sincronización instantánea:
+                        Modelamiento formal en norma BPMN 2.0 del flujo optimizado. El Editor Comercial compone landings visualmente en minutos y el Product Owner aprueba en Staging Sandbox previo a la sincronización instantánea:
                     </p>
 
                     <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA MÓVILES -->
                     <div class="mobile-scroll-hint">
-                        <i class="fas fa-arrows-left-right"></i> <span>Desliza horizontalmente para ver las swimlanes del diagrama BPMN 2.0</span>
+                        <i class="fas fa-arrows-left-right"></i> <span>Desliza horizontalmente para ver el diagrama vectorial BPMN 2.0 completo</span>
                     </div>
 
-                    <!-- POOL MATRIX TO-BE -->
+                    <!-- VECTOR SVG BPMN 2.0 DIAGRAM - TO-BE -->
                     <div class="bpmn-pool-wrapper">
-                        <div class="bpmn-pool-matrix">
-                            <div class="bpmn-pool-header" style="border-bottom-color: #00e676;">
-                                <span><i class="fas fa-layer-group"></i> POOL 2: Proceso Autónomo No-Code con Puck CMS & Strapi 5 (TO-BE)</span>
-                                <span style="font-size:0.8rem; color:#00e676;"><i class="fas fa-bolt"></i> Tiempo de Ciclo Total: 15 Minutos</span>
-                            </div>
+                        <svg viewBox="0 0 1000 460" width="100%" height="auto" style="min-width: 900px; background: #0f172a; border-radius: 12px; border: 2px solid rgba(0, 230, 118, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.5); font-family: system-ui, -apple-system, sans-serif;">
+                            <defs>
+                                <marker id="arrow-tobe-main" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e676"/>
+                                </marker>
+                                <marker id="arrow-tobe-cyan" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#00b4d8"/>
+                                </marker>
+                                <marker id="arrow-danger-tobe" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444"/>
+                                </marker>
+                            </defs>
 
-                            <!-- SWIMLANE 1: EDITOR COMERCIAL -->
-                            <div class="bpmn-swimlane">
-                                <div class="bpmn-lane-title" style="color: #00e676 !important;">
-                                    Editor Comercial
-                                    <span>Puck Admin UI</span>
-                                </div>
-                                <div class="bpmn-lane-content">
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-event-start"><i class="fas fa-magic"></i></div>
-                                        <span style="font-size:0.7rem; color:#00e676; font-weight:700; margin-top:0.25rem;">Inicio: Campaña</span>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task" style="border-color: #00e676;">
-                                            <div class="bpmn-task-title" style="color:#00e676 !important;"><i class="fas fa-layer-group"></i> Plantilla MVP</div>
-                                            <div class="bpmn-task-desc">Selección de 1 de las 5 páginas precargadas.</div>
-                                        </div>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task" style="border-color: #00e676;">
-                                            <div class="bpmn-task-title" style="color:#00e676 !important;"><i class="fas fa-mouse-pointer"></i> Drag & Drop</div>
-                                            <div class="bpmn-task-desc">Edición visual de textos y fotos en Puck (10 min).</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- POOL CONTAINER & HEADER -->
+                            <rect x="5" y="5" width="990" height="450" rx="10" fill="#0b1329" stroke="rgba(0,230,118,0.3)" stroke-width="2"/>
+                            <rect x="5" y="5" width="45" height="450" rx="10 0 0 10" fill="#1e293b" stroke="rgba(0,230,118,0.3)" stroke-width="2"/>
+                            <text x="-225" y="32" transform="rotate(-90)" fill="#00e676" font-weight="800" font-size="12" letter-spacing="1.5">POOL 2: PROCESO AUTÓNOMO NO-CODE CON PUCK (TO-BE)</text>
 
-                            <!-- SWIMLANE 2: PUCK CMS & STRAPI 5 API ENGINE -->
-                            <div class="bpmn-swimlane">
-                                <div class="bpmn-lane-title">
-                                    Strapi 5 & Puck
-                                    <span>API & Auto-Tagueo GTM</span>
-                                </div>
-                                <div class="bpmn-lane-content">
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task">
-                                            <div class="bpmn-task-title"><i class="fas fa-database"></i> Strapi 5 Ingestion</div>
-                                            <div class="bpmn-task-desc">Validación de esquemas JSON y API Restful.</div>
-                                        </div>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task">
-                                            <div class="bpmn-task-title"><i class="fas fa-tags"></i> Auto-Tagueo GTM</div>
-                                            <div class="bpmn-task-desc">Inyección automática de eventos GA4/Clarity.</div>
-                                        </div>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task">
-                                            <div class="bpmn-task-title"><i class="fas fa-server"></i> Staging Deploy</div>
-                                            <div class="bpmn-task-desc">Generación de pre-view Sandbox (1 min).</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- SWIMLANE DIVIDERS -->
+                            <line x1="50" y1="155" x2="995" y2="155" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                            <line x1="50" y1="305" x2="995" y2="305" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
 
-                            <!-- SWIMLANE 3: PRODUCT OWNER & QA CERTIFIER -->
-                            <div class="bpmn-swimlane">
-                                <div class="bpmn-lane-title">
-                                    Product Owner
-                                    <span>Gatekeeper QA Staging</span>
-                                </div>
-                                <div class="bpmn-lane-content">
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task">
-                                            <div class="bpmn-task-title"><i class="fas fa-check-double"></i> QA Staging Gate</div>
-                                            <div class="bpmn-task-desc">Revisión visual en vivo en Sandbox.</div>
-                                        </div>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-gateway-xor" style="border-color: #00e676;">
-                                        <div class="bpmn-gateway-inner" style="color: #00e676;">OK?</div>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-task" style="border-color: #00e676;">
-                                            <div class="bpmn-task-title" style="color:#00e676 !important;"><i class="fas fa-cloud-upload-alt"></i> Sync CDN Prod</div>
-                                            <div class="bpmn-task-desc">Despliegue instantáneo en 1-click (30 seg).</div>
-                                        </div>
-                                    </div>
-                                    <div class="bpmn-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                    <div class="bpmn-element">
-                                        <div class="bpmn-event-end" style="border-color: #00e676; color: #00e676; background: rgba(0,230,118,0.15); box-shadow: 0 0 12px rgba(0,230,118,0.3);"><i class="fas fa-check"></i></div>
-                                        <span style="font-size:0.7rem; color:#00e676; font-weight:700; margin-top:0.25rem;">Fin: 15 Min</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <!-- SWIMLANE 1 HEADER (EDITOR COMERCIAL) -->
+                            <rect x="50" y="5" width="140" height="150" fill="#111c2e" stroke="rgba(0,230,118,0.2)"/>
+                            <text x="120" y="70" text-anchor="middle" fill="#00e676" font-weight="700" font-size="12">EDITOR COMERCIAL</text>
+                            <text x="120" y="90" text-anchor="middle" fill="#94a3b8" font-size="10">Puck Admin UI</text>
+
+                            <!-- SWIMLANE 2 HEADER (STRAPI 5 & PUCK ENGINE) -->
+                            <rect x="50" y="155" width="140" height="150" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
+                            <text x="120" y="215" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="11.5">STRAPI 5 & PUCK ENGINE</text>
+                            <text x="120" y="235" text-anchor="middle" fill="#94a3b8" font-size="9.5">API & Auto-Tagueo GTM</text>
+
+                            <!-- SWIMLANE 3 HEADER (PRODUCT OWNER / QA) -->
+                            <rect x="50" y="305" width="140" height="150" fill="#111c2e" stroke="rgba(0,230,118,0.2)"/>
+                            <text x="120" y="370" text-anchor="middle" fill="#00e676" font-weight="700" font-size="12">PRODUCT OWNER / QA</text>
+                            <text x="120" y="390" text-anchor="middle" fill="#94a3b8" font-size="10">Gatekeeper Staging</text>
+
+                            <!-- SWIMLANE 1 ELEMENTS -->
+                            <!-- START EVENT -->
+                            <circle cx="220" cy="80" r="18" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="3"/>
+                            <text x="220" y="85" text-anchor="middle" fill="#00e676" font-size="12">✨</text>
+                            <text x="220" y="115" text-anchor="middle" fill="#00e676" font-weight="700" font-size="10">Inicio Campaña</text>
+
+                            <path d="M 238 80 L 275 80" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+
+                            <!-- TASK 1 -->
+                            <rect x="275" y="50" width="135" height="60" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
+                            <text x="285" y="68" fill="#00e676" font-weight="700" font-size="11">📑 Plantilla MVP</text>
+                            <text x="285" y="86" fill="#cbd5e1" font-size="9.5">Selección 1 de 5 Páginas</text>
+
+                            <path d="M 410 80 L 450 80" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+
+                            <!-- TASK 2 -->
+                            <rect x="450" y="50" width="145" height="60" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
+                            <text x="460" y="68" fill="#00e676" font-weight="700" font-size="11">🎨 Drag & Drop Visual</text>
+                            <text x="460" y="86" fill="#cbd5e1" font-size="9.5">Edición en Puck (10 min)</text>
+
+                            <!-- CROSS-LANE FLOW TO STRAPI ENGINE -->
+                            <path d="M 522 110 L 522 205" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+                            <text x="530" y="155" fill="#00e676" font-size="9" font-weight="600">Guardar & Validar</text>
+
+                            <!-- SWIMLANE 2 ELEMENTS -->
+                            <!-- TASK 3 -->
+                            <rect x="455" y="205" width="135" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="465" y="223" fill="#ffffff" font-weight="700" font-size="11">⚡ Valida Esquema</text>
+                            <text x="465" y="241" fill="#cbd5e1" font-size="9.5">Strapi 5 REST API</text>
+
+                            <path d="M 590 235 L 630 235" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-tobe-cyan)"/>
+
+                            <!-- TASK 4 -->
+                            <rect x="630" y="205" width="140" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="640" y="223" fill="#ffffff" font-weight="700" font-size="11">🏷️ Auto-Tagueo GTM</text>
+                            <text x="640" y="241" fill="#cbd5e1" font-size="9.5">Inyección GA4/Clarity</text>
+
+                            <path d="M 770 235 L 810 235" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-tobe-cyan)"/>
+
+                            <!-- TASK 5 -->
+                            <rect x="810" y="205" width="130" height="60" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="820" y="223" fill="#ffffff" font-weight="700" font-size="11">🖥️ Build Sandbox</text>
+                            <text x="820" y="241" fill="#cbd5e1" font-size="9.5">Deploy Staging (1 min)</text>
+
+                            <!-- CROSS-LANE FLOW TO PO QA -->
+                            <path d="M 875 265 L 875 380 L 825 380" fill="none" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+
+                            <!-- SWIMLANE 3 ELEMENTS -->
+                            <!-- TASK 6 -->
+                            <rect x="680" y="350" width="145" height="60" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
+                            <text x="690" y="368" fill="#ffffff" font-weight="700" font-size="11">🔍 QA Visual Staging</text>
+                            <text x="690" y="386" fill="#cbd5e1" font-size="9.5">Revisión Sandbox</text>
+
+                            <path d="M 680 380 L 635 380" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+
+                            <!-- GATEWAY XOR -->
+                            <polygon points="615,360 635,380 615,400 595,380" fill="#1e293b" stroke="#00e676" stroke-width="2"/>
+                            <text x="615" y="385" text-anchor="middle" fill="#00e676" font-weight="800" font-size="14">✕</text>
+                            <text x="615" y="418" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9.5">¿Aprobado?</text>
+
+                            <!-- LOOPBACK PATH: NO / AJUSTES (TO SWIMLANE 1 TASK 2) -->
+                            <path d="M 615 360 L 615 130 L 522 130 L 522 110" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrow-danger-tobe)"/>
+                            <rect x="525" y="138" width="140" height="18" rx="4" fill="rgba(239,68,68,0.2)"/>
+                            <text x="595" y="151" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="9">🔴 NO: Ajuste en Puck (2 min)</text>
+
+                            <!-- SUCCESS PATH: SÍ / CERTIFICADO -->
+                            <path d="M 595 380 L 465 380" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+                            <text x="530" y="373" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9">🟢 SÍ: Certificado</text>
+
+                            <!-- TASK 7 SYNC CDN 1-CLICK -->
+                            <rect x="320" y="350" width="145" height="60" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
+                            <text x="330" y="368" fill="#00e676" font-weight="700" font-size="11">☁️ Sync CDN 1-Click</text>
+                            <text x="330" y="386" fill="#cbd5e1" font-size="9.5">Despliegue Prod (30 seg)</text>
+
+                            <path d="M 320 380 L 248 380" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+
+                            <!-- END EVENT -->
+                            <circle cx="230" cy="380" r="18" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="4"/>
+                            <text x="230" y="385" text-anchor="middle" fill="#00e676" font-size="12">✨</text>
+                            <text x="230" y="415" text-anchor="middle" fill="#00e676" font-weight="800" font-size="9.5">Fin: Prod (15 Min)</text>
+                        </svg>
                     </div>
 
                     <div class="bpmn-alert-banner success">
