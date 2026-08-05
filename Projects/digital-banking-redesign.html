@@ -137,7 +137,44 @@
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+        /* SLEEK DARK EXECUTIVE SUMMARY CARDS */
+        .project-executive-summary {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+            gap: 1.25rem !important;
+            margin-top: 2rem !important;
+        }
+        .summary-card {
+            background: #0f172a !important;
+            border: 1.5px solid rgba(0, 180, 216, 0.3) !important;
+            border-left: 4px solid #00b4d8 !important;
+            border-radius: 12px !important;
+            padding: 1.35rem !important;
+            display: flex !important;
+            align-items: flex-start !important;
+            gap: 1rem !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
+            color: #f8fafc !important;
+        }
+        .summary-card i {
+            font-size: 1.6rem !important;
+            color: #00e676 !important;
+            margin-top: 0.2rem !important;
+            flex-shrink: 0 !important;
+        }
+        .summary-card-text h3 {
+            font-size: 1.05rem !important;
+            font-weight: 700 !important;
+            color: #ffffff !important;
+            margin: 0 0 0.5rem 0 !important;
+        }
+        .summary-card-text p {
+            font-size: 0.88rem !important;
+            color: #cbd5e1 !important;
+            line-height: 1.55 !important;
+            margin: 0 !important;
+        }
+
         /* CARDS & ARTIFACT STYLES */
         .artifact-card {
             background: #111c2e;
@@ -687,47 +724,47 @@
                 </div>
             </div>
 
-            <!-- TARJETA 2: BACKLOG PRIORIZADO EN JIRA -->
+            <!-- TARJETA 2: BACKLOG PRIORIZADO EN JIRA (ALINEADO A LAS 4 ACTIVIDADES) -->
             <div class="artifact-card">
                 <div class="artifact-header">
                     <h3 class="artifact-title" data-translate="cs_usm_title"><i class="fas fa-tasks"></i> Backlog Priorizado del Producto (Jira / Confluence)</h3>
                     <span class="meta-tag"><i class="fab fa-jira"></i> Backlog en Triada (PO, BA, Tech Lead)</span>
                 </div>
                 <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_usm_desc">
-                    Historias de Usuario del Backlog priorizadas por Épicas, con estimación en Puntos de Historia (Story Points), priorización MoSCoW y Criterios de Aceptación BDD (Given-When-Then):
+                    Historias de Usuario del Backlog estructuradas en 4 Épicas alineadas al User Story Map, con estimación en Story Points (SP), nivel MoSCoW y Criterios de Aceptación BDD (Given-When-Then):
                 </p>
 
                 <div class="story-board">
                     <!-- ÉPICA 1 -->
                     <div class="epic-column">
                         <div class="epic-header">
-                            <span>Épica 1: CMS & Publicación</span>
-                            <i class="fas fa-cubes"></i>
+                            <span>Épica 1: Diseño UX & Prototipado</span>
+                            <i class="fas fa-paint-brush"></i>
                         </div>
                         <div class="story-card">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
                                 <span class="story-id">BIN-101</span>
-                                <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,230,118,0.15); color: #00e676; border-color: #00e676;">Must-Have | 8 SP</span>
+                                <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,230,118,0.15); color: #00e676; border-color: #00e676;">Must-Have | 5 SP</span>
                             </div>
-                            <div class="story-desc" data-translate="cs_usm_b101_desc"><strong>Como Product Owner</strong>, quiero maquetar y publicar landing pages dinámicas con Puck CMS conectado a Strapi 5 sin depender de sprints de desarrollo.</div>
+                            <div class="story-desc" data-translate="cs_usm_b101_desc"><strong>Como UX Designer & PO</strong>, quiero maquetar los componentes visuales en Firebase y validar el prototipo funcional responsive antes del desarrollo.</div>
                             <div class="story-ac" data-translate="cs_usm_b101_ac">
                                 <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> El usuario está autenticado en el editor visual de Puck CMS.<br>
-                                • <i>When:</i> Arrastra los componentes corporativos y presiona "Publicar en Strapi 5".<br>
-                                • <i>Then:</i> La página se despliega en producción en vivo en menos de 15 minutos.
+                                • <i>Given:</i> Requerimientos de producto definidos.<br>
+                                • <i>When:</i> Se arma el prototipo funcional en Firebase.<br>
+                                • <i>Then:</i> La triada aprueba la maquetación responsive.
                             </div>
                         </div>
                         <div class="story-card">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
                                 <span class="story-id">BIN-102</span>
-                                <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,180,216,0.15); color: #00b4d8; border-color: #00b4d8;">Should-Have | 5 SP</span>
+                                <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,180,216,0.15); color: #00b4d8; border-color: #00b4d8;">Should-Have | 3 SP</span>
                             </div>
-                            <div class="story-desc" data-translate="cs_usm_b102_desc"><strong>Como UX Designer & PO</strong>, quiero validar maquetaciones en alambre creadas con Firebase AI antes de pasarlas a Strapi 5.</div>
+                            <div class="story-desc" data-translate="cs_usm_b102_desc"><strong>Como PO</strong>, quiero asegurar herramientas de accesibilidad (WCAG) y el levantamiento de contenido inicial para salida a producción.</div>
                             <div class="story-ac" data-translate="cs_usm_b102_ac">
                                 <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> El mockup en Firebase AI cuenta con V°B° del equipo comercial.<br>
-                                • <i>When:</i> Se exportan los tokens de diseño al CMS.<br>
-                                • <i>Then:</i> Los componentes se previsualizan 100% responsive en móvil y desktop.
+                                • <i>Given:</i> Componentes UI maquetados.<br>
+                                • <i>When:</i> Se aplican contrastes e imágenes finales.<br>
+                                • <i>Then:</i> Se cumple la norma de accesibilidad WCAG AA.
                             </div>
                         </div>
                     </div>
@@ -735,33 +772,33 @@
                     <!-- ÉPICA 2 -->
                     <div class="epic-column">
                         <div class="epic-header">
-                            <span>Épica 2: Telemetría & GA4</span>
-                            <i class="fas fa-chart-line"></i>
+                            <span>Épica 2: Arquitectura Puck & Strapi 5</span>
+                            <i class="fas fa-code"></i>
                         </div>
                         <div class="story-card">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
                                 <span class="story-id">BIN-201</span>
-                                <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,230,118,0.15); color: #00e676; border-color: #00e676;">Must-Have | 5 SP</span>
+                                <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,230,118,0.15); color: #00e676; border-color: #00e676;">Must-Have | 8 SP</span>
                             </div>
-                            <div class="story-desc" data-translate="cs_usm_b201_desc"><strong>Como Business Analyst</strong>, quiero configurar triggers en GTM para capturar la intención de solicitud en GA4.</div>
+                            <div class="story-desc" data-translate="cs_usm_b201_desc"><strong>Como Product Owner</strong>, quiero desarrollar los componentes visuales en Puck CMS y conectarlos por API a Strapi 5 para publicar páginas en minutos.</div>
                             <div class="story-ac" data-translate="cs_usm_b201_ac">
                                 <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> El usuario navega en la landing pública de producto.<br>
-                                • <i>When:</i> Hace clic en el botón `click_apply_now`.<br>
-                                • <i>Then:</i> GTM dispara el evento a GA4 registrando la sesión y dispositivo.
+                                • <i>Given:</i> Usuario autenticado en editor Puck CMS.<br>
+                                • <i>When:</i> Publica bloques de contenido visual.<br>
+                                • <i>Then:</i> API Strapi 5 actualiza producción en < 15 min.
                             </div>
                         </div>
                         <div class="story-card">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
                                 <span class="story-id">BIN-202</span>
-                                <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,180,216,0.15); color: #00b4d8; border-color: #00b4d8;">Should-Have | 3 SP</span>
+                                <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,230,118,0.15); color: #00e676; border-color: #00e676;">Must-Have | 5 SP</span>
                             </div>
-                            <div class="story-desc" data-translate="cs_usm_b202_desc"><strong>Como Product Owner</strong>, quiero integrar Microsoft Clarity para grabar sesiones anonimizadas y detectar fricción en móviles.</div>
+                            <div class="story-desc" data-translate="cs_usm_b202_desc"><strong>Como Business Analyst</strong>, quiero implementar la telemetría (GA4, GTM, Clarity) para registrar conversiones y mapas de calor.</div>
                             <div class="story-ac" data-translate="cs_usm_b202_ac">
                                 <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> El script de Clarity está activo en el tag global de GTM.<br>
-                                • <i>When:</i> Los usuarios interactúan en smartphones.<br>
-                                • <i>Then:</i> Se generan mapas de calor semanales identficando clics muertos.
+                                • <i>Given:</i> Tag global GTM instalado.<br>
+                                • <i>When:</i> El usuario interactúa con simuladores/CTAs.<br>
+                                • <i>Then:</i> GA4 registra conversiones y Clarity captura mapas.
                             </div>
                         </div>
                     </div>
@@ -769,20 +806,20 @@
                     <!-- ÉPICA 3 -->
                     <div class="epic-column">
                         <div class="epic-header">
-                            <span>Épica 3: Calidad & QA</span>
-                            <i class="fas fa-shield-alt"></i>
+                            <span>Épica 3: Pruebas & Pase a Prod</span>
+                            <i class="fas fa-vial"></i>
                         </div>
                         <div class="story-card">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
                                 <span class="story-id">BIN-301</span>
                                 <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,230,118,0.15); color: #00e676; border-color: #00e676;">Must-Have | 5 SP</span>
                             </div>
-                            <div class="story-desc" data-translate="cs_usm_b301_desc"><strong>Como Business Analyst</strong>, quiero ejecutar la matriz de Pruebas QA en Staging antes de dar el V°B° de pase a producción.</div>
+                            <div class="story-desc" data-translate="cs_usm_b301_desc"><strong>Como Business Analyst</strong>, quiero ejecutar la matriz de Pruebas Funcionales QA en Staging para prevenir errores bloqueantes.</div>
                             <div class="story-ac" data-translate="cs_usm_b301_ac">
                                 <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> La landing creada en Puck CMS está publicada en ambiente Staging.<br>
-                                • <i>When:</i> Se verifica el 100% de la matriz de casos de prueba de formularios.<br>
-                                • <i>Then:</i> Se firma el acta de certificación funcional QA para habilitar el despliegue.
+                                • <i>Given:</i> Landing publicada en Staging.<br>
+                                • <i>When:</i> Se ejecuta 100% de matriz de casos de prueba.<br>
+                                • <i>Then:</i> Certificación funcional aprobada sin incidencias.
                             </div>
                         </div>
                         <div class="story-card">
@@ -790,12 +827,46 @@
                                 <span class="story-id">BIN-302</span>
                                 <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(245,158,11,0.15); color: #f59e0b; border-color: #f59e0b;">Must-Have | 3 SP</span>
                             </div>
-                            <div class="story-desc" data-translate="cs_usm_b302_desc"><strong>Como Product Owner</strong>, quiero un mecanismo de bloqueo que impida el pase a producción si se detectan errores bloqueantes.</div>
+                            <div class="story-desc" data-translate="cs_usm_b302_desc"><strong>Como PO</strong>, quiero contar con la firma digital del acta QA para autorizar el pase automático a Producción.</div>
                             <div class="story-ac" data-translate="cs_usm_b302_ac">
                                 <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> Un caso de prueba funcional falla en la matriz de QA.<br>
-                                • <i>When:</i> Se registra la incidencia en Jira con severidad Alta.<br>
-                                • <i>Then:</i> El pipeline retiene el despliegue y notifica a la triada.
+                                • <i>Given:</i> Matriz QA aprobada en Staging.<br>
+                                • <i>When:</i> Se firma el acta de pase a producción.<br>
+                                • <i>Then:</i> Pipeline desata el despliegue productivo.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ÉPICA 4 -->
+                    <div class="epic-column">
+                        <div class="epic-header">
+                            <span>Épica 4: Operación Continua Puck</span>
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <div class="story-card">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                                <span class="story-id">BIN-401</span>
+                                <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,230,118,0.15); color: #00e676; border-color: #00e676;">Must-Have | 5 SP</span>
+                            </div>
+                            <div class="story-desc" data-translate="cs_usm_b401_desc"><strong>Como Product Owner</strong>, quiero administrar Puck CMS y gestionar perfiles/permisos para otorgar autonomía al equipo comercial.</div>
+                            <div class="story-ac" data-translate="cs_usm_b401_ac">
+                                <strong>Criterios de Aceptación (BDD):</strong><br>
+                                • <i>Given:</i> Usuario de marketing requiere crear campana.<br>
+                                • <i>When:</i> Se asigna rol Editor Comercial en Puck.<br>
+                                • <i>Then:</i> Puede crear/editar páginas con total autonomía.
+                            </div>
+                        </div>
+                        <div class="story-card">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                                <span class="story-id">BIN-402</span>
+                                <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,180,216,0.15); color: #00b4d8; border-color: #00b4d8;">Should-Have | 3 SP</span>
+                            </div>
+                            <div class="story-desc" data-translate="cs_usm_b402_desc"><strong>Como Business Analyst</strong>, quiero taguear métricas clave y eventos de campañas promocionales en GTM de forma ágil.</div>
+                            <div class="story-ac" data-translate="cs_usm_b402_ac">
+                                <strong>Criterios de Aceptación (BDD):</strong><br>
+                                • <i>Given:</i> Nueva campaña creada en Puck.<br>
+                                • <i>When:</i> Se define la métrica principal.<br>
+                                • <i>Then:</i> Trigger GTM registrado y midiendo conversiones.
                             </div>
                         </div>
                     </div>
