@@ -1556,7 +1556,7 @@
                 <div class="artifact-header card-toggle-trigger">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                         <h3 class="artifact-title" style="color: #ef4444 !important;" data-translate="cs_bpmn_asis_title"><i class="fas fa-exclamation-triangle"></i> Proceso Actual (AS-IS): Cuello de Botella en Desarrollo TI</h3>
-                        <span class="meta-tag" style="border-color: #ef4444; color: #ef4444;"><i class="fas fa-history"></i> SLA: 14 a 21 Días</span>
+                        <span class="meta-tag" style="border-color: #ef4444; color: #ef4444;"><i class="fas fa-history"></i> <span data-translate="cs_bpmn_asis_sla">SLA: 14 a 21 Días</span></span>
                     </div>
                     <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
@@ -1567,7 +1567,7 @@
 
                     <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA DESKTOP Y MÓVILES -->
                     <div class="mobile-scroll-hint" style="display: flex !important;">
-                        <i class="fas fa-arrows-left-right"></i> <span>Desliza horizontalmente para navegar el diagrama BPMN 2.0 en tamaño completo</span>
+                        <i class="fas fa-arrows-left-right"></i> <span data-translate="cs_bpmn_scroll_hint">Desliza horizontalmente para navegar el diagrama BPMN 2.0 en tamaño completo</span>
                     </div>
 
                     <!-- VECTOR SVG BPMN 2.0 DIAGRAM (FULL SIZE 1380PX WITH HORIZONTAL SCROLL) - AS-IS -->
@@ -1723,7 +1723,7 @@
                 <div class="artifact-header card-toggle-trigger">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                         <h3 class="artifact-title" style="color: #00e676 !important;" data-translate="cs_bpmn_tobe_title"><i class="fas fa-rocket"></i> Proceso Propuesto (TO-BE): Autonomía Comercial No-Code con Puck CMS</h3>
-                        <span class="meta-tag" style="border-color: #00e676; color: #00e676;"><i class="fas fa-bolt"></i> SLA: 15 Minutos</span>
+                        <span class="meta-tag" style="border-color: #00e676; color: #00e676;"><i class="fas fa-bolt"></i> <span data-translate="cs_bpmn_tobe_sla">SLA: 15 Minutos</span></span>
                     </div>
                     <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
@@ -1734,7 +1734,7 @@
 
                     <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA DESKTOP Y MÓVILES -->
                     <div class="mobile-scroll-hint" style="display: flex !important;">
-                        <i class="fas fa-arrows-left-right"></i> <span>Desliza horizontalmente para navegar el diagrama BPMN 2.0 en tamaño completo</span>
+                        <i class="fas fa-arrows-left-right"></i> <span data-translate="cs_bpmn_scroll_hint">Desliza horizontalmente para navegar el diagrama BPMN 2.0 en tamaño completo</span>
                     </div>
 
                     <!-- VECTOR SVG BPMN 2.0 DIAGRAM (FULL SIZE 1380PX WITH HORIZONTAL SCROLL) - TO-BE -->
@@ -1874,7 +1874,7 @@
                 <div class="artifact-header card-toggle-trigger">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                         <h3 class="artifact-title" data-translate="cs_bpmn_gov_title"><i class="fas fa-shield-alt"></i> Matriz de Gobernanza, Roles RBAC & Reglas de Negocio BPMN</h3>
-                        <span class="meta-tag"><i class="fas fa-user-shield"></i> Control de Cambios</span>
+                        <span class="meta-tag"><i class="fas fa-user-shield"></i> <span data-translate="cs_bpmn_gov_change_ctrl">Control de Cambios</span></span>
                     </div>
                     <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
@@ -1883,17 +1883,17 @@
                         Definición formal de perfiles de acceso (Role-Based Access Control) y políticas de validación para operar el nuevo modelo de procesos sin comprometer la seguridad bancaria:
                     </p>
 
-                    <h4 style="color: #00b4d8; font-size: 0.98rem; margin-bottom: 0.75rem;"><i class="fas fa-users-cog"></i> 1. Matriz de Permisos RBAC en Puck Admin & Strapi 5</h4>
+                    <h4 style="color: #00b4d8; font-size: 0.98rem; margin-bottom: 0.75rem;"><i class="fas fa-users-cog"></i> <span data-translate="cs_bpmn_gov_rbac_title">1. Matriz de Permisos RBAC en Puck Admin & Strapi 5</span></h4>
                     <ul style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.5rem; padding-left: 1.2rem;">
-                        <li><strong>Editor Comercial (Marketing / Producto):</strong> Permiso de creación y modificación visual de textos, imágenes y banners únicamente sobre los componentes precargados en las 5 páginas del MVP. Sin acceso a modificar código duro ni infraestructura.</li>
-                        <li><strong>Product Owner / QA Certifier:</strong> Permiso exclusivo de aprobación final del Gate de Staging Sandbox y ejecución del pase a producción en 1-Click.</li>
-                        <li><strong>Lead Developer / TI:</strong> Administración de componentes React base en Puck, definición de esquemas de datos en Strapi 5 y mantenimiento del pipeline CI/CD.</li>
+                        <li data-translate="cs_bpmn_gov_rbac_r1"><strong>Editor Comercial (Marketing / Producto):</strong> Permiso de creación y modificación visual de textos, imágenes y banners únicamente sobre los componentes precargados en las 5 páginas del MVP. Sin acceso a modificar código duro ni infraestructura.</li>
+                        <li data-translate="cs_bpmn_gov_rbac_r2"><strong>Product Owner / QA Certifier:</strong> Permiso exclusivo de aprobación final del Gate de Staging Sandbox y ejecución del pase a producción en 1-Click.</li>
+                        <li data-translate="cs_bpmn_gov_rbac_r3"><strong>Lead Developer / TI:</strong> Administración de componentes React base en Puck, definición de esquemas de datos en Strapi 5 y mantenimiento del pipeline CI/CD.</li>
                     </ul>
 
-                    <h4 style="color: #00e676; font-size: 0.98rem; margin-bottom: 0.75rem;"><i class="fas fa-gavel"></i> 2. Reglas de Negocio del Proceso BPMN 2.0</h4>
+                    <h4 style="color: #00e676; font-size: 0.98rem; margin-bottom: 0.75rem;"><i class="fas fa-gavel"></i> <span data-translate="cs_bpmn_gov_rules_title">2. Reglas de Negocio del Proceso BPMN 2.0</span></h4>
                     <ul style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.6; margin: 0; padding-left: 1.2rem;">
-                        <li><strong>Regla 1 (Quality Gate Obligatorio):</strong> Ninguna campaña o modificación puede pasar a producción sin previa vista previa y aprobación explícita en el ambiente Sandbox Staging.</li>
-                        <li><strong>Regla 2 (Auto-Tagueo de Analítica):</strong> Toda nueva landing o botón publicado vía Puck CMS aplica automáticamente las etiquetas DataLayer en GTM para seguimiento de conversiones en GA4 y mapas de calor en Clarity sin requerir tagueo manual.</li>
+                        <li data-translate="cs_bpmn_gov_rule1"><strong>Rule 1 (Mandatory Quality Gate):</strong> No campaign or modification can be pushed to production without a prior preview and explicit approval in the Sandbox Staging environment.</li>
+                        <li data-translate="cs_bpmn_gov_rule2"><strong>Rule 2 (Auto-Analytics Tagging):</strong> Every new landing page or button published via Puck CMS automatically applies DataLayer tags in GTM for conversion tracking in GA4 and heatmaps in Clarity without manual tagging.</li>
                     </ul>
                 </div>
             </div>
