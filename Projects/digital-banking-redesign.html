@@ -1574,7 +1574,7 @@
 
                     <!-- VECTOR SVG BPMN 2.0 DIAGRAM (100% CONNECTED & FORMAL) - AS-IS -->
                     <div class="bpmn-pool-wrapper">
-                        <svg viewBox="0 0 1060 440" width="100%" height="auto" style="min-width: 950px; background: #0f172a; border-radius: 12px; border: 2px solid rgba(239, 68, 68, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.5); font-family: system-ui, -apple-system, sans-serif;">
+                        <svg viewBox="0 0 1180 440" width="100%" height="auto" style="min-width: 1000px; background: #0f172a; border-radius: 12px; border: 2px solid rgba(239, 68, 68, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.5); font-family: system-ui, -apple-system, sans-serif;">
                             <defs>
                                 <marker id="arrow-asis" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                                     <path d="M 0 0 L 10 5 L 0 10 z" fill="#00b4d8"/>
@@ -1588,13 +1588,13 @@
                             </defs>
 
                             <!-- POOL CONTAINER & HEADER -->
-                            <rect x="5" y="5" width="1050" height="430" rx="10" fill="#0b1329" stroke="rgba(239,68,68,0.3)" stroke-width="2"/>
+                            <rect x="5" y="5" width="1170" height="430" rx="10" fill="#0b1329" stroke="rgba(239,68,68,0.3)" stroke-width="2"/>
                             <rect x="5" y="5" width="40" height="430" rx="10 0 0 10" fill="#1e293b" stroke="rgba(239,68,68,0.3)" stroke-width="2"/>
                             <text x="-215" y="29" transform="rotate(-90)" fill="#ffffff" font-weight="800" font-size="11.5" letter-spacing="1.2">POOL 1: PROCESO TRADICIONAL BANCARIO (AS-IS)</text>
 
                             <!-- SWIMLANE DIVIDERS -->
-                            <line x1="45" y1="145" x2="1055" y2="145" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
-                            <line x1="45" y1="285" x2="1055" y2="285" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                            <line x1="45" y1="145" x2="1175" y2="145" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                            <line x1="45" y1="285" x2="1175" y2="285" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
 
                             <!-- SWIMLANE 1 HEADER (COMERCIAL) -->
                             <rect x="45" y="5" width="135" height="140" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
@@ -1681,13 +1681,28 @@
                             <text x="950" y="384" text-anchor="middle" fill="#00b4d8" font-weight="700" font-size="9">¿Pasa QA?</text>
 
                             <!-- SUCCESS PATH: SÍ / APROBADO -->
-                            <path d="M 968 352 L 982 352" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe)"/>
-                            <text x="975" y="345" text-anchor="middle" fill="#00e676" font-weight="700" font-size="8.5">SÍ</text>
+                            <path d="M 968 352 L 985 352" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe)"/>
+                            <text x="976" y="345" text-anchor="middle" fill="#00e676" font-weight="700" font-size="8.5">SÍ</text>
+
+                            <!-- TIMER EVENT VENTANA NOCTURNA -->
+                            <circle cx="1002" cy="352" r="16" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="2"/>
+                            <circle cx="1002" cy="352" r="12" fill="none" stroke="#f59e0b" stroke-width="1"/>
+                            <text x="1002" y="356" text-anchor="middle" fill="#f59e0b" font-size="10">🌙</text>
+                            <text x="1002" y="384" text-anchor="middle" fill="#f59e0b" font-weight="700" font-size="8.5">Ventana Nocturna</text>
+
+                            <path d="M 1018 352 L 1038 352" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
+
+                            <!-- TASK 7 DEPLOY MANUAL -->
+                            <rect x="1038" y="325" width="105" height="54" rx="8" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
+                            <text x="1046" y="342" fill="#ffffff" font-weight="700" font-size="10">⚙️ Deploy Manual</text>
+                            <text x="1046" y="360" fill="#cbd5e1" font-size="8.5">Script Build</text>
+
+                            <path d="M 1143 352 L 1155 352" stroke="#00b4d8" stroke-width="2" marker-end="url(#arrow-asis)"/>
 
                             <!-- END EVENT -->
-                            <circle cx="1000" cy="352" r="16" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="4"/>
-                            <text x="1000" y="357" text-anchor="middle" fill="#ef4444" font-size="11">🏁</text>
-                            <text x="1000" y="384" text-anchor="middle" fill="#ef4444" font-weight="800" font-size="9">21 Días</text>
+                            <circle cx="1170" cy="352" r="14" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="3.5"/>
+                            <text x="1170" y="356" text-anchor="middle" fill="#ef4444" font-size="10">🏁</text>
+                            <text x="1170" y="384" text-anchor="middle" fill="#ef4444" font-weight="800" font-size="8.5">21 Días</text>
 
                             <!-- EXACT CONNECTED LOOPBACK PATH: NO / RETRABAJO (DEV TI TASK 4) -->
                             <path d="M 950 370 L 950 405 L 710 405 L 710 242" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrow-danger)"/>
@@ -1699,7 +1714,7 @@
                     <div class="bpmn-alert-banner danger">
                         <i class="fas fa-exclamation-circle" style="font-size: 1.4rem;"></i>
                         <div>
-                            <strong>Punto de Dolor Identificado:</strong> El flujo AS-IS genera cuellos de botella de hasta 3 semanas por la dependencia absoluta de TI en tareas tipográficas y de contenido simple, sumado a los bucles de retorno por errores en QA manuales.
+                            <strong>Punto de Dolor Identificado:</strong> El flujo AS-IS genera cuellos de botella de hasta 3 semanas por la dependencia absoluta de TI en tareas tipográficas y de contenido simple, sumado a los bucles de retorno por errores en QA manuales y la espera de la ventana nocturna de mantención.
                         </div>
                     </div>
                 </div>
@@ -1726,7 +1741,7 @@
 
                     <!-- VECTOR SVG BPMN 2.0 DIAGRAM (100% CONNECTED & FORMAL) - TO-BE -->
                     <div class="bpmn-pool-wrapper">
-                        <svg viewBox="0 0 1060 440" width="100%" height="auto" style="min-width: 950px; background: #0f172a; border-radius: 12px; border: 2px solid rgba(0, 230, 118, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.5); font-family: system-ui, -apple-system, sans-serif;">
+                        <svg viewBox="0 0 1180 440" width="100%" height="auto" style="min-width: 1000px; background: #0f172a; border-radius: 12px; border: 2px solid rgba(0, 230, 118, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.5); font-family: system-ui, -apple-system, sans-serif;">
                             <defs>
                                 <marker id="arrow-tobe-main" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                                     <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e676"/>
@@ -1740,13 +1755,13 @@
                             </defs>
 
                             <!-- POOL CONTAINER & HEADER -->
-                            <rect x="5" y="5" width="1050" height="430" rx="10" fill="#0b1329" stroke="rgba(0,230,118,0.3)" stroke-width="2"/>
+                            <rect x="5" y="5" width="1170" height="430" rx="10" fill="#0b1329" stroke="rgba(0,230,118,0.3)" stroke-width="2"/>
                             <rect x="5" y="5" width="40" height="430" rx="10 0 0 10" fill="#1e293b" stroke="rgba(0,230,118,0.3)" stroke-width="2"/>
                             <text x="-215" y="29" transform="rotate(-90)" fill="#00e676" font-weight="800" font-size="11.5" letter-spacing="1.2">POOL 2: PROCESO AUTÓNOMO NO-CODE CON PUCK (TO-BE)</text>
 
                             <!-- SWIMLANE DIVIDERS -->
-                            <line x1="45" y1="145" x2="1055" y2="145" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
-                            <line x1="45" y1="285" x2="1055" y2="285" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                            <line x1="45" y1="145" x2="1175" y2="145" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                            <line x1="45" y1="285" x2="1175" y2="285" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
 
                             <!-- SWIMLANE 1 HEADER (EDITOR COMERCIAL) -->
                             <rect x="45" y="5" width="135" height="140" fill="#111c2e" stroke="rgba(0,230,118,0.2)"/>
@@ -1825,19 +1840,20 @@
                             <text x="895" y="384" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9">¿Aprobado?</text>
 
                             <!-- SUCCESS PATH: SÍ / CERTIFICADO -->
-                            <path d="M 913 352 L 925 352" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+                            <path d="M 913 352 L 935 352" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+                            <text x="924" y="345" text-anchor="middle" fill="#00e676" font-weight="700" font-size="8.5">SÍ</text>
 
                             <!-- TASK 7 SYNC CDN 1-CLICK -->
-                            <rect x="925" y="325" width="80" height="54" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
-                            <text x="932" y="342" fill="#00e676" font-weight="700" font-size="9.5">☁️ Sync CDN</text>
-                            <text x="932" y="360" fill="#cbd5e1" font-size="8.5">Prod (30 seg)</text>
+                            <rect x="935" y="325" width="120" height="54" rx="8" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
+                            <text x="943" y="342" fill="#00e676" font-weight="700" font-size="9.5">☁️ Sync CDN 1-Click</text>
+                            <text x="943" y="360" fill="#cbd5e1" font-size="8.5">Despliegue (30 seg)</text>
 
-                            <path d="M 1005 352 L 1018 352" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
+                            <path d="M 1055 352 L 1070 352" stroke="#00e676" stroke-width="2" marker-end="url(#arrow-tobe-main)"/>
 
                             <!-- END EVENT -->
-                            <circle cx="1035" cy="352" r="16" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="4"/>
-                            <text x="1035" y="357" text-anchor="middle" fill="#00e676" font-size="11">✨</text>
-                            <text x="1035" y="384" text-anchor="middle" fill="#00e676" font-weight="800" font-size="9">15 Min</text>
+                            <circle cx="1088" cy="352" r="14" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="3.5"/>
+                            <text x="1088" y="356" text-anchor="middle" fill="#00e676" font-size="10">✨</text>
+                            <text x="1088" y="384" text-anchor="middle" fill="#00e676" font-weight="800" font-size="8.5">15 Min</text>
 
                             <!-- EXACT CONNECTED LOOPBACK PATH: NO / AJUSTE (TO EDITOR COMERCIAL TASK 2) -->
                             <path d="M 895 370 L 895 405 L 477 405 L 477 102" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrow-danger-tobe)"/>
