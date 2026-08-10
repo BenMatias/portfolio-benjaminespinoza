@@ -2001,3 +2001,48 @@ p.timeline-company a:hover {
     box-shadow: 0 4px 14px rgba(255, 193, 7, 0.4);
 }
 
+/* TOOLTIP DE CAMBIO DE IDIOMA FLOTANTE */
+.lang-toggle {
+    position: relative;
+}
+
+.lang-tooltip {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: linear-gradient(135deg, rgba(13, 27, 42, 0.96), rgba(0, 180, 216, 0.96));
+    color: #ffffff !important;
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(0, 230, 118, 0.6);
+    z-index: 99999;
+    pointer-events: none;
+    animation: tooltipFadeIn 0.35s ease-out;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.lang-tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    right: 14px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 180, 216, 0.96) transparent;
+}
+
+.lang-tooltip.fade-out {
+    opacity: 0;
+    transform: translateY(-6px);
+}
+
+@keyframes tooltipFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+

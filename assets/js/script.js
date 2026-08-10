@@ -22,8 +22,9 @@ const translations = {
     // --- Hero KPI & Filters ---
     kpiDashboards: "BI Dashboards & Reports",
     kpiReports: "Cross-Functional Impact",
-    kpiAutomation: "Data & Analytics Stack",
+    kpiAutomation: "Modeling & Analytics",
     filterAll: "All Projects",
+    filterCaseStudy: "Case Studies",
     filterPowerBI: "Power BI",
     filterLooker: "Looker Studio",
 
@@ -35,12 +36,12 @@ const translations = {
     btnDownloadCV: "Download CV",
 
     // --- Index Page Content ---
-    heroTitle: "Business & Data Analyst | Product Owner",
-    heroSubtitle: "Transforming complex data into strategic decisions and scalable products through SQL analytics, Power BI / Looker Studio, Agile triads (BPMN 2.0), and Generative AI.",
+    heroTitle: "Senior Business & Data Analyst | Digital Product Specialist",
+    heroSubtitle: "Transforming complex data into strategic decisions and scalable digital products through SQL analytics, Power BI / Looker Studio, Agile triads (BPMN 2.0), and Generative AI.",
     btnProjects: "View Projects",
     btnResume: "View Resume",
     aboutTitle: "About Me",
-    aboutContent: `<p>I'm <strong>Benjamín Espinoza</strong>, an Industrial Civil Engineer specializing in <strong>Data Analytics and Business Intelligence</strong>, serving in a dual role as <strong>Business Analyst (BA) and Product Owner (PO)</strong> at Banco Internacional. My core strength lies in transforming complex data into strategic decisions, designing KPI frameworks, and bridging business vision with technical execution.</p><p>Throughout my career across banking, retail, and industrial sectors, I have built over 50 executive and operational dashboards. At Banco Internacional, I execute advanced SQL queries in <strong>PostgreSQL</strong>, build reports in <strong>Looker Studio</strong> and Power BI, define MVP Canvases and User Story Maps in Jira/Confluence, lead the public website redesign (<strong>Puck CMS</strong>, GA4, GTM, Clarity), and perform functional QA testing.</p><p>Additionally, I am an early adopter of Generative AI (<strong>Gemini, NotebookLM, and Rovo AI</strong>) to automate data workflows, streamline documentation, and accelerate value delivery. A father, lifelong learner, passionate about music and continuous improvement.</p>`,
+    aboutContent: `<p>I am <strong>Benjamín Espinoza</strong>, an Industrial Engineer specializing in <strong>Data Analytics, Business Intelligence, and Digital Product Management</strong> at Banco Internacional. My career is focused on transitioning towards Product Management and <strong>Product Owner</strong> roles, bridging business strategy with tech development and product analytics.</p><p>As a Senior Business Analyst in Agile Triads (Product Owner, Tech Lead, BA), I lead digital product discovery and functional specifications: defining MVP Canvases and User Story Maps in Jira/Confluence, executing complex SQL queries in <strong>PostgreSQL</strong>, building executive dashboards in <strong>Looker Studio</strong> and Power BI, and managing the public web portal (<strong>Puck CMS</strong>, GA4, GTM, Clarity).</p><p>Additionally, I pioneer the daily integration of Generative AI tools (<strong>Gemini, NotebookLM, and Rovo AI</strong>) to streamline analytics, automate documentation, and accelerate value delivery across the product lifecycle.</p>`,
     impactTitle: "How I’ve Made an Impact",
     impacts: [{
       icon: "fa-users-gear",
@@ -756,6 +757,7 @@ const translations = {
     kpiReports: "Impacto Transversal",
     kpiAutomation: "Modelado & Analítica",
     filterAll: "Todos los Proyectos",
+    filterCaseStudy: "Casos de Estudio",
     filterPowerBI: "Power BI",
     filterLooker: "Looker Studio",
 
@@ -767,12 +769,12 @@ const translations = {
     btnDownloadCV: "Descargar CV",
 
     // --- Index Page Content ---
-    heroTitle: "Business & Data Analyst | Product Owner",
-    heroSubtitle: "Transformo datos complejos en decisiones estratégicas y productos escalables mediante analítica SQL, Power BI / Looker Studio, triadas ágiles (BPMN 2.0) e IA Generativa.",
+    heroTitle: "Senior Business & Data Analyst | Digital Product Specialist",
+    heroSubtitle: "Transformo datos complejos en decisiones estratégicas y productos digitales escalables mediante analítica SQL, Power BI / Looker Studio, triadas ágiles (BPMN 2.0) e IA Generativa.",
     btnProjects: "Ver Proyectos",
     btnResume: "Ver CV",
     aboutTitle: "Sobre mí",
-    aboutContent: `<p>Soy <strong>Benjamín Espinoza</strong>, Ingeniero Civil Industrial especializado en <strong>Análisis de Datos e Inteligencia de Negocios</strong>, desempeñándome en el rol dual de <strong>Business Analyst (BA) y Product Owner (PO)</strong> en Banco Internacional. Mi fuerte radica en transformar datos complejos en decisiones estratégicas, diseñar la arquitectura de indicadores de rendimiento (KPIs) y conectar la visión del negocio con el desarrollo tecnológico.</p><p>A lo largo de mi carrera en el sector financiero, retail e industrial, he desarrollado más de 50 tableros de control ejecutivos y operativos. En Banco Internacional ejecuto consultas SQL avanzadas en <strong>PostgreSQL</strong>, construyo reportes en <strong>Looker Studio</strong> y Power BI, estructuro el MVP Canvas y User Story Maps en Jira/Confluence para triadas ágiles, lidero el rediseño del sitio web público (<strong>Puck CMS</strong>, GA4, GTM, Clarity) y realizo pruebas funcionales (QA).</p><p>Adicionalmente, soy pionero en la integración diaria de Inteligencia Artificial Generativa (<strong>Gemini, NotebookLM y Rovo AI</strong>) para optimizar la analítica, automatizar la documentación y acelerar la entrega de valor. Padre, aprendiz constante, apasionado de la música y la mejora continua.</p>`,
+    aboutContent: `<p>Soy <strong>Benjamín Espinoza</strong>, Ingeniero Civil Industrial especializado en <strong>Análisis de Datos, Inteligencia de Negocios y Gestión de Productos Digitales</strong> en Banco Internacional. Mi enfoque profesional se orienta hacia la dirección de productos (<strong>Product Ownership / Product Management</strong>), conectando la estrategia del negocio con el desarrollo tecnológico y la analítica avanzada.</p><p>Como Senior Business Analyst en triadas ágiles (Product Owner, Tech Lead, BA), lidero el descubrimiento y especificación funcional de proyectos digitales: estructuro MVP Canvas y User Story Maps en Jira/Confluence, ejecuto consultas SQL complejas en <strong>PostgreSQL</strong>, construyo reportes ejecutivos en <strong>Looker Studio</strong> y Power BI, y administro el portal web público (<strong>Puck CMS</strong>, GA4, GTM, Clarity).</p><p>Adicionalmente, soy pionero en la integración de Inteligencia Artificial Generativa (<strong>Gemini, NotebookLM y Rovo AI</strong>) para optimizar la analítica, automatizar la documentación y acelerar la entrega de valor en el ciclo de vida del producto.</p>`,
     impactTitle: "Cómo He Generado Impacto",
     impacts: [{
       icon: "fa-users-gear",
@@ -2142,9 +2144,12 @@ function setupProjectFilterTabs() {
       cards.forEach(card => {
         const isPowerBI = card.querySelector('img[alt*="Power BI"]');
         const isLooker = card.querySelector('img[alt*="Looker"]');
+        const isCaseStudy = card.querySelector('.badge-case-study');
 
         if (filterVal === 'all') {
           card.style.display = 'block';
+        } else if (filterVal === 'casestudy') {
+          card.style.display = isCaseStudy ? 'block' : 'none';
         } else if (filterVal === 'powerbi') {
           card.style.display = isPowerBI ? 'block' : 'none';
         } else if (filterVal === 'looker') {
@@ -2485,27 +2490,34 @@ const GeminiChatWidget = {
     const isEn = currentLang === 'en';
     const ctxName = isEn ? activeData.name.en : activeData.name.es;
 
-    if (q.includes('skill') || q.includes('habilidad') || q.includes('tool') || q.includes('tecnolog')) {
+    // Intent: Product Owner / Product Manager / Role Alignment
+    if (q.includes('product owner') || q.includes('po') || q.includes('product manager') || q.includes('product analyst') || q.includes('cargo') || q.includes('adapt') || q.includes('perfil') || q.includes('rol')) {
       return isEn
-        ? `💡 **Skills & Tech in ${ctxName}**:\n${activeData.context}\n\n*(Benjamín specializes in Power BI, Looker Studio, SQL, DAX, and Apps Script)*.`
-        : `💡 **Tecnologías y Enfoque en ${ctxName}**:\n${activeData.context}\n\n*(Benjamín se especializa en Power BI, Looker Studio, SQL, DAX y Apps Script)*.`;
+        ? `🎯 **Alignment with Product Owner / Product Manager Roles**:\nBenjamín Espinoza has extensive experience as a **Senior Business Analyst & Digital Product Analyst** in financial services (Banco Internacional), making him a strong fit for Product Owner / Product Management positions:\n\n• **Agile Triad Execution**: Collaborates directly with POs, Tech Leads, and developers to drive product discovery, refine backlogs, and plan Sprints.\n• **Product Discovery & Specifications**: Defines MVP Canvases, User Story Maps in Jira/Confluence, and writes BDD Acceptance Criteria (*Given-When-Then*).\n• **Product Analytics**: Leverages GA4, GTM, Microsoft Clarity, and PostgreSQL SQL queries to measure conversion funnels and prioritize high-value features.\n• **No-Code Web Management**: Administered public portal landings using Puck CMS, dropping Time-to-Market from weeks to 15 minutes.`
+        : `🎯 **Adaptación del Perfil a Cargos de Product Owner / Product Manager**:\nBenjamín Espinoza cuenta con una sólida trayectoria como **Senior Business Analyst y Analista de Productos Digitales** en el sector bancario (Banco Internacional), proyectando su perfil hacia la dirección de productos:\n\n• **Liderazgo en Triadas Ágiles**: Trabaja codo a codo con POs, Tech Leads y equipos de desarrollo en el descubrimiento de productos y priorización de backlog en Jira.\n• **Estrategia & Especificación**: Diseña MVP Canvas, User Story Maps y Criterios de Aceptación BDD (*Given-When-Then*).\n• **Analítica de Producto**: Mide funnels de conversión en tiempo real con GA4, GTM, Microsoft Clarity y consultas SQL en PostgreSQL para orientar el roadmap.\n• **Gestión de Landings (Puck CMS)**: Lideró la administración de portales web sin código, reduciendo el ciclo de publicación de semanas a 15 minutos.`;
     }
 
-    if (q.includes('api') || q.includes('data') || q.includes('dato') || q.includes('source') || q.includes('fuente')) {
+    if (q.includes('skill') || q.includes('habilidad') || q.includes('tool') || q.includes('tecnolog') || q.includes('stack')) {
       return isEn
-        ? `📊 **Data Sources & Pipeline for ${ctxName}**:\n${activeData.context}`
-        : `📊 **Pipeline de Datos y Fuentes para ${ctxName}**:\n${activeData.context}`;
+        ? `💡 **Skills & Technical Stack in ${ctxName}**:\n${activeData.context}\n\n*(Core Stack: Power BI, Looker Studio, PostgreSQL SQL, DAX, Apps Script, GA4, GTM, BDD, Puck CMS, and Generative AI)*.`
+        : `💡 **Habilidades Técnicas y Herramientas en ${ctxName}**:\n${activeData.context}\n\n*(Stack Principal: Power BI, Looker Studio, PostgreSQL SQL, DAX, Apps Script, GA4, GTM, BDD, Puck CMS e IA Generativa)*.`;
     }
 
-    if (q.includes('contact') || q.includes('contacto') || q.includes('email') || q.includes('linkedin')) {
+    if (q.includes('api') || q.includes('data') || q.includes('dato') || q.includes('source') || q.includes('fuente') || q.includes('pipeline')) {
+      return isEn
+        ? `📊 **Data Pipeline & Architecture for ${ctxName}**:\n${activeData.context}`
+        : `📊 **Pipeline de Datos y Arquitectura para ${ctxName}**:\n${activeData.context}`;
+    }
+
+    if (q.includes('contact') || q.includes('contacto') || q.includes('email') || q.includes('linkedin') || q.includes('mail')) {
       return isEn
         ? `📩 You can contact **Benjamín Espinoza** via email at \`bmatiasespinoza@gmail.com\` or on [LinkedIn](https://www.linkedin.com/in/benmatias).`
-        : `📩 Puedes contactar a **Benjamín Espinoza** por correo a \`bmatiasespinoza@gmail.com\` o en [LinkedIn](https://www.linkedin.com/in/benmatias).`;
+        : `📩 Puedes contactar a **Benjamín Espinoza** por correo a \`bmatiasespinoza@gmail.com\` o en su perfil de [LinkedIn](https://www.linkedin.com/in/benmatias).`;
     }
 
     return isEn
-      ? `🤖 **${ctxName} Summary**:\n${activeData.context}\n\n*(Note: Configure a Gemini API Key using the 🔑 icon above for unrestricted open AI conversations).*`
-      : `🤖 **Resumen sobre ${ctxName}**:\n${activeData.context}\n\n*(Nota: Puedes ingresar tu API Key de Gemini con el icono 🔑 para realizar cualquier pregunta abierta).*`;
+      ? `🤖 **Overview of ${ctxName}**:\n${activeData.context}`
+      : `🤖 **Resumen sobre ${ctxName}**:\n${activeData.context}`;
   }
 };
 
@@ -2544,7 +2556,30 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- 4. INICIALIZACIÓN DEL WIDGET DE CHAT GEMINI & DASHBOARD NATIVO ---
   GeminiChatWidget.init();
   setupNativeDashboardFilters();
+  showLanguageSwitchHint();
 });
+
+function showLanguageSwitchHint() {
+  const toggleBtn = document.querySelector('.lang-toggle');
+  if (!toggleBtn) return;
+
+  const existing = document.querySelector('.lang-tooltip');
+  if (existing) existing.remove();
+
+  const hintText = currentLang === 'es'
+    ? 'You can change the language here! 🌐'
+    : '¡Puedes cambiar el idioma aquí! 🌐';
+
+  const tooltip = document.createElement('div');
+  tooltip.className = 'lang-tooltip';
+  tooltip.innerHTML = hintText;
+  toggleBtn.appendChild(tooltip);
+
+  setTimeout(() => {
+    tooltip.classList.add('fade-out');
+    setTimeout(() => tooltip.remove(), 450);
+  }, 4000);
+}
 
 function setupNativeDashboardFilters() {
   const periodFilter = document.getElementById('dash-period-filter');
