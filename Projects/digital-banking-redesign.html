@@ -955,6 +955,38 @@
         .sql-comment { color: #64748b !important; font-style: italic; }
         .sql-number { color: #a78bfa !important; }
 
+        /* AI FEATURE CARDS FOR TAB 5 */
+        .ai-feature-card {
+            background: #090d16 !important;
+            border: 1.5px solid rgba(0, 180, 216, 0.25) !important;
+            border-radius: 12px !important;
+            padding: 1.35rem !important;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            gap: 0.75rem !important;
+        }
+        .ai-feature-card-header {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: flex-start !important;
+            gap: 0.75rem !important;
+            margin-bottom: 0.5rem !important;
+        }
+        .ai-feature-card-title {
+            font-size: 0.98rem !important;
+            font-weight: 700 !important;
+            margin: 0 !important;
+            line-height: 1.35 !important;
+        }
+        .ai-feature-card-desc {
+            color: #cbd5e1 !important;
+            font-size: 0.86rem !important;
+            line-height: 1.6 !important;
+            margin: 0 !important;
+        }
+
         /* NATIVE PRODUCT ANALYTICS DASHBOARD (NEXUS DIGITAL BANK PALETTE) */
         .native-dashboard-wrapper {
             background: linear-gradient(145deg, #002726, #032221);
@@ -2685,7 +2717,7 @@
                         <div class="dash-funnel-list">
                             <div class="dash-funnel-item">
                                 <div class="dash-funnel-labels">
-                                    <span class="dash-funnel-name">1. Page View (page_view_public)</span>
+                                    <span class="dash-funnel-name" data-translate="dash_funnel_s1">1. Page View (page_view_public)</span>
                                     <span class="dash-funnel-count" id="funnel-c1">12,400 sesiones</span>
                                 </div>
                                 <div class="dash-funnel-bar-bg">
@@ -2697,7 +2729,7 @@
 
                             <div class="dash-funnel-item">
                                 <div class="dash-funnel-labels">
-                                    <span class="dash-funnel-name">2. Clic CTA Intención (click_apply_now)</span>
+                                    <span class="dash-funnel-name" data-translate="dash_funnel_s2">2. Clic CTA Intención (click_apply_now)</span>
                                     <span class="dash-funnel-count" id="funnel-c2">4,712 intenciones</span>
                                 </div>
                                 <div class="dash-funnel-bar-bg">
@@ -2709,7 +2741,7 @@
 
                             <div class="dash-funnel-item">
                                 <div class="dash-funnel-labels">
-                                    <span class="dash-funnel-name">3. Inicio de Formulario (start_form_fill)</span>
+                                    <span class="dash-funnel-name" data-translate="dash_funnel_s3">3. Inicio de Formulario (start_form_fill)</span>
                                     <span class="dash-funnel-count" id="funnel-c3">3,261 formularios</span>
                                 </div>
                                 <div class="dash-funnel-bar-bg">
@@ -2721,7 +2753,7 @@
 
                             <div class="dash-funnel-item">
                                 <div class="dash-funnel-labels">
-                                    <span class="dash-funnel-name">4. Solicitud Enviada (submit_application_success)</span>
+                                    <span class="dash-funnel-name" data-translate="dash_funnel_s4">4. Solicitud Enviada (submit_application_success)</span>
                                     <span class="dash-funnel-count" id="funnel-c4">2,043 enviadas</span>
                                 </div>
                                 <div class="dash-funnel-bar-bg">
@@ -2833,41 +2865,49 @@
             </div>
 
             <!-- 4 CASOS DE USO DE IA (GRID 2x2) -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
 
-                <div class="mvp-box" style="border-left-color: #a855f7; background: #0b1329; margin: 0;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#a855f7; font-size:1rem; margin:0;" data-translate="cs_ai_c1_t"><i class="fas fa-feather-alt"></i> Redacción BDD en Jira (Gemini 1.5 Pro)</h4>
-                        <span class="kpi-badge-success" style="font-size:0.72rem;">-77% Tiempo</span>
+                <div class="ai-feature-card" style="border-left: 4px solid #a855f7 !important;">
+                    <div class="ai-feature-card-header">
+                        <h4 class="ai-feature-card-title" style="color:#a855f7 !important;" data-translate="cs_ai_c1_t"><i class="fas fa-feather-alt"></i> Redacción BDD en Jira (Gemini 1.5 Pro)</h4>
+                        <span class="kpi-badge-success" style="font-size:0.72rem; white-space:nowrap;" data-translate="cs_ai_c1_badge">-77% Tiempo</span>
                     </div>
-                    <p style="color:#cbd5e1; font-size:0.86rem; line-height:1.6;" data-translate="cs_ai_c1_d">
+                    <p class="ai-feature-card-desc" data-translate="cs_ai_c1_d">
                         Transformación de requerimientos de negocio informales en Historias de Usuario estructuradas con Criterios de Aceptación bajo el formato BDD (<strong>Given-When-Then</strong>). Reduce el tiempo de redacción de 45 a 10 minutos por historia.
                     </p>
                 </div>
 
-                <div class="mvp-box" style="border-left-color: #38bdf8; background: #0b1329; margin: 0;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#38bdf8; font-size:1rem; margin:0;" data-translate="cs_ai_c2_t"><i class="fas fa-sitemap"></i> Diagramación Asistida (Rovo AI)</h4>
-                        <span class="kpi-badge-success" style="font-size:0.72rem;">-91% Tiempo</span>
+                <div class="ai-feature-card" style="border-left: 4px solid #38bdf8 !important;">
+                    <div class="ai-feature-card-header">
+                        <h4 class="ai-feature-card-title" style="color:#38bdf8 !important;" data-translate="cs_ai_c2_t"><i class="fas fa-sitemap"></i> Diagramación Asistida (Rovo AI)</h4>
+                        <span class="kpi-badge-success" style="font-size:0.72rem; white-space:nowrap;" data-translate="cs_ai_c2_badge">-91% Tiempo</span>
                     </div>
-                    <p style="color:#cbd5e1; font-size:0.86rem; line-height:1.6;" data-translate="cs_ai_c2_d">
+                    <p class="ai-feature-card-desc" data-translate="cs_ai_c2_d">
                         Conversión automática de minutas de reunión y requerimientos en Confluence a código <strong>Mermaid / PlantUML</strong> para renderizar diagramas de secuencia y flujos BPMN 2.0 en tiempo real.
                     </p>
                 </div>
 
-                <div class="mvp-box" style="border-left-color: #34d399; background: #0b1329; margin: 0;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#34d399; font-size:1rem; margin:0;" data-translate="cs_ai_c3_t"><i class="fas fa-brain"></i> Auditoría Legal & Compliance (NotebookLM)</h4>
-                        <span class="kpi-badge-success" style="font-size:0.72rem;">-98% Tiempo</span>
+                <div class="ai-feature-card" style="border-left: 4px solid #34d399 !important;">
+                    <div class="ai-feature-card-header">
+                        <h4 class="ai-feature-card-title" style="color:#34d399 !important;" data-translate="cs_ai_c3_t"><i class="fas fa-brain"></i> Auditoría Legal & Compliance (NotebookLM)</h4>
+                        <span class="kpi-badge-success" style="font-size:0.72rem; white-space:nowrap;" data-translate="cs_ai_c3_badge">-98% Tiempo</span>
                     </div>
-                    <p style="color:#cbd5e1; font-size:0.86rem; line-height:1.6;" data-translate="cs_ai_c3_d">
+                    <p class="ai-feature-card-desc" data-translate="cs_ai_c3_d">
                         Ingesta acelerada de normativas financieras de la CMF y políticas internas del banco. Permite auditar en minutos si los copys y descargos legales en las landing pages cumplen con la regulación.
                     </p>
                 </div>
 
-                <div class="mvp-box" style="border-left-color: #f59e0b; background: #0b1329; margin: 0;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
-                        <h4 style="color:#f59e0b; font-size:1rem; margin:0;" data-translate="cs_ai_c4_t"><i class="fas fa-code"></i> Prototipado No-Code (Firebase AI)</h4>
+                <div class="ai-feature-card" style="border-left: 4px solid #f59e0b !important;">
+                    <div class="ai-feature-card-header">
+                        <h4 class="ai-feature-card-title" style="color:#f59e0b !important;" data-translate="cs_ai_c4_t"><i class="fas fa-code"></i> Prototipado No-Code (Firebase AI)</h4>
+                        <span class="kpi-badge-success" style="font-size:0.72rem; white-space:nowrap;" data-translate="cs_ai_c4_badge">-95% Tiempo</span>
+                    </div>
+                    <p class="ai-feature-card-desc" data-translate="cs_ai_c4_d">
+                        Asistencia en la maquetación de componentes visuales en HTML5/CSS3/React para integrar al catálogo de Puck CMS, permitiendo validar prototipos funcionales en la Sandbox de Staging.
+                    </p>
+                </div>
+
+            </div>i> Prototipado No-Code (Firebase AI)</h4>
                         <span class="kpi-badge-success" style="font-size:0.72rem;">-95% Tiempo</span>
                     </div>
                     <p style="color:#cbd5e1; font-size:0.86rem; line-height:1.6;" data-translate="cs_ai_c4_d">
