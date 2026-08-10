@@ -466,6 +466,13 @@ const translations = {
     dash_branch: "Branch",
     dash_web: "Web",
     dash_device_title: "Device (GA4): Mobile vs Desktop",
+    cs_dash_expl_title: "<i class=\"fas fa-info-circle\"></i> Dashboard Interpretation & Case Study Coherence",
+    cs_dash_expl1_t: "No-Code Auto-Tagging in GTM",
+    cs_dash_expl1_d: "Every landing created in Puck CMS (Tab 2) automatically fires DataLayer events (page_view_public, click_apply_now, submit_application_success) to GA4 without developer intervention.",
+    cs_dash_expl2_t: "UX Experience Optimization in Clarity",
+    cs_dash_expl2_d: "Heatmaps confirm that 82% of interactions occur in the 1st fold. Reduction of rage clicks to 0.0% certifies the elimination of form friction on mobile.",
+    cs_dash_expl3_t: "SQL Cross-Validation (PostgreSQL)",
+    cs_dash_expl3_d: "GA4 conversion events are cross-referenced against SQL queries from the core banking database (Tab 3), auditing actual web vs branch adoption.",
 
     // --- Projects Page Content ---
     projects_page_title: "Projects",
@@ -1039,6 +1046,13 @@ const translations = {
     dash_branch: "Sucursal",
     dash_web: "Web",
     dash_device_title: "Dispositivo (GA4): Mobile vs Desktop",
+    cs_dash_expl_title: "<i class=\"fas fa-info-circle\"></i> Interpretación del Tablero & Coherencia del Caso de Estudio",
+    cs_dash_expl1_t: "Auto-Tagueo No-Code en GTM",
+    cs_dash_expl1_d: "Toda landing creada en Puck CMS (Tab 2) emite automáticamente los eventos DataLayer (page_view_public, click_apply_now, submit_application_success) a GA4 sin requerir intervención de TI.",
+    cs_dash_expl2_t: "Optimización de Experiencia UX en Clarity",
+    cs_dash_expl2_d: "Los mapas de calor confirman que el 82% de la interacción ocurre en el 1er fold. La reducción de rage clicks a 0.0% certifica la eliminación de bloqueos en formularios responsive.",
+    cs_dash_expl3_t: "Validación Cruzada con SQL (PostgreSQL)",
+    cs_dash_expl3_d: "Los eventos de conversión en GA4 se contrastan con las consultas SQL del sistema core bancario (Tab 3), auditando la adopción real del canal web frente a sucursales.",
 
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
