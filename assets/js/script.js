@@ -61,11 +61,12 @@ const translations = {
     }],
     projectsTitle: "Featured Projects",
     projects: [
-        { title: "Exchange Rate Evolution", description: "A Power BI dashboard that tracks major currencies against the CLP, updated automatically via the Central Bank API.", imageUrl: "assets/img/exchange-rate-cover.webp", link: "projects/exchange-rate-evolution.html", buttonText: "View Project", tool: "powerbi" },
-        { title: "Interactive Pokédex", description: "A National Pokédex of 1,025 Pokémon built by connecting to the PokéAPI with Apps Script.", imageUrl: "assets/img/pokedex-cover.webp", link: "projects/pokedex-dashboard.html", buttonText: "View Project", tool: "looker" },
-        { title: "US Unemployment Analysis", description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.", imageUrl: "assets/img/us-unemployment-cover.webp", link: "projects/US-Unemployment.html", buttonText: "View Project", tool: "looker" },
-        { title: "Global Financial Inclusion", description: "Visualize global trends in account ownership and borrowing behavior by region, income group, and demographics.", imageUrl: "assets/img/global-financial-inclusion-cover.webp", link: "projects/global-financial-inclusion.html", buttonText: "View Project", tool: "looker" },
-        { title: "NEO Tracker", description: "An automated dashboard connecting to the NASA API to track Near-Earth Objects from the last 7 days.", imageUrl: "assets/img/neo-tracker-cover.webp", link: "projects/neo-tracker.html", buttonText: "View Project", tool: "powerbi" }
+        { id: "project-digital-banking", title: "Digital Product Redesign & Analytics", description: "End-to-end case study of a public banking portal redesign, featuring MVP Canvas, BPMN 2.0, PostgreSQL queries, and GA4 telemetry.", imageUrl: "assets/img/digital-banking-cover.webp", link: "projects/digital-banking-redesign.html", buttonText: "View Case Study", tool: "all", type: "case-study" },
+        { id: "project-exchange-rate", title: "Exchange Rate Evolution", description: "A Power BI dashboard that tracks major currencies against the CLP, updated automatically via the Central Bank API.", imageUrl: "assets/img/exchange-rate-cover.webp", link: "projects/exchange-rate-evolution.html", buttonText: "View Project", tool: "powerbi", type: "dashboard" },
+        { id: "project-pokedex", title: "Interactive Pokédex", description: "A National Pokédex of 1,025 Pokémon built by connecting to the PokéAPI with Apps Script.", imageUrl: "assets/img/pokedex-cover.webp", link: "projects/pokedex-dashboard.html", buttonText: "View Project", tool: "looker", type: "dashboard" },
+        { id: "project-unemployment", title: "US Unemployment Analysis", description: "Explores unemployment trends across U.S. states and metro areas using interactive dashboards.", imageUrl: "assets/img/us-unemployment-cover.webp", link: "projects/US-Unemployment.html", buttonText: "View Project", tool: "looker", type: "dashboard" },
+        { id: "project-financial-inclusion", title: "Global Financial Inclusion", description: "Visualize global trends in account ownership and borrowing behavior by region, income group, and demographics.", imageUrl: "assets/img/global-financial-inclusion-cover.webp", link: "projects/global-financial-inclusion.html", buttonText: "View Project", tool: "looker", type: "dashboard" },
+        { id: "project-neo-tracker", title: "NEO Tracker", description: "An automated dashboard connecting to the NASA API to track Near-Earth Objects from the last 7 days.", imageUrl: "assets/img/neo-tracker-cover.webp", link: "projects/neo-tracker.html", buttonText: "View Project", tool: "powerbi", type: "dashboard" }
     ],
     viewAllBtn: "View All Projects",
 
@@ -517,12 +518,12 @@ const translations = {
     // --- Projects Page Content ---
     projects_page_title: "Projects",
     projects_list: [
-        { id: "project-digital-banking", title: "Digital Product Redesign & Analytics", description: "End-to-end case study of a public banking portal redesign, featuring MVP Canvas, BPMN 2.0, PostgreSQL queries, and GA4 telemetry.", link: "projects/digital-banking-redesign.html", imageUrl: "assets/img/digital-banking-cover.webp", buttonText: "View Case Study", tool: "all" },
-        { id: "project-exchange-rate", title: "Exchange Rate Evolution", description: "Real-time tracking of USD, EUR, and GBP against the Chilean Peso.", link: "projects/exchange-rate-evolution.html", imageUrl: "assets/img/exchange-rate-cover.webp", buttonText: "View Project", tool: "powerbi" },
-        { id: "project-pokedex", title: "Interactive Pokédex", description: "An interactive dashboard with data from over 1,000 Pokémon.", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.webp", buttonText: "View Project", tool: "looker" },
-        { id: "project-unemployment", title: "Unemployment in America", description: "Analysis of unemployment trends across U.S. states and metro areas.", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.webp", buttonText: "View Project", tool: "looker" },
-        { id: "project-financial-inclusion", title: "Global Financial Inclusion", description: "Visualizing global trends in account ownership and borrowing behaviors.", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.webp", buttonText: "View Project", tool: "looker" },
-        { id: "project-neo-tracker", title: "NEO Tracker", description: "Tracking Near-Earth Objects with NASA's API.", link: "projects/neo-tracker.html", imageUrl: "assets/img/neo-tracker-cover.webp", buttonText: "View Project", tool: "powerbi" }
+        { id: "project-digital-banking", title: "Digital Product Redesign & Analytics", description: "End-to-end case study of a public banking portal redesign, featuring MVP Canvas, BPMN 2.0, PostgreSQL queries, and GA4 telemetry.", link: "projects/digital-banking-redesign.html", imageUrl: "assets/img/digital-banking-cover.webp", buttonText: "View Case Study", tool: "all", type: "case-study" },
+        { id: "project-exchange-rate", title: "Exchange Rate Evolution", description: "Real-time tracking of USD, EUR, and GBP against the Chilean Peso.", link: "projects/exchange-rate-evolution.html", imageUrl: "assets/img/exchange-rate-cover.webp", buttonText: "View Project", tool: "powerbi", type: "dashboard" },
+        { id: "project-pokedex", title: "Interactive Pokédex", description: "An interactive dashboard with data from over 1,000 Pokémon.", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.webp", buttonText: "View Project", tool: "looker", type: "dashboard" },
+        { id: "project-unemployment", title: "Unemployment in America", description: "Analysis of unemployment trends across U.S. states and metro areas.", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.webp", buttonText: "View Project", tool: "looker", type: "dashboard" },
+        { id: "project-financial-inclusion", title: "Global Financial Inclusion", description: "Visualizing global trends in account ownership and borrowing behaviors.", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.webp", buttonText: "View Project", tool: "looker", type: "dashboard" },
+        { id: "project-neo-tracker", title: "NEO Tracker", description: "Tracking Near-Earth Objects with NASA's API.", link: "projects/neo-tracker.html", imageUrl: "assets/img/neo-tracker-cover.webp", buttonText: "View Project", tool: "powerbi", type: "dashboard" }
     ],
 
     // --- CASE STUDY DATA ---
@@ -792,11 +793,12 @@ const translations = {
     }],
     projectsTitle: "Proyectos Destacados",
     projects: [
-        { title: "Evolución del Tipo de Cambio", description: "Un dashboard en Power BI que monitorea las principales divisas frente al CLP, actualizado automáticamente vía API del Banco Central.", imageUrl: "assets/img/exchange-rate-cover.webp", link: "projects/exchange-rate-evolution.html", buttonText: "Ver Proyecto", tool: "powerbi" },
-        { title: "Pokédex Interactiva", description: "Una Pokédex Nacional de 1,025 Pokémon construida conectándose a la PokéAPI con Apps Script.", imageUrl: "assets/img/pokedex-cover.webp", link: "projects/pokedex-dashboard.html", buttonText: "Ver Proyecto", tool: "looker" },
-        { title: "Análisis de Desempleo en EE.UU.", description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.", imageUrl: "assets/img/us-unemployment-cover.webp", link: "projects/US-Unemployment.html", buttonText: "Ver Proyecto", tool: "looker" },
-        { title: "Inclusión Financiera Global", description: "Visualiza tendencias globales de titularidad de cuentas y comportamiento de crédito por región, ingreso y demografía.", imageUrl: "assets/img/global-financial-inclusion-cover.webp", link: "projects/global-financial-inclusion.html", buttonText: "Ver Proyecto", tool: "looker" },
-        { title: "NEO Tracker", description: "Un dashboard automatizado que se conecta a la API de la NASA para rastrear Objetos Cercanos a la Tierra de los últimos 7 días.", imageUrl: "assets/img/neo-tracker-cover.webp", link: "projects/neo-tracker.html", buttonText: "Ver Proyecto", tool: "powerbi" }
+        { id: "project-digital-banking", title: "Rediseño Digital & Analítica de Producto", description: "Caso de estudio de extremo a extremo de rediseño de portal bancario público con MVP Canvas, BPMN 2.0, SQL en PostgreSQL y GA4.", imageUrl: "assets/img/digital-banking-cover.webp", link: "projects/digital-banking-redesign.html", buttonText: "Ver Caso de Estudio", tool: "all", type: "case-study" },
+        { id: "project-exchange-rate", title: "Evolución del Tipo de Cambio", description: "Un dashboard en Power BI que monitorea las principales divisas frente al CLP, actualizado automáticamente vía API del Banco Central.", imageUrl: "assets/img/exchange-rate-cover.webp", link: "projects/exchange-rate-evolution.html", buttonText: "Ver Proyecto", tool: "powerbi", type: "dashboard" },
+        { id: "project-pokedex", title: "Pokédex Interactiva", description: "Una Pokédex Nacional de 1,025 Pokémon construida conectándose a la PokéAPI con Apps Script.", imageUrl: "assets/img/pokedex-cover.webp", link: "projects/pokedex-dashboard.html", buttonText: "Ver Proyecto", tool: "looker", type: "dashboard" },
+        { id: "project-unemployment", title: "Análisis de Desempleo en EE.UU.", description: "Explora tendencias de desempleo en EE.UU. a nivel estatal y metropolitano mediante dashboards interactivos.", imageUrl: "assets/img/us-unemployment-cover.webp", link: "projects/US-Unemployment.html", buttonText: "Ver Proyecto", tool: "looker", type: "dashboard" },
+        { id: "project-financial-inclusion", title: "Inclusión Financiera Global", description: "Visualiza tendencias globales de titularidad de cuentas y comportamiento de crédito por región, ingreso y demografía.", imageUrl: "assets/img/global-financial-inclusion-cover.webp", link: "projects/global-financial-inclusion.html", buttonText: "Ver Proyecto", tool: "looker", type: "dashboard" },
+        { id: "project-neo-tracker", title: "NEO Tracker", description: "Un dashboard automatizado que se conecta a la API de la NASA para rastrear Objetos Cercanos a la Tierra de los últimos 7 días.", imageUrl: "assets/img/neo-tracker-cover.webp", link: "projects/neo-tracker.html", buttonText: "Ver Proyecto", tool: "powerbi", type: "dashboard" }
     ],
     viewAllBtn: "Ver Todos los Proyectos",
     
@@ -1138,12 +1140,12 @@ const translations = {
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
     projects_list: [
-        { id: "project-digital-banking", title: "Rediseño Digital & Analítica de Producto", description: "Caso de estudio de extremo a extremo de rediseño de portal bancario público con MVP Canvas, BPMN 2.0, SQL en PostgreSQL y GA4.", link: "projects/digital-banking-redesign.html", imageUrl: "assets/img/digital-banking-cover.webp", buttonText: "Ver Caso de Estudio", tool: "all" },
-        { id: "project-exchange-rate", title: "Evolución del Tipo de Cambio", description: "Seguimiento en tiempo real del USD, EUR y GBP frente al peso chileno.", link: "projects/exchange-rate-evolution.html", imageUrl: "assets/img/exchange-rate-cover.webp", buttonText: "Ver Proyecto", tool: "powerbi" },
-        { id: "project-pokedex", title: "Pokédex Interactiva", description: "Un dashboard interactivo con datos de más de 1.000 Pokémon.", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.webp", buttonText: "Ver Proyecto", tool: "looker" },
-        { id: "project-unemployment", title: "Desempleo en América", description: "Análisis de tendencias de desempleo en estados y áreas metropolitanas de EE.UU.", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.webp", buttonText: "Ver Proyecto", tool: "looker" },
-        { id: "project-financial-inclusion", title: "Inclusión Financiera Global", description: "Visualización de tendencias globales en posesión de cuentas y comportamientos de crédito.", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.webp", buttonText: "Ver Proyecto", tool: "looker" },
-        { id: "project-neo-tracker", title: "NEO Tracker", description: "Seguimiento de Objetos Cercanos a la Tierra con la API de la NASA.", link: "projects/neo-tracker.html", imageUrl: "assets/img/neo-tracker-cover.webp", buttonText: "Ver Proyecto", tool: "powerbi" }
+        { id: "project-digital-banking", title: "Rediseño Digital & Analítica de Producto", description: "Caso de estudio de extremo a extremo de rediseño de portal bancario público con MVP Canvas, BPMN 2.0, SQL en PostgreSQL y GA4.", link: "projects/digital-banking-redesign.html", imageUrl: "assets/img/digital-banking-cover.webp", buttonText: "Ver Caso de Estudio", tool: "all", type: "case-study" },
+        { id: "project-exchange-rate", title: "Evolución del Tipo de Cambio", description: "Seguimiento en tiempo real del USD, EUR y GBP frente al peso chileno.", link: "projects/exchange-rate-evolution.html", imageUrl: "assets/img/exchange-rate-cover.webp", buttonText: "Ver Proyecto", tool: "powerbi", type: "dashboard" },
+        { id: "project-pokedex", title: "Pokédex Interactiva", description: "Un dashboard interactivo con datos de más de 1.000 Pokémon.", link: "projects/pokedex-dashboard.html", imageUrl: "assets/img/pokedex-cover.webp", buttonText: "Ver Proyecto", tool: "looker", type: "dashboard" },
+        { id: "project-unemployment", title: "Desempleo en América", description: "Análisis de tendencias de desempleo en estados y áreas metropolitanas de EE.UU.", link: "projects/US-Unemployment.html", imageUrl: "assets/img/us-unemployment-cover.webp", buttonText: "Ver Proyecto", tool: "looker", type: "dashboard" },
+        { id: "project-financial-inclusion", title: "Inclusión Financiera Global", description: "Visualización de tendencias globales en posesión de cuentas y comportamientos de crédito.", link: "projects/global-financial-inclusion.html", imageUrl: "assets/img/global-financial-inclusion-cover.webp", buttonText: "Ver Proyecto", tool: "looker", type: "dashboard" },
+        { id: "project-neo-tracker", title: "NEO Tracker", description: "Seguimiento de Objetos Cercanos a la Tierra con la API de la NASA.", link: "projects/neo-tracker.html", imageUrl: "assets/img/neo-tracker-cover.webp", buttonText: "Ver Proyecto", tool: "powerbi", type: "dashboard" }
     ],
 
     // --- CASE STUDY DATA ---
@@ -1542,10 +1544,17 @@ function populateHomePage(lang, basePath) {
   const projectCarousel = getEl("project-carousel");
   if (projectCarousel) {
       projectCarousel.innerHTML = '';
+      const isEn = (typeof currentLang !== 'undefined' ? currentLang : 'en') === 'en';
       (data.projects || []).forEach(project => {
           const card = document.createElement('div');
           card.className = 'project-card';
+
+          const isCaseStudy = project.type === 'case-study';
+          const typeBadgeLabel = isCaseStudy ? (isEn ? 'Case Study' : 'Caso de Estudio') : 'Dashboard';
+          const typeBadgeClass = isCaseStudy ? 'badge-case-study' : 'badge-dashboard';
+
           card.innerHTML = `
+              <span class="project-type-badge ${typeBadgeClass}">${typeBadgeLabel}</span>
               <img src="${basePath}${project.imageUrl}" alt="${project.title}">
               <div class="project-card-content">
                   <h3>${project.title}</h3>
@@ -1638,6 +1647,7 @@ function populateProjectsPage(lang, basePath) {
     const gridContainer = getEl('project-gallery-grid');
     if (gridContainer) {
         gridContainer.innerHTML = '';
+        const isEn = (typeof currentLang !== 'undefined' ? currentLang : 'en') === 'en';
         (data.projects_list || []).forEach(project => {
             let toolIcon = '';
             if (project.tool === 'powerbi') {
@@ -1646,10 +1656,16 @@ function populateProjectsPage(lang, basePath) {
                 toolIcon = `<img src="${basePath}assets/img/logos/looker-studio.webp" alt="Looker Studio Logo" class="card-tool-icon">`;
             }
 
+            const isCaseStudy = project.type === 'case-study';
+            const typeBadgeLabel = isCaseStudy ? (isEn ? 'Case Study' : 'Caso de Estudio') : 'Dashboard';
+            const typeBadgeClass = isCaseStudy ? 'badge-case-study' : 'badge-dashboard';
+
             const cardItem = document.createElement('li');
             cardItem.innerHTML = `
                 <a href="${project.link}" class="project-gallery-card">
-                    <div class="card-image" style="background-image: url('${basePath}${project.imageUrl}')"></div>
+                    <div class="card-image" style="background-image: url('${basePath}${project.imageUrl}')">
+                        <span class="project-type-badge ${typeBadgeClass}">${typeBadgeLabel}</span>
+                    </div>
                     <div class="card-content">
                         <div class="card-header">
                             <h3>${project.title}</h3>
