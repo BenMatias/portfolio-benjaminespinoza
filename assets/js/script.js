@@ -36,29 +36,53 @@ const translations = {
     btnDownloadCV: "Download CV",
 
     // --- Index Page Content ---
-    heroTitle: "Senior Business & Data Analyst | Digital Product Specialist",
-    heroSubtitle: "Transforming complex data into strategic decisions and scalable digital products through SQL analytics, Power BI / Looker Studio, Agile triads (BPMN 2.0), and Generative AI.",
+    heroTitle: "Data, BI & Business Analyst | Product Specialist",
+    heroSubtitle: "Bridging data analytics (SQL, Power BI, Looker Studio), business process engineering (BPMN 2.0, BDD), digital product management, and Generative AI to drive strategic decisions.",
     btnProjects: "View Projects",
     btnResume: "View Resume",
     aboutTitle: "About Me",
-    aboutContent: `<p>I am <strong>Benjamín Espinoza</strong>, an Industrial Engineer specializing in <strong>Data Analytics, Business Intelligence, and Digital Product Management</strong> at Banco Internacional. My career is focused on transitioning towards Product Management and <strong>Product Owner</strong> roles, bridging business strategy with tech development and product analytics.</p><p>As a Senior Business Analyst in Agile Triads (Product Owner, Tech Lead, BA), I lead digital product discovery and functional specifications: defining MVP Canvases and User Story Maps in Jira/Confluence, executing complex SQL queries in <strong>PostgreSQL</strong>, building executive dashboards in <strong>Looker Studio</strong> and Power BI, and managing the public web portal (<strong>Puck CMS</strong>, GA4, GTM, Clarity).</p><p>Additionally, I pioneer the daily integration of Generative AI tools (<strong>Gemini, NotebookLM, and Rovo AI</strong>) to streamline analytics, automate documentation, and accelerate value delivery across the product lifecycle.</p>`,
+    aboutContent: `<p>I am <strong>Benjamín Espinoza</strong>, an Industrial Engineer specializing in <strong>Data Analytics, Business Intelligence, Business Analysis, and Digital Product Strategy</strong>. Across my professional career in banking (Banco Internacional), retail, and industrial sectors (Lucas Diesel, Heavenward), I have built a versatile profile integrating four core pillars:</p>
+
+<div class="bio-pillars-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #00e676; border-radius: 8px; padding: 0.85rem 1rem;">
+    <h4 style="color: #00e676; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-database"></i> Data Analyst</h4>
+    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Exploratory analysis and complex querying with <strong>Advanced SQL (PostgreSQL)</strong>, scripts in <strong>Python / Apps Script</strong> for automated ETL pipelines and dataset extraction.</p>
+  </div>
+
+  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #00b4d8; border-radius: 8px; padding: 0.85rem 1rem;">
+    <h4 style="color: #00b4d8; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-chart-pie"></i> BI Analyst</h4>
+    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Built over <strong>50 executive & operational dashboards in Power BI, Looker Studio, and Tableau</strong> using DAX, Power Query M, and KPI framework architecture.</p>
+  </div>
+
+  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #a855f7; border-radius: 8px; padding: 0.85rem 1rem;">
+    <h4 style="color: #a855f7; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-project-diagram"></i> Business Analyst (BA)</h4>
+    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Process reengineering with <strong>BPMN 2.0</strong>, BDD functional specifications (<em>Given-When-Then</em>) in Jira/Confluence, regulatory compliance, and business-IT alignment.</p>
+  </div>
+
+  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #ffb703; border-radius: 8px; padding: 0.85rem 1rem;">
+    <h4 style="color: #ffb703; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-bullseye"></i> Product Owner (PO Target)</h4>
+    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Agile triad collaboration (PO, Tech Lead, BA), <strong>MVP Canvas</strong> definition, User Story Mapping, Product Analytics (GA4/GTM/Clarity), and No-Code management in Puck CMS.</p>
+  </div>
+</div>
+
+<p>Pioneering the daily adoption of <strong>Generative AI (Gemini, NotebookLM, Rovo AI)</strong> to accelerate data analytics, automate technical documentation, and shorten value delivery cycles in complex environments.</p>`,
     impactTitle: "How I’ve Made an Impact",
     impacts: [{
-      icon: "fa-users-gear",
-      title: "Agile Triad Execution & UX Delivery",
-      text: "Facilitated business-tech alignment in Agile triads (PO, Tech Lead, BA), crafting MVP Canvases, User Story Maps, and functional QA certifications."
-    }, {
-      icon: "fa-globe",
-      title: "Public Website Redesign & Web Analytics",
-      text: "Led the public website redesign team at Banco Internacional with hands-on Puck CMS administration and full GA4, GTM, and Clarity analytics monitoring."
-    }, {
-      icon: "fa-project-diagram",
-      title: "Process Optimization (BPMN 2.0 & AI)",
-      text: "Mapped business processes using BPMN 2.0 and accelerated flow diagramming and documentation with Rovo AI, Gemini, and NotebookLM."
+      icon: "fa-database",
+      title: "Data Analytics & SQL Pipelines",
+      text: "Extracted actionable insights by executing complex SQL queries in PostgreSQL, building data models, and automating ETL workflows."
     }, {
       icon: "fa-chart-pie",
-      title: "Data Analytics & SQL Dashboards",
-      text: "Extracted insights from PostgreSQL databases with SQL and created Looker Studio / Power BI dashboards for executive decision-making."
+      title: "BI Dashboards & Executive Reporting",
+      text: "Designed and deployed 50+ interactive dashboards in Power BI and Looker Studio using DAX and Power Query for data-driven decisions."
+    }, {
+      icon: "fa-project-diagram",
+      title: "Process Engineering & BA Requirements",
+      text: "Mapped AS-IS and TO-BE operational workflows using BPMN 2.0, authored BDD User Stories in Jira, and audited regulatory compliance."
+    }, {
+      icon: "fa-bullseye",
+      title: "Digital Product Strategy & Agile Triads",
+      text: "Facilitated business-tech alignment in Agile triads (PO, Tech Lead, BA), defining MVP Canvases, Puck CMS management, and GA4 telemetry."
     }],
     projectsTitle: "Featured Projects",
     projects: [
@@ -769,29 +793,53 @@ const translations = {
     btnDownloadCV: "Descargar CV",
 
     // --- Index Page Content ---
-    heroTitle: "Senior Business & Data Analyst | Digital Product Specialist",
-    heroSubtitle: "Transformo datos complejos en decisiones estratégicas y productos digitales escalables mediante analítica SQL, Power BI / Looker Studio, triadas ágiles (BPMN 2.0) e IA Generativa.",
+    heroTitle: "Data, BI & Business Analyst | Product Specialist",
+    heroSubtitle: "Conecto la analítica de datos (SQL, Power BI, Looker Studio), el modelado de negocios (BPMN 2.0, BDD), la gestión de productos digitales e IA Generativa para tomar decisiones estratégicas.",
     btnProjects: "Ver Proyectos",
     btnResume: "Ver CV",
     aboutTitle: "Sobre mí",
-    aboutContent: `<p>Soy <strong>Benjamín Espinoza</strong>, Ingeniero Civil Industrial especializado en <strong>Análisis de Datos, Inteligencia de Negocios y Gestión de Productos Digitales</strong> en Banco Internacional. Mi enfoque profesional se orienta hacia la dirección de productos (<strong>Product Ownership / Product Management</strong>), conectando la estrategia del negocio con el desarrollo tecnológico y la analítica avanzada.</p><p>Como Senior Business Analyst en triadas ágiles (Product Owner, Tech Lead, BA), lidero el descubrimiento y especificación funcional de proyectos digitales: estructuro MVP Canvas y User Story Maps en Jira/Confluence, ejecuto consultas SQL complejas en <strong>PostgreSQL</strong>, construyo reportes ejecutivos en <strong>Looker Studio</strong> y Power BI, y administro el portal web público (<strong>Puck CMS</strong>, GA4, GTM, Clarity).</p><p>Adicionalmente, soy pionero en la integración de Inteligencia Artificial Generativa (<strong>Gemini, NotebookLM y Rovo AI</strong>) para optimizar la analítica, automatizar la documentación y acelerar la entrega de valor en el ciclo de vida del producto.</p>`,
+    aboutContent: `<p>Soy <strong>Benjamín Espinoza</strong>, Ingeniero Civil Industrial especializado en <strong>Análisis de Datos, Inteligencia de Negocios, Análisis de Negocios y Estrategia de Productos Digitales</strong>. A lo largo de mi trayectoria profesional en el sector financiero (Banco Internacional), retail e industrial (Lucas Diesel, Heavenward), he construido un perfil versátil que integra cuatro pilares fundamentales:</p>
+
+<div class="bio-pillars-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
+  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #00e676; border-radius: 8px; padding: 0.85rem 1rem;">
+    <h4 style="color: #00e676; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-database"></i> Data Analyst</h4>
+    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Análisis exploratorio y extracción de datos con <strong>SQL avanzado (PostgreSQL)</strong>, scripts en <strong>Python / Apps Script</strong> para automatización de pipelines ETL y consultas a bases de datos relacionales.</p>
+  </div>
+
+  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #00b4d8; border-radius: 8px; padding: 0.85rem 1rem;">
+    <h4 style="color: #00b4d8; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-chart-pie"></i> BI Analyst</h4>
+    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Construcción de más de <strong>50 tableros ejecutivos y operacionales en Power BI, Looker Studio y Tableau</strong>, con modelado en DAX, Power Query M y diseño de arquitectura de KPIs.</p>
+  </div>
+
+  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #a855f7; border-radius: 8px; padding: 0.85rem 1rem;">
+    <h4 style="color: #a855f7; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-project-diagram"></i> Business Analyst (BA)</h4>
+    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Reingeniería de procesos con <strong>BPMN 2.0</strong>, especificación funcional BDD (<em>Given-When-Then</em>) en Jira/Confluence, auditoría de cumplimiento normativo y alineación negocio-TI.</p>
+  </div>
+
+  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #ffb703; border-radius: 8px; padding: 0.85rem 1rem;">
+    <h4 style="color: #ffb703; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-bullseye"></i> Product Owner (PO Target)</h4>
+    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Liderazgo en triadas ágiles (PO, Tech Lead, BA), definición de <strong>MVP Canvas</strong>, User Story Maps, analítica de producto (GA4/GTM/Clarity) y gestión sin código en Puck CMS.</p>
+  </div>
+</div>
+
+<p>Pionero en la integración diaria de <strong>IA Generativa (Gemini, NotebookLM, Rovo AI)</strong> para acelerar la analítica de datos, automatizar la documentación de requerimientos y reducir el ciclo de entrega de valor en proyectos de alta complejidad.</p>`,
     impactTitle: "Cómo He Generado Impacto",
     impacts: [{
-      icon: "fa-users-gear",
-      title: "Triadas Ágiles & Entregables de Producto",
-      text: "Facilité la alineación negocio-tecnología en triadas ágiles (PO, Tech Lead, BA), creando MVP Canvas, User Story Maps y certificaciones de QA funcional."
-    }, {
-      icon: "fa-globe",
-      title: "Rediseño de Sitio Público & Analítica Web",
-      text: "Lideré el equipo del rediseño del sitio web público de Banco Internacional con administración en Puck CMS y monitoreo de GA4, GTM y Microsoft Clarity."
-    }, {
-      icon: "fa-project-diagram",
-      title: "Optimización de Procesos (BPMN 2.0 & IA)",
-      text: "Modelé flujos operacionales con BPMN 2.0 e impulsé la diagramación y documentación asistida por IA usando Rovo AI, Gemini y NotebookLM."
+      icon: "fa-database",
+      title: "Analítica de Datos & Consultas SQL",
+      text: "Extraje insights ejecutando consultas SQL avanzadas en PostgreSQL, estructurando modelos dimensionales y automatizando flujos ETL."
     }, {
       icon: "fa-chart-pie",
-      title: "Analítica de Datos & Consultas SQL",
-      text: "Extraje insights ejecutando consultas SQL complejas en PostgreSQL y construyendo tableros en Looker Studio y Power BI para la toma de decisiones."
+      title: "Tableros BI & Reportabilidad Ejecutiva",
+      text: "Diseñé y desplegué más de 50 dashboards interactivos en Power BI y Looker Studio con métricas DAX y Power Query para la toma de decisiones."
+    }, {
+      icon: "fa-project-diagram",
+      title: "Ingeniería de Procesos & Requerimientos BA",
+      text: "Modelé flujos operacionales AS-IS y TO-BE con BPMN 2.0, redacté Historias de Usuario BDD en Jira y audité el cumplimiento normativo."
+    }, {
+      icon: "fa-bullseye",
+      title: "Estrategia de Producto & Triadas Ágiles",
+      text: "Facilité la alineación negocio-tecnología en triadas ágiles (PO, Tech Lead, BA), definiendo MVP Canvases, administración Puck CMS y GA4."
     }],
     projectsTitle: "Proyectos Destacados",
     projects: [
