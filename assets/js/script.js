@@ -2452,6 +2452,8 @@ function setupNativeDashboardFilters() {
   const productFilter = document.getElementById('dash-product-filter');
   if (!periodFilter || !productFilter) return;
 
+  const arrow = '<i class="fas fa-arrow-right" style="font-size:0.75rem; color:#00df81; margin:0 0.15rem;"></i>';
+
   const data = {
     all: {
       post: {
@@ -2465,10 +2467,10 @@ function setupNativeDashboardFilters() {
         c4: '2,043 enviadas', b4: '16.5%'
       },
       compare: {
-        apps: '7,702 total', deltaApps: '<i class="fas fa-chart-line"></i> +35.0% Crecimiento',
-        cr: '28.7% -> 50.8%', deltaCr: '<i class="fas fa-arrow-up"></i> +22.1% pp Canal Web',
-        sla: '14 Días -> 15 min', deltaSla: '<i class="fas fa-check"></i> Autonomía Comercial',
-        friction: '12% -> 0.0%', deltaFriction: '<i class="fas fa-shield-alt"></i> QA Staging Certificado',
+        apps: '7,702 <span style="font-size:0.75rem; color:#aacbc4; font-weight:600;">(Total)</span>', deltaApps: '<i class="fas fa-chart-line"></i> +35.0% Crecimiento',
+        cr: `<span style="font-size:1.05rem; color:#94a3b8; font-weight:700;">28.7%</span>${arrow}<span style="font-size:1.35rem; color:#00df81; font-weight:800;">50.8%</span>`, deltaCr: '<i class="fas fa-arrow-up"></i> +22.1% pp Canal Web',
+        sla: `<span style="font-size:1.05rem; color:#94a3b8; font-weight:700;">14 Días</span>${arrow}<span style="font-size:1.35rem; color:#00df81; font-weight:800;">15 min</span>`, deltaSla: '<i class="fas fa-check"></i> Autonomía Comercial',
+        friction: `<span style="font-size:1.05rem; color:#94a3b8; font-weight:700;">12.0%</span>${arrow}<span style="font-size:1.35rem; color:#00df81; font-weight:800;">0.0%</span>`, deltaFriction: '<i class="fas fa-shield-alt"></i> QA Staging Certificado',
         c1: '24,800 sesiones', b1: '100%',
         c2: '8,210 intenciones', b2: '33.1%',
         c3: '5,420 formularios', b3: '21.8%',
@@ -2487,10 +2489,10 @@ function setupNativeDashboardFilters() {
         c4: '1,031 enviadas', b4: '16.8%'
       },
       compare: {
-        apps: '3,842 total', deltaApps: '<i class="fas fa-chart-line"></i> +38.5% Crecimiento',
-        cr: '41.5% -> 56.0%', deltaCr: '<i class="fas fa-arrow-up"></i> +14.5% pp',
-        sla: '14 Días -> 15 min', deltaSla: '<i class="fas fa-check"></i> Autonomía Comercial',
-        friction: '8% -> 0.0%', deltaFriction: '<i class="fas fa-shield-alt"></i> QA Staging Certificado',
+        apps: '3,842 <span style="font-size:0.75rem; color:#aacbc4; font-weight:600;">(Total)</span>', deltaApps: '<i class="fas fa-chart-line"></i> +38.5% Crecimiento',
+        cr: `<span style="font-size:1.05rem; color:#94a3b8; font-weight:700;">41.5%</span>${arrow}<span style="font-size:1.35rem; color:#00df81; font-weight:800;">56.0%</span>`, deltaCr: '<i class="fas fa-arrow-up"></i> +14.5% pp',
+        sla: `<span style="font-size:1.05rem; color:#94a3b8; font-weight:700;">14 Días</span>${arrow}<span style="font-size:1.35rem; color:#00df81; font-weight:800;">15 min</span>`, deltaSla: '<i class="fas fa-check"></i> Autonomía Comercial',
+        friction: `<span style="font-size:1.05rem; color:#94a3b8; font-weight:700;">8.0%</span>${arrow}<span style="font-size:1.35rem; color:#00df81; font-weight:800;">0.0%</span>`, deltaFriction: '<i class="fas fa-shield-alt"></i> QA Staging Certificado',
         c1: '12,200 sesiones', b1: '100%',
         c2: '4,510 intenciones', b2: '36.9%',
         c3: '3,120 formularios', b3: '25.5%',
@@ -2509,10 +2511,10 @@ function setupNativeDashboardFilters() {
         c4: '1,012 enviadas', b4: '16.1%'
       },
       compare: {
-        apps: '3,860 total', deltaApps: '<i class="fas fa-chart-line"></i> +31.8% Crecimiento',
-        cr: '35.6% -> 48.0%', deltaCr: '<i class="fas fa-arrow-up"></i> +12.4% pp',
-        sla: '14 Días -> 15 min', deltaSla: '<i class="fas fa-check"></i> Autonomía Comercial',
-        friction: '15% -> 0.0%', deltaFriction: '<i class="fas fa-shield-alt"></i> QA Staging Certificado',
+        apps: '3,860 <span style="font-size:0.75rem; color:#aacbc4; font-weight:600;">(Total)</span>', deltaApps: '<i class="fas fa-chart-line"></i> +31.8% Crecimiento',
+        cr: `<span style="font-size:1.05rem; color:#94a3b8; font-weight:700;">35.6%</span>${arrow}<span style="font-size:1.35rem; color:#00df81; font-weight:800;">48.0%</span>`, deltaCr: '<i class="fas fa-arrow-up"></i> +12.4% pp',
+        sla: `<span style="font-size:1.05rem; color:#94a3b8; font-weight:700;">14 Días</span>${arrow}<span style="font-size:1.35rem; color:#00df81; font-weight:800;">15 min</span>`, deltaSla: '<i class="fas fa-check"></i> Autonomía Comercial',
+        friction: `<span style="font-size:1.05rem; color:#94a3b8; font-weight:700;">15.0%</span>${arrow}<span style="font-size:1.35rem; color:#00df81; font-weight:800;">0.0%</span>`, deltaFriction: '<i class="fas fa-shield-alt"></i> QA Staging Certificado',
         c1: '12,600 sesiones', b1: '100%',
         c2: '3,700 intenciones', b2: '29.3%',
         c3: '2,300 formularios', b3: '18.25%',
@@ -2535,13 +2537,13 @@ function setupNativeDashboardFilters() {
     const elFriction = document.getElementById('dash-val-friction');
     const elDeltaFriction = document.getElementById('dash-delta-friction');
 
-    if (elApps) elApps.textContent = current.apps;
+    if (elApps) elApps.innerHTML = current.apps;
     if (elDeltaApps) elDeltaApps.innerHTML = current.deltaApps;
-    if (elCr) elCr.textContent = current.cr;
+    if (elCr) elCr.innerHTML = current.cr;
     if (elDeltaCr) elDeltaCr.innerHTML = current.deltaCr;
-    if (elSla) elSla.textContent = current.sla;
+    if (elSla) elSla.innerHTML = current.sla;
     if (elDeltaSla) elDeltaSla.innerHTML = current.deltaSla;
-    if (elFriction) elFriction.textContent = current.friction;
+    if (elFriction) elFriction.innerHTML = current.friction;
     if (elDeltaFriction) elDeltaFriction.innerHTML = current.deltaFriction;
 
     const elC1 = document.getElementById('funnel-c1');

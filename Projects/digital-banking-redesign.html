@@ -1095,14 +1095,20 @@
             font-size: 1.1rem;
         }
         .dash-kpi-val {
-            font-size: 1.85rem;
+            font-size: 1.35rem;
             font-weight: 800;
             color: #ffffff !important;
-            line-height: 1.1;
+            line-height: 1.25;
             margin-bottom: 0.4rem;
+            white-space: nowrap !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
         }
         .dash-kpi-delta {
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             font-weight: 700;
             color: #00df81 !important;
             display: inline-flex;
@@ -1111,11 +1117,13 @@
             background: rgba(0, 223, 129, 0.12);
             padding: 0.15rem 0.5rem;
             border-radius: 4px;
+            white-space: nowrap;
         }
         .dash-kpi-sub {
-            font-size: 0.74rem;
+            font-size: 0.72rem;
             color: #94a3b8 !important;
             margin-top: 0.4rem;
+            white-space: nowrap;
         }
 
         /* MAIN CONTENT GRID */
@@ -1149,7 +1157,7 @@
             padding-bottom: 0.6rem;
         }
 
-        /* FUNNEL BARS STYLING */
+        /* FUNNEL BARS STYLING (CENTERED FUNNEL) */
         .dash-funnel-list {
             display: flex;
             flex-direction: column;
@@ -1175,30 +1183,36 @@
             font-family: 'Fira Code', monospace;
         }
         .dash-funnel-bar-bg {
-            background: rgba(11, 69, 58, 0.8);
+            background: rgba(11, 69, 58, 0.4);
             border-radius: 6px;
-            height: 22px;
+            height: 26px;
             overflow: hidden;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 223, 129, 0.15);
         }
         .dash-funnel-bar-fill {
             height: 100%;
-            background: linear-gradient(90deg, #17876d, #00df81);
+            background: linear-gradient(90deg, #0b453a, #00df81, #2cc295);
             border-radius: 6px;
             transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            padding-right: 0.5rem;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 223, 129, 0.3);
         }
         .dash-funnel-pct {
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             font-weight: 800;
             color: #032221;
             font-family: 'Fira Code', monospace;
+            white-space: nowrap;
         }
 
-        /* CHANNEL COMPARISON WIDGET */
+        /* CHANNEL COMPARISON WIDGET (HIGH CONTRAST) */
         .dash-channel-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1206,17 +1220,36 @@
             margin-top: 0.75rem;
         }
         .dash-channel-box {
-            background: rgba(11, 69, 58, 0.5);
-            border: 1px solid rgba(0, 223, 129, 0.2);
             border-radius: 10px;
-            padding: 0.85rem;
+            padding: 0.9rem 0.75rem;
             text-align: center;
+            transition: transform 0.2s ease;
+        }
+        .dash-channel-box.legacy-box {
+            background: #081211;
+            border: 1.5px dashed rgba(148, 163, 184, 0.35);
+        }
+        .dash-channel-box.tobe-box {
+            background: linear-gradient(145deg, rgba(0, 223, 129, 0.18), rgba(6, 46, 40, 0.95));
+            border: 2px solid #00df81;
+            box-shadow: 0 0 16px rgba(0, 223, 129, 0.25);
         }
         .dash-channel-label {
-            font-size: 0.78rem;
-            color: #aacbc4 !important;
-            margin-bottom: 0.4rem;
-            font-weight: 600;
+            font-size: 0.76rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .dash-channel-box.legacy-box .dash-channel-label {
+            color: #94a3b8 !important;
+            border-bottom: 1px dashed rgba(148, 163, 184, 0.2);
+            padding-bottom: 0.3rem;
+        }
+        .dash-channel-box.tobe-box .dash-channel-label {
+            color: #00df81 !important;
+            border-bottom: 1px solid rgba(0, 223, 129, 0.3);
+            padding-bottom: 0.3rem;
         }
         .dash-channel-split {
             display: flex;
@@ -2707,29 +2740,29 @@
                         </div>
 
                         <div class="dash-channel-grid">
-                            <div class="dash-channel-box">
+                            <div class="dash-channel-box legacy-box">
                                 <div class="dash-channel-label" data-translate="dash_ch_legacy">Antes (Legacy)</div>
                                 <div class="dash-channel-split">
                                     <div>
-                                        <div class="dash-split-val">71.3%</div>
+                                        <div class="dash-split-val" style="color:#cbd5e1 !important;">71.3%</div>
                                         <div class="dash-split-sub" data-translate="dash_branch">Sucursal</div>
                                     </div>
                                     <div>
-                                        <div class="dash-split-val">28.7%</div>
+                                        <div class="dash-split-val" style="color:#64748b !important;">28.7%</div>
                                         <div class="dash-split-sub" data-translate="dash_web">Web</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="dash-channel-box" style="border-color:#00df81; background:rgba(0,223,129,0.08);">
-                                <div class="dash-channel-label" style="color:#00df81 !important;" data-translate="dash_ch_tobe">Después (Puck CMS)</div>
+                            <div class="dash-channel-box tobe-box">
+                                <div class="dash-channel-label" data-translate="dash_ch_tobe">Después (Puck CMS)</div>
                                 <div class="dash-channel-split">
                                     <div>
                                         <div class="dash-split-val" style="color:#00df81 !important;">50.8% 🚀</div>
-                                        <div class="dash-split-sub" data-translate="dash_web">Web</div>
+                                        <div class="dash-split-sub" style="color:#00df81 !important;" data-translate="dash_web">Web</div>
                                     </div>
                                     <div>
-                                        <div class="dash-split-val">49.2%</div>
+                                        <div class="dash-split-val" style="color:#aacbc4 !important;">49.2%</div>
                                         <div class="dash-split-sub" data-translate="dash_branch">Sucursal</div>
                                     </div>
                                 </div>
