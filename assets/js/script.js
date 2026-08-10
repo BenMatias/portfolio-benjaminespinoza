@@ -441,9 +441,31 @@ const translations = {
     cs_dash_c2_text: "76% of users scroll down to the requirements and benefits block before initiating the application, validating component visual hierarchy.",
     cs_dash_c3_title: "Zero Rage Clicks in Forms",
     cs_dash_c3_text: "Rage clicks and dead clicks reduced to 0% on mobile after form simplification to 3 steps certified during QA Staging Sandbox phase.",
-    cs_dash_embed_title: "<i class=\"fas fa-desktop\"></i> 3. Executive Live Product Dashboard (Power BI / Looker Studio)",
-    cs_dash_embed_badge: "Continuous Monitoring",
-    cs_dash_embed_desc: "Real-time visual monitoring of public banking portal adoption, consolidating application volume, conversion rate by channel, and device performance:",
+    cs_dash_embed_title: "<i class=\"fas fa-desktop\"></i> 3. Live Executive Product Dashboard (Native UI)",
+    cs_dash_embed_badge: "Nexus Digital Bank Telemetry",
+    cs_dash_embed_desc: "The dashboard visualizes real-time public banking portal adoption, consolidating application volume, conversion rate by channel, and device performance:",
+    dash_bank_sub: "Product Analytics & Growth Engine",
+    dash_opt_post: "Post-Launch (Last 30 Days)",
+    dash_opt_compare: "Comparison (Before vs After)",
+    dash_opt_all: "All Products",
+    dash_opt_checking: "Checking Account",
+    dash_opt_credit: "Consumer Credit",
+    dash_live_status: "LIVE TELEMETRY",
+    dash_kpi1_title: "Digital Applications",
+    dash_kpi1_sub: "PostgreSQL (Tab 3)",
+    dash_kpi2_title: "Conversion Rate (CR)",
+    dash_kpi2_sub: "GA4 submit_success",
+    dash_kpi3_title: "Time-to-Publish SLA",
+    dash_kpi3_sub: "BPMN TO-BE (Tab 2)",
+    dash_kpi4_title: "Friction & Rage Clicks",
+    dash_kpi4_sub: "Microsoft Clarity UX",
+    dash_panel_funnel_title: "Digital Conversion Funnel (GA4 + GTM Auto-Tagging)",
+    dash_panel_channel_title: "Channel Comparison (SQL Tab 3 Data)",
+    dash_ch_legacy: "Before (Legacy)",
+    dash_ch_tobe: "After (Puck CMS)",
+    dash_branch: "Branch",
+    dash_web: "Web",
+    dash_device_title: "Device (GA4): Mobile vs Desktop",
 
     // --- Projects Page Content ---
     projects_page_title: "Projects",
@@ -992,9 +1014,31 @@ const translations = {
     cs_dash_c2_text: "El 76% de los usuarios navega hasta el bloque de requisitos y beneficios antes de iniciar la solicitud, validando la jerarquía visual de los componentes maquetados.",
     cs_dash_c3_title: "Cero Rage Clicks en Formularios",
     cs_dash_c3_text: "Reducción a 0% de rage clicks y clics muertos en móviles tras la simplificación del formulario a 3 pasos certificada en la fase de QA Staging Sandbox.",
-    cs_dash_embed_title: "<i class=\"fas fa-desktop\"></i> 3. Tablero Ejecutivo de Producto en Vivo (Power BI / Looker Studio)",
-    cs_dash_embed_badge: "Monitoreo Continuo",
+    cs_dash_embed_title: "<i class=\"fas fa-desktop\"></i> 3. Tablero Ejecutivo de Producto en Vivo (Dashboard Nativo)",
+    cs_dash_embed_badge: "Nexus Digital Bank Telemetry",
     cs_dash_embed_desc: "El dashboard visualiza en tiempo real la adopción del portal público bancario, consolidando volumen de solicitudes, tasa de conversión por canal y rendimiento por dispositivo:",
+    dash_bank_sub: "Motor de Analítica de Producto & Crecimiento",
+    dash_opt_post: "Post-Lanzamiento (Últimos 30 Días)",
+    dash_opt_compare: "Comparativa (Antes vs Después)",
+    dash_opt_all: "Todos los Productos",
+    dash_opt_checking: "Cuenta Corriente",
+    dash_opt_credit: "Crédito de Consumo",
+    dash_live_status: "TELEMETRÍA EN VIVO",
+    dash_kpi1_title: "Solicitudes Digitales",
+    dash_kpi1_sub: "PostgreSQL (Tab 3)",
+    dash_kpi2_title: "Tasa de Conversión (CR)",
+    dash_kpi2_sub: "GA4 submit_success",
+    dash_kpi3_title: "Time-to-Publish SLA",
+    dash_kpi3_sub: "BPMN TO-BE (Tab 2)",
+    dash_kpi4_title: "Fricción & Rage Clicks",
+    dash_kpi4_sub: "Microsoft Clarity UX",
+    dash_panel_funnel_title: "Embudo de Conversión Digital (GA4 + GTM Auto-Tagging)",
+    dash_panel_channel_title: "Comparativa de Canales (SQL Tab 3 Data)",
+    dash_ch_legacy: "Antes (Legacy)",
+    dash_ch_tobe: "Después (Puck CMS)",
+    dash_branch: "Sucursal",
+    dash_web: "Web",
+    dash_device_title: "Dispositivo (GA4): Mobile vs Desktop",
 
     // --- Projects Page Content (Spanish) ---
     projects_page_title: "Proyectos",
@@ -2384,7 +2428,131 @@ document.addEventListener("DOMContentLoaded", () => {
     setupProjectFilterTabs();
   }
 
-  // --- 4. INICIALIZACIÓN DEL WIDGET DE CHAT GEMINI ---
+  // --- 4. INICIALIZACIÓN DEL WIDGET DE CHAT GEMINI & DASHBOARD NATIVO ---
   GeminiChatWidget.init();
+  setupNativeDashboardFilters();
 });
+
+function setupNativeDashboardFilters() {
+  const periodFilter = document.getElementById('dash-period-filter');
+  const productFilter = document.getElementById('dash-product-filter');
+  if (!periodFilter || !productFilter) return;
+
+  const data = {
+    all: {
+      post: {
+        apps: '5,361', deltaApps: '<i class="fas fa-arrow-up"></i> +35.0% vs Anterior',
+        cr: '52.4%', deltaCr: '<i class="fas fa-arrow-up"></i> +16.8% pp',
+        sla: '15 min', deltaSla: '<i class="fas fa-arrow-down"></i> -99.9% Ciclo',
+        friction: '0.0%', deltaFriction: '<i class="fas fa-check"></i> 100% QA OK',
+        c1: '12,400 sesiones', b1: '100%',
+        c2: '4,712 intenciones', b2: '38.0%',
+        c3: '3,261 formularios', b3: '26.3%',
+        c4: '2,043 enviadas', b4: '16.5%'
+      },
+      compare: {
+        apps: '7,702 total', deltaApps: '<i class="fas fa-chart-line"></i> +35.0% Crecimiento',
+        cr: '28.7% -> 50.8%', deltaCr: '<i class="fas fa-arrow-up"></i> +22.1% pp Canal Web',
+        sla: '14 Días -> 15 min', deltaSla: '<i class="fas fa-check"></i> Autonomía Comercial',
+        friction: '12% -> 0.0%', deltaFriction: '<i class="fas fa-shield-alt"></i> QA Staging Certificado',
+        c1: '24,800 sesiones', b1: '100%',
+        c2: '8,210 intenciones', b2: '33.1%',
+        c3: '5,420 formularios', b3: '21.8%',
+        c4: '3,540 enviadas', b4: '14.2%'
+      }
+    },
+    checking: {
+      post: {
+        apps: '2,654', deltaApps: '<i class="fas fa-arrow-up"></i> +38.5% vs Anterior',
+        cr: '56.0%', deltaCr: '<i class="fas fa-arrow-up"></i> +14.5% pp',
+        sla: '15 min', deltaSla: '<i class="fas fa-arrow-down"></i> -99.9% Ciclo',
+        friction: '0.0%', deltaFriction: '<i class="fas fa-check"></i> 100% QA OK',
+        c1: '6,120 sesiones', b1: '100%',
+        c2: '2,448 intenciones', b2: '40.0%',
+        c3: '1,836 formularios', b3: '30.0%',
+        c4: '1,031 enviadas', b4: '16.8%'
+      },
+      compare: {
+        apps: '3,842 total', deltaApps: '<i class="fas fa-chart-line"></i> +38.5% Crecimiento',
+        cr: '41.5% -> 56.0%', deltaCr: '<i class="fas fa-arrow-up"></i> +14.5% pp',
+        sla: '14 Días -> 15 min', deltaSla: '<i class="fas fa-check"></i> Autonomía Comercial',
+        friction: '8% -> 0.0%', deltaFriction: '<i class="fas fa-shield-alt"></i> QA Staging Certificado',
+        c1: '12,200 sesiones', b1: '100%',
+        c2: '4,510 intenciones', b2: '36.9%',
+        c3: '3,120 formularios', b3: '25.5%',
+        c4: '1,842 enviadas', b4: '15.1%'
+      }
+    },
+    credit: {
+      post: {
+        apps: '2,707', deltaApps: '<i class="fas fa-arrow-up"></i> +31.8% vs Anterior',
+        cr: '48.0%', deltaCr: '<i class="fas fa-arrow-up"></i> +12.4% pp',
+        sla: '15 min', deltaSla: '<i class="fas fa-arrow-down"></i> -99.9% Ciclo',
+        friction: '0.0%', deltaFriction: '<i class="fas fa-check"></i> 100% QA OK',
+        c1: '6,280 sesiones', b1: '100%',
+        c2: '2,264 intenciones', b2: '36.0%',
+        c3: '1,425 formularios', b3: '22.7%',
+        c4: '1,012 enviadas', b4: '16.1%'
+      },
+      compare: {
+        apps: '3,860 total', deltaApps: '<i class="fas fa-chart-line"></i> +31.8% Crecimiento',
+        cr: '35.6% -> 48.0%', deltaCr: '<i class="fas fa-arrow-up"></i> +12.4% pp',
+        sla: '14 Días -> 15 min', deltaSla: '<i class="fas fa-check"></i> Autonomía Comercial',
+        friction: '15% -> 0.0%', deltaFriction: '<i class="fas fa-shield-alt"></i> QA Staging Certificado',
+        c1: '12,600 sesiones', b1: '100%',
+        c2: '3,700 intenciones', b2: '29.3%',
+        c3: '2,300 formularios', b3: '18.25%',
+        c4: '1,698 enviadas', b4: '13.4%'
+      }
+    }
+  };
+
+  function updateDash() {
+    const prod = productFilter.value || 'all';
+    const period = periodFilter.value || 'post';
+    const current = (data[prod] && data[prod][period]) ? data[prod][period] : data.all.post;
+
+    const elApps = document.getElementById('dash-val-apps');
+    const elDeltaApps = document.getElementById('dash-delta-apps');
+    const elCr = document.getElementById('dash-val-cr');
+    const elDeltaCr = document.getElementById('dash-delta-cr');
+    const elSla = document.getElementById('dash-val-sla');
+    const elDeltaSla = document.getElementById('dash-delta-sla');
+    const elFriction = document.getElementById('dash-val-friction');
+    const elDeltaFriction = document.getElementById('dash-delta-friction');
+
+    if (elApps) elApps.textContent = current.apps;
+    if (elDeltaApps) elDeltaApps.innerHTML = current.deltaApps;
+    if (elCr) elCr.textContent = current.cr;
+    if (elDeltaCr) elDeltaCr.innerHTML = current.deltaCr;
+    if (elSla) elSla.textContent = current.sla;
+    if (elDeltaSla) elDeltaSla.innerHTML = current.deltaSla;
+    if (elFriction) elFriction.textContent = current.friction;
+    if (elDeltaFriction) elDeltaFriction.innerHTML = current.deltaFriction;
+
+    const elC1 = document.getElementById('funnel-c1');
+    const elC2 = document.getElementById('funnel-c2');
+    const elC3 = document.getElementById('funnel-c3');
+    const elC4 = document.getElementById('funnel-c4');
+
+    if (elC1) elC1.textContent = current.c1;
+    if (elC2) elC2.textContent = current.c2;
+    if (elC3) elC3.textContent = current.c3;
+    if (elC4) elC4.textContent = current.c4;
+
+    const elB1 = document.getElementById('funnel-b1');
+    const elB2 = document.getElementById('funnel-b2');
+    const elB3 = document.getElementById('funnel-b3');
+    const elB4 = document.getElementById('funnel-b4');
+
+    if (elB1) elB1.style.width = current.b1;
+    if (elB2) elB2.style.width = current.b2;
+    if (elB3) elB3.style.width = current.b3;
+    if (elB4) elB4.style.width = current.b4;
+  }
+
+  periodFilter.addEventListener('change', updateDash);
+  productFilter.addEventListener('change', updateDash);
+}
+
 

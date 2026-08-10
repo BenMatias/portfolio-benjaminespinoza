@@ -952,6 +952,292 @@
         .sql-string { color: #fde047 !important; }
         .sql-comment { color: #64748b !important; font-style: italic; }
         .sql-number { color: #a78bfa !important; }
+
+        /* NATIVE PRODUCT ANALYTICS DASHBOARD (NEXUS DIGITAL BANK PALETTE) */
+        .native-dashboard-wrapper {
+            background: linear-gradient(145deg, #002726, #032221);
+            border: 1.5px solid rgba(0, 223, 129, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 12px 32px rgba(0, 39, 38, 0.6);
+            color: #f1f7f6 !important;
+            margin-top: 1rem;
+        }
+        .dash-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(0, 223, 129, 0.2);
+            margin-bottom: 1.5rem;
+        }
+        .dash-bank-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+        .dash-bank-logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #00df81, #2cc295);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #032221;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 14px rgba(0, 223, 129, 0.4);
+        }
+        .dash-bank-name {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #ffffff !important;
+            letter-spacing: 0.5px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .dash-bank-sub {
+            font-size: 0.72rem;
+            color: #2cc295 !important;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .dash-controls-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .dash-select-filter {
+            background: #0b453a;
+            border: 1px solid rgba(0, 223, 129, 0.4);
+            color: #f1f7f6;
+            padding: 0.45rem 0.85rem;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .dash-select-filter:hover, .dash-select-filter:focus {
+            border-color: #00df81;
+            box-shadow: 0 0 10px rgba(0, 223, 129, 0.3);
+        }
+        .dash-live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(0, 223, 129, 0.15);
+            border: 1px solid #00df81;
+            color: #00df81 !important;
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .dash-live-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00df81;
+            box-shadow: 0 0 8px #00df81;
+            animation: pulseDot 1.8s infinite;
+        }
+        @keyframes pulseDot {
+            0% { opacity: 0.4; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.15); }
+            100% { opacity: 0.4; transform: scale(0.9); }
+        }
+
+        /* KPI CARDS GRID */
+        .dash-kpis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .dash-kpi-card {
+            background: #062e28;
+            border: 1.5px solid rgba(0, 223, 129, 0.25);
+            border-left: 4px solid #00df81;
+            border-radius: 12px;
+            padding: 1.15rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+        .dash-kpi-card:hover {
+            transform: translateY(-3px);
+            border-color: #00df81;
+        }
+        .dash-kpi-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        .dash-kpi-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #aacbc4 !important;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .dash-kpi-icon {
+            color: #00df81;
+            font-size: 1.1rem;
+        }
+        .dash-kpi-val {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: #ffffff !important;
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
+        }
+        .dash-kpi-delta {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #00df81 !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(0, 223, 129, 0.12);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+        }
+        .dash-kpi-sub {
+            font-size: 0.74rem;
+            color: #94a3b8 !important;
+            margin-top: 0.4rem;
+        }
+
+        /* MAIN CONTENT GRID */
+        .dash-main-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        @media (max-width: 950px) {
+            .dash-main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .dash-panel {
+            background: #062e28;
+            border: 1.5px solid rgba(0, 223, 129, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+        .dash-panel-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #00df81 !important;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(0, 223, 129, 0.15);
+            padding-bottom: 0.6rem;
+        }
+
+        /* FUNNEL BARS STYLING */
+        .dash-funnel-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+        .dash-funnel-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .dash-funnel-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+        }
+        .dash-funnel-name {
+            color: #f1f7f6 !important;
+            font-weight: 600;
+        }
+        .dash-funnel-count {
+            color: #2cc295 !important;
+            font-weight: 700;
+            font-family: 'Fira Code', monospace;
+        }
+        .dash-funnel-bar-bg {
+            background: rgba(11, 69, 58, 0.8);
+            border-radius: 6px;
+            height: 22px;
+            overflow: hidden;
+            position: relative;
+        }
+        .dash-funnel-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #17876d, #00df81);
+            border-radius: 6px;
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 0.5rem;
+        }
+        .dash-funnel-pct {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #032221;
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* CHANNEL COMPARISON WIDGET */
+        .dash-channel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+        .dash-channel-box {
+            background: rgba(11, 69, 58, 0.5);
+            border: 1px solid rgba(0, 223, 129, 0.2);
+            border-radius: 10px;
+            padding: 0.85rem;
+            text-align: center;
+        }
+        .dash-channel-label {
+            font-size: 0.78rem;
+            color: #aacbc4 !important;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+        .dash-channel-split {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 0.5rem;
+        }
+        .dash-split-val {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #ffffff !important;
+        }
+        .dash-split-sub {
+            font-size: 0.7rem;
+            color: #94a3b8 !important;
+        }
+
+        /* BOTTOM ROW GRID */
+        .dash-bottom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
     </style>
 </head>
 <body class="page-project">
@@ -2372,22 +2658,205 @@
                 </div>
             </div>
 
-            <!-- TARJETA 3: DASHBOARD EN VIVO EMBEDDED -->
+            <!-- TARJETA 3: DASHBOARD EN VIVO NATIVO (NEXUS DIGITAL BANK) -->
             <div class="artifact-card">
                 <div class="artifact-header">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                        <h3 class="artifact-title" data-translate="cs_dash_embed_title"><i class="fas fa-desktop"></i> 3. Tablero Ejecutivo de Producto en Vivo (Power BI / Looker Studio)</h3>
-                        <span class="meta-tag" style="border-color:#00e676; color:#00e676;"><i class="fas fa-sync-alt"></i> <span data-translate="cs_dash_embed_badge">Monitoreo Continuo</span></span>
+                        <h3 class="artifact-title" data-translate="cs_dash_embed_title"><i class="fas fa-desktop"></i> 3. Tablero Ejecutivo de Producto en Vivo (Dashboard Nativo)</h3>
+                        <span class="meta-tag" style="border-color:#00df81; color:#00df81;"><i class="fas fa-bolt"></i> <span data-translate="cs_dash_embed_badge">Nexus Digital Bank Telemetry</span></span>
                     </div>
                 </div>
                 <p style="color:#cbd5e1; font-size:0.93rem; margin-bottom:1.5rem;" data-translate="cs_dash_embed_desc">
                     El dashboard visualiza en tiempo real la adopción del portal público bancario, consolidando volumen de solicitudes, tasa de conversión por canal y rendimiento por dispositivo:
                 </p>
 
-                <!-- EMBED DE DASHBOARD INTERACTIVO -->
-                <div class="iframe-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1.5px solid rgba(0, 180, 216, 0.45); box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
-                    <iframe title="Digital Banking Product Analytics Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true" style="position: absolute; top:0; left: 0; width: 100%; height: 100%;"></iframe>
-                </div>
+                <!-- NATIVE DASHBOARD WRAPPER -->
+                <div class="native-dashboard-wrapper">
+
+                    <!-- TOPBAR WITH BRAND & CONTROLS -->
+                    <div class="dash-topbar">
+                        <div class="dash-bank-brand">
+                            <div class="dash-bank-logo-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="dash-bank-name">
+                                <span>Nexus Digital Bank</span>
+                                <span class="dash-bank-sub" data-translate="dash_bank_sub">Product Analytics & Growth Engine</span>
+                            </div>
+                        </div>
+
+                        <div class="dash-controls-bar">
+                            <select id="dash-period-filter" class="dash-select-filter" aria-label="Filtrar Período">
+                                <option value="post" selected data-translate="dash_opt_post">Post-Lanzamiento (Últimos 30 Días)</option>
+                                <option value="compare" data-translate="dash_opt_compare">Comparativa (Antes vs Después)</option>
+                            </select>
+
+                            <select id="dash-product-filter" class="dash-select-filter" aria-label="Filtrar Producto">
+                                <option value="all" selected data-translate="dash_opt_all">Todos los Productos</option>
+                                <option value="checking" data-translate="dash_opt_checking">Cuenta Corriente</option>
+                                <option value="credit" data-translate="dash_opt_credit">Crédito de Consumo</option>
+                            </select>
+
+                            <div class="dash-live-badge">
+                                <span class="dash-live-dot"></span>
+                                <span data-translate="dash_live_status">TELEMETRÍA EN VIVO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 TOP KPI CARDS -->
+                    <div class="dash-kpis-grid">
+                        <div class="dash-kpi-card">
+                            <div class="dash-kpi-header">
+                                <span class="dash-kpi-title" data-translate="dash_kpi1_title">Solicitudes Digitales</span>
+                                <i class="fas fa-file-contract dash-kpi-icon"></i>
+                            </div>
+                            <div class="dash-kpi-val" id="dash-val-apps">5,361</div>
+                            <div class="dash-kpi-delta" id="dash-delta-apps"><i class="fas fa-arrow-up"></i> +35.0% vs Anterior</div>
+                            <div class="dash-kpi-sub" data-translate="dash_kpi1_sub">PostgreSQL (Tab 3)</div>
+                        </div>
+
+                        <div class="dash-kpi-card">
+                            <div class="dash-kpi-header">
+                                <span class="dash-kpi-title" data-translate="dash_kpi2_title">Tasa de Conversión (CR)</span>
+                                <i class="fas fa-bullseye dash-kpi-icon"></i>
+                            </div>
+                            <div class="dash-kpi-val" id="dash-val-cr">52.4%</div>
+                            <div class="dash-kpi-delta" id="dash-delta-cr"><i class="fas fa-arrow-up"></i> +16.8% pp</div>
+                            <div class="dash-kpi-sub" data-translate="dash_kpi2_sub">GA4 submit_success</div>
+                        </div>
+
+                        <div class="dash-kpi-card">
+                            <div class="dash-kpi-header">
+                                <span class="dash-kpi-title" data-translate="dash_kpi3_title">Time-to-Publish SLA</span>
+                                <i class="fas fa-clock dash-kpi-icon"></i>
+                            </div>
+                            <div class="dash-kpi-val" id="dash-val-sla">15 min</div>
+                            <div class="dash-kpi-delta" id="dash-delta-sla"><i class="fas fa-arrow-down"></i> -99.9% Ciclo</div>
+                            <div class="dash-kpi-sub" data-translate="dash_kpi3_sub">BPMN TO-BE (Tab 2)</div>
+                        </div>
+
+                        <div class="dash-kpi-card">
+                            <div class="dash-kpi-header">
+                                <span class="dash-kpi-title" data-translate="dash_kpi4_title">Fricción & Rage Clicks</span>
+                                <i class="fas fa-shield-alt dash-kpi-icon"></i>
+                            </div>
+                            <div class="dash-kpi-val" id="dash-val-friction">0.0%</div>
+                            <div class="dash-kpi-delta" id="dash-delta-friction"><i class="fas fa-check"></i> 100% QA OK</div>
+                            <div class="dash-kpi-sub" data-translate="dash_kpi4_sub">Microsoft Clarity UX</div>
+                        </div>
+                    </div>
+
+                    <!-- MAIN PANELS GRID -->
+                    <div class="dash-main-grid">
+                        <!-- LEFT PANEL: FUNNEL -->
+                        <div class="dash-panel">
+                            <div class="dash-panel-title">
+                                <i class="fas fa-filter"></i> <span data-translate="dash_panel_funnel_title">Embudo de Conversión Digital (GA4 + GTM Auto-Tagging)</span>
+                            </div>
+                            <div class="dash-funnel-list">
+                                <div class="dash-funnel-item">
+                                    <div class="dash-funnel-labels">
+                                        <span class="dash-funnel-name">1. Page View (page_view_public)</span>
+                                        <span class="dash-funnel-count" id="funnel-c1">12,400 sesiones</span>
+                                    </div>
+                                    <div class="dash-funnel-bar-bg">
+                                        <div class="dash-funnel-bar-fill" id="funnel-b1" style="width: 100%;">
+                                            <span class="dash-funnel-pct">100%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dash-funnel-item">
+                                    <div class="dash-funnel-labels">
+                                        <span class="dash-funnel-name">2. Clic CTA Intención (click_apply_now)</span>
+                                        <span class="dash-funnel-count" id="funnel-c2">4,712 intenciones</span>
+                                    </div>
+                                    <div class="dash-funnel-bar-bg">
+                                        <div class="dash-funnel-bar-fill" id="funnel-b2" style="width: 38%;">
+                                            <span class="dash-funnel-pct">38.0%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dash-funnel-item">
+                                    <div class="dash-funnel-labels">
+                                        <span class="dash-funnel-name">3. Inicio de Formulario (start_form_fill)</span>
+                                        <span class="dash-funnel-count" id="funnel-c3">3,261 formularios</span>
+                                    </div>
+                                    <div class="dash-funnel-bar-bg">
+                                        <div class="dash-funnel-bar-fill" id="funnel-b3" style="width: 26.3%;">
+                                            <span class="dash-funnel-pct">69.2%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dash-funnel-item">
+                                    <div class="dash-funnel-labels">
+                                        <span class="dash-funnel-name">4. Solicitud Enviada (submit_application_success)</span>
+                                        <span class="dash-funnel-count" id="funnel-c4">2,043 enviadas</span>
+                                    </div>
+                                    <div class="dash-funnel-bar-bg">
+                                        <div class="dash-funnel-bar-fill" id="funnel-b4" style="width: 16.5%;">
+                                            <span class="dash-funnel-pct">62.6%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT PANEL: CHANNELS & PRODUCTS -->
+                        <div class="dash-panel">
+                            <div class="dash-panel-title">
+                                <i class="fas fa-chart-bar"></i> <span data-translate="dash_panel_channel_title">Comparativa de Canales (SQL Tab 3 Data)</span>
+                            </div>
+
+                            <div class="dash-channel-grid">
+                                <div class="dash-channel-box">
+                                    <div class="dash-channel-label" data-translate="dash_ch_legacy">Antes (Legacy)</div>
+                                    <div class="dash-channel-split">
+                                        <div>
+                                            <div class="dash-split-val">71.3%</div>
+                                            <div class="dash-split-sub" data-translate="dash_branch">Sucursal</div>
+                                        </div>
+                                        <div>
+                                            <div class="dash-split-val">28.7%</div>
+                                            <div class="dash-split-sub" data-translate="dash_web">Web</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dash-channel-box" style="border-color:#00df81; background:rgba(0,223,129,0.08);">
+                                    <div class="dash-channel-label" style="color:#00df81 !important;" data-translate="dash_ch_tobe">Después (Puck CMS)</div>
+                                    <div class="dash-channel-split">
+                                        <div>
+                                            <div class="dash-split-val" style="color:#00df81 !important;">50.8% 🚀</div>
+                                            <div class="dash-split-sub" data-translate="dash_web">Web</div>
+                                        </div>
+                                        <div>
+                                            <div class="dash-split-val">49.2%</div>
+                                            <div class="dash-split-sub" data-translate="dash_branch">Sucursal</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- DEVICE CATEGORY SPLIT -->
+                            <div style="margin-top:1.25rem;">
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:0.4rem;">
+                                    <span style="color:#aacbc4; font-weight:600;" data-translate="dash_device_title">Dispositivo (GA4): Mobile vs Desktop</span>
+                                    <span style="color:#00df81; font-weight:700;">64% Mobile</span>
+                                </div>
+                                <div class="dash-funnel-bar-bg" style="height:14px; display:flex;">
+                                    <div style="width:64%; background:#00df81; height:100%;" title="Mobile 64%"></div>
+                                    <div style="width:31%; background:#2cc295; height:100%;" title="Desktop 31%"></div>
+                                    <div style="width:5%; background:#aacbc4; height:100%;" title="Tablet 5%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /native-dashboard-wrapper -->
             </div>
 
         </div><!-- /tab-dashboard -->
