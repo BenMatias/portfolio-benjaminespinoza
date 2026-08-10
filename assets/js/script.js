@@ -49,16 +49,16 @@ const translations = {
     impactTitle: "How I’ve Made an Impact",
     impacts: [{
       icon: "fa-database",
-      title: "Data Analytics & SQL Pipelines",
-      text: "Extracted actionable insights by executing complex SQL queries in PostgreSQL, building data models, and automating ETL workflows."
+      title: "Data Analytics & SQL Queries",
+      text: "Extracted, modeled, and transformed data by writing advanced SQL queries for strategic decision-making."
     }, {
       icon: "fa-chart-pie",
       title: "BI Dashboards & Executive Reporting",
-      text: "Designed and deployed 50+ interactive dashboards in Power BI and Looker Studio using DAX and Power Query for data-driven decisions."
+      text: "Built interactive executive and operational dashboards in Power BI, Looker Studio, and Tableau with KPI architecture."
     }, {
       icon: "fa-project-diagram",
       title: "Process Engineering & BA Requirements",
-      text: "Mapped AS-IS and TO-BE operational workflows using BPMN 2.0, authored BDD User Stories in Jira, and audited regulatory compliance."
+      text: "Gathered and modeled operational processes in BPMN 2.0, authored BDD User Stories in Jira/Confluence, and audited compliance."
     }, {
       icon: "fa-bullseye",
       title: "Digital Product Strategy & Agile Triads",
@@ -787,19 +787,19 @@ const translations = {
     impacts: [{
       icon: "fa-database",
       title: "Analítica de Datos & Consultas SQL",
-      text: "Extraje insights ejecutando consultas SQL avanzadas en PostgreSQL, estructurando modelos dimensionales y automatizando flujos ETL."
+      text: "Extracción, modelado y transformación de datos ejecutando consultas SQL avanzadas para la toma de decisiones estratégicas."
     }, {
       icon: "fa-chart-pie",
       title: "Tableros BI & Reportabilidad Ejecutiva",
-      text: "Diseñé y desplegué más de 50 dashboards interactivos en Power BI y Looker Studio con métricas DAX y Power Query para la toma de decisiones."
+      text: "Construcción de tableros interactivos ejecutivos y operacionales en Power BI, Looker Studio y Tableau con arquitectura de KPIs."
     }, {
       icon: "fa-project-diagram",
-      title: "Ingeniería de Procesos & Requerimientos BA",
-      text: "Modelé flujos operacionales AS-IS y TO-BE con BPMN 2.0, redacté Historias de Usuario BDD en Jira y audité el cumplimiento normativo."
+      title: "Levantamiento de Procesos & Requerimientos BA",
+      text: "Levantamiento y modelado de procesos en BPMN 2.0, redacción de Historias de Usuario BDD en Jira/Confluence y cumplimiento normativo."
     }, {
       icon: "fa-bullseye",
       title: "Estrategia de Producto & Triadas Ágiles",
-      text: "Facilité la alineación negocio-tecnología en triadas ágiles (PO, Tech Lead, BA), definiendo MVP Canvases, administración Puck CMS y GA4."
+      text: "Alineación negocio-tecnología en triadas ágiles (PO, Tech Lead, BA), definición de MVP Canvas, gestión Puck CMS y analítica GA4/Clarity."
     }],
     projectsTitle: "Proyectos Destacados",
     projects: [
