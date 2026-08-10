@@ -2490,34 +2490,52 @@ const GeminiChatWidget = {
     const isEn = currentLang === 'en';
     const ctxName = isEn ? activeData.name.en : activeData.name.es;
 
-    // Intent: Product Owner / Product Manager / Role Alignment
-    if (q.includes('product owner') || q.includes('po') || q.includes('product manager') || q.includes('product analyst') || q.includes('cargo') || q.includes('adapt') || q.includes('perfil') || q.includes('rol')) {
+    // 1. Intent: Data Analyst / Analista de Datos
+    if (q.includes('data analyst') || q.includes('analista de datos') || q.includes('analista datos') || q.includes('data analytics') || q.includes('analitica de datos') || q.includes('analista bi') || q.includes('business intelligence analyst')) {
       return isEn
-        ? `🎯 **Alignment with Product Owner / Product Manager Roles**:\nBenjamín Espinoza has extensive experience as a **Senior Business Analyst & Digital Product Analyst** in financial services (Banco Internacional), making him a strong fit for Product Owner / Product Management positions:\n\n• **Agile Triad Execution**: Collaborates directly with POs, Tech Leads, and developers to drive product discovery, refine backlogs, and plan Sprints.\n• **Product Discovery & Specifications**: Defines MVP Canvases, User Story Maps in Jira/Confluence, and writes BDD Acceptance Criteria (*Given-When-Then*).\n• **Product Analytics**: Leverages GA4, GTM, Microsoft Clarity, and PostgreSQL SQL queries to measure conversion funnels and prioritize high-value features.\n• **No-Code Web Management**: Administered public portal landings using Puck CMS, dropping Time-to-Market from weeks to 15 minutes.`
+        ? `📊 **Data Analyst Alignment**:\nBenjamín Espinoza is a natural fit for **Data Analyst** roles, blending an Industrial Engineering degree with hands-on banking (Banco Internacional), retail, and industrial experience:\n\n• **SQL & Relational Databases**: Advanced querying in **PostgreSQL** for data extraction, filtering, complex JOINs, aggregations, and cohort metrics.\n• **Data Modeling & Visualization (BI)**: Developed over 50 executive dashboards in **Power BI** and **Looker Studio** utilizing DAX and Power Query M.\n• **ETL & Data Automation**: Automated data extraction pipelines from REST APIs (Central Bank of Chile, NASA, PokéAPI) using **Apps Script** and Python.\n• **Digital Analytics & Web Telemetry**: Audit and configuration of **GA4** events, Google Tag Manager (GTM), and Microsoft Clarity heatmaps to eliminate UX friction and drive conversion.`
+        : `📊 **Perfil & Encaje como Data Analyst**:\nBenjamín Espinoza encaja de manera directa e integral en posiciones de **Data Analyst**, combinando su formación como Ingeniero Civil Industrial con experiencia práctica en banca (Banco Internacional), retail e industria:\n\n• **SQL & Bases de Datos Relacionales**: Consultas SQL avanzadas en **PostgreSQL** para extracción masiva, agregación, uniones complejas (JOINs) y análisis de cohortes.\n• **Modelado & Visualización de Datos (BI)**: Creación de más de 50 tableros interactivos ejecutivos y operativos en **Power BI** y **Looker Studio** usando DAX y Power Query.\n• **Automatización de ETL**: Creación de pipelines automatizados para ingerir datos desde APIs REST (Banco Central de Chile, NASA, PokéAPI) mediante **Apps Script** y Python.\n• **Analítica Digital & Telemetría**: Tagueo de eventos en **GA4**, Google Tag Manager (GTM) y auditoría de mapas de calor en Microsoft Clarity para medir conversión y optimizar la experiencia digital.`;
+    }
+
+    // 2. Intent: Product Owner / Product Manager / Product Analyst / PO
+    if (q.includes('product owner') || q.includes('po') || q.includes('product manager') || q.includes('product analyst') || q.includes('gestion de producto') || q.includes('gestión de producto') || q.includes('direccion de producto') || q.includes('dirección de producto')) {
+      return isEn
+        ? `🎯 **Alignment with Product Owner / Product Manager Roles**:\nBenjamín Espinoza has solid experience as a **Senior Business Analyst & Digital Product Specialist** in banking (Banco Internacional), preparing him for Product Management positions:\n\n• **Agile Triad Execution**: Collaborates directly with POs, Tech Leads, and developers to drive product discovery, refine backlogs, and plan Sprints.\n• **Product Discovery & Specifications**: Defines MVP Canvases, User Story Maps in Jira/Confluence, and writes BDD Acceptance Criteria (*Given-When-Then*).\n• **Product Analytics**: Leverages GA4, GTM, Microsoft Clarity, and PostgreSQL SQL queries to measure conversion funnels and prioritize high-value features.\n• **No-Code Web Management**: Administered public portal landings using Puck CMS, dropping Time-to-Market from weeks to 15 minutes.`
         : `🎯 **Adaptación del Perfil a Cargos de Product Owner / Product Manager**:\nBenjamín Espinoza cuenta con una sólida trayectoria como **Senior Business Analyst y Analista de Productos Digitales** en el sector bancario (Banco Internacional), proyectando su perfil hacia la dirección de productos:\n\n• **Liderazgo en Triadas Ágiles**: Trabaja codo a codo con POs, Tech Leads y equipos de desarrollo en el descubrimiento de productos y priorización de backlog en Jira.\n• **Estrategia & Especificación**: Diseña MVP Canvas, User Story Maps y Criterios de Aceptación BDD (*Given-When-Then*).\n• **Analítica de Producto**: Mide funnels de conversión en tiempo real con GA4, GTM, Microsoft Clarity y consultas SQL en PostgreSQL para orientar el roadmap.\n• **Gestión de Landings (Puck CMS)**: Lideró la administración de portales web sin código, reduciendo el ciclo de publicación de semanas a 15 minutos.`;
     }
 
-    if (q.includes('skill') || q.includes('habilidad') || q.includes('tool') || q.includes('tecnolog') || q.includes('stack')) {
+    // 3. Intent: Business Analyst / BA / Requirements / BPMN
+    if (q.includes('business analyst') || q.includes('ba') || q.includes('analista de negocio') || q.includes('bpmn') || q.includes('requerimientos') || q.includes('bdd') || q.includes('procesos')) {
       return isEn
-        ? `💡 **Skills & Technical Stack in ${ctxName}**:\n${activeData.context}\n\n*(Core Stack: Power BI, Looker Studio, PostgreSQL SQL, DAX, Apps Script, GA4, GTM, BDD, Puck CMS, and Generative AI)*.`
-        : `💡 **Habilidades Técnicas y Herramientas en ${ctxName}**:\n${activeData.context}\n\n*(Stack Principal: Power BI, Looker Studio, PostgreSQL SQL, DAX, Apps Script, GA4, GTM, BDD, Puck CMS e IA Generativa)*.`;
+        ? `📋 **Business Analyst (BA) & Process Engineering Expertise**:\nBenjamín bridges business requirements with technical execution:\n\n• **Process Modeling (BPMN 2.0)**: Maps AS-IS and TO-BE operational workflows to remove bottlenecks.\n• **Agile Requirements**: Authors structured BDD User Stories (*Given-When-Then*) in Jira and Confluence.\n• **Regulatory Compliance**: Audits financial landing content against CMF/SBIF regulations using Generative AI (NotebookLM).\n• **QA & Validation**: Executes functional test plans ensuring clean deployments.`
+        : `📋 **Experiencia como Business Analyst (BA) & Ingeniería de Procesos**:\nBenjamín conecta las necesidades de negocio con la ejecución técnica:\n\n• **Modelado de Procesos (BPMN 2.0)**: Mapea flujos operacionales AS-IS y TO-BE eliminando cuellos de botella.\n• **Requerimientos Ágiles**: Redacta Historias de Usuario BDD (*Given-When-Then*) estructuradas en Jira y Confluence.\n• **Cumplimiento Normativo**: Audita landings financieras frente a regulaciones CMF/SBIF mediante IA Generativa (NotebookLM).\n• **Certificación de QA**: Diseña y ejecuta planes de pruebas funcionales para asegurar lanzamientos sin errores.`;
     }
 
-    if (q.includes('api') || q.includes('data') || q.includes('dato') || q.includes('source') || q.includes('fuente') || q.includes('pipeline')) {
+    // 4. Intent: Technical Stack / Skills / Tools
+    if (q.includes('skill') || q.includes('habilidad') || q.includes('tool') || q.includes('tecnolog') || q.includes('stack') || q.includes('herramienta') || q.includes('power bi') || q.includes('looker') || q.includes('python') || q.includes('sql')) {
       return isEn
-        ? `📊 **Data Pipeline & Architecture for ${ctxName}**:\n${activeData.context}`
-        : `📊 **Pipeline de Datos y Arquitectura para ${ctxName}**:\n${activeData.context}`;
+        ? `💡 **Skills & Technical Stack**:\n• **Databases & Querying**: PostgreSQL, SQL Server, Dimensional Data Modeling.\n• **Business Intelligence**: Power BI, Looker Studio, Tableau, DAX, Power Query (M).\n• **Automation & Scripts**: Google Apps Script, Python, REST APIs, JSON.\n• **Web & Product Analytics**: GA4, Google Tag Manager (GTM), Microsoft Clarity, Puck CMS.\n• **Agile & Process Tools**: Jira, Confluence, BPMN 2.0, BDD (Given-When-Then), Generative AI (Gemini, Rovo AI, NotebookLM).`
+        : `💡 **Habilidades Técnicas y Herramientas**:\n• **Bases de Datos & SQL**: PostgreSQL, SQL Server, Modelado Dimensional.\n• **Inteligencia de Negocios (BI)**: Power BI, Looker Studio, Tableau, DAX, Power Query (M).\n• **Automatización & Scripting**: Google Apps Script, Python, APIs REST, JSON.\n• **Analítica Digital & Producto**: GA4, Google Tag Manager (GTM), Microsoft Clarity, Puck CMS.\n• **Gestión Ágil & Procesos**: Jira, Confluence, BPMN 2.0, BDD (Given-When-Then), IA Generativa (Gemini, Rovo AI, NotebookLM).`;
     }
 
-    if (q.includes('contact') || q.includes('contacto') || q.includes('email') || q.includes('linkedin') || q.includes('mail')) {
+    // 5. Intent: Education / Academic background
+    if (q.includes('estudio') || q.includes('educacion') || q.includes('educación') || q.includes('titulo') || q.includes('título') || q.includes('universidad') || q.includes('carrera') || q.includes('diplomado')) {
       return isEn
-        ? `📩 You can contact **Benjamín Espinoza** via email at \`bmatiasespinoza@gmail.com\` or on [LinkedIn](https://www.linkedin.com/in/benmatias).`
+        ? `🎓 **Academic Background & Certifications**:\n• **Industrial Engineering Degree**: Universidad de Valparaíso (Graduated).\n• **International Diploma in Digital Transformation**: Executive specialization.\n• **Continuous Learning**: Advanced SQL, Power BI, Scrum & Agile Frameworks, Generative AI for Analytics.`
+        : `🎓 **Formación Académica & Certificaciones**:\n• **Ingeniería Civil Industrial**: Universidad de Valparaíso (Titulado).\n• **Diplomado Internacional en Transformación Digital**: Especialización ejecutiva.\n• **Formación Continua**: SQL Avanzado, Power BI, Scrum & Metodologías Ágiles, IA Generativa aplicada a Analítica.`;
+    }
+
+    // 6. Intent: Contact / Email / LinkedIn
+    if (q.includes('contact') || q.includes('contacto') || q.includes('email') || q.includes('linkedin') || q.includes('mail') || q.includes('contratar') || q.includes('trabajar')) {
+      return isEn
+        ? `📩 You can contact **Benjamín Espinoza** via email at \`bmatiasespinoza@gmail.com\` or connect on [LinkedIn](https://www.linkedin.com/in/benmatias).`
         : `📩 Puedes contactar a **Benjamín Espinoza** por correo a \`bmatiasespinoza@gmail.com\` o en su perfil de [LinkedIn](https://www.linkedin.com/in/benmatias).`;
     }
 
+    // 7. General Conversational Fallback
     return isEn
-      ? `🤖 **Overview of ${ctxName}**:\n${activeData.context}`
-      : `🤖 **Resumen sobre ${ctxName}**:\n${activeData.context}`;
+      ? `🤖 **Benjamín Espinoza Professional Summary**:\nBenjamín is a **Senior Business & Data Analyst** (Industrial Engineer) at Banco Internacional. He specializes in transforming complex data into strategic business decisions and scalable digital products using **PostgreSQL SQL**, **Power BI / Looker Studio**, **Agile triads (BPMN 2.0)**, and **Generative AI**.\n\nWould you like to know more about his experience as a **Data Analyst**, **Product Owner**, or **Business Analyst**?`
+      : `🤖 **Resumen del Perfil Profesional de Benjamín Espinoza**:\nBenjamín es **Senior Business & Data Analyst** (Ingeniero Civil Industrial) en Banco Internacional. Se especializa en transformar datos complejos en decisiones estratégicas y productos digitales escalables mediante **SQL (PostgreSQL)**, **Power BI / Looker Studio**, **triadas ágiles (BPMN 2.0)** e **IA Generativa**.\n\n¿Te gustaría saber más sobre su encaje como **Data Analyst**, **Product Owner**, **Business Analyst** o explorar sus **Publicaciones** y **Dashboards**?`;
   }
 };
 
