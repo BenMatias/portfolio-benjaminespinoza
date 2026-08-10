@@ -1899,55 +1899,357 @@
             </div>
         </div>
 
-        <!-- PESTAÑA 3: ARQUITECTURA DE DATOS & CONSULTAS SQL -->
+        <!-- PESTAÑA 3: ARQUITECTURA DE DATOS & CONSULTAS SQL EN POSTGRESQL -->
         <div id="tab-sql" class="cs-tab-pane">
-            <div class="artifact-card">
+
+            <!-- INTRO NARRATIVA -->
+            <div class="artifact-card" style="margin-bottom: 1.5rem;">
                 <div class="artifact-header">
-                    <h3 class="artifact-title"><i class="fas fa-database"></i> Consultas SQL en PostgreSQL (Analítica de Producto)</h3>
-                    <span class="meta-tag"><i class="fas fa-code"></i> PostgreSQL 15</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h3 class="artifact-title" data-translate="cs_sql_title"><i class="fas fa-database"></i> Arquitectura de Datos & Consultas SQL en PostgreSQL</h3>
+                        <span class="meta-tag"><i class="fas fa-code-branch"></i> <span data-translate="cs_sql_badge_pg">PostgreSQL</span></span>
+                        <span class="meta-tag" style="border-color:#00b4d8; color:#00b4d8;"><i class="fas fa-link"></i> <span data-translate="cs_sql_badge_link">Valida Canvas B5 & B6</span></span>
+                    </div>
                 </div>
-                <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1.5rem;">
-                    Extracción de métricas de conversión y comportamiento de usuarios mediante consultas SQL directas sobre la base de datos de eventos digitales (`digital_events`):
+                <p style="color:#cbd5e1; font-size:0.93rem; line-height:1.7; margin:0;" data-translate="cs_sql_intro">
+                    El proceso rediseñado (Tab 2) genera solicitudes de productos digitales que quedan registradas en la base de datos interna del banco en PostgreSQL. Las siguientes consultas validan si el KPI declarado en el MVP Canvas —<strong style="color:#00e676;">+35% de conversión de solicitudes digitales</strong>— se cumplió, utilizando tres tablas del sistema de productos bancario.
                 </p>
+            </div>
 
-                <h4 style="color: #00e676; margin-bottom: 0.75rem;"><i class="fas fa-filter"></i> 1. Análisis de Embudo de Conversión de Productos Financieros</h4>
-                <div class="sql-code-block">
-<span class="sql-keyword">WITH</span> funnel_steps <span class="sql-keyword">AS</span> (
-    <span class="sql-keyword">SELECT</span> 
-        session_id,
-        device_category,
-        <span class="sql-func">MAX</span>(<span class="sql-keyword">CASE WHEN</span> event_name = <span class="sql-string">'page_view_public'</span> <span class="sql-keyword">THEN</span> 1 <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) <span class="sql-keyword">AS</span> step1_landing,
-        <span class="sql-func">MAX</span>(<span class="sql-keyword">CASE WHEN</span> event_name = <span class="sql-string">'click_apply_now'</span> <span class="sql-keyword">THEN</span> 1 <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) <span class="sql-keyword">AS</span> step2_intent,
-        <span class="sql-func">MAX</span>(<span class="sql-keyword">CASE WHEN</span> event_name = <span class="sql-string">'start_form_fill'</span> <span class="sql-keyword">THEN</span> 1 <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) <span class="sql-keyword">AS</span> step3_form,
-        <span class="sql-func">MAX</span>(<span class="sql-keyword">CASE WHEN</span> event_name = <span class="sql-string">'submit_application_success'</span> <span class="sql-keyword">THEN</span> 1 <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) <span class="sql-keyword">AS</span> step4_converted
-    <span class="sql-keyword">FROM</span> digital_events
-    <span class="sql-keyword">WHERE</span> event_timestamp >= <span class="sql-func">CURRENT_DATE</span> - <span class="sql-keyword">INTERVAL</span> <span class="sql-string">'30 days'</span>
-    <span class="sql-keyword">GROUP BY</span> session_id, device_category
-)
-<span class="sql-keyword">SELECT</span> 
-    device_category,
-    <span class="sql-func">COUNT</span>(session_id) <span class="sql-keyword">AS</span> total_sessions,
-    <span class="sql-func">SUM</span>(step2_intent) <span class="sql-keyword">AS</span> intent_clicks,
-    <span class="sql-func">SUM</span>(step4_converted) <span class="sql-keyword">AS</span> total_conversions,
-    <span class="sql-func">ROUND</span>(<span class="sql-func">SUM</span>(step4_converted)::<span class="sql-keyword">NUMERIC</span> / <span class="sql-func">COUNT</span>(session_id) * 100, 2) <span class="sql-keyword">AS</span> overall_conversion_pct
-<span class="sql-keyword">FROM</span> funnel_steps
-<span class="sql-keyword">GROUP BY</span> device_category
-<span class="sql-keyword">ORDER BY</span> overall_conversion_pct <span class="sql-keyword">DESC</span>;
+            <!-- TARJETA 1: ESQUEMA DE TABLAS -->
+            <div class="artifact-card collapsible-card collapsed" style="margin-bottom: 1.25rem;">
+                <div class="artifact-header card-toggle-trigger">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h3 class="artifact-title" data-translate="cs_sql_schema_title"><i class="fas fa-sitemap"></i> Esquema de Tablas del Sistema de Productos (PostgreSQL)</h3>
+                        <span class="meta-tag"><i class="fas fa-table"></i> <span data-translate="cs_sql_schema_badge">3 Tablas Core</span></span>
+                    </div>
+                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
+                <div class="artifact-body">
+                    <p style="color:#cbd5e1; font-size:0.92rem; margin-bottom:1.25rem;" data-translate="cs_sql_schema_desc">
+                        Modelo simplificado de las tres tablas del sistema bancario interno utilizadas para medir la adopción del canal digital y el impacto del rediseño del portal:
+                    </p>
 
-                <h4 style="color: #00e676; margin: 1.75rem 0 0.75rem 0;"><i class="fas fa-chart-area"></i> 2. Rendimiento de Páginas Publicadas en Puck CMS vs. Legacy</h4>
-                <div class="sql-code-block">
-<span class="sql-keyword">SELECT</span> 
-    page_cms_type,
-    <span class="sql-func">COUNT</span>(<span class="sql-keyword">DISTINCT</span> session_id) <span class="sql-keyword">AS</span> unique_visitors,
-    <span class="sql-func">ROUND</span>(<span class="sql-func">AVG</span>(page_load_time_ms), 0) <span class="sql-keyword">AS</span> avg_load_time_ms,
-    <span class="sql-func">ROUND</span>(<span class="sql-func">SUM</span>(conversion_flag)::<span class="sql-keyword">NUMERIC</span> / <span class="sql-func">COUNT</span>(session_id) * 100, 2) <span class="sql-keyword">AS</span> conversion_rate
-<span class="sql-keyword">FROM</span> web_performance_logs
-<span class="sql-keyword">WHERE</span> log_date >= <span class="sql-string">'2025-01-01'</span>
-<span class="sql-keyword">GROUP BY</span> page_cms_type;
+                    <!-- SCHEMA TABLES GRID -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom:1.5rem;">
+
+                        <!-- TABLE 1 -->
+                        <div style="background:#0f172a; border:1px solid rgba(0,180,216,0.35); border-radius:10px; overflow:hidden;">
+                            <div style="background:rgba(0,180,216,0.12); padding:0.65rem 1rem; display:flex; align-items:center; gap:0.5rem; border-bottom:1px solid rgba(0,180,216,0.25);">
+                                <i class="fas fa-table" style="color:#00b4d8; font-size:0.85rem;"></i>
+                                <code style="color:#00b4d8; font-weight:700; font-size:0.88rem;">solicitudes_digitales</code>
+                            </div>
+                            <div style="padding:0.75rem 1rem;">
+                                <p style="color:#64748b; font-size:0.78rem; margin-bottom:0.6rem;" data-translate="cs_sql_t1_desc">Registro de cada solicitud de producto enviada desde el portal web.</p>
+                                <table style="width:100%; border-collapse:collapse; font-size:0.8rem;">
+                                    <thead><tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_field">Campo</th>
+                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_type">Tipo</th>
+                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_desc">Descripción</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">solicitud_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">SERIAL PK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f1">ID único</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">tipo_producto</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f2">cuenta / crédito</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">canal_origen</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f3">web / sucursal / app</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">estado</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f4">iniciada / enviada / aprobada</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">fecha_solicitud</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">TIMESTAMPTZ</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f5">Fecha y hora UTC</td></tr>
+                                        <tr><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">session_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">UUID FK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f6">Enlace a sesión web</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- TABLE 2 -->
+                        <div style="background:#0f172a; border:1px solid rgba(0,230,118,0.35); border-radius:10px; overflow:hidden;">
+                            <div style="background:rgba(0,230,118,0.08); padding:0.65rem 1rem; display:flex; align-items:center; gap:0.5rem; border-bottom:1px solid rgba(0,230,118,0.2);">
+                                <i class="fas fa-table" style="color:#00e676; font-size:0.85rem;"></i>
+                                <code style="color:#00e676; font-weight:700; font-size:0.88rem;">sesiones_web</code>
+                            </div>
+                            <div style="padding:0.75rem 1rem;">
+                                <p style="color:#64748b; font-size:0.78rem; margin-bottom:0.6rem;" data-translate="cs_sql_t2_desc">Sesión de usuario en el portal público con su contexto de dispositivo y campaña.</p>
+                                <table style="width:100%; border-collapse:collapse; font-size:0.8rem;">
+                                    <thead><tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_field">Campo</th>
+                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_type">Tipo</th>
+                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_desc">Descripción</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">session_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">UUID PK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f1">ID único de sesión</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">dispositivo</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f2">mobile / desktop / tablet</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">utm_source</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f3">Fuente de campaña UTM</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">landing_page</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f4">Página de entrada al portal</td></tr>
+                                        <tr><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">fecha_sesion</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">TIMESTAMPTZ</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f5">Timestamp de inicio</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- TABLE 3 -->
+                        <div style="background:#0f172a; border:1px solid rgba(239,68,68,0.35); border-radius:10px; overflow:hidden;">
+                            <div style="background:rgba(239,68,68,0.08); padding:0.65rem 1rem; display:flex; align-items:center; gap:0.5rem; border-bottom:1px solid rgba(239,68,68,0.2);">
+                                <i class="fas fa-table" style="color:#ef4444; font-size:0.85rem;"></i>
+                                <code style="color:#ef4444; font-weight:700; font-size:0.88rem;">errores_formulario</code>
+                            </div>
+                            <div style="padding:0.75rem 1rem;">
+                                <p style="color:#64748b; font-size:0.78rem; margin-bottom:0.6rem;" data-translate="cs_sql_t3_desc">Log de errores de validación capturados en los formularios del portal durante el proceso de solicitud.</p>
+                                <table style="width:100%; border-collapse:collapse; font-size:0.8rem;">
+                                    <thead><tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_field">Campo</th>
+                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_type">Tipo</th>
+                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_desc">Descripción</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">error_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">SERIAL PK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f1">ID único de error</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">session_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">UUID FK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f2">Sesión donde ocurrió</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">campo_formulario</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f3">Campo que generó el error</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">tipo_error</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f4">validación / bloqueante / timeout</td></tr>
+                                        <tr><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">fecha_error</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">TIMESTAMPTZ</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f5">Timestamp del error</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div><!-- /schema grid -->
+                </div>
+            </div><!-- /schema card -->
+
+            <!-- TARJETA 2: QUERY 1 — TASA DE CONVERSIÓN -->
+            <div class="artifact-card collapsible-card collapsed" style="margin-bottom: 1.25rem;">
+                <div class="artifact-header card-toggle-trigger">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h3 class="artifact-title" data-translate="cs_sql_q1_title"><i class="fas fa-percent"></i> Query 1 — Tasa de Conversión de Solicitudes por Tipo de Producto</h3>
+                        <span class="meta-tag" style="border-color:#00e676; color:#00e676;"><i class="fas fa-bullseye"></i> <span data-translate="cs_sql_q1_kpi">Canvas B5: +35% conversión</span></span>
+                    </div>
+                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="artifact-body">
+                    <p style="color:#cbd5e1; font-size:0.9rem; margin-bottom:1rem;" data-translate="cs_sql_q1_desc">
+                        Mide la tasa de conversión de solicitudes digitales por tipo de producto bancario (cuenta corriente vs. crédito de consumo), validando directamente el KPI de +35% de conversión declarado en el <strong>MVP Canvas Bloque 5</strong> y en el resumen ejecutivo del proyecto. Conecta con las Personas Camila y Roberto definidas en el <strong>Canvas Bloque 2</strong>.
+                    </p>
+                    <div class="sql-code-block">
+<span class="sql-comment">-- Canvas B5: valida +35% conversión de solicitudes digitales</span>
+<span class="sql-comment">-- Personas Canvas B2: Camila (cuenta) y Roberto (crédito)</span>
+<span class="sql-keyword">SELECT</span>
+    sd.tipo_producto,
+    <span class="sql-func">COUNT</span>(*) <span class="sql-keyword">AS</span> total_solicitudes,
+    <span class="sql-func">SUM</span>(<span class="sql-keyword">CASE WHEN</span> sd.estado = <span class="sql-string">'aprobada'</span> <span class="sql-keyword">THEN</span> 1 <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>) <span class="sql-keyword">AS</span> solicitudes_aprobadas,
+    <span class="sql-func">ROUND</span>(
+        <span class="sql-func">SUM</span>(<span class="sql-keyword">CASE WHEN</span> sd.estado = <span class="sql-string">'aprobada'</span> <span class="sql-keyword">THEN</span> 1 <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>)::<span class="sql-keyword">NUMERIC</span>
+        / <span class="sql-func">COUNT</span>(*) * 100, 2
+    ) <span class="sql-keyword">AS</span> tasa_conversion_pct,
+    <span class="sql-comment">-- Compara periodo post-rediseño vs período anterior</span>
+    <span class="sql-func">LAG</span>(
+        <span class="sql-func">ROUND</span>(<span class="sql-func">SUM</span>(<span class="sql-keyword">CASE WHEN</span> sd.estado = <span class="sql-string">'aprobada'</span> <span class="sql-keyword">THEN</span> 1 <span class="sql-keyword">ELSE</span> 0 <span class="sql-keyword">END</span>)::<span class="sql-keyword">NUMERIC</span> / <span class="sql-func">COUNT</span>(*) * 100, 2)
+    ) <span class="sql-keyword">OVER</span> (<span class="sql-keyword">PARTITION BY</span> sd.tipo_producto <span class="sql-keyword">ORDER BY</span> <span class="sql-func">DATE_TRUNC</span>(<span class="sql-string">'month'</span>, sd.fecha_solicitud))
+    <span class="sql-keyword">AS</span> tasa_mes_anterior_pct
+<span class="sql-keyword">FROM</span> solicitudes_digitales sd
+<span class="sql-keyword">JOIN</span> sesiones_web sw <span class="sql-keyword">ON</span> sd.session_id = sw.session_id
+<span class="sql-keyword">WHERE</span>
+    sd.canal_origen = <span class="sql-string">'web'</span>
+    <span class="sql-keyword">AND</span> sd.fecha_solicitud &gt;= <span class="sql-func">DATE_TRUNC</span>(<span class="sql-string">'month'</span>, <span class="sql-func">CURRENT_DATE</span>) - <span class="sql-keyword">INTERVAL</span> <span class="sql-string">'3 months'</span>
+<span class="sql-keyword">GROUP BY</span> sd.tipo_producto, <span class="sql-func">DATE_TRUNC</span>(<span class="sql-string">'month'</span>, sd.fecha_solicitud)
+<span class="sql-keyword">ORDER BY</span> sd.tipo_producto, <span class="sql-func">DATE_TRUNC</span>(<span class="sql-string">'month'</span>, sd.fecha_solicitud);
+                    </div>
+
+                    <!-- Resultado simulado -->
+                    <p style="color:#64748b; font-size:0.8rem; margin: 1rem 0 0.5rem;" data-translate="cs_sql_simulated_result">🟢 Resultado simulado (muestra):</p>
+                    <div style="overflow-x:auto;">
+                        <table class="kpi-reengineering-table" style="font-size:0.82rem;">
+                            <thead><tr>
+                                <th data-translate="cs_sql_q1_r_col1">tipo_producto</th>
+                                <th data-translate="cs_sql_q1_r_col2">total_solicitudes</th>
+                                <th data-translate="cs_sql_q1_r_col3">aprobadas</th>
+                                <th data-translate="cs_sql_q1_r_col4">tasa_conversion_pct</th>
+                                <th data-translate="cs_sql_q1_r_col5">tasa_mes_anterior_pct</th>
+                            </tr></thead>
+                            <tbody>
+                                <tr><td><code>cuenta_corriente</code></td><td>1,842</td><td>1,031</td><td><span class="kpi-badge-success">56.0%</span></td><td>41.5%</td></tr>
+                                <tr><td><code>credito_consumo</code></td><td>2,107</td><td>1,012</td><td><span class="kpi-badge-success">48.0%</span></td><td>35.6%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="color:#00e676; font-size:0.82rem; margin-top:0.6rem;"><i class="fas fa-check-circle"></i> <strong data-translate="cs_sql_q1_insight">Insight: +35% de incremento validado → cuenta corriente creció de 41.5% → 56.0% (+35%), crédito de consumo de 35.6% → 48.0% (+35%).</strong></p>
                 </div>
             </div>
-        </div>
+
+            <!-- TARJETA 3: QUERY 2 — EMBUDO DE SOLICITUD -->
+            <div class="artifact-card collapsible-card collapsed" style="margin-bottom: 1.25rem;">
+                <div class="artifact-header card-toggle-trigger">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h3 class="artifact-title" data-translate="cs_sql_q2_title"><i class="fas fa-filter"></i> Query 2 — Análisis de Embudo: Sesión → CTA → Formulario → Aprobada</h3>
+                        <span class="meta-tag" style="border-color:#00b4d8; color:#00b4d8;"><i class="fas fa-route"></i> <span data-translate="cs_sql_q2_kpi">Canvas B6: submit_application_success</span></span>
+                    </div>
+                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="artifact-body">
+                    <p style="color:#cbd5e1; font-size:0.9rem; margin-bottom:1rem;" data-translate="cs_sql_q2_desc">
+                        Traza el embudo de conversión de extremo a extremo, desde la sesión en el portal hasta la aprobación de la solicitud. Valida el evento <code>submit_application_success</code> definido en el <strong>Canvas Bloque 6</strong> y los pasos 3, 4 y 5 del <strong>Journey (Canvas Bloque 3)</strong>: Intención de Solicitud → Formulario → Conversión.
+                    </p>
+                    <div class="sql-code-block">
+<span class="sql-comment">-- Canvas B6: mide submit_application_success</span>
+<span class="sql-comment">-- Canvas B3 Journey: pasos 3 (CTA) → 4 (formulario) → 5 (conversión)</span>
+<span class="sql-keyword">WITH</span> embudo <span class="sql-keyword">AS</span> (
+    <span class="sql-keyword">SELECT</span>
+        <span class="sql-func">COUNT</span>(<span class="sql-keyword">DISTINCT</span> sw.session_id)          <span class="sql-keyword">AS</span> paso1_sesiones,
+        <span class="sql-func">COUNT</span>(<span class="sql-keyword">DISTINCT</span> <span class="sql-keyword">CASE WHEN</span> sd.estado <span class="sql-keyword">IS NOT NULL</span>
+            <span class="sql-keyword">THEN</span> sd.session_id <span class="sql-keyword">END</span>)            <span class="sql-keyword">AS</span> paso2_inicio_solicitud,
+        <span class="sql-func">COUNT</span>(<span class="sql-keyword">DISTINCT</span> <span class="sql-keyword">CASE WHEN</span> sd.estado <span class="sql-keyword">IN</span> (<span class="sql-string">'enviada'</span>,<span class="sql-string">'aprobada'</span>)
+            <span class="sql-keyword">THEN</span> sd.session_id <span class="sql-keyword">END</span>)            <span class="sql-keyword">AS</span> paso3_formulario_enviado,
+        <span class="sql-func">COUNT</span>(<span class="sql-keyword">DISTINCT</span> <span class="sql-keyword">CASE WHEN</span> sd.estado = <span class="sql-string">'aprobada'</span>
+            <span class="sql-keyword">THEN</span> sd.session_id <span class="sql-keyword">END</span>)            <span class="sql-keyword">AS</span> paso4_aprobada
+    <span class="sql-keyword">FROM</span> sesiones_web sw
+    <span class="sql-keyword">LEFT JOIN</span> solicitudes_digitales sd <span class="sql-keyword">ON</span> sw.session_id = sd.session_id
+        <span class="sql-keyword">AND</span> sd.canal_origen = <span class="sql-string">'web'</span>
+    <span class="sql-keyword">WHERE</span> sw.fecha_sesion &gt;= <span class="sql-func">CURRENT_DATE</span> - <span class="sql-keyword">INTERVAL</span> <span class="sql-string">'30 days'</span>
+)
+<span class="sql-keyword">SELECT</span>
+    paso1_sesiones,
+    paso2_inicio_solicitud,
+    paso3_formulario_enviado,
+    paso4_aprobada,
+    <span class="sql-func">ROUND</span>(paso2_inicio_solicitud::numeric / paso1_sesiones * 100, 1) <span class="sql-keyword">AS</span> pct_inician,
+    <span class="sql-func">ROUND</span>(paso3_formulario_enviado::numeric / paso2_inicio_solicitud * 100, 1) <span class="sql-keyword">AS</span> pct_envian,
+    <span class="sql-func">ROUND</span>(paso4_aprobada::numeric / paso3_formulario_enviado * 100, 1) <span class="sql-keyword">AS</span> pct_aprobadas
+<span class="sql-keyword">FROM</span> embudo;
+                    </div>
+
+                    <p style="color:#64748b; font-size:0.8rem; margin: 1rem 0 0.5rem;" data-translate="cs_sql_simulated_result">🟢 Resultado simulado (muestra):</p>
+                    <div style="overflow-x:auto;">
+                        <table class="kpi-reengineering-table" style="font-size:0.82rem;">
+                            <thead><tr>
+                                <th data-translate="cs_sql_q2_r_col1">Paso</th>
+                                <th data-translate="cs_sql_q2_r_col2">Cantidad</th>
+                                <th data-translate="cs_sql_q2_r_col3">% Conversión del paso</th>
+                            </tr></thead>
+                            <tbody>
+                                <tr><td>1 — <span data-translate="cs_sql_q2_step1">Sesiones en portal</span></td><td>12,400</td><td>—</td></tr>
+                                <tr><td>2 — <span data-translate="cs_sql_q2_step2">Iniciaron solicitud</span></td><td>4,712</td><td>38.0%</td></tr>
+                                <tr><td>3 — <span data-translate="cs_sql_q2_step3">Enviaron formulario</span></td><td>3,261</td><td>69.2%</td></tr>
+                                <tr><td>4 — <span data-translate="cs_sql_q2_step4">Solicitud aprobada</span></td><td><span class="kpi-badge-success">2,043</span></td><td><span class="kpi-badge-success">62.6%</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA 4: QUERY 3 — CANAL DIGITAL VS SUCURSAL -->
+            <div class="artifact-card collapsible-card collapsed" style="margin-bottom: 1.25rem;">
+                <div class="artifact-header card-toggle-trigger">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h3 class="artifact-title" data-translate="cs_sql_q3_title"><i class="fas fa-chart-bar"></i> Query 3 — Canal Digital vs. Sucursal: Antes y Después del Rediseño</h3>
+                        <span class="meta-tag" style="border-color:#a78bfa; color:#a78bfa;"><i class="fas fa-exchange-alt"></i> <span data-translate="cs_sql_q3_kpi">Canvas B5: Autonomía Operativa</span></span>
+                    </div>
+                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="artifact-body">
+                    <p style="color:#cbd5e1; font-size:0.9rem; margin-bottom:1rem;" data-translate="cs_sql_q3_desc">
+                        Compara el volumen y participación del canal digital frente al canal presencial (sucursal) antes y después del rediseño del portal. Valida el KPI de "Autonomía Operativa" del <strong>Canvas Bloque 5</strong> y el impacto del flujo TO-BE implementado en la <strong>Tab 2</strong>.
+                    </p>
+                    <div class="sql-code-block">
+<span class="sql-comment">-- Canvas B5: valida crecimiento del canal digital post-rediseño</span>
+<span class="sql-comment">-- Fecha de corte: lanzamiento del nuevo portal</span>
+<span class="sql-keyword">SELECT</span>
+    canal_origen,
+    <span class="sql-keyword">CASE</span>
+        <span class="sql-keyword">WHEN</span> fecha_solicitud &lt; <span class="sql-string">'2025-03-01'</span> <span class="sql-keyword">THEN</span> <span class="sql-string">'Antes del Rediseño'</span>
+        <span class="sql-keyword">ELSE</span> <span class="sql-string">'Después del Rediseño'</span>
+    <span class="sql-keyword">END</span> <span class="sql-keyword">AS</span> periodo,
+    <span class="sql-func">COUNT</span>(*) <span class="sql-keyword">AS</span> total_solicitudes,
+    <span class="sql-func">ROUND</span>(
+        <span class="sql-func">COUNT</span>(*) * 100.0 / <span class="sql-func">SUM</span>(<span class="sql-func">COUNT</span>(*)) <span class="sql-keyword">OVER</span> (
+            <span class="sql-keyword">PARTITION BY</span> <span class="sql-keyword">CASE</span>
+                <span class="sql-keyword">WHEN</span> fecha_solicitud &lt; <span class="sql-string">'2025-03-01'</span> <span class="sql-keyword">THEN</span> <span class="sql-string">'Antes del Rediseño'</span>
+                <span class="sql-keyword">ELSE</span> <span class="sql-string">'Después del Rediseño'</span>
+            <span class="sql-keyword">END</span>
+        ), 1
+    ) <span class="sql-keyword">AS</span> participacion_pct
+<span class="sql-keyword">FROM</span> solicitudes_digitales
+<span class="sql-keyword">WHERE</span> fecha_solicitud &gt;= <span class="sql-string">'2024-12-01'</span>
+<span class="sql-keyword">GROUP BY</span> canal_origen, periodo
+<span class="sql-keyword">ORDER BY</span> periodo, canal_origen;
+                    </div>
+
+                    <p style="color:#64748b; font-size:0.8rem; margin: 1rem 0 0.5rem;" data-translate="cs_sql_simulated_result">🟢 Resultado simulado (muestra):</p>
+                    <div style="overflow-x:auto;">
+                        <table class="kpi-reengineering-table" style="font-size:0.82rem;">
+                            <thead><tr>
+                                <th data-translate="cs_sql_q3_r_canal">canal_origen</th>
+                                <th data-translate="cs_sql_q3_r_periodo">periodo</th>
+                                <th data-translate="cs_sql_q3_r_total">total_solicitudes</th>
+                                <th data-translate="cs_sql_q3_r_pct">participacion_pct</th>
+                            </tr></thead>
+                            <tbody>
+                                <tr><td><code>sucursal</code></td><td data-translate="cs_sql_q3_antes">Antes del Rediseño</td><td>5,820</td><td>71.3%</td></tr>
+                                <tr><td><code>web</code></td><td data-translate="cs_sql_q3_antes">Antes del Rediseño</td><td>2,341</td><td>28.7%</td></tr>
+                                <tr style="background:rgba(0,230,118,0.05);"><td><code>sucursal</code></td><td data-translate="cs_sql_q3_despues">Después del Rediseño</td><td>5,190</td><td>49.2%</td></tr>
+                                <tr style="background:rgba(0,230,118,0.05);"><td><code>web</code></td><td data-translate="cs_sql_q3_despues">Después del Rediseño</td><td><span class="kpi-badge-success">5,361</span></td><td><span class="kpi-badge-success">50.8% ↑</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="color:#00e676; font-size:0.82rem; margin-top:0.6rem;"><i class="fas fa-check-circle"></i> <strong data-translate="cs_sql_q3_insight">Insight: El canal web superó a sucursal post-rediseño (28.7% → 50.8%), validando la Autonomía Operativa del Canvas B5.</strong></p>
+                </div>
+            </div>
+
+            <!-- TARJETA 5: QUERY 4 — ERRORES EN FORMULARIO -->
+            <div class="artifact-card collapsible-card collapsed" style="margin-bottom: 1.25rem;">
+                <div class="artifact-header card-toggle-trigger">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h3 class="artifact-title" data-translate="cs_sql_q4_title"><i class="fas fa-exclamation-triangle"></i> Query 4 — Logs de Errores Bloqueantes en Formularios por Semana</h3>
+                        <span class="meta-tag" style="border-color:#ef4444; color:#ef4444;"><i class="fas fa-shield-alt"></i> <span data-translate="cs_sql_q4_kpi">Canvas B5: 0 defectos bloqueantes</span></span>
+                    </div>
+                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="artifact-body">
+                    <p style="color:#cbd5e1; font-size:0.9rem; margin-bottom:1rem;" data-translate="cs_sql_q4_desc">
+                        Monitorea la tendencia semanal de errores bloqueantes en los formularios del portal, validando el KPI de "Cero defectos bloqueantes en producción" del <strong>Canvas Bloque 5</strong> y la efectividad de la <strong>Épica 3: Pruebas & Pase a Producción</strong> del Roadmap (BIN-301 y BIN-302).
+                    </p>
+                    <div class="sql-code-block">
+<span class="sql-comment">-- Canvas B5: valida "Cero defectos bloqueantes" post-QA Staging</span>
+<span class="sql-comment">-- Roadmap Épica 3 BIN-301: efectividad de la Matriz de Pruebas QA</span>
+<span class="sql-keyword">SELECT</span>
+    <span class="sql-func">DATE_TRUNC</span>(<span class="sql-string">'week'</span>, ef.fecha_error)       <span class="sql-keyword">AS</span> semana,
+    ef.tipo_error,
+    ef.campo_formulario,
+    <span class="sql-func">COUNT</span>(*)                               <span class="sql-keyword">AS</span> total_errores,
+    <span class="sql-func">COUNT</span>(<span class="sql-keyword">DISTINCT</span> ef.session_id)          <span class="sql-keyword">AS</span> sesiones_afectadas,
+    <span class="sql-func">ROUND</span>(
+        <span class="sql-func">COUNT</span>(<span class="sql-keyword">DISTINCT</span> ef.session_id)::numeric
+        / (<span class="sql-keyword">SELECT</span> <span class="sql-func">COUNT</span>(*) <span class="sql-keyword">FROM</span> sesiones_web
+           <span class="sql-keyword">WHERE</span> <span class="sql-func">DATE_TRUNC</span>(<span class="sql-string">'week'</span>, fecha_sesion)
+               = <span class="sql-func">DATE_TRUNC</span>(<span class="sql-string">'week'</span>, ef.fecha_error)) * 100, 2
+    ) <span class="sql-keyword">AS</span> pct_sesiones_con_error
+<span class="sql-keyword">FROM</span> errores_formulario ef
+<span class="sql-keyword">WHERE</span>
+    ef.tipo_error = <span class="sql-string">'bloqueante'</span>
+    <span class="sql-keyword">AND</span> ef.fecha_error &gt;= <span class="sql-func">CURRENT_DATE</span> - <span class="sql-keyword">INTERVAL</span> <span class="sql-string">'8 weeks'</span>
+<span class="sql-keyword">GROUP BY</span> semana, ef.tipo_error, ef.campo_formulario
+<span class="sql-keyword">ORDER BY</span> semana <span class="sql-keyword">DESC</span>, total_errores <span class="sql-keyword">DESC</span>;
+                    </div>
+
+                    <p style="color:#64748b; font-size:0.8rem; margin: 1rem 0 0.5rem;" data-translate="cs_sql_simulated_result">🟢 Resultado simulado (últimas 4 semanas post-lanzamiento):</p>
+                    <div style="overflow-x:auto;">
+                        <table class="kpi-reengineering-table" style="font-size:0.82rem;">
+                            <thead><tr>
+                                <th data-translate="cs_sql_q4_r_week">semana</th>
+                                <th data-translate="cs_sql_q4_r_field">campo_formulario</th>
+                                <th data-translate="cs_sql_q4_r_errors">total_errores</th>
+                                <th data-translate="cs_sql_q4_r_pct">pct_sesiones_con_error</th>
+                            </tr></thead>
+                            <tbody>
+                                <tr><td>2025-03-03</td><td><code>rut_validacion</code></td><td>12</td><td>0.10%</td></tr>
+                                <tr><td>2025-03-10</td><td><code>rut_validacion</code></td><td>7</td><td>0.06%</td></tr>
+                                <tr><td>2025-03-17</td><td><code>rut_validacion</code></td><td>3</td><td>0.02%</td></tr>
+                                <tr style="background:rgba(0,230,118,0.05);"><td>2025-03-24</td><td>—</td><td><span class="kpi-badge-success">0</span></td><td><span class="kpi-badge-success">0.00%</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="color:#00e676; font-size:0.82rem; margin-top:0.6rem;"><i class="fas fa-check-circle"></i> <strong data-translate="cs_sql_q4_insight">Insight: Tendencia a cero errores bloqueantes confirmada en semana 4 post-lanzamiento. KPI Canvas B5 "Cero defectos bloqueantes" validado.</strong></p>
+                </div>
+            </div>
+
+        </div><!-- /tab-sql -->
+
+
 
         <!-- PESTAÑA 4: TELEMETRÍA & DASHBOARD EN VIVO -->
         <div id="tab-dashboard" class="cs-tab-pane">
