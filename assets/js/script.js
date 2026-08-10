@@ -41,31 +41,11 @@ const translations = {
     btnProjects: "View Projects",
     btnResume: "View Resume",
     aboutTitle: "About Me",
-    aboutContent: `<p>I am <strong>Benjamín Espinoza</strong>, an Industrial Engineer specializing in <strong>Data Analytics, Business Intelligence, Business Analysis, and Digital Product Strategy</strong>. Across my professional career in banking (Banco Internacional), retail, and industrial sectors (Lucas Diesel, Heavenward), I have built a versatile profile integrating four core pillars:</p>
+    aboutContent: `<p>I am <strong>Benjamín Espinoza</strong>, an Industrial Engineer specializing in <strong>Data Analytics, Business Intelligence, Business Analysis, and Digital Product Strategy</strong>. Across my professional career in banking (Banco Internacional), retail, and industrial sectors (Lucas Diesel, Heavenward Elevators), I have built a versatile profile balancing four core disciplines: <strong>Data Analyst, BI Analyst, Business Analyst (BA), and Product Specialist (PO Target)</strong>.</p>
 
-<div class="bio-pillars-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
-  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #00e676; border-radius: 8px; padding: 0.85rem 1rem;">
-    <h4 style="color: #00e676; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-database"></i> Data Analyst</h4>
-    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Exploratory analysis and complex querying with <strong>Advanced SQL (PostgreSQL)</strong>, scripts in <strong>Python / Apps Script</strong> for automated ETL pipelines and dataset extraction.</p>
-  </div>
+<p>My core strength lies in transforming complex datasets into strategic decisions and scalable products: executing advanced SQL queries in <strong>PostgreSQL</strong>, building automated ETL pipelines with <strong>Python and Apps Script</strong>, designing KPI architectures, and developing over <strong>50 executive & operational dashboards in Power BI, Looker Studio, and Tableau</strong>.</p>
 
-  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #00b4d8; border-radius: 8px; padding: 0.85rem 1rem;">
-    <h4 style="color: #00b4d8; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-chart-pie"></i> BI Analyst</h4>
-    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Built over <strong>50 executive & operational dashboards in Power BI, Looker Studio, and Tableau</strong> using DAX, Power Query M, and KPI framework architecture.</p>
-  </div>
-
-  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #a855f7; border-radius: 8px; padding: 0.85rem 1rem;">
-    <h4 style="color: #a855f7; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-project-diagram"></i> Business Analyst (BA)</h4>
-    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Process reengineering with <strong>BPMN 2.0</strong>, BDD functional specifications (<em>Given-When-Then</em>) in Jira/Confluence, regulatory compliance, and business-IT alignment.</p>
-  </div>
-
-  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #ffb703; border-radius: 8px; padding: 0.85rem 1rem;">
-    <h4 style="color: #ffb703; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-bullseye"></i> Product Owner (PO Target)</h4>
-    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Agile triad collaboration (PO, Tech Lead, BA), <strong>MVP Canvas</strong> definition, User Story Mapping, Product Analytics (GA4/GTM/Clarity), and No-Code management in Puck CMS.</p>
-  </div>
-</div>
-
-<p>Pioneering the daily adoption of <strong>Generative AI (Gemini, NotebookLM, Rovo AI)</strong> to accelerate data analytics, automate technical documentation, and shorten value delivery cycles in complex environments.</p>`,
+<p>At the same time, I bridge business strategy with tech execution within Agile triads (PO, Tech Lead, BA): authoring BDD User Stories (<em>Given-When-Then</em>) in Jira/Confluence, modeling operational workflows in <strong>BPMN 2.0</strong>, auditing regulatory compliance, and measuring product funnels with <strong>GA4, GTM, and Microsoft Clarity</strong>. Additionally, I pioneer the daily adoption of <strong>Generative AI (Gemini, NotebookLM, Rovo AI)</strong> to accelerate value delivery.</p>`,
     impactTitle: "How I’ve Made an Impact",
     impacts: [{
       icon: "fa-database",
@@ -798,31 +778,11 @@ const translations = {
     btnProjects: "Ver Proyectos",
     btnResume: "Ver CV",
     aboutTitle: "Sobre mí",
-    aboutContent: `<p>Soy <strong>Benjamín Espinoza</strong>, Ingeniero Civil Industrial especializado en <strong>Análisis de Datos, Inteligencia de Negocios, Análisis de Negocios y Estrategia de Productos Digitales</strong>. A lo largo de mi trayectoria profesional en el sector financiero (Banco Internacional), retail e industrial (Lucas Diesel, Heavenward), he construido un perfil versátil que integra cuatro pilares fundamentales:</p>
+    aboutContent: `<p>Soy <strong>Benjamín Espinoza</strong>, Ingeniero Civil Industrial especializado en <strong>Análisis de Datos, Inteligencia de Negocios, Análisis de Negocios y Estrategia de Productos Digitales</strong>. A lo largo de mi trayectoria profesional en el sector financiero (Banco Internacional), retail e industrial (Lucas Diesel, Heavenward Elevators), he construido un perfil versátil que equilibra cuatro disciplinas fundamentales: <strong>Data Analyst, BI Analyst, Business Analyst (BA) y Product Specialist (PO Target)</strong>.</p>
 
-<div class="bio-pillars-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
-  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #00e676; border-radius: 8px; padding: 0.85rem 1rem;">
-    <h4 style="color: #00e676; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-database"></i> Data Analyst</h4>
-    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Análisis exploratorio y extracción de datos con <strong>SQL avanzado (PostgreSQL)</strong>, scripts en <strong>Python / Apps Script</strong> para automatización de pipelines ETL y consultas a bases de datos relacionales.</p>
-  </div>
+<p>Mi fortaleza radica en transformar volúmenes de datos complejos en decisiones estratégicas y productos escalables: ejecuto consultas avanzadas en <strong>PostgreSQL</strong>, desarrollo pipelines de automatización ETL con <strong>Python y Apps Script</strong>, diseño la arquitectura de KPIs y he construido más de <strong>50 tableros interactivos ejecutivos en Power BI, Looker Studio y Tableau</strong>.</p>
 
-  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #00b4d8; border-radius: 8px; padding: 0.85rem 1rem;">
-    <h4 style="color: #00b4d8; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-chart-pie"></i> BI Analyst</h4>
-    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Construcción de más de <strong>50 tableros ejecutivos y operacionales en Power BI, Looker Studio y Tableau</strong>, con modelado en DAX, Power Query M y diseño de arquitectura de KPIs.</p>
-  </div>
-
-  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #a855f7; border-radius: 8px; padding: 0.85rem 1rem;">
-    <h4 style="color: #a855f7; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-project-diagram"></i> Business Analyst (BA)</h4>
-    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Reingeniería de procesos con <strong>BPMN 2.0</strong>, especificación funcional BDD (<em>Given-When-Then</em>) en Jira/Confluence, auditoría de cumplimiento normativo y alineación negocio-TI.</p>
-  </div>
-
-  <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 180, 216, 0.25); border-left: 3px solid #ffb703; border-radius: 8px; padding: 0.85rem 1rem;">
-    <h4 style="color: #ffb703; font-size: 0.95rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-bullseye"></i> Product Owner (PO Target)</h4>
-    <p style="font-size: 0.84rem; color: #cbd5e1; margin: 0; line-height: 1.5;">Liderazgo en triadas ágiles (PO, Tech Lead, BA), definición de <strong>MVP Canvas</strong>, User Story Maps, analítica de producto (GA4/GTM/Clarity) y gestión sin código en Puck CMS.</p>
-  </div>
-</div>
-
-<p>Pionero en la integración diaria de <strong>IA Generativa (Gemini, NotebookLM, Rovo AI)</strong> para acelerar la analítica de datos, automatizar la documentación de requerimientos y reducir el ciclo de entrega de valor en proyectos de alta complejidad.</p>`,
+<p>Al mismo tiempo, conecto la visión de negocio con la ejecución tecnológica liderando el descubrimiento y especificación funcional en triadas ágiles (PO, Tech Lead, BA): redacto historias BDD (<em>Given-When-Then</em>) en Jira/Confluence, modelé flujos operacionales en <strong>BPMN 2.0</strong>, audito cumplimiento normativo CMF y mido la conversión con <strong>GA4, GTM y Microsoft Clarity</strong>. Adicionalmente, soy pionero en la integración diaria de <strong>IA Generativa (Gemini, NotebookLM, Rovo AI)</strong> para acelerar la entrega de valor.</p>`,
     impactTitle: "Cómo He Generado Impacto",
     impacts: [{
       icon: "fa-database",
