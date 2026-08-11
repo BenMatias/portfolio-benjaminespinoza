@@ -313,23 +313,6 @@
 
         /* ===== TABLE OVERFLOW PROTECTION ===== */
         .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; }
-
-        /* ===== COVER IMAGE ===== */
-        .hero-cover-img {
-            width: 100%; max-height: 340px; object-fit: cover;
-            display: block; border-radius: 12px; margin-top: 2rem;
-            border: 1px solid rgba(0,180,216,0.2);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-        }
-
-        /* ===== STICKY TABS ===== */
-        .tabs-sticky {
-            background: #0a0f1a;
-            position: sticky;
-            top: 64px;
-            z-index: 90;
-            border-bottom: none;
-        }
     </style>
 </head>
 <body>
@@ -386,38 +369,33 @@
             <span class="pill-badge-blue"><i class="fas fa-tree"></i> Problem Tree</span>
             <span class="pill-badge-blue"><i class="fas fa-file-invoice"></i> ChileCompra</span>
         </div>
-        <!-- Cover image inside hero -->
-        <img src="../assets/img/healthcare-procurement-cover.jpg"
-             alt="Healthcare Procurement Analytics Cover"
-             class="hero-cover-img">
     </div>
 </section>
 
-<!-- TABS NAVIGATION -->
-<div class="tabs-sticky">
-    <div class="container">
-        <div class="cs-tabs-wrapper">
-            <button class="cs-tab-btn active" onclick="switchTab('overview',this)" id="tab-overview">
-                <i class="fas fa-th-large"></i> <span data-i18n="hpa.tab.overview">Overview</span>
-            </button>
-            <button class="cs-tab-btn" onclick="switchTab('process',this)" id="tab-process">
-                <i class="fas fa-stream"></i> <span data-i18n="hpa.tab.process">Process (AS-IS)</span>
-            </button>
-            <button class="cs-tab-btn" onclick="switchTab('data',this)" id="tab-data">
-                <i class="fas fa-chart-area"></i> <span data-i18n="hpa.tab.data">Data Analysis</span>
-            </button>
-            <button class="cs-tab-btn" onclick="switchTab('model',this)" id="tab-model">
-                <i class="fas fa-lightbulb"></i> <span data-i18n="hpa.tab.model">Proposed Model</span>
-            </button>
-            <button class="cs-tab-btn" onclick="switchTab('method',this)" id="tab-method">
-                <i class="fas fa-flask"></i> <span data-i18n="hpa.tab.method">Methodology</span>
-            </button>
-        </div>
-    </div>
-</div>
 
 <div style="background: #060d16; min-height: 60vh;">
 <div class="container">
+
+<!-- TABS NAVIGATION -->
+<div class="cs-tabs-wrapper" style="margin: 2.5rem 0 0 0;">
+    <button class="cs-tab-btn active" onclick="switchTab('overview',this)" id="tab-overview">
+        <i class="fas fa-th-large"></i> <span data-i18n="hpa.tab.overview">Overview</span>
+    </button>
+    <button class="cs-tab-btn" onclick="switchTab('process',this)" id="tab-process">
+        <i class="fas fa-stream"></i> <span data-i18n="hpa.tab.process">Process (AS-IS)</span>
+    </button>
+    <button class="cs-tab-btn" onclick="switchTab('data',this)" id="tab-data">
+        <i class="fas fa-chart-area"></i> <span data-i18n="hpa.tab.data">Data Analysis</span>
+    </button>
+    <button class="cs-tab-btn" onclick="switchTab('model',this)" id="tab-model">
+        <i class="fas fa-lightbulb"></i> <span data-i18n="hpa.tab.model">Proposed Model</span>
+    </button>
+    <button class="cs-tab-btn" onclick="switchTab('method',this)" id="tab-method">
+        <i class="fas fa-flask"></i> <span data-i18n="hpa.tab.method">Methodology</span>
+    </button>
+</div>
+
+
 
 <!-- ========================== TAB 1: OVERVIEW ========================== -->
 <div class="cs-tab-pane active" id="pane-overview">
