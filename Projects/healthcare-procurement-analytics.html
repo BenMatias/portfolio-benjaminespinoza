@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -284,32 +284,56 @@
         .survey-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #00b4d8, #a78bfa); display: flex; align-items: center; padding-left: 6px; font-size: 0.7rem; font-weight: 700; color: #fff; }
         .survey-pct { font-size: 0.8rem; font-weight: 700; color: #00e676; width: 38px; text-align: right; flex-shrink: 0; }
 
-        /* ===== CANVAS ===== */
+        /* ===== CANVAS (Osterwalder 9-Box Layout) ===== */
         .canvas-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem; margin-top: 1.25rem;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.85rem;
+            margin-top: 1.25rem;
         }
         .canvas-card {
             background: #0f172a; border: 1.5px solid rgba(0,180,216,0.3);
-            border-radius: 10px; padding: 1.1rem; position: relative;
+            border-radius: 10px; padding: 1rem; position: relative;
             box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            display: flex; flex-direction: column;
             transition: transform 0.25s ease, border-color 0.25s ease;
         }
         .canvas-card:hover { transform: translateY(-2px); border-color: #00e676; }
         .canvas-card .canvas-num {
             position: absolute; top: 10px; right: 10px;
-            width: 28px; height: 28px; border-radius: 50%;
+            width: 24px; height: 24px; border-radius: 50%;
             background: linear-gradient(135deg, #00b4d8, #00e676);
-            color: #0d1b2a; font-weight: 800; font-size: 0.8rem;
+            color: #0d1b2a; font-weight: 800; font-size: 0.75rem;
             display: flex; align-items: center; justify-content: center;
         }
-        .canvas-card h4 { color: #00e676 !important; font-size: 0.85rem; font-weight: 800; margin: 0 0 0.6rem 0; text-transform: uppercase; letter-spacing: 0.4px; padding-right: 32px; }
-        .canvas-card ul { padding-left: 1rem; margin: 0; }
-        .canvas-card li { font-size: 0.76rem; color: #cbd5e1 !important; margin-bottom: 0.3rem; }
-        .canvas-full { grid-column: 1 / -1; }
-        @media (max-width: 900px) { .canvas-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 600px) { .canvas-grid { grid-template-columns: 1fr; } .canvas-full { grid-column: 1; } }
+        .canvas-card h4 { color: #00e676 !important; font-size: 0.82rem; font-weight: 800; margin: 0 0 0.5rem 0; text-transform: uppercase; letter-spacing: 0.4px; padding-right: 28px; }
+        .canvas-card ul { padding-left: 1rem; margin: 0; flex: 1; }
+        .canvas-card li { font-size: 0.75rem; color: #cbd5e1 !important; margin-bottom: 0.35rem; line-height: 1.35; }
+        .canvas-card p { font-size: 0.75rem; color: #cbd5e1 !important; margin: 0; line-height: 1.4; flex: 1; }
+
+        /* Osterwalder 9-Box Grid Positions */
+        .bm-partners { grid-column: 1 / 2; grid-row: 1 / 3; }
+        .bm-activities { grid-column: 2 / 3; grid-row: 1 / 2; }
+        .bm-resources { grid-column: 2 / 3; grid-row: 2 / 3; }
+        .bm-value { grid-column: 3 / 4; grid-row: 1 / 3; }
+        .bm-relationships { grid-column: 4 / 5; grid-row: 1 / 2; }
+        .bm-channels { grid-column: 4 / 5; grid-row: 2 / 3; }
+        .bm-customers { grid-column: 5 / 6; grid-row: 1 / 3; }
+        .bm-costs { grid-column: 1 / 3; grid-row: 3 / 4; }
+        .bm-revenues { grid-column: 3 / 6; grid-row: 3 / 4; }
+
+        @media (max-width: 992px) {
+            .canvas-grid { grid-template-columns: repeat(2, 1fr); }
+            .bm-partners, .bm-activities, .bm-resources, .bm-value, 
+            .bm-relationships, .bm-channels, .bm-customers, .bm-costs, .bm-revenues {
+                grid-column: span 1; grid-row: auto;
+            }
+            .bm-costs, .bm-revenues { grid-column: span 2; }
+        }
+        @media (max-width: 600px) {
+            .canvas-grid { grid-template-columns: 1fr; }
+            .bm-costs, .bm-revenues { grid-column: span 1; }
+        }
 
         /* ===== TABLE OVERFLOW PROTECTION ===== */
         .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; }
@@ -464,65 +488,93 @@
             <span class="pill-badge-blue" data-translate="hpa_canvas_badge">CENABAST Intermediation Model</span>
         </div>
         <div class="canvas-grid">
-            <div class="canvas-card">
+            <!-- 1. Aliados Clave (Key Partners) -->
+            <div class="canvas-card bm-partners">
                 <span class="canvas-num">1</span>
                 <h4 data-translate="hpa_canvas_partners">Key Partners</h4>
                 <ul>
-                    <li data-translate="hpa_canvas_partners1">MINSAL (regulatory oversight)</li>
-                    <li data-translate="hpa_canvas_partners2">ISP (quality control)</li>
-                    <li data-translate="hpa_canvas_partners3">ChileCompra (procurement platform)</li>
-                    <li data-translate="hpa_canvas_partners4">FONASA (public health funding)</li>
-                    <li data-translate="hpa_canvas_partners5">Pharmaceutical suppliers (100+)</li>
+                    <li data-translate="hpa_canvas_partners1">National Suppliers</li>
+                    <li data-translate="hpa_canvas_partners2">International Suppliers</li>
+                    <li data-translate="hpa_canvas_partners3">Logistics Operators</li>
+                    <li data-translate="hpa_canvas_partners4">SEREMI Salud (Regional Health Secretariat)</li>
+                    <li data-translate="hpa_canvas_partners5">SAG (Agricultural & Livestock Service)</li>
+                    <li data-translate="hpa_canvas_partners6">Customs Authority (Aduanas)</li>
+                    <li data-translate="hpa_canvas_partners7">ChileCompra Public Procurement Platform</li>
                 </ul>
             </div>
-            <div class="canvas-card">
+
+            <!-- 2. Actividades Clave (Key Activities) -->
+            <div class="canvas-card bm-activities">
                 <span class="canvas-num">2</span>
                 <h4 data-translate="hpa_canvas_activities">Key Activities</h4>
                 <ul>
-                    <li data-translate="hpa_canvas_act1">18-month demand aggregation</li>
-                    <li data-translate="hpa_canvas_act2">Public tender management (licitaciones)</li>
-                    <li data-translate="hpa_canvas_act3">Contract execution & monitoring</li>
-                    <li data-translate="hpa_canvas_act4">Vendor performance tracking</li>
-                    <li data-translate="hpa_canvas_act5">Progressive compliance reporting</li>
+                    <li data-translate="hpa_canvas_act1">Demand collection & aggregation</li>
+                    <li data-translate="hpa_canvas_act2">Order dispatch & delivery within agreed SLAs</li>
                 </ul>
             </div>
-            <div class="canvas-card">
+
+            <!-- 3. Recursos Clave (Key Resources) -->
+            <div class="canvas-card bm-resources">
                 <span class="canvas-num">3</span>
-                <h4 data-translate="hpa_canvas_value">Value Proposition</h4>
+                <h4 data-translate="hpa_canvas_resources">Key Resources</h4>
                 <ul>
-                    <li data-translate="hpa_canvas_val1">Bulk pricing via economies of scale</li>
-                    <li data-translate="hpa_canvas_val2">Guaranteed access to critical medicines</li>
-                    <li data-translate="hpa_canvas_val3">Centralized procurement expertise</li>
-                    <li data-translate="hpa_canvas_val4">Regulatory compliance assurance</li>
+                    <li data-translate="hpa_canvas_res1">Central agency headquarters & infrastructure</li>
+                    <li data-translate="hpa_canvas_res2">Web procurement platforms</li>
+                    <li data-translate="hpa_canvas_res3">Awarded supply contracts</li>
                 </ul>
             </div>
-            <div class="canvas-card">
+
+            <!-- 4. Propuesta de Valor (Value Proposition) -->
+            <div class="canvas-card bm-value">
                 <span class="canvas-num">4</span>
+                <h4 data-translate="hpa_canvas_value">Value Proposition</h4>
+                <p data-translate="hpa_canvas_val1">Cost reduction for client health facilities through volume purchasing & economies of scale.</p>
+            </div>
+
+            <!-- 5. Relación con el Cliente (Customer Relationships) -->
+            <div class="canvas-card bm-relationships">
+                <span class="canvas-num">5</span>
+                <h4 data-translate="hpa_canvas_relationships">Customer Relationships</h4>
+                <p data-translate="hpa_canvas_rel1">Dedicated personal & phone assistance.</p>
+            </div>
+
+            <!-- 6. Canales (Channels) -->
+            <div class="canvas-card bm-channels">
+                <span class="canvas-num">6</span>
                 <h4 data-translate="hpa_canvas_channels">Channels</h4>
                 <ul>
-                    <li data-translate="hpa_canvas_ch1">Online platform (order placement)</li>
-                    <li data-translate="hpa_canvas_ch2">Dedicated account executives (2 per macrozone)</li>
-                    <li data-translate="hpa_canvas_ch3">Monthly compliance reports (Informe Progresivo)</li>
-                    <li data-translate="hpa_canvas_ch4">Phone & email support</li>
+                    <li data-translate="hpa_canvas_ch1">Direct supplier channels</li>
+                    <li data-translate="hpa_canvas_ch2">External logistics operators</li>
+                    <li data-translate="hpa_canvas_ch3">Customer service & order portal</li>
                 </ul>
             </div>
-            <div class="canvas-card">
-                <span class="canvas-num">5</span>
+
+            <!-- 7. Segmentos de Clientes (Customer Segments) -->
+            <div class="canvas-card bm-customers">
+                <span class="canvas-num">7</span>
                 <h4 data-translate="hpa_canvas_customers">Customer Segments</h4>
                 <ul>
-                    <li data-translate="hpa_canvas_cs1">500+ public health facilities (hospitals, clinics, CESFAM)</li>
-                    <li data-translate="hpa_canvas_cs2">MINSAL ministerial programs</li>
-                    <li data-translate="hpa_canvas_cs3">Regional health services (Servicios de Salud)</li>
+                    <li data-translate="hpa_canvas_cs1">Ministry of Health (MINSAL)</li>
+                    <li data-translate="hpa_canvas_cs2">Undersecretariat of Healthcare Networks</li>
+                    <li data-translate="hpa_canvas_cs3">Undersecretariat of Public Health</li>
+                    <li data-translate="hpa_canvas_cs4">National Health Fund (FONASA)</li>
+                    <li data-translate="hpa_canvas_cs5">Municipalities & Municipal Health Corporations</li>
+                    <li data-translate="hpa_canvas_cs6">Affiliated entities of the National Health Services System</li>
                 </ul>
             </div>
-            <div class="canvas-card">
-                <span class="canvas-num">6</span>
+
+            <!-- 8. Estructura de Costes (Cost Structure) -->
+            <div class="canvas-card bm-costs">
+                <span class="canvas-num">8</span>
+                <h4 data-translate="hpa_canvas_costs">Cost Structure</h4>
+                <p data-translate="hpa_canvas_costs_desc">Inventory Holding and Transportation represent the primary operational cost drivers. Total annual expenditure (2016): $11,687,552 CLP (in thousands).</p>
+            </div>
+
+            <!-- 9. Estructura de Ingresos (Revenue Streams) -->
+            <div class="canvas-card bm-revenues">
+                <span class="canvas-num">9</span>
                 <h4 data-translate="hpa_canvas_revenue">Revenue Streams</h4>
-                <ul>
-                    <li data-translate="hpa_canvas_rev1">Intermediation commissions from client institutions</li>
-                    <li data-translate="hpa_canvas_rev2">Vendor sanctions / fines</li>
-                    <li data-translate="hpa_canvas_rev3">No public fiscal contribution</li>
-                </ul>
+                <p data-translate="hpa_canvas_rev_desc">Intermediation commission fees charged to client health institutions per transaction. Total annual revenue (2016): $12,359,324 CLP (in thousands).</p>
             </div>
         </div>
     </div>
