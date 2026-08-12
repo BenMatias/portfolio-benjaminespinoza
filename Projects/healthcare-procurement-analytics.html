@@ -320,119 +320,109 @@
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZ6WFTW7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- NAVBAR -->
-<nav class="navbar" id="main-navbar">
-    <div class="nav-container">
-        <a href="../index.html" class="nav-logo" aria-label="Benjamín Espinoza Portfolio Home">
-            <img src="../assets/img/Logo.webp" alt="Ben Matías Logo" style="height:36px;width:auto;">
-        </a>
-        <div class="nav-links" id="nav-links">
-            <a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a>
-            <a href="../projects.html" class="nav-link active" data-i18n="nav.projects">Projects</a>
-            <a href="../publications.html" class="nav-link" data-i18n="nav.publications">Publications</a>
-            <a href="../cv.html" class="nav-link" data-i18n="nav.cv">CV</a>
+<!-- NAVBAR & HERO WRAPPER -->
+<div class="header-hero-wrapper">
+    <header class="container">
+        <a href="../index.html" class="logo"><img src="../assets/img/Logo.webp" alt="Ben Matias Logo" decoding="async"></a>
+        <button id="menu-toggle" class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">&#9776;</button>
+        <nav class="desktop-nav">
+            <a data-translate="navAbout" href="../index.html#about">About</a>
+            <a data-translate="navResume" href="../cv.html">CV / Resume</a>
+            <a data-translate="navProjects" href="../projects.html">Projects</a>
+            <a data-translate="navPublications" href="../publications.html">Publications</a>
+            <a href="mailto:bmatiasespinoza@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <button class="lang-toggle" aria-label="Change language"></button>
+        </nav>
+        <div id="mobile-nav" class="mobile-nav">
+            <a data-translate="navAbout" href="../index.html#about">About</a>
+            <a data-translate="navResume" href="../cv.html">CV / Resume</a>
+            <a data-translate="navProjects" href="../projects.html">Projects</a>
+            <a data-translate="navPublications" href="../publications.html">Publications</a>
+            <a href="mailto:bmatiasespinoza@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/benmatias" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <div class="lang-toggle-wrapper"><button class="lang-toggle" aria-label="Change language"></button></div>
         </div>
-        <div class="nav-actions">
-            <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
-                <i class="fas fa-globe"></i>
-                <span id="lang-label">EN</span>
-            </button>
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle mobile menu">
-                <i class="fas fa-bars"></i>
-            </button>
+    </header>
+
+    <!-- HERO -->
+    <section class="case-study-hero">
+        <div class="container">
+            <span class="pill-badge"><i class="fas fa-chart-bar"></i> <span data-i18n="hpa.badge">Case Study</span></span>
+
+            <h1 class="case-study-title" data-i18n="hpa.title">Healthcare Procurement Analytics</h1>
+            <p class="case-study-subtitle" data-i18n="hpa.subtitle">
+                An independent analysis of Chile's public healthcare supply chain — examining vendor compliance failures, procurement effectiveness, and order fulfillment gaps to propose a data-driven vendor management model for systemic improvement.
+            </p>
+
+            <div class="meta-pills-row">
+                <span class="meta-tag"><i class="fas fa-calendar"></i> 2019–2020 Data</span>
+                <span class="meta-tag"><i class="fas fa-globe-americas"></i> Chile</span>
+                <span class="meta-tag"><i class="fas fa-hospital"></i> Public Health Supply Chain</span>
+                <span class="meta-tag"><i class="fas fa-cogs"></i> BPM / Process Redesign</span>
+                <span class="meta-tag"><i class="fas fa-chart-line"></i> BI Analytics</span>
+            </div>
+
+            <div class="meta-pills-row">
+                <span class="pill-badge-blue"><i class="fas fa-database"></i> SQL</span>
+                <span class="pill-badge-blue"><i class="fas fa-project-diagram"></i> BPMN 2.0</span>
+                <span class="pill-badge-blue"><i class="fas fa-chart-bar"></i> Power BI</span>
+                <span class="pill-badge-blue"><i class="fas fa-tree"></i> Problem Tree</span>
+                <span class="pill-badge-blue"><i class="fas fa-file-invoice"></i> ChileCompra</span>
+            </div>
         </div>
-    </div>
-</nav>
-
-<!-- HERO -->
-<section class="case-study-hero">
-    <div class="container">
-        <span class="pill-badge"><i class="fas fa-chart-bar"></i> <span data-i18n="hpa.badge">Case Study</span></span>
-
-        <h1 class="case-study-title" data-i18n="hpa.title">Healthcare Procurement Analytics</h1>
-        <p class="case-study-subtitle" data-i18n="hpa.subtitle">
-            An independent analysis of Chile's public healthcare supply chain — examining vendor compliance failures, procurement effectiveness, and order fulfillment gaps to propose a data-driven vendor management model for systemic improvement.
-        </p>
-
-        <div class="meta-pills-row">
-            <span class="meta-tag"><i class="fas fa-calendar"></i> 2019–2020 Data</span>
-            <span class="meta-tag"><i class="fas fa-globe-americas"></i> Chile</span>
-            <span class="meta-tag"><i class="fas fa-hospital"></i> Public Health Supply Chain</span>
-            <span class="meta-tag"><i class="fas fa-cogs"></i> BPM / Process Redesign</span>
-            <span class="meta-tag"><i class="fas fa-chart-line"></i> BI Analytics</span>
-        </div>
-
-        <div class="meta-pills-row">
-            <span class="pill-badge-blue"><i class="fas fa-database"></i> SQL</span>
-            <span class="pill-badge-blue"><i class="fas fa-project-diagram"></i> BPMN 2.0</span>
-            <span class="pill-badge-blue"><i class="fas fa-chart-bar"></i> Power BI</span>
-            <span class="pill-badge-blue"><i class="fas fa-tree"></i> Problem Tree</span>
-            <span class="pill-badge-blue"><i class="fas fa-file-invoice"></i> ChileCompra</span>
-        </div>
-    </div>
-</section>
-
-
-<div style="background: #060d16; min-height: 60vh;">
-<div class="container">
-
-<!-- TABS NAVIGATION -->
-<div class="cs-tabs-wrapper" style="margin: 2.5rem 0 0 0;">
-    <button class="cs-tab-btn active" onclick="switchTab('overview',this)" id="tab-overview">
-        <i class="fas fa-th-large"></i> <span data-i18n="hpa.tab.overview">Overview</span>
-    </button>
-    <button class="cs-tab-btn" onclick="switchTab('process',this)" id="tab-process">
-        <i class="fas fa-stream"></i> <span data-i18n="hpa.tab.process">Process (AS-IS)</span>
-    </button>
-    <button class="cs-tab-btn" onclick="switchTab('data',this)" id="tab-data">
-        <i class="fas fa-chart-area"></i> <span data-i18n="hpa.tab.data">Data Analysis</span>
-    </button>
-    <button class="cs-tab-btn" onclick="switchTab('model',this)" id="tab-model">
-        <i class="fas fa-lightbulb"></i> <span data-i18n="hpa.tab.model">Proposed Model</span>
-    </button>
-    <button class="cs-tab-btn" onclick="switchTab('method',this)" id="tab-method">
-        <i class="fas fa-flask"></i> <span data-i18n="hpa.tab.method">Methodology</span>
-    </button>
+    </section>
 </div>
 
+<main class="container page-container">
 
-
-<!-- ========================== TAB 1: OVERVIEW ========================== -->
-<div class="cs-tab-pane active" id="pane-overview">
-
-    <!-- KPI SNAPSHOT -->
-    <div class="kpi-grid">
-        <div class="kpi-card">
-            <div class="kpi-value danger">24.2%</div>
-            <div class="kpi-label" data-i18n="hpa.kpi.noncompliance">Non-Fulfillment Rate</div>
-            <div class="kpi-sub" data-i18n="hpa.kpi.noncompliance_sub">231,488 of 954,815 orders unmet (2018)</div>
+    <!-- EXECUTIVE SUMMARY CARDS -->
+    <div class="project-executive-summary" style="margin-top: 2rem;">
+        <div class="summary-card">
+            <i class="fas fa-bullseye"></i>
+            <div class="summary-card-text">
+                <h3 data-i18n="hpa.exec1.title">The Business Challenge</h3>
+                <p data-i18n="hpa.exec1.body">Chronic vendor non-compliance in Chile's public health procurement agency (CENABAST) led to a 24.2% order non-fulfillment rate and an 82.9% surge in client complaints across 500+ health facilities.</p>
+            </div>
         </div>
-        <div class="kpi-card">
-            <div class="kpi-value warning">+82.9%</div>
-            <div class="kpi-label" data-i18n="hpa.kpi.complaints">Complaint Surge</div>
-            <div class="kpi-sub" data-i18n="hpa.kpi.complaints_sub">Client complaints 2017 → 2018</div>
+        <div class="summary-card">
+            <i class="fas fa-rocket"></i>
+            <div class="summary-card-text">
+                <h3 data-i18n="hpa.exec2.title">The Analytics Solution</h3>
+                <p data-i18n="hpa.exec2.body">BPMN 2.0 process modeling, OTIF analytics on ChileCompra tender execution, and a proposed Vendor Management Model featuring a dynamic Vendor Scorecard.</p>
+            </div>
         </div>
-        <div class="kpi-card">
-            <div class="kpi-value danger">$1.7B</div>
-            <div class="kpi-label" data-i18n="hpa.kpi.fines">CLP Vendor Fines</div>
-            <div class="kpi-sub" data-i18n="hpa.kpi.fines_sub">False/late info submissions alone</div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-value info">500+</div>
-            <div class="kpi-label" data-i18n="hpa.kpi.facilities">Health Facilities</div>
-            <div class="kpi-sub" data-i18n="hpa.kpi.facilities_sub">Served across all Chile's regions</div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-value warning">109%</div>
-            <div class="kpi-label" data-i18n="hpa.kpi.sanction_rate">Sanction Rate</div>
-            <div class="kpi-sub" data-i18n="hpa.kpi.sanction_rate_sub">1,867 sanctions / 1,707 active contracts (H1 2019)</div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-value danger">24.6%</div>
-            <div class="kpi-label" data-i18n="hpa.kpi.expiring">Contracts Expiring</div>
-            <div class="kpi-sub" data-i18n="hpa.kpi.expiring_sub">Near-expiry contracts without renewal pipeline</div>
+        <div class="summary-card">
+            <i class="fas fa-chart-pie"></i>
+            <div class="summary-card-text">
+                <h3 data-i18n="hpa.exec3.title">Targeted Impact</h3>
+                <p data-i18n="hpa.exec3.body">Mitigation of $1.7B CLP in vendor fines, early detection of contract renewal risks, and systematic SLA enforcement for vital pharmaceutical supply lines.</p>
+            </div>
         </div>
     </div>
+
+    <!-- TABS NAVIGATION -->
+    <div class="cs-tabs-wrapper" style="margin: 2.5rem 0 1.5rem 0;">
+        <button class="cs-tab-btn active" onclick="switchTab('overview',this)" id="tab-overview">
+            <i class="fas fa-th-large"></i> <span data-i18n="hpa.tab.overview">Overview</span>
+        </button>
+        <button class="cs-tab-btn" onclick="switchTab('process',this)" id="tab-process">
+            <i class="fas fa-stream"></i> <span data-i18n="hpa.tab.process">Process (AS-IS)</span>
+        </button>
+        <button class="cs-tab-btn" onclick="switchTab('data',this)" id="tab-data">
+            <i class="fas fa-chart-area"></i> <span data-i18n="hpa.tab.data">Data Analysis</span>
+        </button>
+        <button class="cs-tab-btn" onclick="switchTab('model',this)" id="tab-model">
+            <i class="fas fa-lightbulb"></i> <span data-i18n="hpa.tab.model">Proposed Model</span>
+        </button>
+        <button class="cs-tab-btn" onclick="switchTab('method',this)" id="tab-method">
+            <i class="fas fa-flask"></i> <span data-i18n="hpa.tab.method">Methodology</span>
+        </button>
+    </div>
+
+    <!-- ========================== TAB 1: OVERVIEW ========================== -->
+    <div class="cs-tab-pane active" id="pane-overview">
+
 
     <!-- CONTEXT & BUSINESS MODEL -->
     <div class="artifact-card">
@@ -533,6 +523,48 @@
                     <li data-i18n="hpa.canvas.rev2">Vendor sanctions / fines</li>
                     <li data-i18n="hpa.canvas.rev3">No public fiscal contribution</li>
                 </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- BASELINE PERFORMANCE METRICS (KPIs) -->
+    <div class="artifact-card">
+        <div class="artifact-header">
+            <h2 class="artifact-title"><i class="fas fa-chart-line"></i> <span data-i18n="hpa.kpicard.title">Baseline Performance Indicators (2018–2019)</span></h2>
+            <span class="pill-badge-blue" data-i18n="hpa.kpicard.badge">Empirical Baseline</span>
+        </div>
+        <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:1.25rem;" data-i18n="hpa.kpicard.desc">Quantitative baseline metrics highlighting the operational non-compliance gap, sanction rates, and financial risks across CENABAST's network before the proposed intervention.</p>
+        
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-value danger">24.2%</div>
+                <div class="kpi-label" data-i18n="hpa.kpi.noncompliance">Non-Fulfillment Rate</div>
+                <div class="kpi-sub" data-i18n="hpa.kpi.noncompliance_sub">231,488 of 954,815 orders unmet (2018)</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value warning">+82.9%</div>
+                <div class="kpi-label" data-i18n="hpa.kpi.complaints">Complaint Surge</div>
+                <div class="kpi-sub" data-i18n="hpa.kpi.complaints_sub">Client complaints 2017 → 2018</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value danger">$1.7B</div>
+                <div class="kpi-label" data-i18n="hpa.kpi.fines">CLP Vendor Fines</div>
+                <div class="kpi-sub" data-i18n="hpa.kpi.fines_sub">False/late info submissions alone</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value info">500+</div>
+                <div class="kpi-label" data-i18n="hpa.kpi.facilities">Health Facilities</div>
+                <div class="kpi-sub" data-i18n="hpa.kpi.facilities_sub">Served across all Chile's regions</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value warning">109%</div>
+                <div class="kpi-label" data-i18n="hpa.kpi.sanction_rate">Sanction Rate</div>
+                <div class="kpi-sub" data-i18n="hpa.kpi.sanction_rate_sub">1,867 sanctions / 1,707 active contracts (H1 2019)</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value danger">24.6%</div>
+                <div class="kpi-label" data-i18n="hpa.kpi.expiring">Contracts Expiring</div>
+                <div class="kpi-sub" data-i18n="hpa.kpi.expiring_sub">Near-expiry contracts without renewal pipeline</div>
             </div>
         </div>
     </div>
@@ -1112,8 +1144,7 @@
 
 </div><!-- /pane-method -->
 
-</div><!-- /container -->
-</div><!-- /main bg -->
+</main>
 
 <!-- BACK BUTTON -->
 <div style="background:#060d16; padding: 2rem 0 3rem;">
@@ -1161,11 +1192,20 @@
             "hpa.badge": "Case Study",
             "hpa.title": "Healthcare Procurement Analytics",
             "hpa.subtitle": "An independent analysis of Chile's public healthcare supply chain — examining vendor compliance failures, procurement effectiveness, and order fulfillment gaps to propose a data-driven vendor management model for systemic improvement.",
+            "hpa.exec1.title": "The Business Challenge",
+            "hpa.exec1.body": "Chronic vendor non-compliance in Chile's public health procurement agency (CENABAST) led to a 24.2% order non-fulfillment rate and an 82.9% surge in client complaints across 500+ health facilities.",
+            "hpa.exec2.title": "The Analytics Solution",
+            "hpa.exec2.body": "BPMN 2.0 process modeling, OTIF analytics on ChileCompra tender execution, and a proposed Vendor Management Model featuring a dynamic Vendor Scorecard.",
+            "hpa.exec3.title": "Targeted Impact",
+            "hpa.exec3.body": "Mitigation of $1.7B CLP in vendor fines, early detection of contract renewal risks, and systematic SLA enforcement for vital pharmaceutical supply lines.",
             "hpa.tab.overview": "Overview",
             "hpa.tab.process": "Process (AS-IS)",
             "hpa.tab.data": "Data Analysis",
             "hpa.tab.model": "Proposed Model",
             "hpa.tab.method": "Methodology",
+            "hpa.kpicard.title": "Baseline Performance Indicators (2018–2019)",
+            "hpa.kpicard.badge": "Empirical Baseline",
+            "hpa.kpicard.desc": "Quantitative baseline metrics highlighting the operational non-compliance gap, sanction rates, and financial risks across CENABAST's network before the proposed intervention.",
             "hpa.kpi.noncompliance": "Non-Fulfillment Rate",
             "hpa.kpi.noncompliance_sub": "231,488 of 954,815 orders unmet (2018)",
             "hpa.kpi.complaints": "Complaint Surge",
@@ -1371,11 +1411,20 @@
             "hpa.badge": "Caso de Estudio",
             "hpa.title": "Healthcare Procurement Analytics",
             "hpa.subtitle": "Análisis independiente de la cadena de suministro de salud pública en Chile: incumplimientos de proveedores, efectividad en compras y brechas en la entrega de pedidos, con una propuesta de modelo de gestión de proveedores basado en datos.",
+            "hpa.exec1.title": "El Desafío de Negocio",
+            "hpa.exec1.body": "El incumplimiento crónico de proveedores en la agencia de compras de salud pública de Chile (CENABAST) generó una tasa de incumplimiento de pedidos del 24,2% y un alza del 82,9% en reclamos en 500+ establecimientos de salud.",
+            "hpa.exec2.title": "La Solución Analítica",
+            "hpa.exec2.body": "Modelamiento de procesos BPMN 2.0, analítica OTIF sobre ejecuciones de licitaciones en ChileCompra y una propuesta de Modelo de Gestión de Proveedores con Scorecard dinámico.",
+            "hpa.exec3.title": "Impacto Esperado",
+            "hpa.exec3.body": "Mitigación de $1.700 millones de CLP en multas a proveedores, detección temprana de riesgos en renovaciones de contratos y cumplimiento sistemático de SLA en medicamentos vitales.",
             "hpa.tab.overview": "Resumen",
             "hpa.tab.process": "Proceso (AS-IS)",
             "hpa.tab.data": "Análisis de Datos",
             "hpa.tab.model": "Modelo Propuesto",
             "hpa.tab.method": "Metodología",
+            "hpa.kpicard.title": "Indicadores de Desempeño Base (2018–2019)",
+            "hpa.kpicard.badge": "Línea Base Empírica",
+            "hpa.kpicard.desc": "Métricas cuantitativas de línea base que evidencian la brecha de incumplimiento operacional, tasas de sanciones y riesgos financieros antes de la intervención propuesta.",
             "hpa.kpi.noncompliance": "Tasa de Incumplimiento",
             "hpa.kpi.noncompliance_sub": "231.488 de 954.815 pedidos sin completar (2018)",
             "hpa.kpi.complaints": "Alza de Reclamos",
