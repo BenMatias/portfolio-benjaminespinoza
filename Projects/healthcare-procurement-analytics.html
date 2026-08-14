@@ -728,11 +728,11 @@
             </div>
 
             <div class="meta-pills-row">
-                <span class="pill-badge-blue"><i class="fas fa-database"></i> SQL</span>
                 <span class="pill-badge-blue"><i class="fas fa-project-diagram"></i> BPM / BPR</span>
+                <span class="pill-badge-blue"><i class="fas fa-sitemap"></i> Metodología ILPES/CEPAL</span>
+                <span class="pill-badge-blue"><i class="fas fa-code"></i> Python & Analytics</span>
                 <span class="pill-badge-blue"><i class="fas fa-chart-pie"></i> Tableau Public</span>
-                <span class="pill-badge-blue"><i class="fas fa-tree"></i> Problem Tree</span>
-                <span class="pill-badge-blue"><i class="fas fa-file-invoice"></i> ChileCompra</span>
+                <span class="pill-badge-blue"><i class="fas fa-file-invoice"></i> ChileCompra / Mercado Público</span>
             </div>
         </div>
     </section>
@@ -1784,57 +1784,70 @@
 <!-- ========================== TAB 5: METHODOLOGY ========================== -->
 <div class="cs-tab-pane" id="pane-method">
 
+    <!-- 0. CONTEXTUALIZACIÓN METODOLÓGICA -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-flask"></i> <span data-translate="hpa_meth_title">Enfoque Analítico</span></h2>
+            <h2 class="artifact-title"><i class="fas fa-flask"></i> <span data-translate="hpa_meth_intro_title">Contexto Metodológico e Integración de Marcos</span></h2>
+            <span class="pill-badge-blue" data-translate="hpa_meth_title">Enfoque Analítico y Metodología</span>
+        </div>
+        <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.7; margin-bottom:1.25rem;" data-translate="hpa_meth_intro_desc">
+            Este caso de estudio sintetiza análisis cualitativo estructurado, reingeniería de procesos rigorosa y analítica cuantitativa de datos. La combinación de la metodología de Árbol de Problemas/Objetivos ILPES/CEPAL con el mapeo de procesos BPR y el procesamiento en Python de 810.703 pedidos garantiza que las soluciones propuestas resuelvan causas raíz verificadas.
+        </p>
+    </div>
+
+    <!-- FASES DEL PROYECTO (4 FASES) -->
+    <div class="artifact-card">
+        <div class="artifact-header">
+            <h2 class="artifact-title"><i class="fas fa-tasks"></i> <span data-translate="hpa_phases_title">Fases de Ejecución del Proyecto (4 Fases)</span></h2>
         </div>
         <div class="findings-grid-2x2">
-            <div class="summary-card">
-                <i class="fas fa-search"></i>
+            <div class="summary-card" style="border-left-color:#00b4d8;">
+                <i class="fas fa-search" style="color:#00b4d8;"></i>
                 <div>
-                    <h3 data-translate="hpa_meth1_title">Marco de Diagnóstico</h3>
-                    <p data-translate="hpa_meth1_body">Aplicación de la metodología de Árbol de Problemas ILPES/CEPAL para estructurar causas raíz y efectos sistémicos del incumplimiento de proveedores en una jerarquía analítica ejecutable.</p>
+                    <h3 data-translate="hpa_phase1_title">Fase 1: Mapeo de Procesos AS-IS y Diagnóstico</h3>
+                    <p data-translate="hpa_phase1_body">Modelado detallado de los 5 subprocesos de compra de CENABAST siguiendo la metodología BPR Ospina-Duque, identificando fallas en la aplicación de sanciones y lagunas de visibilidad.</p>
                 </div>
             </div>
-            <div class="summary-card">
-                <i class="fas fa-project-diagram"></i>
+            <div class="summary-card" style="border-left-color:#38bdf8;">
+                <i class="fas fa-chart-line" style="color:#38bdf8;"></i>
                 <div>
-                    <h3 data-translate="hpa_meth2_title">Gestión de Procesos (BPM / BPR)</h3>
-                    <p data-translate="hpa_meth2_body">Mapeo de los 5 subprocesos de compras siguiendo la metodología BPR Ospina-Duque — documentando la secuencia operacional del estado AS-IS y diseñando las intervenciones del estado TO-BE.</p>
+                    <h3 data-translate="hpa_phase2_title">Fase 2: Analítica Cuantitativa de Datos</h3>
+                    <p data-translate="hpa_phase2_body">Procesamiento de 810.703 registros históricos de pedidos (datasets 2016–2018) con Python/Pandas para calcular tasas OTIF de referencia, concentración de faltantes (Top-5 proveedores), tasa de sanciones (109%) y multas por datos erróneos ($1.695M CLP).</p>
                 </div>
             </div>
-            <div class="summary-card">
-                <i class="fas fa-chart-bar"></i>
+            <div class="summary-card" style="border-left-color:#00e676;">
+                <i class="fas fa-cubes" style="color:#00e676;"></i>
                 <div>
-                    <h3 data-translate="hpa_meth3_title">Análisis Cuantitativo</h3>
-                    <p data-translate="hpa_meth3_body">Extracción y análisis de datos institucionales: tasas mensuales OTIF, registros de sanciones a proveedores, causalidad de reclamos y efectividad de compras a lo largo de 4 años fiscales.</p>
+                    <h3 data-translate="hpa_phase3_title">Fase 3: Arquitectura del Modelo TO-BE</h3>
+                    <p data-translate="hpa_phase3_body">Diseño del Árbol de Objetivos ILPES, marco de 4 KPIs operacionales de servicio y Scorecard obligatorio en ChileCompra ponderando cumplimiento OTIF (35%) y puntualidad (25%).</p>
                 </div>
             </div>
-            <div class="summary-card">
-                <i class="fas fa-poll"></i>
+            <div class="summary-card" style="border-left-color:#a855f7;">
+                <i class="fas fa-chart-pie" style="color:#a855f7;"></i>
                 <div>
-                    <h3 data-translate="hpa_meth4_title">Encuesta Percepción Cliente</h3>
-                    <p data-translate="hpa_meth4_body">Análisis de encuesta estructurada de satisfacción (SISMARKET) cubriendo calidad de intermediación, atención ejecutiva, logística y facturación en la red de salud.</p>
+                    <h3 data-translate="hpa_phase4_title">Fase 4: Prototipado de Dashboard BI</h3>
+                    <p data-translate="hpa_phase4_body">Modelado de dashboards interactivos en Tableau Public para la supervisión ejecutiva del desempeño de proveedores, alertas a 90 días de vencimiento de contratos y análisis de reclamos.</p>
                 </div>
             </div>
         </div>
 
-        <h3 style="color:#00b4d8; font-size:1rem; margin:1.5rem 0 1rem;" data-translate="hpa_tools_title">Herramientas y Tecnologías</h3>
+        <hr style="border-color:rgba(255,255,255,0.08); margin:1.5rem 0 1.25rem;">
+        <h3 style="color:#00b4d8; font-size:1rem; margin-bottom:1rem;" data-translate="hpa_tools_title">Herramientas y Stack Tecnológico</h3>
         <div class="tools-grid">
-            <span class="tool-chip">Mapeo de Procesos BPM</span>
+            <span class="tool-chip">Mapeo de Procesos BPMN / BPR</span>
             <span class="tool-chip">Business Model Canvas</span>
-            <span class="tool-chip">Árbol de Problemas (ILPES)</span>
-            <span class="tool-chip">Metodología BPR</span>
-            <span class="tool-chip">Excel / Extracción de Datos</span>
-            <span class="tool-chip">Diseño de Scorecard Proveedor</span>
-            <span class="tool-chip">Diseño de Marco de KPIs</span>
-            <span class="tool-chip">Análisis Cuantitativo</span>
-            <span class="tool-chip">Análisis de Encuestas</span>
-            <span class="tool-chip">IA Gemini</span>
+            <span class="tool-chip">Metodología ILPES/CEPAL</span>
+            <span class="tool-chip">Python & Pandas Analytics</span>
+            <span class="tool-chip">Tableau Public (BI)</span>
+            <span class="tool-chip">ChileCompra / Mercado Público</span>
+            <span class="tool-chip">Integración SAP / ERP</span>
+            <span class="tool-chip">Diseño Scorecard Proveedores</span>
+            <span class="tool-chip">Marco de KPIs Operacionales</span>
+            <span class="tool-chip">Análisis Encuestas SISMARKET</span>
         </div>
 
-        <div class="source-box">
-            <strong>📂 Fuentes de Datos:</strong><br>
+        <div class="source-box" style="margin-top:1.5rem;">
+            <strong>📂 Fuentes de Datos e Integridad Regulatoria:</strong><br>
             • Informes Anuales Institucionales CENABAST (BGI) 2016, 2017, 2018<br>
             • Registros de plataforma de compras públicas ChileCompra (Mercado Público)<br>
             • Reportes internos de cumplimiento CENABAST (Informe de Cumplimiento Progresivo)<br>
@@ -1849,9 +1862,9 @@
     <!-- Dashboard CTA -->
     <div class="artifact-card" style="background: linear-gradient(135deg, #0a192f 0%, #0d2748 100%); border-color: rgba(0,180,216,0.4); text-align: center;">
         <i class="fas fa-chart-pie" style="font-size:2.5rem; color:#00b4d8; margin-bottom:1rem;"></i>
-        <h3 style="color:#ffffff; font-size:1.3rem; margin-bottom:0.75rem;" data-translate="hpa_dash_title">Dashboard Interactivo — Próximamente</h3>
+        <h3 style="color:#ffffff; font-size:1.3rem; margin-bottom:0.75rem;" data-translate="hpa_dash_title">Dashboard Interactivo — Tableau Public</h3>
         <p style="color:#94a3b8; max-width:600px; margin:0 auto 1.5rem;" data-translate="hpa_dash_desc">
-            Un dashboard totalmente interactivo en Tableau Public está en desarrollo — con seguimiento OTIF, simulación de Scorecard de proveedores, análisis de embudo de compras y visualización de tendencia de reclamos usando los datasets de este análisis.
+            Un dashboard completamente interactivo en Tableau Public está en desarrollo — con seguimiento OTIF, simulación de scorecard de proveedores, análisis de funnel de licitaciones y visualización de tendencias de reclamos.
         </p>
         <span class="pill-badge" style="cursor:default;"><i class="fas fa-clock"></i> <span data-translate="hpa_dash_badge">En Desarrollo</span></span>
     </div>
