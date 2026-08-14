@@ -1396,7 +1396,7 @@
         <p style="color:#94a3b8; font-size:0.82rem; margin:0;" data-translate="hpa_part1_subtitle">Definición del modelo operativo objetivo, estructura de objetivos, KPIs operacionales y sistema de scoring de proveedores.</p>
     </div>
 
-    <!-- 0. DEFINICIÓN ESTRUCTURAL DEL MODELO TO-BE -->
+    <!-- 0. DEFINICIÓN ESTRUCTURAL DEL MODELO TO-BE Y METAS OBJETIVO -->
     <div class="artifact-card">
         <div class="artifact-header">
             <h2 class="artifact-title"><i class="fas fa-cubes"></i> <span data-translate="hpa_model_def_title">¿En qué consiste el Modelo de Gestión de Proveedores Propuesto?</span></h2>
@@ -1436,29 +1436,120 @@
 
         <div class="kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
             <div class="kpi-card">
-                <div class="kpi-value info" data-translate="hpa_imp_box1_val">75,8% → ≥93%</div>
+                <div class="kpi-value info" style="font-size: clamp(0.95rem, 1.4vw, 1.25rem); white-space: nowrap; font-weight:800;" data-translate="hpa_imp_box1_val">75,8% → ≥93%</div>
                 <div class="kpi-label" data-translate="hpa_imp_box1_lbl">Tasa Cumplimiento OTIF</div>
                 <div class="kpi-sub" data-translate="hpa_imp_box1_sub">+115.000 entregas fallidas recuperadas al año</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-value danger" data-translate="hpa_imp_box2_val">109% → &lt;10%</div>
+                <div class="kpi-value danger" style="font-size: clamp(0.95rem, 1.4vw, 1.25rem); white-space: nowrap; font-weight:800;" data-translate="hpa_imp_box2_val">109% → &lt;10%</div>
                 <div class="kpi-label" data-translate="hpa_imp_box2_lbl">Tasa de Sanciones</div>
                 <div class="kpi-sub" data-translate="hpa_imp_box2_sub">Elimina $1.695M CLP en multas por reportes manuales</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-value warning" data-translate="hpa_imp_box3_val">24,6% → ≤5%</div>
+                <div class="kpi-value warning" style="font-size: clamp(0.95rem, 1.4vw, 1.25rem); white-space: nowrap; font-weight:800;" data-translate="hpa_imp_box3_val">24,6% → ≤5%</div>
                 <div class="kpi-label" data-translate="hpa_imp_box3_lbl">Contratos en Riesgo de Vencer</div>
                 <div class="kpi-sub" data-translate="hpa_imp_box3_sub">Monitoreo diario en ERP evita quiebres de licitación</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-value warning" style="color:#00e676;" data-translate="hpa_imp_box4_val">0% → 100%</div>
+                <div class="kpi-value success" style="font-size: clamp(0.95rem, 1.4vw, 1.25rem); white-space: nowrap; font-weight:800; color:#00e676;" data-translate="hpa_imp_box4_val">0% → 100%</div>
                 <div class="kpi-label" data-translate="hpa_imp_box4_lbl">Ponderación Scorecard en ChileCompra</div>
                 <div class="kpi-sub" data-translate="hpa_imp_box4_sub">35% OTIF / 25% Puntualidad bloquea a infractores</div>
             </div>
         </div>
     </div>
 
-    <!-- OBJECTIVE TREE -->
+    <!-- 1. Proposed KPIs (INMEDIATAMENTE DESPUÉS DE LAS MÉTRICAS DE ARRIBA) -->
+    <div class="artifact-card">
+        <div class="artifact-header">
+            <h2 class="artifact-title"><i class="fas fa-tachometer-alt"></i> <span data-translate="hpa_kpis_title">Marco de KPIs Propuesto</span></h2>
+        </div>
+        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1rem;" data-translate="hpa_kpis_desc">Cuatro KPIs operacionales diseñados para monitorear el cumplimiento de proveedores en tiempo casi real, cada uno con frecuencia definida, línea base actual y meta de mejora.</p>
+        <div class="kpi-def-grid">
+            <div class="kpi-def-card">
+                <div class="kpi-name" data-translate="hpa_kpi2_name">Tasa de Cumplimiento de Entregas</div>
+                <code class="kpi-formula">Unidades Entregadas / Unidades Pedidas × 100</code>
+                <div class="kpi-current" data-translate="hpa_kpi2_current">📍 Actual (2019): 88,1%</div>
+                <div class="kpi-target" data-translate="hpa_kpi2_target">🎯 Meta: ≥ 93%</div>
+            </div>
+            <div class="kpi-def-card">
+                <div class="kpi-name" data-translate="hpa_kpi3_name">Tasa de Entregas a Tiempo</div>
+                <code class="kpi-formula">Pedidos a Tiempo / Pedidos Totales × 100</code>
+                <div class="kpi-current" data-translate="hpa_kpi3_current">📍 Actual: Sin seguimiento sistemático</div>
+                <div class="kpi-target" data-translate="hpa_kpi3_target">🎯 Meta: Binario — 100% marcado si hay atraso</div>
+            </div>
+            <div class="kpi-def-card">
+                <div class="kpi-name" data-translate="hpa_kpi4_name">Tasa de Sanciones a Proveedores</div>
+                <code class="kpi-formula">Sanciones Totales / Contratos Activos × 100</code>
+                <div class="kpi-current" data-translate="hpa_kpi4_current">📍 Actual: 109% (H1 2019)</div>
+                <div class="kpi-target" data-translate="hpa_kpi4_target">🎯 Meta: &lt; 10% · Tendencia → 0%</div>
+            </div>
+            <div class="kpi-def-card">
+                <div class="kpi-name" data-translate="hpa_kpi5_name">Contratos Próximos a Vencer</div>
+                <code class="kpi-formula">Contratos por Vencer / Totales Activos × 100</code>
+                <div class="kpi-current" data-translate="hpa_kpi5_current">📍 Actual: 24,63% en riesgo</div>
+                <div class="kpi-target" data-translate="hpa_kpi5_target">🎯 Meta: ≤ 5% · Monitoreo diario</div>
+            </div>
+        </div>
+        <div class="insight-box">
+            <i class="fas fa-lightbulb"></i> <span data-translate="hpa_kpi_insight">Hallazgo Analítico Clave: A diferencia del modelo AS-IS (que solo monitoreaba montos presupuestarios contratados), este nuevo marco mide el nivel de servicio operacional en tiempo real. Reducir la tasa de sanciones del 109% a <10% y mantener los contratos por vencer en ≤5% previene el desabastecimiento de forma proactiva.</span>
+        </div>
+    </div>
+
+    <!-- 2. Vendor Scorecard -->
+    <div class="artifact-card">
+        <div class="artifact-header">
+            <h2 class="artifact-title"><i class="fas fa-star-half-alt"></i> <span data-translate="hpa_scorecard_title">Sistema de Scorecard de Proveedores (Propuesto)</span></h2>
+        </div>
+        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1rem;" data-translate="hpa_scorecard_desc">Mecanismo estructurado de calificación para rankear proveedores por historial de cumplimiento. Scorecard integrado como insumo de evaluación obligatorio en licitaciones.</p>
+        <div class="table-wrap">
+        <table class="vendor-table">
+            <thead>
+                <tr>
+                    <th data-translate="hpa_sc_dim">Dimensión</th>
+                    <th data-translate="hpa_sc_metric">Métrica</th>
+                    <th data-translate="hpa_sc_weight">Ponderación</th>
+                    <th data-translate="hpa_sc_freq">Frecuencia</th>
+                    <th data-translate="hpa_sc_flag">Alerta de Riesgo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-translate="hpa_sc_r1d">Volumen de Entrega</td>
+                    <td data-translate="hpa_sc_r1m">Tasa de Cumplimiento (%)</td>
+                    <td>35%</td>
+                    <td data-translate="hpa_sc_r1f">Por entrega</td>
+                    <td><span class="badge-danger" data-translate="hpa_sc_r1fl">&lt;85% → Riesgo Alto</span></td>
+                </tr>
+                <tr>
+                    <td data-translate="hpa_sc_r2d">Puntualidad</td>
+                    <td data-translate="hpa_sc_r2m">Tasa a Tiempo (%)</td>
+                    <td>25%</td>
+                    <td data-translate="hpa_sc_r2f">Por entrega</td>
+                    <td><span class="badge-warn" data-translate="hpa_sc_r2fl">2+ atrasos → Advertencia</span></td>
+                </tr>
+                <tr>
+                    <td data-translate="hpa_sc_r3d">Calidad de Información</td>
+                    <td data-translate="hpa_sc_r3m">Reportes Inexactos (%)</td>
+                    <td>25%</td>
+                    <td data-translate="hpa_sc_r3f">Mensual</td>
+                    <td><span class="badge-danger" data-translate="hpa_sc_r3fl">1 reporte falso → Alerta</span></td>
+                </tr>
+                <tr>
+                    <td data-translate="hpa_sc_r4d">Sanciones</td>
+                    <td data-translate="hpa_sc_r4m">Tasa Sanción / Contratos</td>
+                    <td>15%</td>
+                    <td data-translate="hpa_sc_r4f">Semestral</td>
+                    <td><span class="badge-danger" data-translate="hpa_sc_r4fl">3+ → Descalificación Licitación</span></td>
+                </tr>
+            </tbody>
+        </table>
+        </div><!-- /table-wrap -->
+        <div class="insight-box">
+            <i class="fas fa-lightbulb"></i> <span data-translate="hpa_scorecard_insight">Hallazgo Analítico Clave: Otorgar un 35% de peso a la Tasa de Cumplimiento OTIF y un 25% a la Puntualidad en las evaluaciones de ChileCompra cierra la brecha histórica donde laboratorios incumplidores volvían a adjudicarse contratos sin penalización.</span>
+        </div>
+    </div>
+
+    <!-- 3. OBJECTIVE TREE -->
     <div class="artifact-card">
         <div class="artifact-header">
             <h2 class="artifact-title"><i class="fas fa-bullseye"></i> <span data-translate="hpa_obj_title">Árbol de Objetivos — Visión TO-BE</span></h2>
@@ -1587,97 +1678,6 @@
 
         <div class="insight-box">
             <i class="fas fa-lightbulb"></i> <span data-translate="hpa_obj_insight">Hallazgo Analítico Clave: El Árbol de Objetivos transforma directamente las 4 causas raíz del diagnóstico en 4 habilitadores de valor. Al establecer el Sistema de Gestión de Proveedores como eje central, las metas de nivel superior (OTIF ≥93%, expansión del volumen de compras y eliminación de cobros improcedentes) se vuelven alcanzables de forma sostenible.</span>
-        </div>
-    </div>
-
-    <!-- Proposed KPIs -->
-    <div class="artifact-card">
-        <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-tachometer-alt"></i> <span data-translate="hpa_kpis_title">Marco de KPIs Propuesto</span></h2>
-        </div>
-        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1rem;" data-translate="hpa_kpis_desc">Cuatro KPIs operacionales diseñados para monitorear el cumplimiento de proveedores en tiempo casi real, cada uno con frecuencia definida, línea base actual y meta de mejora.</p>
-        <div class="kpi-def-grid">
-            <div class="kpi-def-card">
-                <div class="kpi-name" data-translate="hpa_kpi2_name">Tasa de Cumplimiento de Entregas</div>
-                <code class="kpi-formula">Unidades Entregadas / Unidades Pedidas × 100</code>
-                <div class="kpi-current" data-translate="hpa_kpi2_current">📍 Actual (2019): 88,1%</div>
-                <div class="kpi-target" data-translate="hpa_kpi2_target">🎯 Meta: ≥ 93%</div>
-            </div>
-            <div class="kpi-def-card">
-                <div class="kpi-name" data-translate="hpa_kpi3_name">Tasa de Entregas a Tiempo</div>
-                <code class="kpi-formula">Pedidos a Tiempo / Pedidos Totales × 100</code>
-                <div class="kpi-current" data-translate="hpa_kpi3_current">📍 Actual: Sin seguimiento sistemático</div>
-                <div class="kpi-target" data-translate="hpa_kpi3_target">🎯 Meta: Binario — 100% marcado si hay atraso</div>
-            </div>
-            <div class="kpi-def-card">
-                <div class="kpi-name" data-translate="hpa_kpi4_name">Tasa de Sanciones a Proveedores</div>
-                <code class="kpi-formula">Sanciones Totales / Contratos Activos × 100</code>
-                <div class="kpi-current" data-translate="hpa_kpi4_current">📍 Actual: 109% (H1 2019)</div>
-                <div class="kpi-target" data-translate="hpa_kpi4_target">🎯 Meta: &lt; 10% · Tendencia → 0%</div>
-            </div>
-            <div class="kpi-def-card">
-                <div class="kpi-name" data-translate="hpa_kpi5_name">Contratos Próximos a Vencer</div>
-                <code class="kpi-formula">Contratos por Vencer / Totales Activos × 100</code>
-                <div class="kpi-current" data-translate="hpa_kpi5_current">📍 Actual: 24,63% en riesgo</div>
-                <div class="kpi-target" data-translate="hpa_kpi5_target">🎯 Meta: ≤ 5% · Monitoreo diario</div>
-            </div>
-        </div>
-        <div class="insight-box">
-            <i class="fas fa-lightbulb"></i> <span data-translate="hpa_kpi_insight">Hallazgo Analítico Clave: A diferencia del modelo AS-IS (que solo monitoreaba montos presupuestarios contratados), este nuevo marco mide el nivel de servicio operacional en tiempo real. Reducir la tasa de sanciones del 109% a <10% y mantener los contratos por vencer en ≤5% previene el desabastecimiento de forma proactiva.</span>
-        </div>
-    </div>
-
-    <!-- Vendor Scorecard -->
-    <div class="artifact-card">
-        <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-star-half-alt"></i> <span data-translate="hpa_scorecard_title">Sistema de Scorecard de Proveedores (Propuesto)</span></h2>
-        </div>
-        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1rem;" data-translate="hpa_scorecard_desc">Mecanismo estructurado de calificación para rankear proveedores por historial de cumplimiento. Scorecard integrado como insumo de evaluación obligatorio en licitaciones.</p>
-        <div class="table-wrap">
-        <table class="vendor-table">
-            <thead>
-                <tr>
-                    <th data-translate="hpa_sc_dim">Dimensión</th>
-                    <th data-translate="hpa_sc_metric">Métrica</th>
-                    <th data-translate="hpa_sc_weight">Ponderación</th>
-                    <th data-translate="hpa_sc_freq">Frecuencia</th>
-                    <th data-translate="hpa_sc_flag">Alerta de Riesgo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td data-translate="hpa_sc_r1d">Volumen de Entrega</td>
-                    <td data-translate="hpa_sc_r1m">Tasa de Cumplimiento (%)</td>
-                    <td>35%</td>
-                    <td data-translate="hpa_sc_r1f">Por entrega</td>
-                    <td><span class="badge-danger" data-translate="hpa_sc_r1fl">&lt;85% → Riesgo Alto</span></td>
-                </tr>
-                <tr>
-                    <td data-translate="hpa_sc_r2d">Puntualidad</td>
-                    <td data-translate="hpa_sc_r2m">Tasa a Tiempo (%)</td>
-                    <td>25%</td>
-                    <td data-translate="hpa_sc_r2f">Por entrega</td>
-                    <td><span class="badge-warn" data-translate="hpa_sc_r2fl">2+ atrasos → Advertencia</span></td>
-                </tr>
-                <tr>
-                    <td data-translate="hpa_sc_r3d">Calidad de Información</td>
-                    <td data-translate="hpa_sc_r3m">Reportes Inexactos (%)</td>
-                    <td>25%</td>
-                    <td data-translate="hpa_sc_r3f">Mensual</td>
-                    <td><span class="badge-danger" data-translate="hpa_sc_r3fl">1 reporte falso → Alerta</span></td>
-                </tr>
-                <tr>
-                    <td data-translate="hpa_sc_r4d">Sanciones</td>
-                    <td data-translate="hpa_sc_r4m">Tasa Sanción / Contratos</td>
-                    <td>15%</td>
-                    <td data-translate="hpa_sc_r4f">Semestral</td>
-                    <td><span class="badge-danger" data-translate="hpa_sc_r4fl">3+ → Descalificación Licitación</span></td>
-                </tr>
-            </tbody>
-        </table>
-        </div><!-- /table-wrap -->
-        <div class="insight-box">
-            <i class="fas fa-lightbulb"></i> <span data-translate="hpa_scorecard_insight">Hallazgo Analítico Clave: Otorgar un 35% de peso a la Tasa de Cumplimiento OTIF y un 25% a la Puntualidad en las evaluaciones de ChileCompra cierra la brecha histórica donde laboratorios incumplidores volvían a adjudicarse contratos sin penalización.</span>
         </div>
     </div>
 
