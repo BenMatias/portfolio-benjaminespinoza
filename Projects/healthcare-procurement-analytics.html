@@ -442,13 +442,208 @@
             margin: -0.15rem 0;
         }
 
-        @media (max-width: 900px) {
-            .ptree-grid { grid-template-columns: repeat(2, 1fr); }
-            .ptree-center-node { grid-column: span 2; }
+        /* ===== RESPONSIVE HORIZONTAL SCROLL CONTAINERS ===== */
+        .responsive-scroll-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 0.5rem;
+            margin-top: 1rem;
         }
-        @media (max-width: 600px) {
-            .ptree-grid { grid-template-columns: 1fr; }
-            .ptree-center-node { grid-column: span 1; }
+        .canvas-grid {
+            min-width: 860px; /* Preserves authentic 9-Box Osterwalder Canvas structure on mobile */
+        }
+        .ptree-grid {
+            min-width: 860px; /* Preserves authentic 4-Branch Coggle Tree structure on mobile */
+        }
+        .scroll-hint {
+            display: none;
+            font-size: 0.73rem;
+            color: #00b4d8;
+            margin-bottom: 0.6rem;
+            align-items: center;
+            gap: 0.45rem;
+            font-weight: 700;
+            background: rgba(0, 180, 216, 0.08);
+            border: 1px dashed rgba(0, 180, 216, 0.3);
+            border-radius: 6px;
+            padding: 0.4rem 0.75rem;
+            width: fit-content;
+        }
+        @media (max-width: 900px) {
+            .scroll-hint { display: inline-flex; }
+        }
+
+        /* ===== SUPERSYSTEM MAP ===== */
+        .supersys-grid {
+            display: grid;
+            grid-template-columns: 220px 1fr 240px;
+            grid-template-rows: auto 1fr auto;
+            gap: 0.85rem;
+            min-width: 820px;
+        }
+        .supersys-box {
+            background: #0f172a;
+            border: 1.5px solid rgba(0, 180, 216, 0.3);
+            border-radius: 10px;
+            padding: 0.85rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+        }
+        .supersys-header {
+            grid-column: 1 / -1;
+            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(15, 23, 42, 0.95);
+        }
+        .supersys-center {
+            grid-column: 2 / 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 2px solid #00b4d8;
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 180, 216, 0.2);
+        }
+        .supersys-center h3 {
+            color: #38bdf8 !important;
+            font-size: 1.15rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            margin: 0 0 0.3rem 0;
+        }
+        .supersys-center p {
+            color: #94a3b8;
+            font-size: 0.72rem;
+            margin: 0;
+        }
+        .supersys-footer {
+            grid-column: 1 / -1;
+            border-color: rgba(168, 85, 247, 0.4);
+            background: rgba(15, 23, 42, 0.95);
+        }
+        .supersys-title {
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin: 0 0 0.6rem 0;
+            color: #00e676;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .supersys-pill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 0.45rem;
+        }
+        .supersys-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 0.45rem 0.6rem;
+            font-size: 0.72rem;
+            color: #cbd5e1;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        /* ===== PROCESS MAP (MACROPROCESOS CENABAST) ===== */
+        .procmap-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            min-width: 820px;
+        }
+        .procmap-layer {
+            background: #0f172a;
+            border-radius: 10px;
+            padding: 0.9rem 1.1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+        .procmap-layer-strategic { border: 1.5px solid rgba(239, 68, 68, 0.4); }
+        .procmap-layer-core { border: 2px solid #00b4d8; background: rgba(15, 23, 42, 0.95); }
+        .procmap-layer-support { border: 1.5px solid rgba(0, 230, 118, 0.4); }
+        
+        .procmap-layer-title {
+            font-size: 0.76rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            margin: 0 0 0.65rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+        .procmap-layer-strategic .procmap-layer-title { color: #f87171; }
+        .procmap-layer-core .procmap-layer-title { color: #38bdf8; }
+        .procmap-layer-support .procmap-layer-title { color: #4ade80; }
+
+        .procmap-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+        .procmap-grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6rem; }
+        .procmap-grid-6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+
+        .procmap-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 7px;
+            padding: 0.65rem;
+            text-align: center;
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            line-height: 1.35;
+        }
+        .procmap-layer-core .procmap-card {
+            background: rgba(0, 180, 216, 0.1);
+            border-color: rgba(0, 180, 216, 0.35);
+            color: #7dd3fc;
+            font-weight: 700;
+        }
+
+        .procmap-flank-bar {
+            background: rgba(0, 180, 216, 0.1);
+            border: 1.5px solid #00b4d8;
+            border-radius: 8px;
+            padding: 0.65rem 1rem;
+            font-size: 0.74rem;
+            font-weight: 800;
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* ===== EXECUTIVE SUMMARY DISCLAIMER ===== */
+        .summary-disclaimer {
+            grid-column: 1 / -1;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(0, 180, 216, 0.25);
+            border-left: 4px solid #00b4d8;
+            border-radius: 8px;
+            padding: 0.65rem 1rem;
+            font-size: 0.78rem;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            margin-top: 0.85rem;
+            line-height: 1.4;
+        }
+        .summary-disclaimer i {
+            color: #00b4d8;
+            font-size: 0.95rem;
+            flex-shrink: 0;
         }
 
         /* ===== TABLE OVERFLOW PROTECTION ===== */
@@ -539,6 +734,10 @@
                 <p data-translate="hpa_exec3_body">Mitigation of $1.7B CLP in vendor fines, early detection of contract renewal risks, and systematic SLA enforcement for vital pharmaceutical supply lines.</p>
             </div>
         </div>
+        <div class="summary-disclaimer">
+            <i class="fas fa-info-circle"></i>
+            <span data-translate="hpa_exec_disclaimer">Methodological Note: Case study developed using historical data (2018–2019) and does not represent the current operational state or delivery performance of CENABAST.</span>
+        </div>
     </div>
 
     <!-- TABS NAVIGATION -->
@@ -603,94 +802,97 @@
             <h2 class="artifact-title"><i class="fas fa-th"></i> <span data-translate="hpa_canvas_title">Business Model Canvas</span></h2>
             <span class="pill-badge-blue" data-translate="hpa_canvas_badge">CENABAST Intermediation Model</span>
         </div>
-        <div class="canvas-grid">
-            <!-- 1. Aliados Clave (Key Partners) -->
-            <div class="canvas-card bm-partners">
-                <span class="canvas-num">1</span>
-                <h4 data-translate="hpa_canvas_partners">Key Partners</h4>
-                <ul>
-                    <li data-translate="hpa_canvas_partners1">National Suppliers</li>
-                    <li data-translate="hpa_canvas_partners2">International Suppliers</li>
-                    <li data-translate="hpa_canvas_partners3">Logistics Operators</li>
-                    <li data-translate="hpa_canvas_partners4">SEREMI Salud (Regional Health Secretariat)</li>
-                    <li data-translate="hpa_canvas_partners5">SAG (Agricultural & Livestock Service)</li>
-                    <li data-translate="hpa_canvas_partners6">Customs Authority (Aduanas)</li>
-                    <li data-translate="hpa_canvas_partners7">ChileCompra Public Procurement Platform</li>
-                </ul>
-            </div>
+        <div class="scroll-hint"><i class="fas fa-arrows-left-right"></i> <span data-translate="hpa_scroll_hint">Desliza horizontalmente para ver el Canvas de 9 bloques completo</span></div>
+        <div class="responsive-scroll-wrapper">
+            <div class="canvas-grid">
+                <!-- 1. Aliados Clave (Key Partners) -->
+                <div class="canvas-card bm-partners">
+                    <span class="canvas-num">1</span>
+                    <h4 data-translate="hpa_canvas_partners">Key Partners</h4>
+                    <ul>
+                        <li data-translate="hpa_canvas_partners1">National Suppliers</li>
+                        <li data-translate="hpa_canvas_partners2">International Suppliers</li>
+                        <li data-translate="hpa_canvas_partners3">Logistics Operators</li>
+                        <li data-translate="hpa_canvas_partners4">SEREMI Salud (Regional Health Secretariat)</li>
+                        <li data-translate="hpa_canvas_partners5">SAG (Agricultural & Livestock Service)</li>
+                        <li data-translate="hpa_canvas_partners6">Customs Authority (Aduanas)</li>
+                        <li data-translate="hpa_canvas_partners7">ChileCompra Public Procurement Platform</li>
+                    </ul>
+                </div>
 
-            <!-- 2. Actividades Clave (Key Activities) -->
-            <div class="canvas-card bm-activities">
-                <span class="canvas-num">2</span>
-                <h4 data-translate="hpa_canvas_activities">Key Activities</h4>
-                <ul>
-                    <li data-translate="hpa_canvas_act1">Demand collection & aggregation</li>
-                    <li data-translate="hpa_canvas_act2">Order dispatch & delivery within agreed SLAs</li>
-                </ul>
-            </div>
+                <!-- 2. Actividades Clave (Key Activities) -->
+                <div class="canvas-card bm-activities">
+                    <span class="canvas-num">2</span>
+                    <h4 data-translate="hpa_canvas_activities">Key Activities</h4>
+                    <ul>
+                        <li data-translate="hpa_canvas_act1">Demand collection & aggregation</li>
+                        <li data-translate="hpa_canvas_act2">Order dispatch & delivery within agreed SLAs</li>
+                    </ul>
+                </div>
 
-            <!-- 3. Recursos Clave (Key Resources) -->
-            <div class="canvas-card bm-resources">
-                <span class="canvas-num">3</span>
-                <h4 data-translate="hpa_canvas_resources">Key Resources</h4>
-                <ul>
-                    <li data-translate="hpa_canvas_res1">Central agency headquarters & infrastructure</li>
-                    <li data-translate="hpa_canvas_res2">Web procurement platforms</li>
-                    <li data-translate="hpa_canvas_res3">Awarded supply contracts</li>
-                </ul>
-            </div>
+                <!-- 3. Recursos Clave (Key Resources) -->
+                <div class="canvas-card bm-resources">
+                    <span class="canvas-num">3</span>
+                    <h4 data-translate="hpa_canvas_resources">Key Resources</h4>
+                    <ul>
+                        <li data-translate="hpa_canvas_res1">Central agency headquarters & infrastructure</li>
+                        <li data-translate="hpa_canvas_res2">Web procurement platforms</li>
+                        <li data-translate="hpa_canvas_res3">Awarded supply contracts</li>
+                    </ul>
+                </div>
 
-            <!-- 4. Propuesta de Valor (Value Proposition) -->
-            <div class="canvas-card bm-value">
-                <span class="canvas-num">4</span>
-                <h4 data-translate="hpa_canvas_value">Value Proposition</h4>
-                <p data-translate="hpa_canvas_val1">Cost reduction for client health facilities through volume purchasing & economies of scale.</p>
-            </div>
+                <!-- 4. Propuesta de Valor (Value Proposition) -->
+                <div class="canvas-card bm-value">
+                    <span class="canvas-num">4</span>
+                    <h4 data-translate="hpa_canvas_value">Value Proposition</h4>
+                    <p data-translate="hpa_canvas_val1">Cost reduction for client health facilities through volume purchasing & economies of scale.</p>
+                </div>
 
-            <!-- 5. Relación con el Cliente (Customer Relationships) -->
-            <div class="canvas-card bm-relationships">
-                <span class="canvas-num">5</span>
-                <h4 data-translate="hpa_canvas_relationships">Customer Relationships</h4>
-                <p data-translate="hpa_canvas_rel1">Dedicated personal & phone assistance.</p>
-            </div>
+                <!-- 5. Relación con el Cliente (Customer Relationships) -->
+                <div class="canvas-card bm-relationships">
+                    <span class="canvas-num">5</span>
+                    <h4 data-translate="hpa_canvas_relationships">Customer Relationships</h4>
+                    <p data-translate="hpa_canvas_rel1">Dedicated personal & phone assistance.</p>
+                </div>
 
-            <!-- 6. Canales (Channels) -->
-            <div class="canvas-card bm-channels">
-                <span class="canvas-num">6</span>
-                <h4 data-translate="hpa_canvas_channels">Channels</h4>
-                <ul>
-                    <li data-translate="hpa_canvas_ch1">Direct supplier channels</li>
-                    <li data-translate="hpa_canvas_ch2">External logistics operators</li>
-                    <li data-translate="hpa_canvas_ch3">Customer service & order portal</li>
-                </ul>
-            </div>
+                <!-- 6. Canales (Channels) -->
+                <div class="canvas-card bm-channels">
+                    <span class="canvas-num">6</span>
+                    <h4 data-translate="hpa_canvas_channels">Channels</h4>
+                    <ul>
+                        <li data-translate="hpa_canvas_ch1">Direct supplier channels</li>
+                        <li data-translate="hpa_canvas_ch2">External logistics operators</li>
+                        <li data-translate="hpa_canvas_ch3">Customer service & order portal</li>
+                    </ul>
+                </div>
 
-            <!-- 7. Segmentos de Clientes (Customer Segments) -->
-            <div class="canvas-card bm-customers">
-                <span class="canvas-num">7</span>
-                <h4 data-translate="hpa_canvas_customers">Customer Segments</h4>
-                <ul>
-                    <li data-translate="hpa_canvas_cs1">Ministry of Health (MINSAL)</li>
-                    <li data-translate="hpa_canvas_cs2">Undersecretariat of Healthcare Networks</li>
-                    <li data-translate="hpa_canvas_cs3">Undersecretariat of Public Health</li>
-                    <li data-translate="hpa_canvas_cs4">National Health Fund (FONASA)</li>
-                    <li data-translate="hpa_canvas_cs5">Municipalities & Municipal Health Corporations</li>
-                    <li data-translate="hpa_canvas_cs6">Affiliated entities of the National Health Services System</li>
-                </ul>
-            </div>
+                <!-- 7. Segmentos de Clientes (Customer Segments) -->
+                <div class="canvas-card bm-customers">
+                    <span class="canvas-num">7</span>
+                    <h4 data-translate="hpa_canvas_customers">Customer Segments</h4>
+                    <ul>
+                        <li data-translate="hpa_canvas_cs1">Ministry of Health (MINSAL)</li>
+                        <li data-translate="hpa_canvas_cs2">Undersecretariat of Healthcare Networks</li>
+                        <li data-translate="hpa_canvas_cs3">Undersecretariat of Public Health</li>
+                        <li data-translate="hpa_canvas_cs4">National Health Fund (FONASA)</li>
+                        <li data-translate="hpa_canvas_cs5">Municipalities & Municipal Health Corporations</li>
+                        <li data-translate="hpa_canvas_cs6">Affiliated entities of the National Health Services System</li>
+                    </ul>
+                </div>
 
-            <!-- 8. Estructura de Costes (Cost Structure) -->
-            <div class="canvas-card bm-costs">
-                <span class="canvas-num">8</span>
-                <h4 data-translate="hpa_canvas_costs">Cost Structure</h4>
-                <p data-translate="hpa_canvas_costs_desc">Inventory Holding and Transportation represent the primary operational cost drivers. Total annual expenditure (2016): $11,687,552 CLP (in thousands).</p>
-            </div>
+                <!-- 8. Estructura de Costes (Cost Structure) -->
+                <div class="canvas-card bm-costs">
+                    <span class="canvas-num">8</span>
+                    <h4 data-translate="hpa_canvas_costs">Cost Structure</h4>
+                    <p data-translate="hpa_canvas_costs_desc">Inventory Holding and Transportation represent the primary operational cost drivers. Total annual expenditure (2016): $11,687,552 CLP (in thousands).</p>
+                </div>
 
-            <!-- 9. Estructura de Ingresos (Revenue Streams) -->
-            <div class="canvas-card bm-revenues">
-                <span class="canvas-num">9</span>
-                <h4 data-translate="hpa_canvas_revenue">Revenue Streams</h4>
-                <p data-translate="hpa_canvas_rev_desc">Intermediation commission fees charged to client health institutions per transaction. Total annual revenue (2016): $12,359,324 CLP (in thousands).</p>
+                <!-- 9. Estructura de Ingresos (Revenue Streams) -->
+                <div class="canvas-card bm-revenues">
+                    <span class="canvas-num">9</span>
+                    <h4 data-translate="hpa_canvas_revenue">Revenue Streams</h4>
+                    <p data-translate="hpa_canvas_rev_desc">Intermediation commission fees charged to client health institutions per transaction. Total annual revenue (2016): $12,359,324 CLP (in thousands).</p>
+                </div>
             </div>
         </div>
     </div>
@@ -745,87 +947,90 @@
         </div>
         <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:1.25rem;" data-translate="hpa_problem_desc">Root-cause analysis mapping the 4 operational branches of deficient vendor management. Indirect effects flow upward (top); root causes branch downward (bottom).</p>
         
-        <div class="ptree-wrapper">
-            <!-- Badge Top: Indirect Effects -->
-            <div class="ptree-section-badge ptree-badge-effects"><i class="fas fa-arrow-up"></i> <span data-translate="hpa_tree_effects_label">Indirect & Direct Effects (Top Level)</span></div>
+        <div class="scroll-hint"><i class="fas fa-arrows-left-right"></i> <span data-translate="hpa_scroll_hint_diagram">Desliza horizontalmente para ver el diagrama completo</span></div>
+        <div class="responsive-scroll-wrapper">
+            <div class="ptree-wrapper">
+                <!-- Badge Top: Indirect Effects -->
+                <div class="ptree-section-badge ptree-badge-effects"><i class="fas fa-arrow-up"></i> <span data-translate="hpa_tree_effects_label">Indirect & Direct Effects (Top Level)</span></div>
 
-            <div class="ptree-grid">
-                <!-- BRANCH 1 -->
-                <div class="ptree-branch branch-1">
-                    <div class="ptree-branch-title" data-translate="hpa_tree_b1_title">Contract Enforcement</div>
-                    <div class="ptree-node node-ind-eff" data-translate="hpa_tree_b1_ind_eff">Early contract termination</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                    <div class="ptree-node node-dir-eff" data-translate="hpa_tree_b1_dir_eff">Accumulated vendor sanctions</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                <div class="ptree-grid">
+                    <!-- BRANCH 1 -->
+                    <div class="ptree-branch branch-1">
+                        <div class="ptree-branch-title" data-translate="hpa_tree_b1_title">Contract Enforcement</div>
+                        <div class="ptree-node node-ind-eff" data-translate="hpa_tree_b1_ind_eff">Early contract termination</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                        <div class="ptree-node node-dir-eff" data-translate="hpa_tree_b1_dir_eff">Accumulated vendor sanctions</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+
+                    <!-- BRANCH 2 -->
+                    <div class="ptree-branch branch-2">
+                        <div class="ptree-branch-title" data-translate="hpa_tree_b2_title">Procurement Volume</div>
+                        <div class="ptree-node node-ind-eff" data-translate="hpa_tree_b2_ind_eff">Decline in procurement transactions</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                        <div class="ptree-node node-dir-eff" data-translate="hpa_tree_b2_dir_eff">Health services refrain from expanding purchases</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+
+                    <!-- BRANCH 3 -->
+                    <div class="ptree-branch branch-3">
+                        <div class="ptree-branch-title" data-translate="hpa_tree_b3_title">Fulfillment & Compliance</div>
+                        <div class="ptree-node node-ind-eff" data-translate="hpa_tree_b3_ind_eff">Widespread client dissatisfaction</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                        <div class="ptree-node node-dir-eff" data-translate="hpa_tree_b3_dir_eff">Order delivery non-fulfillment</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+
+                    <!-- BRANCH 4 -->
+                    <div class="ptree-branch branch-4">
+                        <div class="ptree-branch-title" data-translate="hpa_tree_b4_title">Information & Costs</div>
+                        <div class="ptree-node node-ind-eff" data-translate="hpa_tree_b4_ind_eff">Increased operational costs for CENABAST</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                        <div class="ptree-node node-dir-eff" data-translate="hpa_tree_b4_dir_eff">External third-party deliveries billed to CENABAST</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+
+                    <!-- CENTRAL PROBLEM NODE (Spans all columns) -->
+                    <div class="ptree-center-node">
+                        <h3 data-translate="hpa_tree_center">⚠ DEFICIENT VENDOR MANAGEMENT</h3>
+                    </div>
+
+                    <!-- BRANCH 1 (CAUSES) -->
+                    <div class="ptree-branch branch-1">
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-dir-cau" data-translate="hpa_tree_b1_dir_cau">Deficient contract management</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-ind-cau" data-translate="hpa_tree_b1_ind_cau">Lack of staff training</div>
+                    </div>
+
+                    <!-- BRANCH 2 (CAUSES) -->
+                    <div class="ptree-branch branch-2">
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-dir-cau" data-translate="hpa_tree_b2_dir_cau">Lack of operational control</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-ind-cau" data-translate="hpa_tree_b2_ind_cau">Outsourced delivery operations</div>
+                    </div>
+
+                    <!-- BRANCH 3 (CAUSES) -->
+                    <div class="ptree-branch branch-3">
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-dir-cau" data-translate="hpa_tree_b3_dir_cau">Vendors evade penalty fines</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-ind-cau" data-translate="hpa_tree_b3_ind_cau">Poorly designed sanction system</div>
+                    </div>
+
+                    <!-- BRANCH 4 (CAUSES) -->
+                    <div class="ptree-branch branch-4">
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-dir-cau" data-translate="hpa_tree_b4_dir_cau">Vendors manipulate reporting data</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-ind-cau" data-translate="hpa_tree_b4_ind_cau">Absence of systematic data registration</div>
+                    </div>
                 </div>
 
-                <!-- BRANCH 2 -->
-                <div class="ptree-branch branch-2">
-                    <div class="ptree-branch-title" data-translate="hpa_tree_b2_title">Procurement Volume</div>
-                    <div class="ptree-node node-ind-eff" data-translate="hpa_tree_b2_ind_eff">Decline in procurement transactions</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                    <div class="ptree-node node-dir-eff" data-translate="hpa_tree_b2_dir_eff">Health services refrain from expanding purchases</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                </div>
-
-                <!-- BRANCH 3 -->
-                <div class="ptree-branch branch-3">
-                    <div class="ptree-branch-title" data-translate="hpa_tree_b3_title">Fulfillment & Compliance</div>
-                    <div class="ptree-node node-ind-eff" data-translate="hpa_tree_b3_ind_eff">Widespread client dissatisfaction</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                    <div class="ptree-node node-dir-eff" data-translate="hpa_tree_b3_dir_eff">Order delivery non-fulfillment</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                </div>
-
-                <!-- BRANCH 4 -->
-                <div class="ptree-branch branch-4">
-                    <div class="ptree-branch-title" data-translate="hpa_tree_b4_title">Information & Costs</div>
-                    <div class="ptree-node node-ind-eff" data-translate="hpa_tree_b4_ind_eff">Increased operational costs for CENABAST</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                    <div class="ptree-node node-dir-eff" data-translate="hpa_tree_b4_dir_eff">External third-party deliveries billed to CENABAST</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                </div>
-
-                <!-- CENTRAL PROBLEM NODE (Spans all columns) -->
-                <div class="ptree-center-node">
-                    <h3 data-translate="hpa_tree_center">⚠ DEFICIENT VENDOR MANAGEMENT</h3>
-                </div>
-
-                <!-- BRANCH 1 (CAUSES) -->
-                <div class="ptree-branch branch-1">
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-dir-cau" data-translate="hpa_tree_b1_dir_cau">Deficient contract management</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-ind-cau" data-translate="hpa_tree_b1_ind_cau">Lack of staff training</div>
-                </div>
-
-                <!-- BRANCH 2 (CAUSES) -->
-                <div class="ptree-branch branch-2">
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-dir-cau" data-translate="hpa_tree_b2_dir_cau">Lack of operational control</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-ind-cau" data-translate="hpa_tree_b2_ind_cau">Outsourced delivery operations</div>
-                </div>
-
-                <!-- BRANCH 3 (CAUSES) -->
-                <div class="ptree-branch branch-3">
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-dir-cau" data-translate="hpa_tree_b3_dir_cau">Vendors evade penalty fines</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-ind-cau" data-translate="hpa_tree_b3_ind_cau">Poorly designed sanction system</div>
-                </div>
-
-                <!-- BRANCH 4 (CAUSES) -->
-                <div class="ptree-branch branch-4">
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-dir-cau" data-translate="hpa_tree_b4_dir_cau">Vendors manipulate reporting data</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-ind-cau" data-translate="hpa_tree_b4_ind_cau">Absence of systematic data registration</div>
-                </div>
+                <!-- Badge Bottom: Root Causes -->
+                <div class="ptree-section-badge ptree-badge-causes"><i class="fas fa-arrow-down"></i> <span data-translate="hpa_tree_causes_label">Direct & Root Causes (Base Level)</span></div>
             </div>
-
-            <!-- Badge Bottom: Root Causes -->
-            <div class="ptree-section-badge ptree-badge-causes"><i class="fas fa-arrow-down"></i> <span data-translate="hpa_tree_causes_label">Direct & Root Causes (Base Level)</span></div>
         </div>
     </div>
 
@@ -834,6 +1039,127 @@
 <!-- ========================== TAB 2: PROCESS ========================== -->
 <div class="cs-tab-pane" id="pane-process">
 
+    <!-- 1. SUPERSYSTEM MAP (Contexto Organizacional) -->
+    <div class="artifact-card">
+        <div class="artifact-header">
+            <h2 class="artifact-title"><i class="fas fa-network-wired"></i> <span data-translate="hpa_super_title">Supersystem Analysis (Organizational Context)</span></h2>
+            <span class="pill-badge-blue" data-translate="hpa_super_badge">System Architecture</span>
+        </div>
+        <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:1.25rem;" data-translate="hpa_super_desc">Structural mapping of CENABAST's environment — detailing governing regulations, operational resources, public health market demands, and pharmaceutical competition.</p>
+        
+        <div class="scroll-hint"><i class="fas fa-arrows-left-right"></i> <span data-translate="hpa_scroll_hint_diagram">Desliza horizontalmente para ver el diagrama completo</span></div>
+        <div class="responsive-scroll-wrapper">
+            <div class="supersys-grid">
+                <!-- Top Header: Contexto de la Organización -->
+                <div class="supersys-box supersys-header">
+                    <div class="supersys-title"><i class="fas fa-building-columns"></i> <span data-translate="hpa_super_env">Organizational Context</span></div>
+                    <div class="supersys-pill-grid">
+                        <div class="supersys-pill"><strong>Gobierno:</strong> <span data-translate="hpa_super_gov">Regulación MINSAL</span></div>
+                        <div class="supersys-pill"><strong>Cultura:</strong> <span data-translate="hpa_super_cult">Código ético y Política Calidad</span></div>
+                        <div class="supersys-pill"><strong>Economía:</strong> <span data-translate="hpa_super_econ">Importaciones y Aranceles</span></div>
+                        <div class="supersys-pill"><strong>Comunicaciones:</strong> <span data-translate="hpa_super_comm">Canales Online / Telefónico</span></div>
+                    </div>
+                </div>
+
+                <!-- Left: Recursos e Insumos -->
+                <div class="supersys-box">
+                    <div class="supersys-title"><i class="fas fa-boxes-stacked"></i> <span data-translate="hpa_super_res">Resources & Inputs</span></div>
+                    <div style="display:flex; flex-direction:column; gap:0.4rem;">
+                        <div class="supersys-pill" data-translate="hpa_super_res_prov">Proveedores → Insumos</div>
+                        <div class="supersys-pill" data-translate="hpa_super_res_fin">Financiamiento → Capital</div>
+                        <div class="supersys-pill" data-translate="hpa_super_res_lab">Fuerza Laboral → Personal</div>
+                        <div class="supersys-pill" data-translate="hpa_super_res_dist">Centro Distribución → Equipo</div>
+                    </div>
+                </div>
+
+                <!-- Center: CENABAST -->
+                <div class="supersys-center">
+                    <h3>CENABAST</h3>
+                    <p data-translate="hpa_super_center_sub">Central Nacional de Abastecimiento<br>Ente Intermediador del Estado</p>
+                </div>
+
+                <!-- Right: Mercado Red de Salud -->
+                <div class="supersys-box">
+                    <div class="supersys-title"><i class="fas fa-hospital-user"></i> <span data-translate="hpa_super_mkt">Health System Market</span></div>
+                    <div class="supersys-pill" style="height:100%; display:flex; flex-direction:column; justify-content:center;" data-translate="hpa_super_mkt_desc">
+                        Servicios adscritos al Sistema Nacional de Servicios de Salud (Pedidos, Ingresos, Contratos, Productos)
+                    </div>
+                </div>
+
+                <!-- Bottom Footer: Competencia del Sector -->
+                <div class="supersys-box supersys-footer">
+                    <div class="supersys-title" style="color:#a78bfa;"><i class="fas fa-industry"></i> <span data-translate="hpa_super_comp">Industry Competition</span></div>
+                    <div class="supersys-pill-grid">
+                        <div class="supersys-pill"><strong>Laboratorios Farmacéuticos</strong></div>
+                        <div class="supersys-pill"><strong>Distribuidoras Privadas</strong></div>
+                        <div class="supersys-pill"><strong>Droguerías e Importadoras</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. CENABAST MACRO-PROCESS MAP (Mapa de Procesos) -->
+    <div class="artifact-card">
+        <div class="artifact-header">
+            <h2 class="artifact-title"><i class="fas fa-sitemap"></i> <span data-translate="hpa_pmap_title">CENABAST Macro-Process Map</span></h2>
+            <span class="pill-badge-blue" data-translate="hpa_pmap_badge">Process Architecture</span>
+        </div>
+        <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:1.25rem;" data-translate="hpa_pmap_desc">High-level classification of strategic, core business, and support processes transforming health facility demand into delivery satisfaction.</p>
+        
+        <div class="scroll-hint"><i class="fas fa-arrows-left-right"></i> <span data-translate="hpa_scroll_hint_diagram">Desliza horizontalmente para ver el mapa de procesos completo</span></div>
+        <div class="responsive-scroll-wrapper">
+            <div class="procmap-wrapper">
+                <!-- Flank Left & Right Indicator -->
+                <div class="procmap-flank-bar">
+                    <span><i class="fas fa-arrow-right"></i> <span data-translate="hpa_pmap_req">Requerimientos del Cliente (Red de Salud)</span></span>
+                    <span><span data-translate="hpa_pmap_sat">Satisfacción del Cliente y Entregas</span> <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Strategic Layer -->
+                <div class="procmap-layer procmap-layer-strategic">
+                    <div class="procmap-layer-title"><i class="fas fa-chess"></i> <span data-translate="hpa_pmap_strat">Strategic Processes</span></div>
+                    <div class="procmap-grid-3">
+                        <div class="procmap-card" data-translate="hpa_pmap_s1">Planificación Estratégica y Desarrollo Institucional</div>
+                        <div class="procmap-card" data-translate="hpa_pmap_s2">Aseguramiento de Calidad y Asuntos Regulatorios</div>
+                        <div class="procmap-card" data-translate="hpa_pmap_s3">Comunicaciones y Asuntos Públicos</div>
+                    </div>
+                </div>
+
+                <!-- Core Business Layer -->
+                <div class="procmap-layer procmap-layer-core">
+                    <div class="procmap-layer-title"><i class="fas fa-cogs"></i> <span data-translate="hpa_pmap_core">Core Business Processes</span></div>
+                    <div class="procmap-grid-5">
+                        <div class="procmap-card" data-translate="hpa_pmap_c1">Estimación y Análisis de Demanda</div>
+                        <div class="procmap-card" data-translate="hpa_pmap_c2">Gestión de Abastecimiento</div>
+                        <div class="procmap-card" data-translate="hpa_pmap_c3">Gestión de Contratos</div>
+                        <div class="procmap-card" data-translate="hpa_pmap_c4">Gestión Comercial</div>
+                        <div class="procmap-card" data-translate="hpa_pmap_c5">Gestión Distribución</div>
+                    </div>
+                </div>
+
+                <!-- Support Layer -->
+                <div class="procmap-layer procmap-layer-support">
+                    <div class="procmap-layer-title"><i class="fas fa-tools"></i> <span data-translate="hpa_pmap_supp">Support Processes</span></div>
+                    <div class="procmap-grid-6">
+                        <div class="procmap-card" data-translate="hpa_pmap_su1">Gestión Financiera - Administrativa</div>
+                        <div class="procmap-card" data-translate="hpa_pmap_su2">Gestión Jurídica</div>
+                        <div class="procmap-card" data-translate="hpa_pmap_su3">Gestión Atención Ciudadana</div>
+                        <div class="procmap-card" data-translate="hpa_pmap_su4">Gestión Control Interno</div>
+                        <div class="procmap-card" data-translate="hpa_pmap_su5">Gestión de Servicios de Información y Tecnología</div>
+                        <div class="procmap-card" data-translate="hpa_pmap_su6">Gestión de Personas</div>
+                    </div>
+                </div>
+
+                <!-- Bottom Feedback Bar -->
+                <div class="procmap-flank-bar" style="border-color:#00e676; background:rgba(0,230,118,0.08); color:#00e676; justify-content:center; gap:0.6rem;">
+                    <i class="fas fa-arrows-spin"></i> <span data-translate="hpa_pmap_feed">Retroalimentación de los Clientes - Usuarios</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. DETAILED SUB-PROCESS FLOW (BPMN 2.0) -->
     <div class="artifact-card">
         <div class="artifact-header">
             <h2 class="artifact-title"><i class="fas fa-stream"></i> <span data-translate="hpa_process_title">Procurement Process — AS-IS (BPM Analysis)</span></h2>
@@ -1132,87 +1458,90 @@
         </div>
         <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:1.25rem;" data-translate="hpa_obj_desc">Direct translation of the Problem Tree into a solution framework across 4 operational branches. Ends flow upward (top); enablers branch downward (bottom).</p>
         
-        <div class="ptree-wrapper">
-            <!-- Badge Top: Strategic Outcomes -->
-            <div class="ptree-section-badge ptree-badge-effects"><i class="fas fa-arrow-up"></i> <span data-translate="hpa_obj_outcomes_label">Strategic Outcomes & Impact (Top Level)</span></div>
+        <div class="scroll-hint"><i class="fas fa-arrows-left-right"></i> <span data-translate="hpa_scroll_hint_diagram">Desliza horizontalmente para ver el diagrama completo</span></div>
+        <div class="responsive-scroll-wrapper">
+            <div class="ptree-wrapper">
+                <!-- Badge Top: Strategic Outcomes -->
+                <div class="ptree-section-badge ptree-badge-effects"><i class="fas fa-arrow-up"></i> <span data-translate="hpa_obj_outcomes_label">Strategic Outcomes & Impact (Top Level)</span></div>
 
-            <div class="ptree-grid">
-                <!-- BRANCH 1 -->
-                <div class="ptree-branch branch-1">
-                    <div class="ptree-branch-title" data-translate="hpa_tree_b1_title">Contract Enforcement</div>
-                    <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b1_ind">Timely contract fulfillment & planned renewals</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                    <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b1_dir">Reduction in vendor sanctions and defaults</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                <div class="ptree-grid">
+                    <!-- BRANCH 1 -->
+                    <div class="ptree-branch branch-1">
+                        <div class="ptree-branch-title" data-translate="hpa_tree_b1_title">Contract Enforcement</div>
+                        <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b1_ind">Timely contract fulfillment & planned renewals</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                        <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b1_dir">Reduction in vendor sanctions and defaults</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+
+                    <!-- BRANCH 2 -->
+                    <div class="ptree-branch branch-2">
+                        <div class="ptree-branch-title" data-translate="hpa_tree_b2_title">Procurement Volume</div>
+                        <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b2_ind">Expansion of public procurement volume</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                        <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b2_dir">Health services increase purchases via CENABAST</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+
+                    <!-- BRANCH 3 -->
+                    <div class="ptree-branch branch-3">
+                        <div class="ptree-branch-title" data-translate="hpa_tree_b3_title">Fulfillment & Compliance</div>
+                        <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b3_ind">High client satisfaction across health network</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                        <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b3_dir">Elimination of order delivery shortfalls (OTIF ≥93%)</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+
+                    <!-- BRANCH 4 -->
+                    <div class="ptree-branch branch-4">
+                        <div class="ptree-branch-title" data-translate="hpa_tree_b4_title">Information & Costs</div>
+                        <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b4_ind">Operational cost optimization for CENABAST</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                        <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b4_dir">Elimination of unauthorized third-party billing</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
+                    </div>
+
+                    <!-- CENTRAL SOLUTION NODE (Spans all columns) -->
+                    <div class="ptree-center-node" style="border-color:#00e676; box-shadow:0 0 20px rgba(0,230,118,0.25);">
+                        <h3 style="color:#00e676 !important;" data-translate="hpa_obj_center">✅ IMPROVED VENDOR MANAGEMENT SYSTEM</h3>
+                    </div>
+
+                    <!-- BRANCH 1 (ENABLERS) -->
+                    <div class="ptree-branch branch-1">
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b1_cau_dir">Robust contract lifecycle management</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b1_cau_ind">Comprehensive staff training program</div>
+                    </div>
+
+                    <!-- BRANCH 2 (ENABLERS) -->
+                    <div class="ptree-branch branch-2">
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b2_cau_dir">Proactive operational oversight & SLAs</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b2_cau_ind">Direct logistic monitoring layer</div>
+                    </div>
+
+                    <!-- BRANCH 3 (ENABLERS) -->
+                    <div class="ptree-branch branch-3">
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b3_cau_dir">Enforced compliance & non-excludable fines</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b3_cau_ind">Redesigned, loophole-free sanction system</div>
+                    </div>
+
+                    <!-- BRANCH 4 (ENABLERS) -->
+                    <div class="ptree-branch branch-4">
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b4_cau_dir">Automated, validated vendor data reporting</div>
+                        <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b4_cau_ind">ERP-integrated single source of truth</div>
+                    </div>
                 </div>
 
-                <!-- BRANCH 2 -->
-                <div class="ptree-branch branch-2">
-                    <div class="ptree-branch-title" data-translate="hpa_tree_b2_title">Procurement Volume</div>
-                    <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b2_ind">Expansion of public procurement volume</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                    <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b2_dir">Health services increase purchases via CENABAST</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                </div>
-
-                <!-- BRANCH 3 -->
-                <div class="ptree-branch branch-3">
-                    <div class="ptree-branch-title" data-translate="hpa_tree_b3_title">Fulfillment & Compliance</div>
-                    <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b3_ind">High client satisfaction across health network</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                    <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b3_dir">Elimination of order delivery shortfalls (OTIF ≥93%)</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                </div>
-
-                <!-- BRANCH 4 -->
-                <div class="ptree-branch branch-4">
-                    <div class="ptree-branch-title" data-translate="hpa_tree_b4_title">Information & Costs</div>
-                    <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b4_ind">Operational cost optimization for CENABAST</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                    <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b4_dir">Elimination of unauthorized third-party billing</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                </div>
-
-                <!-- CENTRAL SOLUTION NODE (Spans all columns) -->
-                <div class="ptree-center-node" style="border-color:#00e676; box-shadow:0 0 20px rgba(0,230,118,0.25);">
-                    <h3 style="color:#00e676 !important;" data-translate="hpa_obj_center">✅ IMPROVED VENDOR MANAGEMENT SYSTEM</h3>
-                </div>
-
-                <!-- BRANCH 1 (ENABLERS) -->
-                <div class="ptree-branch branch-1">
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b1_cau_dir">Robust contract lifecycle management</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b1_cau_ind">Comprehensive staff training program</div>
-                </div>
-
-                <!-- BRANCH 2 (ENABLERS) -->
-                <div class="ptree-branch branch-2">
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b2_cau_dir">Proactive operational oversight & SLAs</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b2_cau_ind">Direct logistic monitoring layer</div>
-                </div>
-
-                <!-- BRANCH 3 (ENABLERS) -->
-                <div class="ptree-branch branch-3">
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b3_cau_dir">Enforced compliance & non-excludable fines</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b3_cau_ind">Redesigned, loophole-free sanction system</div>
-                </div>
-
-                <!-- BRANCH 4 (ENABLERS) -->
-                <div class="ptree-branch branch-4">
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b4_cau_dir">Automated, validated vendor data reporting</div>
-                    <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                    <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b4_cau_ind">ERP-integrated single source of truth</div>
-                </div>
+                <!-- Badge Bottom: Operational Enablers -->
+                <div class="ptree-section-badge ptree-badge-causes" style="background:rgba(0,230,118,0.15); color:#00e676; border-color:rgba(0,230,118,0.3);"><i class="fas fa-arrow-down"></i> <span data-translate="hpa_obj_enablers_label">Operational Enablers & Initiatives (Base Level)</span></div>
             </div>
-
-            <!-- Badge Bottom: Operational Enablers -->
-            <div class="ptree-section-badge ptree-badge-causes" style="background:rgba(0,230,118,0.15); color:#00e676; border-color:rgba(0,230,118,0.3);"><i class="fas fa-arrow-down"></i> <span data-translate="hpa_obj_enablers_label">Operational Enablers & Initiatives (Base Level)</span></div>
         </div>
     </div>
 
