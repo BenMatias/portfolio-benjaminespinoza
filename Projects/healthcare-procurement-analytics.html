@@ -473,6 +473,19 @@
             .scroll-hint { display: inline-flex; }
         }
 
+        /* ===== 2X2 FINDINGS GRID ===== */
+        .findings-grid-2x2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+        @media (max-width: 768px) {
+            .findings-grid-2x2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ===== SUPERSYSTEM MAP ===== */
         .supersys-grid {
             display: grid;
@@ -1032,94 +1045,94 @@
     <!-- 1. RESUMEN DEL PROCESO DE COMPRAS Y ABASTECIMIENTO -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-info-circle"></i> <span data-translate="hpa_proc_summary_title">CENABAST Procurement & Supply Model Summary</span></h2>
-            <span class="pill-badge-blue">Operational Context</span>
+            <h2 class="artifact-title"><i class="fas fa-info-circle"></i> <span data-translate="hpa_proc_summary_title">Resumen del Proceso de Compras y Abastecimiento de CENABAST</span></h2>
+            <span class="pill-badge-blue">Contexto Operacional</span>
         </div>
         <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.7;" data-translate="hpa_proc_summary_desc">
-            CENABAST operates as a strategic intermediary connecting over 500 public health facilities with private pharmaceutical suppliers. The cycle begins with 18-month demand forecasts submitted by hospitals and clinics. CENABAST aggregates this volume to launch public tenders or framework agreements on ChileCompra. Once awarded, suppliers deliver products directly to client healthcare facilities without physical warehousing at CENABAST. Operational oversight and fine enforcement rely on vendor-submitted dispatch reports and facility receipt confirmations.
+            CENABAST opera como un intermediario estratégico conectando a más de 500 establecimientos de la red pública de salud con proveedores farmacéuticos privados. El ciclo inicia con pronósticos de demanda a 18 meses enviados por hospitales y consultorios. CENABAST agrega este volumen para estructurar licitaciones públicas o convenios marco en ChileCompra. Una vez adjudicado el contrato, los proveedores despachan las remesas directamente a los establecimientos de salud sin que los productos pasen por bodegas físicas de CENABAST. El seguimiento operacional y la aplicación de multas dependen de los informes de despacho cargados por los proveedores y las confirmaciones de recepción de los clientes.
         </p>
     </div>
 
-    <!-- 2. DETAILED SUB-PROCESS FLOW (BPMN 2.0) -->
+    <!-- 2. CICLO DE COMPRAS AS-IS (Mapeo de Flujo) -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-stream"></i> <span data-translate="hpa_process_title">Procurement Process — AS-IS (BPM Analysis)</span></h2>
-            <span class="pill-badge-blue">BPMN 2.0</span>
+            <h2 class="artifact-title"><i class="fas fa-stream"></i> <span data-translate="hpa_process_title">Flujo del Proceso de Compras — AS-IS</span></h2>
+            <span class="pill-badge-blue" data-translate="hpa_proc_badge">Mapeo de Flujo</span>
         </div>
-        <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:1.5rem;" data-translate="hpa_process_desc">The procurement cycle consists of 5 sequential sub-processes. Pain points are identified at each node based on documented operational failures (Jan–Jul 2019 reference period).</p>
+        <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:1.5rem;" data-translate="hpa_process_desc">El ciclo de compras consta de 5 subprocesos secuenciales. En cada etapa se identifican las fallas operacionales y puntos de dolor del modelo actual (período ene–jul 2019).</p>
 
         <!-- Process Flow -->
         <div class="process-flow">
             <div class="process-node">
                 <div class="node-icon"><i class="fas fa-database"></i></div>
-                <div class="node-title" data-translate="hpa_proc_p1">1. Demand Aggregation</div>
-                <div class="node-desc" data-translate="hpa_proc_p1d">Clients submit 18-month demand forecasts via online platform. CENABAST consolidates for tender planning.</div>
-                <div class="node-pain" data-translate="hpa_proc_p1p">⚠ Manual data review; no validation layer</div>
+                <div class="node-title" data-translate="hpa_proc_p1">1. Agregación de Demanda</div>
+                <div class="node-desc" data-translate="hpa_proc_p1d">Los clientes envían pronósticos de demanda a 18 meses via plataforma. CENABAST consolida para planificar licitaciones.</div>
+                <div class="node-pain" data-translate="hpa_proc_p1p">⚠ Revisión manual; sin capa de validación</div>
             </div>
             <div class="process-arrow">→</div>
             <div class="process-node">
                 <div class="node-icon"><i class="fas fa-gavel"></i></div>
-                <div class="node-title" data-translate="hpa_proc_p2">2. Tender Creation</div>
-                <div class="node-desc" data-translate="hpa_proc_p2d">Public tenders published on ChileCompra. Procurement Commission (MINSAL, FONASA, Health Services) adjudicates bids &gt;UTM 1,000.</div>
-                <div class="node-pain" data-translate="hpa_proc_p2p">⚠ Vendor sanctions not systematically weighted</div>
+                <div class="node-title" data-translate="hpa_proc_p2">2. Creación de Licitación</div>
+                <div class="node-desc" data-translate="hpa_proc_p2d">Licitaciones publicadas en ChileCompra. Comisión de Adquisiciones adjudica ofertas sobre UTM 1.000.</div>
+                <div class="node-pain" data-translate="hpa_proc_p2p">⚠ Sanciones de proveedores no ponderadas sistemáticamente</div>
             </div>
             <div class="process-arrow">→</div>
             <div class="process-node">
                 <div class="node-icon"><i class="fas fa-handshake"></i></div>
-                <div class="node-title" data-translate="hpa_proc_p3">3. Direct Deal / Renewal</div>
-                <div class="node-desc" data-translate="hpa_proc_p3d">Exceptional single-supplier contracts for urgent needs or framework renewals. Fast-track mechanism, lower transparency.</div>
-                <div class="node-pain" data-translate="hpa_proc_p3p">⚠ Risk: repeated non-compliant vendors selected</div>
+                <div class="node-title" data-translate="hpa_proc_p3">3. Trato Directo / Renovación</div>
+                <div class="node-desc" data-translate="hpa_proc_p3d">Contratos excepcionales con proveedor único para urgencias o renovaciones de convenio marco.</div>
+                <div class="node-pain" data-translate="hpa_proc_p3p">⚠ Riesgo: proveedores incumplidores vuelven a ser seleccionados</div>
             </div>
             <div class="process-arrow">→</div>
             <div class="process-node">
                 <div class="node-icon"><i class="fas fa-truck"></i></div>
-                <div class="node-title" data-translate="hpa_proc_p4">4. Contract Execution</div>
-                <div class="node-desc" data-translate="hpa_proc_p4d">Vendor confirms supply % (full/partial/zero) via platform. Products delivered directly to facilities within 48h of scheduled date.</div>
-                <div class="node-pain" data-translate="hpa_proc_p4p">⚠ No real-time tracking; delivery confirmation is reactive</div>
+                <div class="node-title" data-translate="hpa_proc_p4">4. Ejecución del Contrato</div>
+                <div class="node-desc" data-translate="hpa_proc_p4d">El proveedor informa % de cumplimiento via plataforma. Entrega directa al establecimiento en máximo 48h.</div>
+                <div class="node-pain" data-translate="hpa_proc_p4p">⚠ Sin seguimiento en tiempo real; confirmación de entrega es reactiva</div>
             </div>
             <div class="process-arrow">→</div>
             <div class="process-node">
                 <div class="node-icon"><i class="fas fa-exclamation-circle"></i></div>
-                <div class="node-title" data-translate="hpa_proc_p5">5. Complaint & Sanction</div>
-                <div class="node-desc" data-translate="hpa_proc_p5d">Account executives log client complaints. Sanctions applied for late/false information and non-delivery; accumulated sanctions can terminate contracts.</div>
-                <div class="node-pain" data-translate="hpa_proc_p5p">⚠ Fines non-delivery but not "no information submitted"</div>
+                <div class="node-title" data-translate="hpa_proc_p5">5. Reclamo y Sanción</div>
+                <div class="node-desc" data-translate="hpa_proc_p5d">Ejecutivos registran reclamos de clientes. Sanciones por información tardía/falsa e incumplimiento de entrega.</div>
+                <div class="node-pain" data-translate="hpa_proc_p5p">⚠ Multa la no entrega pero no la falta de información</div>
             </div>
         </div>
     </div>
 
-    <!-- 3. DETAILED OPERATIONAL FINDINGS -->
+    <!-- 3. HALLAZGOS OPERACIONALES DETALLADOS (Grilla 2x2) -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-search"></i> <span data-translate="hpa_crit_title">Detailed Analysis of Critical AS-IS Operational Findings</span></h2>
-            <span class="pill-badge-blue">Operational Root Causes</span>
+            <h2 class="artifact-title"><i class="fas fa-search"></i> <span data-translate="hpa_crit_title">Análisis Detallado de Hallazgos Críticos Operacionales (AS-IS)</span></h2>
+            <span class="pill-badge-blue">Causas Raíz Operacionales</span>
         </div>
-        <div class="summary-grid">
+        <div class="findings-grid-2x2">
             <div class="summary-card" style="border-left-color:#f87171;">
                 <i class="fas fa-eye-slash" style="color:#f87171 !important;"></i>
                 <div>
-                    <h3 data-translate="hpa_crit1_title">Zero Vendor Visibility & Scorecards</h3>
-                    <p data-translate="hpa_crit1_body">Complete absence of historical vendor scorecards or OTIF compliance metrics. Evaluators in ChileCompra tenders had no consolidated delivery record, allowing previously penalized suppliers to repeatedly win contract awards.</p>
+                    <h3 data-translate="hpa_crit1_title">Sin Visibilidad ni Scoring de Proveedores</h3>
+                    <p data-translate="hpa_crit1_body">Ausencia total de Scorecards históricos o métricas OTIF de proveedores. Las comisiones evaluadoras en ChileCompra no contaban con registros consolidados de cumplimiento, permitiendo que proveedores multados volvieran a adjudicarse licitaciones.</p>
                 </div>
             </div>
             <div class="summary-card" style="border-left-color:#f59e0b;">
                 <i class="fas fa-edit" style="color:#f59e0b !important;"></i>
                 <div>
-                    <h3 data-translate="hpa_crit2_title">Manual Data Processing & Fragmented Systems</h3>
-                    <p data-translate="hpa_crit2_body">Delivery reports were uploaded manually via flat files without automated real-time cross-validation. This disconnect caused operational delays of up to 30 days between an actual delivery default and CENABAST's alert system.</p>
+                    <h3 data-translate="hpa_crit2_title">Procesamiento Manual y Fragmentación de Datos</h3>
+                    <p data-translate="hpa_crit2_body">Los informes de despacho se cargaban manualmente mediante archivos planos sin validación automatizada en tiempo real. Esto generaba desfases operacionales de hasta 30 días entre la falta de entrega y la alerta del sistema.</p>
                 </div>
             </div>
             <div class="summary-card" style="border-left-color:#a78bfa;">
                 <i class="fas fa-balance-scale" style="color:#a78bfa !important;"></i>
                 <div>
-                    <h3 data-translate="hpa_crit3_title">Structural Sanctions System Loophole</h3>
-                    <p data-translate="hpa_crit3_body">The regulation penalized late or false reporting ($1.695B CLP in fines in H1 2019), but failed to effectively penalize total omission of dispatch reports. Vendors exploited this loophole by withholding data to avoid automated partial-delivery penalties.</p>
+                    <h3 data-translate="hpa_crit3_title">Brecha Estructural en el Esquema de Sanciones</h3>
+                    <p data-translate="hpa_crit3_body">El reglamento penalizaba la información tardía o falsa ($1.695M CLP en multas en el H1 2019), pero no la omisión total del reporte. Los laboratorios aprovechaban esta brecha no subiendo datos para evitar multas por entregas parciales.</p>
                 </div>
             </div>
             <div class="summary-card" style="border-left-color:#00b4d8;">
                 <i class="fas fa-money-bill-wave" style="color:#00b4d8 !important;"></i>
                 <div>
-                    <h3 data-translate="hpa_crit4_title">Reactive Management & Financial-Only Scope</h3>
-                    <p data-translate="hpa_crit4_body">Institutional reporting focused strictly on budget execution and total contracted amounts rather than patient service levels or stockout frequencies. Management operated reactively only after client health facilities filed formal complaints.</p>
+                    <h3 data-translate="hpa_crit4_title">Gestión Reactiva y Enfoque Exclusivamente Financiero</h3>
+                    <p data-translate="hpa_crit4_body">Los informes institucionales evaluaban montos presupuestarios contratados en lugar del nivel de servicio al paciente o la frecuencia de desabastecimiento. La agencia actuaba reactivamente solo tras el reclamo del establecimiento de salud.</p>
                 </div>
             </div>
         </div>
@@ -1133,49 +1146,49 @@
     <!-- OTIF Monthly -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-chart-bar"></i> <span data-translate="hpa_otif_title">OTIF — Monthly Compliance Rate (2018)</span></h2>
-            <span class="pill-badge-blue" data-translate="hpa_otif_badge">954,815 total orders</span>
+            <h2 class="artifact-title"><i class="fas fa-chart-bar"></i> <span data-translate="hpa_otif_title">OTIF — Tasa de Cumplimiento Mensual (2018)</span></h2>
+            <span class="pill-badge-blue" data-translate="hpa_otif_badge">954.815 pedidos totales</span>
         </div>
-        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1.25rem;" data-translate="hpa_otif_desc">Monthly breakdown of order fulfillment rate. January registered the worst performance while June–August showed seasonal improvement, possibly aligned with winter budget cycles.</p>
+        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1.25rem;" data-translate="hpa_otif_desc">Desglose mensual de la tasa de cumplimiento de pedidos. Enero registró el peor rendimiento; junio–agosto mostraron mejora estacional, posiblemente alineada con ciclos presupuestarios de invierno.</p>
         <div class="chart-container">
-            <div class="bar-row"><span class="bar-label">Jan</span><div class="bar-track"><div class="bar-fill danger" style="width:40%">40%</div></div></div>
+            <div class="bar-row"><span class="bar-label">Ene</span><div class="bar-track"><div class="bar-fill danger" style="width:40%">40%</div></div></div>
             <div class="bar-row"><span class="bar-label">Feb</span><div class="bar-track"><div class="bar-fill warning" style="width:68%">68%</div></div></div>
             <div class="bar-row"><span class="bar-label">Mar</span><div class="bar-track"><div class="bar-fill warning" style="width:72%">72%</div></div></div>
-            <div class="bar-row"><span class="bar-label">Apr</span><div class="bar-track"><div class="bar-fill warning" style="width:74%">74%</div></div></div>
+            <div class="bar-row"><span class="bar-label">Abr</span><div class="bar-track"><div class="bar-fill warning" style="width:74%">74%</div></div></div>
             <div class="bar-row"><span class="bar-label">May</span><div class="bar-track"><div class="bar-fill warning" style="width:76%">76%</div></div></div>
             <div class="bar-row"><span class="bar-label">Jun</span><div class="bar-track"><div class="bar-fill compliance" style="width:80%">80%</div></div></div>
             <div class="bar-row"><span class="bar-label">Jul</span><div class="bar-track"><div class="bar-fill compliance" style="width:79%">79%</div></div></div>
-            <div class="bar-row"><span class="bar-label">Aug</span><div class="bar-track"><div class="bar-fill compliance" style="width:78%">78%</div></div></div>
+            <div class="bar-row"><span class="bar-label">Ago</span><div class="bar-track"><div class="bar-fill compliance" style="width:78%">78%</div></div></div>
             <div class="bar-row"><span class="bar-label">Sep</span><div class="bar-track"><div class="bar-fill warning" style="width:75%">75%</div></div></div>
             <div class="bar-row"><span class="bar-label">Oct</span><div class="bar-track"><div class="bar-fill warning" style="width:77%">77%</div></div></div>
             <div class="bar-row"><span class="bar-label">Nov</span><div class="bar-track"><div class="bar-fill warning" style="width:74%">74%</div></div></div>
-            <div class="bar-row"><span class="bar-label">Dec</span><div class="bar-track"><div class="bar-fill warning" style="width:71%">71%</div></div></div>
+            <div class="bar-row"><span class="bar-label">Dic</span><div class="bar-track"><div class="bar-fill warning" style="width:71%">71%</div></div></div>
         </div>
-        <p style="color:#64748b; font-size:0.75rem; margin-top:0.75rem;" data-translate="hpa_otif_note">Annual avg: 75.8% compliance → 24.2% non-fulfillment = 231,488 incomplete orders. Source: CENABAST Annual Report 2018.</p>
+        <p style="color:#64748b; font-size:0.75rem; margin-top:0.75rem;" data-translate="hpa_otif_note">Promedio anual: 75,8% de cumplimiento → 24,2% de incumplimiento = 231.488 pedidos no completados. Fuente: Informe Anual CENABAST 2018.</p>
     </div>
 
     <!-- Complaint Trend -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-comment-alt"></i> <span data-translate="hpa_complaints_title">Client Complaint Trend (2016–2018)</span></h2>
+            <h2 class="artifact-title"><i class="fas fa-comment-alt"></i> <span data-translate="hpa_complaints_title">Tendencia de Reclamos de Clientes (2016–2018)</span></h2>
         </div>
-        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1.25rem;" data-translate="hpa_complaints_desc">After a dip in 2017 (likely under-reporting), complaints surged 82.9% in 2018, with "order shortfall" consistently the dominant cause.</p>
+        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1.25rem;" data-translate="hpa_complaints_desc">Tras una baja en 2017 (probable subreporte), los reclamos aumentaron 82,9% en 2018, siendo "pedido con faltante" la causa dominante.</p>
         <div class="chart-container">
-            <div class="chart-title" data-translate="hpa_complaints_by_cause">Complaints by Primary Cause</div>
+            <div class="chart-title" data-translate="hpa_complaints_by_cause">Reclamos por Causa Principal</div>
             <div class="bar-row">
-                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c1">Order Shortfall</span>
+                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c1">Pedido con Faltante</span>
                 <div class="bar-track"><div class="bar-fill danger" style="width:72%">72%</div></div>
             </div>
             <div class="bar-row">
-                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c2">Late Delivery</span>
+                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c2">Entrega Tardía</span>
                 <div class="bar-track"><div class="bar-fill warning" style="width:15%">15%</div></div>
             </div>
             <div class="bar-row">
-                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c3">Wrong Product</span>
+                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c3">Producto Erróneo</span>
                 <div class="bar-track"><div class="bar-fill warning" style="width:8%">8%</div></div>
             </div>
             <div class="bar-row">
-                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c4">Other / Info</span>
+                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c4">Otros / Información</span>
                 <div class="bar-track"><div class="bar-fill compliance" style="width:5%">5%</div></div>
             </div>
         </div>
@@ -1184,90 +1197,90 @@
     <!-- Vendor Fines Breakdown -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-gavel"></i> <span data-translate="hpa_fines_title">Vendor Sanction Breakdown</span></h2>
-            <span class="pill-badge-blue" data-translate="hpa_fines_badge">H1 2019 — 1,867 total sanctions</span>
+            <h2 class="artifact-title"><i class="fas fa-gavel"></i> <span data-translate="hpa_fines_title">Desglose de Sanciones a Proveedores</span></h2>
+            <span class="pill-badge-blue" data-translate="hpa_fines_badge">H1 2019 — 1.867 sanciones totales</span>
         </div>
         <div class="chart-container">
             <div class="bar-row">
-                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f1">Inaccurate info</span>
-                <div class="bar-track"><div class="bar-fill danger" style="width:48%">48% · $1.695B CLP</div></div>
+                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f1">Información inexacta</span>
+                <div class="bar-track"><div class="bar-fill danger" style="width:48%">48% · $1.695M CLP</div></div>
             </div>
             <div class="bar-row">
-                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f2">Late delivery</span>
+                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f2">Entrega tardía</span>
                 <div class="bar-track"><div class="bar-fill warning" style="width:28%">28%</div></div>
             </div>
             <div class="bar-row">
-                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f3">Non-delivery</span>
+                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f3">No entrega</span>
                 <div class="bar-track"><div class="bar-fill warning" style="width:17%">17%</div></div>
             </div>
             <div class="bar-row">
-                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f4">Other infractions</span>
+                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f4">Otras infracciones</span>
                 <div class="bar-track"><div class="bar-fill compliance" style="width:7%">7%</div></div>
             </div>
         </div>
         <p style="color:#94a3b8; font-size:0.8rem; margin-top:1rem;" data-translate="hpa_fines_note">
-            The top offending vendor accumulated <strong style="color:#f87171;">64 sanctions across only 6 active contracts</strong> — a 1,067% sanction rate. This illustrates the absence of a vendor blacklist mechanism in the existing procurement model.
+            El proveedor con más infracciones acumuló <strong style="color:#f87171;">64 sanciones en solo 6 contratos activos</strong> — una tasa de sanción del 1.067%. Esto ilustra la ausencia de un mecanismo de lista negra de proveedores en el modelo existente.
         </p>
     </div>
 
     <!-- Procurement Effectiveness -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-percentage"></i> <span data-translate="hpa_eff_title">Procurement Effectiveness (2015–2018)</span></h2>
+            <h2 class="artifact-title"><i class="fas fa-percentage"></i> <span data-translate="hpa_eff_title">Efectividad de Compras (2015–2018)</span></h2>
         </div>
-        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1.25rem;" data-translate="hpa_eff_desc">Ratio of intended-to-contracted vs. actually executed purchases. Rising effectiveness through 2017 reversed sharply in 2018 following a reduction in the product basket.</p>
+        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1.25rem;" data-translate="hpa_eff_desc">Relación entre compras proyectadas vs. efectivamente ejecutadas. El aumento de efectividad hasta 2017 se revirtió marcadamente en 2018 tras una reducción de la canasta de productos.</p>
         <div class="table-wrap">
         <table class="vendor-table">
             <thead>
                 <tr>
-                    <th data-translate="hpa_eff_year">Year</th>
-                    <th data-translate="hpa_eff_intended">Intended Contracts</th>
-                    <th data-translate="hpa_eff_executed">Executed</th>
-                    <th data-translate="hpa_eff_rate">Effectiveness</th>
-                    <th data-translate="hpa_eff_trend">Trend</th>
+                    <th data-translate="hpa_eff_year">Año</th>
+                    <th data-translate="hpa_eff_intended">Contratos Proyectados</th>
+                    <th data-translate="hpa_eff_executed">Ejecutados</th>
+                    <th data-translate="hpa_eff_rate">Efectividad</th>
+                    <th data-translate="hpa_eff_trend">Tendencia</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>2015</td><td>—</td><td>—</td><td class="badge-warn">Baseline</td><td>—</td></tr>
-                <tr><td>2016</td><td>High</td><td>Lower</td><td class="badge-warn">↑ Improving</td><td>+</td></tr>
-                <tr><td>2017</td><td>Medium</td><td>High match</td><td class="badge-ok">↑ Best period</td><td>++</td></tr>
-                <tr><td>2018</td><td>Reduced basket</td><td>Lower %</td><td class="badge-danger">↓ Declined</td><td>−</td></tr>
+                <tr><td>2015</td><td>—</td><td>—</td><td class="badge-warn">Línea base</td><td>—</td></tr>
+                <tr><td>2016</td><td>Alto</td><td>Menor</td><td class="badge-warn">↑ Mejorando</td><td>+</td></tr>
+                <tr><td>2017</td><td>Medio</td><td>Coincidencia alta</td><td class="badge-ok">↑ Mejor período</td><td>++</td></tr>
+                <tr><td>2018</td><td>Canasta reducida</td><td>% Menor</td><td class="badge-danger">↓ Caída</td><td>−</td></tr>
             </tbody>
         </table>
         </div><!-- /table-wrap -->
-        <p style="color:#64748b; font-size:0.75rem; margin-top:0.75rem;" data-translate="hpa_eff_note">Basket reduction in 2018 eliminated zero/low-demand SKUs (positive efficiency signal), but overall execution rate fell due to vendor compliance failures.</p>
+        <p style="color:#64748b; font-size:0.75rem; margin-top:0.75rem;" data-translate="hpa_eff_note">La reducción de la canasta en 2018 eliminó SKUs sin demanda (señal positiva de eficiencia), pero la tasa de ejecución general cayó por incumplimientos de proveedores.</p>
     </div>
 
     <!-- Orders with shortfall -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-boxes"></i> <span data-translate="hpa_vendor_title">Vendor Shortfall Analysis</span></h2>
+            <h2 class="artifact-title"><i class="fas fa-boxes"></i> <span data-translate="hpa_vendor_title">Análisis de Pedidos con Faltantes</span></h2>
         </div>
         <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1rem;" data-translate="hpa_vendor_desc">
-            Of 810,703 executed orders, 24.92% had confirmed shortfalls. 5 vendors concentrated the highest shortfall volumes — collectively responsible for 4.5 percentage points of total non-compliance.
+            De 810.703 pedidos ejecutados, el 24,92% presentó faltantes confirmados. 5 proveedores concentraron los mayores volúmenes de faltantes — responsables colectivamente de 4,5 puntos porcentuales del incumplimiento total.
         </p>
         <div class="kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px,1fr));">
             <div class="kpi-card">
-                <div class="kpi-value info">810,703</div>
-                <div class="kpi-label" data-translate="hpa_v1">Orders Executed</div>
+                <div class="kpi-value info">810.703</div>
+                <div class="kpi-label" data-translate="hpa_v1">Pedidos Ejecutados</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-value danger">24.92%</div>
-                <div class="kpi-label" data-translate="hpa_v2">Had Shortfalls</div>
+                <div class="kpi-value danger">24,92%</div>
+                <div class="kpi-label" data-translate="hpa_v2">Tuvieron Faltantes</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-value warning">2.53%</div>
-                <div class="kpi-label" data-translate="hpa_v3">Excess Delivered</div>
+                <div class="kpi-value warning">2,53%</div>
+                <div class="kpi-label" data-translate="hpa_v3">Exceso Entregado</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-value danger">4.5pp</div>
-                <div class="kpi-label" data-translate="hpa_v4">Top-5 Vendor Impact</div>
-                <div class="kpi-sub" data-translate="hpa_v4sub">Removing 5 worst = +4.5% compliance</div>
+                <div class="kpi-value danger">4,5pp</div>
+                <div class="kpi-label" data-translate="hpa_v4">Impacto Top-5 Proveedores</div>
+                <div class="kpi-sub" data-translate="hpa_v4sub">Eliminar los 5 peores = +4.5% cumplimiento</div>
             </div>
             <div class="kpi-card">
                 <div class="kpi-value warning">1pp</div>
-                <div class="kpi-label" data-translate="hpa_v5">Top-10 Sanction Impact</div>
-                <div class="kpi-sub" data-translate="hpa_v5sub">7.2% of shortfalls from sanctioned vendors</div>
+                <div class="kpi-label" data-translate="hpa_v5">Impacto Sanción Top-10</div>
+                <div class="kpi-sub" data-translate="hpa_v5sub">7.2% de faltantes provienen de sancionados</div>
             </div>
         </div>
     </div>
@@ -1275,14 +1288,14 @@
     <!-- Survey Results -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-poll"></i> <span data-translate="hpa_survey_title">Client Satisfaction Survey — Key Findings</span></h2>
-            <span class="pill-badge-blue" data-translate="hpa_survey_badge">SISMARKET · Client Perception</span>
+            <h2 class="artifact-title"><i class="fas fa-poll"></i> <span data-translate="hpa_survey_title">Encuesta de Satisfacción de Clientes — Hallazgos Clave</span></h2>
+            <span class="pill-badge-blue" data-translate="hpa_survey_badge">SISMARKET · Percepción de Clientes</span>
         </div>
-        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1.25rem;" data-translate="hpa_survey_desc">Client-facing survey conducted across member health facilities to capture perceived service quality across procurement, logistics, executive attention, and billing dimensions.</p>
+        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1.25rem;" data-translate="hpa_survey_desc">Encuesta aplicada en establecimientos de salud de la red pública para capturar la calidad percibida del servicio en compras, logística, atención y facturación.</p>
 
-        <h4 style="color:#00b4d8; font-size:0.9rem; margin-bottom:1rem;" data-translate="hpa_survey_q_title">Why clients do NOT increase their CENABAST purchases (top reasons)</h4>
+        <h4 style="color:#00b4d8; font-size:0.9rem; margin-bottom:1rem;" data-translate="hpa_survey_q_title">Por qué los clientes NO aumentan sus compras en CENABAST (principales razones)</h4>
         <div class="survey-item">
-            <div class="survey-question" data-translate="hpa_survey_s1">Risk of supply shortfall / non-compliance</div>
+            <div class="survey-question" data-translate="hpa_survey_s1">Riesgo de faltante de stock / incumplimiento</div>
             <div class="survey-bar-wrap">
                 <div class="survey-bar-track"><div class="survey-bar-fill" style="width:68%">68%</div></div>
                 <span class="survey-pct">68%</span>
@@ -1335,94 +1348,94 @@
     <!-- OBJECTIVE TREE -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-bullseye"></i> <span data-translate="hpa_obj_title">Objective Tree — TO-BE Vision</span></h2>
-            <span class="pill-badge-blue" data-translate="hpa_obj_badge">ILPES/CEPAL Solution Framework</span>
+            <h2 class="artifact-title"><i class="fas fa-bullseye"></i> <span data-translate="hpa_obj_title">Árbol de Objetivos — Visión TO-BE</span></h2>
+            <span class="pill-badge-blue" data-translate="hpa_obj_badge">Marco de Solución ILPES/CEPAL</span>
         </div>
-        <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:1.25rem;" data-translate="hpa_obj_desc">Direct translation of the Problem Tree into a solution framework across 4 operational branches. Ends flow upward (top); enablers branch downward (bottom).</p>
+        <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:1.25rem;" data-translate="hpa_obj_desc">Traducción directa del Árbol de Problemas en un marco de solución a través de 4 ramas operacionales. Los fines fluyen hacia arriba (superior); los medios hacia abajo (inferior).</p>
         
         <div class="scroll-hint"><i class="fas fa-arrows-left-right"></i> <span data-translate="hpa_scroll_hint_diagram">Desliza horizontalmente para ver el diagrama completo</span></div>
         <div class="responsive-scroll-wrapper">
             <div class="ptree-wrapper">
                 <!-- Badge Top: Strategic Outcomes -->
-                <div class="ptree-section-badge ptree-badge-effects"><i class="fas fa-arrow-up"></i> <span data-translate="hpa_obj_outcomes_label">Strategic Outcomes & Impact (Top Level)</span></div>
+                <div class="ptree-section-badge ptree-badge-effects"><i class="fas fa-arrow-up"></i> <span data-translate="hpa_obj_outcomes_label">Fines e Impacto Estratégico (Nivel Superior)</span></div>
 
                 <div class="ptree-grid">
                     <!-- BRANCH 1 -->
                     <div class="ptree-branch branch-1">
-                        <div class="ptree-branch-title" data-translate="hpa_tree_b1_title">Contract Enforcement</div>
-                        <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b1_ind">Timely contract fulfillment & planned renewals</div>
+                        <div class="ptree-branch-title" data-translate="hpa_tree_b1_title">Gestión de Contratos</div>
+                        <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b1_ind">Cumplimiento oportuno de contratos y renovaciones planificadas</div>
                         <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                        <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b1_dir">Reduction in vendor sanctions and defaults</div>
+                        <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b1_dir">Reducción de sanciones e incumplimientos de proveedores</div>
                         <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
                     </div>
 
                     <!-- BRANCH 2 -->
                     <div class="ptree-branch branch-2">
-                        <div class="ptree-branch-title" data-translate="hpa_tree_b2_title">Procurement Volume</div>
-                        <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b2_ind">Expansion of public procurement volume</div>
+                        <div class="ptree-branch-title" data-translate="hpa_tree_b2_title">Volumen de Compras</div>
+                        <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b2_ind">Expansión del volumen de compras públicas</div>
                         <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                        <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b2_dir">Health services increase purchases via CENABAST</div>
+                        <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b2_dir">Los servicios de salud aumentan sus compras via CENABAST</div>
                         <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
                     </div>
 
                     <!-- BRANCH 3 -->
                     <div class="ptree-branch branch-3">
-                        <div class="ptree-branch-title" data-translate="hpa_tree_b3_title">Fulfillment & Compliance</div>
-                        <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b3_ind">High client satisfaction across health network</div>
+                        <div class="ptree-branch-title" data-translate="hpa_tree_b3_title">Cumplimiento y Entregas</div>
+                        <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b3_ind">Alta satisfacción de clientes en la red de salud</div>
                         <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                        <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b3_dir">Elimination of order delivery shortfalls (OTIF ≥93%)</div>
+                        <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b3_dir">Eliminación de faltantes en la entrega (OTIF ≥93%)</div>
                         <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
                     </div>
 
                     <!-- BRANCH 4 -->
                     <div class="ptree-branch branch-4">
-                        <div class="ptree-branch-title" data-translate="hpa_tree_b4_title">Information & Costs</div>
-                        <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b4_ind">Operational cost optimization for CENABAST</div>
+                        <div class="ptree-branch-title" data-translate="hpa_tree_b4_title">Información y Costos</div>
+                        <div class="ptree-node node-ind-eff" data-translate="hpa_obj_b4_ind">Optimización de costos operacionales para CENABAST</div>
                         <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
-                        <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b4_dir">Elimination of unauthorized third-party billing</div>
+                        <div class="ptree-node node-dir-eff" data-translate="hpa_obj_b4_dir">Eliminación de facturación no autorizada de terceros</div>
                         <div class="ptree-arrow"><i class="fas fa-arrow-up"></i></div>
                     </div>
 
                     <!-- CENTRAL SOLUTION NODE (Spans all columns) -->
                     <div class="ptree-center-node" style="border-color:#00e676; box-shadow:0 0 20px rgba(0,230,118,0.25);">
-                        <h3 style="color:#00e676 !important;" data-translate="hpa_obj_center">✅ IMPROVED VENDOR MANAGEMENT SYSTEM</h3>
+                        <h3 style="color:#00e676 !important;" data-translate="hpa_obj_center">✅ SISTEMA DE GESTIÓN DE PROVEEDORES MEJORADO</h3>
                     </div>
 
                     <!-- BRANCH 1 (ENABLERS) -->
                     <div class="ptree-branch branch-1">
                         <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                        <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b1_cau_dir">Robust contract lifecycle management</div>
+                        <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b1_cau_dir">Gestión del ciclo de vida del contrato robusta</div>
                         <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                        <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b1_cau_ind">Comprehensive staff training program</div>
+                        <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b1_cau_ind">Programa integral de capacitación de personal</div>
                     </div>
 
                     <!-- BRANCH 2 (ENABLERS) -->
                     <div class="ptree-branch branch-2">
                         <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                        <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b2_cau_dir">Proactive operational oversight & SLAs</div>
+                        <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b2_cau_dir">Supervisión operacional proactiva y SLAs</div>
                         <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                        <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b2_cau_ind">Direct logistic monitoring layer</div>
+                        <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b2_cau_ind">Capa de monitoreo logístico directo</div>
                     </div>
 
                     <!-- BRANCH 3 (ENABLERS) -->
                     <div class="ptree-branch branch-3">
                         <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                        <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b3_cau_dir">Enforced compliance & non-excludable fines</div>
+                        <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b3_cau_dir">Cumplimiento forzado y multas no excluibles</div>
                         <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                        <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b3_cau_ind">Redesigned, loophole-free sanction system</div>
+                        <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b3_cau_ind">Sistema de sanciones rediseñado y sin vacíos legales</div>
                     </div>
 
                     <!-- BRANCH 4 (ENABLERS) -->
                     <div class="ptree-branch branch-4">
                         <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                        <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b4_cau_dir">Automated, validated vendor data reporting</div>
+                        <div class="ptree-node node-dir-cau" data-translate="hpa_obj_b4_cau_dir">Reporte automatizado y validado de datos de proveedores</div>
                         <div class="ptree-arrow"><i class="fas fa-arrow-down"></i></div>
-                        <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b4_cau_ind">ERP-integrated single source of truth</div>
+                        <div class="ptree-node node-ind-cau" data-translate="hpa_obj_b4_cau_ind">Fuente única de verdad integrada al ERP</div>
                     </div>
                 </div>
 
                 <!-- Badge Bottom: Operational Enablers -->
-                <div class="ptree-section-badge ptree-badge-causes" style="background:rgba(0,230,118,0.15); color:#00e676; border-color:rgba(0,230,118,0.3);"><i class="fas fa-arrow-down"></i> <span data-translate="hpa_obj_enablers_label">Operational Enablers & Initiatives (Base Level)</span></div>
+                <div class="ptree-section-badge ptree-badge-causes" style="background:rgba(0,230,118,0.15); color:#00e676; border-color:rgba(0,230,118,0.3);"><i class="fas fa-arrow-down"></i> <span data-translate="hpa_obj_enablers_label">Iniciativas y Medios Operacionales (Nivel Base)</span></div>
             </div>
         </div>
     </div>
@@ -1430,33 +1443,33 @@
     <!-- Proposed KPIs -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-tachometer-alt"></i> <span data-translate="hpa_kpis_title">Proposed KPI Framework</span></h2>
+            <h2 class="artifact-title"><i class="fas fa-tachometer-alt"></i> <span data-translate="hpa_kpis_title">Marco de KPIs Propuesto</span></h2>
         </div>
-        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1rem;" data-translate="hpa_kpis_desc">Four operational KPIs designed to monitor vendor compliance in near real-time, each with defined frequency, current baseline, and improvement target.</p>
+        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1rem;" data-translate="hpa_kpis_desc">Cuatro KPIs operacionales diseñados para monitorear el cumplimiento de proveedores en tiempo casi real, cada uno con frecuencia definida, línea base actual y meta de mejora.</p>
         <div class="kpi-def-grid">
             <div class="kpi-def-card">
-                <div class="kpi-name" data-translate="hpa_kpi2_name">Delivery Compliance Rate</div>
-                <code class="kpi-formula">Units Delivered / Units Ordered × 100</code>
-                <div class="kpi-current" data-translate="hpa_kpi2_current">📍 Current (2019): 88.1%</div>
-                <div class="kpi-target" data-translate="hpa_kpi2_target">🎯 Target: ≥ 93%</div>
+                <div class="kpi-name" data-translate="hpa_kpi2_name">Tasa de Cumplimiento de Entregas</div>
+                <code class="kpi-formula">Unidades Entregadas / Unidades Pedidas × 100</code>
+                <div class="kpi-current" data-translate="hpa_kpi2_current">📍 Actual (2019): 88,1%</div>
+                <div class="kpi-target" data-translate="hpa_kpi2_target">🎯 Meta: ≥ 93%</div>
             </div>
             <div class="kpi-def-card">
-                <div class="kpi-name" data-translate="hpa_kpi3_name">On-Time Delivery Rate</div>
-                <code class="kpi-formula">Orders on Time / Total Orders × 100</code>
-                <div class="kpi-current" data-translate="hpa_kpi3_current">📍 Current: Not systematically tracked</div>
-                <div class="kpi-target" data-translate="hpa_kpi3_target">🎯 Target: Binary — 100% flagged if late</div>
+                <div class="kpi-name" data-translate="hpa_kpi3_name">Tasa de Entregas a Tiempo</div>
+                <code class="kpi-formula">Pedidos a Tiempo / Pedidos Totales × 100</code>
+                <div class="kpi-current" data-translate="hpa_kpi3_current">📍 Actual: Sin seguimiento sistemático</div>
+                <div class="kpi-target" data-translate="hpa_kpi3_target">🎯 Meta: Binario — 100% marcado si hay atraso</div>
             </div>
             <div class="kpi-def-card">
-                <div class="kpi-name" data-translate="hpa_kpi4_name">Vendor Sanction Rate</div>
-                <code class="kpi-formula">Total Sanctions / Active Contracts × 100</code>
-                <div class="kpi-current" data-translate="hpa_kpi4_current">📍 Current: 109% (H1 2019)</div>
-                <div class="kpi-target" data-translate="hpa_kpi4_target">🎯 Target: &lt; 10% · Trend → 0%</div>
+                <div class="kpi-name" data-translate="hpa_kpi4_name">Tasa de Sanciones a Proveedores</div>
+                <code class="kpi-formula">Sanciones Totales / Contratos Activos × 100</code>
+                <div class="kpi-current" data-translate="hpa_kpi4_current">📍 Actual: 109% (H1 2019)</div>
+                <div class="kpi-target" data-translate="hpa_kpi4_target">🎯 Meta: &lt; 10% · Tendencia → 0%</div>
             </div>
             <div class="kpi-def-card">
-                <div class="kpi-name" data-translate="hpa_kpi5_name">Contracts Near Expiry</div>
-                <code class="kpi-formula">Near-expiry Contracts / Total Active × 100</code>
-                <div class="kpi-current" data-translate="hpa_kpi5_current">📍 Current: 24.63% at risk</div>
-                <div class="kpi-target" data-translate="hpa_kpi5_target">🎯 Target: ≤ 5% · Daily monitoring</div>
+                <div class="kpi-name" data-translate="hpa_kpi5_name">Contratos Próximos a Vencer</div>
+                <code class="kpi-formula">Contratos por Vencer / Totales Activos × 100</code>
+                <div class="kpi-current" data-translate="hpa_kpi5_current">📍 Actual: 24,63% en riesgo</div>
+                <div class="kpi-target" data-translate="hpa_kpi5_target">🎯 Meta: ≤ 5% · Monitoreo diario</div>
             </div>
         </div>
     </div>
@@ -1464,48 +1477,48 @@
     <!-- Vendor Scorecard -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-star-half-alt"></i> <span data-translate="hpa_scorecard_title">Vendor Scorecard System (Proposed)</span></h2>
+            <h2 class="artifact-title"><i class="fas fa-star-half-alt"></i> <span data-translate="hpa_scorecard_title">Sistema de Scorecard de Proveedores (Propuesto)</span></h2>
         </div>
-        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1rem;" data-translate="hpa_scorecard_desc">A structured scoring mechanism to rank vendors by compliance history. Scorecard integrated as mandatory evaluation input in all tender processes.</p>
+        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1rem;" data-translate="hpa_scorecard_desc">Mecanismo estructurado de calificación para rankear proveedores por historial de cumplimiento. Scorecard integrado como insumo de evaluación obligatorio en licitaciones.</p>
         <div class="table-wrap">
         <table class="vendor-table">
             <thead>
                 <tr>
-                    <th data-translate="hpa_sc_dim">Dimension</th>
-                    <th data-translate="hpa_sc_metric">Metric</th>
-                    <th data-translate="hpa_sc_weight">Weight</th>
-                    <th data-translate="hpa_sc_freq">Frequency</th>
-                    <th data-translate="hpa_sc_flag">Risk Flag</th>
+                    <th data-translate="hpa_sc_dim">Dimensión</th>
+                    <th data-translate="hpa_sc_metric">Métrica</th>
+                    <th data-translate="hpa_sc_weight">Ponderación</th>
+                    <th data-translate="hpa_sc_freq">Frecuencia</th>
+                    <th data-translate="hpa_sc_flag">Alerta de Riesgo</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td data-translate="hpa_sc_r1d">Delivery Volume</td>
-                    <td data-translate="hpa_sc_r1m">Compliance Rate (%)</td>
+                    <td data-translate="hpa_sc_r1d">Volumen de Entrega</td>
+                    <td data-translate="hpa_sc_r1m">Tasa de Cumplimiento (%)</td>
                     <td>35%</td>
-                    <td data-translate="hpa_sc_r1f">Per delivery</td>
-                    <td><span class="badge-danger" data-translate="hpa_sc_r1fl">&lt;85% → High Risk</span></td>
+                    <td data-translate="hpa_sc_r1f">Por entrega</td>
+                    <td><span class="badge-danger" data-translate="hpa_sc_r1fl">&lt;85% → Riesgo Alto</span></td>
                 </tr>
                 <tr>
-                    <td data-translate="hpa_sc_r2d">Punctuality</td>
-                    <td data-translate="hpa_sc_r2m">On-Time Rate (%)</td>
+                    <td data-translate="hpa_sc_r2d">Puntualidad</td>
+                    <td data-translate="hpa_sc_r2m">Tasa a Tiempo (%)</td>
                     <td>25%</td>
-                    <td data-translate="hpa_sc_r2f">Per delivery</td>
-                    <td><span class="badge-warn" data-translate="hpa_sc_r2fl">2+ late → Warning</span></td>
+                    <td data-translate="hpa_sc_r2f">Por entrega</td>
+                    <td><span class="badge-warn" data-translate="hpa_sc_r2fl">2+ atrasos → Advertencia</span></td>
                 </tr>
                 <tr>
-                    <td data-translate="hpa_sc_r3d">Information Quality</td>
-                    <td data-translate="hpa_sc_r3m">Accurate Reports (%)</td>
+                    <td data-translate="hpa_sc_r3d">Calidad de Información</td>
+                    <td data-translate="hpa_sc_r3m">Reportes Inexactos (%)</td>
                     <td>25%</td>
-                    <td data-translate="hpa_sc_r3f">Monthly</td>
-                    <td><span class="badge-danger" data-translate="hpa_sc_r3fl">1 false report → Flag</span></td>
+                    <td data-translate="hpa_sc_r3f">Mensual</td>
+                    <td><span class="badge-danger" data-translate="hpa_sc_r3fl">1 reporte falso → Alerta</span></td>
                 </tr>
                 <tr>
-                    <td data-translate="hpa_sc_r4d">Sanctions</td>
-                    <td data-translate="hpa_sc_r4m">Sanction Rate / Contracts</td>
+                    <td data-translate="hpa_sc_r4d">Sanciones</td>
+                    <td data-translate="hpa_sc_r4m">Tasa Sanción / Contratos</td>
                     <td>15%</td>
                     <td data-translate="hpa_sc_r4f">Semestral</td>
-                    <td><span class="badge-danger" data-translate="hpa_sc_r4fl">3+ → Tender Disqualification</span></td>
+                    <td><span class="badge-danger" data-translate="hpa_sc_r4fl">3+ → Descalificación Licitación</span></td>
                 </tr>
             </tbody>
         </table>
@@ -1515,48 +1528,48 @@
     <!-- Expected Impact -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-chart-line"></i> <span data-translate="hpa_impact_title">Expected Impact — AS-IS vs TO-BE</span></h2>
+            <h2 class="artifact-title"><i class="fas fa-chart-line"></i> <span data-translate="hpa_impact_title">Impacto Esperado — AS-IS vs TO-BE</span></h2>
         </div>
         <div class="table-wrap">
         <table class="impact-table">
             <thead>
                 <tr>
-                    <th data-translate="hpa_imp_metric">Metric</th>
+                    <th data-translate="hpa_imp_metric">Métrica</th>
                     <th data-translate="hpa_imp_asis">AS-IS (2018–2019)</th>
-                    <th data-translate="hpa_imp_tobe">TO-BE Target</th>
-                    <th data-translate="hpa_imp_method">Key Intervention</th>
+                    <th data-translate="hpa_imp_tobe">Meta TO-BE</th>
+                    <th data-translate="hpa_imp_method">Intervención Clave</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td data-translate="hpa_imp_r1">Order Fulfillment Rate</td>
-                    <td class="as-is">75.8%</td>
+                    <td data-translate="hpa_imp_r1">Tasa Cumplimiento Pedidos</td>
+                    <td class="as-is">75,8%</td>
                     <td class="to-be">≥ 88%</td>
-                    <td data-translate="hpa_imp_r1m">Vendor scorecard in tender selection</td>
+                    <td data-translate="hpa_imp_r1m">Scorecard de proveedor en selección de licitación</td>
                 </tr>
                 <tr>
-                    <td data-translate="hpa_imp_r2">Sanction Rate</td>
+                    <td data-translate="hpa_imp_r2">Tasa de Sanciones</td>
                     <td class="as-is">109%</td>
                     <td class="to-be">≤ 10%</td>
-                    <td data-translate="hpa_imp_r2m">Automated ERP reporting + revised fine rules</td>
+                    <td data-translate="hpa_imp_r2m">Reporte ERP automatizado + reglas de multas revisadas</td>
                 </tr>
                 <tr>
-                    <td data-translate="hpa_imp_r3">Near-Expiry Contracts</td>
-                    <td class="as-is">24.6%</td>
+                    <td data-translate="hpa_imp_r3">Contratos por Vencer</td>
+                    <td class="as-is">24,6%</td>
                     <td class="to-be">≤ 5%</td>
-                    <td data-translate="hpa_imp_r3m">Daily expiry monitoring dashboard</td>
+                    <td data-translate="hpa_imp_r3m">Dashboard de monitoreo diario de vencimientos</td>
                 </tr>
                 <tr>
-                    <td data-translate="hpa_imp_r4">Info Accuracy Fines</td>
-                    <td class="as-is">$1.695B CLP / yr</td>
-                    <td class="to-be">→ 0 (eliminated)</td>
-                    <td data-translate="hpa_imp_r4m">ERP eliminates manual vendor data entry</td>
+                    <td data-translate="hpa_imp_r4">Multas por Info Inexacta</td>
+                    <td class="as-is">$1.695M CLP / año</td>
+                    <td class="to-be">→ 0 (eliminado)</td>
+                    <td data-translate="hpa_imp_r4m">ERP elimina ingreso manual de datos por proveedor</td>
                 </tr>
                 <tr>
-                    <td data-translate="hpa_imp_r5">Client Complaints</td>
-                    <td class="as-is">Reactive, trending ↑</td>
-                    <td class="to-be">Proactive early warning</td>
-                    <td data-translate="hpa_imp_r5m">Real-time delivery tracking & alerts</td>
+                    <td data-translate="hpa_imp_r5">Reclamos de Clientes</td>
+                    <td class="as-is">Reactivo, tendencia ↑</td>
+                    <td class="to-be">Alerta proactiva temprana</td>
+                    <td data-translate="hpa_imp_r5m">Seguimiento de entrega en tiempo real y alertas</td>
                 </tr>
             </tbody>
         </table>
@@ -1570,74 +1583,74 @@
 
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-flask"></i> <span data-translate="hpa_meth_title">Analytical Approach</span></h2>
+            <h2 class="artifact-title"><i class="fas fa-flask"></i> <span data-translate="hpa_meth_title">Enfoque Analítico</span></h2>
         </div>
-        <div class="summary-grid">
+        <div class="findings-grid-2x2">
             <div class="summary-card">
                 <i class="fas fa-search"></i>
                 <div>
-                    <h3 data-translate="hpa_meth1_title">Diagnostic Framework</h3>
-                    <p data-translate="hpa_meth1_body">Applied ILPES/CEPAL Problem Tree methodology to structure root causes and systemic effects of vendor non-compliance into an actionable analytical hierarchy.</p>
+                    <h3 data-translate="hpa_meth1_title">Marco de Diagnóstico</h3>
+                    <p data-translate="hpa_meth1_body">Aplicación de la metodología de Árbol de Problemas ILPES/CEPAL para estructurar causas raíz y efectos sistémicos del incumplimiento de proveedores en una jerarquía analítica ejecutable.</p>
                 </div>
             </div>
             <div class="summary-card">
                 <i class="fas fa-project-diagram"></i>
                 <div>
-                    <h3 data-translate="hpa_meth2_title">BPM / BPMN 2.0</h3>
-                    <p data-translate="hpa_meth2_body">Mapped all 5 procurement sub-processes in BPMN 2.0 notation following the Ospina-Duque BPR methodology — documenting the AS-IS state and designing the TO-BE improvements.</p>
+                    <h3 data-translate="hpa_meth2_title">Gestión de Procesos (BPM / BPR)</h3>
+                    <p data-translate="hpa_meth2_body">Mapeo de los 5 subprocesos de compras siguiendo la metodología BPR Ospina-Duque — documentando la secuencia operacional del estado AS-IS y diseñando las intervenciones del estado TO-BE.</p>
                 </div>
             </div>
             <div class="summary-card">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3 data-translate="hpa_meth3_title">Quantitative Analysis</h3>
-                    <p data-translate="hpa_meth3_body">Extracted and analyzed institutional datasets: monthly OTIF rates, vendor sanction logs, complaint causality data, and procurement effectiveness ratios across 4 fiscal years.</p>
+                    <h3 data-translate="hpa_meth3_title">Análisis Cuantitativo</h3>
+                    <p data-translate="hpa_meth3_body">Extracción y análisis de datos institucionales: tasas mensuales OTIF, registros de sanciones a proveedores, causalidad de reclamos y efectividad de compras a lo largo de 4 años fiscales.</p>
                 </div>
             </div>
             <div class="summary-card">
                 <i class="fas fa-poll"></i>
                 <div>
-                    <h3 data-translate="hpa_meth4_title">Client Perception Survey</h3>
-                    <p data-translate="hpa_meth4_body">Analyzed a structured satisfaction survey (SISMARKET) covering intermediation quality, executive attention, logistics, and billing dimensions across member health facilities.</p>
+                    <h3 data-translate="hpa_meth4_title">Encuesta Percepción Cliente</h3>
+                    <p data-translate="hpa_meth4_body">Análisis de encuesta estructurada de satisfacción (SISMARKET) cubriendo calidad de intermediación, atención ejecutiva, logística y facturación en la red de salud.</p>
                 </div>
             </div>
         </div>
 
-        <h3 style="color:#00b4d8; font-size:1rem; margin:1.5rem 0 1rem;" data-translate="hpa_tools_title">Tools & Technologies</h3>
+        <h3 style="color:#00b4d8; font-size:1rem; margin:1.5rem 0 1rem;" data-translate="hpa_tools_title">Herramientas y Tecnologías</h3>
         <div class="tools-grid">
-            <span class="tool-chip">BPMN 2.0</span>
+            <span class="tool-chip">Mapeo de Procesos BPM</span>
             <span class="tool-chip">Business Model Canvas</span>
-            <span class="tool-chip">Problem Tree (ILPES)</span>
-            <span class="tool-chip">BPR Methodology</span>
-            <span class="tool-chip">Excel / Data Extraction</span>
-            <span class="tool-chip">Vendor Scorecard Design</span>
-            <span class="tool-chip">KPI Framework Design</span>
-            <span class="tool-chip">Quantitative Analysis</span>
-            <span class="tool-chip">Survey Analysis</span>
-            <span class="tool-chip">Gemini AI</span>
+            <span class="tool-chip">Árbol de Problemas (ILPES)</span>
+            <span class="tool-chip">Metodología BPR</span>
+            <span class="tool-chip">Excel / Extracción de Datos</span>
+            <span class="tool-chip">Diseño de Scorecard Proveedor</span>
+            <span class="tool-chip">Diseño de Marco de KPIs</span>
+            <span class="tool-chip">Análisis Cuantitativo</span>
+            <span class="tool-chip">Análisis de Encuestas</span>
+            <span class="tool-chip">IA Gemini</span>
         </div>
 
         <div class="source-box">
-            <strong>📂 Data Sources:</strong><br>
-            • CENABAST Institutional Annual Reports (BGI) 2016, 2017, 2018<br>
-            • ChileCompra public procurement platform records (Mercado Público)<br>
-            • CENABAST internal compliance reporting (Informe de Cumplimiento Progresivo)<br>
-            • SISMARKET client satisfaction survey (applied to CENABAST client network)<br>
-            • MINSAL / Subsecretaría de Redes Asistenciales statistics<br>
-            • ISP (Instituto de Salud Pública) regulatory records<br>
-            • Law 19.886 (Chilean Public Procurement Law) and its Regulation<br>
-            • Association of BPM Professionals (ABPMP) — BPM lifecycle reference
+            <strong>📂 Fuentes de Datos:</strong><br>
+            • Informes Anuales Institucionales CENABAST (BGI) 2016, 2017, 2018<br>
+            • Registros de plataforma de compras públicas ChileCompra (Mercado Público)<br>
+            • Reportes internos de cumplimiento CENABAST (Informe de Cumplimiento Progresivo)<br>
+            • Encuesta de satisfacción de clientes SISMARKET (aplicada a la red cliente CENABAST)<br>
+            • Estadísticas MINSAL / Subsecretaría de Redes Asistenciales<br>
+            • Registros regulatorios del ISP (Instituto de Salud Pública)<br>
+            • Ley 19.886 (Ley de Compras Públicas de Chile) y su Reglamento<br>
+            • Asociación de Profesionales BPM (ABPMP) — Referencia del ciclo de vida BPM
         </div>
     </div>
 
     <!-- Dashboard CTA -->
     <div class="artifact-card" style="background: linear-gradient(135deg, #0a192f 0%, #0d2748 100%); border-color: rgba(0,180,216,0.4); text-align: center;">
         <i class="fas fa-chart-pie" style="font-size:2.5rem; color:#00b4d8; margin-bottom:1rem;"></i>
-        <h3 style="color:#ffffff; font-size:1.3rem; margin-bottom:0.75rem;" data-translate="hpa_dash_title">Interactive Dashboard — Coming Soon</h3>
+        <h3 style="color:#ffffff; font-size:1.3rem; margin-bottom:0.75rem;" data-translate="hpa_dash_title">Dashboard Interactivo — Próximamente</h3>
         <p style="color:#94a3b8; max-width:600px; margin:0 auto 1.5rem;" data-translate="hpa_dash_desc">
-            A fully interactive Tableau Public dashboard is in development — featuring OTIF tracking, vendor scorecard simulation, procurement funnel analysis, and complaint trend visualization using the datasets from this analysis.
+            Un dashboard totalmente interactivo en Tableau Public está en desarrollo — con seguimiento OTIF, simulación de Scorecard de proveedores, análisis de embudo de compras y visualización de tendencia de reclamos usando los datasets de este análisis.
         </p>
-        <span class="pill-badge" style="cursor:default;"><i class="fas fa-clock"></i> <span data-translate="hpa_dash_badge">In Development</span></span>
+        <span class="pill-badge" style="cursor:default;"><i class="fas fa-clock"></i> <span data-translate="hpa_dash_badge">En Desarrollo</span></span>
     </div>
 
 </div><!-- /pane-method -->
