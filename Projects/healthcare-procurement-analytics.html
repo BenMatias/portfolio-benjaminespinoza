@@ -486,6 +486,22 @@
             }
         }
 
+        /* ===== ANALYTICAL INSIGHT BOX ===== */
+        .insight-box {
+            margin-top: 1.25rem;
+            background: rgba(15, 23, 42, 0.7);
+            border-left: 4px solid #00b4d8;
+            border-radius: 0 8px 8px 0;
+            padding: 0.85rem 1.1rem;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+        .insight-box i {
+            color: #00b4d8;
+            margin-right: 0.4rem;
+        }
+
         /* ===== SUPERSYSTEM MAP ===== */
         .supersys-grid {
             display: grid;
@@ -1143,7 +1159,18 @@
 <!-- ========================== TAB 3: DATA ANALYSIS ========================== -->
 <div class="cs-tab-pane" id="pane-data">
 
-    <!-- OTIF Monthly -->
+    <!-- 0. CONTEXTUALIZACIÓN DEL ANÁLISIS DE DATOS -->
+    <div class="artifact-card">
+        <div class="artifact-header">
+            <h2 class="artifact-title"><i class="fas fa-chart-line"></i> <span data-translate="hpa_data_intro_title">Contextualización del Análisis de Datos</span></h2>
+            <span class="pill-badge-blue" data-translate="hpa_data_intro_badge">Evidencia Cuantitativa</span>
+        </div>
+        <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.7;" data-translate="hpa_data_intro_desc">
+            A continuación se presenta el análisis cuantitativo de la gestión de abastecimiento de CENABAST (período de referencia 2015–2019). Los datos consolidados permiten diagnosticar objetivamente los puntos de quiebre en el nivel de servicio (OTIF), la efectividad del proceso de compra, el impacto de las sanciones a proveedores y la percepción directa de los clientes de la red pública de salud — fundamentando con evidencia empírica el Modelo de Gestión de Proveedores propuesto.
+        </p>
+    </div>
+
+    <!-- 1. OTIF MENSUAL -->
     <div class="artifact-card">
         <div class="artifact-header">
             <h2 class="artifact-title"><i class="fas fa-chart-bar"></i> <span data-translate="hpa_otif_title">OTIF — Tasa de Cumplimiento Mensual (2018)</span></h2>
@@ -1165,93 +1192,12 @@
             <div class="bar-row"><span class="bar-label">Dic</span><div class="bar-track"><div class="bar-fill warning" style="width:71%">71%</div></div></div>
         </div>
         <p style="color:#64748b; font-size:0.75rem; margin-top:0.75rem;" data-translate="hpa_otif_note">Promedio anual: 75,8% de cumplimiento → 24,2% de incumplimiento = 231.488 pedidos no completados. Fuente: Informe Anual CENABAST 2018.</p>
-    </div>
-
-    <!-- Complaint Trend -->
-    <div class="artifact-card">
-        <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-comment-alt"></i> <span data-translate="hpa_complaints_title">Tendencia de Reclamos de Clientes (2016–2018)</span></h2>
-        </div>
-        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1.25rem;" data-translate="hpa_complaints_desc">Tras una baja en 2017 (probable subreporte), los reclamos aumentaron 82,9% en 2018, siendo "pedido con faltante" la causa dominante.</p>
-        <div class="chart-container">
-            <div class="chart-title" data-translate="hpa_complaints_by_cause">Reclamos por Causa Principal</div>
-            <div class="bar-row">
-                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c1">Pedido con Faltante</span>
-                <div class="bar-track"><div class="bar-fill danger" style="width:72%">72%</div></div>
-            </div>
-            <div class="bar-row">
-                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c2">Entrega Tardía</span>
-                <div class="bar-track"><div class="bar-fill warning" style="width:15%">15%</div></div>
-            </div>
-            <div class="bar-row">
-                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c3">Producto Erróneo</span>
-                <div class="bar-track"><div class="bar-fill warning" style="width:8%">8%</div></div>
-            </div>
-            <div class="bar-row">
-                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c4">Otros / Información</span>
-                <div class="bar-track"><div class="bar-fill compliance" style="width:5%">5%</div></div>
-            </div>
+        <div class="insight-box">
+            <i class="fas fa-lightbulb"></i> <span data-translate="hpa_otif_insight">Hallazgo Analítico Clave: Enero registró la tasa de cumplimiento más crítica (40%), generando un déficit operativo al inicio del año fiscal. Aunque en invierno el cumplimiento mejoró (80%), el promedio anual se estancó en 75,8%, dejando 231.488 pedidos incompletos que afectaron directamente el stock hospitalario.</span>
         </div>
     </div>
 
-    <!-- Vendor Fines Breakdown -->
-    <div class="artifact-card">
-        <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-gavel"></i> <span data-translate="hpa_fines_title">Desglose de Sanciones a Proveedores</span></h2>
-            <span class="pill-badge-blue" data-translate="hpa_fines_badge">H1 2019 — 1.867 sanciones totales</span>
-        </div>
-        <div class="chart-container">
-            <div class="bar-row">
-                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f1">Información inexacta</span>
-                <div class="bar-track"><div class="bar-fill danger" style="width:48%">48% · $1.695M CLP</div></div>
-            </div>
-            <div class="bar-row">
-                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f2">Entrega tardía</span>
-                <div class="bar-track"><div class="bar-fill warning" style="width:28%">28%</div></div>
-            </div>
-            <div class="bar-row">
-                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f3">No entrega</span>
-                <div class="bar-track"><div class="bar-fill warning" style="width:17%">17%</div></div>
-            </div>
-            <div class="bar-row">
-                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f4">Otras infracciones</span>
-                <div class="bar-track"><div class="bar-fill compliance" style="width:7%">7%</div></div>
-            </div>
-        </div>
-        <p style="color:#94a3b8; font-size:0.8rem; margin-top:1rem;" data-translate="hpa_fines_note">
-            El proveedor con más infracciones acumuló <strong style="color:#f87171;">64 sanciones en solo 6 contratos activos</strong> — una tasa de sanción del 1.067%. Esto ilustra la ausencia de un mecanismo de lista negra de proveedores en el modelo existente.
-        </p>
-    </div>
-
-    <!-- Procurement Effectiveness -->
-    <div class="artifact-card">
-        <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-percentage"></i> <span data-translate="hpa_eff_title">Efectividad de Compras (2015–2018)</span></h2>
-        </div>
-        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1.25rem;" data-translate="hpa_eff_desc">Relación entre compras proyectadas vs. efectivamente ejecutadas. El aumento de efectividad hasta 2017 se revirtió marcadamente en 2018 tras una reducción de la canasta de productos.</p>
-        <div class="table-wrap">
-        <table class="vendor-table">
-            <thead>
-                <tr>
-                    <th data-translate="hpa_eff_year">Año</th>
-                    <th data-translate="hpa_eff_intended">Contratos Proyectados</th>
-                    <th data-translate="hpa_eff_executed">Ejecutados</th>
-                    <th data-translate="hpa_eff_rate">Efectividad</th>
-                    <th data-translate="hpa_eff_trend">Tendencia</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>2015</td><td>—</td><td>—</td><td class="badge-warn">Línea base</td><td>—</td></tr>
-                <tr><td>2016</td><td>Alto</td><td>Menor</td><td class="badge-warn">↑ Mejorando</td><td>+</td></tr>
-                <tr><td>2017</td><td>Medio</td><td>Coincidencia alta</td><td class="badge-ok">↑ Mejor período</td><td>++</td></tr>
-                <tr><td>2018</td><td>Canasta reducida</td><td>% Menor</td><td class="badge-danger">↓ Caída</td><td>−</td></tr>
-            </tbody>
-        </table>
-        </div><!-- /table-wrap -->
-        <p style="color:#64748b; font-size:0.75rem; margin-top:0.75rem;" data-translate="hpa_eff_note">La reducción de la canasta en 2018 eliminó SKUs sin demanda (señal positiva de eficiencia), pero la tasa de ejecución general cayó por incumplimientos de proveedores.</p>
-    </div>
-
-    <!-- Orders with shortfall -->
+    <!-- 2. ANÁLISIS DE PEDIDOS CON FALTANTES -->
     <div class="artifact-card">
         <div class="artifact-header">
             <h2 class="artifact-title"><i class="fas fa-boxes"></i> <span data-translate="hpa_vendor_title">Análisis de Pedidos con Faltantes</span></h2>
@@ -1283,9 +1229,42 @@
                 <div class="kpi-sub" data-translate="hpa_v5sub">7.2% de faltantes provienen de sancionados</div>
             </div>
         </div>
+        <div class="insight-box">
+            <i class="fas fa-lightbulb"></i> <span data-translate="hpa_vendor_insight">Hallazgo Analítico Clave: El incumplimiento está altamente concentrado; solo 5 proveedores concentran 4,5 puntos porcentuales del total de fallas nacionales. Descalificar o penalizar a este pequeño grupo aumentaría el cumplimiento global de 75,8% a 80,3%.</span>
+        </div>
     </div>
 
-    <!-- Survey Results -->
+    <!-- 3. TENDENCIA DE RECLAMOS DE CLIENTES -->
+    <div class="artifact-card">
+        <div class="artifact-header">
+            <h2 class="artifact-title"><i class="fas fa-comment-alt"></i> <span data-translate="hpa_complaints_title">Tendencia de Reclamos de Clientes (2016–2018)</span></h2>
+        </div>
+        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1.25rem;" data-translate="hpa_complaints_desc">Tras una baja en 2017 (probable subreporte), los reclamos aumentaron 82,9% en 2018, siendo "pedido con faltante" la causa dominante.</p>
+        <div class="chart-container">
+            <div class="chart-title" data-translate="hpa_complaints_by_cause">Reclamos por Causa Principal</div>
+            <div class="bar-row">
+                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c1">Pedido con Faltante</span>
+                <div class="bar-track"><div class="bar-fill danger" style="width:72%">72%</div></div>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c2">Entrega Tardía</span>
+                <div class="bar-track"><div class="bar-fill warning" style="width:15%">15%</div></div>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c3">Producto Erróneo</span>
+                <div class="bar-track"><div class="bar-fill warning" style="width:8%">8%</div></div>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label" style="width:130px; text-align:right;" data-translate="hpa_comp_c4">Otros / Información</span>
+                <div class="bar-track"><div class="bar-fill compliance" style="width:5%">5%</div></div>
+            </div>
+        </div>
+        <div class="insight-box">
+            <i class="fas fa-lightbulb"></i> <span data-translate="hpa_complaints_insight">Hallazgo Analítico Clave: El aumento del 82,9% en reclamos durante 2018 estuvo dominado por faltantes (72%). Los clientes priorizan recibir el pedido completo sobre el plazo estricto, convirtiendo al cumplimiento de volumen en el principal motor de satisfacción.</span>
+        </div>
+    </div>
+
+    <!-- 4. ENCUESTA DE SATISFACCIÓN DE CLIENTES (SISMARKET) -->
     <div class="artifact-card">
         <div class="artifact-header">
             <h2 class="artifact-title"><i class="fas fa-poll"></i> <span data-translate="hpa_survey_title">Encuesta de Satisfacción de Clientes — Hallazgos Clave</span></h2>
@@ -1338,6 +1317,72 @@
             <div class="survey-bar-wrap"><div class="survey-bar-track"><div class="survey-bar-fill" style="width:33%">33%</div></div><span class="survey-pct">33%</span></div>
         </div>
         <p style="color:#64748b; font-size:0.75rem; margin-top:1rem;" data-translate="hpa_survey_note">Encuesta realizada por SISMARKET a pedido de CENABAST. Aplicada a una muestra de administradores de establecimientos de salud clientes. Resultados utilizados para validar el diagnóstico operacional.</p>
+        <div class="insight-box">
+            <i class="fas fa-lightbulb"></i> <span data-translate="hpa_survey_insight">Hallazgo Analítico Clave: El 68% de las redes de salud frena la expansión de sus compras en CENABAST por temor al desabastecimiento, recurriendo a compras directas más costosas. Un scorecard dinámico de proveedores devuelve la confianza institucional.</span>
+        </div>
+    </div>
+
+    <!-- 5. DESGLOSE DE SANCIONES A PROVEEDORES -->
+    <div class="artifact-card">
+        <div class="artifact-header">
+            <h2 class="artifact-title"><i class="fas fa-gavel"></i> <span data-translate="hpa_fines_title">Desglose de Sanciones a Proveedores</span></h2>
+            <span class="pill-badge-blue" data-translate="hpa_fines_badge">H1 2019 — 1.867 sanciones totales</span>
+        </div>
+        <div class="chart-container">
+            <div class="bar-row">
+                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f1">Información inexacta</span>
+                <div class="bar-track"><div class="bar-fill danger" style="width:48%">48% · $1.695M CLP</div></div>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f2">Entrega tardía</span>
+                <div class="bar-track"><div class="bar-fill warning" style="width:28%">28%</div></div>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f3">No entrega</span>
+                <div class="bar-track"><div class="bar-fill warning" style="width:17%">17%</div></div>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label" style="width:160px; text-align:right;" data-translate="hpa_fine_f4">Otras infracciones</span>
+                <div class="bar-track"><div class="bar-fill compliance" style="width:7%">7%</div></div>
+            </div>
+        </div>
+        <p style="color:#94a3b8; font-size:0.8rem; margin-top:1rem;" data-translate="hpa_fines_note">
+            El proveedor con más infracciones acumuló <strong style="color:#f87171;">64 sanciones en solo 6 contratos activos</strong> — una tasa de sanción del 1.067%. Esto ilustra la ausencia de un mecanismo de lista negra de proveedores en el modelo existente.
+        </p>
+        <div class="insight-box">
+            <i class="fas fa-lightbulb"></i> <span data-translate="hpa_fines_insight">Hallazgo Analítico Clave: El reglamento multó la información inexacta ($1.695M CLP), pero no penalizó omitir por completo el reporte. El mayor infractor acumuló 64 sanciones en 6 contratos sin descalificación, demostrando la necesidad urgente de una lista negra.</span>
+        </div>
+    </div>
+
+    <!-- 6. EFECTIVIDAD DE COMPRAS -->
+    <div class="artifact-card">
+        <div class="artifact-header">
+            <h2 class="artifact-title"><i class="fas fa-percentage"></i> <span data-translate="hpa_eff_title">Efectividad de Compras (2015–2018)</span></h2>
+        </div>
+        <p style="color:#94a3b8; font-size:0.83rem; margin-bottom:1.25rem;" data-translate="hpa_eff_desc">Relación entre compras proyectadas vs. efectivamente ejecutadas. El aumento de efectividad hasta 2017 se revirtió marcadamente en 2018 tras una reducción de la canasta de productos.</p>
+        <div class="table-wrap">
+        <table class="vendor-table">
+            <thead>
+                <tr>
+                    <th data-translate="hpa_eff_year">Año</th>
+                    <th data-translate="hpa_eff_intended">Contratos Proyectados</th>
+                    <th data-translate="hpa_eff_executed">Ejecutados</th>
+                    <th data-translate="hpa_eff_rate">Efectividad</th>
+                    <th data-translate="hpa_eff_trend">Tendencia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>2015</td><td>—</td><td>—</td><td class="badge-warn">Línea base</td><td>—</td></tr>
+                <tr><td>2016</td><td>Alto</td><td>Menor</td><td class="badge-warn">↑ Mejorando</td><td>+</td></tr>
+                <tr><td>2017</td><td>Medio</td><td>Coincidencia alta</td><td class="badge-ok">↑ Mejor período</td><td>++</td></tr>
+                <tr><td>2018</td><td>Canasta reducida</td><td>% Menor</td><td class="badge-danger">↓ Caída</td><td>−</td></tr>
+            </tbody>
+        </table>
+        </div><!-- /table-wrap -->
+        <p style="color:#64748b; font-size:0.75rem; margin-top:0.75rem;" data-translate="hpa_eff_note">La reducción de la canasta en 2018 eliminó SKUs sin demanda (señal positiva de eficiencia), pero la tasa de ejecución general cayó por incumplimientos de proveedores.</p>
+        <div class="insight-box">
+            <i class="fas fa-lightbulb"></i> <span data-translate="hpa_eff_insight">Hallazgo Analítico Clave: La caída de efectividad en 2018 responde a la depuración de la canasta (eliminando SKUs sin demanda), revelando que la tasa real de ejecución depende de la confiabilidad de los proveedores adjudicados.</span>
+        </div>
     </div>
 
 </div><!-- /pane-data -->
