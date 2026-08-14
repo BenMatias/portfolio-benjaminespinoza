@@ -1859,14 +1859,58 @@
         </div>
     </div>
 
-    <!-- Dashboard CTA -->
-    <div class="artifact-card" style="background: linear-gradient(135deg, #0a192f 0%, #0d2748 100%); border-color: rgba(0,180,216,0.4); text-align: center;">
-        <i class="fas fa-chart-pie" style="font-size:2.5rem; color:#00b4d8; margin-bottom:1rem;"></i>
-        <h3 style="color:#ffffff; font-size:1.3rem; margin-bottom:0.75rem;" data-translate="hpa_dash_title">Dashboard Interactivo — Tableau Public</h3>
-        <p style="color:#94a3b8; max-width:600px; margin:0 auto 1.5rem;" data-translate="hpa_dash_desc">
-            Un dashboard completamente interactivo en Tableau Public está en desarrollo — con seguimiento OTIF, simulación de scorecard de proveedores, análisis de funnel de licitaciones y visualización de tendencias de reclamos.
+    <!-- LIVE TABLEAU PUBLIC INTERACTIVE DASHBOARD EMBED -->
+    <div class="artifact-card" style="padding: 1.5rem 1rem;">
+        <div class="artifact-header" style="margin-bottom: 1.25rem;">
+            <h2 class="artifact-title"><i class="fas fa-chart-pie"></i> <span data-translate="hpa_dash_live_title">Dashboard Interactivo — Tableau Public BI</span></h2>
+            <span class="pill-badge-blue"><i class="fas fa-signal"></i> <span data-translate="hpa_dash_live_badge">Tablero Interactivo BI</span></span>
+        </div>
+        <p style="color:#cbd5e1; font-size:0.88rem; line-height:1.6; margin-bottom:1.25rem;" data-translate="hpa_dash_live_desc">
+            Explore el panel de inteligencia de negocios de CENABAST: visualización de la tasa OTIF mensual (2016–2018), ranking de faltantes por proveedor y análisis multidimensional de la encuesta SISMARKET.
         </p>
-        <span class="pill-badge" style="cursor:default;"><i class="fas fa-clock"></i> <span data-translate="hpa_dash_badge">En Desarrollo</span></span>
+
+        <div class="scroll-hint"><i class="fas fa-arrows-left-right"></i> <span data-translate="hpa_scroll_hint_diagram">Desliza horizontalmente para navegar el tablero interactivo</span></div>
+        
+        <div class="responsive-scroll-wrapper" style="border-radius:12px; overflow:hidden; border:1px solid rgba(0,180,216,0.35); background:#070f1e; box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+            <div class="tableauPlaceholder" id="viz1700000000000" style="position: relative; width: 100%; height: 750px; min-width: 860px;">
+                <noscript>
+                    <a href="#">
+                        <img alt="Healthcare Procurement Analytics Dashboard" src="https://public.tableau.com/static/images/He/HealthcareProcurementAnalytics/Dashboard1/1_rss.png" style="border: none" />
+                    </a>
+                </noscript>
+                <object class="tableauViz" style="display:none;">
+                    <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+                    <param name="embed_code_version" value="3" />
+                    <param name="site_root" value="" />
+                    <param name="name" value="HealthcareProcurementAnalytics&#47;Dashboard1" />
+                    <param name="tabs" value="no" />
+                    <param name="toolbar" value="yes" />
+                    <param name="animate_transition" value="yes" />
+                    <param name="display_static_image" value="yes" />
+                    <param name="display_spinner" value="yes" />
+                    <param name="display_overlay" value="yes" />
+                    <param name="display_count" value="yes" />
+                    <param name="language" value="es-ES" />
+                </object>
+            </div>
+            <script type="text/javascript">
+                var divElement = document.getElementById('viz1700000000000');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                if (divElement.offsetWidth > 800) {
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = '750px';
+                } else if (divElement.offsetWidth > 500) {
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = '750px';
+                } else {
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = '700px';
+                }
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+        </div>
     </div>
 
 </div><!-- /pane-method -->
