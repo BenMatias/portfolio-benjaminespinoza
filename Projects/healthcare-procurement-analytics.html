@@ -1390,6 +1390,12 @@
 <!-- ========================== TAB 4: PROPOSED MODEL ========================== -->
 <div class="cs-tab-pane" id="pane-model">
 
+    <!-- PARTE 1: ARQUITECTURA DE LA SOLUCIÓN (MODELO TO-BE) -->
+    <div style="margin: 0.5rem 0 1.25rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(0, 180, 216, 0.3);">
+        <h3 style="color:#00b4d8; font-size:1.05rem; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; margin:0 0 0.25rem 0;" data-translate="hpa_part1_title">PARTE 1: ARQUITECTURA DE LA SOLUCIÓN (MODELO TO-BE)</h3>
+        <p style="color:#94a3b8; font-size:0.82rem; margin:0;" data-translate="hpa_part1_subtitle">Definición del modelo operativo objetivo, estructura de objetivos, KPIs operacionales y sistema de scoring de proveedores.</p>
+    </div>
+
     <!-- 0. CONTEXTUALIZACIÓN DEL MODELO PROPUESTO TO-BE -->
     <div class="artifact-card">
         <div class="artifact-header">
@@ -1590,6 +1596,13 @@
         </div>
     </div>
 
+
+    <!-- PARTE 2: JUSTIFICACIÓN TÉCNICA Y MATRIZ DE IMPACTO -->
+    <div style="margin: 2.5rem 0 1.25rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(0, 230, 118, 0.3);">
+        <h3 style="color:#00e676; font-size:1.05rem; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; margin:0 0 0.25rem 0;" data-translate="hpa_part2_title">PARTE 2: JUSTIFICACIÓN TÉCNICA Y MATRIZ DE IMPACTO</h3>
+        <p style="color:#94a3b8; font-size:0.82rem; margin:0;" data-translate="hpa_part2_subtitle">Evidencia empírica del retorno operacional y trazabilidad directa entre brechas diagnosticadas y soluciones.</p>
+    </div>
+
     <!-- Expected Impact -->
     <div class="artifact-card">
         <div class="artifact-header">
@@ -1641,6 +1654,43 @@
         </div><!-- /table-wrap -->
         <div class="insight-box">
             <i class="fas fa-lightbulb"></i> <span data-translate="hpa_impact_insight">Hallazgo Analítico Clave: La transición del estado AS-IS (75,8% de cumplimiento OTIF) al TO-BE (≥88% en Fase 1) representa recuperar más de 115.000 entregas anuales que antes fallaban, restaurando la confianza operacional en la red pública de salud.</span>
+        </div>
+    </div>
+
+    <!-- STRATEGIC JUSTIFICATIONS (2X2 GRID) -->
+    <div class="artifact-card">
+        <div class="artifact-header">
+            <h2 class="artifact-title"><i class="fas fa-shield-alt"></i> <span data-translate="hpa_just_title">Justificación Estratégica y Retorno Operacional del Modelo</span></h2>
+        </div>
+        <div class="findings-grid-2x2">
+            <div class="summary-card">
+                <i class="fas fa-gavel"></i>
+                <div>
+                    <h3 data-translate="hpa_j1_title">1. Cierre de la Brecha de Impunidad en Licitaciones</h3>
+                    <p data-translate="hpa_j1_body">El Scorecard dinámico asigna un 60% de peso al cumplimiento real (OTIF y puntualidad) en la evaluación de ChileCompra. Esto elimina la anomalía donde proveedores con hasta 64 sanciones activas continuaban ganando licitaciones.</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-eye"></i>
+                <div>
+                    <h3 data-translate="hpa_j2_title">2. Eliminación de la Ceguera Operacional</h3>
+                    <p data-translate="hpa_j2_body">La transición de reportes financieros a KPIs de servicio en tiempo real permite detectar riesgos antes del desabastecimiento hospitalario, manteniendo los contratos por vencer en ≤5%.</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-handshake"></i>
+                <div>
+                    <h3 data-translate="hpa_j3_title">3. Recuperación de la Confianza de la Red Pública</h3>
+                    <p data-translate="hpa_j3_body">Garantizar un OTIF ≥93% resuelve el motivo del 68% de clientes que evitaba comprar en CENABAST por temor a faltantes, impulsando la centralización de volumen de compras públicas.</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-database"></i>
+                <div>
+                    <h3 data-translate="hpa_j4_title">4. Automatización de Datos e Integración ERP</h3>
+                    <p data-translate="hpa_j4_body">La integración directa elimina la carga manual de archivos planos, borrando $1.695M CLP en multas por información inexacta y eliminando el desfase de 30 días en alertas.</p>
+                </div>
+            </div>
         </div>
     </div>
 
