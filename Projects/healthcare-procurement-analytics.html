@@ -766,32 +766,22 @@
     <!-- CONTEXT & BUSINESS MODEL -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-hospital"></i> <span data-translate="hpa_context_title">Organizational Context</span></h2>
+            <h2 class="artifact-title"><i class="fas fa-hospital"></i> <span data-translate="hpa_context_title">Organizational Context & Mission</span></h2>
+            <span class="pill-badge-blue">CENABAST — MINSAL</span>
         </div>
-        <p data-translate="hpa_context_body">
+        <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.7; margin-bottom:1.25rem;" data-translate="hpa_context_body">
             CENABAST (Central Nacional de Abastecimiento) is Chile's public healthcare procurement agency, responsible for aggregating demand and managing supply of pharmaceuticals, medical devices, and food for the entire national health network. Operating without fiscal support, it sustains itself through commissions charged for its intermediation role — making procurement effectiveness directly tied to financial stability.
         </p>
-        <div class="summary-grid">
-            <div class="summary-card">
-                <i class="fas fa-layer-group"></i>
-                <div>
-                    <h3 data-translate="hpa_ctx1_title">Economies of Scale</h3>
-                    <p data-translate="hpa_ctx1_body">Aggregates demand from 500+ facilities to achieve bulk pricing unavailable to individual buyers — its core value proposition.</p>
-                </div>
+        
+        <div style="display:flex; flex-direction:column; gap:0.65rem; background:rgba(15,23,42,0.6); border:1px solid rgba(0,180,216,0.2); border-radius:8px; padding:1rem 1.25rem;">
+            <div style="font-size:0.85rem; color:#cbd5e1; line-height:1.5;">
+                <i class="fas fa-layer-group" style="color:#00b4d8; margin-right:0.5rem;"></i> <strong data-translate="hpa_ctx1_title">Economies of Scale:</strong> <span data-translate="hpa_ctx1_body">Aggregates demand from 500+ facilities to achieve bulk pricing unavailable to individual buyers — its core value proposition.</span>
             </div>
-            <div class="summary-card">
-                <i class="fas fa-exchange-alt"></i>
-                <div>
-                    <h3 data-translate="hpa_ctx2_title">Intermediation Model</h3>
-                    <p data-translate="hpa_ctx2_body">Operates via ChileCompra public tenders. Suppliers deliver directly to facilities; CENABAST never physically handles products.</p>
-                </div>
+            <div style="font-size:0.85rem; color:#cbd5e1; line-height:1.5;">
+                <i class="fas fa-exchange-alt" style="color:#00b4d8; margin-right:0.5rem;"></i> <strong data-translate="hpa_ctx2_title">Intermediation Model:</strong> <span data-translate="hpa_ctx2_body">Operates via ChileCompra public tenders. Suppliers deliver directly to facilities; CENABAST never physically handles products.</span>
             </div>
-            <div class="summary-card">
-                <i class="fas fa-exclamation-triangle"></i>
-                <div>
-                    <h3 data-translate="hpa_ctx3_title">The Core Problem</h3>
-                    <p data-translate="hpa_ctx3_body">Chronic vendor non-compliance — partial deliveries, false reporting, and late submissions — cascades into supply shortages for critical medications across the country.</p>
-                </div>
+            <div style="font-size:0.85rem; color:#cbd5e1; line-height:1.5;">
+                <i class="fas fa-exclamation-triangle" style="color:#f87171; margin-right:0.5rem;"></i> <strong style="color:#f87171;" data-translate="hpa_ctx3_title">The Core Problem:</strong> <span data-translate="hpa_ctx3_body">Chronic vendor non-compliance — partial deliveries, false reporting, and late submissions — cascades into supply shortages for critical medications across the country.</span>
             </div>
         </div>
     </div>
@@ -1039,127 +1029,18 @@
 <!-- ========================== TAB 2: PROCESS ========================== -->
 <div class="cs-tab-pane" id="pane-process">
 
-    <!-- 1. SUPERSYSTEM MAP (Contexto Organizacional) -->
+    <!-- 1. RESUMEN DEL PROCESO DE COMPRAS Y ABASTECIMIENTO -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-network-wired"></i> <span data-translate="hpa_super_title">Supersystem Analysis (Organizational Context)</span></h2>
-            <span class="pill-badge-blue" data-translate="hpa_super_badge">System Architecture</span>
+            <h2 class="artifact-title"><i class="fas fa-info-circle"></i> <span data-translate="hpa_proc_summary_title">CENABAST Procurement & Supply Model Summary</span></h2>
+            <span class="pill-badge-blue">Operational Context</span>
         </div>
-        <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:1.25rem;" data-translate="hpa_super_desc">Structural mapping of CENABAST's environment — detailing governing regulations, operational resources, public health market demands, and pharmaceutical competition.</p>
-        
-        <div class="scroll-hint"><i class="fas fa-arrows-left-right"></i> <span data-translate="hpa_scroll_hint_diagram">Desliza horizontalmente para ver el diagrama completo</span></div>
-        <div class="responsive-scroll-wrapper">
-            <div class="supersys-grid">
-                <!-- Top Header: Contexto de la Organización -->
-                <div class="supersys-box supersys-header">
-                    <div class="supersys-title"><i class="fas fa-building-columns"></i> <span data-translate="hpa_super_env">Organizational Context</span></div>
-                    <div class="supersys-pill-grid">
-                        <div class="supersys-pill"><strong>Gobierno:</strong> <span data-translate="hpa_super_gov">Regulación MINSAL</span></div>
-                        <div class="supersys-pill"><strong>Cultura:</strong> <span data-translate="hpa_super_cult">Código ético y Política Calidad</span></div>
-                        <div class="supersys-pill"><strong>Economía:</strong> <span data-translate="hpa_super_econ">Importaciones y Aranceles</span></div>
-                        <div class="supersys-pill"><strong>Comunicaciones:</strong> <span data-translate="hpa_super_comm">Canales Online / Telefónico</span></div>
-                    </div>
-                </div>
-
-                <!-- Left: Recursos e Insumos -->
-                <div class="supersys-box">
-                    <div class="supersys-title"><i class="fas fa-boxes-stacked"></i> <span data-translate="hpa_super_res">Resources & Inputs</span></div>
-                    <div style="display:flex; flex-direction:column; gap:0.4rem;">
-                        <div class="supersys-pill" data-translate="hpa_super_res_prov">Proveedores → Insumos</div>
-                        <div class="supersys-pill" data-translate="hpa_super_res_fin">Financiamiento → Capital</div>
-                        <div class="supersys-pill" data-translate="hpa_super_res_lab">Fuerza Laboral → Personal</div>
-                        <div class="supersys-pill" data-translate="hpa_super_res_dist">Centro Distribución → Equipo</div>
-                    </div>
-                </div>
-
-                <!-- Center: CENABAST -->
-                <div class="supersys-center">
-                    <h3>CENABAST</h3>
-                    <p data-translate="hpa_super_center_sub">Central Nacional de Abastecimiento<br>Ente Intermediador del Estado</p>
-                </div>
-
-                <!-- Right: Mercado Red de Salud -->
-                <div class="supersys-box">
-                    <div class="supersys-title"><i class="fas fa-hospital-user"></i> <span data-translate="hpa_super_mkt">Health System Market</span></div>
-                    <div class="supersys-pill" style="height:100%; display:flex; flex-direction:column; justify-content:center;" data-translate="hpa_super_mkt_desc">
-                        Servicios adscritos al Sistema Nacional de Servicios de Salud (Pedidos, Ingresos, Contratos, Productos)
-                    </div>
-                </div>
-
-                <!-- Bottom Footer: Competencia del Sector -->
-                <div class="supersys-box supersys-footer">
-                    <div class="supersys-title" style="color:#a78bfa;"><i class="fas fa-industry"></i> <span data-translate="hpa_super_comp">Industry Competition</span></div>
-                    <div class="supersys-pill-grid">
-                        <div class="supersys-pill"><strong>Laboratorios Farmacéuticos</strong></div>
-                        <div class="supersys-pill"><strong>Distribuidoras Privadas</strong></div>
-                        <div class="supersys-pill"><strong>Droguerías e Importadoras</strong></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.7;" data-translate="hpa_proc_summary_desc">
+            CENABAST operates as a strategic intermediary connecting over 500 public health facilities with private pharmaceutical suppliers. The cycle begins with 18-month demand forecasts submitted by hospitals and clinics. CENABAST aggregates this volume to launch public tenders or framework agreements on ChileCompra. Once awarded, suppliers deliver products directly to client healthcare facilities without physical warehousing at CENABAST. Operational oversight and fine enforcement rely on vendor-submitted dispatch reports and facility receipt confirmations.
+        </p>
     </div>
 
-    <!-- 2. CENABAST MACRO-PROCESS MAP (Mapa de Procesos) -->
-    <div class="artifact-card">
-        <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-sitemap"></i> <span data-translate="hpa_pmap_title">CENABAST Macro-Process Map</span></h2>
-            <span class="pill-badge-blue" data-translate="hpa_pmap_badge">Process Architecture</span>
-        </div>
-        <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:1.25rem;" data-translate="hpa_pmap_desc">High-level classification of strategic, core business, and support processes transforming health facility demand into delivery satisfaction.</p>
-        
-        <div class="scroll-hint"><i class="fas fa-arrows-left-right"></i> <span data-translate="hpa_scroll_hint_diagram">Desliza horizontalmente para ver el mapa de procesos completo</span></div>
-        <div class="responsive-scroll-wrapper">
-            <div class="procmap-wrapper">
-                <!-- Flank Left & Right Indicator -->
-                <div class="procmap-flank-bar">
-                    <span><i class="fas fa-arrow-right"></i> <span data-translate="hpa_pmap_req">Requerimientos del Cliente (Red de Salud)</span></span>
-                    <span><span data-translate="hpa_pmap_sat">Satisfacción del Cliente y Entregas</span> <i class="fas fa-arrow-right"></i></span>
-                </div>
-
-                <!-- Strategic Layer -->
-                <div class="procmap-layer procmap-layer-strategic">
-                    <div class="procmap-layer-title"><i class="fas fa-chess"></i> <span data-translate="hpa_pmap_strat">Strategic Processes</span></div>
-                    <div class="procmap-grid-3">
-                        <div class="procmap-card" data-translate="hpa_pmap_s1">Planificación Estratégica y Desarrollo Institucional</div>
-                        <div class="procmap-card" data-translate="hpa_pmap_s2">Aseguramiento de Calidad y Asuntos Regulatorios</div>
-                        <div class="procmap-card" data-translate="hpa_pmap_s3">Comunicaciones y Asuntos Públicos</div>
-                    </div>
-                </div>
-
-                <!-- Core Business Layer -->
-                <div class="procmap-layer procmap-layer-core">
-                    <div class="procmap-layer-title"><i class="fas fa-cogs"></i> <span data-translate="hpa_pmap_core">Core Business Processes</span></div>
-                    <div class="procmap-grid-5">
-                        <div class="procmap-card" data-translate="hpa_pmap_c1">Estimación y Análisis de Demanda</div>
-                        <div class="procmap-card" data-translate="hpa_pmap_c2">Gestión de Abastecimiento</div>
-                        <div class="procmap-card" data-translate="hpa_pmap_c3">Gestión de Contratos</div>
-                        <div class="procmap-card" data-translate="hpa_pmap_c4">Gestión Comercial</div>
-                        <div class="procmap-card" data-translate="hpa_pmap_c5">Gestión Distribución</div>
-                    </div>
-                </div>
-
-                <!-- Support Layer -->
-                <div class="procmap-layer procmap-layer-support">
-                    <div class="procmap-layer-title"><i class="fas fa-tools"></i> <span data-translate="hpa_pmap_supp">Support Processes</span></div>
-                    <div class="procmap-grid-6">
-                        <div class="procmap-card" data-translate="hpa_pmap_su1">Gestión Financiera - Administrativa</div>
-                        <div class="procmap-card" data-translate="hpa_pmap_su2">Gestión Jurídica</div>
-                        <div class="procmap-card" data-translate="hpa_pmap_su3">Gestión Atención Ciudadana</div>
-                        <div class="procmap-card" data-translate="hpa_pmap_su4">Gestión Control Interno</div>
-                        <div class="procmap-card" data-translate="hpa_pmap_su5">Gestión de Servicios de Información y Tecnología</div>
-                        <div class="procmap-card" data-translate="hpa_pmap_su6">Gestión de Personas</div>
-                    </div>
-                </div>
-
-                <!-- Bottom Feedback Bar -->
-                <div class="procmap-flank-bar" style="border-color:#00e676; background:rgba(0,230,118,0.08); color:#00e676; justify-content:center; gap:0.6rem;">
-                    <i class="fas fa-arrows-spin"></i> <span data-translate="hpa_pmap_feed">Retroalimentación de los Clientes - Usuarios</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. DETAILED SUB-PROCESS FLOW (BPMN 2.0) -->
+    <!-- 2. DETAILED SUB-PROCESS FLOW (BPMN 2.0) -->
     <div class="artifact-card">
         <div class="artifact-header">
             <h2 class="artifact-title"><i class="fas fa-stream"></i> <span data-translate="hpa_process_title">Procurement Process — AS-IS (BPM Analysis)</span></h2>
@@ -1206,38 +1087,39 @@
         </div>
     </div>
 
-    <!-- Critical Findings -->
+    <!-- 3. DETAILED OPERATIONAL FINDINGS -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-search"></i> <span data-translate="hpa_crit_title">Critical AS-IS Findings</span></h2>
+            <h2 class="artifact-title"><i class="fas fa-search"></i> <span data-translate="hpa_crit_title">Detailed Analysis of Critical AS-IS Operational Findings</span></h2>
+            <span class="pill-badge-blue">Operational Root Causes</span>
         </div>
         <div class="summary-grid">
             <div class="summary-card" style="border-left-color:#f87171;">
                 <i class="fas fa-eye-slash" style="color:#f87171 !important;"></i>
                 <div>
-                    <h3 data-translate="hpa_crit1_title">No Vendor Visibility</h3>
-                    <p data-translate="hpa_crit1_body">No systematic tracking of vendor delivery performance across contracts. Repeat offenders could continue winning bids without historical penalty.</p>
+                    <h3 data-translate="hpa_crit1_title">Zero Vendor Visibility & Scorecards</h3>
+                    <p data-translate="hpa_crit1_body">Complete absence of historical vendor scorecards or OTIF compliance metrics. Evaluators in ChileCompra tenders had no consolidated delivery record, allowing previously penalized suppliers to repeatedly win contract awards.</p>
                 </div>
             </div>
             <div class="summary-card" style="border-left-color:#f59e0b;">
                 <i class="fas fa-edit" style="color:#f59e0b !important;"></i>
                 <div>
-                    <h3 data-translate="hpa_crit2_title">Manual Data Processing</h3>
-                    <p data-translate="hpa_crit2_body">Information from multiple sources processed manually. No integrated dashboard or holistic view of procurement status available to managers.</p>
+                    <h3 data-translate="hpa_crit2_title">Manual Data Processing & Fragmented Systems</h3>
+                    <p data-translate="hpa_crit2_body">Delivery reports were uploaded manually via flat files without automated real-time cross-validation. This disconnect caused operational delays of up to 30 days between an actual delivery default and CENABAST's alert system.</p>
                 </div>
             </div>
             <div class="summary-card" style="border-left-color:#a78bfa;">
                 <i class="fas fa-balance-scale" style="color:#a78bfa !important;"></i>
                 <div>
-                    <h3 data-translate="hpa_crit3_title">Sanctions Gap</h3>
-                    <p data-translate="hpa_crit3_body">Fine system penalizes late information but not failure to submit. Vendors exploit this loophole, submitting no data to avoid triggering fines for partial fulfillment.</p>
+                    <h3 data-translate="hpa_crit3_title">Structural Sanctions System Loophole</h3>
+                    <p data-translate="hpa_crit3_body">The regulation penalized late or false reporting ($1.695B CLP in fines in H1 2019), but failed to effectively penalize total omission of dispatch reports. Vendors exploited this loophole by withholding data to avoid automated partial-delivery penalties.</p>
                 </div>
             </div>
             <div class="summary-card" style="border-left-color:#00b4d8;">
                 <i class="fas fa-money-bill-wave" style="color:#00b4d8 !important;"></i>
                 <div>
-                    <h3 data-translate="hpa_crit4_title">Financial-Only Focus</h3>
-                    <p data-translate="hpa_crit4_body">Existing reporting focused on unit quantities and spend. Data not used for operational decision-making, demand forecasting improvement, or vendor risk scoring.</p>
+                    <h3 data-translate="hpa_crit4_title">Reactive Management & Financial-Only Scope</h3>
+                    <p data-translate="hpa_crit4_body">Institutional reporting focused strictly on budget execution and total contracted amounts rather than patient service levels or stockout frequencies. Management operated reactively only after client health facilities filed formal complaints.</p>
                 </div>
             </div>
         </div>
