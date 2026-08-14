@@ -1396,15 +1396,38 @@
         <p style="color:#94a3b8; font-size:0.82rem; margin:0;" data-translate="hpa_part1_subtitle">Definición del modelo operativo objetivo, estructura de objetivos, KPIs operacionales y sistema de scoring de proveedores.</p>
     </div>
 
-    <!-- 0. CONTEXTUALIZACIÓN DEL MODELO PROPUESTO TO-BE -->
+    <!-- 0. CONTEXTUALIZACIÓN Y MEJORAS CONCRETAS DEL MODELO TO-BE -->
     <div class="artifact-card">
         <div class="artifact-header">
-            <h2 class="artifact-title"><i class="fas fa-sitemap"></i> <span data-translate="hpa_model_intro_title">Contextualización del Modelo Propuesto TO-BE</span></h2>
-            <span class="pill-badge-blue" data-translate="hpa_model_intro_badge">Modelo Operativo Objetivo</span>
+            <h2 class="artifact-title"><i class="fas fa-sitemap"></i> <span data-translate="hpa_model_intro_title">Resumen Ejecutivo de Mejoras Objetivo (AS-IS → TO-BE)</span></h2>
+            <span class="pill-badge-blue" data-translate="hpa_model_intro_badge">Estado Objetivo</span>
         </div>
-        <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.7;" data-translate="hpa_model_intro_desc">
-            A continuación se presenta el Modelo de Gestión de Proveedores (TO-BE) propuesto, diseñado para abordar directamente las causas raíz identificadas en el diagnóstico. Basado en la metodología ILPES/CEPAL, el modelo traduce los cuellos de botella operacionales en un Árbol de Objetivos de 4 ramas, un marco de KPIs operacionales, un sistema de Scorecard dinámico y una matriz de impacto cuantitativo comparando las líneas base actuales con las metas de desempeño.
+        <p style="color:#cbd5e1; font-size:0.92rem; line-height:1.7; margin-bottom:1.25rem;" data-translate="hpa_model_intro_desc">
+            El Modelo de Gestión de Proveedores propuesto transforma la operación de CENABAST desde un modelo reactivo basado en trámites manuales hacia un motor operacional impulsado por datos. A continuación se detallan las 4 mejoras cuantitativas y estructurales concretas que aporta la solución TO-BE:
         </p>
+
+        <div class="kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="kpi-card">
+                <div class="kpi-value info" data-translate="hpa_imp_box1_val">75,8% → ≥93%</div>
+                <div class="kpi-label" data-translate="hpa_imp_box1_lbl">Tasa Cumplimiento OTIF</div>
+                <div class="kpi-sub" data-translate="hpa_imp_box1_sub">+115.000 entregas fallidas recuperadas al año</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value danger" data-translate="hpa_imp_box2_val">109% → &lt;10%</div>
+                <div class="kpi-label" data-translate="hpa_imp_box2_lbl">Tasa de Sanciones</div>
+                <div class="kpi-sub" data-translate="hpa_imp_box2_sub">Elimina $1.695M CLP en multas por reportes manuales</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value warning" data-translate="hpa_imp_box3_val">24,6% → ≤5%</div>
+                <div class="kpi-label" data-translate="hpa_imp_box3_lbl">Contratos en Riesgo de Vencer</div>
+                <div class="kpi-sub" data-translate="hpa_imp_box3_sub">Monitoreo diario en ERP evita quiebres de licitación</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value warning" style="color:#00e676;" data-translate="hpa_imp_box4_val">0% → 100%</div>
+                <div class="kpi-label" data-translate="hpa_imp_box4_lbl">Ponderación Scorecard en ChileCompra</div>
+                <div class="kpi-sub" data-translate="hpa_imp_box4_sub">35% OTIF / 25% Puntualidad bloquea a infractores</div>
+            </div>
+        </div>
     </div>
 
     <!-- OBJECTIVE TREE -->
@@ -1500,6 +1523,40 @@
                 <div class="ptree-section-badge ptree-badge-causes" style="background:rgba(0,230,118,0.15); color:#00e676; border-color:rgba(0,230,118,0.3);"><i class="fas fa-arrow-down"></i> <span data-translate="hpa_obj_enablers_label">Iniciativas y Medios Operacionales (Nivel Base)</span></div>
             </div>
         </div>
+
+        <hr style="border-color:rgba(255,255,255,0.08); margin:1.5rem 0 1.25rem;">
+        <h4 style="color:#00b4d8; font-size:0.92rem; margin-bottom:1rem; text-transform:uppercase; letter-spacing:0.5px;" data-translate="hpa_tree_guide_title">Cómo Funciona la Transformación: Explicación de los 4 Ejes del Árbol</h4>
+        <div class="findings-grid-2x2">
+            <div class="summary-card">
+                <i class="fas fa-file-contract"></i>
+                <div>
+                    <h3 data-translate="hpa_tree_g1_title">Eje 1: Gestión del Ciclo de Vida del Contrato</h3>
+                    <p data-translate="hpa_tree_g1_body">Habilitador: Monitoreo en ERP + capacitación del personal. Transformación: Elimina el 24,6% de contratos en riesgo de vencer mediante alertas automáticas a 90 días, garantizando renovaciones a tiempo.</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-truck-loading"></i>
+                <div>
+                    <h3 data-translate="hpa_tree_g2_title">Eje 2: Supervisión Logística Proactiva y SLAs</h3>
+                    <p data-translate="hpa_tree_g2_body">Habilitador: Capa de seguimiento logístico directo + SLAs explícitos. Transformación: Recupera la confianza del 68% de las redes públicas que no compraban en CENABAST por temor al desabastecimiento.</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-balance-scale"></i>
+                <div>
+                    <h3 data-translate="hpa_tree_g3_title">Eje 3: Rediseño del Esquema de Sanciones y Scorecard</h3>
+                    <p data-translate="hpa_tree_g3_body">Habilitador: Sanciones no excluibles + descalificación en ChileCompra tras 3 multas. Transformación: Erradica los faltantes en entregas, elevando la tasa OTIF de 75,8% a ≥93%.</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <div>
+                    <h3 data-translate="hpa_tree_g4_title">Eje 4: Integración ERP y Fuente Única de Verdad</h3>
+                    <p data-translate="hpa_tree_g4_body">Habilitador: Validación automática de datos vía API ERP. Transformación: Elimina la carga manual de planillas, borrando los $1.695M CLP en multas por reportes falsos y los 30 días de desfase en alertas.</p>
+                </div>
+            </div>
+        </div>
+
         <div class="insight-box">
             <i class="fas fa-lightbulb"></i> <span data-translate="hpa_obj_insight">Hallazgo Analítico Clave: El Árbol de Objetivos transforma directamente las 4 causas raíz del diagnóstico en 4 habilitadores de valor. Al establecer el Sistema de Gestión de Proveedores como eje central, las metas de nivel superior (OTIF ≥93%, expansión del volumen de compras y eliminación de cobros improcedentes) se vuelven alcanzables de forma sostenible.</span>
         </div>
