@@ -96,12 +96,16 @@
 
         /* ===== TABS ===== */
         .cs-tabs-wrapper {
-            display: flex; gap: 0.5rem;
+            display: flex; gap: 0.75rem;
             border-bottom: 2px solid rgba(255,255,255,0.1);
-            overflow-x: auto; padding-bottom: 0;
-            scrollbar-width: none;
+            overflow-x: auto; padding-bottom: 4px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 230, 118, 0.4) rgba(255, 255, 255, 0.05);
         }
-        .cs-tabs-wrapper::-webkit-scrollbar { display: none; }
+        .cs-tabs-wrapper::-webkit-scrollbar { height: 4px; }
+        .cs-tabs-wrapper::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
+        .cs-tabs-wrapper::-webkit-scrollbar-thumb { background: rgba(0, 230, 118, 0.45); border-radius: 4px; }
         .cs-tab-btn {
             background: transparent; border: none; color: #94a3b8;
             padding: 0.85rem 1.4rem; font-size: 0.95rem; font-weight: 700;
@@ -112,7 +116,7 @@
         .cs-tab-btn:hover { color: #00b4d8; }
         .cs-tab-btn.active {
             color: #00e676; border-bottom-color: #00e676;
-            background: rgba(0,230,118,0.05); border-radius: 8px 8px 0 0;
+            background: rgba(0,230,118,0.08); border-radius: 8px 8px 0 0;
         }
         .cs-tab-pane { display: none; padding: 2rem 0; animation: fadeIn 0.4s ease; }
         .cs-tab-pane.active { display: block; }
@@ -126,12 +130,14 @@
         }
         .artifact-header {
             display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 0.75rem;
             margin-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.1);
             padding-bottom: 0.75rem;
         }
         .artifact-title {
             font-size: 1.2rem; font-weight: 700; color: #00b4d8 !important;
             margin: 0; display: flex; align-items: center; gap: 0.6rem;
+            flex: 1 1 auto;
         }
         .artifact-card > p, .artifact-card > ul > li { color: #cbd5e1 !important; line-height: 1.55; }
         .artifact-card h3, .artifact-card h4 { color: #ffffff !important; }
@@ -653,6 +659,19 @@
             justify-content: space-between;
         }
 
+        /* ===== EXECUTIVE SUMMARY ===== */
+        .project-executive-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+            background: rgba(13, 27, 42, 0.6);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            border-radius: 14px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
         /* ===== EXECUTIVE SUMMARY DISCLAIMER ===== */
         .summary-disclaimer {
             grid-column: 1 / -1;
@@ -677,6 +696,97 @@
 
         /* ===== TABLE OVERFLOW PROTECTION ===== */
         .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; }
+
+        /* ===== MOBILE RESPONSIVE ADAPTATIONS ===== */
+        @media (max-width: 768px) {
+            .case-study-hero {
+                padding-top: 6.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+            .case-study-title {
+                font-size: 1.85rem !important;
+                line-height: 1.25 !important;
+            }
+            .case-study-subtitle {
+                font-size: 0.95rem !important;
+                line-height: 1.5 !important;
+                margin-bottom: 1.25rem !important;
+            }
+            .meta-pills-row {
+                gap: 0.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+            .meta-tag, .pill-badge-blue {
+                font-size: 0.75rem !important;
+                padding: 0.3rem 0.65rem !important;
+            }
+            .project-executive-summary {
+                grid-template-columns: 1fr !important;
+                padding: 1rem !important;
+                gap: 1rem !important;
+                margin-top: 1.25rem !important;
+            }
+            .summary-card {
+                padding: 1.1rem 1rem !important;
+            }
+            .cs-tabs-wrapper {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 6px;
+                justify-content: flex-start;
+                -webkit-overflow-scrolling: touch;
+                margin: 1.5rem 0 1rem 0 !important;
+                gap: 0.5rem;
+            }
+            .cs-tab-btn {
+                white-space: nowrap;
+                flex-shrink: 0;
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+            }
+            .artifact-header {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 0.5rem !important;
+            }
+            .artifact-header .pill-badge-blue,
+            .artifact-header .pill-badge,
+            .artifact-header .meta-tag {
+                align-self: flex-start !important;
+                margin-top: 0.2rem !important;
+            }
+            .artifact-title {
+                font-size: 1.05rem !important;
+                line-height: 1.35 !important;
+                width: 100% !important;
+            }
+            .artifact-card {
+                padding: 1.1rem 0.9rem !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                border-radius: 10px !important;
+            }
+            .kpi-grid {
+                grid-template-columns: 1fr !important;
+                gap: 0.85rem !important;
+            }
+            .kpi-card {
+                padding: 1.1rem 0.9rem !important;
+            }
+            .kpi-card .kpi-value {
+                font-size: 2rem !important;
+            }
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.5rem !important;
+            }
+            .bm-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .bm-costs, .bm-revenues {
+                grid-column: span 1 !important;
+            }
+        }
     </style>
 </head>
 <body id="page-healthcare-procurement">
@@ -1924,10 +2034,17 @@
         function switchTab(tabId, btn) {
             document.querySelectorAll('.cs-tab-pane').forEach(p => p.classList.remove('active'));
             document.querySelectorAll('.cs-tab-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById('pane-' + tabId).classList.add('active');
-            btn.classList.add('active');
-            window.scrollTo({ top: document.querySelector('.cs-tabs-wrapper').offsetTop - 80, behavior: 'smooth' });
-    }
+            const targetPane = document.getElementById('pane-' + tabId);
+            if (targetPane) targetPane.classList.add('active');
+            if (btn) {
+                btn.classList.add('active');
+                btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+            const tabsWrapper = document.querySelector('.cs-tabs-wrapper');
+            if (tabsWrapper) {
+                window.scrollTo({ top: tabsWrapper.offsetTop - 75, behavior: 'smooth' });
+            }
+        }
     </script>
 </body>
 </html>

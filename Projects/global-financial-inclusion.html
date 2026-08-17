@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Global Financial Inclusion Dashboard | Ben Matias</title>
-    <meta name="description" content="Visualize global trends in bank account ownership, digital payments, and credit behavior by region and demographics using World Bank Findex data." />
+    <title>Global Financial Inclusion & Banking Access Analytics | Ben Matias</title>
+    <meta name="description" content="Global business intelligence case study analyzing bank account ownership, mobile money, and credit behavior across 140+ economies using World Bank Findex." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://benmatias.com/projects/global-financial-inclusion.html" />
     <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
@@ -12,8 +12,8 @@
     <!-- Open Graph / LinkedIn / Facebook -->
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Ben Matias Portfolio" />
-    <meta property="og:title" content="Global Financial Inclusion Dashboard | Ben Matias" />
-    <meta property="og:description" content="Visualize global trends in bank account ownership, digital payments, and credit behavior by region and demographics using World Bank Findex data." />
+    <meta property="og:title" content="Global Financial Inclusion & Banking Access Analytics | Ben Matias" />
+    <meta property="og:description" content="Global BI case study analyzing bank account ownership, digital payments, and credit behavior across 140+ economies using World Bank Findex data." />
     <meta property="og:image" content="https://benmatias.com/assets/img/global-financial-inclusion-cover.webp" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="720" />
@@ -21,14 +21,16 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Global Financial Inclusion Dashboard | Ben Matias" />
-    <meta name="twitter:description" content="Visualize global trends in bank account ownership, digital payments, and credit behavior by region and demographics using World Bank Findex data." />
+    <meta name="twitter:title" content="Global Financial Inclusion & Banking Access Analytics | Ben Matias" />
+    <meta name="twitter:description" content="Global BI case study analyzing bank account ownership, digital payments, and credit behavior across 140+ economies using World Bank Findex data." />
     <meta name="twitter:image" content="https://benmatias.com/assets/img/global-financial-inclusion-cover.webp" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
+
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -51,15 +53,213 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-6Z42HX3EZZ');
     </script>
+
+    <style>
+        /* ===== BASE & HERO ===== */
+        body { background: #060d16; }
+        .case-study-hero {
+            padding: 5rem 0 2.5rem 0;
+            background: linear-gradient(135deg, #0a192f 0%, #0d1b2a 100%);
+            border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+        }
+        .pill-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.35rem 0.9rem; border-radius: 50px; font-size: 0.82rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+            background: rgba(0, 230, 118, 0.15); color: #00e676; border: 1px solid #00e676;
+            margin-bottom: 1rem;
+        }
+        .pill-badge-blue {
+            background: rgba(0, 180, 216, 0.15); color: #00b4d8; border: 1px solid #00b4d8;
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.78rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .case-study-title {
+            font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #ffffff;
+            line-height: 1.2; margin-bottom: 1rem;
+        }
+        .case-study-subtitle {
+            font-size: 1.15rem; color: #94a3b8; max-width: 850px;
+            line-height: 1.6; margin-bottom: 2rem;
+        }
+        .meta-pills-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
+        .meta-tag {
+            background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e2e8f0; padding: 0.4rem 0.85rem; border-radius: 6px;
+            font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem;
+        }
+
+        /* ===== EXECUTIVE SUMMARY ===== */
+        .project-executive-summary {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+            margin-top: 2rem; margin-bottom: 2rem;
+            background: rgba(13, 27, 42, 0.6); border: 1px solid rgba(0, 180, 216, 0.2);
+            border-radius: 14px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+        .summary-card {
+            background: #0f172a; border: 1.5px solid rgba(0, 180, 216, 0.3); border-left: 4px solid #00e676;
+            border-radius: 12px; padding: 1.35rem; display: flex; align-items: flex-start; gap: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); color: #f8fafc !important;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .summary-card:hover { transform: translateY(-2px); border-color: #00e676; }
+        .summary-card i { font-size: 1.6rem !important; color: #00e676 !important; margin-top: 0.2rem; flex-shrink: 0; }
+        .summary-card h3 { font-size: 1.05rem !important; font-weight: 700; color: #ffffff !important; margin: 0 0 0.5rem 0; }
+        .summary-card p { font-size: 0.88rem !important; color: #cbd5e1 !important; line-height: 1.55; margin: 0; }
+
+        /* ===== TABS SYSTEM ===== */
+        .cs-tabs-wrapper {
+            display: flex; gap: 0.75rem; border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            overflow-x: auto; padding-bottom: 4px; margin: 2.5rem 0 1.5rem 0;
+            -webkit-overflow-scrolling: touch; scrollbar-width: thin;
+            scrollbar-color: rgba(0, 230, 118, 0.4) rgba(255, 255, 255, 0.05);
+        }
+        .cs-tabs-wrapper::-webkit-scrollbar { height: 4px; }
+        .cs-tabs-wrapper::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
+        .cs-tabs-wrapper::-webkit-scrollbar-thumb { background: rgba(0, 230, 118, 0.45); border-radius: 4px; }
+        .cs-tab-btn {
+            background: transparent; border: none; color: #94a3b8;
+            padding: 0.85rem 1.4rem; font-size: 0.95rem; font-weight: 700;
+            cursor: pointer; border-bottom: 3px solid transparent;
+            transition: all 0.3s ease; white-space: nowrap;
+            display: flex; align-items: center; gap: 0.6rem;
+        }
+        .cs-tab-btn:hover { color: #00b4d8; }
+        .cs-tab-btn.active {
+            color: #00e676; border-bottom-color: #00e676;
+            background: rgba(0, 230, 118, 0.08); border-radius: 8px 8px 0 0;
+        }
+        .cs-tab-pane { display: none; padding: 2rem 0; animation: fadeIn 0.4s ease; }
+        .cs-tab-pane.active { display: block; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+        /* ===== ARTIFACT CARDS ===== */
+        .artifact-card {
+            background: #111c2e; border: 1.5px solid rgba(0, 180, 216, 0.25);
+            border-radius: 12px; padding: 1.75rem; margin-bottom: 1.5rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); color: #f8fafc !important;
+        }
+        .artifact-header {
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 0.75rem;
+        }
+        .artifact-title {
+            font-size: 1.2rem; font-weight: 700; color: #00b4d8 !important;
+            margin: 0; display: flex; align-items: center; gap: 0.6rem; flex: 1 1 auto;
+        }
+        .artifact-card p, .artifact-card li { color: #cbd5e1 !important; line-height: 1.6; }
+        .artifact-card strong, .artifact-card b { color: #ffffff !important; font-weight: 700; }
+
+        /* ===== KPI CARDS ===== */
+        .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+        .kpi-card {
+            background: #0f172a; border: 1.5px solid rgba(0, 180, 216, 0.3);
+            border-radius: 12px; padding: 1.4rem 1.25rem; text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+        .kpi-card:hover { transform: translateY(-3px); border-color: #00e676; }
+        .kpi-card .kpi-value {
+            font-size: 2.2rem; font-weight: 800; color: #00e676;
+            font-family: 'Outfit', sans-serif; line-height: 1;
+        }
+        .kpi-card .kpi-value.info { color: #00b4d8; }
+        .kpi-card .kpi-value.warning { color: #f59e0b; }
+        .kpi-card .kpi-label { font-size: 0.78rem; color: #94a3b8; margin-top: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .kpi-card .kpi-sub { font-size: 0.75rem; color: #64748b; margin-top: 0.35rem; }
+
+        /* ===== SCHEMA & ARCHITECTURE CARDS ===== */
+        .schema-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 1.25rem 0; }
+        .schema-card {
+            background: #090f1d; border: 1px solid rgba(0, 180, 216, 0.3); border-radius: 10px;
+            padding: 1.25rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .schema-card-title {
+            font-size: 0.95rem; font-weight: 700; color: #38bdf8;
+            margin: 0 0 0.75rem 0; display: flex; align-items: center; gap: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.5rem;
+        }
+        .schema-fields-list { list-style: none; padding: 0; margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+        .schema-fields-list li {
+            padding: 0.3rem 0; display: flex; justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.05); color: #94a3b8 !important;
+        }
+        .schema-fields-list li .field-type { color: #00e676; font-size: 0.72rem; }
+
+        /* ===== LIVE EMBED CONTAINER ===== */
+        .dashboard-live-wrapper {
+            background: #090d16; border: 2px solid rgba(0, 180, 216, 0.3);
+            border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative; min-height: 780px; width: 100%;
+        }
+        .dashboard-live-wrapper iframe {
+            width: 100%; height: 780px; border: none; display: block;
+        }
+        .dashboard-action-bar {
+            display: flex; justify-content: space-between; align-items: center;
+            background: #0d1b2a; border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+            padding: 0.75rem 1.25rem; font-size: 0.85rem; color: #94a3b8;
+        }
+
+        /* ===== INSIGHT CARDS ===== */
+        .insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin: 1.25rem 0; }
+        .insight-card {
+            background: #0f172a; border: 1.5px solid rgba(0, 180, 216, 0.25);
+            border-left: 4px solid #00b4d8; border-radius: 10px; padding: 1.35rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+        .insight-card.highlight { border-left-color: #00e676; }
+        .insight-title { font-size: 1.05rem; font-weight: 700; color: #ffffff; margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.5rem; }
+        .insight-card p { font-size: 0.88rem !important; color: #cbd5e1 !important; line-height: 1.55; margin: 0; }
+
+        /* ===== CODE SNIPPET ===== */
+        pre.code-block {
+            background: #080c14; border: 1px solid rgba(0, 180, 216, 0.2);
+            border-left: 4px solid #00e676; border-radius: 8px;
+            padding: 1.2rem; font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem; color: #38bdf8; overflow-x: auto; line-height: 1.6;
+        }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+            .schema-grid { grid-template-columns: 1fr; }
+            .insight-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .case-study-hero { padding-top: 6.5rem !important; padding-bottom: 1.5rem !important; }
+            .case-study-title { font-size: 1.85rem !important; line-height: 1.25 !important; }
+            .case-study-subtitle { font-size: 0.95rem !important; line-height: 1.5 !important; margin-bottom: 1.25rem !important; }
+            .meta-pills-row { gap: 0.5rem !important; margin-bottom: 1rem !important; }
+            .meta-tag, .pill-badge-blue { font-size: 0.75rem !important; padding: 0.3rem 0.65rem !important; }
+            .project-executive-summary { grid-template-columns: 1fr !important; padding: 1rem !important; gap: 1rem !important; margin-top: 1.25rem !important; }
+            .summary-card { padding: 1.1rem 1rem !important; }
+            .cs-tabs-wrapper {
+                overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px;
+                justify-content: flex-start; -webkit-overflow-scrolling: touch;
+                margin: 1.5rem 0 1rem 0 !important; gap: 0.5rem;
+            }
+            .cs-tab-btn { white-space: nowrap; flex-shrink: 0; font-size: 0.85rem; padding: 0.6rem 1rem; }
+            .artifact-header { flex-direction: column !important; align-items: flex-start !important; gap: 0.5rem !important; }
+            .artifact-header .pill-badge-blue, .artifact-header .pill-badge, .artifact-header .meta-tag { align-self: flex-start !important; margin-top: 0.2rem !important; }
+            .artifact-title { font-size: 1.05rem !important; line-height: 1.35 !important; width: 100% !important; }
+            .artifact-card { padding: 1.1rem 0.9rem !important; max-width: 100% !important; box-sizing: border-box !important; border-radius: 10px !important; }
+            .kpi-grid { grid-template-columns: 1fr !important; gap: 0.85rem !important; }
+            .kpi-card { padding: 1.1rem 0.9rem !important; }
+            .kpi-card .kpi-value { font-size: 2rem !important; }
+            .dashboard-live-wrapper { min-height: 540px; }
+            .dashboard-live-wrapper iframe { height: 540px; }
+        }
+    </style>
 </head>
-<body id="page-financial-inclusion" class="page-project-case-study">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZ6WFTW7"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+<body id="page-financial-inclusion">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZ6WFTW7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div class="header-hero-wrapper">
         <header class="container">
@@ -88,11 +288,19 @@
             </div>
         </header>
 
-        <section class="page-hero section">
-            <div class="container page-hero-container">
-                <div class="project-header">
-                    <h1 id="project-title" class="page-hero-title"></h1>
-                    <div id="project-button-group" class="btn-group"></div>
+        <section class="case-study-hero">
+            <div class="container">
+                <div class="pill-badge"><i class="fas fa-globe-americas"></i> <span data-translate="gfi_badge">Global Fintech & Inclusion BI</span></div>
+                <h1 class="case-study-title" data-translate="gfi_title">Global Financial Inclusion & Banking Access Analytics</h1>
+                <p class="case-study-subtitle" data-translate="gfi_subtitle">
+                    Multi-dimensional business intelligence case study analyzing banking penetration, mobile money adoption, and digital credit behavior across 140+ economies using World Bank Global Findex microdata.
+                </p>
+                <div class="meta-pills-row">
+                    <span class="meta-tag"><i class="fas fa-landmark"></i> World Bank Global Findex Database</span>
+                    <span class="meta-tag"><i class="fas fa-chart-bar"></i> Google Looker Studio</span>
+                    <span class="meta-tag"><i class="fas fa-mobile-alt"></i> Mobile Money & Fintech Telemetry</span>
+                    <span class="meta-tag"><i class="fas fa-venus-mars"></i> Gender & Income Cohort Analytics</span>
+                    <span class="meta-tag"><i class="fas fa-history"></i> 13-Year Longitudinal Trend (2011–2024)</span>
                 </div>
             </div>
         </section>
@@ -100,19 +308,230 @@
 
     <main class="container page-container">
 
-        <section id="project-executive-summary" class="project-executive-summary">
-            </section>
-
-        <div class="case-study-layout">
-            <aside id="project-sidebar" class="project-sidebar">
-                </aside>
-            <div id="project-dashboard-content" class="project-dashboard-content">
-                <h2 id="dashboard-title"></h2>
-                <p id="dashboard-subtitle"></p>
-                <div id="dashboard-embed-container" class="dashboard-embed-container">
-                    </div>
+        <!-- RESUMEN EJECUTIVO (3 CARDS STANDARD) -->
+        <div class="project-executive-summary">
+            <div class="summary-card">
+                <i class="fas fa-bullseye"></i>
+                <div class="summary-card-text">
+                    <h3 data-translate="gfi_exec1_title">The Global Financial Access Challenge</h3>
+                    <p data-translate="gfi_exec1_desc">Over 1.4 billion adults remain unbanked worldwide. Understanding where formal banking fails requires decomposing complex survey microdata across income quintiles, gender gaps, and rural infrastructure.</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-rocket"></i>
+                <div class="summary-card-text">
+                    <h3 data-translate="gfi_exec2_title">The BI Analytical Solution</h3>
+                    <p data-translate="gfi_exec2_desc">Engineered an interactive Looker Studio intelligence portal harmonizing 13+ years of World Bank Findex surveys into a Star Schema with cross-demographic slicing and mobile money adoption velocity tracking.</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <i class="fas fa-chart-pie"></i>
+                <div class="summary-card-text">
+                    <h3 data-translate="gfi_exec3_title">Strategic Market & Policy Impact</h3>
+                    <p data-translate="gfi_exec3_desc">Empowers retail banking strategists, fintech venture builders, and multilateral development organizations to evaluate addressable market readiness and model financial inclusion velocity.</p>
+                </div>
             </div>
         </div>
+
+        <!-- SISTEMA DE PESTAÑAS DEL CASO DE ESTUDIO BI -->
+        <div class="cs-tabs-wrapper">
+            <button class="cs-tab-btn active" onclick="switchTab('context', this)" id="tab-context">
+                <i class="fas fa-info-circle"></i> <span data-translate="gfi_tab_context">1. Context & Global KPIs</span>
+            </button>
+            <button class="cs-tab-btn" onclick="switchTab('model', this)" id="tab-model">
+                <i class="fas fa-project-diagram"></i> <span data-translate="gfi_tab_model">2. BI Architecture & Data Model</span>
+            </button>
+            <button class="cs-tab-btn" onclick="switchTab('dashboard', this)" id="tab-dashboard">
+                <i class="fas fa-chart-area"></i> <span data-translate="gfi_tab_dash">3. Interactive Dashboard</span>
+            </button>
+            <button class="cs-tab-btn" onclick="switchTab('insights', this)" id="tab-insights">
+                <i class="fas fa-lightbulb"></i> <span data-translate="gfi_tab_insights">4. Strategic Global Insights</span>
+            </button>
+        </div>
+
+        <!-- ========================== TAB 1: CONTEXT & KPIS ========================== -->
+        <div class="cs-tab-pane active" id="pane-context">
+            
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h2 class="artifact-title"><i class="fas fa-globe"></i> <span data-translate="gfi_ctx_title">Global Inclusion Landscape & Objectives</span></h2>
+                    <span class="pill-badge-blue">World Bank Findex Microdata</span>
+                </div>
+                <p data-translate="gfi_ctx_p1">
+                    Financial inclusion is a primary enabler of poverty reduction and economic resilience. Access to formal transaction accounts serves as the gateway to the broader financial ecosystem—enabling secure savings, emergency digital credit, and transparent government social transfers.
+                </p>
+                <p data-translate="gfi_ctx_p2">
+                    This BI project models survey data representing over <strong>5.77 Billion adults (aged 15+)</strong> across 140+ developing and advanced economies. By standardizing indicators across four survey waves (2011, 2014, 2017, and 2021–2024), the dashboard reveals how digital payments and mobile money have altered traditional banking economics.
+                </p>
+
+                <!-- KPI SNAPSHOT -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-value info">5.77B</div>
+                        <div class="kpi-label" data-translate="gfi_kpi1_label">Surveyed Adult Base</div>
+                        <div class="kpi-sub" data-translate="gfi_kpi1_sub">Global 15+ Population</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">74.35%</div>
+                        <div class="kpi-label" data-translate="gfi_kpi2_label">Formal Account Ownership</div>
+                        <div class="kpi-sub" data-translate="gfi_kpi2_sub">Global Average Access Rate</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value warning">140+</div>
+                        <div class="kpi-label" data-translate="gfi_kpi3_label">Economies Benchmarked</div>
+                        <div class="kpi-sub" data-translate="gfi_kpi3_sub">Cross-Country Standard</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">6.2%</div>
+                        <div class="kpi-label" data-translate="gfi_kpi4_label">Gender Parity Spread</div>
+                        <div class="kpi-sub" data-translate="gfi_kpi4_sub">Male vs. Female Account Gap</div>
+                    </div>
+                </div>
+
+                <div class="artifact-header" style="margin-top: 1.5rem;">
+                    <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-users-cog"></i> <span data-translate="gfi_stakeholders_title">Analytical Personas & Use Cases</span></h3>
+                </div>
+                <ul>
+                    <li data-translate="gfi_stk1"><strong>Fintech & Digital Wallet Strategists</strong>: Pinpoint unbanked corridors with high mobile penetration to target merchant payment rollouts and digital credit scoring.</li>
+                    <li data-translate="gfi_stk2"><strong>Commercial Retail Banks</strong>: Benchmark account penetration vs. active deposit engagement to identify under-monetized consumer segments.</li>
+                    <li data-translate="gfi_stk3"><strong>Multilateral Development Economists (World Bank / IDB)</strong>: Track policy intervention outcomes and monitor gender equity in formal financial participation.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- ========================== TAB 2: DATA ARCHITECTURE & MODELING ========================== -->
+        <div class="cs-tab-pane" id="pane-model">
+            
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h2 class="artifact-title"><i class="fas fa-sitemap"></i> <span data-translate="gfi_model_title">BI Dimensional Architecture (Star Schema)</span></h2>
+                    <span class="pill-badge-blue">Dimensional Data Model</span>
+                </div>
+                <p data-translate="gfi_model_p1">
+                    The Findex microdata was normalized into a dimensional model optimized for Looker Studio, enabling rapid aggregation across geographical regions, economic income brackets, and demographic sub-populations.
+                </p>
+
+                <div class="schema-grid">
+                    <div class="schema-card">
+                        <h4 class="schema-card-title"><i class="fas fa-table"></i> Fact_Financial_Inclusion</h4>
+                        <ul class="schema-fields-list">
+                            <li><span>CountryKey (FK)</span> <span class="field-type">VARCHAR(3)</span></li>
+                            <li><span>YearKey (FK)</span> <span class="field-type">SMALLINT</span></li>
+                            <li><span>CohortKey (FK)</span> <span class="field-type">INT</span></li>
+                            <li><span>AdultPopulation</span> <span class="field-type">BIGINT</span></li>
+                            <li><span>AccountOwnership_Pct</span> <span class="field-type">DECIMAL(5,2)</span></li>
+                            <li><span>DigitalPaymentMade_Pct</span> <span class="field-type">DECIMAL(5,2)</span></li>
+                            <li><span>MobileMoneyAccount_Pct</span> <span class="field-type">DECIMAL(5,2)</span></li>
+                            <li><span>FormalSavings_Pct</span> <span class="field-type">DECIMAL(5,2)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="schema-card">
+                        <h4 class="schema-card-title"><i class="fas fa-globe-asia"></i> Dim_Country</h4>
+                        <ul class="schema-fields-list">
+                            <li><span>CountryKey (PK)</span> <span class="field-type">VARCHAR(3) [ISO-3]</span></li>
+                            <li><span>CountryName</span> <span class="field-type">VARCHAR(60)</span></li>
+                            <li><span>WorldBankRegion</span> <span class="field-type">VARCHAR(35)</span></li>
+                            <li><span>IncomeClassification</span> <span class="field-type">ENUM(Low, Mid, High)</span></li>
+                            <li><span>LendingType</span> <span class="field-type">VARCHAR(20)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="schema-card">
+                        <h4 class="schema-card-title"><i class="fas fa-user-friends"></i> Dim_Demographic_Cohort</h4>
+                        <ul class="schema-fields-list">
+                            <li><span>CohortKey (PK)</span> <span class="field-type">INT</span></li>
+                            <li><span>GenderSegment</span> <span class="field-type">ENUM(Male, Female)</span></li>
+                            <li><span>IncomeQuintile</span> <span class="field-type">ENUM(Poorest 40%, Richest 60%)</span></li>
+                            <li><span>EducationLevel</span> <span class="field-type">ENUM(Primary, Secondary+)</span></li>
+                            <li><span>AgeGroup</span> <span class="field-type">ENUM(15-24, 25+)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="artifact-header" style="margin-top: 1.5rem;">
+                    <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-calculator"></i> <span data-translate="gfi_calc_title">Engineered Semantic Measures</span></h3>
+                </div>
+                <p data-translate="gfi_calc_desc">
+                    Custom measures calculate inclusion velocity, gender parity ratios, and digital payment conversion:
+                </p>
+
+                <pre class="code-block"><code>-- Gender Inclusion Gap (Percentage Points)
+Gender_Inclusion_Gap = AccountOwnership_Male - AccountOwnership_Female
+
+-- Digital Payment Conversion Efficiency
+Digital_Conversion_Rate = (DigitalPaymentMade_Pct / AccountOwnership_Pct) * 100
+
+-- Mobile Money Acceleration Index (YoY Velocity)
+Mobile_Money_Velocity = (MobileMoney_CurrentWave - MobileMoney_PreviousWave) / MobileMoney_PreviousWave</code></pre>
+            </div>
+
+        </div>
+
+        <!-- ========================== TAB 3: INTERACTIVE DASHBOARD ========================== -->
+        <div class="cs-tab-pane" id="pane-dashboard">
+            
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h2 class="artifact-title"><i class="fas fa-desktop"></i> <span data-translate="gfi_dash_title">Live Interactive BI Report</span></h2>
+                    <a href="https://lookerstudio.google.com/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb" target="_blank" rel="noopener" class="pill-badge-blue">
+                        <i class="fas fa-external-link-alt"></i> <span data-translate="gfi_fullscreen">Open in Full Screen</span>
+                    </a>
+                </div>
+                <p data-translate="gfi_dash_guide">
+                    <strong>Interactive Navigation Guide:</strong> Filter by geographic region and country using the top navigation controls. Switch demographic cohorts (income quintile vs. gender) to observe disparity shifts, and explore the interactive scatter chart to correlate GDP per capita with formal account adoption.
+                </p>
+
+                <!-- LIVE LOOKER STUDIO EMBED WRAPPER -->
+                <div class="dashboard-live-wrapper">
+                    <div class="dashboard-action-bar">
+                        <span><i class="fas fa-circle" style="color: #00e676; font-size: 0.65rem;"></i> Looker Studio Live Engine Connected</span>
+                        <span><i class="fas fa-globe"></i> World Bank Findex Survey Waves</span>
+                    </div>
+                    <iframe src="https://lookerstudio.google.com/embed/reporting/d245373a-d1e9-46ab-b29a-f11a40d153bb/page/4kyRF" loading="lazy" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ========================== TAB 4: STRATEGIC INSIGHTS ========================== -->
+        <div class="cs-tab-pane" id="pane-insights">
+            
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h2 class="artifact-title"><i class="fas fa-brain"></i> <span data-translate="gfi_insights_title">Strategic Global Findings & Banking Takeaways</span></h2>
+                    <span class="pill-badge-blue">Executive Synthesis</span>
+                </div>
+                <p data-translate="gfi_insights_intro">
+                    Cross-analyzing global financial telemetry surfaces four major takeaways for international banking and fintech ecosystems:
+                </p>
+
+                <div class="insight-grid">
+                    <div class="insight-card highlight">
+                        <h4 class="insight-title"><i class="fas fa-mobile-alt"></i> <span data-translate="gfi_ins1_title">1. The Mobile Money Leapfrog</span></h4>
+                        <p data-translate="gfi_ins1_desc">In Sub-Saharan Africa and South Asia, mobile money accounts bypassed brick-and-mortar branch infrastructure, boosting adult financial access by over 30 percentage points without requiring traditional credit cards.</p>
+                    </div>
+
+                    <div class="insight-card">
+                        <h4 class="insight-title"><i class="fas fa-hand-holding-usd"></i> <span data-translate="gfi_ins2_title">2. G2P Digital Transfer Catalyst</span></h4>
+                        <p data-translate="gfi_ins2_desc">Government-to-Person (G2P) social benefit digitizations during 2020–2022 served as the single largest catalyst for onboarding lower-income women into formal banking systems across Latin America and South Asia.</p>
+                    </div>
+
+                    <div class="insight-card">
+                        <h4 class="insight-title"><i class="fas fa-piggy-bank"></i> <span data-translate="gfi_ins3_title">3. The Ownership vs. Usage Chasm</span></h4>
+                        <p data-translate="gfi_ins3_desc">While formal account ownership reached 74% globally, active formal credit usage remains below 28% in developing nations, highlighting massive untapped opportunity for AI-driven microcredit underwriting.</p>
+                    </div>
+
+                    <div class="insight-card highlight">
+                        <h4 class="insight-title"><i class="fas fa-chart-line"></i> <span data-translate="gfi_ins4_title">4. Private Sector Monetization</span></h4>
+                        <p data-translate="gfi_ins4_desc">Fintech platforms integrating interoperable QR payments and low-fee domestic remittances demonstrate 4.2x higher weekly transaction retention compared to standalone traditional banking apps.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </main>
 
     <footer class="footer">
@@ -147,11 +566,28 @@
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2025 Ben Matias. All rights reserved.</p>
+        <div class="footer-copyright container">
+            <p>&copy; <span id="year"></span> Benjamín Espinoza. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // TAB SWITCHING LOGIC
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.cs-tab-pane').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.cs-tab-btn').forEach(b => b.classList.remove('active'));
+            const targetPane = document.getElementById('pane-' + tabId);
+            if (targetPane) targetPane.classList.add('active');
+            if (btn) {
+                btn.classList.add('active');
+                btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+            const tabsWrapper = document.querySelector('.cs-tabs-wrapper');
+            if (tabsWrapper) {
+                window.scrollTo({ top: tabsWrapper.offsetTop - 75, behavior: 'smooth' });
+            }
+        }
+    </script>
 </body>
 </html>

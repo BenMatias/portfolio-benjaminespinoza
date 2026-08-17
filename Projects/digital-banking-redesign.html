@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Product Redesign & Analytics - Case Study | Benjamín Espinoza</title>
+    <title>Digital Product Redesign & Analytics - Case Study | BenjamÃ­n Espinoza</title>
     <meta name="description" content="End-to-End Case Study of a public banking portal redesign, featuring MVP Canvas, BPMN 2.0, PostgreSQL SQL queries, Puck CMS, and GA4 telemetry.">
     
     <!-- Open Graph / LinkedIn / Facebook Social Meta Tags -->
     <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="Benjamín Espinoza Portfolio" />
+    <meta property="og:site_name" content="BenjamÃ­n Espinoza Portfolio" />
     <meta property="og:title" content="Digital Product Redesign & Analytics | Case Study" />
     <meta property="og:description" content="End-to-End case study of a public banking portal redesign, featuring MVP Canvas, BPMN 2.0, PostgreSQL SQL queries, GA4 telemetry, and Generative AI acceleration." />
     <meta property="og:url" content="https://benmatias.com/projects/digital-banking-redesign.html" />
@@ -117,7 +117,21 @@
             gap: 0.75rem;
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
             overflow-x: auto;
-            padding-bottom: 2px;
+            padding-bottom: 4px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 230, 118, 0.4) rgba(255, 255, 255, 0.05);
+        }
+        .cs-tabs-wrapper::-webkit-scrollbar {
+            height: 4px;
+        }
+        .cs-tabs-wrapper::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .cs-tabs-wrapper::-webkit-scrollbar-thumb {
+            background: rgba(0, 230, 118, 0.45);
+            border-radius: 4px;
         }
         .cs-tab-btn {
             background: transparent;
@@ -438,64 +452,6 @@
         .mvp-block-5 { grid-column: 3 / 4; grid-row: 1 / 3; border-top: 4px solid #00e676; }
         .mvp-block-6 { grid-column: 3 / 4; grid-row: 3 / 4; border-top: 4px solid #38bdf8; }
         .mvp-block-7 { grid-column: 2 / 3; grid-row: 3 / 4; border-top: 4px solid #f59e0b; }
-
-        /* ACCORDION SYSTEM STYLES */
-        .accordion-global-controls {
-            display: flex;
-            justify-content: flex-end;
-            gap: 0.75rem;
-            margin-bottom: 1.25rem;
-        }
-        .accordion-control-btn {
-            background: rgba(0, 180, 216, 0.12);
-            border: 1px solid rgba(0, 180, 216, 0.3);
-            color: #00b4d8;
-            padding: 0.4rem 0.9rem;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .accordion-control-btn:hover {
-            background: #00b4d8;
-            color: #0d1b2a;
-            box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
-        }
-        .card-toggle-trigger {
-            cursor: pointer;
-            user-select: none;
-        }
-        .card-accordion-toggle {
-            background: rgba(0, 180, 216, 0.15);
-            border: 1px solid rgba(0, 180, 216, 0.3);
-            color: #00b4d8;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: transform 0.3s ease, background 0.2s ease;
-            flex-shrink: 0;
-            margin-left: 1rem;
-        }
-        .collapsible-card.collapsed .card-accordion-toggle {
-            transform: rotate(-90deg);
-            color: #94a3b8;
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .collapsible-card.collapsed .artifact-body {
-            display: none;
-        }
-        .collapsible-card.collapsed {
-            padding-bottom: 1.25rem;
-        }
 
         /* ROADMAP VISUAL MATRIX STYLES */
         .roadmap-matrix-wrapper {
@@ -927,10 +883,19 @@
                 grid-row: auto !important;
             }
             .artifact-header {
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                gap: 0.5rem;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 0.5rem !important;
+            }
+            .artifact-header .meta-tag,
+            .artifact-header .pill-badge {
+                align-self: flex-start !important;
+                margin-top: 0.2rem !important;
+            }
+            .artifact-title {
+                font-size: 1.05rem !important;
+                line-height: 1.35 !important;
+                width: 100% !important;
             }
         }
 
@@ -940,13 +905,6 @@
             }
             .story-board {
                 grid-template-columns: 1fr !important;
-            }
-            .accordion-global-controls {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .accordion-control-btn {
-                justify-content: center;
             }
         }
 
@@ -1360,9 +1318,9 @@
         <section class="case-study-hero">
             <div class="container">
                 <div class="pill-badge"><i class="fas fa-star"></i> <span data-translate="cs_flagship_badge">Flagship Case Study</span></div>
-                <h1 class="case-study-title" id="cs-hero-title" data-translate="cs_hero_title">Rediseño Digital & Analítica de Producto: Banca Pública</h1>
+                <h1 class="case-study-title" id="cs-hero-title" data-translate="cs_hero_title">RediseÃ±o Digital & AnalÃ­tica de Producto: Banca PÃºblica</h1>
                 <p class="case-study-subtitle" id="cs-hero-subtitle" data-translate="cs_hero_subtitle">
-                    Transformación de extremo a extremo de la plataforma pública bancaria. Integración de gestión de producto ágil (MVP Canvas & User Stories), modelamiento de procesos BPMN 2.0, arquitectura de datos en PostgreSQL, administración con Strapi 5 + Puck CMS y analítica digital avanzada (GA4 / Clarity).
+                    TransformaciÃ³n de extremo a extremo de la plataforma pÃºblica bancaria. IntegraciÃ³n de gestiÃ³n de producto Ã¡gil (MVP Canvas & User Stories), modelamiento de procesos BPMN 2.0, arquitectura de datos en PostgreSQL, administraciÃ³n con Strapi 5 + Puck CMS y analÃ­tica digital avanzada (GA4 / Clarity).
                 </p>
                 <div class="meta-pills-row">
                     <span class="meta-tag"><i class="fas fa-user-check"></i> Product Owner & Business Analyst</span>
@@ -1383,63 +1341,57 @@
             <div class="summary-card">
                 <i class="fas fa-bullseye"></i>
                 <div class="summary-card-text">
-                    <h3 id="cs-sum1-title" data-translate="cs_sum1_title">El Desafío de Negocio</h3>
-                    <p id="cs-sum1-desc" data-translate="cs_sum1_desc">El portal web público legacy presentaba altas tasas de abandono en solicitudes de productos (cuentas/créditos), rigidez operativa para publicar campañas comerciales y falta de telemetría de eventos de usuario.</p>
+                    <h3 id="cs-sum1-title" data-translate="cs_sum1_title">El DesafÃ­o de Negocio</h3>
+                    <p id="cs-sum1-desc" data-translate="cs_sum1_desc">El portal web pÃºblico legacy presentaba altas tasas de abandono en solicitudes de productos (cuentas/crÃ©ditos), rigidez operativa para publicar campaÃ±as comerciales y falta de telemetrÃ­a de eventos de usuario.</p>
                 </div>
             </div>
             <div class="summary-card">
                 <i class="fas fa-rocket"></i>
                 <div class="summary-card-text">
-                    <h3 id="cs-sum2-title" data-translate="cs_sum2_title">La Solución de Producto</h3>
-                    <p id="cs-sum2-desc" data-translate="cs_sum2_desc">Liderazgo de triada ágil para migrar a un frontend visual No-Code con Puck CMS conectado a Strapi 5 (Headless CMS), maquetación apoyada en IA (Firebase), pruebas QA funcionales en Staging y etiquetado GTM completo.</p>
+                    <h3 id="cs-sum2-title" data-translate="cs_sum2_title">La SoluciÃ³n de Producto</h3>
+                    <p id="cs-sum2-desc" data-translate="cs_sum2_desc">Liderazgo de triada Ã¡gil para migrar a un frontend visual No-Code con Puck CMS conectado a Strapi 5 (Headless CMS), maquetaciÃ³n apoyada en IA (Firebase), pruebas QA funcionales en Staging y etiquetado GTM completo.</p>
                 </div>
             </div>
             <div class="summary-card">
                 <i class="fas fa-chart-pie"></i>
                 <div class="summary-card-text">
                     <h3 id="cs-sum3-title" data-translate="cs_sum3_title">Impacto Cuantitativo</h3>
-                    <p id="cs-sum3-desc" data-translate="cs_sum3_desc">+35% en conversión de solicitudes digitales, reducción de tiempo de publicación web de semanas a minutos y 100% de calidad probada previo a despliegue productivo.</p>
+                    <p id="cs-sum3-desc" data-translate="cs_sum3_desc">+35% en conversiÃ³n de solicitudes digitales, reducciÃ³n de tiempo de publicaciÃ³n web de semanas a minutos y 100% de calidad probada previo a despliegue productivo.</p>
                 </div>
             </div>
         </div>
 
-        <!-- SISTEMA DE PESTAÑAS DEL CASO DE ESTUDIO -->
+        <!-- SISTEMA DE PESTAÃ‘AS DEL CASO DE ESTUDIO -->
         <div class="cs-tabs-wrapper">
             <button class="cs-tab-btn active" data-tab="tab-po" data-translate="cs_tab_po"><i class="fas fa-lightbulb"></i> 1. Estrategia PO (MVP & Stories)</button>
             <button class="cs-tab-btn" data-tab="tab-bpmn" data-translate="cs_tab_bpmn"><i class="fas fa-project-diagram"></i> 2. Procesos BPMN 2.0</button>
             <button class="cs-tab-btn" data-tab="tab-sql" data-translate="cs_tab_sql"><i class="fas fa-database"></i> 3. Arquitectura SQL (PostgreSQL)</button>
-            <button class="cs-tab-btn" data-tab="tab-dashboard" data-translate="cs_tab_dashboard"><i class="fas fa-chart-bar"></i> 4. Telemetría & Dashboard</button>
-            <button class="cs-tab-btn" data-tab="tab-genai" data-translate="cs_tab_genai"><i class="fas fa-robot"></i> 5. Aceleración con GenAI</button>
+            <button class="cs-tab-btn" data-tab="tab-dashboard" data-translate="cs_tab_dashboard"><i class="fas fa-chart-bar"></i> 4. TelemetrÃ­a & Dashboard</button>
+            <button class="cs-tab-btn" data-tab="tab-genai" data-translate="cs_tab_genai"><i class="fas fa-robot"></i> 5. AceleraciÃ³n con GenAI</button>
         </div>
 
-        <!-- PESTAÑA 1: ESTRATEGIA DE PRODUCTO (MVP, USM, BACKLOG & ROADMAP) -->
+        <!-- PESTAÃ‘A 1: ESTRATEGIA DE PRODUCTO (MVP, USM, BACKLOG & ROADMAP) -->
         <div id="tab-po" class="cs-tab-pane active">
-            <!-- BARRA DE CONTROLES DEL ACORDEÓN INTERACTIVO -->
-            <div class="accordion-global-controls">
-                <button id="expand-all-cards" class="accordion-control-btn"><i class="fas fa-chevron-circle-down"></i> <span data-translate="accExpandAll">Expandir Todas las Tarjetas</span></button>
-                <button id="collapse-all-cards" class="accordion-control-btn"><i class="fas fa-chevron-circle-up"></i> <span data-translate="accCollapseAll">Contraer Todas las Tarjetas</span></button>
-            </div>
-
+            <!-- BARRA DE CONTROLES DEL ACORDEÃ“N INTERACTIVO -->
             <!-- TARJETA 1: MVP CANVAS OFICIAL (COLLAPSIBLE CARD - COLLAPSED BY DEFAULT) -->
-            <div class="artifact-card collapsible-card collapsed">
-                <div class="artifact-header card-toggle-trigger">
+            <div class="artifact-card">
+                <div class="artifact-header ">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                        <h3 class="artifact-title" data-translate="cs_mvp_title"><i class="fas fa-th-large"></i> MVP Canvas Oficial (Estándar de 7 Bloques)</h3>
+                        <h3 class="artifact-title" data-translate="cs_mvp_title"><i class="fas fa-th-large"></i> MVP Canvas Oficial (EstÃ¡ndar de 7 Bloques)</h3>
                         <span class="meta-tag"><i class="fas fa-check-circle"></i> <span data-translate="cs_mvp_standardized_badge">Matriz Estandarizada</span></span>
                     </div>
-                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="artifact-body">
                     <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_mvp_subtitle">
-                        Estructura oficial del MVP Canvas para validar las hipótesis de negocio, definir los viajes de usuario, las funcionalidades mínimas y el cronograma de ejecución:
+                        Estructura oficial del MVP Canvas para validar las hipÃ³tesis de negocio, definir los viajes de usuario, las funcionalidades mÃ­nimas y el cronograma de ejecuciÃ³n:
                     </p>
 
-                    <!-- CANVAS DE 7 BLOQUES ESTÁNDAR -->
+                    <!-- CANVAS DE 7 BLOQUES ESTÃNDAR -->
                     <div class="mvp-standard-canvas">
                         <div class="mvp-canvas-card mvp-block-1">
                         <span class="badge-num">1</span>
                         <h4 data-translate="cs_mvp_b1_title">MVP Proposal</h4>
-                        <div data-translate="cs_mvp_b1_text"><p>Rediseño de la plataforma web pública bancaria implementando arquitectura desacoplada Strapi 5 (Headless CMS) + Puck CMS React, maquetación asistida por IA (Firebase) y telemetría en tiempo real (GA4 / Clarity), permitiendo publicar landing pages comerciales en minutos con 100% de calidad aprobada en QA.</p></div>
+                        <div data-translate="cs_mvp_b1_text"><p>RediseÃ±o de la plataforma web pÃºblica bancaria implementando arquitectura desacoplada Strapi 5 (Headless CMS) + Puck CMS React, maquetaciÃ³n asistida por IA (Firebase) y telemetrÃ­a en tiempo real (GA4 / Clarity), permitiendo publicar landing pages comerciales en minutos con 100% de calidad aprobada en QA.</p></div>
                     </div>
 
                     <!-- BLOQUE 2: Segmented Personas (Top left) -->
@@ -1448,9 +1400,9 @@
                         <h4 data-translate="cs_mvp_b2_title">Segmented Personas</h4>
                         <div data-translate="cs_mvp_b2_text">
                             <ul>
-                                <li><strong>Persona 1 (Camila / 32 yrs):</strong> Busca apertura de cuenta corriente y evaluación de crédito de consumo 100% digital desde smartphone.</li>
-                                <li><strong>Persona 2 (Roberto / 45 yrs):</strong> Requiere financiamiento comercial e información de inversión corporativa clara y ágil.</li>
-                                <li><strong>Persona 3 (Equipo de Marketing & Comercial):</strong> Dueños de producto y campaña que necesitan autonomía para lanzar landing pages sin depender del backlog dev.</li>
+                                <li><strong>Persona 1 (Camila / 32 yrs):</strong> Busca apertura de cuenta corriente y evaluaciÃ³n de crÃ©dito de consumo 100% digital desde smartphone.</li>
+                                <li><strong>Persona 2 (Roberto / 45 yrs):</strong> Requiere financiamiento comercial e informaciÃ³n de inversiÃ³n corporativa clara y Ã¡gil.</li>
+                                <li><strong>Persona 3 (Equipo de Marketing & Comercial):</strong> DueÃ±os de producto y campaÃ±a que necesitan autonomÃ­a para lanzar landing pages sin depender del backlog dev.</li>
                             </ul>
                         </div>
                     </div>
@@ -1461,11 +1413,11 @@
                         <h4 data-translate="cs_mvp_b3_title">Journeys</h4>
                         <div data-translate="cs_mvp_b3_text">
                             <ul>
-                                <li><strong>1. Descubrimiento:</strong> Usuario ingresa a landing pública desde campaña digital o búsqueda orgánica.</li>
-                                <li><strong>2. Navegación Intuitiva y Fluida:</strong> Interacción sencilla en componentes responsive y simuladores financieros.</li>
-                                <li><strong>3. Intención de Solicitud:</strong> Clic en CTA principal (<code>click_apply_now</code>) capturado en GTM.</li>
+                                <li><strong>1. Descubrimiento:</strong> Usuario ingresa a landing pÃºblica desde campaÃ±a digital o bÃºsqueda orgÃ¡nica.</li>
+                                <li><strong>2. NavegaciÃ³n Intuitiva y Fluida:</strong> InteracciÃ³n sencilla en componentes responsive y simuladores financieros.</li>
+                                <li><strong>3. IntenciÃ³n de Solicitud:</strong> Clic en CTA principal (<code>click_apply_now</code>) capturado en GTM.</li>
                                 <li><strong>4. Formulario & QA:</strong> Llenado optimizado en 3 pasos con validaciones funcionales certificadas.</li>
-                                <li><strong>5. Conversión:</strong> Confirmación de solicitud exitosa registrada en GA4 y dashboard en vivo.</li>
+                                <li><strong>5. ConversiÃ³n:</strong> ConfirmaciÃ³n de solicitud exitosa registrada en GA4 y dashboard en vivo.</li>
                             </ul>
                         </div>
                     </div>
@@ -1477,10 +1429,10 @@
                         <div data-translate="cs_mvp_b4_text">
                             <ul>
                                 <li>Editor visual Drag-and-Drop No-Code (Puck CMS) conectado a Strapi 5 (Headless CMS).</li>
-                                <li>Maquetación rápida apoyada en IA Generativa (Firebase / Gemini).</li>
-                                <li>Etiquetado automático de eventos en Google Tag Manager (GTM) y GA4.</li>
-                                <li>Mapas de calor y grabación de sesiones anonimizadas (Microsoft Clarity).</li>
-                                <li>Matriz de Pruebas Funcionales QA en ambiente Staging previo a producción.</li>
+                                <li>MaquetaciÃ³n rÃ¡pida apoyada en IA Generativa (Firebase / Gemini).</li>
+                                <li>Etiquetado automÃ¡tico de eventos en Google Tag Manager (GTM) y GA4.</li>
+                                <li>Mapas de calor y grabaciÃ³n de sesiones anonimizadas (Microsoft Clarity).</li>
+                                <li>Matriz de Pruebas Funcionales QA en ambiente Staging previo a producciÃ³n.</li>
                             </ul>
                         </div>
                     </div>
@@ -1491,10 +1443,10 @@
                         <h4 data-translate="cs_mvp_b5_title">Expected Outcome</h4>
                         <div data-translate="cs_mvp_b5_text">
                             <ul>
-                                <li><strong>+35% de incremento</strong> en la tasa de conversión de solicitudes de productos digitales.</li>
-                                <li><strong>Reducción de Time-to-Market:</strong> Tiempo de publicación web reducido de 2 semanas a solo 15 minutos.</li>
-                                <li><strong>Cero defectos bloqueantes:</strong> Garantía del 100% de calidad en producción mediante certificación QA en Staging.</li>
-                                <li><strong>Autonomía Operativa:</strong> Capacidad total del equipo de producto/marketing para lanzar campañas comerciales.</li>
+                                <li><strong>+35% de incremento</strong> en la tasa de conversiÃ³n de solicitudes de productos digitales.</li>
+                                <li><strong>ReducciÃ³n de Time-to-Market:</strong> Tiempo de publicaciÃ³n web reducido de 2 semanas a solo 15 minutos.</li>
+                                <li><strong>Cero defectos bloqueantes:</strong> GarantÃ­a del 100% de calidad en producciÃ³n mediante certificaciÃ³n QA en Staging.</li>
+                                <li><strong>AutonomÃ­a Operativa:</strong> Capacidad total del equipo de producto/marketing para lanzar campaÃ±as comerciales.</li>
                             </ul>
                         </div>
                     </div>
@@ -1507,8 +1459,8 @@
                             <ul>
                                 <li><strong>Conversion Rate (CR):</strong> <code>% de sesiones que completan la solicitud (submit_application_success)</code>.</li>
                                 <li><strong>Time-to-Publish (TTP):</strong> <code>Minutos requeridos para crear y publicar una landing en Strapi 5 / Puck CMS</code>.</li>
-                                <li><strong>Bounce Rate Mobile:</strong> <code>Tasa de rebote en móviles monitoreada con Clarity</code>.</li>
-                                <li><strong>Feature Adoption:</strong> <code>% de interacción con simuladores y CTAs principales</code>.</li>
+                                <li><strong>Bounce Rate Mobile:</strong> <code>Tasa de rebote en mÃ³viles monitoreada con Clarity</code>.</li>
+                                <li><strong>Feature Adoption:</strong> <code>% de interacciÃ³n con simuladores y CTAs principales</code>.</li>
                             </ul>
                         </div>
                     </div>
@@ -1519,7 +1471,7 @@
                         <h4 data-translate="cs_mvp_b7_title">Cost and Schedule</h4>
                         <div data-translate="cs_mvp_b7_text">
                             <ul>
-                                <li><strong>Cronograma:</strong> 6 Sprints ágiles de 2 semanas (12 semanas totales) operando en triada (PO, Tech Lead, BA + Developers).</li>
+                                <li><strong>Cronograma:</strong> 6 Sprints Ã¡giles de 2 semanas (12 semanas totales) operando en triada (PO, Tech Lead, BA + Developers).</li>
                                 <li><strong>Costo Operativo:</strong> Optimizado reutilizando la suite existente del banco (GCP / Google Cloud Suite: GA4, GTM, Looker Studio, Firebase; Jira, Confluence, Strapi 5).</li>
                             </ul>
                         </div>
@@ -1529,44 +1481,43 @@
         </div>
 
         <!-- TARJETA 2: USER STORY MAP (COLLAPSIBLE CARD - COLLAPSED BY DEFAULT) -->
-        <div class="artifact-card collapsible-card collapsed">
-                <div class="artifact-header card-toggle-trigger">
+        <div class="artifact-card">
+                <div class="artifact-header ">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                         <h3 class="artifact-title" data-translate="cs_usm_matrix_title"><i class="fas fa-sitemap"></i> User Story Map: Matriz Visual de Producto</h3>
-                        <span class="meta-tag"><i class="fas fa-layer-group"></i> Estándar de Gestión de Producto</span>
+                        <span class="meta-tag"><i class="fas fa-layer-group"></i> EstÃ¡ndar de GestiÃ³n de Producto</span>
                     </div>
-                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="artifact-body">
                     <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_usm_matrix_desc">
-                        Mapa de viaje del producto estructurado en 4 Actividades Estratégicas (Backbone) con sus tareas y pasos de flujo (Steps) ordenados verticalmente:
+                        Mapa de viaje del producto estructurado en 4 Actividades EstratÃ©gicas (Backbone) con sus tareas y pasos de flujo (Steps) ordenados verticalmente:
                     </p>
 
                 <!-- TABLERO DE 4 COLUMNAS PERFECCIONADO -->
                 <div class="usm-columns-board">
-                    <!-- COLUMNA 1: DISEÑO UX & PROTOTIPADO -->
+                    <!-- COLUMNA 1: DISEÃ‘O UX & PROTOTIPADO -->
                     <div class="usm-column">
-                        <div class="usm-activity-header" data-translate="cs_usm_act1"><i class="fas fa-paint-brush"></i> 1. Diseño UX & Prototipado</div>
+                        <div class="usm-activity-header" data-translate="cs_usm_act1"><i class="fas fa-paint-brush"></i> 1. DiseÃ±o UX & Prototipado</div>
                         <div class="usm-steps-stack">
                             <div class="usm-step-item">
                                 <span class="usm-step-num">1.1</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st11">Maquetación de componentes en Firebase.</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st11">MaquetaciÃ³n de componentes en Firebase.</div>
                             </div>
                             <div class="usm-step-item">
                                 <span class="usm-step-num">1.2</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st12">Creación de la maqueta funcional del nuevo sitio.</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st12">CreaciÃ³n de la maqueta funcional del nuevo sitio.</div>
                             </div>
                             <div class="usm-step-item">
                                 <span class="usm-step-num">1.3</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st13">Diseño de formato Mobile y Responsive.</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st13">DiseÃ±o de formato Mobile y Responsive.</div>
                             </div>
                             <div class="usm-step-item">
                                 <span class="usm-step-num">1.4</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st14">Diseño de herramientas de accesibilidad (WCAG).</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st14">DiseÃ±o de herramientas de accesibilidad (WCAG).</div>
                             </div>
                             <div class="usm-step-item">
                                 <span class="usm-step-num">1.5</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st15">Levantamiento de imágenes y contenido para salida a producción.</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st15">Levantamiento de imÃ¡genes y contenido para salida a producciÃ³n.</div>
                             </div>
                         </div>
                     </div>
@@ -1581,53 +1532,53 @@
                             </div>
                             <div class="usm-step-item">
                                 <span class="usm-step-num">2.2</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st22">Implementación de Puck y conexión API con Strapi 5 (Headless CMS).</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st22">ImplementaciÃ³n de Puck y conexiÃ³n API con Strapi 5 (Headless CMS).</div>
                             </div>
                             <div class="usm-step-item">
                                 <span class="usm-step-num">2.3</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st23">Creación de páginas precargadas en Puck para salida ágil.</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st23">CreaciÃ³n de pÃ¡ginas precargadas en Puck para salida Ã¡gil.</div>
                             </div>
                             <div class="usm-step-item">
                                 <span class="usm-step-num">2.4</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st24">Implementación de telemetría: GA4, Google Tag Manager y Clarity.</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st24">ImplementaciÃ³n de telemetrÃ­a: GA4, Google Tag Manager y Clarity.</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- COLUMNA 3: PRUEBAS & PASO A PRODUCCIÓN -->
+                    <!-- COLUMNA 3: PRUEBAS & PASO A PRODUCCIÃ“N -->
                     <div class="usm-column">
-                        <div class="usm-activity-header" data-translate="cs_usm_act3"><i class="fas fa-vial"></i> 3. Pruebas & Pase a Producción</div>
+                        <div class="usm-activity-header" data-translate="cs_usm_act3"><i class="fas fa-vial"></i> 3. Pruebas & Pase a ProducciÃ³n</div>
                         <div class="usm-steps-stack">
                             <div class="usm-step-item">
                                 <span class="usm-step-num">3.1</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st31">Ejecución de Matriz de Pruebas Funcionales QA en Staging.</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st31">EjecuciÃ³n de Matriz de Pruebas Funcionales QA en Staging.</div>
                             </div>
                             <div class="usm-step-item">
                                 <span class="usm-step-num">3.2</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st32">Validación de formularios y prevención de errores bloqueantes.</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st32">ValidaciÃ³n de formularios y prevenciÃ³n de errores bloqueantes.</div>
                             </div>
                             <div class="usm-step-item">
                                 <span class="usm-step-num">3.3</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st33">Firma de acta de certificación QA y despliegue a Producción.</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st33">Firma de acta de certificaciÃ³n QA y despliegue a ProducciÃ³n.</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- COLUMNA 4: OPERACIÓN CONTINUA & ADMINISTRACIÓN PUCK -->
+                    <!-- COLUMNA 4: OPERACIÃ“N CONTINUA & ADMINISTRACIÃ“N PUCK -->
                     <div class="usm-column">
-                        <div class="usm-activity-header" data-translate="cs_usm_act4"><i class="fas fa-sliders-h"></i> 4. Operación Continua Puck</div>
+                        <div class="usm-activity-header" data-translate="cs_usm_act4"><i class="fas fa-sliders-h"></i> 4. OperaciÃ³n Continua Puck</div>
                         <div class="usm-steps-stack">
                             <div class="usm-step-item">
                                 <span class="usm-step-num">4.1</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st41">Creación y modificación de páginas a través del administrador Puck.</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st41">CreaciÃ³n y modificaciÃ³n de pÃ¡ginas a travÃ©s del administrador Puck.</div>
                             </div>
                             <div class="usm-step-item">
                                 <span class="usm-step-num">4.2</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st42">Creación de perfiles y permisos para usuarios estratégicos (Marketing/Comercial).</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st42">CreaciÃ³n de perfiles y permisos para usuarios estratÃ©gicos (Marketing/Comercial).</div>
                             </div>
                             <div class="usm-step-item">
                                 <span class="usm-step-num">4.3</span>
-                                <div class="usm-step-text" data-translate="cs_usm_st43">Tagueo de métricas clave y eventos de campaña en GTM.</div>
+                                <div class="usm-step-text" data-translate="cs_usm_st43">Tagueo de mÃ©tricas clave y eventos de campaÃ±a en GTM.</div>
                             </div>
                         </div>
                     </div>
@@ -1636,24 +1587,23 @@
         </div>
 
         <!-- TARJETA 3: BACKLOG PRIORIZADO EN JIRA (COLLAPSIBLE CARD - COLLAPSED BY DEFAULT) -->
-        <div class="artifact-card collapsible-card collapsed">
-            <div class="artifact-header card-toggle-trigger">
+        <div class="artifact-card">
+            <div class="artifact-header ">
                 <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                     <h3 class="artifact-title" data-translate="cs_usm_title"><i class="fas fa-tasks"></i> Backlog Priorizado del Producto (Jira / Confluence)</h3>
                     <span class="meta-tag"><i class="fab fa-jira"></i> Backlog en Triada (PO, BA, Tech Lead)</span>
                 </div>
-                <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
             </div>
             <div class="artifact-body">
                 <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_usm_desc">
-                    Historias de Usuario del Backlog estructuradas en 4 Épicas alineadas al User Story Map, con estimación en Story Points (SP), nivel MoSCoW y Criterios de Aceptación BDD (Given-When-Then):
+                    Historias de Usuario del Backlog estructuradas en 4 Ã‰picas alineadas al User Story Map, con estimaciÃ³n en Story Points (SP), nivel MoSCoW y Criterios de AceptaciÃ³n BDD (Given-When-Then):
                 </p>
 
                 <div class="story-board">
-                    <!-- ÉPICA 1 -->
+                    <!-- Ã‰PICA 1 -->
                     <div class="epic-column">
                         <div class="epic-header">
-                            <span>Épica 1: Diseño UX & Prototipado</span>
+                            <span>Ã‰pica 1: DiseÃ±o UX & Prototipado</span>
                             <i class="fas fa-paint-brush"></i>
                         </div>
                         <div class="story-card">
@@ -1663,10 +1613,10 @@
                             </div>
                             <div class="story-desc" data-translate="cs_usm_b101_desc"><strong>Como UX Designer</strong>, quiero maquetar los componentes visuales en Firebase y validar el prototipo funcional responsive antes del desarrollo.</div>
                             <div class="story-ac" data-translate="cs_usm_b101_ac">
-                                <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> Requerimientos de producto definidos.<br>
-                                • <i>When:</i> Se arma el prototipo funcional en Firebase.<br>
-                                • <i>Then:</i> La triada aprueba la maquetación responsive.
+                                <strong>Criterios de AceptaciÃ³n (BDD):</strong><br>
+                                â€¢ <i>Given:</i> Requerimientos de producto definidos.<br>
+                                â€¢ <i>When:</i> Se arma el prototipo funcional en Firebase.<br>
+                                â€¢ <i>Then:</i> La triada aprueba la maquetaciÃ³n responsive.
                             </div>
                         </div>
                         <div class="story-card">
@@ -1674,20 +1624,20 @@
                                 <span class="story-id">BIN-102</span>
                                 <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,180,216,0.15); color: #00b4d8; border-color: #00b4d8;">Should-Have | 3 SP</span>
                             </div>
-                            <div class="story-desc" data-translate="cs_usm_b102_desc"><strong>Como PO</strong>, quiero asegurar herramientas de accesibilidad (WCAG) y el levantamiento de contenido inicial para salida a producción.</div>
+                            <div class="story-desc" data-translate="cs_usm_b102_desc"><strong>Como PO</strong>, quiero asegurar herramientas de accesibilidad (WCAG) y el levantamiento de contenido inicial para salida a producciÃ³n.</div>
                             <div class="story-ac" data-translate="cs_usm_b102_ac">
-                                <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> Componentes UI maquetados.<br>
-                                • <i>When:</i> Se aplican contrastes e imágenes finales.<br>
-                                • <i>Then:</i> Se cumple la norma de accesibilidad WCAG AA.
+                                <strong>Criterios de AceptaciÃ³n (BDD):</strong><br>
+                                â€¢ <i>Given:</i> Componentes UI maquetados.<br>
+                                â€¢ <i>When:</i> Se aplican contrastes e imÃ¡genes finales.<br>
+                                â€¢ <i>Then:</i> Se cumple la norma de accesibilidad WCAG AA.
                             </div>
                         </div>
                     </div>
 
-                    <!-- ÉPICA 2 -->
+                    <!-- Ã‰PICA 2 -->
                     <div class="epic-column">
                         <div class="epic-header">
-                            <span>Épica 2: Arquitectura Puck & Strapi 5</span>
+                            <span>Ã‰pica 2: Arquitectura Puck & Strapi 5</span>
                             <i class="fas fa-code"></i>
                         </div>
                         <div class="story-card">
@@ -1695,12 +1645,12 @@
                                 <span class="story-id">BIN-201</span>
                                 <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,230,118,0.15); color: #00e676; border-color: #00e676;">Must-Have | 11 SP</span>
                             </div>
-                            <div class="story-desc" data-translate="cs_usm_b201_desc"><strong>Como Lead Developer</strong>, quiero desarrollar los componentes visuales en Puck CMS y conectarlos por API a Strapi 5 para publicar páginas en minutos.</div>
+                            <div class="story-desc" data-translate="cs_usm_b201_desc"><strong>Como Lead Developer</strong>, quiero desarrollar los componentes visuales en Puck CMS y conectarlos por API a Strapi 5 para publicar pÃ¡ginas en minutos.</div>
                             <div class="story-ac" data-translate="cs_usm_b201_ac">
-                                <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> Usuario autenticado en editor Puck CMS.<br>
-                                • <i>When:</i> Publica bloques de contenido visual.<br>
-                                • <i>Then:</i> API Strapi 5 actualiza producción en < 15 min.
+                                <strong>Criterios de AceptaciÃ³n (BDD):</strong><br>
+                                â€¢ <i>Given:</i> Usuario autenticado en editor Puck CMS.<br>
+                                â€¢ <i>When:</i> Publica bloques de contenido visual.<br>
+                                â€¢ <i>Then:</i> API Strapi 5 actualiza producciÃ³n en < 15 min.
                             </div>
                         </div>
                         <div class="story-card">
@@ -1708,20 +1658,20 @@
                                 <span class="story-id">BIN-202</span>
                                 <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,230,118,0.15); color: #00e676; border-color: #00e676;">Must-Have | 5 SP</span>
                             </div>
-                            <div class="story-desc" data-translate="cs_usm_b202_desc"><strong>Como Business Analyst</strong>, quiero implementar la telemetría (GA4, GTM, Clarity) para registrar conversiones y mapas de calor.</div>
+                            <div class="story-desc" data-translate="cs_usm_b202_desc"><strong>Como Business Analyst</strong>, quiero implementar la telemetrÃ­a (GA4, GTM, Clarity) para registrar conversiones y mapas de calor.</div>
                             <div class="story-ac" data-translate="cs_usm_b202_ac">
-                                <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> Tag global GTM instalado.<br>
-                                • <i>When:</i> El usuario interactúa con simuladores/CTAs.<br>
-                                • <i>Then:</i> GA4 registra conversiones y Clarity captura mapas.
+                                <strong>Criterios de AceptaciÃ³n (BDD):</strong><br>
+                                â€¢ <i>Given:</i> Tag global GTM instalado.<br>
+                                â€¢ <i>When:</i> El usuario interactÃºa con simuladores/CTAs.<br>
+                                â€¢ <i>Then:</i> GA4 registra conversiones y Clarity captura mapas.
                             </div>
                         </div>
                     </div>
 
-                    <!-- ÉPICA 3 -->
+                    <!-- Ã‰PICA 3 -->
                     <div class="epic-column">
                         <div class="epic-header">
-                            <span>Épica 3: Pruebas & Pase a Prod</span>
+                            <span>Ã‰pica 3: Pruebas & Pase a Prod</span>
                             <i class="fas fa-vial"></i>
                         </div>
                         <div class="story-card">
@@ -1731,10 +1681,10 @@
                             </div>
                             <div class="story-desc" data-translate="cs_usm_b301_desc"><strong>Como Business Analyst</strong>, quiero ejecutar la matriz de Pruebas Funcionales QA en Staging para prevenir errores bloqueantes.</div>
                             <div class="story-ac" data-translate="cs_usm_b301_ac">
-                                <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> Landing publicada en Staging.<br>
-                                • <i>When:</i> Se ejecuta 100% de matriz de casos de prueba.<br>
-                                • <i>Then:</i> Certificación funcional aprobada sin incidencias.
+                                <strong>Criterios de AceptaciÃ³n (BDD):</strong><br>
+                                â€¢ <i>Given:</i> Landing publicada en Staging.<br>
+                                â€¢ <i>When:</i> Se ejecuta 100% de matriz de casos de prueba.<br>
+                                â€¢ <i>Then:</i> CertificaciÃ³n funcional aprobada sin incidencias.
                             </div>
                         </div>
                         <div class="story-card">
@@ -1742,20 +1692,20 @@
                                 <span class="story-id">BIN-302</span>
                                 <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(245,158,11,0.15); color: #f59e0b; border-color: #f59e0b;">Must-Have | 3 SP</span>
                             </div>
-                            <div class="story-desc" data-translate="cs_usm_b302_desc"><strong>Como PO</strong>, quiero contar con la firma digital del acta QA para autorizar el pase automático a Producción.</div>
+                            <div class="story-desc" data-translate="cs_usm_b302_desc"><strong>Como PO</strong>, quiero contar con la firma digital del acta QA para autorizar el pase automÃ¡tico a ProducciÃ³n.</div>
                             <div class="story-ac" data-translate="cs_usm_b302_ac">
-                                <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> Matriz QA aprobada en Staging.<br>
-                                • <i>When:</i> Se firma el acta de pase a producción.<br>
-                                • <i>Then:</i> Pipeline desata el despliegue productivo.
+                                <strong>Criterios de AceptaciÃ³n (BDD):</strong><br>
+                                â€¢ <i>Given:</i> Matriz QA aprobada en Staging.<br>
+                                â€¢ <i>When:</i> Se firma el acta de pase a producciÃ³n.<br>
+                                â€¢ <i>Then:</i> Pipeline desata el despliegue productivo.
                             </div>
                         </div>
                     </div>
 
-                    <!-- ÉPICA 4 -->
+                    <!-- Ã‰PICA 4 -->
                     <div class="epic-column">
                         <div class="epic-header">
-                            <span>Épica 4: Operación Continua Puck</span>
+                            <span>Ã‰pica 4: OperaciÃ³n Continua Puck</span>
                             <i class="fas fa-sliders-h"></i>
                         </div>
                         <div class="story-card">
@@ -1763,12 +1713,12 @@
                                 <span class="story-id">BIN-401</span>
                                 <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,230,118,0.15); color: #00e676; border-color: #00e676;">Must-Have | 5 SP</span>
                             </div>
-                            <div class="story-desc" data-translate="cs_usm_b401_desc"><strong>Como Product Owner</strong>, quiero administrar Puck CMS y gestionar perfiles/permisos para otorgar autonomía al equipo comercial.</div>
+                            <div class="story-desc" data-translate="cs_usm_b401_desc"><strong>Como Product Owner</strong>, quiero administrar Puck CMS y gestionar perfiles/permisos para otorgar autonomÃ­a al equipo comercial.</div>
                             <div class="story-ac" data-translate="cs_usm_b401_ac">
-                                <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> Usuario de marketing requiere crear campana.<br>
-                                • <i>When:</i> Se asigna rol Editor Comercial en Puck.<br>
-                                • <i>Then:</i> Puede crear/editar páginas con total autonomía.
+                                <strong>Criterios de AceptaciÃ³n (BDD):</strong><br>
+                                â€¢ <i>Given:</i> Usuario de marketing requiere crear campana.<br>
+                                â€¢ <i>When:</i> Se asigna rol Editor Comercial en Puck.<br>
+                                â€¢ <i>Then:</i> Puede crear/editar pÃ¡ginas con total autonomÃ­a.
                             </div>
                         </div>
                         <div class="story-card">
@@ -1776,12 +1726,12 @@
                                 <span class="story-id">BIN-402</span>
                                 <span class="meta-tag" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; background: rgba(0,180,216,0.15); color: #00b4d8; border-color: #00b4d8;">Should-Have | 3 SP</span>
                             </div>
-                            <div class="story-desc" data-translate="cs_usm_b402_desc"><strong>Como Business Analyst</strong>, quiero taguear métricas clave y eventos de campañas promocionales en GTM de forma ágil.</div>
+                            <div class="story-desc" data-translate="cs_usm_b402_desc"><strong>Como Business Analyst</strong>, quiero taguear mÃ©tricas clave y eventos de campaÃ±as promocionales en GTM de forma Ã¡gil.</div>
                             <div class="story-ac" data-translate="cs_usm_b402_ac">
-                                <strong>Criterios de Aceptación (BDD):</strong><br>
-                                • <i>Given:</i> Nueva campaña creada en Puck.<br>
-                                • <i>When:</i> Se define la métrica principal.<br>
-                                • <i>Then:</i> Trigger GTM registrado y midiendo conversiones.
+                                <strong>Criterios de AceptaciÃ³n (BDD):</strong><br>
+                                â€¢ <i>Given:</i> Nueva campaÃ±a creada en Puck.<br>
+                                â€¢ <i>When:</i> Se define la mÃ©trica principal.<br>
+                                â€¢ <i>Then:</i> Trigger GTM registrado y midiendo conversiones.
                             </div>
                         </div>
                     </div>
@@ -1789,21 +1739,20 @@
             </div>
         </div>
 
-        <!-- TARJETA 4: ROADMAP ESTRATÉGICO DEL PRODUCTO (COLLAPSIBLE CARD - COLLAPSED BY DEFAULT) -->
-        <div class="artifact-card collapsible-card collapsed">
-            <div class="artifact-header card-toggle-trigger">
+        <!-- TARJETA 4: ROADMAP ESTRATÃ‰GICO DEL PRODUCTO (COLLAPSIBLE CARD - COLLAPSED BY DEFAULT) -->
+        <div class="artifact-card">
+            <div class="artifact-header ">
                 <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                    <h3 class="artifact-title" data-translate="cs_roadmap_title"><i class="fas fa-map-signs"></i> Roadmap Estratégico del Producto (Quarterly Timeline - 6 Sprints)</h3>
-                    <span class="meta-tag" data-translate="cs_roadmap_tag"><i class="fas fa-calendar-alt"></i> Cronograma de 12 Semanas (Triada Ágil)</span>
+                    <h3 class="artifact-title" data-translate="cs_roadmap_title"><i class="fas fa-map-signs"></i> Roadmap EstratÃ©gico del Producto (Quarterly Timeline - 6 Sprints)</h3>
+                    <span class="meta-tag" data-translate="cs_roadmap_tag"><i class="fas fa-calendar-alt"></i> Cronograma de 12 Semanas (Triada Ãgil)</span>
                 </div>
-                <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
             </div>
             <div class="artifact-body">
                 <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_roadmap_desc">
-                    Cronograma visual de entregas secuenciales organizado por Épicas del Backlog, Sprints y Tiempos Estimados para el rediseño del portal público bancario (5 Páginas del MVP):
+                    Cronograma visual de entregas secuenciales organizado por Ã‰picas del Backlog, Sprints y Tiempos Estimados para el rediseÃ±o del portal pÃºblico bancario (5 PÃ¡ginas del MVP):
                 </p>
 
-                <!-- INDICADOR VISUAL DE DESLIZAMIENTO LATERAL PARA MÓVILES -->
+                <!-- INDICADOR VISUAL DE DESLIZAMIENTO LATERAL PARA MÃ“VILES -->
                 <div class="mobile-scroll-hint">
                     <i class="fas fa-arrows-left-right"></i> <span data-translate="cs_scroll_hint">Desliza horizontalmente para ver el cronograma completo de 12 semanas</span>
                 </div>
@@ -1812,59 +1761,59 @@
                 <div class="roadmap-scroll-wrapper">
                     <div class="roadmap-matrix-wrapper">
                         <!-- HEADER ROW -->
-                        <div class="roadmap-header-cell epic-col" data-translate="cs_rm_col_epics"><i class="fas fa-layer-group"></i> Épicas del Backlog</div>
+                        <div class="roadmap-header-cell epic-col" data-translate="cs_rm_col_epics"><i class="fas fa-layer-group"></i> Ã‰picas del Backlog</div>
                         <div class="roadmap-header-cell" data-translate="cs_rm_col_m1"><i class="fas fa-clock"></i> Mes 1: Sprints 1-2<br><span style="font-size:0.72rem; color:#94a3b8;">(Semanas 1 a 4)</span></div>
                         <div class="roadmap-header-cell" data-translate="cs_rm_col_m2"><i class="fas fa-clock"></i> Mes 2: Sprints 3-4<br><span style="font-size:0.72rem; color:#94a3b8;">(Semanas 5 a 8)</span></div>
                         <div class="roadmap-header-cell" data-translate="cs_rm_col_m3"><i class="fas fa-clock"></i> Mes 3: Sprints 5-6<br><span style="font-size:0.72rem; color:#94a3b8;">(Semanas 9 a 12)</span></div>
 
-                        <!-- ROW 1: ÉPICA 1 (MES 1: SEMANAS 1 A 4) -->
+                        <!-- ROW 1: Ã‰PICA 1 (MES 1: SEMANAS 1 A 4) -->
                         <div class="roadmap-epic-cell">
-                            <div class="roadmap-epic-name" style="color: #a78bfa !important;" data-translate="cs_rm_e1_title"><i class="fas fa-paint-brush"></i> Épica 1: UX & Prototipado</div>
-                            <div class="roadmap-epic-sub" data-translate="cs_rm_e1_sub">Firebase & Maquetación (8 SP)</div>
+                            <div class="roadmap-epic-name" style="color: #a78bfa !important;" data-translate="cs_rm_e1_title"><i class="fas fa-paint-brush"></i> Ã‰pica 1: UX & Prototipado</div>
+                            <div class="roadmap-epic-sub" data-translate="cs_rm_e1_sub">Firebase & MaquetaciÃ³n (8 SP)</div>
                         </div>
                         <div class="roadmap-timeline-row">
                             <div class="roadmap-bar roadmap-bar-epic1" style="grid-column: 1 / 2;">
-                                <span data-translate="cs_rm_e1_b1">BIN-101: Maquetación Firebase & Prototipo Funcional (5 SP)</span>
+                                <span data-translate="cs_rm_e1_b1">BIN-101: MaquetaciÃ³n Firebase & Prototipo Funcional (5 SP)</span>
                                 <span data-translate="cs_rm_e1_b2">BIN-102: Accesibilidad WCAG AA & Contenido Inicial (3 SP)</span>
                                 <span class="roadmap-milestone" data-translate="cs_rm_e1_time"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 1 a 4</span>
                             </div>
                         </div>
 
-                        <!-- ROW 2: ÉPICA 2 (MES 1 SEMANA 3 A MES 2 SEMANA 8) -->
+                        <!-- ROW 2: Ã‰PICA 2 (MES 1 SEMANA 3 A MES 2 SEMANA 8) -->
                         <div class="roadmap-epic-cell">
-                            <div class="roadmap-epic-name" style="color: #38bdf8 !important;" data-translate="cs_rm_e2_title"><i class="fas fa-code"></i> Épica 2: Puck & Strapi 5</div>
-                            <div class="roadmap-epic-sub" data-translate="cs_rm_e2_sub">CMS & Telemetría Core (16 SP)</div>
+                            <div class="roadmap-epic-name" style="color: #38bdf8 !important;" data-translate="cs_rm_e2_title"><i class="fas fa-code"></i> Ã‰pica 2: Puck & Strapi 5</div>
+                            <div class="roadmap-epic-sub" data-translate="cs_rm_e2_sub">CMS & TelemetrÃ­a Core (16 SP)</div>
                         </div>
                         <div class="roadmap-timeline-row">
                             <div class="roadmap-bar roadmap-bar-epic2" style="grid-column: 1 / 3; margin-left: 33%; width: 67%;">
                                 <span data-translate="cs_rm_e2_b1">BIN-201: Componentes Puck CMS & API Strapi 5 (11 SP)</span>
-                                <span data-translate="cs_rm_e2_b2">BIN-202: Telemetría (GA4, GTM & Clarity) (5 SP)</span>
+                                <span data-translate="cs_rm_e2_b2">BIN-202: TelemetrÃ­a (GA4, GTM & Clarity) (5 SP)</span>
                                 <span class="roadmap-milestone" data-translate="cs_rm_e2_time1"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 3 a 8</span>
                             </div>
                         </div>
 
-                        <!-- ROW 3: ÉPICA 3 (MES 3: SEMANAS 9 A 10 - PRIMERA MITAD) -->
+                        <!-- ROW 3: Ã‰PICA 3 (MES 3: SEMANAS 9 A 10 - PRIMERA MITAD) -->
                         <div class="roadmap-epic-cell">
-                            <div class="roadmap-epic-name" style="color: #fbbf24 !important;" data-translate="cs_rm_e3_title"><i class="fas fa-vial"></i> Épica 3: Pruebas & Pase Prod</div>
+                            <div class="roadmap-epic-name" style="color: #fbbf24 !important;" data-translate="cs_rm_e3_title"><i class="fas fa-vial"></i> Ã‰pica 3: Pruebas & Pase Prod</div>
                             <div class="roadmap-epic-sub" data-translate="cs_rm_e3_sub">Calidad QA & Despliegue (8 SP)</div>
                         </div>
                         <div class="roadmap-timeline-row">
                             <div class="roadmap-bar roadmap-bar-epic3" style="grid-column: 3 / 4; width: 75%; margin-left: 0;">
                                 <span data-translate="cs_rm_e3_b1">BIN-301: Matriz Pruebas Funcionales QA Staging (5 SP)</span>
-                                <span data-translate="cs_rm_e3_b2">BIN-302: Firma Acta Certificación QA & Go-Live (3 SP)</span>
+                                <span data-translate="cs_rm_e3_b2">BIN-302: Firma Acta CertificaciÃ³n QA & Go-Live (3 SP)</span>
                                 <span class="roadmap-milestone" data-translate="cs_rm_e3_time"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 9 a 10</span>
                             </div>
                         </div>
 
-                        <!-- ROW 4: ÉPICA 4 (MES 3: SEMANAS 11 A 12 - SEGUNDA MITAD) -->
+                        <!-- ROW 4: Ã‰PICA 4 (MES 3: SEMANAS 11 A 12 - SEGUNDA MITAD) -->
                         <div class="roadmap-epic-cell">
-                            <div class="roadmap-epic-name" style="color: #34d399 !important;" data-translate="cs_rm_e4_title"><i class="fas fa-sliders-h"></i> Épica 4: Operación Continua</div>
-                            <div class="roadmap-epic-sub" data-translate="cs_rm_e4_sub">Autonomía Comercial (8 SP)</div>
+                            <div class="roadmap-epic-name" style="color: #34d399 !important;" data-translate="cs_rm_e4_title"><i class="fas fa-sliders-h"></i> Ã‰pica 4: OperaciÃ³n Continua</div>
+                            <div class="roadmap-epic-sub" data-translate="cs_rm_e4_sub">AutonomÃ­a Comercial (8 SP)</div>
                         </div>
                         <div class="roadmap-timeline-row">
                             <div class="roadmap-bar roadmap-bar-epic4" style="grid-column: 3 / 4; width: 75%; margin-left: 25%;">
-                                <span data-translate="cs_rm_e4_b1">BIN-401: Administración Puck & Roles Comercial (5 SP)</span>
-                                <span data-translate="cs_rm_e4_b2">BIN-402: Tagueo Métricas de Campaña GTM (3 SP)</span>
+                                <span data-translate="cs_rm_e4_b1">BIN-401: AdministraciÃ³n Puck & Roles Comercial (5 SP)</span>
+                                <span data-translate="cs_rm_e4_b2">BIN-402: Tagueo MÃ©tricas de CampaÃ±a GTM (3 SP)</span>
                                 <span class="roadmap-milestone" data-translate="cs_rm_e4_time"><i class="fas fa-clock"></i> Tiempo Estimado: Semanas 11 a 12</span>
                             </div>
                         </div>
@@ -1874,33 +1823,27 @@
         </div>
     </div>
 
-        <!-- PESTAÑA 2: DIAGRAMA DE PROCESOS BPMN 2.0 (AS-IS VS TO-BE) -->
+        <!-- PESTAÃ‘A 2: DIAGRAMA DE PROCESOS BPMN 2.0 (AS-IS VS TO-BE) -->
         <div id="tab-bpmn" class="cs-tab-pane">
-            <!-- BARRA SUPERIOR DE CONTROLES GLOBALES PARA PESTAÑA 2 -->
-            <div class="accordion-global-controls">
-                <button id="expand-all-bpmn" class="accordion-control-btn"><i class="fas fa-chevron-circle-down"></i> <span data-translate="accExpandAll">Expandir Todas las Tarjetas</span></button>
-                <button id="collapse-all-bpmn" class="accordion-control-btn"><i class="fas fa-chevron-circle-up"></i> <span data-translate="accCollapseAll">Contraer Todas las Tarjetas</span></button>
-            </div>
-
-            <!-- TARJETA 1: FICHA DE REINGENIERÍA & COMPARATIVA DE KPIS (COLLAPSED BY DEFAULT) -->
-            <div class="artifact-card collapsible-card collapsed">
-                <div class="artifact-header card-toggle-trigger">
+            <!-- BARRA SUPERIOR DE CONTROLES GLOBALES PARA PESTAÃ‘A 2 -->
+            <!-- TARJETA 1: FICHA DE REINGENIERÃA & COMPARATIVA DE KPIS (COLLAPSED BY DEFAULT) -->
+            <div class="artifact-card">
+                <div class="artifact-header ">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                        <h3 class="artifact-title" data-translate="cs_bpmn_summary_title"><i class="fas fa-tachometer-alt"></i> Ficha de Reingeniería & Matriz Comparativa de KPIs (AS-IS vs. TO-BE)</h3>
+                        <h3 class="artifact-title" data-translate="cs_bpmn_summary_title"><i class="fas fa-tachometer-alt"></i> Ficha de ReingenierÃ­a & Matriz Comparativa de KPIs (AS-IS vs. TO-BE)</h3>
                         <span class="meta-tag"><i class="fas fa-chart-line"></i> Impacto Operacional</span>
                     </div>
-                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="artifact-body">
                     <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_bpmn_summary_desc">
-                        Resumen ejecutivo del impacto directo de la reingeniería de procesos en el ciclo de publicación del portal público bancario (5 Páginas del MVP):
+                        Resumen ejecutivo del impacto directo de la reingenierÃ­a de procesos en el ciclo de publicaciÃ³n del portal pÃºblico bancario (5 PÃ¡ginas del MVP):
                     </p>
 
                     <div style="overflow-x: auto;">
                         <table class="kpi-reengineering-table">
                             <thead>
                                 <tr>
-                                    <th>Métrica de Proceso</th>
+                                    <th>MÃ©trica de Proceso</th>
                                     <th>Flujo Actual (AS-IS)</th>
                                     <th>Flujo Propuesto (TO-BE)</th>
                                     <th>Impacto & Mejora %</th>
@@ -1909,15 +1852,15 @@
                             <tbody>
                                 <tr>
                                     <td><strong>SLA Time-to-Market</strong></td>
-                                    <td><span class="kpi-badge-danger">14 a 21 Días Hábiles</span></td>
+                                    <td><span class="kpi-badge-danger">14 a 21 DÃ­as HÃ¡biles</span></td>
                                     <td><span class="kpi-badge-success">15 Minutos</span></td>
                                     <td><strong style="color: #00e676 !important;">-99.9% Tiempo de Ciclo</strong></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Dependencia Operativa</strong></td>
                                     <td><span class="kpi-badge-danger">100% Ticket Dev TI</span></td>
-                                    <td><span class="kpi-badge-success">Autonomía Comercial No-Code</span></td>
-                                    <td><strong style="color: #00e676 !important;">100% Autonomía</strong></td>
+                                    <td><span class="kpi-badge-success">AutonomÃ­a Comercial No-Code</span></td>
+                                    <td><strong style="color: #00e676 !important;">100% AutonomÃ­a</strong></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Costo en Story Points</strong></td>
@@ -1926,38 +1869,37 @@
                                     <td><strong style="color: #00e676 !important;">Capacidad TI liberada</strong></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Riesgo en Producción</strong></td>
+                                    <td><strong>Riesgo en ProducciÃ³n</strong></td>
                                     <td><span class="kpi-badge-danger">Despliegue Manual Nocturno</span></td>
                                     <td><span class="kpi-badge-success">Staging Sandbox QA Gate</span></td>
                                     <td><strong style="color: #00e676 !important;">0 Errores en Prod</strong></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Telemetría Analítica</strong></td>
+                                    <td><strong>TelemetrÃ­a AnalÃ­tica</strong></td>
                                     <td><span class="kpi-badge-danger">Tagueo Manual Posterior</span></td>
                                     <td><span class="kpi-badge-success">Auto-Tagueo GTM / GA4 / Clarity</span></td>
-                                    <td><strong style="color: #00e676 !important;">100% Medición Automática</strong></td>
+                                    <td><strong style="color: #00e676 !important;">100% MediciÃ³n AutomÃ¡tica</strong></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            <div class="artifact-card collapsible-card collapsed">
-                <div class="artifact-header card-toggle-trigger">
+            <div class="artifact-card">
+                <div class="artifact-header ">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                         <h3 class="artifact-title" style="color: #ef4444 !important;" data-translate="cs_bpmn_asis_title"><i class="fas fa-exclamation-triangle"></i> Proceso Actual (AS-IS): Cuello de Botella en Desarrollo TI</h3>
-                        <span class="meta-tag" style="border-color: #ef4444; color: #ef4444;"><i class="fas fa-history"></i> <span data-translate="cs_bpmn_asis_sla">SLA: 14 a 21 Días</span></span>
+                        <span class="meta-tag" style="border-color: #ef4444; color: #ef4444;"><i class="fas fa-history"></i> <span data-translate="cs_bpmn_asis_sla">SLA: 14 a 21 DÃ­as</span></span>
                     </div>
-                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="artifact-body">
                     <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1rem;" data-translate="cs_bpmn_asis_desc">
-                        Modelamiento formal en norma BPMN 2.0 con flujos de secuencia entre Swimlanes, compuertas de decisión XOR, eventos de temporizador (Timer) y bucles de retorno por retrabajo perfectamente conectados:
+                        Modelamiento formal en norma BPMN 2.0 con flujos de secuencia entre Swimlanes, compuertas de decisiÃ³n XOR, eventos de temporizador (Timer) y bucles de retorno por retrabajo perfectamente conectados:
                     </p>
 
-                    <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA DESKTOP Y MÓVILES -->
+                    <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA DESKTOP Y MÃ“VILES -->
                     <div class="mobile-scroll-hint" style="display: flex !important;">
-                        <i class="fas fa-arrows-left-right"></i> <span data-translate="cs_bpmn_scroll_hint">Desliza horizontalmente para navegar el diagrama BPMN 2.0 en tamaño completo</span>
+                        <i class="fas fa-arrows-left-right"></i> <span data-translate="cs_bpmn_scroll_hint">Desliza horizontalmente para navegar el diagrama BPMN 2.0 en tamaÃ±o completo</span>
                     </div>
 
                     <!-- VECTOR SVG BPMN 2.0 DIAGRAM (FULL SIZE 1380PX WITH HORIZONTAL SCROLL) - AS-IS -->
@@ -1986,12 +1928,12 @@
 
                             <!-- SWIMLANE 1 HEADER (COMERCIAL) -->
                             <rect x="45" y="5" width="135" height="130" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
-                            <text x="112" y="60" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="11">ÁREA COMERCIAL</text>
+                            <text x="112" y="60" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="11">ÃREA COMERCIAL</text>
                             <text x="112" y="78" text-anchor="middle" fill="#94a3b8" font-size="9">Marketing / PO</text>
 
                             <!-- SWIMLANE 2 HEADER (DEV TI) -->
                             <rect x="45" y="135" width="135" height="135" fill="#111c2e" stroke="rgba(0,180,216,0.2)"/>
-                            <text x="112" y="195" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="11">CÉLULA DEV TI</text>
+                            <text x="112" y="195" text-anchor="middle" fill="#38bdf8" font-weight="700" font-size="11">CÃ‰LULA DEV TI</text>
                             <text x="112" y="213" text-anchor="middle" fill="#94a3b8" font-size="9">Desarrolladores Web</text>
 
                             <!-- SWIMLANE 3 HEADER (QA & OPS) -->
@@ -2002,53 +1944,53 @@
                             <!-- SWIMLANE 1 ELEMENTS -->
                             <!-- START EVENT (SHIFTED RIGHT FOR BREATHING ROOM) -->
                             <circle cx="215" cy="70" r="15" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="2.5"/>
-                            <text x="215" y="74" text-anchor="middle" fill="#00e676" font-size="10">▶</text>
+                            <text x="215" y="74" text-anchor="middle" fill="#00e676" font-size="10">â–¶</text>
                             <text x="215" y="98" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9">Inicio Oferta</text>
 
                             <path d="M 230 70 L 250 70" stroke="#00b4d8" stroke-width="1.8" marker-end="url(#arrow-asis)"/>
 
                             <!-- TASK 1 -->
                             <rect x="250" y="46" width="110" height="48" rx="7" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="258" y="62" fill="#ffffff" font-weight="700" font-size="10">📄 Requerimiento</text>
-                            <text x="258" y="78" fill="#cbd5e1" font-size="8.5">Doc Especif. Campaña</text>
+                            <text x="258" y="62" fill="#ffffff" font-weight="700" font-size="10">ðŸ“„ Requerimiento</text>
+                            <text x="258" y="78" fill="#cbd5e1" font-size="8.5">Doc Especif. CampaÃ±a</text>
 
                             <path d="M 360 70 L 390 70" stroke="#00b4d8" stroke-width="1.8" marker-end="url(#arrow-asis)"/>
 
                             <!-- TASK 2 -->
                             <rect x="390" y="46" width="105" height="48" rx="7" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="398" y="62" fill="#ffffff" font-weight="700" font-size="10">🎫 Ticket Jira</text>
+                            <text x="398" y="62" fill="#ffffff" font-weight="700" font-size="10">ðŸŽ« Ticket Jira</text>
                             <text x="398" y="78" fill="#cbd5e1" font-size="8.5">Ingreso Mesa TI</text>
 
                             <!-- CROSS-LANE FLOW TO DEV TI -->
                             <path d="M 442 94 L 442 187" stroke="#00b4d8" stroke-width="1.8" marker-end="url(#arrow-asis)"/>
-                            <text x="449" y="140" fill="#38bdf8" font-size="8.5" font-weight="600">Asignación TI</text>
+                            <text x="449" y="140" fill="#38bdf8" font-size="8.5" font-weight="600">AsignaciÃ³n TI</text>
 
                             <!-- SWIMLANE 2 ELEMENTS -->
                             <!-- TIMER EVENT -->
                             <circle cx="442" cy="202" r="15" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="2"/>
                             <circle cx="442" cy="202" r="11" fill="none" stroke="#f59e0b" stroke-width="1"/>
-                            <text x="442" y="206" text-anchor="middle" fill="#f59e0b" font-size="9">⏱</text>
-                            <text x="442" y="228" text-anchor="middle" fill="#f59e0b" font-weight="700" font-size="8">Wait 10-14 días</text>
+                            <text x="442" y="206" text-anchor="middle" fill="#f59e0b" font-size="9">â±</text>
+                            <text x="442" y="228" text-anchor="middle" fill="#f59e0b" font-weight="700" font-size="8">Wait 10-14 dÃ­as</text>
 
                             <path d="M 457 202 L 480 202" stroke="#00b4d8" stroke-width="1.8" marker-end="url(#arrow-asis)"/>
 
                             <!-- TASK 3 -->
                             <rect x="480" y="178" width="110" height="48" rx="7" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="488" y="194" fill="#ffffff" font-weight="700" font-size="10">📅 Refinamiento</text>
+                            <text x="488" y="194" fill="#ffffff" font-weight="700" font-size="10">ðŸ“… Refinamiento</text>
                             <text x="488" y="210" fill="#cbd5e1" font-size="8.5">Story Points Planning</text>
 
                             <path d="M 590 202 L 620 202" stroke="#00b4d8" stroke-width="1.8" marker-end="url(#arrow-asis)"/>
 
                             <!-- TASK 4 (TARGET OF QA LOOPBACK) -->
                             <rect x="620" y="178" width="110" height="48" rx="7" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="628" y="194" fill="#ffffff" font-weight="700" font-size="10">💻 Código Duro</text>
+                            <text x="628" y="194" fill="#ffffff" font-weight="700" font-size="10">ðŸ’» CÃ³digo Duro</text>
                             <text x="628" y="210" fill="#cbd5e1" font-size="8.5">Frontend HTML/React</text>
 
                             <path d="M 730 202 L 760 202" stroke="#00b4d8" stroke-width="1.8" marker-end="url(#arrow-asis)"/>
 
                             <!-- TASK 5 -->
                             <rect x="760" y="178" width="105" height="48" rx="7" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="767" y="194" fill="#ffffff" font-weight="700" font-size="9.5">🔀 Pull Request</text>
+                            <text x="767" y="194" fill="#ffffff" font-weight="700" font-size="9.5">ðŸ”€ Pull Request</text>
                             <text x="767" y="210" fill="#cbd5e1" font-size="8">Code Review</text>
 
                             <!-- CROSS-LANE FLOW TO QA -->
@@ -2058,73 +2000,72 @@
                             <!-- SWIMLANE 3 ELEMENTS -->
                             <!-- TASK 6 -->
                             <rect x="757" y="315" width="110" height="48" rx="7" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="765" y="331" fill="#ffffff" font-weight="700" font-size="10">🧪 Pruebas QA</text>
+                            <text x="765" y="331" fill="#ffffff" font-weight="700" font-size="10">ðŸ§ª Pruebas QA</text>
                             <text x="765" y="347" fill="#cbd5e1" font-size="8.5">Casos Manuales QA</text>
 
                             <path d="M 867 339 L 917 339" stroke="#00b4d8" stroke-width="1.8" marker-end="url(#arrow-asis)"/>
 
                             <!-- GATEWAY XOR -->
                             <polygon points="935,321 953,339 935,357 917,339" fill="#1e293b" stroke="#00b4d8" stroke-width="2"/>
-                            <text x="935" y="343" text-anchor="middle" fill="#00b4d8" font-weight="800" font-size="12">✕</text>
-                            <text x="935" y="312" text-anchor="middle" fill="#00b4d8" font-weight="700" font-size="9.5">¿Pasa QA?</text>
+                            <text x="935" y="343" text-anchor="middle" fill="#00b4d8" font-weight="800" font-size="12">âœ•</text>
+                            <text x="935" y="312" text-anchor="middle" fill="#00b4d8" font-weight="700" font-size="9.5">Â¿Pasa QA?</text>
 
-                            <!-- SUCCESS PATH: SÍ / APROBADO -->
+                            <!-- SUCCESS PATH: SÃ / APROBADO -->
                             <path d="M 953 339 L 1025 339" stroke="#00e676" stroke-width="1.8" marker-end="url(#arrow-tobe)"/>
-                            <text x="986" y="331" text-anchor="middle" fill="#00e676" font-weight="700" font-size="8.5">🟢 SÍ</text>
+                            <text x="986" y="331" text-anchor="middle" fill="#00e676" font-weight="700" font-size="8.5">ðŸŸ¢ SÃ</text>
 
                             <!-- TIMER EVENT VENTANA NOCTURNA -->
                             <circle cx="1040" cy="339" r="15" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="2"/>
                             <circle cx="1040" cy="339" r="11" fill="none" stroke="#f59e0b" stroke-width="1"/>
-                            <text x="1040" y="343" text-anchor="middle" fill="#f59e0b" font-size="9.5">🌙</text>
+                            <text x="1040" y="343" text-anchor="middle" fill="#f59e0b" font-size="9.5">ðŸŒ™</text>
                             <text x="1040" y="368" text-anchor="middle" fill="#f59e0b" font-weight="700" font-size="8">Ventana Nocturna</text>
 
                             <path d="M 1055 339 L 1085 339" stroke="#00b4d8" stroke-width="1.8" marker-end="url(#arrow-asis)"/>
 
                             <!-- TASK 7 DEPLOY MANUAL -->
                             <rect x="1085" y="315" width="110" height="48" rx="7" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="1093" y="331" fill="#ffffff" font-weight="700" font-size="9.5">⚙️ Deploy Manual</text>
+                            <text x="1093" y="331" fill="#ffffff" font-weight="700" font-size="9.5">âš™ï¸ Deploy Manual</text>
                             <text x="1093" y="347" fill="#cbd5e1" font-size="8">Script Build</text>
 
                             <path d="M 1195 339 L 1230 339" stroke="#00b4d8" stroke-width="1.8" marker-end="url(#arrow-asis)"/>
 
                             <!-- END EVENT -->
                             <circle cx="1245" cy="339" r="14" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="3"/>
-                            <text x="1245" y="343" text-anchor="middle" fill="#ef4444" font-size="10">🏁</text>
-                            <text x="1245" y="368" text-anchor="middle" fill="#ef4444" font-weight="800" font-size="8.5">21 Días</text>
+                            <text x="1245" y="343" text-anchor="middle" fill="#ef4444" font-size="10">ðŸ</text>
+                            <text x="1245" y="368" text-anchor="middle" fill="#ef4444" font-weight="800" font-size="8.5">21 DÃ­as</text>
 
                             <!-- EXACT CONNECTED LOOPBACK PATH: NO / RETRABAJO (DEV TI TASK 4) -->
                             <path d="M 935 357 L 935 390 L 675 390 L 675 226" fill="none" stroke="#ef4444" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#arrow-danger)"/>
                             <rect x="740" y="380" width="150" height="20" rx="6" fill="#0f172a" stroke="#ef4444" stroke-width="1.5"/>
-                            <text x="815" y="394" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="9.5">🔴 NO: Retrabajo Dev (3-5 días)</text>
+                            <text x="815" y="394" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="9.5">ðŸ”´ NO: Retrabajo Dev (3-5 dÃ­as)</text>
                         </svg>
                     </div>
 
                     <div class="bpmn-alert-banner danger">
                         <i class="fas fa-exclamation-circle" style="font-size: 1.4rem;"></i>
                         <div>
-                            <strong>Punto de Dolor Identificado:</strong> El flujo AS-IS genera cuellos de botella de hasta 3 semanas por la dependencia absoluta de TI en tareas tipográficas y de contenido simple, sumado a los bucles de retorno por errores en QA manuales y la espera de la ventana nocturna de mantención.
+                            <strong>Punto de Dolor Identificado:</strong> El flujo AS-IS genera cuellos de botella de hasta 3 semanas por la dependencia absoluta de TI en tareas tipogrÃ¡ficas y de contenido simple, sumado a los bucles de retorno por errores en QA manuales y la espera de la ventana nocturna de mantenciÃ³n.
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- TARJETA 3: DIAGRAMA BPMN 2.0 - PROCESO PROPUESTO (TO-BE: PUCK CMS & STRAPI 5) -->
-            <div class="artifact-card collapsible-card collapsed">
-                <div class="artifact-header card-toggle-trigger">
+            <div class="artifact-card">
+                <div class="artifact-header ">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                        <h3 class="artifact-title" style="color: #00e676 !important;" data-translate="cs_bpmn_tobe_title"><i class="fas fa-rocket"></i> Proceso Propuesto (TO-BE): Autonomía Comercial No-Code con Puck CMS</h3>
+                        <h3 class="artifact-title" style="color: #00e676 !important;" data-translate="cs_bpmn_tobe_title"><i class="fas fa-rocket"></i> Proceso Propuesto (TO-BE): AutonomÃ­a Comercial No-Code con Puck CMS</h3>
                         <span class="meta-tag" style="border-color: #00e676; color: #00e676;"><i class="fas fa-bolt"></i> <span data-translate="cs_bpmn_tobe_sla">SLA: 15 Minutos</span></span>
                     </div>
-                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="artifact-body">
                     <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1rem;" data-translate="cs_bpmn_tobe_desc">
-                        Modelamiento formal en norma BPMN 2.0 del flujo optimizado. El Editor Comercial compone landings visualmente en minutos y el Product Owner aprueba en Staging Sandbox previo a la sincronización instantánea:
+                        Modelamiento formal en norma BPMN 2.0 del flujo optimizado. El Editor Comercial compone landings visualmente en minutos y el Product Owner aprueba en Staging Sandbox previo a la sincronizaciÃ³n instantÃ¡nea:
                     </p>
 
-                    <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA DESKTOP Y MÓVILES -->
+                    <!-- INDICADOR VISUAL DE SCROLL LATERAL PARA DESKTOP Y MÃ“VILES -->
                     <div class="mobile-scroll-hint" style="display: flex !important;">
-                        <i class="fas fa-arrows-left-right"></i> <span data-translate="cs_bpmn_scroll_hint">Desliza horizontalmente para navegar el diagrama BPMN 2.0 en tamaño completo</span>
+                        <i class="fas fa-arrows-left-right"></i> <span data-translate="cs_bpmn_scroll_hint">Desliza horizontalmente para navegar el diagrama BPMN 2.0 en tamaÃ±o completo</span>
                     </div>
 
                     <!-- VECTOR SVG BPMN 2.0 DIAGRAM (FULL SIZE 1380PX WITH HORIZONTAL SCROLL) - TO-BE -->
@@ -2145,7 +2086,7 @@
                             <!-- POOL CONTAINER & HEADER -->
                             <rect x="5" y="5" width="1370" height="410" rx="10" fill="#0b1329" stroke="rgba(0,230,118,0.3)" stroke-width="2"/>
                             <rect x="5" y="5" width="40" height="410" rx="10 0 0 10" fill="#1e293b" stroke="rgba(0,230,118,0.3)" stroke-width="2"/>
-                            <text x="25" y="210" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 25 210)" fill="#00e676" font-weight="800" font-size="11" letter-spacing="1">POOL 2: PROCESO AUTÓNOMO NO-CODE CON PUCK (TO-BE)</text>
+                            <text x="25" y="210" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 25 210)" fill="#00e676" font-weight="800" font-size="11" letter-spacing="1">POOL 2: PROCESO AUTÃ“NOMO NO-CODE CON PUCK (TO-BE)</text>
 
                             <!-- SWIMLANE DIVIDERS -->
                             <line x1="45" y1="135" x2="1375" y2="135" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
@@ -2169,22 +2110,22 @@
                             <!-- SWIMLANE 1 ELEMENTS -->
                             <!-- START EVENT (SHIFTED RIGHT FOR BREATHING ROOM) -->
                             <circle cx="215" cy="70" r="15" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="2.5"/>
-                            <text x="215" y="74" text-anchor="middle" fill="#00e676" font-size="10">✨</text>
-                            <text x="215" y="98" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9">Inicio Campaña</text>
+                            <text x="215" y="74" text-anchor="middle" fill="#00e676" font-size="10">âœ¨</text>
+                            <text x="215" y="98" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9">Inicio CampaÃ±a</text>
 
                             <path d="M 230 70 L 250 70" stroke="#00e676" stroke-width="1.8" marker-end="url(#arrow-tobe-main)"/>
 
                             <!-- TASK 1 -->
                             <rect x="250" y="46" width="115" height="48" rx="7" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
-                            <text x="258" y="62" fill="#00e676" font-weight="700" font-size="10">📑 Plantilla MVP</text>
-                            <text x="258" y="78" fill="#cbd5e1" font-size="8.5">Selección 1 de 5 Páginas</text>
+                            <text x="258" y="62" fill="#00e676" font-weight="700" font-size="10">ðŸ“‘ Plantilla MVP</text>
+                            <text x="258" y="78" fill="#cbd5e1" font-size="8.5">SelecciÃ³n 1 de 5 PÃ¡ginas</text>
 
                             <path d="M 365 70 L 390 70" stroke="#00e676" stroke-width="1.8" marker-end="url(#arrow-tobe-main)"/>
 
                             <!-- TASK 2 (TARGET OF QA LOOPBACK) -->
                             <rect x="390" y="46" width="135" height="48" rx="7" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
-                            <text x="398" y="62" fill="#00e676" font-weight="700" font-size="10">🎨 Drag & Drop Visual</text>
-                            <text x="398" y="78" fill="#cbd5e1" font-size="8.5">Edición en Puck (10 min)</text>
+                            <text x="398" y="62" fill="#00e676" font-weight="700" font-size="10">ðŸŽ¨ Drag & Drop Visual</text>
+                            <text x="398" y="78" fill="#cbd5e1" font-size="8.5">EdiciÃ³n en Puck (10 min)</text>
 
                             <!-- CROSS-LANE FLOW TO STRAPI ENGINE -->
                             <path d="M 457 94 L 457 178" stroke="#00e676" stroke-width="1.8" marker-end="url(#arrow-tobe-main)"/>
@@ -2193,21 +2134,21 @@
                             <!-- SWIMLANE 2 ELEMENTS -->
                             <!-- TASK 3 -->
                             <rect x="402" y="178" width="110" height="48" rx="7" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="410" y="194" fill="#ffffff" font-weight="700" font-size="10">⚡ Valida Esquema</text>
+                            <text x="410" y="194" fill="#ffffff" font-weight="700" font-size="10">âš¡ Valida Esquema</text>
                             <text x="410" y="210" fill="#cbd5e1" font-size="8.5">Strapi 5 REST API</text>
 
                             <path d="M 512 202 L 540 202" stroke="#00b4d8" stroke-width="1.8" marker-end="url(#arrow-tobe-cyan)"/>
 
                             <!-- TASK 4 -->
                             <rect x="540" y="178" width="125" height="48" rx="7" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="548" y="194" fill="#ffffff" font-weight="700" font-size="10">🏷️ Auto-Tagueo GTM</text>
-                            <text x="548" y="210" fill="#cbd5e1" font-size="8.5">Inyección GA4/Clarity</text>
+                            <text x="548" y="194" fill="#ffffff" font-weight="700" font-size="10">ðŸ·ï¸ Auto-Tagueo GTM</text>
+                            <text x="548" y="210" fill="#cbd5e1" font-size="8.5">InyecciÃ³n GA4/Clarity</text>
 
                             <path d="M 665 202 L 690 202" stroke="#00b4d8" stroke-width="1.8" marker-end="url(#arrow-tobe-cyan)"/>
 
                             <!-- TASK 5 -->
                             <rect x="690" y="178" width="115" height="48" rx="7" fill="#1e293b" stroke="#00b4d8" stroke-width="1.5"/>
-                            <text x="698" y="194" fill="#ffffff" font-weight="700" font-size="10">🖥️ Build Sandbox</text>
+                            <text x="698" y="194" fill="#ffffff" font-weight="700" font-size="10">ðŸ–¥ï¸ Build Sandbox</text>
                             <text x="698" y="210" fill="#cbd5e1" font-size="8.5">Deploy Staging (1 min)</text>
 
                             <!-- CROSS-LANE FLOW TO PO QA -->
@@ -2217,67 +2158,66 @@
                             <!-- SWIMLANE 3 ELEMENTS -->
                             <!-- TASK 6 -->
                             <rect x="690" y="315" width="115" height="48" rx="7" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
-                            <text x="698" y="331" fill="#ffffff" font-weight="700" font-size="10">🔍 QA Visual Staging</text>
-                            <text x="698" y="347" fill="#cbd5e1" font-size="8.5">Revisión Sandbox</text>
+                            <text x="698" y="331" fill="#ffffff" font-weight="700" font-size="10">ðŸ” QA Visual Staging</text>
+                            <text x="698" y="347" fill="#cbd5e1" font-size="8.5">RevisiÃ³n Sandbox</text>
 
                             <path d="M 805 339 L 857 339" stroke="#00e676" stroke-width="1.8" marker-end="url(#arrow-tobe-main)"/>
 
                             <!-- GATEWAY XOR -->
                             <polygon points="875,321 893,339 875,357 857,339" fill="#1e293b" stroke="#00e676" stroke-width="2"/>
-                            <text x="875" y="343" text-anchor="middle" fill="#00e676" font-weight="800" font-size="12">✕</text>
-                            <text x="875" y="312" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9.5">¿Aprobado?</text>
+                            <text x="875" y="343" text-anchor="middle" fill="#00e676" font-weight="800" font-size="12">âœ•</text>
+                            <text x="875" y="312" text-anchor="middle" fill="#00e676" font-weight="700" font-size="9.5">Â¿Aprobado?</text>
 
-                            <!-- SUCCESS PATH: SÍ / CERTIFICADO -->
+                            <!-- SUCCESS PATH: SÃ / CERTIFICADO -->
                             <path d="M 893 339 L 960 339" stroke="#00e676" stroke-width="1.8" marker-end="url(#arrow-tobe-main)"/>
-                            <text x="926" y="331" text-anchor="middle" fill="#00e676" font-weight="700" font-size="8.5">🟢 SÍ</text>
+                            <text x="926" y="331" text-anchor="middle" fill="#00e676" font-weight="700" font-size="8.5">ðŸŸ¢ SÃ</text>
 
                             <!-- TASK 7 SYNC CDN 1-CLICK -->
                             <rect x="960" y="315" width="125" height="48" rx="7" fill="#1e293b" stroke="#00e676" stroke-width="1.5"/>
-                            <text x="968" y="331" fill="#00e676" font-weight="700" font-size="9.5">☁️ Sync CDN 1-Click</text>
+                            <text x="968" y="331" fill="#00e676" font-weight="700" font-size="9.5">â˜ï¸ Sync CDN 1-Click</text>
                             <text x="968" y="347" fill="#cbd5e1" font-size="8">Despliegue (30 seg)</text>
 
                             <path d="M 1085 339 L 1115 339" stroke="#00e676" stroke-width="1.8" marker-end="url(#arrow-tobe-main)"/>
 
                             <!-- END EVENT -->
                             <circle cx="1135" cy="339" r="14" fill="rgba(0,230,118,0.15)" stroke="#00e676" stroke-width="3"/>
-                            <text x="1135" y="343" text-anchor="middle" fill="#00e676" font-size="10">✨</text>
+                            <text x="1135" y="343" text-anchor="middle" fill="#00e676" font-size="10">âœ¨</text>
                             <text x="1135" y="368" text-anchor="middle" fill="#00e676" font-weight="800" font-size="8.5">15 Min</text>
 
                             <!-- EXACT CONNECTED LOOPBACK PATH: NO / AJUSTE (MATCHING USER's BLUE SKETCH INTO DRAG & DROP LEFT EDGE) -->
                             <path d="M 875 357 L 875 390 L 377 390 L 377 70 L 390 70" fill="none" stroke="#ef4444" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#arrow-danger-tobe)"/>
                             <rect x="550" y="380" width="150" height="20" rx="6" fill="#0f172a" stroke="#ef4444" stroke-width="1.5"/>
-                            <text x="625" y="394" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="9.5">🔴 NO: Ajuste en Puck (2 min)</text>
+                            <text x="625" y="394" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="9.5">ðŸ”´ NO: Ajuste en Puck (2 min)</text>
                         </svg>
                     </div>
 
                     <div class="bpmn-alert-banner success">
                         <i class="fas fa-check-circle" style="font-size: 1.4rem;"></i>
                         <div>
-                            <strong>Ganancia Operacional Prometida:</strong> Reducción del 99.9% en Time-to-Market, eliminación total de la dependencia de TI en cambios tipográficos y garantía de cero errores gracias a la certificación previa en Staging Sandbox.
+                            <strong>Ganancia Operacional Prometida:</strong> ReducciÃ³n del 99.9% en Time-to-Market, eliminaciÃ³n total de la dependencia de TI en cambios tipogrÃ¡ficos y garantÃ­a de cero errores gracias a la certificaciÃ³n previa en Staging Sandbox.
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- TARJETA 4: MATRIZ DE GOBERNANZA, ROLES RBAC & REGLAS DE NEGOCIO BPMN -->
-            <div class="artifact-card collapsible-card collapsed">
-                <div class="artifact-header card-toggle-trigger">
+            <div class="artifact-card">
+                <div class="artifact-header ">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                         <h3 class="artifact-title" data-translate="cs_bpmn_gov_title"><i class="fas fa-shield-alt"></i> Matriz de Gobernanza, Roles RBAC & Reglas de Negocio BPMN</h3>
                         <span class="meta-tag"><i class="fas fa-user-shield"></i> <span data-translate="cs_bpmn_gov_change_ctrl">Control de Cambios</span></span>
                     </div>
-                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="artifact-body">
                     <p style="color: #cbd5e1; font-size: 0.92rem; margin-bottom: 1.25rem;" data-translate="cs_bpmn_gov_desc">
-                        Definición formal de perfiles de acceso (Role-Based Access Control) y políticas de validación para operar el nuevo modelo de procesos sin comprometer la seguridad bancaria:
+                        DefiniciÃ³n formal de perfiles de acceso (Role-Based Access Control) y polÃ­ticas de validaciÃ³n para operar el nuevo modelo de procesos sin comprometer la seguridad bancaria:
                     </p>
 
                     <h4 style="color: #00b4d8; font-size: 0.98rem; margin-bottom: 0.75rem;"><i class="fas fa-users-cog"></i> <span data-translate="cs_bpmn_gov_rbac_title">1. Matriz de Permisos RBAC en Puck Admin & Strapi 5</span></h4>
                     <ul style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.5rem; padding-left: 1.2rem;">
-                        <li data-translate="cs_bpmn_gov_rbac_r1"><strong>Editor Comercial (Marketing / Producto):</strong> Permiso de creación y modificación visual de textos, imágenes y banners únicamente sobre los componentes precargados en las 5 páginas del MVP. Sin acceso a modificar código duro ni infraestructura.</li>
-                        <li data-translate="cs_bpmn_gov_rbac_r2"><strong>Product Owner / QA Certifier:</strong> Permiso exclusivo de aprobación final del Gate de Staging Sandbox y ejecución del pase a producción en 1-Click.</li>
-                        <li data-translate="cs_bpmn_gov_rbac_r3"><strong>Lead Developer / TI:</strong> Administración de componentes React base en Puck, definición de esquemas de datos en Strapi 5 y mantenimiento del pipeline CI/CD.</li>
+                        <li data-translate="cs_bpmn_gov_rbac_r1"><strong>Editor Comercial (Marketing / Producto):</strong> Permiso de creaciÃ³n y modificaciÃ³n visual de textos, imÃ¡genes y banners Ãºnicamente sobre los componentes precargados en las 5 pÃ¡ginas del MVP. Sin acceso a modificar cÃ³digo duro ni infraestructura.</li>
+                        <li data-translate="cs_bpmn_gov_rbac_r2"><strong>Product Owner / QA Certifier:</strong> Permiso exclusivo de aprobaciÃ³n final del Gate de Staging Sandbox y ejecuciÃ³n del pase a producciÃ³n en 1-Click.</li>
+                        <li data-translate="cs_bpmn_gov_rbac_r3"><strong>Lead Developer / TI:</strong> AdministraciÃ³n de componentes React base en Puck, definiciÃ³n de esquemas de datos en Strapi 5 y mantenimiento del pipeline CI/CD.</li>
                     </ul>
 
                     <h4 style="color: #00e676; font-size: 0.98rem; margin-bottom: 0.75rem;"><i class="fas fa-gavel"></i> <span data-translate="cs_bpmn_gov_rules_title">2. Reglas de Negocio del Proceso BPMN 2.0</span></h4>
@@ -2289,7 +2229,7 @@
             </div>
         </div>
 
-        <!-- PESTAÑA 3: ARQUITECTURA DE DATOS & CONSULTAS SQL EN POSTGRESQL -->
+        <!-- PESTAÃ‘A 3: ARQUITECTURA DE DATOS & CONSULTAS SQL EN POSTGRESQL -->
         <div id="tab-sql" class="cs-tab-pane">
 
             <!-- INTRO NARRATIVA -->
@@ -2302,22 +2242,21 @@
                     </div>
                 </div>
                 <p style="color:#cbd5e1; font-size:0.93rem; line-height:1.7; margin:0;" data-translate="cs_sql_intro">
-                    El proceso rediseñado (Tab 2) genera solicitudes de productos digitales que quedan registradas en la base de datos interna del banco en PostgreSQL. Las siguientes consultas validan si el KPI declarado en el MVP Canvas —<strong style="color:#00e676;">+35% de conversión de solicitudes digitales</strong>— se cumplió, utilizando tres tablas del sistema de productos bancario.
+                    El proceso rediseÃ±ado (Tab 2) genera solicitudes de productos digitales que quedan registradas en la base de datos interna del banco en PostgreSQL. Las siguientes consultas validan si el KPI declarado en el MVP Canvas â€”<strong style="color:#00e676;">+35% de conversiÃ³n de solicitudes digitales</strong>â€” se cumpliÃ³, utilizando tres tablas del sistema de productos bancario.
                 </p>
             </div>
 
             <!-- TARJETA 1: ESQUEMA DE TABLAS -->
-            <div class="artifact-card collapsible-card collapsed" style="margin-bottom: 1.25rem;">
-                <div class="artifact-header card-toggle-trigger">
+            <div class="artifact-card" style="margin-bottom: 1.25rem;">
+                <div class="artifact-header ">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                         <h3 class="artifact-title" data-translate="cs_sql_schema_title"><i class="fas fa-sitemap"></i> Esquema de Tablas del Sistema de Productos (PostgreSQL)</h3>
                         <span class="meta-tag"><i class="fas fa-table"></i> <span data-translate="cs_sql_schema_badge">3 Tablas Core</span></span>
                     </div>
-                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="artifact-body">
                     <p style="color:#cbd5e1; font-size:0.92rem; margin-bottom:1.25rem;" data-translate="cs_sql_schema_desc">
-                        Modelo simplificado de las tres tablas del sistema bancario interno utilizadas para medir la adopción del canal digital y el impacto del rediseño del portal:
+                        Modelo simplificado de las tres tablas del sistema bancario interno utilizadas para medir la adopciÃ³n del canal digital y el impacto del rediseÃ±o del portal:
                     </p>
 
                     <!-- SCHEMA TABLES GRID -->
@@ -2335,15 +2274,15 @@
                                     <thead><tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
                                         <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_field">Campo</th>
                                         <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_type">Tipo</th>
-                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_desc">Descripción</th>
+                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_desc">DescripciÃ³n</th>
                                     </tr></thead>
                                     <tbody>
-                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">application_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">SERIAL PK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f1">ID único</td></tr>
-                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">product_type</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f2">cuenta / crédito</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">application_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">SERIAL PK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f1">ID Ãºnico</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">product_type</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f2">cuenta / crÃ©dito</td></tr>
                                         <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">origin_channel</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f3">web / sucursal / app</td></tr>
                                         <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">status</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f4">iniciada / enviada / aprobada</td></tr>
                                         <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">application_date</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">TIMESTAMPTZ</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f5">Fecha y hora UTC</td></tr>
-                                        <tr><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">session_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">UUID FK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f6">Enlace a sesión web</td></tr>
+                                        <tr><td style="color:#f8b4d9; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">session_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">UUID FK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t1_f6">Enlace a sesiÃ³n web</td></tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -2356,18 +2295,18 @@
                                 <code style="color:#00e676; font-weight:700; font-size:0.88rem;">web_sessions</code>
                             </div>
                             <div style="padding:0.75rem 1rem;">
-                                <p style="color:#64748b; font-size:0.78rem; margin-bottom:0.6rem;" data-translate="cs_sql_t2_desc">Sesión de usuario en el portal público con su contexto de dispositivo y campaña.</p>
+                                <p style="color:#64748b; font-size:0.78rem; margin-bottom:0.6rem;" data-translate="cs_sql_t2_desc">SesiÃ³n de usuario en el portal pÃºblico con su contexto de dispositivo y campaÃ±a.</p>
                                 <table style="width:100%; border-collapse:collapse; font-size:0.8rem;">
                                     <thead><tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
                                         <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_field">Campo</th>
                                         <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_type">Tipo</th>
-                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_desc">Descripción</th>
+                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_desc">DescripciÃ³n</th>
                                     </tr></thead>
                                     <tbody>
-                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">session_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">UUID PK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f1">ID único de sesión</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">session_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">UUID PK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f1">ID Ãºnico de sesiÃ³n</td></tr>
                                         <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">device_category</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f2">mobile / desktop / tablet</td></tr>
-                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">utm_source</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f3">Fuente de campaña UTM</td></tr>
-                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">landing_page</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f4">Página de entrada al portal</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">utm_source</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f3">Fuente de campaÃ±a UTM</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">landing_page</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f4">PÃ¡gina de entrada al portal</td></tr>
                                         <tr><td style="color:#6ee7b7; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">session_date</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">TIMESTAMPTZ</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t2_f5">Timestamp de inicio</td></tr>
                                     </tbody>
                                 </table>
@@ -2381,18 +2320,18 @@
                                 <code style="color:#ef4444; font-weight:700; font-size:0.88rem;">form_errors</code>
                             </div>
                             <div style="padding:0.75rem 1rem;">
-                                <p style="color:#64748b; font-size:0.78rem; margin-bottom:0.6rem;" data-translate="cs_sql_t3_desc">Log de errores de validación capturados en los formularios del portal durante el proceso de solicitud.</p>
+                                <p style="color:#64748b; font-size:0.78rem; margin-bottom:0.6rem;" data-translate="cs_sql_t3_desc">Log de errores de validaciÃ³n capturados en los formularios del portal durante el proceso de solicitud.</p>
                                 <table style="width:100%; border-collapse:collapse; font-size:0.8rem;">
                                     <thead><tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
                                         <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_field">Campo</th>
                                         <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_type">Tipo</th>
-                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_desc">Descripción</th>
+                                        <th style="color:#475569; padding:0.3rem 0.4rem; text-align:left;" data-translate="cs_sql_col_desc">DescripciÃ³n</th>
                                     </tr></thead>
                                     <tbody>
-                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">error_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">SERIAL PK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f1">ID único de error</td></tr>
-                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">session_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">UUID FK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f2">Sesión donde ocurrió</td></tr>
-                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">form_field</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f3">Campo que generó el error</td></tr>
-                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">error_type</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f4">validación / bloqueante / timeout</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">error_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">SERIAL PK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f1">ID Ãºnico de error</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">session_id</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">UUID FK</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f2">SesiÃ³n donde ocurriÃ³</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">form_field</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f3">Campo que generÃ³ el error</td></tr>
+                                        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">error_type</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">VARCHAR</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f4">validaciÃ³n / bloqueante / timeout</td></tr>
                                         <tr><td style="color:#fca5a5; padding:0.3rem 0.4rem; font-family:'Fira Code',monospace;">error_date</td><td style="color:#a78bfa; padding:0.3rem 0.4rem;">TIMESTAMPTZ</td><td style="color:#94a3b8; padding:0.3rem 0.4rem;" data-translate="cs_sql_t3_f5">Timestamp del error</td></tr>
                                     </tbody>
                                 </table>
@@ -2403,18 +2342,17 @@
                 </div>
             </div><!-- /schema card -->
 
-            <!-- TARJETA 2: QUERY 1 — TASA DE CONVERSIÓN -->
-            <div class="artifact-card collapsible-card collapsed" style="margin-bottom: 1.25rem;">
-                <div class="artifact-header card-toggle-trigger">
+            <!-- TARJETA 2: QUERY 1 â€” TASA DE CONVERSIÃ“N -->
+            <div class="artifact-card" style="margin-bottom: 1.25rem;">
+                <div class="artifact-header ">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                        <h3 class="artifact-title" data-translate="cs_sql_q1_title"><i class="fas fa-percent"></i> Query 1 — Tasa de Conversión de Solicitudes por Tipo de Producto</h3>
-                        <span class="meta-tag" style="border-color:#00e676; color:#00e676;"><i class="fas fa-bullseye"></i> <span data-translate="cs_sql_q1_kpi">Canvas B5: +35% conversión</span></span>
+                        <h3 class="artifact-title" data-translate="cs_sql_q1_title"><i class="fas fa-percent"></i> Query 1 â€” Tasa de ConversiÃ³n de Solicitudes por Tipo de Producto</h3>
+                        <span class="meta-tag" style="border-color:#00e676; color:#00e676;"><i class="fas fa-bullseye"></i> <span data-translate="cs_sql_q1_kpi">Canvas B5: +35% conversiÃ³n</span></span>
                     </div>
-                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="artifact-body">
                     <p style="color:#cbd5e1; font-size:0.9rem; margin-bottom:1rem;" data-translate="cs_sql_q1_desc">
-                        Mide la tasa de conversión de solicitudes digitales por tipo de producto bancario (cuenta corriente vs. crédito de consumo), validando directamente el KPI de +35% de conversión declarado en el <strong>MVP Canvas Bloque 5</strong> y en el resumen ejecutivo del proyecto. Conecta con las Personas Camila y Roberto definidas en el <strong>Canvas Bloque 2</strong>.
+                        Mide la tasa de conversiÃ³n de solicitudes digitales por tipo de producto bancario (cuenta corriente vs. crÃ©dito de consumo), validando directamente el KPI de +35% de conversiÃ³n declarado en el <strong>MVP Canvas Bloque 5</strong> y en el resumen ejecutivo del proyecto. Conecta con las Personas Camila y Roberto definidas en el <strong>Canvas Bloque 2</strong>.
                     </p>
                     <pre class="sql-code-block"><span class="sql-comment">-- Canvas B5: Validates +35% digital application conversion rate</span>
 <span class="sql-comment">-- Canvas B2 Personas: Camila (checking_account) & Roberto (consumer_credit)</span>
@@ -2440,7 +2378,7 @@
 <span class="sql-keyword">ORDER BY</span> da.product_type, <span class="sql-func">DATE_TRUNC</span>(<span class="sql-string">'month'</span>, da.application_date);</pre>
 
                     <!-- Resultado simulado -->
-                    <p style="color:#64748b; font-size:0.8rem; margin: 1rem 0 0.5rem;" data-translate="cs_sql_simulated_result">🟢 Resultado simulado (muestra):</p>
+                    <p style="color:#64748b; font-size:0.8rem; margin: 1rem 0 0.5rem;" data-translate="cs_sql_simulated_result">ðŸŸ¢ Resultado simulado (muestra):</p>
                     <div style="overflow-x:auto;">
                         <table class="kpi-reengineering-table" style="font-size:0.82rem;">
                             <thead><tr>
@@ -2456,22 +2394,21 @@
                             </tbody>
                         </table>
                     </div>
-                    <p style="color:#00e676; font-size:0.82rem; margin-top:0.6rem;"><i class="fas fa-check-circle"></i> <strong data-translate="cs_sql_q1_insight">Insight: +35% de incremento validado → cuenta corriente creció de 41.5% → 56.0% (+35%), crédito de consumo de 35.6% → 48.0% (+35%).</strong></p>
+                    <p style="color:#00e676; font-size:0.82rem; margin-top:0.6rem;"><i class="fas fa-check-circle"></i> <strong data-translate="cs_sql_q1_insight">Insight: +35% de incremento validado â†’ cuenta corriente creciÃ³ de 41.5% â†’ 56.0% (+35%), crÃ©dito de consumo de 35.6% â†’ 48.0% (+35%).</strong></p>
                 </div>
             </div>
 
-            <!-- TARJETA 3: QUERY 2 — EMBUDO DE SOLICITUD -->
-            <div class="artifact-card collapsible-card collapsed" style="margin-bottom: 1.25rem;">
-                <div class="artifact-header card-toggle-trigger">
+            <!-- TARJETA 3: QUERY 2 â€” EMBUDO DE SOLICITUD -->
+            <div class="artifact-card" style="margin-bottom: 1.25rem;">
+                <div class="artifact-header ">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                        <h3 class="artifact-title" data-translate="cs_sql_q2_title"><i class="fas fa-filter"></i> Query 2 — Análisis de Embudo: Sesión → CTA → Formulario → Aprobada</h3>
+                        <h3 class="artifact-title" data-translate="cs_sql_q2_title"><i class="fas fa-filter"></i> Query 2 â€” AnÃ¡lisis de Embudo: SesiÃ³n â†’ CTA â†’ Formulario â†’ Aprobada</h3>
                         <span class="meta-tag" style="border-color:#00b4d8; color:#00b4d8;"><i class="fas fa-route"></i> <span data-translate="cs_sql_q2_kpi">Canvas B6: submit_application_success</span></span>
                     </div>
-                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="artifact-body">
                     <p style="color:#cbd5e1; font-size:0.9rem; margin-bottom:1rem;" data-translate="cs_sql_q2_desc">
-                        Traza el embudo de conversión de extremo a extremo, desde la sesión en el portal hasta la aprobación de la solicitud. Valida el evento <code>submit_application_success</code> definido en el <strong>Canvas Bloque 6</strong> y los pasos 3, 4 y 5 del <strong>Journey (Canvas Bloque 3)</strong>: Intención de Solicitud → Formulario → Conversión.
+                        Traza el embudo de conversiÃ³n de extremo a extremo, desde la sesiÃ³n en el portal hasta la aprobaciÃ³n de la solicitud. Valida el evento <code>submit_application_success</code> definido en el <strong>Canvas Bloque 6</strong> y los pasos 3, 4 y 5 del <strong>Journey (Canvas Bloque 3)</strong>: IntenciÃ³n de Solicitud â†’ Formulario â†’ ConversiÃ³n.
                     </p>
                     <pre class="sql-code-block"><span class="sql-comment">-- Canvas B6: Measures submit_application_success</span>
 <span class="sql-comment">-- Canvas B3 Journey: Steps 3 (CTA) -&gt; 4 (Form) -&gt; 5 (Conversion)</span>
@@ -2499,37 +2436,36 @@
     <span class="sql-func">ROUND</span>(step4_approved_applications::<span class="sql-keyword">NUMERIC</span> / step3_submitted_forms * <span class="sql-number">100</span>, <span class="sql-number">1</span>) <span class="sql-keyword">AS</span> approval_rate_pct
 <span class="sql-keyword">FROM</span> application_funnel;</pre>
 
-                    <p style="color:#64748b; font-size:0.8rem; margin: 1rem 0 0.5rem;" data-translate="cs_sql_simulated_result">🟢 Resultado simulado (muestra):</p>
+                    <p style="color:#64748b; font-size:0.8rem; margin: 1rem 0 0.5rem;" data-translate="cs_sql_simulated_result">ðŸŸ¢ Resultado simulado (muestra):</p>
                     <div style="overflow-x:auto;">
                         <table class="kpi-reengineering-table" style="font-size:0.82rem;">
                             <thead><tr>
                                 <th data-translate="cs_sql_q2_r_col1">Paso</th>
                                 <th data-translate="cs_sql_q2_r_col2">Cantidad</th>
-                                <th data-translate="cs_sql_q2_r_col3">% Conversión del paso</th>
+                                <th data-translate="cs_sql_q2_r_col3">% ConversiÃ³n del paso</th>
                             </tr></thead>
                             <tbody>
-                                <tr><td>1 — <span data-translate="cs_sql_q2_step1">Sesiones en portal</span></td><td>12,400</td><td>—</td></tr>
-                                <tr><td>2 — <span data-translate="cs_sql_q2_step2">Iniciaron solicitud</span></td><td>4,712</td><td>38.0%</td></tr>
-                                <tr><td>3 — <span data-translate="cs_sql_q2_step3">Enviaron formulario</span></td><td>3,261</td><td>69.2%</td></tr>
-                                <tr><td>4 — <span data-translate="cs_sql_q2_step4">Solicitud aprobada</span></td><td><span class="kpi-badge-success">2,043</span></td><td><span class="kpi-badge-success">62.6%</span></td></tr>
+                                <tr><td>1 â€” <span data-translate="cs_sql_q2_step1">Sesiones en portal</span></td><td>12,400</td><td>â€”</td></tr>
+                                <tr><td>2 â€” <span data-translate="cs_sql_q2_step2">Iniciaron solicitud</span></td><td>4,712</td><td>38.0%</td></tr>
+                                <tr><td>3 â€” <span data-translate="cs_sql_q2_step3">Enviaron formulario</span></td><td>3,261</td><td>69.2%</td></tr>
+                                <tr><td>4 â€” <span data-translate="cs_sql_q2_step4">Solicitud aprobada</span></td><td><span class="kpi-badge-success">2,043</span></td><td><span class="kpi-badge-success">62.6%</span></td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
 
-            <!-- TARJETA 4: QUERY 3 — CANAL DIGITAL VS SUCURSAL -->
-            <div class="artifact-card collapsible-card collapsed" style="margin-bottom: 1.25rem;">
-                <div class="artifact-header card-toggle-trigger">
+            <!-- TARJETA 4: QUERY 3 â€” CANAL DIGITAL VS SUCURSAL -->
+            <div class="artifact-card" style="margin-bottom: 1.25rem;">
+                <div class="artifact-header ">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                        <h3 class="artifact-title" data-translate="cs_sql_q3_title"><i class="fas fa-chart-bar"></i> Query 3 — Canal Digital vs. Sucursal: Antes y Después del Rediseño</h3>
-                        <span class="meta-tag" style="border-color:#a78bfa; color:#a78bfa;"><i class="fas fa-exchange-alt"></i> <span data-translate="cs_sql_q3_kpi">Canvas B5: Autonomía Operativa</span></span>
+                        <h3 class="artifact-title" data-translate="cs_sql_q3_title"><i class="fas fa-chart-bar"></i> Query 3 â€” Canal Digital vs. Sucursal: Antes y DespuÃ©s del RediseÃ±o</h3>
+                        <span class="meta-tag" style="border-color:#a78bfa; color:#a78bfa;"><i class="fas fa-exchange-alt"></i> <span data-translate="cs_sql_q3_kpi">Canvas B5: AutonomÃ­a Operativa</span></span>
                     </div>
-                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="artifact-body">
                     <p style="color:#cbd5e1; font-size:0.9rem; margin-bottom:1rem;" data-translate="cs_sql_q3_desc">
-                        Compara el volumen y participación del canal digital frente al canal presencial (sucursal) antes y después del rediseño del portal. Valida el KPI de "Autonomía Operativa" del <strong>Canvas Bloque 5</strong> y el impacto del flujo TO-BE implementado en la <strong>Tab 2</strong>.
+                        Compara el volumen y participaciÃ³n del canal digital frente al canal presencial (sucursal) antes y despuÃ©s del rediseÃ±o del portal. Valida el KPI de "AutonomÃ­a Operativa" del <strong>Canvas Bloque 5</strong> y el impacto del flujo TO-BE implementado en la <strong>Tab 2</strong>.
                     </p>
                     <pre class="sql-code-block"><span class="sql-comment">-- Canvas B5: Validates digital channel growth post-redesign</span>
 <span class="sql-comment">-- Cut-off date: New portal go-live</span>
@@ -2553,7 +2489,7 @@
 <span class="sql-keyword">GROUP BY</span> origin_channel, period
 <span class="sql-keyword">ORDER BY</span> period, origin_channel;</pre>
 
-                    <p style="color:#64748b; font-size:0.8rem; margin: 1rem 0 0.5rem;" data-translate="cs_sql_simulated_result">🟢 Resultado simulado (muestra):</p>
+                    <p style="color:#64748b; font-size:0.8rem; margin: 1rem 0 0.5rem;" data-translate="cs_sql_simulated_result">ðŸŸ¢ Resultado simulado (muestra):</p>
                     <div style="overflow-x:auto;">
                         <table class="kpi-reengineering-table" style="font-size:0.82rem;">
                             <thead><tr>
@@ -2563,29 +2499,28 @@
                                 <th>share_pct</th>
                             </tr></thead>
                             <tbody>
-                                <tr><td><code>branch</code></td><td data-translate="cs_sql_q3_antes">Antes del Rediseño</td><td>5,820</td><td>71.3%</td></tr>
-                                <tr><td><code>web</code></td><td data-translate="cs_sql_q3_antes">Antes del Rediseño</td><td>2,341</td><td>28.7%</td></tr>
-                                <tr style="background:rgba(0,230,118,0.05);"><td><code>branch</code></td><td data-translate="cs_sql_q3_despues">Después del Rediseño</td><td>5,190</td><td>49.2%</td></tr>
-                                <tr style="background:rgba(0,230,118,0.05);"><td><code>web</code></td><td data-translate="cs_sql_q3_despues">Después del Rediseño</td><td><span class="kpi-badge-success">5,361</span></td><td><span class="kpi-badge-success">50.8% ↑</span></td></tr>
+                                <tr><td><code>branch</code></td><td data-translate="cs_sql_q3_antes">Antes del RediseÃ±o</td><td>5,820</td><td>71.3%</td></tr>
+                                <tr><td><code>web</code></td><td data-translate="cs_sql_q3_antes">Antes del RediseÃ±o</td><td>2,341</td><td>28.7%</td></tr>
+                                <tr style="background:rgba(0,230,118,0.05);"><td><code>branch</code></td><td data-translate="cs_sql_q3_despues">DespuÃ©s del RediseÃ±o</td><td>5,190</td><td>49.2%</td></tr>
+                                <tr style="background:rgba(0,230,118,0.05);"><td><code>web</code></td><td data-translate="cs_sql_q3_despues">DespuÃ©s del RediseÃ±o</td><td><span class="kpi-badge-success">5,361</span></td><td><span class="kpi-badge-success">50.8% â†‘</span></td></tr>
                             </tbody>
                         </table>
                     </div>
-                    <p style="color:#00e676; font-size:0.82rem; margin-top:0.6rem;"><i class="fas fa-check-circle"></i> <strong data-translate="cs_sql_q3_insight">Insight: El canal web superó a sucursal post-rediseño (28.7% → 50.8%), validando la Autonomía Operativa del Canvas B5.</strong></p>
+                    <p style="color:#00e676; font-size:0.82rem; margin-top:0.6rem;"><i class="fas fa-check-circle"></i> <strong data-translate="cs_sql_q3_insight">Insight: El canal web superÃ³ a sucursal post-rediseÃ±o (28.7% â†’ 50.8%), validando la AutonomÃ­a Operativa del Canvas B5.</strong></p>
                 </div>
             </div>
 
-            <!-- TARJETA 5: QUERY 4 — ERRORES EN FORMULARIO -->
-            <div class="artifact-card collapsible-card collapsed" style="margin-bottom: 1.25rem;">
-                <div class="artifact-header card-toggle-trigger">
+            <!-- TARJETA 5: QUERY 4 â€” ERRORES EN FORMULARIO -->
+            <div class="artifact-card" style="margin-bottom: 1.25rem;">
+                <div class="artifact-header ">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                        <h3 class="artifact-title" data-translate="cs_sql_q4_title"><i class="fas fa-exclamation-triangle"></i> Query 4 — Logs de Errores Bloqueantes en Formularios por Semana</h3>
+                        <h3 class="artifact-title" data-translate="cs_sql_q4_title"><i class="fas fa-exclamation-triangle"></i> Query 4 â€” Logs de Errores Bloqueantes en Formularios por Semana</h3>
                         <span class="meta-tag" style="border-color:#ef4444; color:#ef4444;"><i class="fas fa-shield-alt"></i> <span data-translate="cs_sql_q4_kpi">Canvas B5: 0 defectos bloqueantes</span></span>
                     </div>
-                    <button class="card-accordion-toggle" aria-label="Toggle card"><i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="artifact-body">
                     <p style="color:#cbd5e1; font-size:0.9rem; margin-bottom:1rem;" data-translate="cs_sql_q4_desc">
-                        Monitorea la tendencia semanal de errores bloqueantes en los formularios del portal, validando el KPI de "Cero defectos bloqueantes en producción" del <strong>Canvas Bloque 5</strong> y la efectividad de la <strong>Épica 3: Pruebas & Pase a Producción</strong> del Roadmap (BIN-301 y BIN-302).
+                        Monitorea la tendencia semanal de errores bloqueantes en los formularios del portal, validando el KPI de "Cero defectos bloqueantes en producciÃ³n" del <strong>Canvas Bloque 5</strong> y la efectividad de la <strong>Ã‰pica 3: Pruebas & Pase a ProducciÃ³n</strong> del Roadmap (BIN-301 y BIN-302).
                     </p>
                     <pre class="sql-code-block"><span class="sql-comment">-- Canvas B5: Validates "Zero blocking defects" post-QA Staging</span>
 <span class="sql-comment">-- Roadmap Epic 3 BIN-301: Effectiveness of QA Testing Matrix</span>
@@ -2608,7 +2543,7 @@
 <span class="sql-keyword">GROUP BY</span> week_start, fe.error_type, fe.form_field
 <span class="sql-keyword">ORDER BY</span> week_start <span class="sql-keyword">DESC</span>, total_errors <span class="sql-keyword">DESC</span>;</pre>
 
-                    <p style="color:#64748b; font-size:0.8rem; margin: 1rem 0 0.5rem;" data-translate="cs_sql_simulated_result">🟢 Resultado simulado (últimas 4 semanas post-lanzamiento):</p>
+                    <p style="color:#64748b; font-size:0.8rem; margin: 1rem 0 0.5rem;" data-translate="cs_sql_simulated_result">ðŸŸ¢ Resultado simulado (Ãºltimas 4 semanas post-lanzamiento):</p>
                     <div style="overflow-x:auto;">
                         <table class="kpi-reengineering-table" style="font-size:0.82rem;">
                             <thead><tr>
@@ -2621,7 +2556,7 @@
                                 <tr><td>2025-03-03</td><td><code>rut_validation</code></td><td>12</td><td>0.10%</td></tr>
                                 <tr><td>2025-03-10</td><td><code>rut_validation</code></td><td>7</td><td>0.06%</td></tr>
                                 <tr><td>2025-03-17</td><td><code>rut_validation</code></td><td>3</td><td>0.02%</td></tr>
-                                <tr style="background:rgba(0,230,118,0.05);"><td>2025-03-24</td><td>—</td><td><span class="kpi-badge-success">0</span></td><td><span class="kpi-badge-success">0.00%</span></td></tr>
+                                <tr style="background:rgba(0,230,118,0.05);"><td>2025-03-24</td><td>â€”</td><td><span class="kpi-badge-success">0</span></td><td><span class="kpi-badge-success">0.00%</span></td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -2633,20 +2568,20 @@
 
 
 
-        <!-- PESTAÑA 4: TELEMETRÍA & DASHBOARD EN VIVO -->
+        <!-- PESTAÃ‘A 4: TELEMETRÃA & DASHBOARD EN VIVO -->
         <div id="tab-dashboard" class="cs-tab-pane">
 
             <!-- INTRO NARRATIVA -->
             <div class="artifact-card" style="margin-bottom: 1.5rem;">
                 <div class="artifact-header">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                        <h3 class="artifact-title" data-translate="cs_dash_title"><i class="fas fa-chart-line"></i> Telemetría Digital & Tablero de Analítica en Vivo</h3>
+                        <h3 class="artifact-title" data-translate="cs_dash_title"><i class="fas fa-chart-line"></i> TelemetrÃ­a Digital & Tablero de AnalÃ­tica en Vivo</h3>
                         <span class="meta-tag" style="border-color:#00df81; color:#00df81;"><i class="fas fa-tags"></i> <span data-translate="cs_dash_badge_ga4">GA4 & GTM Auto-Tagging</span></span>
                         <span class="meta-tag" style="border-color:#2cc295; color:#2cc295;"><i class="fas fa-eye"></i> <span data-translate="cs_dash_badge_clarity">Microsoft Clarity UX</span></span>
                     </div>
                 </div>
                 <p style="color:#cbd5e1; font-size:0.93rem; line-height:1.7; margin:0;" data-translate="cs_dash_intro">
-                    Integración de telemetría en tiempo real sobre el portal público rediseñado. La arquitectura combina el etiquetado automático de eventos DataLayer en Google Tag Manager (GTM), la medición de conversión en Google Analytics 4 (GA4) y el análisis de comportamiento visual (mapas de calor y grabaciones) en Microsoft Clarity, permitiendo validar las hipótesis de adopción del MVP Canvas en tiempo real.
+                    IntegraciÃ³n de telemetrÃ­a en tiempo real sobre el portal pÃºblico rediseÃ±ado. La arquitectura combina el etiquetado automÃ¡tico de eventos DataLayer en Google Tag Manager (GTM), la mediciÃ³n de conversiÃ³n en Google Analytics 4 (GA4) y el anÃ¡lisis de comportamiento visual (mapas de calor y grabaciones) en Microsoft Clarity, permitiendo validar las hipÃ³tesis de adopciÃ³n del MVP Canvas en tiempo real.
                 </p>
             </div>
 
@@ -2666,20 +2601,20 @@
                     </div>
 
                     <div class="dash-controls-bar">
-                        <select id="dash-period-filter" class="dash-select-filter" aria-label="Filtrar Período">
-                            <option value="post" selected data-translate="dash_opt_post">Post-Lanzamiento (Últimos 30 Días)</option>
-                            <option value="compare" data-translate="dash_opt_compare">Comparativa (Antes vs Después)</option>
+                        <select id="dash-period-filter" class="dash-select-filter" aria-label="Filtrar PerÃ­odo">
+                            <option value="post" selected data-translate="dash_opt_post">Post-Lanzamiento (Ãšltimos 30 DÃ­as)</option>
+                            <option value="compare" data-translate="dash_opt_compare">Comparativa (Antes vs DespuÃ©s)</option>
                         </select>
 
                         <select id="dash-product-filter" class="dash-select-filter" aria-label="Filtrar Producto">
                             <option value="all" selected data-translate="dash_opt_all">Todos los Productos</option>
                             <option value="checking" data-translate="dash_opt_checking">Cuenta Corriente</option>
-                            <option value="credit" data-translate="dash_opt_credit">Crédito de Consumo</option>
+                            <option value="credit" data-translate="dash_opt_credit">CrÃ©dito de Consumo</option>
                         </select>
 
                         <div class="dash-live-badge">
                             <span class="dash-live-dot"></span>
-                            <span data-translate="dash_live_status">TELEMETRÍA EN VIVO</span>
+                            <span data-translate="dash_live_status">TELEMETRÃA EN VIVO</span>
                         </div>
                     </div>
                 </div>
@@ -2698,7 +2633,7 @@
 
                     <div class="dash-kpi-card">
                         <div class="dash-kpi-header">
-                            <span class="dash-kpi-title" data-translate="dash_kpi2_title">Tasa de Conversión (CR)</span>
+                            <span class="dash-kpi-title" data-translate="dash_kpi2_title">Tasa de ConversiÃ³n (CR)</span>
                             <i class="fas fa-bullseye dash-kpi-icon"></i>
                         </div>
                         <div class="dash-kpi-val" id="dash-val-cr">52.4%</div>
@@ -2718,7 +2653,7 @@
 
                     <div class="dash-kpi-card">
                         <div class="dash-kpi-header">
-                            <span class="dash-kpi-title" data-translate="dash_kpi4_title">Fricción & Rage Clicks</span>
+                            <span class="dash-kpi-title" data-translate="dash_kpi4_title">FricciÃ³n & Rage Clicks</span>
                             <i class="fas fa-shield-alt dash-kpi-icon"></i>
                         </div>
                         <div class="dash-kpi-val" id="dash-val-friction">0.0%</div>
@@ -2732,7 +2667,7 @@
                     <!-- LEFT PANEL: FUNNEL -->
                     <div class="dash-panel">
                         <div class="dash-panel-title">
-                            <i class="fas fa-filter"></i> <span data-translate="dash_panel_funnel_title">Embudo de Conversión Digital (GA4 + GTM Auto-Tagging)</span>
+                            <i class="fas fa-filter"></i> <span data-translate="dash_panel_funnel_title">Embudo de ConversiÃ³n Digital (GA4 + GTM Auto-Tagging)</span>
                         </div>
                         <div class="dash-funnel-list">
                             <div class="dash-funnel-item">
@@ -2749,7 +2684,7 @@
 
                             <div class="dash-funnel-item">
                                 <div class="dash-funnel-labels">
-                                    <span class="dash-funnel-name" data-translate="dash_funnel_s2">2. Clic CTA Intención (click_apply_now)</span>
+                                    <span class="dash-funnel-name" data-translate="dash_funnel_s2">2. Clic CTA IntenciÃ³n (click_apply_now)</span>
                                     <span class="dash-funnel-count" id="funnel-c2">4,712 intenciones</span>
                                 </div>
                                 <div class="dash-funnel-bar-bg">
@@ -2807,10 +2742,10 @@
                             </div>
 
                             <div class="dash-channel-box tobe-box">
-                                <div class="dash-channel-label" data-translate="dash_ch_tobe">Después (Puck CMS)</div>
+                                <div class="dash-channel-label" data-translate="dash_ch_tobe">DespuÃ©s (Puck CMS)</div>
                                 <div class="dash-channel-split">
                                     <div>
-                                        <div class="dash-split-val" style="color:#00df81 !important;">50.8% 🚀</div>
+                                        <div class="dash-split-val" style="color:#00df81 !important;">50.8% ðŸš€</div>
                                         <div class="dash-split-sub" style="color:#00df81 !important;" data-translate="dash_web">Web</div>
                                     </div>
                                     <div>
@@ -2845,42 +2780,42 @@
             <!-- TARJETA EXPLICATIVA INFERIOR -->
             <div class="artifact-card">
                 <div class="artifact-header">
-                    <h3 class="artifact-title" data-translate="cs_dash_expl_title"><i class="fas fa-info-circle"></i> Interpretación del Tablero & Coherencia del Caso de Estudio</h3>
+                    <h3 class="artifact-title" data-translate="cs_dash_expl_title"><i class="fas fa-info-circle"></i> InterpretaciÃ³n del Tablero & Coherencia del Caso de Estudio</h3>
                 </div>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
                     <div style="background:#062e28; border:1px solid rgba(0,223,129,0.25); border-left:4px solid #00df81; border-radius:10px; padding:1.1rem;">
                         <h4 style="color:#00df81; font-size:0.95rem; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;"><i class="fas fa-tags"></i> <span data-translate="cs_dash_expl1_t">Auto-Tagueo No-Code en GTM</span></h4>
-                        <p style="color:#cbd5e1; font-size:0.85rem; line-height:1.55; margin:0;" data-translate="cs_dash_expl1_d">Toda landing creada en Puck CMS (Tab 2) emite automáticamente los eventos DataLayer (page_view_public, click_apply_now, submit_application_success) a GA4 sin requerir intervención de TI.</p>
+                        <p style="color:#cbd5e1; font-size:0.85rem; line-height:1.55; margin:0;" data-translate="cs_dash_expl1_d">Toda landing creada en Puck CMS (Tab 2) emite automÃ¡ticamente los eventos DataLayer (page_view_public, click_apply_now, submit_application_success) a GA4 sin requerir intervenciÃ³n de TI.</p>
                     </div>
 
                     <div style="background:#062e28; border:1px solid rgba(44,194,149,0.25); border-left:4px solid #2cc295; border-radius:10px; padding:1.1rem;">
-                        <h4 style="color:#2cc295; font-size:0.95rem; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;"><i class="fas fa-eye"></i> <span data-translate="cs_dash_expl2_t">Optimización de Experiencia UX en Clarity</span></h4>
-                        <p style="color:#cbd5e1; font-size:0.85rem; line-height:1.55; margin:0;" data-translate="cs_dash_expl2_d">Los mapas de calor confirman que el 82% de la interacción ocurre en el 1er fold. La reducción de rage clicks a 0.0% certifica la eliminación de bloqueos en formularios responsive.</p>
+                        <h4 style="color:#2cc295; font-size:0.95rem; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;"><i class="fas fa-eye"></i> <span data-translate="cs_dash_expl2_t">OptimizaciÃ³n de Experiencia UX en Clarity</span></h4>
+                        <p style="color:#cbd5e1; font-size:0.85rem; line-height:1.55; margin:0;" data-translate="cs_dash_expl2_d">Los mapas de calor confirman que el 82% de la interacciÃ³n ocurre en el 1er fold. La reducciÃ³n de rage clicks a 0.0% certifica la eliminaciÃ³n de bloqueos en formularios responsive.</p>
                     </div>
 
                     <div style="background:#062e28; border:1px solid rgba(0,223,129,0.25); border-left:4px solid #00df81; border-radius:10px; padding:1.1rem;">
-                        <h4 style="color:#00df81; font-size:0.95rem; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;"><i class="fas fa-database"></i> <span data-translate="cs_dash_expl3_t">Validación Cruzada con SQL (PostgreSQL)</span></h4>
-                        <p style="color:#cbd5e1; font-size:0.85rem; line-height:1.55; margin:0;" data-translate="cs_dash_expl3_d">Los eventos de conversión en GA4 se contrastan con las consultas SQL del sistema core bancario (Tab 3), auditando la adopción real del canal web frente a sucursales.</p>
+                        <h4 style="color:#00df81; font-size:0.95rem; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;"><i class="fas fa-database"></i> <span data-translate="cs_dash_expl3_t">ValidaciÃ³n Cruzada con SQL (PostgreSQL)</span></h4>
+                        <p style="color:#cbd5e1; font-size:0.85rem; line-height:1.55; margin:0;" data-translate="cs_dash_expl3_d">Los eventos de conversiÃ³n en GA4 se contrastan con las consultas SQL del sistema core bancario (Tab 3), auditando la adopciÃ³n real del canal web frente a sucursales.</p>
                     </div>
                 </div>
             </div>
 
         </div><!-- /tab-dashboard -->
 
-        <!-- PESTAÑA 5: ACELERACIÓN CON IA GENERATIVA -->
+        <!-- PESTAÃ‘A 5: ACELERACIÃ“N CON IA GENERATIVA -->
         <div id="tab-genai" class="cs-tab-pane">
 
             <!-- INTRO CARD -->
             <div class="artifact-card" style="margin-bottom: 1.5rem;">
                 <div class="artifact-header">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                        <h3 class="artifact-title" data-translate="cs_ai_title"><i class="fas fa-robot"></i> Aceleración del Ciclo de Producto con IA Generativa</h3>
+                        <h3 class="artifact-title" data-translate="cs_ai_title"><i class="fas fa-robot"></i> AceleraciÃ³n del Ciclo de Producto con IA Generativa</h3>
                         <span class="meta-tag" style="border-color:#a855f7; color:#a855f7;"><i class="fas fa-magic"></i> <span data-translate="cs_ai_badge1">Gemini 1.5 Pro & Rovo AI</span></span>
                         <span class="meta-tag" style="border-color:#00b4d8; color:#00b4d8;"><i class="fas fa-brain"></i> <span data-translate="cs_ai_badge2">NotebookLM Compliance</span></span>
                     </div>
                 </div>
                 <p style="color: #cbd5e1; font-size: 0.93rem; line-height: 1.7; margin: 0;" data-translate="cs_ai_intro">
-                    Integración estratégica de herramientas de Inteligencia Artificial Generativa en el flujo de trabajo diario de Product Owner y Business Analyst. La adopción de Gemini, Atlassian Rovo AI, NotebookLM y Firebase AI permitió eliminar tareas repetitivas, acelerar la especificación funcional y elevar la velocidad de entrega del equipo sin comprometer el rigor normativo bancario.
+                    IntegraciÃ³n estratÃ©gica de herramientas de Inteligencia Artificial Generativa en el flujo de trabajo diario de Product Owner y Business Analyst. La adopciÃ³n de Gemini, Atlassian Rovo AI, NotebookLM y Firebase AI permitiÃ³ eliminar tareas repetitivas, acelerar la especificaciÃ³n funcional y elevar la velocidad de entrega del equipo sin comprometer el rigor normativo bancario.
                 </p>
             </div>
 
@@ -2889,31 +2824,31 @@
 
                 <div class="ai-feature-card" style="border-left: 4px solid #a855f7 !important;">
                     <div class="ai-feature-card-header">
-                        <h4 class="ai-feature-card-title" style="color:#a855f7 !important;" data-translate="cs_ai_c1_t"><i class="fas fa-feather-alt"></i> Redacción BDD & Prototipado No-Code (Gemini & Firebase AI)</h4>
+                        <h4 class="ai-feature-card-title" style="color:#a855f7 !important;" data-translate="cs_ai_c1_t"><i class="fas fa-feather-alt"></i> RedacciÃ³n BDD & Prototipado No-Code (Gemini & Firebase AI)</h4>
                         <span class="kpi-badge-success" style="font-size:0.72rem; white-space:nowrap;" data-translate="cs_ai_c1_badge">-77% Tiempo</span>
                     </div>
                     <p class="ai-feature-card-desc" data-translate="cs_ai_c1_d">
-                        Transformación de requerimientos de negocio en Historias de Usuario BDD (<strong>Given-When-Then</strong>) en Jira, y maquetación acelerada de componentes visuales para Puck CMS en Sandbox Staging.
+                        TransformaciÃ³n de requerimientos de negocio en Historias de Usuario BDD (<strong>Given-When-Then</strong>) en Jira, y maquetaciÃ³n acelerada de componentes visuales para Puck CMS en Sandbox Staging.
                     </p>
                 </div>
 
                 <div class="ai-feature-card" style="border-left: 4px solid #38bdf8 !important;">
                     <div class="ai-feature-card-header">
-                        <h4 class="ai-feature-card-title" style="color:#38bdf8 !important;" data-translate="cs_ai_c2_t"><i class="fas fa-sitemap"></i> Diagramación Asistida BPMN 2.0 (Rovo AI)</h4>
+                        <h4 class="ai-feature-card-title" style="color:#38bdf8 !important;" data-translate="cs_ai_c2_t"><i class="fas fa-sitemap"></i> DiagramaciÃ³n Asistida BPMN 2.0 (Rovo AI)</h4>
                         <span class="kpi-badge-success" style="font-size:0.72rem; white-space:nowrap;" data-translate="cs_ai_c2_badge">-91% Tiempo</span>
                     </div>
                     <p class="ai-feature-card-desc" data-translate="cs_ai_c2_d">
-                        Conversión automática de minutas de reunión y requerimientos en Confluence a código <strong>Mermaid / PlantUML</strong> para renderizar diagramas de secuencia y flujos BPMN 2.0 en tiempo real.
+                        ConversiÃ³n automÃ¡tica de minutas de reuniÃ³n y requerimientos en Confluence a cÃ³digo <strong>Mermaid / PlantUML</strong> para renderizar diagramas de secuencia y flujos BPMN 2.0 en tiempo real.
                     </p>
                 </div>
 
                 <div class="ai-feature-card" style="border-left: 4px solid #34d399 !important;">
                     <div class="ai-feature-card-header">
-                        <h4 class="ai-feature-card-title" style="color:#34d399 !important;" data-translate="cs_ai_c3_t"><i class="fas fa-brain"></i> Auditoría Legal & Compliance (NotebookLM)</h4>
+                        <h4 class="ai-feature-card-title" style="color:#34d399 !important;" data-translate="cs_ai_c3_t"><i class="fas fa-brain"></i> AuditorÃ­a Legal & Compliance (NotebookLM)</h4>
                         <span class="kpi-badge-success" style="font-size:0.72rem; white-space:nowrap;" data-translate="cs_ai_c3_badge">-98% Tiempo</span>
                     </div>
                     <p class="ai-feature-card-desc" data-translate="cs_ai_c3_d">
-                        Ingesta acelerada de compendios normativos CMF/SBIF y políticas internas del banco. Permite auditar en minutos si los descargos legales y copys en landing pages cumplen con la regulación.
+                        Ingesta acelerada de compendios normativos CMF/SBIF y polÃ­ticas internas del banco. Permite auditar en minutos si los descargos legales y copys en landing pages cumplen con la regulaciÃ³n.
                     </p>
                 </div>
 
@@ -2936,21 +2871,21 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="font-weight:600; color:#f1f7f6;" data-translate="cs_ai_row1_task"><i class="fas fa-feather-alt" style="color:#a855f7;"></i> Redacción BDD & Prototipado Puck CMS</td>
-                                <td data-translate="cs_ai_row1_trad">45 min por historia / 3 días dev</td>
+                                <td style="font-weight:600; color:#f1f7f6;" data-translate="cs_ai_row1_task"><i class="fas fa-feather-alt" style="color:#a855f7;"></i> RedacciÃ³n BDD & Prototipado Puck CMS</td>
+                                <td data-translate="cs_ai_row1_trad">45 min por historia / 3 dÃ­as dev</td>
                                 <td data-translate="cs_ai_row1_ai">10 min (Gemini BDD) y 2 hrs Sandbox (Firebase AI)</td>
                                 <td data-translate="cs_ai_row1_gain"><span class="kpi-badge-success">-77% a -95% Tiempo</span></td>
                             </tr>
                             <tr>
-                                <td style="font-weight:600; color:#f1f7f6;" data-translate="cs_ai_row2_task"><i class="fas fa-sitemap" style="color:#38bdf8;"></i> Diagramación BPMN 2.0 y Secuencia</td>
-                                <td data-translate="cs_ai_row2_trad">4 horas de edición manual en Visio/Lucid</td>
-                                <td data-translate="cs_ai_row2_ai">20 min (Rovo AI + Código Mermaid automático)</td>
-                                <td data-translate="cs_ai_row2_gain"><span class="kpi-badge-success">-91% Tiempo Diagramación</span></td>
+                                <td style="font-weight:600; color:#f1f7f6;" data-translate="cs_ai_row2_task"><i class="fas fa-sitemap" style="color:#38bdf8;"></i> DiagramaciÃ³n BPMN 2.0 y Secuencia</td>
+                                <td data-translate="cs_ai_row2_trad">4 horas de ediciÃ³n manual en Visio/Lucid</td>
+                                <td data-translate="cs_ai_row2_ai">20 min (Rovo AI + CÃ³digo Mermaid automÃ¡tico)</td>
+                                <td data-translate="cs_ai_row2_gain"><span class="kpi-badge-success">-91% Tiempo DiagramaciÃ³n</span></td>
                             </tr>
                             <tr>
-                                <td style="font-weight:600; color:#f1f7f6;" data-translate="cs_ai_row3_task"><i class="fas fa-brain" style="color:#34d399;"></i> Auditoría Normativa CMF / Legal Compliance</td>
-                                <td data-translate="cs_ai_row3_trad">2 días hábiles de revisión manual</td>
-                                <td data-translate="cs_ai_row3_ai">15 min (NotebookLM Ingestión y Q&A)</td>
+                                <td style="font-weight:600; color:#f1f7f6;" data-translate="cs_ai_row3_task"><i class="fas fa-brain" style="color:#34d399;"></i> AuditorÃ­a Normativa CMF / Legal Compliance</td>
+                                <td data-translate="cs_ai_row3_trad">2 dÃ­as hÃ¡biles de revisiÃ³n manual</td>
+                                <td data-translate="cs_ai_row3_ai">15 min (NotebookLM IngestiÃ³n y Q&A)</td>
                                 <td data-translate="cs_ai_row3_gain"><span class="kpi-badge-success">-98% Ciclo Compliance</span></td>
                             </tr>
                         </tbody>
@@ -2962,7 +2897,7 @@
             <div class="artifact-card">
                 <div class="artifact-header">
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                        <h3 class="artifact-title" data-translate="cs_ai_jira_title"><i class="fab fa-jira"></i> Ejemplo Real: Generación de Criterios de Aceptación Given-When-Then</h3>
+                        <h3 class="artifact-title" data-translate="cs_ai_jira_title"><i class="fab fa-jira"></i> Ejemplo Real: GeneraciÃ³n de Criterios de AceptaciÃ³n Given-When-Then</h3>
                         <span class="meta-tag" style="border-color:#38bdf8; color:#38bdf8;"><i class="fas fa-terminal"></i> Jira Integration</span>
                     </div>
                 </div>
@@ -2974,13 +2909,13 @@
                     <div style="background:#090d16; border:1px solid rgba(168,85,247,0.3); border-radius:8px; padding:1rem;">
                         <div style="color:#a855f7; font-size:0.82rem; font-weight:700; text-transform:uppercase; margin-bottom:0.5rem;" data-translate="cs_ai_prompt_lbl"><i class="fas fa-comment-alt"></i> Prompt de Entrada (PO / BA)</div>
                         <p style="color:#cbd5e1; font-size:0.82rem; line-height:1.5; font-family:'Fira Code', monospace; margin:0;" data-translate="cs_ai_prompt_txt">
-                            "Actúa como Senior BA Financiero. Genera 3 criterios BDD (Given-When-Then) para la historia 'Apertura Digital de Cuenta Corriente' en móviles cuando el usuario falla la validación de clave de acceso."
+                            "ActÃºa como Senior BA Financiero. Genera 3 criterios BDD (Given-When-Then) para la historia 'Apertura Digital de Cuenta Corriente' en mÃ³viles cuando el usuario falla la validaciÃ³n de clave de acceso."
                         </p>
                     </div>
 
                     <div style="background:#090d16; border:1px solid rgba(0,230,118,0.3); border-radius:8px; padding:1rem;">
                         <div style="color:#00e676; font-size:0.82rem; font-weight:700; text-transform:uppercase; margin-bottom:0.5rem;" data-translate="cs_ai_out_lbl"><i class="fas fa-check-circle"></i> Criterio BDD Generado (Jira Ready)</div>
-                        <pre class="sql-code-block" style="margin:0 !important; font-size:0.78rem !important; padding:0.75rem !important;" data-translate="cs_ai_out_code"><span class="sql-keyword">SCENARIO</span>: Error en validación de clave de acceso
+                        <pre class="sql-code-block" style="margin:0 !important; font-size:0.78rem !important; padding:0.75rem !important;" data-translate="cs_ai_out_code"><span class="sql-keyword">SCENARIO</span>: Error en validaciÃ³n de clave de acceso
 <span class="sql-func">GIVEN</span> el usuario se encuentra en el Paso 2 del formulario
 <span class="sql-func">WHEN</span> ingresa una clave incorrecta por 3ra vez
 <span class="sql-keyword">THEN</span> el sistema emite el evento form_validation_error
@@ -2991,7 +2926,7 @@
 
         </div>
 
-        <!-- SECCIÓN INDEPENDIENTE DE RETORNO A PROYECTOS -->
+        <!-- SECCIÃ“N INDEPENDIENTE DE RETORNO A PROYECTOS -->
         <div style="text-align: center; padding: 3rem 0 2rem 0; margin-top: 3rem; border-top: 1px solid rgba(0, 180, 216, 0.2);">
             <a href="../projects.html" class="btn btn-hero-primary" style="padding: 0.85rem 2.5rem; font-size: 1rem; border-radius: 50px; box-shadow: 0 6px 20px rgba(0, 230, 118, 0.3); display: inline-flex; align-items: center; gap: 0.6rem;"><i class="fas fa-arrow-left"></i> <span data-translate="btnBackProjects">Volver a Proyectos</span></a>
         </div>
@@ -3029,13 +2964,13 @@
             </div>
         </div>
         <div class="footer-copyright container">
-            <p>&copy; <span id="year"></span> Benjamín Espinoza. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> BenjamÃ­n Espinoza. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="../assets/js/script.js"></script>
     <script>
-        // LÓGICA DE PESTAÑAS INTERACTIVAS DEL CASO DE ESTUDIO
+        // LÃ“GICA DE PESTAÃ‘AS INTERACTIVAS DEL CASO DE ESTUDIO
         document.addEventListener('DOMContentLoaded', () => {
             const tabBtns = document.querySelectorAll('.cs-tab-btn');
             const tabPanes = document.querySelectorAll('.cs-tab-pane');
@@ -3052,50 +2987,8 @@
                     if (pane) pane.classList.add('active');
                 });
             });
-
-            // LÓGICA DE ACORDEÓN INTERACTIVO PARA LAS TARJETAS DE ESTRATEGIA DE PRODUCTO
-            const collapsibleCards = document.querySelectorAll('.collapsible-card');
-            collapsibleCards.forEach(card => {
-                const trigger = card.querySelector('.card-toggle-trigger');
-                if (trigger) {
-                    trigger.addEventListener('click', (e) => {
-                        card.classList.toggle('collapsed');
-                    });
-                }
-            });
-
-            const expandAllBtn = document.getElementById('expand-all-cards');
-            const collapseAllBtn = document.getElementById('collapse-all-cards');
-
-            if (expandAllBtn) {
-                expandAllBtn.addEventListener('click', () => {
-                    const poCards = document.querySelectorAll('#tab-po .collapsible-card');
-                    poCards.forEach(c => c.classList.remove('collapsed'));
-                });
-            }
-            if (collapseAllBtn) {
-                collapseAllBtn.addEventListener('click', () => {
-                    const poCards = document.querySelectorAll('#tab-po .collapsible-card');
-                    poCards.forEach(c => c.classList.add('collapsed'));
-                });
-            }
-
-            const expandAllBpmnBtn = document.getElementById('expand-all-bpmn');
-            const collapseAllBpmnBtn = document.getElementById('collapse-all-bpmn');
-
-            if (expandAllBpmnBtn) {
-                expandAllBpmnBtn.addEventListener('click', () => {
-                    const bpmnCards = document.querySelectorAll('#tab-bpmn .collapsible-card');
-                    bpmnCards.forEach(c => c.classList.remove('collapsed'));
-                });
-            }
-            if (collapseAllBpmnBtn) {
-                collapseAllBpmnBtn.addEventListener('click', () => {
-                    const bpmnCards = document.querySelectorAll('#tab-bpmn .collapsible-card');
-                    bpmnCards.forEach(c => c.classList.add('collapsed'));
-                });
-            }
         });
     </script>
 </body>
 </html>
+
