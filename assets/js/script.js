@@ -39,7 +39,8 @@ const translations = {
     btnDownloadCV: "Download CV",
 
     // --- Index Page Content ---
-    heroTitle: "Data, BI & Business Analyst | Product Specialist",
+    heroBadge: '<i class="fas fa-layer-group"></i> Data, BI & Business Analyst',
+    heroTitle: "Data, BI & Business Analyst",
     heroSubtitle: "Bridging data analytics (SQL, Power BI, Looker Studio), business process engineering (BPMN 2.0, BDD), digital product management, and Generative AI to drive strategic decisions.",
     btnProjects: "View Projects",
     btnResume: "View Resume",
@@ -94,19 +95,29 @@ const translations = {
     cv_timeline_items: [{
       type: 'work',
       date: "May 2023 – Present",
-      title: "Business Analyst & Product Owner",
+      title: "Business Analyst",
       company: "Banco Internacional",
       url: "https://www.internacional.cl",
       logo: "assets/img/logos/banco-internacional.webp",
       description: `<ul>
   <li><strong>Business Analyst in Agile Triads</strong>: Defined MVP Canvases, User Story Mapping, wrote user stories in Jira, and structured technical/functional documentation in Confluence within Agile triads (Product Owner, Tech Lead, BA + Developers).</li>
   <li><strong>Functional QA & Production Rollouts</strong>: Conducted functional testing in QA staging environments to certify software builds, collaborated with UX designers for Figma wireframing, and performed smoke testing for production deployments.</li>
-  <li><strong>Dual Role (BA & PO) for Public Website Redesign</strong>: Led the cross-functional team in charge of redesigning the bank’s public website. Directly managed page creation and production publishing using Puck CMS, AI-assisted UX mockups (Firebase), and web analytics setup (GA4, GTM, Microsoft Clarity).</li>
+  <li><strong>Digital Product & Web Portal Management</strong>: Collaborated on the public website redesign. Directly managed page creation and production publishing using Puck CMS, AI-assisted UX mockups (Firebase), and web analytics setup (GA4, GTM, Microsoft Clarity).</li>
   <li><strong>Process Modeling (BPMN 2.0)</strong>: Surveyed and mapped business workflows and operating models adhering strictly to BPMN 2.0 standards.</li>
   <li><strong>Data Analytics & SQL (PostgreSQL & Looker Studio)</strong>: Measured product adoption and performance by writing complex SQL queries in PostgreSQL and crafting executive dashboards in Looker Studio.</li>
   <li><strong>GenAI Productivity Integration</strong>: Leveraged Gemini and NotebookLM daily for rapid user story creation and task automation, alongside Rovo AI (Jira/Confluence) for AI-assisted flow diagramming.</li>
   <li><strong>Analytics & Metrics Legacy (2+ Years)</strong>: Established the initial reporting framework and key performance indicators from scratch across Innovation, Fraud, Sales, and Product teams before transitioning to the digital product triad.</li>
-</ul>`
+</ul>`,
+      skills: [
+        "Business Analysis (BA)",
+        "Agile Triads & Jira",
+        "Functional QA",
+        "Puck CMS & Web Management",
+        "BPMN 2.0 Process Modeling",
+        "SQL (PostgreSQL)",
+        "Looker Studio & Power BI",
+        "Generative AI (Gemini, Rovo)"
+      ]
     }, {
       type: 'work',
       date: "Sep 2021 – Apr 2023",
@@ -526,7 +537,7 @@ const translations = {
     hpa_badge: "Case Study",
     hpa_title: "Healthcare Procurement Analytics",
     hpa_subtitle: "An independent analysis of Chile's public healthcare supply chain — examining vendor compliance failures, procurement effectiveness, and order fulfillment gaps to propose a data-driven vendor management model for systemic improvement.",
-    hpa_meta_date: "2016–2018 Data",
+    hpa_meta_date: "2016–2019 Data",
     hpa_meta_country: "Chile",
     hpa_meta_sector: "Public Health Supply Chain",
     hpa_meta_bpm: "BPM / Process Redesign",
@@ -542,7 +553,7 @@ const translations = {
     hpa_exec2_body: "BPMN 2.0 process modeling, OTIF analytics on ChileCompra tender execution, and a proposed Vendor Management Model featuring a dynamic Vendor Scorecard.",
     hpa_exec3_title: "Targeted Impact",
     hpa_exec3_body: "Mitigation of $1.7B CLP in vendor fines, early detection of contract renewal risks, and systematic SLA enforcement for vital pharmaceutical supply lines.",
-    hpa_exec_disclaimer: "Methodological Note: Case study developed using historical data (2016–2018) and does not represent the current operational state or delivery performance of CENABAST.",
+    hpa_exec_disclaimer: "Methodological Note: Case study developed using historical data (2016–2019) and does not represent the current operational state or delivery performance of CENABAST.",
     hpa_tab_overview: "Overview",
     hpa_tab_process: "Process (AS-IS)",
     hpa_tab_data: "Data Analysis",
@@ -592,7 +603,7 @@ const translations = {
     hpa_canvas_costs_desc: "Inventory Holding and Transportation represent the primary operational cost drivers. Total annual expenditure (2016): $11,687,552 CLP (in thousands).",
     hpa_canvas_revenue: "Revenue Streams",
     hpa_canvas_rev_desc: "Intermediation commission fees charged to client health institutions per transaction. Total annual revenue (2016): $12,359,324 CLP (in thousands).",
-    hpa_kpicard_title: "Baseline Performance Indicators (2016–2018)",
+    hpa_kpicard_title: "Baseline Performance Indicators (2016–2019)",
     hpa_kpicard_badge: "Empirical Baseline",
     hpa_kpicard_desc: "Quantitative baseline metrics highlighting the operational non-compliance gap, sanction rates, and financial risks across CENABAST's network before the proposed intervention.",
     hpa_kpi_noncompliance: "Non-Fulfillment Rate",
@@ -872,7 +883,7 @@ const translations = {
     hpa_j3_title: "3. Restoration of Public Network Trust",
     hpa_j3_body: "Guaranteeing an OTIF ≥93% resolves the primary reason why 68% of member health facilities avoided purchasing through CENABAST due to fear of shortages, driving public procurement volume aggregation.",
     hpa_j4_title: "4. Data Automation & ERP Integration",
-    hpa_imp_metric: "Metric", hpa_imp_asis: "AS-IS (2016–2018)", hpa_imp_tobe: "TO-BE Target", hpa_imp_method: "Key Intervention",
+    hpa_imp_metric: "Metric", hpa_imp_asis: "AS-IS (2016–2019)", hpa_imp_tobe: "TO-BE Target", hpa_imp_method: "Key Intervention",
     hpa_imp_r1: "Order Fulfillment Rate", hpa_imp_r1m: "Vendor scorecard in tender selection",
     hpa_imp_r2: "Sanction Rate", hpa_imp_r2m: "Automated ERP reporting + revised fine rules",
     hpa_imp_r3: "Near-Expiry Contracts", hpa_imp_r3m: "Daily expiry monitoring system",
@@ -886,7 +897,7 @@ const translations = {
     hpa_phase1_title: "Phase 1: AS-IS Process Mapping & Bottleneck Diagnosis",
     hpa_phase1_body: "Detailed modeling of CENABAST's 5 procurement sub-processes following BPR Ospina-Duque methodology, identifying structural flaws in vendor penalty enforcement and operational visibility gaps.",
     hpa_phase2_title: "Phase 2: Quantitative Data Analytics",
-    hpa_phase2_body: "Processing 810,703 historical order records (2016–2018 datasets) using Python/Pandas to compute baseline OTIF delivery compliance, shortfall concentration (Top-5 vendors), sanction rates (109%), and billing error fines ($1.695B CLP).",
+    hpa_phase2_body: "Processing 810,703 historical order records (2016–2019 datasets) using Python/Pandas to compute baseline OTIF delivery compliance, shortfall concentration (Top-5 vendors), sanction rates (109%), and billing error fines ($1.695B CLP).",
     hpa_phase3_title: "Phase 3: Proposed TO-BE Model Architecture",
     hpa_phase3_body: "Design of the ILPES Objective Tree, a 4-metric operational service KPI framework, and a mandatory ChileCompra Vendor Scorecard weighting OTIF compliance (35%) and punctuality (25%).",
     hpa_phase4_title: "Phase 4: Implementation Roadmap & Governance",
@@ -909,9 +920,9 @@ const translations = {
     hpa_sources_body: "<strong>📂 Data Sources & Regulatory Framework:</strong><br>• CENABAST Annual Institutional Reports (BGI) 2016, 2017, 2018<br>• ChileCompra Public Procurement Platform records (Mercado Público)<br>• CENABAST internal compliance reports (Progressive Fulfillment Report)<br>• SISMARKET customer perception survey (applied across public health network)<br>• MINSAL / Healthcare Network Undersecretariat statistics<br>• ISP (Public Health Institute) regulatory registries<br>• Law 19,886 (Chilean Public Procurement Law) and its regulations<br>• Association of BPM Professionals (ABPMP) — BPM lifecycle reference",
     hpa_dash_live_title: "Analytical Synthesis & Data Governance",
     hpa_dash_live_badge: "Institutional Analysis",
-    hpa_dash_live_desc: "Comprehensive supply chain analytics consolidating 810,703 order records (2016–2018), vendor shortfall rankings, and SISMARKET public health survey dimensions.",
+    hpa_dash_live_desc: "Comprehensive supply chain analytics consolidating 810,703 order records (2016–2019), vendor shortfall rankings, and SISMARKET public health survey dimensions.",
     hpa_dash_title: "Analytical Synthesis & Institutional Governance",
-    hpa_dash_desc: "The quantitative methodology consolidates 810,703 order records across 36 months (2016–2018), integrating empirical client surveys (SISMARKET) with ILPES/CEPAL problem structuring to deliver actionable, validated supply chain governance aligned with Law 19.886.",
+    hpa_dash_desc: "The quantitative methodology consolidates 810,703 order records across 36 months (2016–2019), integrating empirical client surveys (SISMARKET) with ILPES/CEPAL problem structuring to deliver actionable, validated supply chain governance aligned with Law 19.886.",
     hpa_dash_badge: "Institutional Synthesis",
     hpa_chip_orders: "810,703 Orders Processed",
     hpa_chip_series: "36 Months of Time Series",
@@ -1178,7 +1189,8 @@ const translations = {
     btnDownloadCV: "Descargar CV",
 
     // --- Index Page Content ---
-    heroTitle: "Data, BI & Business Analyst | Product Specialist",
+    heroBadge: '<i class="fas fa-layer-group"></i> Analista de Datos, BI y Negocios',
+    heroTitle: "Data, BI & Business Analyst",
     heroSubtitle: "Conecto la analítica de datos (SQL, Power BI, Looker Studio), el modelado de negocios (BPMN 2.0, BDD), la gestión de productos digitales e IA Generativa para tomar decisiones estratégicas.",
     btnProjects: "Ver Proyectos",
     btnResume: "Ver CV",
@@ -1231,10 +1243,10 @@ const translations = {
     cv_badges_title: "Insignias Destacadas",
     cv_credly_link: "Ver más en mi perfil de Credly",
     cv_timeline_items: [
-        { type: 'work', date: "Mayo 2023 – Actualidad", title: "Business Analyst & Product Owner", company: "Banco Internacional", url: "https://www.internacional.cl", logo: "assets/img/logos/banco-internacional.webp", description: `<ul>
+        { type: 'work', date: "Mayo 2023 – Actualidad", title: "Business Analyst", company: "Banco Internacional", url: "https://www.internacional.cl", logo: "assets/img/logos/banco-internacional.webp", description: `<ul>
   <li><strong>Business Analyst en Triadas Ágiles</strong>: Definición de MVP Canvas, User Story Mapping, redacción de historias de usuario en Jira y documentación técnica/funcional en Confluence para triadas compuestas por Product Owner, Technical Lead y desarrolladores.</li>
   <li><strong>Pruebas Funcionales y Calidad (QA)</strong>: Certificación de desarrollos en ambientes previos (QA), interacción constante con equipos UX para maquetación en Figma y ejecución de pruebas de aceptación en ambientes productivos.</li>
-  <li><strong>Doble Rol (BA & PO) en Rediseño Web Público</strong>: Liderazgo del equipo responsable del rediseño del sitio web público del banco, administrando directamente la herramienta Puck CMS para la creación y publicación de páginas en producción, maquetación apoyada en IA (Firebase) y monitoreo de analítica digital (GA4, GTM y Microsoft Clarity).</li>
+  <li><strong>Gestión de Productos Digitales & Rediseño Web</strong>: Colaboración activa en el rediseño del sitio web público del banco, administrando directamente la herramienta Puck CMS para la creación y publicación de páginas en producción, maquetación apoyada en IA (Firebase) y monitoreo de analítica digital (GA4, GTM y Microsoft Clarity).</li>
   <li><strong>Diagramación de Procesos (BPMN 2.0)</strong>: Levantamiento y modelamiento formal de flujos de negocio optimizados bajo estándar BPMN 2.0.</li>
   <li><strong>Métricas y Consultas SQL (PostgreSQL & Looker Studio)</strong>: Medición de uso e impacto de productos digitales ejecutando consultas SQL sobre PostgreSQL y construyendo tableros de control en Looker Studio.</li>
   <li><strong>Productividad impulsada por IA Generativa</strong>: Adopción diaria de Gemini y NotebookLM para agilizar la generación de historias de usuario y tareas repetitivas, y uso de Rovo AI en Jira/Confluence para la diagramación asistida de procesos.</li>
@@ -1262,7 +1274,7 @@ const translations = {
         tier2: [
           "User Story Mapping & MVP Canvas",
           "Modelado de Procesos (BPMN 2.0)",
-          "Rol Dual Product Owner & BA",
+          "Análisis de Negocios (BA)",
           "Pruebas Funcionales (QA)",
           "Inteligencia de Negocios & KPIs"
         ],
@@ -1557,7 +1569,7 @@ const translations = {
     hpa_badge: "Caso de Estudio",
     hpa_title: "Healthcare Procurement Analytics",
     hpa_subtitle: "Análisis independiente de la cadena de suministro de salud pública en Chile: incumplimientos de proveedores, efectividad en compras y brechas en la entrega de pedidos, con una propuesta de modelo de gestión de proveedores basado en datos.",
-    hpa_meta_date: "Datos 2016–2018",
+    hpa_meta_date: "Datos 2016–2019",
     hpa_meta_country: "Chile",
     hpa_meta_sector: "Cadena de Suministro de Salud",
     hpa_meta_bpm: "BPM / Rediseño de Procesos",
@@ -1573,7 +1585,7 @@ const translations = {
     hpa_exec2_body: "Modelamiento de procesos BPMN 2.0, analítica OTIF sobre ejecuciones de licitaciones en ChileCompra y una propuesta de Modelo de Gestión de Proveedores con Scorecard dinámico.",
     hpa_exec3_title: "Impacto Esperado",
     hpa_exec3_body: "Mitigación de $1.700 millones de CLP en multas a proveedores, detección temprana de riesgos en renovaciones de contratos y cumplimiento sistemático de SLA en medicamentos vitales.",
-    hpa_exec_disclaimer: "Nota metodológica: Caso de estudio desarrollado con datos históricos (2016–2018) y no representa el estado actual de las operaciones ni entregas de CENABAST.",
+    hpa_exec_disclaimer: "Nota metodológica: Caso de estudio desarrollado con datos históricos (2016–2019) y no representa el estado actual de las operaciones ni entregas de CENABAST.",
     hpa_tab_overview: "Resumen",
     hpa_tab_process: "Proceso (AS-IS)",
     hpa_tab_data: "Análisis de Datos",
@@ -1623,7 +1635,7 @@ const translations = {
     hpa_canvas_costs_desc: "La mayor parte de los costos se da en cuanto a costos de Inventario y de Transporte. Los gastos al año 2016 fueron $M11.687.552 CLP.",
     hpa_canvas_revenue: "Estructura de Ingresos",
     hpa_canvas_rev_desc: "Ingresos por comisión que cobra a sus clientes por las operaciones que realiza. Para el año 2016 estos ingresos fueron de $M12.359.324 CLP.",
-    hpa_kpicard_title: "Indicadores de Desempeño Base (2016–2018)",
+    hpa_kpicard_title: "Indicadores de Desempeño Base (2016–2019)",
     hpa_kpicard_badge: "Línea Base Empírica",
     hpa_kpicard_desc: "Métricas cuantitativas de línea base que evidencian la brecha de incumplimiento operacional, tasas de sanciones y riesgos financieros antes de la intervención propuesta.",
     hpa_kpi_noncompliance: "Tasa de Incumplimiento",
@@ -1905,7 +1917,7 @@ const translations = {
     hpa_j4_title: "4. Automatización de Datos e Integración ERP",
     hpa_j4_body: "La integración directa elimina la carga manual de archivos planos, borrando $1.695M CLP en multas por información inexacta y eliminando el desfase de 30 días en alertas.",
     hpa_impact_title: "Impacto Esperado — AS-IS vs TO-BE",
-    hpa_imp_metric: "Métrica", hpa_imp_asis: "AS-IS (2016–2018)", hpa_imp_tobe: "Meta TO-BE", hpa_imp_method: "Intervención Clave",
+    hpa_imp_metric: "Métrica", hpa_imp_asis: "AS-IS (2016–2019)", hpa_imp_tobe: "Meta TO-BE", hpa_imp_method: "Intervención Clave",
     hpa_imp_r1: "Tasa de Cumplimiento de Pedidos", hpa_imp_r1m: "Scorecard de proveedor en selección de licitación",
     hpa_imp_r2: "Tasa de Sanciones", hpa_imp_r2m: "Informes ERP automatizados + nuevas reglas de multas",
     hpa_imp_r3: "Contratos por Vencer", hpa_imp_r3m: "Sistema de monitoreo diario de vencimientos",
@@ -1919,7 +1931,7 @@ const translations = {
     hpa_phase1_title: "Fase 1: Mapeo de Procesos AS-IS y Diagnóstico",
     hpa_phase1_body: "Modelado detallado de los 5 subprocesos de compra de CENABAST siguiendo la metodología BPR Ospina-Duque, identificando fallas en la aplicación de sanciones y lagunas de visibilidad.",
     hpa_phase2_title: "Fase 2: Analítica Cuantitativa de Datos",
-    hpa_phase2_body: "Procesamiento de 810.703 registros históricos de pedidos (datasets 2016–2018) con Python/Pandas para calcular tasas OTIF de referencia, concentración de faltantes (Top-5 proveedores), tasa de sanciones (109%) y multas por datos erróneos ($1.695M CLP).",
+    hpa_phase2_body: "Procesamiento de 810.703 registros históricos de pedidos (datasets 2016–2019) con Python/Pandas para calcular tasas OTIF de referencia, concentración de faltantes (Top-5 proveedores), tasa de sanciones (109%) y multas por datos erróneos ($1.695M CLP).",
     hpa_phase3_title: "Fase 3: Arquitectura del Modelo TO-BE",
     hpa_phase3_body: "Diseño del Árbol de Objetivos ILPES, marco de 4 KPIs operacionales de servicio y Scorecard obligatorio en ChileCompra ponderando cumplimiento OTIF (35%) y puntualidad (25%).",
     hpa_phase4_title: "Fase 4: Plan de Implementación y Gobernanza",
@@ -1942,9 +1954,9 @@ const translations = {
     hpa_sources_body: "<strong>📂 Fuentes de Datos e Integridad Regulatoria:</strong><br>• Informes Anuales Institucionales CENABAST (BGI) 2016, 2017, 2018<br>• Registros de plataforma de compras públicas ChileCompra (Mercado Público)<br>• Reportes internos de cumplimiento CENABAST (Informe de Cumplimiento Progresivo)<br>• Encuesta de satisfacción de clientes SISMARKET (aplicada a la red cliente CENABAST)<br>• Estadísticas MINSAL / Subsecretaría de Redes Asistenciales<br>• Registros regulatorios del ISP (Instituto de Salud Pública)<br>• Ley 19.886 (Ley de Compras Públicas de Chile) y su Reglamento<br>• Asociación de Profesionales BPM (ABPMP) — Referencia del ciclo de vida BPM",
     hpa_dash_live_title: "Síntesis Analítica y Gobernanza Institucional",
     hpa_dash_live_badge: "Análisis Institucional",
-    hpa_dash_live_desc: "Consolidación analítica de la cadena de suministro sobre 810.703 pedidos (2016–2018), ranking de proveedores críticos y dimensiones de la encuesta SISMARKET de la red asistencial.",
+    hpa_dash_live_desc: "Consolidación analítica de la cadena de suministro sobre 810.703 pedidos (2016–2019), ranking de proveedores críticos y dimensiones de la encuesta SISMARKET de la red asistencial.",
     hpa_dash_title: "Síntesis Analítica y Gobernanza Institucional",
-    hpa_dash_desc: "La metodología cuantitativa consolida 810.703 registros de pedidos a lo largo de 36 meses (2016–2018), integrando encuestas empíricas de clientes (SISMARKET) con la estructuración ILPES/CEPAL para fundamentar una gobernanza de abastecimiento rigurosa y alineada con la Ley 19.886.",
+    hpa_dash_desc: "La metodología cuantitativa consolida 810.703 registros de pedidos a lo largo de 36 meses (2016–2019), integrando encuestas empíricas de clientes (SISMARKET) con la estructuración ILPES/CEPAL para fundamentar una gobernanza de abastecimiento rigurosa y alineada con la Ley 19.886.",
     hpa_dash_badge: "Síntesis Institucional",
     hpa_chip_orders: "810.703 Pedidos Procesados",
     hpa_chip_series: "36 Meses de Serie Temporal",
@@ -3402,8 +3414,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function showLanguageSwitchHint() {
-  const toggleBtn = document.querySelector('.lang-toggle');
-  if (!toggleBtn) return;
+  const toggleBtns = document.querySelectorAll('.lang-toggle');
+  let targetBtn = null;
+  for (const btn of toggleBtns) {
+    if (btn.offsetParent !== null) {
+      targetBtn = btn;
+      break;
+    }
+  }
+  if (!targetBtn && toggleBtns.length > 0) targetBtn = toggleBtns[0];
+  if (!targetBtn) return;
 
   const existing = document.querySelector('.lang-tooltip');
   if (existing) existing.remove();
@@ -3415,12 +3435,12 @@ function showLanguageSwitchHint() {
   const tooltip = document.createElement('div');
   tooltip.className = 'lang-tooltip';
   tooltip.innerHTML = hintText;
-  toggleBtn.appendChild(tooltip);
+  targetBtn.appendChild(tooltip);
 
   setTimeout(() => {
     tooltip.classList.add('fade-out');
     setTimeout(() => tooltip.remove(), 450);
-  }, 4000);
+  }, 4500);
 }
 
 function setupNativeDashboardFilters() {

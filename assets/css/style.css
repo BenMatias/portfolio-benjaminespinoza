@@ -155,6 +155,7 @@ nav.desktop-nav a:hover { color: #00f2fe; }
 .lang-toggle { background: none; border: none; color: inherit; font-family: inherit; font-size: inherit; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; }
 .hamburger { display: none; font-size: 1.6rem; background: none; border: none; color: var(--white); cursor: pointer; z-index: 10001; padding: 0.3rem 0.5rem; border-radius: 8px; transition: background 0.2s ease; }
 .hamburger:hover { background: rgba(0, 230, 118, 0.15); }
+.header-mobile-actions { display: none; }
 
 /* Mobile Navigation - themed to match hero */
 .mobile-nav { 
@@ -1194,6 +1195,37 @@ p.timeline-company a:hover {
   nav.desktop-nav { display: none; }
   .hamburger { display: block; }
 
+  .header-mobile-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 100001;
+  }
+
+  .lang-toggle-header-mobile {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 230, 118, 0.4);
+    border-radius: 20px;
+    padding: 0.3rem 0.65rem;
+    color: #e0e1dd;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .lang-toggle-header-mobile:hover,
+  .lang-toggle-header-mobile:active {
+    background: rgba(0, 230, 118, 0.22);
+    border-color: #00e676;
+    color: #ffffff;
+  }
+
   /* Fixed Mobile Header & Navigation */
   header,
   .header-hero-wrapper header {
@@ -1208,6 +1240,9 @@ p.timeline-company a:hover {
     -webkit-backdrop-filter: blur(16px) !important;
     padding: 0.75rem 1.5rem !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   /* Hero: ocultar imagen y wrapper en mobile para eliminar espacio vacío */
