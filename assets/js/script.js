@@ -878,19 +878,19 @@ const translations = {
     hpa_phase2_body: "Processing 810,703 historical order records (2016–2018 datasets) using Python/Pandas to compute baseline OTIF delivery compliance, shortfall concentration (Top-5 vendors), sanction rates (109%), and billing error fines ($1.695B CLP).",
     hpa_phase3_title: "Phase 3: Proposed TO-BE Model Architecture",
     hpa_phase3_body: "Design of the ILPES Objective Tree, a 4-metric operational service KPI framework, and a mandatory ChileCompra Vendor Scorecard weighting OTIF compliance (35%) and punctuality (25%).",
-    hpa_phase4_title: "Phase 4: BI Dashboard Prototyping",
-    hpa_phase4_body: "Interactive Tableau Public dashboard prototyping for executive monitoring of real-time vendor performance, 90-day contract expiry alerts, and complaint trend analysis.",
+    hpa_phase4_title: "Phase 4: Implementation Roadmap & Governance",
+    hpa_phase4_body: "Design of the operational implementation roadmap, ERP data integration protocols, penalty enforcement workflows, and institutional change management for CENABAST and ChileCompra.",
     hpa_meth1_title: "Diagnostic Framework", hpa_meth1_body: "Applied ILPES/CEPAL Problem Tree methodology to structure root causes and systemic effects of vendor non-compliance.",
     hpa_meth2_title: "Process Management (BPM / BPR)", hpa_meth2_body: "Mapped all 5 procurement sub-processes following the BPR methodology — documenting the AS-IS operational sequence and designing TO-BE improvements.",
     hpa_meth3_title: "Quantitative Analytics", hpa_meth3_body: "Extracted and analyzed institutional datasets: monthly OTIF rates, vendor sanction logs, complaint causality data, and procurement effectiveness ratios using Python/Pandas.",
     hpa_meth4_title: "Client Perception Survey", hpa_meth4_body: "Analyzed a structured satisfaction survey (SISMARKET) covering intermediation quality, executive attention, logistics, and billing dimensions.",
     hpa_tools_title: "Tools & Technical Stack",
-    hpa_dash_live_title: "Interactive Dashboard — Tableau Public BI",
-    hpa_dash_live_badge: "Live BI Dashboard",
-    hpa_dash_live_desc: "Explore CENABAST's business intelligence dashboard: monthly OTIF tracking (2016–2018), vendor shortfall rankings, and SISMARKET survey analytics.",
-    hpa_dash_title: "Interactive Dashboard — Tableau Public",
-    hpa_dash_desc: "A fully interactive Tableau Public dashboard — featuring OTIF tracking, vendor scorecard simulation, procurement funnel analysis, and complaint trend visualization.",
-    hpa_dash_badge: "Live Dashboard",
+    hpa_dash_live_title: "Analytical Synthesis & Data Governance",
+    hpa_dash_live_badge: "Institutional Analysis",
+    hpa_dash_live_desc: "Comprehensive supply chain analytics consolidating 810,703 order records (2016–2018), vendor shortfall rankings, and SISMARKET public health survey dimensions.",
+    hpa_dash_title: "Analytical Synthesis & Institutional Governance",
+    hpa_dash_desc: "The quantitative methodology consolidates 810,703 order records across 36 months (2016–2018), integrating empirical client surveys (SISMARKET) with ILPES/CEPAL problem structuring to deliver actionable, validated supply chain governance aligned with Law 19.886.",
+    hpa_dash_badge: "Institutional Synthesis",
     hpa_back: "Back to Projects",
     cs_ai_c2_badge: "-91% Time",
     cs_ai_c3_badge: "-98% Time",
@@ -1883,19 +1883,19 @@ const translations = {
     hpa_phase2_body: "Procesamiento de 810.703 registros históricos de pedidos (datasets 2016–2018) con Python/Pandas para calcular tasas OTIF de referencia, concentración de faltantes (Top-5 proveedores), tasa de sanciones (109%) y multas por datos erróneos ($1.695M CLP).",
     hpa_phase3_title: "Fase 3: Arquitectura del Modelo TO-BE",
     hpa_phase3_body: "Diseño del Árbol de Objetivos ILPES, marco de 4 KPIs operacionales de servicio y Scorecard obligatorio en ChileCompra ponderando cumplimiento OTIF (35%) y puntualidad (25%).",
-    hpa_phase4_title: "Fase 4: Prototipado de Dashboard BI",
-    hpa_phase4_body: "Modelado de dashboards interactivos en Tableau Public para la supervisión ejecutiva del desempeño de proveedores, alertas a 90 días de vencimiento de contratos y análisis de reclamos.",
+    hpa_phase4_title: "Fase 4: Plan de Implementación y Gobernanza",
+    hpa_phase4_body: "Diseño de la hoja de ruta de implementación operacional, protocolos de integración de datos ERP, flujos de aplicación de sanciones y gestión del cambio institucional para CENABAST y ChileCompra.",
     hpa_meth1_title: "Marco Diagnóstico", hpa_meth1_body: "Metodología Árbol de Problemas (ILPES/CEPAL) para estructurar causas raíz y efectos sistémicos del incumplimiento de proveedores.",
     hpa_meth2_title: "Gestión de Procesos (BPM / BPR)", hpa_meth2_body: "Mapeo de los 5 subprocesos de compras siguiendo la metodología BPR Ospina-Duque — documentando la secuencia operacional del estado AS-IS y diseñando las intervenciones del estado TO-BE.",
     hpa_meth3_title: "Análisis Cuantitativo", hpa_meth3_body: "Extracción y análisis de datos institucionales: tasas OTIF mensuales, registros de sanciones, causalidad de reclamos y ratios de efectividad en compras usando Python/Pandas.",
     hpa_meth4_title: "Encuesta de Percepción de Clientes", hpa_meth4_body: "Análisis de encuesta estructurada (SISMARKET) con dimensiones de calidad de intermediación, atención ejecutiva, logística y facturación.",
     hpa_tools_title: "Herramientas y Stack Tecnológico",
-    hpa_dash_live_title: "Dashboard Interactivo — Tableau Public BI",
-    hpa_dash_live_badge: "Tablero Interactivo BI",
-    hpa_dash_live_desc: "Explore el panel de inteligencia de negocios de CENABAST: visualización de la tasa OTIF mensual (2016–2018), ranking de faltantes por proveedor y análisis multidimensional de la encuesta SISMARKET.",
-    hpa_dash_title: "Dashboard Interactivo — Tableau Public",
-    hpa_dash_desc: "Un dashboard completamente interactivo en Tableau Public con seguimiento OTIF, simulación de scorecard de proveedores, análisis de funnel de licitaciones y visualización de tendencias de reclamos.",
-    hpa_dash_badge: "Tablero Activo",
+    hpa_dash_live_title: "Síntesis Analítica y Gobernanza Institucional",
+    hpa_dash_live_badge: "Análisis Institucional",
+    hpa_dash_live_desc: "Consolidación analítica de la cadena de suministro sobre 810.703 pedidos (2016–2018), ranking de proveedores críticos y dimensiones de la encuesta SISMARKET de la red asistencial.",
+    hpa_dash_title: "Síntesis Analítica y Gobernanza Institucional",
+    hpa_dash_desc: "La metodología cuantitativa consolida 810.703 registros de pedidos a lo largo de 36 meses (2016–2018), integrando encuestas empíricas de clientes (SISMARKET) con la estructuración ILPES/CEPAL para fundamentar una gobernanza de abastecimiento rigurosa y alineada con la Ley 19.886.",
+    hpa_dash_badge: "Síntesis Institucional",
     hpa_back: "Volver a Proyectos",
     cs_ai_c4_badge: "-95% Tiempo",
 
@@ -2978,6 +2978,14 @@ const KNOWLEDGE_BASE = {
       en: ["How does it connect to NASA API?", "How are hazardous asteroids classified?", "What space metrics are shown?"],
       es: ["¿Cómo se conecta a la API de la NASA?", "¿Cómo clasifica los asteroides peligrosos?", "¿Qué métricas astronómicas muestra?"]
     }
+  },
+  healthcare: {
+    name: { en: "Healthcare Procurement Analytics", es: "Compras Públicas de Salud" },
+    context: "Strategic case study analyzing 810,703 order records from CENABAST (Chile's public health procurement agency). Identifies a 75.8% OTIF baseline, $111B CLP in product shortfalls, and designs a TO-BE Vendor Management Model with ILPES/CEPAL Objective Tree, BPMN 2.0 process redesign, a 0-100 ChileCompra Scorecard (35% OTIF, 25% punctuality), and an institutional data governance framework.",
+    prompts: {
+      en: ["What is the OTIF baseline and main bottleneck?", "How does the proposed Vendor Scorecard work?", "What was analyzed in the 810k orders dataset?"],
+      es: ["¿Cuál es la tasa OTIF y el cuello de botella principal?", "¿Cómo funciona el Scorecard de Proveedores propuesto?", "¿Qué revela el análisis de las 810k órdenes?"]
+    }
   }
 };
 
@@ -3000,6 +3008,7 @@ const GeminiChatWidget = {
     else if (bodyId === 'page-unemployment') this.activeContextKey = 'unemployment';
     else if (bodyId === 'page-financial-inclusion') this.activeContextKey = 'inclusion';
     else if (bodyId === 'page-neo-tracker') this.activeContextKey = 'neo';
+    else if (bodyId === 'page-healthcare-procurement' || window.location.pathname.includes('healthcare-procurement-analytics')) this.activeContextKey = 'healthcare';
     else if (document.body.classList.contains('page-publications')) this.activeContextKey = 'publications';
     else this.activeContextKey = 'general';
   },
