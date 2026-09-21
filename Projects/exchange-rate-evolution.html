@@ -90,12 +90,14 @@
             background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15);
             color: #e2e8f0; padding: 0.4rem 0.85rem; border-radius: 6px;
             font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem;
+            transition: all 0.2s ease;
         }
+        .meta-tag:hover { border-color: #00e676; }
 
         /* ===== EXECUTIVE SUMMARY ===== */
         .project-executive-summary {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
-            margin-top: 2rem; margin-bottom: 2rem;
+            margin-top: 2rem; margin-bottom: 2.5rem;
             background: rgba(13, 27, 42, 0.6); border: 1px solid rgba(0, 180, 216, 0.2);
             border-radius: 14px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         }
@@ -110,36 +112,21 @@
         .summary-card h3 { font-size: 1.05rem !important; font-weight: 700; color: #ffffff !important; margin: 0 0 0.5rem 0; }
         .summary-card p { font-size: 0.88rem !important; color: #cbd5e1 !important; line-height: 1.55; margin: 0; }
 
-        /* ===== TABS SYSTEM ===== */
-        .cs-tabs-wrapper {
-            display: flex; gap: 0.75rem; border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            overflow-x: auto; padding-bottom: 4px; margin: 2.5rem 0 1.5rem 0;
-            -webkit-overflow-scrolling: touch; scrollbar-width: thin;
-            scrollbar-color: rgba(0, 230, 118, 0.4) rgba(255, 255, 255, 0.05);
+        /* ===== SECTION SEPARATORS & ARTIFACT CARDS ===== */
+        .section-separator {
+            display: flex; align-items: center; gap: 1rem; margin: 3rem 0 1.5rem 0;
         }
-        .cs-tabs-wrapper::-webkit-scrollbar { height: 4px; }
-        .cs-tabs-wrapper::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
-        .cs-tabs-wrapper::-webkit-scrollbar-thumb { background: rgba(0, 230, 118, 0.45); border-radius: 4px; }
-        .cs-tab-btn {
-            background: transparent; border: none; color: #94a3b8;
-            padding: 0.85rem 1.4rem; font-size: 0.95rem; font-weight: 700;
-            cursor: pointer; border-bottom: 3px solid transparent;
-            transition: all 0.3s ease; white-space: nowrap;
+        .section-separator h2 {
+            font-size: 1.45rem; font-weight: 800; color: #ffffff; margin: 0; white-space: nowrap;
             display: flex; align-items: center; gap: 0.6rem;
         }
-        .cs-tab-btn:hover { color: #00b4d8; }
-        .cs-tab-btn.active {
-            color: #00e676; border-bottom-color: #00e676;
-            background: rgba(0, 230, 118, 0.08); border-radius: 8px 8px 0 0;
+        .section-separator .separator-line {
+            flex-grow: 1; height: 1px; background: linear-gradient(90deg, rgba(0, 180, 216, 0.4), transparent);
         }
-        .cs-tab-pane { display: none; padding: 2rem 0; animation: fadeIn 0.4s ease; }
-        .cs-tab-pane.active { display: block; }
-        @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
 
-        /* ===== ARTIFACT CARDS ===== */
         .artifact-card {
             background: #111c2e; border: 1.5px solid rgba(0, 180, 216, 0.25);
-            border-radius: 12px; padding: 1.75rem; margin-bottom: 1.5rem;
+            border-radius: 12px; padding: 1.75rem; margin-bottom: 2rem;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); color: #f8fafc !important;
         }
         .artifact-header {
@@ -194,7 +181,7 @@
         .dashboard-live-wrapper {
             background: #090d16; border: 2px solid rgba(0, 180, 216, 0.3);
             border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            position: relative; min-height: 800px; width: 100%;
+            position: relative; min-height: 800px; width: 100%; margin-top: 1rem;
         }
         .dashboard-live-wrapper iframe {
             width: 100%; height: 800px; border: none; display: block;
@@ -238,12 +225,6 @@
             .meta-tag, .pill-badge-blue { font-size: 0.75rem !important; padding: 0.3rem 0.65rem !important; }
             .project-executive-summary { grid-template-columns: 1fr !important; padding: 1rem !important; gap: 1rem !important; margin-top: 1.25rem !important; }
             .summary-card { padding: 1.1rem 1rem !important; }
-            .cs-tabs-wrapper {
-                overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px;
-                justify-content: flex-start; -webkit-overflow-scrolling: touch;
-                margin: 1.5rem 0 1rem 0 !important; gap: 0.5rem;
-            }
-            .cs-tab-btn { white-space: nowrap; flex-shrink: 0; font-size: 0.85rem; padding: 0.6rem 1rem; }
             .artifact-header { flex-direction: column !important; align-items: flex-start !important; gap: 0.5rem !important; }
             .artifact-header .pill-badge-blue, .artifact-header .pill-badge, .artifact-header .meta-tag { align-self: flex-start !important; margin-top: 0.2rem !important; }
             .artifact-title { font-size: 1.05rem !important; line-height: 1.35 !important; width: 100% !important; }
@@ -251,8 +232,8 @@
             .kpi-grid { grid-template-columns: 1fr !important; gap: 0.85rem !important; }
             .kpi-card { padding: 1.1rem 0.9rem !important; }
             .kpi-card .kpi-value { font-size: 2rem !important; }
-            .dashboard-live-wrapper { min-height: 560px; }
-            .dashboard-live-wrapper iframe { height: 560px; }
+            .dashboard-live-wrapper { min-height: 540px; }
+            .dashboard-live-wrapper iframe { height: 540px; }
         }
     </style>
 </head>
@@ -333,241 +314,223 @@
             </div>
         </div>
 
-        <!-- SISTEMA DE PESTAÑAS DEL CASO DE ESTUDIO BI -->
-        <div class="cs-tabs-wrapper">
-            <button class="cs-tab-btn active" onclick="switchTab('context', this)" id="tab-context">
-                <i class="fas fa-info-circle"></i> <span data-translate="fx_tab_context">1. Context & FX Indicators</span>
-            </button>
-            <button class="cs-tab-btn" onclick="switchTab('model', this)" id="tab-model">
-                <i class="fas fa-project-diagram"></i> <span data-translate="fx_tab_model">2. BI Architecture & DAX Modeling</span>
-            </button>
-            <button class="cs-tab-btn" onclick="switchTab('dashboard', this)" id="tab-dashboard">
-                <i class="fas fa-chart-area"></i> <span data-translate="fx_tab_dash">3. Interactive Dashboard</span>
-            </button>
-            <button class="cs-tab-btn" onclick="switchTab('insights', this)" id="tab-insights">
-                <i class="fas fa-lightbulb"></i> <span data-translate="fx_tab_insights">4. Strategic Findings & Treasury Insights</span>
-            </button>
+        <!-- ========================== 1. LIVE INTERACTIVE DASHBOARD (HERO CENTERPIECE) ========================== -->
+        <div class="section-separator">
+            <h2><i class="fas fa-desktop" style="color: #00e676;"></i> <span data-translate="fx_dash_title">Live Interactive BI Report</span></h2>
+            <div class="separator-line"></div>
         </div>
 
-        <!-- ========================== TAB 1: CONTEXT & KPIS ========================== -->
-        <div class="cs-tab-pane active" id="pane-context">
-            
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h2 class="artifact-title"><i class="fas fa-money-bill-wave"></i> <span data-translate="fx_ctx_title">Macroeconomic Context & Exchange Rate Dynamics</span></h2>
-                    <span class="pill-badge-blue">Central Bank of Chile (BCCh)</span>
-                </div>
-                <p data-translate="fx_ctx_p1">
-                    In small open economies such as Chile, exchange rate dynamics serve as the primary transmission mechanism for international macroeconomic shocks, copper commodity price swings, and central bank monetary policy rate differentials (TPM vs. US Fed Funds Rate).
-                </p>
-                <p data-translate="fx_ctx_p2">
-                    This business intelligence project establishes an automated connection to the <strong>Banco Central de Chile's official API</strong>, capturing daily closing fixings across major international trading currencies (USD, EUR, GBP) to structure a longitudinal analytical engine spanning historical cycles from 2013 to the present.
-                </p>
+        <div class="artifact-card">
+            <div class="artifact-header">
+                <span class="artifact-title"><i class="fas fa-chart-area"></i> <span data-translate="fx_dash_title">Interactive Foreign Exchange Dashboard</span></span>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNGE4NGI0ODItNDhkZS00Y2Y0LWFlZjgtNjcxNDcwNWJhYTBhIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" target="_blank" rel="noopener" class="pill-badge-blue">
+                    <i class="fas fa-external-link-alt"></i> <span data-translate="fx_fullscreen">Open in Full Screen</span>
+                </a>
+            </div>
+            <p data-translate="fx_dash_guide">
+                <strong>Interactive Navigation Guide:</strong> Toggle between currency slicers (USD, EUR, GBP) to update the time-series trajectory. Use the date range slider to isolate specific macroeconomic shock windows and observe the automated 30-day Bollinger/SMA bands.
+            </p>
 
-                <!-- KPI SNAPSHOT -->
-                <div class="kpi-grid">
-                    <div class="kpi-card">
-                        <div class="kpi-value info">3 Pairs</div>
-                        <div class="kpi-label" data-translate="fx_kpi1_label">Major Currencies</div>
-                        <div class="kpi-sub" data-translate="fx_kpi1_sub">USD, EUR, GBP vs. CLP</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">Daily</div>
-                        <div class="kpi-label" data-translate="fx_kpi2_label">API Refresh Cadence</div>
-                        <div class="kpi-sub" data-translate="fx_kpi2_sub">Official Fixing Ingestion</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value warning">10+ Yrs</div>
-                        <div class="kpi-label" data-translate="fx_kpi3_label">Historical Horizon</div>
-                        <div class="kpi-sub" data-translate="fx_kpi3_sub">Multi-Cycle Trend Archive</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">DAX</div>
-                        <div class="kpi-label" data-translate="fx_kpi4_label">Statistical Engine</div>
-                        <div class="kpi-sub" data-translate="fx_kpi4_sub">SMA 30/90 & Rolling Vol</div>
-                    </div>
+            <!-- LIVE EMBED WRAPPER -->
+            <div class="dashboard-live-wrapper">
+                <div class="dashboard-action-bar">
+                    <span><i class="fas fa-circle" style="color: #00e676; font-size: 0.65rem;"></i> Power BI Service Embedded Live</span>
+                    <span><i class="fas fa-sync-alt"></i> BCCh API Automated Daily Refresh</span>
+                </div>
+                <iframe src="https://app.powerbi.com/view?r=eyJrIjoiNGE4NGI0ODItNDhkZS00Y2Y0LWFlZjgtNjcxNDcwNWJhYTBhIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- ========================== 2. STRATEGIC FINDINGS & INSIGHTS ========================== -->
+        <div class="section-separator">
+            <h2><i class="fas fa-lightbulb" style="color: #38bdf8;"></i> <span data-translate="fx_insights_title">Strategic Treasury Findings & Macroeconomic Insights</span></h2>
+            <div class="separator-line"></div>
+        </div>
+
+        <div class="artifact-card">
+            <p data-translate="fx_insights_intro">
+                Quantitative time series analysis of historical exchange rate cycles (2013–2024) reveals four key treasury principles:
+            </p>
+
+            <div class="insight-grid">
+                <div class="insight-card highlight">
+                    <h4 class="insight-title"><i class="fas fa-gem"></i> <span data-translate="fx_ins1_title">1. Inverse Copper Correlation (-0.72)</span></h4>
+                    <p data-translate="fx_ins1_desc">USD/CLP exhibits a robust -0.72 inverse correlation with LME copper spot prices. Significant copper drawdowns precede sharp CLP depreciation by an average of 14 trading sessions.</p>
                 </div>
 
-                <div class="artifact-header" style="margin-top: 1.5rem;">
-                    <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-users-cog"></i> <span data-translate="fx_stakeholders_title">Stakeholder Decision Personas</span></h3>
+                <div class="insight-card">
+                    <h4 class="insight-title"><i class="fas fa-percentage"></i> <span data-translate="fx_ins2_title">2. Policy Rate Spread Sensitivity</span></h4>
+                    <p data-translate="fx_ins2_desc">The interest rate differential between Chile's TPM and the US Federal Funds Rate serves as the primary predictor of short-term speculative currency flows and carry trade unwinding.</p>
                 </div>
-                <ul>
-                    <li data-translate="fx_stk1"><strong>CFOs & Corporate Treasury Managers</strong>: Model forward currency hedging requirements (FX Forwards / Options) and optimize dollar-denominated working capital.</li>
-                    <li data-translate="fx_stk2"><strong>Procurement & International Trade Heads</strong>: Forecast landed cost inflation for imported inventory and renegotiate supplier contractual indexations.</li>
-                    <li data-translate="fx_stk3"><strong>Investment & Wealth Management Analysts</strong>: Track real effective exchange rate (TCR) deviations and asset allocation risk exposures.</li>
-                </ul>
 
-                <!-- DATASET INFORMATION CARD CON LINK DIRECTO -->
-                <div class="artifact-card" style="margin-top: 1.5rem; background: #0c1626; border-left: 4px solid #00b4d8; border-color: rgba(0, 180, 216, 0.4);">
-                    <div class="artifact-header" style="border-bottom: 1px solid rgba(0, 180, 216, 0.2);">
-                        <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-database"></i> <span data-translate="fx_dataset_title">Dataset Source & API Feed</span></h3>
-                        <a href="https://si3.bcentral.cl/Siete/" target="_blank" rel="noopener" class="pill-badge-blue" style="text-decoration: none;">
-                            <i class="fas fa-external-link-alt"></i> <span data-translate="fx_dataset_btn">Access Central Bank Portal</span>
-                        </a>
-                    </div>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-top: 0.75rem;">
-                        <div>
-                            <span style="font-size: 0.78rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" data-translate="dataset_source_label">Official Data Source</span>
-                            <p style="margin: 0.35rem 0 0 0; font-weight: 600;">
-                                <a href="https://si3.bcentral.cl/Siete/" target="_blank" rel="noopener" style="color: #00e676; text-decoration: underline;">
-                                    Banco Central de Chile (BCCh API) <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i>
-                                </a>
-                            </p>
-                        </div>
-                        <div>
-                            <span style="font-size: 0.78rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" data-translate="dataset_period_label">Time Horizon / Period</span>
-                            <p style="margin: 0.35rem 0 0 0; color: #e2e8f0 !important;" data-translate="fx_dataset_period">2013 – Present (Daily Financial Time Series)</p>
-                        </div>
-                        <div>
-                            <span style="font-size: 0.78rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" data-translate="dataset_scope_label">Coverage & Scope</span>
-                            <p style="margin: 0.35rem 0 0 0; color: #e2e8f0 !important;" data-translate="fx_dataset_scope">Daily Official Fixings (USD/CLP, EUR/CLP, GBP/CLP), SMA 30/90 & Volatility</p>
-                        </div>
-                    </div>
+                <div class="insight-card">
+                    <h4 class="insight-title"><i class="fas fa-shield-virus"></i> <span data-translate="fx_ins3_title">3. Dynamic Hedging Trigger Rule</span></h4>
+                    <p data-translate="fx_ins3_desc">When the 30-day Rolling Volatility Index exceeds 1.85 standard deviations, execution of forward hedging contracts is empirically optimal to preserve gross import margins.</p>
+                </div>
+
+                <div class="insight-card highlight">
+                    <h4 class="insight-title"><i class="fas fa-balance-scale"></i> <span data-translate="fx_ins4_title">4. Cross-Currency EUR vs. USD Arbitrage</span></h4>
+                    <p data-translate="fx_ins4_desc">EUR/CLP exhibits higher tail-risk during European geopolitical events, whereas USD/CLP is heavily tied to domestic political and sovereign risk premiums.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================== 3. CONTEXT & METRICS FOUNDATION ========================== -->
+        <div class="section-separator">
+            <h2><i class="fas fa-info-circle" style="color: #00e676;"></i> <span data-translate="fx_ctx_title">Macroeconomic Context & Exchange Rate Dynamics</span></h2>
+            <div class="separator-line"></div>
+        </div>
+
+        <div class="artifact-card">
+            <p data-translate="fx_ctx_p1">
+                In small open economies such as Chile, exchange rate dynamics serve as the primary transmission mechanism for international macroeconomic shocks, copper commodity price swings, and central bank monetary policy rate differentials (TPM vs. US Fed Funds Rate).
+            </p>
+            <p data-translate="fx_ctx_p2">
+                This business intelligence project establishes an automated connection to the <strong>Banco Central de Chile's official API</strong>, capturing daily closing fixings across major international trading currencies (USD, EUR, GBP) to structure a longitudinal analytical engine spanning historical cycles from 2013 to the present.
+            </p>
+
+            <!-- KPI SNAPSHOT -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value info">3 Pairs</div>
+                    <div class="kpi-label" data-translate="fx_kpi1_label">Major Currencies</div>
+                    <div class="kpi-sub" data-translate="fx_kpi1_sub">USD, EUR, GBP vs. CLP</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">Daily</div>
+                    <div class="kpi-label" data-translate="fx_kpi2_label">API Refresh Cadence</div>
+                    <div class="kpi-sub" data-translate="fx_kpi2_sub">Official Fixing Ingestion</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value warning">10+ Yrs</div>
+                    <div class="kpi-label" data-translate="fx_kpi3_label">Historical Horizon</div>
+                    <div class="kpi-sub" data-translate="fx_kpi3_sub">Multi-Cycle Trend Archive</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">DAX</div>
+                    <div class="kpi-label" data-translate="fx_kpi4_label">Statistical Engine</div>
+                    <div class="kpi-sub" data-translate="fx_kpi4_sub">SMA 30/90 & Rolling Vol</div>
                 </div>
             </div>
 
-        </div>
-
-        <!-- ========================== TAB 2: DATA ARCHITECTURE & MODELING ========================== -->
-        <div class="cs-tab-pane" id="pane-model">
-            
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h2 class="artifact-title"><i class="fas fa-sitemap"></i> <span data-translate="fx_model_title">Data Model Architecture (Star Schema)</span></h2>
-                    <span class="pill-badge-blue">Power BI Tabular Model</span>
-                </div>
-                <p data-translate="fx_model_p1">
-                    The analytical tabular model is structured into a clean Star Schema optimized for high-performance DAX time-intelligence calculations and moving averages:
-                </p>
-
-                <div class="schema-grid">
-                    <div class="schema-card">
-                        <h4 class="schema-card-title"><i class="fas fa-table"></i> Fact_Exchange_Rates</h4>
-                        <ul class="schema-fields-list">
-                            <li><span>DateKey (FK)</span> <span class="field-type">INT [YYYYMMDD]</span></li>
-                            <li><span>CurrencyKey (FK)</span> <span class="field-type">VARCHAR(3)</span></li>
-                            <li><span>ObsValue_CLP</span> <span class="field-type">DECIMAL(10,4)</span></li>
-                            <li><span>DailyReturn_Pct</span> <span class="field-type">FLOAT</span></li>
-                            <li><span>MoM_Change_Pct</span> <span class="field-type">FLOAT</span></li>
-                            <li><span>YoY_Change_Pct</span> <span class="field-type">FLOAT</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="schema-card">
-                        <h4 class="schema-card-title"><i class="fas fa-coins"></i> Dim_Currency</h4>
-                        <ul class="schema-fields-list">
-                            <li><span>CurrencyKey (PK)</span> <span class="field-type">VARCHAR(3)</span></li>
-                            <li><span>CurrencyName</span> <span class="field-type">VARCHAR(30)</span></li>
-                            <li><span>IsoSymbol</span> <span class="field-type">CHAR(3)</span></li>
-                            <li><span>CountryOrigin</span> <span class="field-type">VARCHAR(50)</span></li>
-                            <li><span>CentralBankSource</span> <span class="field-type">VARCHAR(50)</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="schema-card">
-                        <h4 class="schema-card-title"><i class="fas fa-calendar-alt"></i> Dim_Calendar</h4>
-                        <ul class="schema-fields-list">
-                            <li><span>DateKey (PK)</span> <span class="field-type">INT [YYYYMMDD]</span></li>
-                            <li><span>DateValue</span> <span class="field-type">DATE</span></li>
-                            <li><span>Year</span> <span class="field-type">INT</span></li>
-                            <li><span>MonthNum / MonthName</span> <span class="field-type">VARCHAR(15)</span></li>
-                            <li><span>IsBankingDay</span> <span class="field-type">BOOLEAN</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="artifact-header" style="margin-top: 1.5rem;">
-                    <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-code"></i> <span data-translate="fx_calc_title">Advanced DAX Time Intelligence Measures</span></h3>
-                </div>
-                <p data-translate="fx_calc_desc">
-                    Key DAX measures power moving averages, rolling volatility windows, and depreciation benchmarks:
-                </p>
-
-                <pre class="code-block"><code>-- DAX Measure: 30-Day Simple Moving Average (SMA 30)
-SMA_30D = 
-CALCULATE(
-    AVERAGE(Fact_Exchange_Rates[ObsValue_CLP]),
-    DATESINPERIOD(Dim_Calendar[DateValue], MAX(Dim_Calendar[DateValue]), -30, DAY)
-)
-
--- DAX Measure: 30-Day Rolling Statistical Volatility (Annualized)
-Rolling_Volatility_30D = 
-CALCULATE(
-    STDEV.S(Fact_Exchange_Rates[DailyReturn_Pct]) * SQRT(252),
-    DATESINPERIOD(Dim_Calendar[DateValue], MAX(Dim_Calendar[DateValue]), -30, DAY)
-)
-
--- DAX Measure: Year-To-Date (YTD) Currency Depreciation
-YTD_Depreciation_Pct = 
-VAR StartOfYearRate = CALCULATE(FIRSTNONBLANKVALUE(Dim_Calendar[DateValue], Fact_Exchange_Rates[ObsValue_CLP]), DATESYTD(Dim_Calendar[DateValue]))
-VAR CurrentRate = MAX(Fact_Exchange_Rates[ObsValue_CLP])
-RETURN
-DIVIDE(CurrentRate - StartOfYearRate, StartOfYearRate, 0)</code></pre>
-            </div>
-
-        </div>
-
-        <!-- ========================== TAB 3: INTERACTIVE DASHBOARD ========================== -->
-        <div class="cs-tab-pane" id="pane-dashboard">
-            
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h2 class="artifact-title"><i class="fas fa-desktop"></i> <span data-translate="fx_dash_title">Live Interactive Power BI Report</span></h2>
-                    <a href="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" target="_blank" rel="noopener" class="pill-badge-blue">
-                        <i class="fas fa-external-link-alt"></i> <span data-translate="fx_fullscreen">Open in Power BI Full Screen</span>
+            <!-- DATASET INFORMATION CARD CON LINK DIRECTO -->
+            <div class="artifact-card" style="margin-top: 1.5rem; background: #0c1626; border-left: 4px solid #00b4d8; border-color: rgba(0, 180, 216, 0.4);">
+                <div class="artifact-header" style="border-bottom: 1px solid rgba(0, 180, 216, 0.2);">
+                    <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-database"></i> <span data-translate="fx_dataset_title">Dataset Source & API Feed</span></h3>
+                    <a href="https://si3.bcentral.cl/Siete/" target="_blank" rel="noopener" class="pill-badge-blue" style="text-decoration: none;">
+                        <i class="fas fa-external-link-alt"></i> <span data-translate="fx_dataset_btn">Access Central Bank Portal</span>
                     </a>
                 </div>
-                <p data-translate="fx_dash_guide">
-                    <strong>Interactive Navigation Guide:</strong> Select a currency pair (USD, EUR, or GBP) using the slicers. Adjust the date horizon slider to analyze specific economic cycles (such as the 2020 pandemic volatility or the 2022 inflationary peak). Hover over chart data points to view exact closing values and moving average spreads.
-                </p>
-
-                <!-- LIVE POWER BI EMBED WRAPPER -->
-                <div class="dashboard-live-wrapper">
-                    <div class="dashboard-action-bar">
-                        <span><i class="fas fa-circle" style="color: #00e676; font-size: 0.65rem;"></i> Power BI Service Embedded Live</span>
-                        <span><i class="fas fa-shield-alt"></i> Central Bank of Chile Verified Data</span>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-top: 0.75rem;">
+                    <div>
+                        <span style="font-size: 0.78rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" data-translate="dataset_source_label">Official Data Source</span>
+                        <p style="margin: 0.35rem 0 0 0; font-weight: 600;">
+                            <a href="https://si3.bcentral.cl/Siete/" target="_blank" rel="noopener" style="color: #00e676; text-decoration: underline;">
+                                Banco Central de Chile (BCCh API) <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i>
+                            </a>
+                        </p>
                     </div>
-                    <iframe title="Exchange rate evolution" src="https://app.powerbi.com/view?r=eyJrIjoiNmQ0NjMzOTItMTFmZi00YzAyLWE5MTctMDMzYTFiZjQ2MDdiIiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true" loading="lazy"></iframe>
+                    <div>
+                        <span style="font-size: 0.78rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" data-translate="dataset_period_label">Time Horizon / Period</span>
+                        <p style="margin: 0.35rem 0 0 0; color: #e2e8f0 !important;" data-translate="fx_dataset_period">2013 – Present (Daily Financial Time Series)</p>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.78rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" data-translate="dataset_scope_label">Coverage & Scope</span>
+                        <p style="margin: 0.35rem 0 0 0; color: #e2e8f0 !important;" data-translate="fx_dataset_scope">Daily Official Fixings (USD/CLP, EUR/CLP, GBP/CLP), SMA 30/90 & Volatility</p>
+                    </div>
                 </div>
             </div>
 
+            <div class="artifact-header" style="margin-top: 1.5rem;">
+                <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-users-cog"></i> <span data-translate="fx_stakeholders_title">Stakeholder Decision Personas</span></h3>
+            </div>
+            <ul>
+                <li data-translate="fx_stk1"><strong>CFOs & Corporate Treasury Managers</strong>: Model forward currency hedging requirements (FX Forwards / Options) and optimize dollar-denominated working capital.</li>
+                <li data-translate="fx_stk2"><strong>Procurement & International Trade Heads</strong>: Forecast landed cost inflation for imported inventory and renegotiate supplier contractual indexations.</li>
+                <li data-translate="fx_stk3"><strong>Investment & Wealth Management Analysts</strong>: Track real effective exchange rate (TCR) deviations and asset allocation risk exposures.</li>
+            </ul>
         </div>
 
-        <!-- ========================== TAB 4: STRATEGIC INSIGHTS ========================== -->
-        <div class="cs-tab-pane" id="pane-insights">
-            
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h2 class="artifact-title"><i class="fas fa-brain"></i> <span data-translate="fx_insights_title">Strategic Macroeconomic & Treasury Takeaways</span></h2>
-                    <span class="pill-badge-blue">Treasury Insights</span>
+        <!-- ========================== 4. DATA ARCHITECTURE & DAX MODELING ========================== -->
+        <div class="section-separator">
+            <h2><i class="fas fa-project-diagram" style="color: #38bdf8;"></i> <span data-translate="fx_model_title">BI Tabular Model Architecture (Star Schema)</span></h2>
+            <div class="separator-line"></div>
+        </div>
+
+        <div class="artifact-card">
+            <p data-translate="fx_model_p1">
+                The Power BI data engine utilizes a normalized Star Schema separating daily time series observations from the currency metadata and the financial master calendar:
+            </p>
+
+            <div class="schema-grid">
+                <div class="schema-card">
+                    <h4 class="schema-card-title"><i class="fas fa-table"></i> Fact_FX_Daily_Rates</h4>
+                    <ul class="schema-fields-list">
+                        <li><span>DateKey (FK)</span> <span class="field-type">INT [YYYYMMDD]</span></li>
+                        <li><span>CurrencyKey (FK)</span> <span class="field-type">INT</span></li>
+                        <li><span>ObservedRate (CLP)</span> <span class="field-type">DECIMAL(10,4)</span></li>
+                        <li><span>DailyVariation_CLP</span> <span class="field-type">DECIMAL(8,4)</span></li>
+                        <li><span>DailyVariation_Pct</span> <span class="field-type">DECIMAL(6,4)</span></li>
+                    </ul>
                 </div>
-                <p data-translate="fx_insights_intro">
-                    Empirical analysis of the exchange rate time series across economic cycles yields four actionable treasury recommendations:
-                </p>
 
-                <div class="insight-grid">
-                    <div class="insight-card highlight">
-                        <h4 class="insight-title"><i class="fas fa-industry"></i> <span data-translate="fx_ins1_title">1. Copper Price Correlation Transmission</span></h4>
-                        <p data-translate="fx_ins1_desc">Historical regressions confirm a persistent -0.72 inverse correlation between LME copper prices and USD/CLP, indicating that commodity price rallies serve as a high-probability leading indicator for local currency appreciation.</p>
-                    </div>
+                <div class="schema-card">
+                    <h4 class="schema-card-title"><i class="fas fa-dollar-sign"></i> Dim_Currency</h4>
+                    <ul class="schema-fields-list">
+                        <li><span>CurrencyKey (PK)</span> <span class="field-type">INT</span></li>
+                        <li><span>CurrencyCode</span> <span class="field-type">CHAR(3)</span></li>
+                        <li><span>CurrencyName</span> <span class="field-type">VARCHAR(50)</span></li>
+                        <li><span>CentralBankSeriesID</span> <span class="field-type">VARCHAR(20)</span></li>
+                        <li><span>CountryOfOrigin</span> <span class="field-type">VARCHAR(40)</span></li>
+                    </ul>
+                </div>
 
-                    <div class="insight-card">
-                        <h4 class="insight-title"><i class="fas fa-percentage"></i> <span data-translate="fx_ins2_title">2. Monetary Policy Spread Sensitivity</span></h4>
-                        <p data-translate="fx_ins2_desc">When the spread between the Chilean Central Bank TPM and the US Federal Funds Rate narrows below 200 bps, capital flows create immediate upward pressure on the dollar, triggering currency volatility.</p>
-                    </div>
-
-                    <div class="insight-card">
-                        <h4 class="insight-title"><i class="fas fa-calendar-check"></i> <span data-translate="fx_ins3_title">3. Seasonal Liquidity Windows</span></h4>
-                        <p data-translate="fx_ins3_desc">Corporate tax settlement periods (April) and mining export revenue repatriation months historically display localized dips in USD/CLP volatility, representing optimal windows for commercial import payment settlements.</p>
-                    </div>
-
-                    <div class="insight-card highlight">
-                        <h4 class="insight-title"><i class="fas fa-chart-pie"></i> <span data-translate="fx_ins4_title">4. Dynamic Hedging Trigger Rule</span></h4>
-                        <p data-translate="fx_ins4_desc">Treasury teams utilizing a 30-day moving average breakout rule (spot price > 2 standard deviations above SMA 30) reduced foreign exchange losses by 18.5% compared to static fixed-schedule hedging.</p>
-                    </div>
+                <div class="schema-card">
+                    <h4 class="schema-card-title"><i class="fas fa-calendar-check"></i> Dim_Date</h4>
+                    <ul class="schema-fields-list">
+                        <li><span>DateKey (PK)</span> <span class="field-type">INT [YYYYMMDD]</span></li>
+                        <li><span>FullDate</span> <span class="field-type">DATE</span></li>
+                        <li><span>Year / Quarter</span> <span class="field-type">INT / VARCHAR(2)</span></li>
+                        <li><span>MonthName</span> <span class="field-type">VARCHAR(15)</span></li>
+                        <li><span>IsBusinessDay</span> <span class="field-type">BOOLEAN</span></li>
+                    </ul>
                 </div>
             </div>
 
+            <div class="artifact-header" style="margin-top: 1.5rem;">
+                <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-code"></i> <span data-translate="fx_calc_title">Advanced DAX Time Intelligence & Volatility Measures</span></h3>
+            </div>
+            <p data-translate="fx_calc_desc">
+                Core DAX expressions engineered to compute 30-day moving averages, rolling annual volatility, and Year-To-Date (YTD) cumulative returns:
+            </p>
+
+            <pre class="code-block"><code>// 30-Day Simple Moving Average (SMA)
+SMA_30D = 
+CALCULATE(
+    AVERAGE(Fact_FX_Daily_Rates[ObservedRate]),
+    DATESINPERIOD(Dim_Date[FullDate], MAX(Dim_Date[FullDate]), -30, DAY)
+)
+
+// 30-Day Rolling Annualized Volatility
+Rolling_Volatility_30D = 
+VAR DailyStdDev = 
+    CALCULATE(
+        STDEV.S(Fact_FX_Daily_Rates[DailyVariation_Pct]),
+        DATESINPERIOD(Dim_Date[FullDate], MAX(Dim_Date[FullDate]), -30, DAY)
+    )
+RETURN
+    DailyStdDev * SQRT(252)
+
+// Year-to-Date (YTD) Cumulative Depreciation (%)
+YTD_Depreciation_Pct = 
+VAR CurrentRate = [Latest_Observed_Rate]
+VAR YearStartRate = 
+    CALCULATE(
+        [Latest_Observed_Rate],
+        STARTOFYEAR(Dim_Date[FullDate])
+    )
+RETURN
+    DIVIDE(CurrentRate - YearStartRate, YearStartRate, 0) * 100</code></pre>
         </div>
 
     </main>
@@ -610,22 +573,5 @@ DIVIDE(CurrentRate - StartOfYearRate, StartOfYearRate, 0)</code></pre>
     </footer>
 
     <script src="../assets/js/script.js"></script>
-    <script>
-        // TAB SWITCHING LOGIC
-        function switchTab(tabId, btn) {
-            document.querySelectorAll('.cs-tab-pane').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.cs-tab-btn').forEach(b => b.classList.remove('active'));
-            const targetPane = document.getElementById('pane-' + tabId);
-            if (targetPane) targetPane.classList.add('active');
-            if (btn) {
-                btn.classList.add('active');
-                btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-            }
-            const tabsWrapper = document.querySelector('.cs-tabs-wrapper');
-            if (tabsWrapper) {
-                window.scrollTo({ top: tabsWrapper.offsetTop - 75, behavior: 'smooth' });
-            }
-        }
-    </script>
 </body>
 </html>

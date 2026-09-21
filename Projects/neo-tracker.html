@@ -90,12 +90,14 @@
             background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15);
             color: #e2e8f0; padding: 0.4rem 0.85rem; border-radius: 6px;
             font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem;
+            transition: all 0.2s ease;
         }
+        .meta-tag:hover { border-color: #00e676; }
 
         /* ===== EXECUTIVE SUMMARY ===== */
         .project-executive-summary {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
-            margin-top: 2rem; margin-bottom: 2rem;
+            margin-top: 2rem; margin-bottom: 2.5rem;
             background: rgba(13, 27, 42, 0.6); border: 1px solid rgba(0, 180, 216, 0.2);
             border-radius: 14px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         }
@@ -110,36 +112,21 @@
         .summary-card h3 { font-size: 1.05rem !important; font-weight: 700; color: #ffffff !important; margin: 0 0 0.5rem 0; }
         .summary-card p { font-size: 0.88rem !important; color: #cbd5e1 !important; line-height: 1.55; margin: 0; }
 
-        /* ===== TABS SYSTEM ===== */
-        .cs-tabs-wrapper {
-            display: flex; gap: 0.75rem; border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            overflow-x: auto; padding-bottom: 4px; margin: 2.5rem 0 1.5rem 0;
-            -webkit-overflow-scrolling: touch; scrollbar-width: thin;
-            scrollbar-color: rgba(0, 230, 118, 0.4) rgba(255, 255, 255, 0.05);
+        /* ===== SECTION SEPARATORS & ARTIFACT CARDS ===== */
+        .section-separator {
+            display: flex; align-items: center; gap: 1rem; margin: 3rem 0 1.5rem 0;
         }
-        .cs-tabs-wrapper::-webkit-scrollbar { height: 4px; }
-        .cs-tabs-wrapper::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 4px; }
-        .cs-tabs-wrapper::-webkit-scrollbar-thumb { background: rgba(0, 230, 118, 0.45); border-radius: 4px; }
-        .cs-tab-btn {
-            background: transparent; border: none; color: #94a3b8;
-            padding: 0.85rem 1.4rem; font-size: 0.95rem; font-weight: 700;
-            cursor: pointer; border-bottom: 3px solid transparent;
-            transition: all 0.3s ease; white-space: nowrap;
+        .section-separator h2 {
+            font-size: 1.45rem; font-weight: 800; color: #ffffff; margin: 0; white-space: nowrap;
             display: flex; align-items: center; gap: 0.6rem;
         }
-        .cs-tab-btn:hover { color: #00b4d8; }
-        .cs-tab-btn.active {
-            color: #00e676; border-bottom-color: #00e676;
-            background: rgba(0, 230, 118, 0.08); border-radius: 8px 8px 0 0;
+        .section-separator .separator-line {
+            flex-grow: 1; height: 1px; background: linear-gradient(90deg, rgba(0, 180, 216, 0.4), transparent);
         }
-        .cs-tab-pane { display: none; padding: 2rem 0; animation: fadeIn 0.4s ease; }
-        .cs-tab-pane.active { display: block; }
-        @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
 
-        /* ===== ARTIFACT CARDS ===== */
         .artifact-card {
             background: #111c2e; border: 1.5px solid rgba(0, 180, 216, 0.25);
-            border-radius: 12px; padding: 1.75rem; margin-bottom: 1.5rem;
+            border-radius: 12px; padding: 1.75rem; margin-bottom: 2rem;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); color: #f8fafc !important;
         }
         .artifact-header {
@@ -194,7 +181,7 @@
         .dashboard-live-wrapper {
             background: #090d16; border: 2px solid rgba(0, 180, 216, 0.3);
             border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            position: relative; min-height: 800px; width: 100%;
+            position: relative; min-height: 800px; width: 100%; margin-top: 1rem;
         }
         .dashboard-live-wrapper iframe {
             width: 100%; height: 800px; border: none; display: block;
@@ -238,12 +225,6 @@
             .meta-tag, .pill-badge-blue { font-size: 0.75rem !important; padding: 0.3rem 0.65rem !important; }
             .project-executive-summary { grid-template-columns: 1fr !important; padding: 1rem !important; gap: 1rem !important; margin-top: 1.25rem !important; }
             .summary-card { padding: 1.1rem 1rem !important; }
-            .cs-tabs-wrapper {
-                overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px;
-                justify-content: flex-start; -webkit-overflow-scrolling: touch;
-                margin: 1.5rem 0 1rem 0 !important; gap: 0.5rem;
-            }
-            .cs-tab-btn { white-space: nowrap; flex-shrink: 0; font-size: 0.85rem; padding: 0.6rem 1rem; }
             .artifact-header { flex-direction: column !important; align-items: flex-start !important; gap: 0.5rem !important; }
             .artifact-header .pill-badge-blue, .artifact-header .pill-badge, .artifact-header .meta-tag { align-self: flex-start !important; margin-top: 0.2rem !important; }
             .artifact-title { font-size: 1.05rem !important; line-height: 1.35 !important; width: 100% !important; }
@@ -251,8 +232,8 @@
             .kpi-grid { grid-template-columns: 1fr !important; gap: 0.85rem !important; }
             .kpi-card { padding: 1.1rem 0.9rem !important; }
             .kpi-card .kpi-value { font-size: 2rem !important; }
-            .dashboard-live-wrapper { min-height: 560px; }
-            .dashboard-live-wrapper iframe { height: 560px; }
+            .dashboard-live-wrapper { min-height: 540px; }
+            .dashboard-live-wrapper iframe { height: 540px; }
         }
     </style>
 </head>
@@ -333,241 +314,218 @@
             </div>
         </div>
 
-        <!-- SISTEMA DE PESTAÑAS DEL CASO DE ESTUDIO BI -->
-        <div class="cs-tabs-wrapper">
-            <button class="cs-tab-btn active" onclick="switchTab('context', this)" id="tab-context">
-                <i class="fas fa-info-circle"></i> <span data-translate="neo_tab_context">1. Context & Orbital KPIs</span>
-            </button>
-            <button class="cs-tab-btn" onclick="switchTab('model', this)" id="tab-model">
-                <i class="fas fa-project-diagram"></i> <span data-translate="neo_tab_model">2. BI Architecture & Risk Model</span>
-            </button>
-            <button class="cs-tab-btn" onclick="switchTab('dashboard', this)" id="tab-dashboard">
-                <i class="fas fa-chart-area"></i> <span data-translate="neo_tab_dash">3. Interactive Dashboard</span>
-            </button>
-            <button class="cs-tab-btn" onclick="switchTab('insights', this)" id="tab-insights">
-                <i class="fas fa-lightbulb"></i> <span data-translate="neo_tab_insights">4. Astronomical & Telemetry Insights</span>
-            </button>
+        <!-- ========================== 1. LIVE INTERACTIVE DASHBOARD (HERO CENTERPIECE) ========================== -->
+        <div class="section-separator">
+            <h2><i class="fas fa-desktop" style="color: #00e676;"></i> <span data-translate="neo_dash_title">Live Interactive BI Report</span></h2>
+            <div class="separator-line"></div>
         </div>
 
-        <!-- ========================== TAB 1: CONTEXT & KPIS ========================== -->
-        <div class="cs-tab-pane active" id="pane-context">
-            
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h2 class="artifact-title"><i class="fas fa-meteor"></i> <span data-translate="neo_ctx_title">NASA Planetary Defense & Telemetry Objectives</span></h2>
-                    <span class="pill-badge-blue">NASA JPL Center for NEO Studies (CNEOS)</span>
-                </div>
-                <p data-translate="neo_ctx_p1">
-                    Near-Earth Objects (NEOs) are comets and asteroids whose orbits bring them into proximity with Earth's orbit (within 1.3 Astronomical Units). NASA's Planetary Defense Coordination Office continuously surveys these celestial bodies to evaluate collision probabilities and kinetic energy profiles.
-                </p>
-                <p data-translate="neo_ctx_p2">
-                    This business intelligence project ingests raw JSON feeds from the <strong>NASA NeoWs (Near Earth Object Web Service) API</strong>. The analytical objective is to structure a scalable reporting layer that calculates hazard ratios, diameter confidence intervals, and close approach velocity distributions in real time.
-                </p>
+        <div class="artifact-card">
+            <div class="artifact-header">
+                <span class="artifact-title"><i class="fas fa-chart-area"></i> <span data-translate="neo_dash_title">Interactive Asteroid Telemetry Dashboard</span></span>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiN2FjMjk0N2YtMjFlYi00Nzc3LWIzZGMtZDM1ZmIzZDgxOGE3IiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" target="_blank" rel="noopener" class="pill-badge-blue">
+                    <i class="fas fa-external-link-alt"></i> <span data-translate="neo_fullscreen">Open in Full Screen Power BI</span>
+                </a>
+            </div>
+            <p data-translate="neo_dash_guide">
+                <strong>Interactive Navigation Guide:</strong> Filter by date window or toggle the 'Potentially Hazardous' slicer to isolate high-risk close approaches. Explore the scatter matrix correlating asteroid diameter with relative flyby velocity and click individual object cards to inspect exact orbital metrics.
+            </p>
 
-                <!-- KPI SNAPSHOT -->
-                <div class="kpi-grid">
-                    <div class="kpi-card">
-                        <div class="kpi-value info">REST</div>
-                        <div class="kpi-label" data-translate="neo_kpi1_label">NASA NeoWs Pipeline</div>
-                        <div class="kpi-sub" data-translate="neo_kpi1_sub">Automated JSON Ingestion</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value warning">PHA</div>
-                        <div class="kpi-label" data-translate="neo_kpi2_label">Hazard Classification</div>
-                        <div class="kpi-sub" data-translate="neo_kpi2_sub">MOID &lt; 0.05 AU &amp; H &le; 22.0</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">LD</div>
-                        <div class="kpi-label" data-translate="neo_kpi3_label">Lunar Distance Scale</div>
-                        <div class="kpi-sub" data-translate="neo_kpi3_sub">1 LD &asymp; 384,400 km</div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-value">km/h</div>
-                        <div class="kpi-label" data-translate="neo_kpi4_label">Kinematic Velocity</div>
-                        <div class="kpi-sub" data-translate="neo_kpi4_sub">Relative Earth Velocity</div>
-                    </div>
+            <!-- LIVE EMBED WRAPPER -->
+            <div class="dashboard-live-wrapper">
+                <div class="dashboard-action-bar">
+                    <span><i class="fas fa-circle" style="color: #00e676; font-size: 0.65rem;"></i> Power BI Service Embedded Live</span>
+                    <span><i class="fas fa-space-shuttle"></i> NASA JPL NeoWs API Feed Connected</span>
+                </div>
+                <iframe src="https://app.powerbi.com/view?r=eyJrIjoiN2FjMjk0N2YtMjFlYi00Nzc3LWIzZGMtZDM1ZmIzZDgxOGE3IiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- ========================== 2. STRATEGIC FINDINGS & INSIGHTS ========================== -->
+        <div class="section-separator">
+            <h2><i class="fas fa-lightbulb" style="color: #38bdf8;"></i> <span data-translate="neo_insights_title">Astronomical Telemetry Findings & Planetary Risk Insights</span></h2>
+            <div class="separator-line"></div>
+        </div>
+
+        <div class="artifact-card">
+            <p data-translate="neo_insights_intro">
+                Quantitative analysis of Near-Earth Object telemetry yields four key conclusions regarding orbital risk distributions:
+            </p>
+
+            <div class="insight-grid">
+                <div class="insight-card highlight">
+                    <h4 class="insight-title"><i class="fas fa-tachometer-alt"></i> <span data-translate="neo_ins1_title">1. Kinetic Velocity vs. Diameter Distribution</span></h4>
+                    <p data-translate="neo_ins1_desc">Over 85% of detected NEOs measure under 100 meters in diameter, exhibiting hyper-velocity flybys between 40,000 km/h and 110,000 km/h relative to Earth's barycenter.</p>
                 </div>
 
-                <div class="artifact-header" style="margin-top: 1.5rem;">
-                    <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-users-cog"></i> <span data-translate="neo_stakeholders_title">Stakeholder Decision Personas</span></h3>
+                <div class="insight-card">
+                    <h4 class="insight-title"><i class="fas fa-exclamation-triangle"></i> <span data-translate="neo_ins2_title">2. PHA Hazard Ratio Baseline</span></h4>
+                    <p data-translate="neo_ins2_desc">Potentially Hazardous Asteroids (PHAs) represent 8% to 12% of tracked weekly objects, with the vast majority maintaining comfortable safety margins beyond 10 Lunar Distances (3.8M+ km).</p>
                 </div>
-                <ul>
-                    <li data-translate="neo_stk1"><strong>Planetary Defense Researchers & Astronomers</strong>: Filter and track high-priority objects exhibiting minimum orbit intersection distance (MOID) anomalies.</li>
-                    <li data-translate="neo_stk2"><strong>Aerospace Data Analysts & Telemetry Engineers</strong>: Evaluate size-velocity power laws and model orbital kinetic energy ranges.</li>
-                    <li data-translate="neo_stk3"><strong>Science Communicators & Academic Institutions</strong>: Demystify close approach astronomy through intuitive risk-tier visualizations and empirical benchmarks.</li>
-                </ul>
 
-                <!-- DATASET INFORMATION CARD CON LINK DIRECTO -->
-                <div class="artifact-card" style="margin-top: 1.5rem; background: #0c1626; border-left: 4px solid #00b4d8; border-color: rgba(0, 180, 216, 0.4);">
-                    <div class="artifact-header" style="border-bottom: 1px solid rgba(0, 180, 216, 0.2);">
-                        <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-database"></i> <span data-translate="neo_dataset_title">Dataset Source & API Telemetry</span></h3>
-                        <a href="https://api.nasa.gov/" target="_blank" rel="noopener" class="pill-badge-blue" style="text-decoration: none;">
-                            <i class="fas fa-external-link-alt"></i> <span data-translate="neo_dataset_btn">Access NASA API Portal</span>
-                        </a>
+                <div class="insight-card">
+                    <h4 class="insight-title"><i class="fas fa-chart-line"></i> <span data-translate="neo_ins3_title">3. Absolute Magnitude (H) Inverse Law</span></h4>
+                    <p data-translate="neo_ins3_desc">Visualizing absolute magnitude against estimated diameter confirmed the inverse logarithmic scaling: objects with H &gt; 24 consistently correlate with sub-50-meter rock fragments.</p>
+                </div>
+
+                <div class="insight-card highlight">
+                    <h4 class="insight-title"><i class="fas fa-server"></i> <span data-translate="neo_ins4_title">4. Automated REST ETL Resilience</span></h4>
+                    <p data-translate="neo_ins4_desc">The decoupled JSON parser and Star Schema architecture ensure zero data degradation even when NASA API responses contain variable daily object counts or missing albedo parameters.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================== 3. CONTEXT & METRICS FOUNDATION ========================== -->
+        <div class="section-separator">
+            <h2><i class="fas fa-info-circle" style="color: #00e676;"></i> <span data-translate="neo_ctx_title">NASA Planetary Defense & Telemetry Objectives</span></h2>
+            <div class="separator-line"></div>
+        </div>
+
+        <div class="artifact-card">
+            <p data-translate="neo_ctx_p1">
+                Near-Earth Objects (NEOs) are comets and asteroids whose orbits bring them into proximity with Earth's orbit (within 1.3 Astronomical Units). NASA's Planetary Defense Coordination Office continuously surveys these celestial bodies to evaluate collision probabilities and kinetic energy profiles.
+            </p>
+            <p data-translate="neo_ctx_p2">
+                This business intelligence project ingests raw JSON feeds from the <strong>NASA NeoWs (Near Earth Object Web Service) API</strong>. The analytical objective is to structure a scalable reporting layer that calculates hazard ratios, diameter confidence intervals, and close approach velocity distributions in real time.
+            </p>
+
+            <!-- KPI SNAPSHOT -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value info">REST</div>
+                    <div class="kpi-label" data-translate="neo_kpi1_label">NASA NeoWs Pipeline</div>
+                    <div class="kpi-sub" data-translate="neo_kpi1_sub">Automated JSON Ingestion</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value warning">PHA</div>
+                    <div class="kpi-label" data-translate="neo_kpi2_label">Hazard Classification</div>
+                    <div class="kpi-sub" data-translate="neo_kpi2_sub">MOID &lt; 0.05 AU &amp; H &le; 22.0</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">LD</div>
+                    <div class="kpi-label" data-translate="neo_kpi3_label">Lunar Distance Scale</div>
+                    <div class="kpi-sub" data-translate="neo_kpi3_sub">1 LD &asymp; 384,400 km</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">km/h</div>
+                    <div class="kpi-label" data-translate="neo_kpi4_label">Kinematic Velocity</div>
+                    <div class="kpi-sub" data-translate="neo_kpi4_sub">Relative Earth Velocity</div>
+                </div>
+            </div>
+
+            <!-- DATASET INFORMATION CARD CON LINK DIRECTO -->
+            <div class="artifact-card" style="margin-top: 1.5rem; background: #0c1626; border-left: 4px solid #00b4d8; border-color: rgba(0, 180, 216, 0.4);">
+                <div class="artifact-header" style="border-bottom: 1px solid rgba(0, 180, 216, 0.2);">
+                    <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-database"></i> <span data-translate="neo_dataset_title">Dataset Source & API Telemetry</span></h3>
+                    <a href="https://api.nasa.gov/" target="_blank" rel="noopener" class="pill-badge-blue" style="text-decoration: none;">
+                        <i class="fas fa-external-link-alt"></i> <span data-translate="neo_dataset_btn">Access NASA API Portal</span>
+                    </a>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-top: 0.75rem;">
+                    <div>
+                        <span style="font-size: 0.78rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" data-translate="dataset_source_label">Official Data Source</span>
+                        <p style="margin: 0.35rem 0 0 0; font-weight: 600;">
+                            <a href="https://api.nasa.gov/" target="_blank" rel="noopener" style="color: #00e676; text-decoration: underline;">
+                                NASA NeoWs API & JPL CNEOS <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i>
+                            </a>
+                        </p>
                     </div>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-top: 0.75rem;">
-                        <div>
-                            <span style="font-size: 0.78rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" data-translate="dataset_source_label">Official Data Source</span>
-                            <p style="margin: 0.35rem 0 0 0; font-weight: 600;">
-                                <a href="https://api.nasa.gov/" target="_blank" rel="noopener" style="color: #00e676; text-decoration: underline;">
-                                    NASA NeoWs API & JPL CNEOS <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i>
-                                </a>
-                            </p>
-                        </div>
-                        <div>
-                            <span style="font-size: 0.78rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" data-translate="dataset_period_label">Time Horizon / Period</span>
-                            <p style="margin: 0.35rem 0 0 0; color: #e2e8f0 !important;" data-translate="neo_dataset_period">Real-time Ingestion & 7-Day Rolling Orbit Windows</p>
-                        </div>
-                        <div>
-                            <span style="font-size: 0.78rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" data-translate="dataset_scope_label">Coverage & Scope</span>
-                            <p style="margin: 0.35rem 0 0 0; color: #e2e8f0 !important;" data-translate="neo_dataset_scope">Orbital Kinematics, Miss Distances (LD/KM), Estimated Diameter & PHA Classification</p>
-                        </div>
+                    <div>
+                        <span style="font-size: 0.78rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" data-translate="dataset_period_label">Time Horizon / Period</span>
+                        <p style="margin: 0.35rem 0 0 0; color: #e2e8f0 !important;" data-translate="neo_dataset_period">Real-time Ingestion & 7-Day Rolling Orbit Windows</p>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.78rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" data-translate="dataset_scope_label">Coverage & Scope</span>
+                        <p style="margin: 0.35rem 0 0 0; color: #e2e8f0 !important;" data-translate="neo_dataset_scope">Orbital Kinematics, Miss Distances (LD/KM), Estimated Diameter & PHA Classification</p>
                     </div>
                 </div>
             </div>
 
+            <div class="artifact-header" style="margin-top: 1.5rem;">
+                <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-users-cog"></i> <span data-translate="neo_stakeholders_title">Stakeholder Decision Personas</span></h3>
+            </div>
+            <ul>
+                <li data-translate="neo_stk1"><strong>Planetary Defense Researchers & Astronomers</strong>: Filter and track high-priority objects exhibiting minimum orbit intersection distance (MOID) anomalies.</li>
+                <li data-translate="neo_stk2"><strong>Aerospace Data Analysts & Telemetry Engineers</strong>: Evaluate size-velocity power laws and model orbital kinetic energy ranges.</li>
+                <li data-translate="neo_stk3"><strong>Science Communicators & Academic Institutions</strong>: Demystify close approach astronomy through intuitive risk-tier visualizations and empirical benchmarks.</li>
+            </ul>
         </div>
 
-        <!-- ========================== TAB 2: DATA ARCHITECTURE & MODELING ========================== -->
-        <div class="cs-tab-pane" id="pane-model">
-            
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h2 class="artifact-title"><i class="fas fa-sitemap"></i> <span data-translate="neo_model_title">Aerospace Data Model (Star Schema)</span></h2>
-                    <span class="pill-badge-blue">Dimensional Telemetry Architecture</span>
-                </div>
-                <p data-translate="neo_model_p1">
-                    Nested JSON payloads from the NeoWs feed were flattened and transformed into a Power BI Star Schema separating physical asteroid dimensions from temporal close-approach events:
-                </p>
+        <!-- ========================== 4. DATA ARCHITECTURE & DAX MODELING ========================== -->
+        <div class="section-separator">
+            <h2><i class="fas fa-project-diagram" style="color: #38bdf8;"></i> <span data-translate="neo_model_title">Aerospace Data Model Architecture (Star Schema)</span></h2>
+            <div class="separator-line"></div>
+        </div>
 
-                <div class="schema-grid">
-                    <div class="schema-card">
-                        <h4 class="schema-card-title"><i class="fas fa-table"></i> Fact_Close_Approaches</h4>
-                        <ul class="schema-fields-list">
-                            <li><span>NeoId (FK)</span> <span class="field-type">INT</span></li>
-                            <li><span>DateKey (FK)</span> <span class="field-type">INT [YYYYMMDD]</span></li>
-                            <li><span>RelativeVelocity_KMH</span> <span class="field-type">DECIMAL(12,2)</span></li>
-                            <li><span>RelativeVelocity_KMS</span> <span class="field-type">DECIMAL(6,3)</span></li>
-                            <li><span>MissDistance_KM</span> <span class="field-type">BIGINT</span></li>
-                            <li><span>MissDistance_LD</span> <span class="field-type">DECIMAL(8,4)</span></li>
-                            <li><span>OrbitingBody</span> <span class="field-type">VARCHAR(10)</span></li>
-                        </ul>
-                    </div>
+        <div class="artifact-card">
+            <p data-translate="neo_model_p1">
+                The nested JSON payloads from the NeoWs API were flattened and transformed into a Power BI Star Schema separating physical asteroid dimensions from temporal close-approach events:
+            </p>
 
-                    <div class="schema-card">
-                        <h4 class="schema-card-title"><i class="fas fa-meteor"></i> Dim_Near_Earth_Object</h4>
-                        <ul class="schema-fields-list">
-                            <li><span>NeoId (PK)</span> <span class="field-type">INT</span></li>
-                            <li><span>Name</span> <span class="field-type">VARCHAR(50)</span></li>
-                            <li><span>AbsoluteMagnitude_H</span> <span class="field-type">DECIMAL(5,2)</span></li>
-                            <li><span>EstDiameterMin_M</span> <span class="field-type">DECIMAL(8,2)</span></li>
-                            <li><span>EstDiameterMax_M</span> <span class="field-type">DECIMAL(8,2)</span></li>
-                            <li><span>IsHazardous_PHA</span> <span class="field-type">BOOLEAN</span></li>
-                            <li><span>NasaJplUrl</span> <span class="field-type">VARCHAR(150)</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="schema-card">
-                        <h4 class="schema-card-title"><i class="fas fa-calendar-day"></i> Dim_Approach_Date</h4>
-                        <ul class="schema-fields-list">
-                            <li><span>DateKey (PK)</span> <span class="field-type">INT [YYYYMMDD]</span></li>
-                            <li><span>DateValue</span> <span class="field-type">DATE</span></li>
-                            <li><span>Year / Month</span> <span class="field-type">INT / VARCHAR</span></li>
-                            <li><span>WeekNumber</span> <span class="field-type">TINYINT</span></li>
-                            <li><span>DayOfWeek</span> <span class="field-type">VARCHAR(10)</span></li>
-                        </ul>
-                    </div>
+            <div class="schema-grid">
+                <div class="schema-card">
+                    <h4 class="schema-card-title"><i class="fas fa-table"></i> Fact_Close_Approaches</h4>
+                    <ul class="schema-fields-list">
+                        <li><span>ApproachID (PK)</span> <span class="field-type">BIGINT</span></li>
+                        <li><span>NeoKey (FK)</span> <span class="field-type">INT</span></li>
+                        <li><span>DateKey (FK)</span> <span class="field-type">INT [YYYYMMDD]</span></li>
+                        <li><span>MissDistance_KM</span> <span class="field-type">DECIMAL(14,2)</span></li>
+                        <li><span>MissDistance_LD</span> <span class="field-type">DECIMAL(8,4)</span></li>
+                        <li><span>RelativeVelocity_KMH</span> <span class="field-type">DECIMAL(10,2)</span></li>
+                        <li><span>OrbitingBody</span> <span class="field-type">VARCHAR(10)</span></li>
+                    </ul>
                 </div>
 
-                <div class="artifact-header" style="margin-top: 1.5rem;">
-                    <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-code"></i> <span data-translate="neo_calc_title">Kinematic & Risk DAX Measures</span></h3>
+                <div class="schema-card">
+                    <h4 class="schema-card-title"><i class="fas fa-meteor"></i> Dim_Near_Earth_Object</h4>
+                    <ul class="schema-fields-list">
+                        <li><span>NeoKey (PK)</span> <span class="field-type">INT</span></li>
+                        <li><span>SPK_ID</span> <span class="field-type">INT</span></li>
+                        <li><span>Name</span> <span class="field-type">VARCHAR(50)</span></li>
+                        <li><span>AbsoluteMagnitude_H</span> <span class="field-type">DECIMAL(4,2)</span></li>
+                        <li><span>EstDiameterMin_M</span> <span class="field-type">DECIMAL(8,2)</span></li>
+                        <li><span>EstDiameterMax_M</span> <span class="field-type">DECIMAL(8,2)</span></li>
+                        <li><span>IsPotentiallyHazardous</span> <span class="field-type">BOOLEAN</span></li>
+                    </ul>
                 </div>
-                <p data-translate="neo_calc_desc">
-                    Formulas engineered in DAX to compute estimated mean diameter, hazardous object ratios, and minimum lunar proximity:
-                </p>
 
-                <pre class="code-block"><code>-- DAX: Estimated Mean Asteroid Diameter (Meters)
-Est_Mean_Diameter_M = 
+                <div class="schema-card">
+                    <h4 class="schema-card-title"><i class="fas fa-calendar-alt"></i> Dim_Approach_Date</h4>
+                    <ul class="schema-fields-list">
+                        <li><span>DateKey (PK)</span> <span class="field-type">INT [YYYYMMDD]</span></li>
+                        <li><span>FullDate</span> <span class="field-type">DATE</span></li>
+                        <li><span>DayOfWeek</span> <span class="field-type">VARCHAR(10)</span></li>
+                        <li><span>Year / Month</span> <span class="field-type">INT / VARCHAR(10)</span></li>
+                        <li><span>IsCurrentWindow</span> <span class="field-type">BOOLEAN</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="artifact-header" style="margin-top: 1.5rem;">
+                <h3 class="artifact-title" style="font-size: 1.05rem;"><i class="fas fa-calculator"></i> <span data-translate="neo_calc_title">Kinematic & Risk Metric Calculations in DAX</span></h3>
+            </div>
+            <p data-translate="neo_calc_desc">
+                Engineered DAX formulas computing average estimated diameter, Potentially Hazardous Asteroid (PHA) ratios, and minimum approach distance:
+            </p>
+
+            <pre class="code-block"><code>// Mean Estimated Asteroid Diameter (Meters)
+Avg_Estimated_Diameter_M = 
 AVERAGEX(
     Dim_Near_Earth_Object,
-    (Dim_Near_Earth_Object[EstDiameterMin_M] + Dim_Near_Earth_Object[EstDiameterMax_M]) / 2
+    DIVIDE(Dim_Near_Earth_Object[EstDiameterMin_M] + Dim_Near_Earth_Object[EstDiameterMax_M], 2)
 )
 
--- DAX: Percentage of Potentially Hazardous Asteroids (PHA Rate)
-PHA_Hazard_Ratio_Pct = 
+// Potentially Hazardous Asteroid (PHA) Ratio (%)
+PHA_Hazard_Ratio = 
 DIVIDE(
-    CALCULATE(COUNTROWS(Dim_Near_Earth_Object), Dim_Near_Earth_Object[IsHazardous_PHA] = TRUE()),
+    CALCULATE(COUNTROWS(Dim_Near_Earth_Object), Dim_Near_Earth_Object[IsPotentiallyHazardous] = TRUE()),
     COUNTROWS(Dim_Near_Earth_Object),
     0
 ) * 100
 
--- DAX: Closest Approach Distance in Lunar Distances (LD)
-Closest_Approach_LD = MIN(Fact_Close_Approaches[MissDistance_LD])</code></pre>
-            </div>
-
-        </div>
-
-        <!-- ========================== TAB 3: INTERACTIVE DASHBOARD ========================== -->
-        <div class="cs-tab-pane" id="pane-dashboard">
-            
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h2 class="artifact-title"><i class="fas fa-desktop"></i> <span data-translate="neo_dash_title">Live Interactive Power BI Report</span></h2>
-                    <a href="https://app.powerbi.com/view?r=eyJrIjoiN2FjMjk0N2YtMjFlYi00Nzc3LWIzZGMtZDM1ZmIzZDgxOGE3IiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" target="_blank" rel="noopener" class="pill-badge-blue">
-                        <i class="fas fa-external-link-alt"></i> <span data-translate="neo_fullscreen">Open in Power BI Full Screen</span>
-                    </a>
-                </div>
-                <p data-translate="neo_dash_guide">
-                    <strong>Interactive Navigation Guide:</strong> Filter by date window or toggle the "Potentially Hazardous" slicer to isolate high-risk objects. Explore the scatter matrix correlating asteroid diameter with relative approach velocity. Click on individual object cards to review exact orbital metrics.
-                </p>
-
-                <!-- LIVE POWER BI EMBED WRAPPER -->
-                <div class="dashboard-live-wrapper">
-                    <div class="dashboard-action-bar">
-                        <span><i class="fas fa-circle" style="color: #00e676; font-size: 0.65rem;"></i> Power BI Embedded Live Telemetry</span>
-                        <span><i class="fas fa-satellite"></i> NASA NeoWs API Direct Feed</span>
-                    </div>
-                    <iframe title="NEO Tracker - Weekly Data Overview" src="https://app.powerbi.com/view?r=eyJrIjoiN2FjMjk0N2YtMjFlYi00Nzc3LWIzZGMtZDM1ZmIzZDgxOGE3IiwidCI6ImJiMDZmMmM2LTIxNjItNDczMS05NmYwLTljZTE0MGZmMWFmNiIsImMiOjR9" frameborder="0" allowFullScreen="true" loading="lazy"></iframe>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- ========================== TAB 4: STRATEGIC INSIGHTS ========================== -->
-        <div class="cs-tab-pane" id="pane-insights">
-            
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h2 class="artifact-title"><i class="fas fa-brain"></i> <span data-translate="neo_insights_title">Astronomical Telemetry & Risk Findings</span></h2>
-                    <span class="pill-badge-blue">Planetary Defense Analytics</span>
-                </div>
-                <p data-translate="neo_insights_intro">
-                    Quantitative synthesis of the NEO telemetry data reveals four core takeaways regarding orbital risk distributions:
-                </p>
-
-                <div class="insight-grid">
-                    <div class="insight-card highlight">
-                        <h4 class="insight-title"><i class="fas fa-tachometer-alt"></i> <span data-translate="neo_ins1_title">1. Kinetic Velocity vs. Diameter Distribution</span></h4>
-                        <p data-translate="neo_ins1_desc">The vast majority of detected NEOs (85%+) measure under 100 meters in diameter, exhibiting hypervelocity approaches between 40,000 km/h and 110,000 km/h relative to Earth's barycenter.</p>
-                    </div>
-
-                    <div class="insight-card">
-                        <h4 class="insight-title"><i class="fas fa-shield-alt"></i> <span data-translate="neo_ins2_title">2. PHA Hazard Ratio Baseline</span></h4>
-                        <p data-translate="neo_ins2_desc">Potentially Hazardous Asteroids (PHAs) constitute approximately 8% to 12% of tracked weekly objects, with the majority maintaining comfortable safety buffers exceeding 10 Lunar Distances (3.8M+ km).</p>
-                    </div>
-
-                    <div class="insight-card">
-                        <h4 class="insight-title"><i class="fas fa-sun"></i> <span data-translate="neo_ins3_title">3. Absolute Magnitude (H) Inverse Law</span></h4>
-                        <p data-translate="neo_ins3_desc">Visualizing absolute magnitude against estimated diameter confirmed the inverse logarithmic scaling: objects with H > 24 consistently correlate with sub-50-meter rock fragments.</p>
-                    </div>
-
-                    <div class="insight-card highlight">
-                        <h4 class="insight-title"><i class="fas fa-database"></i> <span data-translate="neo_ins4_title">4. Automated REST ETL Resilience</span></h4>
-                        <p data-translate="neo_ins4_desc">The decoupled JSON parser and Star Schema architecture ensure zero data degradation even when NASA API responses contain variable daily object counts or missing albedo parameters.</p>
-                    </div>
-                </div>
-            </div>
-
+// Minimum Miss Distance in Window (Lunar Distances)
+Min_Miss_Distance_LD = 
+MIN(Fact_Close_Approaches[MissDistance_LD])</code></pre>
         </div>
 
     </main>
@@ -610,22 +568,5 @@ Closest_Approach_LD = MIN(Fact_Close_Approaches[MissDistance_LD])</code></pre>
     </footer>
 
     <script src="../assets/js/script.js"></script>
-    <script>
-        // TAB SWITCHING LOGIC
-        function switchTab(tabId, btn) {
-            document.querySelectorAll('.cs-tab-pane').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.cs-tab-btn').forEach(b => b.classList.remove('active'));
-            const targetPane = document.getElementById('pane-' + tabId);
-            if (targetPane) targetPane.classList.add('active');
-            if (btn) {
-                btn.classList.add('active');
-                btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-            }
-            const tabsWrapper = document.querySelector('.cs-tabs-wrapper');
-            if (tabsWrapper) {
-                window.scrollTo({ top: tabsWrapper.offsetTop - 75, behavior: 'smooth' });
-            }
-        }
-    </script>
 </body>
 </html>
