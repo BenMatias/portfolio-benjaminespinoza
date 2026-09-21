@@ -5,29 +5,71 @@
  * The API key is stored as a Netlify environment variable (GEMINI_API_KEY)
  * and is NEVER exposed to the browser.
  *
- * Set up in Netlify Dashboard:
- *   Site Settings → Environment Variables → Add:
- *   Key:   GEMINI_API_KEY
- *   Value: AIzaSy... (your Google AI Studio key)
+ * Security features:
+ * - Strict Origin & Referer validation
+ * - Prompt length enforcement (max 500 chars)
+ * - Safe CORS response headers
  */
 
+const ALLOWED_ORIGINS = [
+  'https://benmatias.com',
+  'https://www.benmatias.com',
+];
+
+function isOriginAllowed(origin) {
+  if (!origin) return false;
+  if (ALLOWED_ORIGINS.includes(origin)) return true;
+  // Allow localhost or 127.0.0.1 for local development
+  if (/^http:\/\/localhost(:\d+)?$/.test(origin)) return true;
+  if (/^http:\/\/127\.0\.0\.1(:\d+)?$/.test(origin)) return true;
+  return false;
+}
+
+function getCorsHeaders(origin) {
+  const allowed = isOriginAllowed(origin) ? origin : 'https://benmatias.com';
+  return {
+    'Access-Control-Allow-Origin': allowed,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+}
+
 exports.handler = async (event) => {
-  // Only allow POST requests
+  const origin = event.headers.origin || event.headers.Origin || '';
+  const referer = event.headers.referer || event.headers.Referer || '';
+  const corsHeaders = getCorsHeaders(origin);
+
+  // Handle preflight OPTIONS
   if (event.httpMethod === 'OPTIONS') {
     return {
       statusCode: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
-      },
+      headers: corsHeaders,
       body: '',
+    };
+  }
+
+  // Validate Origin / Referer to prevent unauthorized third-party requests
+  const originValid = origin ? isOriginAllowed(origin) : (
+    referer && (
+      referer.startsWith('https://benmatias.com') ||
+      referer.startsWith('https://www.benmatias.com') ||
+      referer.startsWith('http://localhost') ||
+      referer.startsWith('http://127.0.0.1')
+    )
+  );
+
+  if (!originValid) {
+    return {
+      statusCode: 403,
+      headers: corsHeaders,
+      body: JSON.stringify({ error: 'Access forbidden: Request origin not authorized.' }),
     };
   }
 
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
+      headers: corsHeaders,
       body: JSON.stringify({ error: 'Method Not Allowed' }),
     };
   }
@@ -37,7 +79,7 @@ exports.handler = async (event) => {
   if (!apiKey) {
     return {
       statusCode: 503,
-      headers: { 'Access-Control-Allow-Origin': '*' },
+      headers: corsHeaders,
       body: JSON.stringify({ error: 'Gemini API key not configured on the server.' }),
     };
   }
@@ -48,7 +90,7 @@ exports.handler = async (event) => {
   } catch {
     return {
       statusCode: 400,
-      headers: { 'Access-Control-Allow-Origin': '*' },
+      headers: corsHeaders,
       body: JSON.stringify({ error: 'Invalid JSON body.' }),
     };
   }
@@ -58,10 +100,29 @@ exports.handler = async (event) => {
   if (!prompt || typeof prompt !== 'string') {
     return {
       statusCode: 400,
-      headers: { 'Access-Control-Allow-Origin': '*' },
+      headers: corsHeaders,
       body: JSON.stringify({ error: 'Missing or invalid "prompt" field.' }),
     };
   }
+
+  const trimmedPrompt = prompt.trim();
+  if (trimmedPrompt.length === 0) {
+    return {
+      statusCode: 400,
+      headers: corsHeaders,
+      body: JSON.stringify({ error: 'Prompt cannot be empty.' }),
+    };
+  }
+
+  if (trimmedPrompt.length > 500) {
+    return {
+      statusCode: 400,
+      headers: corsHeaders,
+      body: JSON.stringify({ error: 'Prompt exceeds maximum limit of 500 characters.' }),
+    };
+  }
+
+  const sanitizedContext = typeof context === 'string' ? context.slice(0, 4000) : '';
 
   const langInstruction =
     lang === 'es'
@@ -73,13 +134,13 @@ Your goal is to answer questions from recruiters or users about Benjamín's dash
 ${langInstruction}
 
 Current context:
-${context || ''}`;
+${sanitizedContext}`;
 
   const geminiBody = {
     contents: [
       {
         role: 'user',
-        parts: [{ text: `${systemInstruction}\n\nUser query: ${prompt}` }],
+        parts: [{ text: `${systemInstruction}\n\nUser query: ${trimmedPrompt}` }],
       },
     ],
   };
@@ -98,7 +159,7 @@ ${context || ''}`;
       console.error('Gemini API Error:', geminiRes.status, errText);
       return {
         statusCode: geminiRes.status,
-        headers: { 'Access-Control-Allow-Origin': '*' },
+        headers: corsHeaders,
         body: JSON.stringify({ error: `Gemini API returned ${geminiRes.status}` }),
       };
     }
@@ -110,7 +171,7 @@ ${context || ''}`;
       statusCode: 200,
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
+        ...corsHeaders,
       },
       body: JSON.stringify({ response: responseText }),
     };
@@ -118,7 +179,7 @@ ${context || ''}`;
     console.error('Proxy fetch error:', err);
     return {
       statusCode: 500,
-      headers: { 'Access-Control-Allow-Origin': '*' },
+      headers: corsHeaders,
       body: JSON.stringify({ error: 'Internal server error while calling Gemini API.' }),
     };
   }

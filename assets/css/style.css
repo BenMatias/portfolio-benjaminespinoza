@@ -148,7 +148,7 @@ header.container.scrolled, header.scrolled {
   padding-top: 2.5rem;
 }
 
-.logo img { height: 44px; }
+.logo img { height: 44px; width: auto; max-width: 100%; display: block; }
 nav.desktop-nav { display: flex; gap: 1.5rem; align-items: center; }
 nav.desktop-nav a { color: var(--white); font-weight: 600; transition: color 0.2s ease; }
 nav.desktop-nav a:hover { color: #00f2fe; }

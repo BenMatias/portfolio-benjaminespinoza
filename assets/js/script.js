@@ -3601,7 +3601,7 @@ const GeminiChatWidget = {
           <span id="gemini-toggle-text-span" class="gemini-toggle-text">${buttonText}</span>
         </button>
 
-        <div id="gemini-chat-window" class="gemini-chat-window hidden" role="dialog" aria-label="Gemini Dashboard Assistant">
+        <div id="gemini-chat-window" class="gemini-chat-window hidden" role="dialog" aria-modal="true" aria-label="Gemini Dashboard Assistant">
           <div class="gemini-chat-header">
             <div class="gemini-chat-title-group">
               <i class="fas fa-sparkles gemini-sparkle-icon"></i>
@@ -3710,6 +3710,12 @@ const GeminiChatWidget = {
       input.value = '';
       this.handleUserQuery(query);
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
+        this.toggleChat(false);
+      }
+    });
   },
 
   toggleChat(forceState) {
@@ -3765,7 +3771,16 @@ const GeminiChatWidget = {
     const msgEl = document.createElement('div');
     msgEl.className = 'gemini-msg bot';
 
-    let formatted = htmlContent
+    // Sanitize HTML to prevent DOM XSS before formatting markdown tokens
+    const rawText = String(htmlContent || '');
+    const sanitized = rawText
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+
+    let formatted = sanitized
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/`([^`]+)`/g, '<code>$1</code>')
       .replace(/\n/g, '<br>');
